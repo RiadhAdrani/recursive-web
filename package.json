@@ -1,0 +1,48 @@
+{
+    "name": "@riadh-adrani/recursive-web",
+    "version": "0.1.0",
+    "description": "Recursive Web is the web implementation of the Recursive Framework.",
+    "license": "MIT",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/RiadhAdrani/recursive-web"
+    },
+    "scripts": {
+        "start": "webpack-dev-server --config ./dev/webpack.dev.js --open",
+        "test": "webpack-dev-server --config ./dev/webpack.test.js --open"
+    },
+    "keywords": [
+        "npm",
+        "package",
+        "riadh",
+        "adrani",
+        "recursive",
+        "web",
+        "javascript",
+        "front-end",
+        "component-based",
+        "framework"
+    ],
+    "dependencies": {
+        "@riadh-adrani/recursive": "^0.7.19"
+    },
+    "devDependencies": {
+        "clean-webpack-plugin": "^4.0.0",
+        "css-loader": "^6.5.1",
+        "css-minimizer-webpack-plugin": "^3.3.1",
+        "file-loader": "^6.2.0",
+        "html-loader": "^3.1.0",
+        "html-webpack-plugin": "^5.5.0",
+        "mini-css-extract-plugin": "^2.4.6",
+        "node-sass": "^7.0.1",
+        "sass-loader": "^12.4.0",
+        "style-loader": "^3.3.1",
+        "terser-webpack-plugin": "^5.3.0",
+        "ts-loader": "^9.3.0",
+        "typescript": "^4.7.4",
+        "webpack-cli": "^4.9.1",
+        "webpack-dev-server": "^4.7.2",
+        "webpack-merge": "^5.8.0"
+    }
+}
