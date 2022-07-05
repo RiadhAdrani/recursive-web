@@ -1,4 +1,4 @@
-module.exports = {
+const Elements = {
     Address: { props: {} },
     Article: { props: {} },
     Aside: { props: {} },
@@ -283,7 +283,7 @@ module.exports = {
             size: "number",
         },
     },
-    Textarea: {
+    TextArea: {
         props: {
             autoComplete: "string",
             autoFocus: "boolean",
@@ -305,3 +305,5 @@ module.exports = {
     Slot: { props: { name: "string" } },
     Template: { props: {} },
 };
+
+module.exports = Elements;

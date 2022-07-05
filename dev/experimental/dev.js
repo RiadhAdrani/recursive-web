@@ -7,7 +7,7 @@ const {
     getParams,
     goTo,
 } = require("../../index.js");
-const { LazyColumn, Fragment, P } = require("../../html");
+const { LazyColumn, Fragment, P, Address, Article, Column } = require("../../html");
 const { Svg, Circle } = require("../../svg");
 
 Render({
@@ -20,23 +20,13 @@ Render({
         scroll: true,
     },
     app: () => {
-        const [value, setValue] = setState(
-            "value",
-            [1, 2, 3, 4, 5, 6, 10, 12, 13, 15, 19, 17, 20, 100]
-        );
-
+        const [value, setValue] = setState("value", [1]);
         const [count, setCount] = setCache("count", 10);
 
         return LazyColumn({
             children: [
+                Address({ children: "Hello" }),
                 renderRoute(),
-                Svg({
-                    viewBox: "0 0 24 24",
-                    height: "50px",
-                    width: "50px",
-                    style: { scoped: true, normal: { border: "2px solid white" } },
-                    children: [Circle({ r: 10, cy: 10, cx: 10, fill: "red" })],
-                }),
                 Fragment({
                     children: value.slice(0, count).map((item) =>
                         P({

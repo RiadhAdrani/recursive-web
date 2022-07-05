@@ -74,17 +74,20 @@ class RecursiveWebRenderer extends RecursiveRenderer {
      * @param {Function} callback
      * @param {HTMLElement} instance
      */
-    useRendererAddEvent(eventName, callback, instance) {
-        const exists = instance.events[eventName] !== undefined;
+    useRendererAddEvent(eventName, callback, element) {
+        const exists = element.events[eventName] !== undefined;
 
-        instance.events[eventName] = callback;
+        element.instance.events[eventName] = callback;
 
         if (!exists) {
             if (hasHandler(eventName)) {
-                getEv(eventName).handler(instance);
+                getEv(eventName).handler(element.instance);
             } else {
-                instance.addEventListener(eventName, (e) => {
-                    this.orchestrator.batchCallback(() => instance.events[eventName](e), eventName);
+                element.instance.addEventListener(getListener(eventName), (e) => {
+                    this.orchestrator.batchCallback(
+                        () => element.instance.events[eventName](e),
+                        eventName
+                    );
                 });
             }
         }
@@ -326,6 +329,15 @@ class RecursiveWebRenderer extends RecursiveRenderer {
      */
     useRendererRemoveElement(element) {
         element.instance.remove();
+    }
+
+    /**
+     * Remove the given event from the instance.
+     * @param {string} eventName
+     * @param {HTMLElement} instance
+     */
+    useRendererRemoveEvent(eventName, instance) {
+        instance.events[eventName] = () => {};
     }
 }
 

@@ -138,7 +138,7 @@ function Link(props) {
             e.preventDefault();
 
             appRouter.goTo(props.href);
-            _onClick();
+            _onClick(e);
         };
     }
 

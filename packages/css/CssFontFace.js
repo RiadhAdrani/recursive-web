@@ -24,15 +24,17 @@ function get(key) {
 }
 
 function render(content) {
-    if (!content) return "";
+    if (!Array.isArray(content)) return "";
 
     let output = "@font-face{";
 
-    for (let key in content) {
-        if (!is(key) || content[key].toString().includes(";")) continue;
+    content.forEach((item) => {
+        for (let key in item) {
+            if (!is(key) || item[key].toString().includes(";")) continue;
 
-        output += `${get(key)}:${content[key]};`;
-    }
+            output += `${get(key)}:${item[key]};`;
+        }
+    });
 
     output += "}";
 

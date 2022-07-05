@@ -17,8 +17,8 @@ class RecursiveCSSOM {
         this.appStyle = document.createElement("style");
 
         document.querySelector("head").append(this.appStaticStyle);
-        document.querySelector("head").append(this.appStyle);
         document.querySelector("head").append(this.appDynamicStyle);
+        document.querySelector("head").append(this.appStyle);
 
         this.sheet = "";
         this.staticSheet = "";

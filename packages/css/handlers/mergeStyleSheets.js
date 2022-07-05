@@ -45,7 +45,7 @@ export default function (styleSheets) {
 
                         if (!output.fontFace) output.fontFace = [];
 
-                        output.fontFace.push(sheet.fontFace);
+                        output.fontFace.push(...sheet.fontFace);
                     }
                     break;
                 case "var":

@@ -5,7 +5,7 @@ const SVG = require("../components/SVGelements.js");
 const component = (tag) => `
 /**
  * Create \`<${tag.toLocaleLowerCase()}>\` element.
- * @param {typeof ${tag}Props} props 
+ * @param {import("../lib.js").${tag}Props} props 
  * @returns Recursive Web Element
  */
 function ${tag}(props){
@@ -15,7 +15,7 @@ function ${tag}(props){
 const svgComponent = (tag) => `
 /**
  * Create \`<${tag.toLocaleLowerCase()}>\` element.
- * @param {typeof ${tag}Props} props 
+ * @param {import("../lib.js").SVG${tag}Props} props
  * @returns Recursive Web Element
  */
 function ${tag}(props){
@@ -25,7 +25,7 @@ function ${tag}(props){
 const customComponent = (name, tag, handler) => `
 /**
  * Create \`<${tag.toLocaleLowerCase()}>\` element.
- * @param {typeof ${name}Props} props 
+ * @param {import("../lib.js").${name}Props} props 
  * @returns Recursive Web Element
  */
 function ${name}(props){
@@ -74,20 +74,20 @@ const Props = (tag, item) => {
     let exp = "export {";
 
     for (let element in Elements) {
-        types += Props(element, Elements[element]);
+        // types += Props(element, Elements[element]);
         elements += component(element);
         exp += element + ",";
     }
 
     for (let element in Custom) {
-        types += Props(element, Custom[element]);
+        // types += Props(element, Custom[element]);
         elements += customComponent(element, Custom[element].tag, Custom[element].handler);
         exp += element + ",";
     }
 
     exp += "}";
 
-    const output = imp + "\n" + types + "\n" + elements + "\n" + exp;
+    const output = imp + "\n" /* + props + */ + elements + "\n" + exp;
 
     const fs = require("fs");
     const path = require("path");

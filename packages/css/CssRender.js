@@ -14,7 +14,7 @@ function (styleSheet) {
 
     let output = "";
     output += renderVar(styleSheet.var);
-    output += renderImport(styleSheet.import);
+    output += renderImport(styleSheet.imports);
     output += renderFont(styleSheet.fontFace);
 
     if (styleSheet["charset"]) {
