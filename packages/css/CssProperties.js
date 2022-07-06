@@ -398,7 +398,7 @@ function get(key) {
 }
 
 function validValue(value) {
-    return typeof value == "string" && value.trim() && !regEx.test(value);
+    return value.toString().trim() && !regEx.test(value.toString());
 }
 
 /**
@@ -409,14 +409,6 @@ function validValue(value) {
  */
 function render(property, value) {
     if (!is(property)) return "";
-
-    if (typeof value == "string") {
-        if (validValue(value)) {
-            return `${get(property)}:${value};`;
-        } else {
-            console.warn(`CSS: value "${value}" of property "${property}" has been ignored.`);
-        }
-    }
 
     if (Array.isArray(value)) {
         let _value = "";
@@ -432,6 +424,14 @@ function render(property, value) {
         if (!_value) return "";
 
         return `${get(property)}:${_value};`;
+    }
+
+    value = value.toString();
+
+    if (validValue(value)) {
+        return `${get(property)}:${value};`;
+    } else {
+        console.warn(`CSS: value "${value}" of property "${property}" has been ignored.`);
     }
 
     return "";

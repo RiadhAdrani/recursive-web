@@ -7,7 +7,11 @@ const Item = () =>
         children: Row({
             style: {
                 scoped: true,
-                normal: { height: "10px", backgroundColor: "blueviolet", marginBottom: ["5px"] },
+                normal: {
+                    height: "10px",
+                    backgroundColor: "blueviolet",
+                    marginBottom: [],
+                },
             },
         }),
     });
