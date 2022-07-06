@@ -863,7 +863,7 @@ function Row(props){
 function Spacer(props){
     const el = {...props,elementType:"spacer-view"}
 
-    CustomElements.Spacer.handler(el);
+    CustomElements.items.Spacer.handler(el);
 
     return el;
  
@@ -876,7 +876,7 @@ function Spacer(props){
 function LazyColumn(props){
     const el = {...props,elementType:"lazy-column"}
 
-    CustomElements.LazyColumn.handler(el);
+    CustomElements.items.LazyColumn.handler(el);
 
     return el;
  
@@ -889,7 +889,7 @@ function LazyColumn(props){
 function LazyRow(props){
     const el = {...props,elementType:"lazy-row"}
 
-    CustomElements.LazyRow.handler(el);
+    CustomElements.items.LazyRow.handler(el);
 
     return el;
  

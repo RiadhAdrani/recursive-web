@@ -1,25 +1,29 @@
 import { Render } from "../..";
-import { Column, Row } from "../../html";
+import { Column, LazyColumn, Row, Spacer } from "../../html";
 
 const Item = () =>
     Column({
         style: { scoped: true },
-        children: Row({
-            style: {
-                scoped: true,
-                normal: {
-                    height: "10px",
-                    backgroundColor: "blueviolet",
-                    marginBottom: [],
+        children: [
+            Row({
+                style: {
+                    scoped: true,
+                    normal: {
+                        height: "10px",
+                        backgroundColor: "blueviolet",
+                    },
                 },
-            },
-        }),
+            }),
+            Spacer({ height: "10px" }),
+            LazyColumn(),
+        ],
     });
 
 Render({
     root: document.body,
     app: () =>
-        Column({
+        LazyColumn({
+            onObserved: () => {},
             style: {
                 scoped: true,
                 normal: {

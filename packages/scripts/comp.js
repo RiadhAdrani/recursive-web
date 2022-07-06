@@ -37,7 +37,7 @@ const customComponent = (name, tag, handler) => `
 function ${name}(props){
     const el = {...props,elementType:"${tag.toLocaleLowerCase()}"}
 
-    ${handler ? `CustomElements.${name}.handler(el);` : ""}
+    ${handler ? `CustomElements.items.${name}.handler(el);` : ""}
 
     return el;
  

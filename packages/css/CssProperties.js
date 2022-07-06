@@ -408,7 +408,7 @@ function validValue(value) {
  * @returns
  */
 function render(property, value) {
-    if (!is(property)) return "";
+    if (!is(property) || !value) return "";
 
     if (Array.isArray(value)) {
         let _value = "";

@@ -33,6 +33,8 @@ module.exports = {
             tag: LAZY_COLUMN,
             props: { onObserved: "Function" },
             handler: (element) => {
+                element.hooks = {};
+
                 const _onRef = element.hooks.onRef || (() => {});
 
                 element.hooks.onRef = (instance) => {
@@ -62,6 +64,8 @@ module.exports = {
             tag: LAZY_ROW,
             props: { onObserved: "Function" },
             handler: (element) => {
+                element.hooks = {};
+
                 const _onRef = element.hooks.onRef || (() => {});
 
                 element.hooks.onRef = (instance) => {
