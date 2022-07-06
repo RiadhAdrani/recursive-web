@@ -1,6 +1,6 @@
 import { get as getAtt, is as isAttt, isToggle } from "../dom/DomAttributes.js";
 import { get as getEv, is as isEv, getListener, hasHandler } from "../dom/DomEvents.js";
-import { RecursiveRenderer, ElementType } from "@riadh-adrani/recursive/index";
+import { RecursiveRenderer } from "@riadh-adrani/recursive/index";
 import RecursiveCSSOM from "../css/";
 
 /**
@@ -10,7 +10,7 @@ import RecursiveCSSOM from "../css/";
 class RecursiveWebRenderer extends RecursiveRenderer {
     /**
      * Create an instance of `RecursiveWeb`
-     * @param {Function} app
+     * @param {import("@riadh-adrani/recursive/lib.js").App} app
      * @param {HTMLElement} root
      */
     constructor(app, root) {
@@ -26,7 +26,7 @@ class RecursiveWebRenderer extends RecursiveRenderer {
      * * `html` : http://www.w3.org/1999/xhtm
      * * `svg` : http://www.w3.org/2000/svg
      * * `math` : http://www.w3.org/1998/Math/MathML
-     * @param {typeof ElementType} element
+     * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
      * @returns {HTMLElement}
      */
     useRendererCreateInstance(element) {
@@ -43,8 +43,8 @@ class RecursiveWebRenderer extends RecursiveRenderer {
 
     /**
      * Update text node inner value.
-     * @param {typeof ElementType} element
-     * @param {typeof ElementType} newElement
+     * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
+     * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} newElement
      */
     useRendererUpdateText(element, newElement) {
         element.instance.data = newElement.children;
@@ -95,7 +95,7 @@ class RecursiveWebRenderer extends RecursiveRenderer {
 
     /**
      * Check if the provided element exists in the DOM.
-     * @param {typeof ElementType} element
+     * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
      * @returns {boolean}
      */
     useRendererItemInTree(element) {
@@ -104,7 +104,7 @@ class RecursiveWebRenderer extends RecursiveRenderer {
 
     /**
      * Inject attributes into the HTML instance.
-     * @param {typeof ElementType} element
+     * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
      * @param {HTMLElement} instance
      */
     useRendererInjectAttributes(element, instance) {
@@ -133,7 +133,7 @@ class RecursiveWebRenderer extends RecursiveRenderer {
      * Used to update the given attribute with the provided value.
      * @param {string} attribute
      * @param {string} value
-     * @param {typeof ElementType} element
+     * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
      */
     useRendererSetAttribute(attribute, value, element) {
         const instance = element.instance;
@@ -159,8 +159,8 @@ class RecursiveWebRenderer extends RecursiveRenderer {
 
     /**
      * Update inline style.
-     * @param {typeof ElementType} element
-     * @param {typeof ElementType} newElement
+     * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
+     * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} newElement
      */
     useRendererUpdateStyle(element, newElement) {
         if (element.style && element.style.inline) {
@@ -187,7 +187,7 @@ class RecursiveWebRenderer extends RecursiveRenderer {
 
     /**
      * Inject event listeners into the HTML instance.
-     * @param {typeof ElementType} element
+     * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
      * @param {HTMLElement} instance
      */
     useRendererInjectEvents(element, instance) {
@@ -208,7 +208,7 @@ class RecursiveWebRenderer extends RecursiveRenderer {
 
     /**
      * Inject children into the HTML instance
-     * @param {typeof ElementType} element
+     * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
      * @param {HTMLElement} instance
      */
     useRendererInjectChildren(element, instance) {
@@ -228,9 +228,28 @@ class RecursiveWebRenderer extends RecursiveRenderer {
         this.root.append(tree);
     }
 
+    transformUid(uid) {
+        function convert(uid) {
+            const pool = [..."abcdefghijklmnopqrstuvwxyz-_0123456789"];
+            const length = pool.length;
+
+            return [...uid]
+                .map((char, index) => {
+                    return ((n) => {
+                        const _char = pool[n % length];
+                        return index % 3 == 0 && index != 0 ? _char.toUpperCase() : _char;
+                    })(char.charCodeAt() + index + uid.length);
+                })
+                .join("");
+        }
+
+        const output = convert(uid);
+        return output;
+    }
+
     /**
      * Check and update the `className` of the element.
-     * @param {typeof ElementType} element
+     * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
      */
     resolveClassName(element) {
         if (element.style && (element.style.scoped || element.style.className)) {
@@ -239,7 +258,7 @@ class RecursiveWebRenderer extends RecursiveRenderer {
             if (element.style.scoped) {
                 if (_class) _class += "-";
 
-                _class += `${element.elementType}${element.uid}`;
+                _class += `_${this.transformUid(element.uid)}`;
             }
 
             if (element.attributes.className) element.attributes.className += " ";
@@ -252,7 +271,7 @@ class RecursiveWebRenderer extends RecursiveRenderer {
 
     /**
      * Flatten and return the `StyleSheets` of the elements' tree.
-     * @param {typeof ElementType} element
+     * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
      * @returns {Array<any>}
      */
     flattenStyle(element) {
@@ -275,7 +294,7 @@ class RecursiveWebRenderer extends RecursiveRenderer {
 
     /**
      * Remove the provided attribute.
-     * @param {typeof ElementType} attribute
+     * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} attribute
      * @param {HTMLElement} instance
      */
     useRendererRemoveAttribute(attribute, instance) {
@@ -284,7 +303,7 @@ class RecursiveWebRenderer extends RecursiveRenderer {
 
     /**
      * Apply style and post-computation effects.
-     * @param {typeof ElementType} tree
+     * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} tree
      */
     useRendererOnTreePrepared(tree) {
         const style = this.flattenStyle(tree);
@@ -294,8 +313,8 @@ class RecursiveWebRenderer extends RecursiveRenderer {
 
     /**
      * Append an element to the DOM.
-     * @param {typeof ElementType} element
-     * @param {typeof ElementType} parentElement
+     * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
+     * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} parentElement
      */
     useRendererAddElement(element, parentElement) {
         parentElement.instance.append(this.renderInstance(element));
@@ -303,8 +322,8 @@ class RecursiveWebRenderer extends RecursiveRenderer {
 
     /**
      * Change the position of an element in the given node element.
-     * @param {typeof ElementType} element
-     * @param {typeof ElementType} parentElement
+     * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
+     * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} parentElement
      * @param {number} newPosition
      */
     useRendererChangeElementPosition(element, parentElement, newPosition) {
@@ -316,8 +335,8 @@ class RecursiveWebRenderer extends RecursiveRenderer {
 
     /**
      * Replace the given element with the new one.
-     * @param {typeof ElementType} element
-     * @param {typeof ElementType} newElement
+     * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
+     * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} newElement
      */
     useRendererReplaceElement(element, newElement) {
         element.instance.replaceWith(this.renderInstance(newElement));
@@ -325,7 +344,7 @@ class RecursiveWebRenderer extends RecursiveRenderer {
 
     /**
      * Remove the provided element from the DOM.
-     * @param {typeof ElementType} element
+     * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
      */
     useRendererRemoveElement(element) {
         element.instance.remove();

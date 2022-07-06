@@ -6,6 +6,7 @@ function useRecursiveWindow(orchestrator) {
     onGlobal(orchestrator, "contextmenu", "oncontextmenuglobal", "onContextMenuGlobal");
     onGlobal(orchestrator, "resize", "onresizeglobal", "onResizeGlobal", false);
     onGlobal(orchestrator, "keyup", "onkeyupglobal", "onKeyUpGlobal", false);
+    onGlobal(orchestrator, "keydown", "onkeydownglobal", "onKeyDownGlobal", false);
     onGlobal(orchestrator, "scroll", "onscrollglobal", "onScrollGlobal", false);
 }
 

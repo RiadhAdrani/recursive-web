@@ -1,7 +1,157 @@
 // This file is generated
 
+export type Color =
+    | "aliceblue"
+    | "antiquewhite"
+    | "aqua"
+    | "aquamarine"
+    | "azure"
+    | "beige"
+    | "bisque"
+    | "black"
+    | "blanchedalmond"
+    | "blue"
+    | "blueviolet"
+    | "brown"
+    | "burlywood"
+    | "cadetblue"
+    | "chartreuse"
+    | "chocolate"
+    | "coral"
+    | "cornflowerblue"
+    | "cornsilk"
+    | "crimson"
+    | "cyan"
+    | "darkblue"
+    | "darkcyan"
+    | "darkgoldenrod"
+    | "darkgray"
+    | "darkgreen"
+    | "darkgrey"
+    | "darkkhaki"
+    | "darkmagenta"
+    | "darkolivegreen"
+    | "darkorange"
+    | "darkorchid"
+    | "darkred"
+    | "darksalmon"
+    | "darkseagreen"
+    | "darkslateblue"
+    | "darkslategray"
+    | "darkslategrey"
+    | "darkturquoise"
+    | "darkviolet"
+    | "deeppink"
+    | "deepskyblue"
+    | "dimgray"
+    | "dimgrey"
+    | "dodgerblue"
+    | "firebrick"
+    | "floralwhite"
+    | "forestgreen"
+    | "fuchsia"
+    | "gainsboro"
+    | "ghostwhite"
+    | "goldenrod"
+    | "gold"
+    | "gray"
+    | "green"
+    | "greenyellow"
+    | "grey"
+    | "honeydew"
+    | "hotpink"
+    | "indianred"
+    | "indigo"
+    | "ivory"
+    | "khaki"
+    | "lavenderblush"
+    | "lavender"
+    | "lawngreen"
+    | "lemonchiffon"
+    | "lightblue"
+    | "lightcoral"
+    | "lightcyan"
+    | "lightgoldenrodyellow"
+    | "lightgray"
+    | "lightgreen"
+    | "lightgrey"
+    | "lightpink"
+    | "lightsalmon"
+    | "lightseagreen"
+    | "lightskyblue"
+    | "lightslategray"
+    | "lightslategrey"
+    | "lightsteelblue"
+    | "lightyellow"
+    | "lime"
+    | "limegreen"
+    | "linen"
+    | "magenta"
+    | "maroon"
+    | "mediumaquamarine"
+    | "mediumblue"
+    | "mediumorchid"
+    | "mediumpurple"
+    | "mediumseagreen"
+    | "mediumslateblue"
+    | "mediumspringgreen"
+    | "mediumturquoise"
+    | "mediumvioletred"
+    | "midnightblue"
+    | "mintcream"
+    | "mistyrose"
+    | "moccasin"
+    | "navajowhite"
+    | "navy"
+    | "oldlace"
+    | "olive"
+    | "olivedrab"
+    | "orange"
+    | "orangered"
+    | "orchid"
+    | "palegoldenrod"
+    | "palegreen"
+    | "paleturquoise"
+    | "palevioletred"
+    | "papayawhip"
+    | "peachpuff"
+    | "peru"
+    | "pink"
+    | "plum"
+    | "powderblue"
+    | "purple"
+    | "rebeccapurple"
+    | "red"
+    | "rosybrown"
+    | "royalblue"
+    | "saddlebrown"
+    | "salmon"
+    | "sandybrown"
+    | "seagreen"
+    | "seashell"
+    | "sienna"
+    | "silver"
+    | "skyblue"
+    | "slateblue"
+    | "slategray"
+    | "slategrey"
+    | "snow"
+    | "springgreen"
+    | "steelblue"
+    | "tan"
+    | "teal"
+    | "thistle"
+    | "tomato"
+    | "turquoise"
+    | "violet"
+    | "wheat"
+    | "white"
+    | "whitesmoke"
+    | "yellow"
+    | "yellowgreen";
+
 export interface Selector {
-    accentColor: string;
+    accentColor: Color;
     alignContent: string;
     alignItems: string;
     alignSelf: string;
@@ -24,7 +174,7 @@ export interface Selector {
     backgroundAttachment: string;
     backgroundBlendMode: string;
     backgroundClip: string;
-    backgroundColor: string;
+    backgroundColor: Color;
     backgroundImage: string;
     backgroundOrigin: string;
     backgroundPosition: string;
@@ -34,26 +184,26 @@ export interface Selector {
     backgroundSize: string;
     blockSize: string;
     borderBlock: string;
-    borderBlockColor: string;
+    borderBlockColor: Color;
     borderBlockStyle: string;
     borderBlockWidth: string;
     borderBlockEnd: string;
-    borderBlockEndColor: string;
+    borderBlockEndColor: Color;
     borderBlockEndStyle: string;
     borderBlockEndWidth: string;
     borderBlockStart: string;
-    borderBlockStartColor: string;
+    borderBlockStartColor: Color;
     borderBlockStartStyle: string;
     borderBlockStartWidth: string;
     border: string;
     borderBottom: string;
-    borderBottomColor: string;
+    borderBottomColor: Color;
     borderBottomLeftRadius: string;
     borderBottomRightRadius: string;
     borderBottomStyle: string;
     borderBottomWidth: string;
     borderCollapse: string;
-    borderColor: string;
+    borderColor: Color;
     borderEndEndRadius: string;
     borderEndStartRadius: string;
     borderStartEndRadius: string;
@@ -65,30 +215,30 @@ export interface Selector {
     borderImageSource: string;
     borderImageWidth: string;
     borderInline: string;
-    borderInlineColor: string;
+    borderInlineColor: Color;
     borderInlineStyle: string;
     borderInlineWidth: string;
     borderInlineEnd: string;
-    borderInlineEndColor: string;
+    borderInlineEndColor: Color;
     borderInlineEndStyle: string;
     borderInlineEndWidth: string;
     borderStartEnd: string;
-    borderInlineStartColor: string;
+    borderInlineStartColor: Color;
     borderInlineStartStyle: string;
     borderInlineStartWidth: string;
     borderLeft: string;
-    borderLeftColor: string;
+    borderLeftColor: Color;
     borderLeftStyle: string;
     borderLeftWidth: string;
     borderRadius: string;
     borderRight: string;
-    borderRightColor: string;
+    borderRightColor: Color;
     borderRightStyle: string;
     borderRightWidth: string;
     borderSpacing: string;
     borderStyle: string;
     borderTop: string;
-    borderTopColor: string;
+    borderTopColor: Color;
     borderTopLeftRadius: string;
     borderTopRightRadius: string;
     borderTopStyle: string;
@@ -102,18 +252,18 @@ export interface Selector {
     breakBefore: string;
     breakInside: string;
     captionSide: string;
-    caretColor: string;
+    caretColor: Color;
     clear: string;
     clip: string;
     clipPath: string;
-    color: string;
+    color: Color;
     colorAdjust: string;
     colorScheme: string;
     columnCount: string;
     columnFill: string;
     columnGap: string;
     columnRule: string;
-    columnRuleColor: string;
+    columnRuleColor: Color;
     columnRuleStyle: string;
     columnRuleWidth: string;
     columnSpan: string;
@@ -250,7 +400,7 @@ export interface Selector {
     order: string;
     orphans: string;
     outline: string;
-    outlineColor: string;
+    outlineColor: Color;
     outlineOffset: string;
     outlineStyle: string;
     outlineWidth: string;
@@ -321,7 +471,7 @@ export interface Selector {
     scrollSnapAlign: string;
     scrollSnapStop: string;
     scrollSnapType: string;
-    scrollbarColor: string;
+    scrollbarColor: Color;
     scrollbarGutter: string;
     scrollbarWidth: string;
     shapeImageThreshold: string;
@@ -333,14 +483,14 @@ export interface Selector {
     textAlignLast: string;
     textCombineUpright: string;
     textDecoration: string;
-    textDecorationColor: string;
+    textDecorationColor: Color;
     textDecorationLine: string;
     textDecorationSkip: string;
     textDecorationSkipInk: string;
     textDecorationStyle: string;
     textDecorationThickness: string;
     textEmphasis: string;
-    textEmphasisColor: string;
+    textEmphasisColor: Color;
     textEmphasisPosition: string;
     textEmphasisStyle: string;
     textIndent: string;
@@ -378,18 +528,23 @@ export interface Selector {
     writingMode: string;
     zIndex: string;
     zoom: string;
+
     webkitLineClamp: string;
     webkitAppearance: string;
     webkitTextEmphasis: string;
     webkitHyphens: string;
+
     mozAppearance: string;
     mozTabSize: string;
     mozHyphens: string;
+
     oTabSize: string;
+
     msHyphens: string;
 }
 
 export interface SelectorTypes {
+    inline: Selector;
     normal: Selector;
     active: Selector;
     anyLink: Selector;
@@ -454,6 +609,7 @@ export interface MediaQuery extends SelectorTypes {
 
 export interface StyleSheet extends SelectorTypes {
     scoped: boolean;
+    className: string;
     animations: Array<Animation>;
     mediaQueries: Array<MediaQuery>;
 }
@@ -545,13 +701,20 @@ export interface Events {
     onCopy: (event: Event) => {};
     onCut: (event: Event) => {};
     onPaste: (event: Event) => {};
+
+    onClickGlobal: (event: Event, notify: Function) => void;
+    onContextMenuGlobal: (event: Event, notify: Function) => void;
+    onResizeGlobal: (event: Event, notify: Function) => void;
+    onKeyUpGlobal: (event: Event, notify: Function) => void;
+    onKeyDownGlobal: (event: Event, notify: Function) => void;
+    onScrollGlobal: (event: Event, notify: Function) => void;
 }
 
 export interface StandardAttributes {
     key: string;
     hooks: Hooks;
     flags: Flags;
-    children: Array;
+    children: Array<any>;
     style: StyleSheet;
 }
 
@@ -592,6 +755,22 @@ export interface SVGAttributes extends StandardAttributes, Events {
     xmlSpace: string;
     className: string;
 }
+
+export interface FreeStyleSheet {
+    var: { [key: string]: string };
+    import: Array<string>;
+    selectors: { [key: string]: Selector };
+    mediaQueries: { [key: string]: Selector };
+    animations: { [key: string]: Selector };
+}
+
+export function setState<T>(
+    key: string,
+    value: T,
+    onInit: Function,
+    onRemoved: Function
+): [T, (value: any) => void, () => T, T];
+
 export interface AddressProps extends HTMLAttributes {}
 
 export interface ArticleProps extends HTMLAttributes {}
@@ -638,7 +817,7 @@ export interface FigureProps extends HTMLAttributes {}
 
 export interface HrProps extends HTMLAttributes {
     align: string;
-    color: string;
+    color: Color;
     noShade: string;
     size: string;
     width: string;
@@ -654,7 +833,7 @@ export interface MenuProps extends HTMLAttributes {}
 export interface OlProps extends HTMLAttributes {
     reversed: boolean;
     start: string;
-    type: string;
+    type: "a" | "A" | "i" | "I" | "1";
 }
 
 export interface PProps extends HTMLAttributes {}
@@ -675,9 +854,17 @@ export interface AProps extends HTMLAttributes {
     href: string;
     hrefLang: string;
     ping: string;
-    referrerPolicy: string;
+    referrerPolicy:
+        | "no-referrer"
+        | "no-referrer-when-downgrade"
+        | "origin"
+        | "origin-when-cross-origin"
+        | "same-origin"
+        | "strict-origin"
+        | "strict-origin-when-cross-origin"
+        | "unsafe-url";
     rel: string;
-    target: string;
+    target: "_self" | "_blank" | "_parent" | "_top";
     type: string;
 }
 
@@ -754,10 +941,18 @@ export interface AreaProps extends HTMLAttributes {
     href: string;
     hrefLang: string;
     ping: string;
-    referrerPolicy: string;
+    referrerPolicy:
+        | "no-referrer"
+        | "no-referrer-when-downgrade"
+        | "origin"
+        | "origin-when-cross-origin"
+        | "same-origin"
+        | "strict-origin"
+        | "strict-origin-when-cross-origin"
+        | "unsafe-url";
     rel: string;
     shape: string;
-    target: string;
+    target: "_self" | "_blank" | "_parent" | "_top";
 }
 
 export interface AudioProps extends HTMLAttributes {
@@ -777,7 +972,15 @@ export interface ImgProps extends HTMLAttributes {
     height: number;
     isMap: boolean;
     loading: string;
-    referrerPolicy: string;
+    referrerPolicy:
+        | "no-referrer"
+        | "no-referrer-when-downgrade"
+        | "origin"
+        | "origin-when-cross-origin"
+        | "same-origin"
+        | "strict-origin"
+        | "strict-origin-when-cross-origin"
+        | "unsafe-url";
     sizes: string;
     src: string;
     srcSet: string;
@@ -825,7 +1028,15 @@ export interface IframeProps extends HTMLAttributes {
     height: number;
     loading: string;
     name: string;
-    referrerPolicy: string;
+    referrerPolicy:
+        | "no-referrer"
+        | "no-referrer-when-downgrade"
+        | "origin"
+        | "origin-when-cross-origin"
+        | "same-origin"
+        | "strict-origin"
+        | "strict-origin-when-cross-origin"
+        | "unsafe-url";
     sandbox: string;
     src: string;
     srcDoc: string;
@@ -909,7 +1120,7 @@ export interface ButtonProps extends HTMLAttributes {
     formEncType: string;
     formMethod: string;
     formNoValidate: string;
-    formTarget: string;
+    formtarget: "_self" | "_blank" | "_parent" | "_top";
     name: string;
     type: string;
     value: string;
@@ -932,7 +1143,7 @@ export interface FormProps extends HTMLAttributes {
     encType: string;
     method: string;
     noValidate: string;
-    target: string;
+    target: "_self" | "_blank" | "_parent" | "_top";
 }
 
 export interface InputProps extends HTMLAttributes {
@@ -948,7 +1159,7 @@ export interface InputProps extends HTMLAttributes {
     formEncType: string;
     formMethod: string;
     formNoValidate: string;
-    formTarget: string;
+    formtarget: "_self" | "_blank" | "_parent" | "_top";
     height: number;
     list: string;
     max: number;

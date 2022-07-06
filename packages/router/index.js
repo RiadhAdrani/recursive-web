@@ -1,11 +1,9 @@
-import { RecursiveRouter, RouteType } from "@riadh-adrani/recursive/";
+import { RecursiveRouter } from "@riadh-adrani/recursive/";
 
 class RecursiveWebRouter extends RecursiveRouter {
     constructor(route, base, scroll, manager, orchestrator) {
         super(route, base, scroll, manager, orchestrator);
     }
-
-    static singleton = undefined;
 
     /**
      * Add a `popstate` event listener to the window.

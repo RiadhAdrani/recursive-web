@@ -328,4 +328,4 @@ const Elements = {
     View: { tag: "view", props: {} },
 };
 
-module.exports = Elements;
+module.exports = { items: Elements };

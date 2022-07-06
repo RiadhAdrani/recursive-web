@@ -93,6 +93,7 @@ const list = {
     onClickGlobal: handler("onclickglobal"),
     onResizeGlobal: handler("onresizeglobal"),
     onKeyUpGlobal: handler("onkeyupglobal"),
+    onKeyDownGlobal: handler("onkeydownglobal"),
     onContextMenuGlobal: handler("oncontextmenuglobal"),
     onScrollGlobal: handler("onscrollglobal"),
 };

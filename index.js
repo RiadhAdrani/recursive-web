@@ -2,7 +2,6 @@ import { RecursiveOrchestrator, RecursiveState } from "@riadh-adrani/recursive";
 import RecursiveWebRenderer from "./packages/renderer/";
 import RecursiveWebRouter from "./packages/router";
 import { useRecursiveWindow } from "./packages/window";
-import GlobalAttributes from "./packages/types/GlobalAttributes";
 import "./packages/components/DefineElements.js";
 
 let appRouter = undefined;
@@ -105,27 +104,19 @@ function updateOn(callback) {
     appOrchestrator.batchCallback(callback, "update-on-" + Date.now());
 }
 
+/**
+ * Add a style sheet
+ * @param {import("./lib").FreeStyleSheet} cssObject
+ */
 function setStyle(cssObject) {
     checkStyle(() => {
         appRenderer.styler.setStyle(cssObject);
     });
 }
 
-const LinkProps = {
-    ...GlobalAttributes,
-    download: "",
-    href: "",
-    hrefLang: "",
-    ping: "",
-    referrerPolicy: "",
-    rel: "",
-    target: "",
-    type: "",
-};
-
 /**
  * Create `<a>` element.
- * @param {typeof LinkProps} props
+ * @param {import("./lib").AProps} props
  */
 function Link(props) {
     const el = { ...props, elementType: "a" };

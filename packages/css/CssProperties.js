@@ -387,6 +387,8 @@ const list = {
     msHyphens: { css: "-ms-hyphens", support: {} },
 };
 
+const regEx = /[:;\{\}]{1}/gm;
+
 function is(key) {
     return list[key] !== undefined && list[key].css != undefined;
 }
@@ -395,18 +397,44 @@ function get(key) {
     return list[key].css;
 }
 
+function validValue(value) {
+    return typeof value == "string" && value.trim() && !regEx.test(value);
+}
+
 /**
  * Render a css property declaration.
  * @param {String} property
- * @param {String} value
+ * @param {String | Array<string>} value
  * @returns
  */
 function render(property, value) {
-    if (!is(property) || !value) return "";
-    if (property.includes(";")) return "";
-    if (value.toString().includes(";")) return "";
+    if (!is(property)) return "";
 
-    return `${get(property)}:${value};`;
+    if (typeof value == "string") {
+        if (validValue(value)) {
+            return `${get(property)}:${value};`;
+        } else {
+            console.warn(`CSS: value "${value}" of property "${property}" has been ignored.`);
+        }
+    }
+
+    if (Array.isArray(value)) {
+        let _value = "";
+
+        value.forEach((item) => {
+            if (validValue(item)) {
+                _value += ` ${item}`;
+            } else {
+                console.warn(`CSS: value "${item}" of property "${property}" has been ignored.`);
+            }
+        });
+
+        if (!_value) return "";
+
+        return `${get(property)}:${_value};`;
+    }
+
+    return "";
 }
 
 export { list, is, get, render };

@@ -66,7 +66,7 @@ function get(key) {
 /**
  * render a selector declaration
  * @param {String} selector
- * @param {Selector} content
+ * @param {import("../../lib").Selector} content
  */
 function render(selector, content) {
     if (!selector || !content) return "";

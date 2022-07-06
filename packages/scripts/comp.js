@@ -1,6 +1,12 @@
-const Elements = require("../components/HTMLelements.js");
-const Custom = require("../components/Utilities.js");
-const SVG = require("../components/SVGelements.js");
+/**
+ * @important
+ * Do not run this file using node.
+ * use `npm run generate` instead
+ */
+
+const Elements = require("../components/HTMLelements.js").items;
+const Custom = require("../components/Utilities.js").items;
+const SVG = require("../components/SVGelements.js").items;
 
 const component = (tag) => `
 /**
@@ -37,57 +43,25 @@ function ${name}(props){
  
 }`;
 
-const Props = (tag, item) => {
-    let props = `const ${tag}Props = {...GlobalAttributes,`;
-
-    for (let prop in item.props) {
-        switch (item.props[prop]) {
-            case "string":
-                props += `${prop}:"",`;
-                break;
-            case "number":
-                props += `${prop}:1,`;
-                break;
-            case "boolean":
-                props += `${prop}:false,`;
-                break;
-            case "function":
-                props += `${prop}:() => {},`;
-                break;
-            default:
-                props += `${prop}:"",`;
-                break;
-        }
-    }
-
-    props += "};";
-
-    return props;
-};
-
 (() => {
-    let imp = `import GlobalAttributes from "../packages/types/GlobalAttributes.js";
-    import CustomElements from "../packages/components/Utilities.js";`;
+    let imp = `import CustomElements from "../packages/components/Utilities.js";`;
 
     let elements = "";
-    let types = "";
     let exp = "export {";
 
     for (let element in Elements) {
-        // types += Props(element, Elements[element]);
         elements += component(element);
         exp += element + ",";
     }
 
     for (let element in Custom) {
-        // types += Props(element, Custom[element]);
         elements += customComponent(element, Custom[element].tag, Custom[element].handler);
         exp += element + ",";
     }
 
     exp += "}";
 
-    const output = imp + "\n" /* + props + */ + elements + "\n" + exp;
+    const output = imp + "\n" + elements + "\n" + exp;
 
     const fs = require("fs");
     const path = require("path");
@@ -99,21 +73,19 @@ const Props = (tag, item) => {
 })();
 
 (() => {
-    let imp = `import GlobalAttributes from "../packages/types/GlobalSVGAttributes.js";`;
+    let imp = ``;
 
     let elements = "";
-    let types = "";
     let exp = "export {";
 
     for (let element in SVG) {
-        types += Props(element, SVG[element]);
         elements += svgComponent(element);
         exp += element + ",";
     }
 
     exp += "}";
 
-    const output = imp + "\n" + types + "\n" + elements + "\n" + exp;
+    const output = imp + "\n" + elements + "\n" + exp;
 
     const fs = require("fs");
     const path = require("path");

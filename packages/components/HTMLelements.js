@@ -23,7 +23,7 @@ const Elements = {
     Hr: {
         props: {
             align: "string",
-            color: "string",
+            color: "Color",
             noShade: "string",
             size: "string",
             width: "string",
@@ -31,7 +31,7 @@ const Elements = {
     },
     Li: { props: { value: "string", type: "string" } },
     Menu: { props: {} },
-    Ol: { props: { reversed: "boolean", start: "string", type: "string" } },
+    Ol: { props: { reversed: "boolean", start: "string", type: `"a"|"A"|"i"|"I"|"1"` } },
     P: { props: {} },
     Pre: { props: { cols: "string", width: "string", wrap: "string" } },
     Ul: { props: { compact: "boolean", type: "string" } },
@@ -41,9 +41,9 @@ const Elements = {
             href: "string",
             hrefLang: "string",
             ping: "string",
-            referrerPolicy: "string",
+            referrerPolicy: `"no-referrer"|"no-referrer-when-downgrade"|"origin"|"origin-when-cross-origin"|"same-origin"|"strict-origin"|"strict-origin-when-cross-origin"|"unsafe-url"`,
             rel: "string",
-            target: "string",
+            target: `"_self"|"_blank"|"_parent"|"_top"`,
             type: "string",
         },
     },
@@ -83,10 +83,10 @@ const Elements = {
             href: "string",
             hrefLang: "string",
             ping: "string",
-            referrerPolicy: "string",
+            referrerPolicy: `"no-referrer"|"no-referrer-when-downgrade"|"origin"|"origin-when-cross-origin"|"same-origin"|"strict-origin"|"strict-origin-when-cross-origin"|"unsafe-url"`,
             rel: "string",
             shape: "string",
-            target: "string",
+            target: `"_self"|"_blank"|"_parent"|"_top"`,
         },
     },
     Audio: {
@@ -108,7 +108,7 @@ const Elements = {
             height: "number",
             isMap: "boolean",
             loading: "string",
-            referrerPolicy: "string",
+            referrerPolicy: `"no-referrer"|"no-referrer-when-downgrade"|"origin"|"origin-when-cross-origin"|"same-origin"|"strict-origin"|"strict-origin-when-cross-origin"|"unsafe-url"`,
             sizes: "string",
             src: "string",
             srcSet: "string",
@@ -144,7 +144,7 @@ const Elements = {
             height: "number",
             loading: "string",
             name: "string",
-            referrerPolicy: "string",
+            referrerPolicy: `"no-referrer"|"no-referrer-when-downgrade"|"origin"|"origin-when-cross-origin"|"same-origin"|"strict-origin"|"strict-origin-when-cross-origin"|"unsafe-url"`,
             sandbox: "string",
             src: "string",
             srcDoc: "string",
@@ -196,7 +196,7 @@ const Elements = {
             formEncType: "string",
             formMethod: "string",
             formNoValidate: "string",
-            formTarget: "string",
+            formtarget: `"_self"|"_blank"|"_parent"|"_top"`,
             name: "string",
             type: "string",
             value: "string",
@@ -214,7 +214,7 @@ const Elements = {
             encType: "string",
             method: "string",
             noValidate: "string",
-            target: "string",
+            target: `"_self"|"_blank"|"_parent"|"_top"`,
         },
     },
     Input: {
@@ -232,7 +232,7 @@ const Elements = {
             formEncType: "string",
             formMethod: "string",
             formNoValidate: "string",
-            formTarget: "string",
+            formtarget: `"_self"|"_blank"|"_parent"|"_top"`,
             height: "number",
             list: "string",
             max: "number",
@@ -306,4 +306,4 @@ const Elements = {
     Template: { props: {} },
 };
 
-module.exports = Elements;
+module.exports = { items: Elements };
