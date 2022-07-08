@@ -387,7 +387,7 @@ const list = {
     msHyphens: { css: "-ms-hyphens", support: {} },
 };
 
-const regEx = /[:;\{\}]{1}/gm;
+const regEx = /[\{\}]{1}/gm;
 
 function is(key) {
     return list[key] !== undefined && list[key].css != undefined;
