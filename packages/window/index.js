@@ -8,6 +8,7 @@ function useRecursiveWindow(orchestrator) {
     onGlobal(orchestrator, "keyup", "onkeyupglobal", "onKeyUpGlobal", false);
     onGlobal(orchestrator, "keydown", "onkeydownglobal", "onKeyDownGlobal", false);
     onGlobal(orchestrator, "scroll", "onscrollglobal", "onScrollGlobal", false);
+    onGlobal(orchestrator, "beforeunload", "onbeforeunloadglobal", "onBeforeUnloadGlobal", false);
 }
 
 export { handler, useRecursiveWindow };

@@ -62,7 +62,14 @@ const Home = () => {
 };
 
 const Page2 = () => {
-    return P({ children: "Hello", onClick: () => goTo("/") });
+    return P({
+        children: "Hello",
+        onClick: () => goTo("/"),
+        onBeforeUnloadGlobal: (e) => {
+            e.preventDefault();
+            e.returnValue = "bro you leaving ?";
+        },
+    });
 };
 
 const Router = {

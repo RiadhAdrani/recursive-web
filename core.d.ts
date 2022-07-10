@@ -377,12 +377,12 @@ export interface FreeStyleSheet {
     animations: { [key: string]: { [key: string]: Selector } };
 }
 
-export function setState<T>(
-    key: string,
-    value: T,
-    onInit: Function,
-    onRemoved: Function
-): [T, (value: any) => void, () => T, T];
+// export function setState<T>(
+//     key: string,
+//     value: T,
+//     onInit: Function,
+//     onRemoved: Function
+// ): [T, (value: any) => void, () => T, T];
 
 export type Corners =
     | string
