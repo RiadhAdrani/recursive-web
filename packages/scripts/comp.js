@@ -66,10 +66,13 @@ function ${name}(props){
     const fs = require("fs");
     const path = require("path");
 
-    fs.writeFile(path.resolve(__dirname, "../../html/index.js"), output, (err) => {
-        console.log(err ? "Failed" : "Success");
-        console.log(err);
-    });
+    try {
+        fs.writeFileSync(path.resolve(__dirname, "../../html/index.js"), output);
+        console.log("HTML Element written");
+    } catch (error) {
+        console.log("Failed to write HTML ELEMENTS");
+        console.log(error);
+    }
 })();
 
 (() => {
@@ -90,7 +93,11 @@ function ${name}(props){
     const fs = require("fs");
     const path = require("path");
 
-    fs.writeFile(path.resolve(__dirname, "../../svg/index.js"), output, (err) => {
-        console.log(err ? "Failed" : "Success");
-    });
+    try {
+        fs.writeFileSync(path.resolve(__dirname, "../../svg/index.js"), output);
+        console.log("SVG Element written");
+    } catch (error) {
+        console.log("Failed to write SVG ELEMENTS");
+        console.log(error);
+    }
 })();

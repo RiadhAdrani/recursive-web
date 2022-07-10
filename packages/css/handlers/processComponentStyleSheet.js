@@ -1,5 +1,5 @@
 import { isValidName } from "../CssAnimations";
-import { is as isSelector, get as getSelector } from "../CssSelectors";
+import { get as getSelector, is, customSelectorAlreadyExist } from "../CssSelectors";
 
 /**
  * Process the given component stylesheet and convert it into a unified format.
@@ -12,7 +12,7 @@ export default function (styleSheet) {
     if (!styleSheet || styleSheet.className === undefined) return output;
 
     function makeSelectorObject(className, selector, content) {
-        if (!isSelector(selector) || !className || !content) return;
+        if (!className || !content) return;
 
         let key = "." + className + getSelector(selector);
 
@@ -58,7 +58,19 @@ export default function (styleSheet) {
                 });
                 break;
             default:
-                if (!isSelector(key)) break;
+                if (["className", "scoped", "mediaQueries", "animations"].includes(key)) {
+                    break;
+                }
+
+                if (!is(key)) {
+                    const _key = customSelectorAlreadyExist(key);
+                    if (_key !== false) {
+                        console.warn(
+                            `CSSOM : Custom selector "${key}" is already defined and the custom declaration have been igonred. Use predefined selector "${_key}"`
+                        );
+                        break;
+                    }
+                }
 
                 const res = makeSelectorObject(styleSheet.className, key, styleSheet[key]);
 

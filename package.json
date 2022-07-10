@@ -11,7 +11,7 @@
     "scripts": {
         "start": "webpack-dev-server --config ./dev/webpack.dev.js --open",
         "test": "webpack-dev-server --config ./dev/webpack.test.js --open",
-        "generate": "node ./packages/scripts/types.js && node ./packages/scripts/comp.js"
+        "generate": "node ./packages/scripts/types.js && node ./packages/scripts/style.js && node ./packages/scripts/comp.js"
     },
     "keywords": [
         "npm",

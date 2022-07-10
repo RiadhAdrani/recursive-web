@@ -5,6 +5,27 @@ const LAZY_ROW = "lazy-row";
 const SPACER_VIEW = "spacer-view";
 const FRAGMENT = "fragment";
 
+const useObserver = (element, instance) => {
+    var observer = new IntersectionObserver(
+        (entries) => {
+            if (entries[0].isIntersecting === true) {
+                observer.unobserve(entries[0].target);
+
+                if (entries[0].target === instance.lastChild) {
+                    element.onObserved(instance);
+                }
+            }
+        },
+        { threshold: [0] }
+    );
+
+    if (instance.lastChild.nodeName != "#text") observer.observe(instance.lastChild);
+    else
+        console.warn(
+            "UseObserver : Unable to observe text node. Try wrapping it in another Element"
+        );
+};
+
 module.exports = {
     items: {
         Fragment: { tag: FRAGMENT, props: {} },
@@ -43,20 +64,7 @@ module.exports = {
                     if (instance.childNodes.length === 0 || typeof element.onObserved != "function")
                         return;
 
-                    var observer = new IntersectionObserver(
-                        (entries) => {
-                            if (entries[0].isIntersecting === true) {
-                                observer.unobserve(entries[0].target);
-
-                                if (entries[0].target === instance.lastChild) {
-                                    element.onObserved(instance);
-                                }
-                            }
-                        },
-                        { threshold: [0] }
-                    );
-
-                    observer.observe(instance.lastChild);
+                    useObserver(element, instance);
                 };
             },
         },
@@ -74,20 +82,7 @@ module.exports = {
                     if (instance.childNodes.length === 0 || typeof element.onObserved != "function")
                         return;
 
-                    var observer = new IntersectionObserver(
-                        (entries) => {
-                            if (entries[0].isIntersecting === true) {
-                                observer.unobserve(entries[0].target);
-
-                                if (entries[0].target === instance.lastChild) {
-                                    element.onObserved(instance);
-                                }
-                            }
-                        },
-                        { threshold: [0] }
-                    );
-
-                    observer.observe(instance.lastChild);
+                    useObserver(element, instance);
                 };
             },
         },

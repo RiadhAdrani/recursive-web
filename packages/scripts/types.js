@@ -19,7 +19,6 @@ for (let ele in html) {
     let customInterface = `export interface ${ele}Props extends HTMLAttributes{`;
 
     for (let prop in html[ele].props) {
-        if (prop == "color") console.log(html[ele].props[prop]);
         customInterface += `${prop}:${html[ele].props[prop]};`;
     }
 
@@ -52,4 +51,10 @@ for (let ele in svg) {
     generated += customInterface;
 }
 
-fs.writeFileSync(path.join("./lib.d.ts"), generated);
+try {
+    fs.writeFileSync(path.join("./lib.d.ts"), generated);
+    console.log("Types written");
+} catch (error) {
+    console.log("Failed to write Types");
+    console.log(error);
+}

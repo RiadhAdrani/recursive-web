@@ -55,16 +55,41 @@ const list = {
     webkitScrollbarThumbActive: { css: "::-webkit-scrollbar-thumb:active", support: {} },
 };
 
+/**
+ * Check if the given exist in the list of predefined selectors.
+ * @param {string} key
+ * @returns
+ */
 function is(key) {
     return list[key] !== undefined && list[key].css !== undefined;
 }
 
+/**
+ * Get the corresponding CSS selector.
+ * @param {string} key
+ * @returns
+ */
 function get(key) {
-    return list[key].css;
+    return is(key) ? list[key].css : key;
 }
 
 /**
- * render a selector declaration
+ * Check if the selector already exist in the list of selectors
+ * @param {string} selector
+ * @returns
+ */
+function customSelectorAlreadyExist(selector) {
+    for (let key in list) {
+        if (list[key].css == selector) {
+            return key;
+        }
+    }
+
+    return false;
+}
+
+/**
+ * Render a selector declaration
  * @param {String} selector
  * @param {import("../../lib").Selector} content
  */
@@ -82,4 +107,4 @@ function render(selector, content) {
     return output;
 }
 
-export { list, is, get, render };
+export { list, is, get, render, customSelectorAlreadyExist };

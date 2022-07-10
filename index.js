@@ -35,8 +35,8 @@ function checkStyle(callback) {
  * @param param
  * @returns
  */
-function route({ path, component, title, routes, redirectTo }) {
-    return { path, component, title, routes, redirectTo };
+function route({ path, component, title, routes, redirectTo, onLoad, onExit }) {
+    return arguments[0];
 }
 
 /**
