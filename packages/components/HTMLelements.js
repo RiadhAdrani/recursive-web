@@ -164,7 +164,7 @@ const Elements = {
     },
     Picture: { props: {} },
     Portal: { props: { src: "string" } },
-    Source: { props: {} },
+    Source: { props: { type: "string" } },
     Canvas: { props: { height: "number", width: "number" } },
     Noscript: { props: {} },
     Del: { props: { cite: "string", dateTime: "string" } },

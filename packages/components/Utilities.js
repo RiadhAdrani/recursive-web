@@ -54,17 +54,15 @@ module.exports = {
             tag: LAZY_COLUMN,
             props: { onObserved: "Function" },
             handler: (element) => {
-                element.hooks = {};
+                if (!element.hooks) element.hooks = {};
 
                 const _onRef = element.hooks.onRef || (() => {});
 
                 element.hooks.onRef = (instance) => {
-                    _onRef(instance);
+                    if (instance.childNodes.length !== 0 && typeof element.onObserved == "function")
+                        useObserver(element, instance);
 
-                    if (instance.childNodes.length === 0 || typeof element.onObserved != "function")
-                        return;
-
-                    useObserver(element, instance);
+                    return _onRef(instance);
                 };
             },
         },

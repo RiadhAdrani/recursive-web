@@ -21,6 +21,10 @@ export default function (styleSheet) {
 
     for (let key in styleSheet) {
         switch (key) {
+            case "inline":
+                break;
+            case "scoped":
+                break;
             case "animations":
                 if (!Array.isArray(styleSheet.animations)) break;
 

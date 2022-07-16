@@ -3,6 +3,8 @@
  * Do not modify this file
  */
 
+import { RawElement } from "../recursive/lib";
+
 export type Color =
     | "aliceblue"
     | "antiquewhite"
@@ -229,7 +231,7 @@ export interface StyleSheet extends SelectorTypes {
 
 export interface Hooks {
     onCreated: (el: HTMLElement) => {};
-    onRef: (el: HTMLElement) => {};
+    onRef: (el: HTMLElement) => string;
     beforeDestroyed: (el: HTMLElement) => {};
     onDestroyed: () => {};
 }
@@ -377,12 +379,24 @@ export interface FreeStyleSheet {
     animations: { [key: string]: { [key: string]: Selector } };
 }
 
-// export function setState<T>(
-//     key: string,
-//     value: T,
-//     onInit: Function,
-//     onRemoved: Function
-// ): [T, (value: any) => void, () => T, T];
+export interface Route {
+    path: string;
+    component: RawElement;
+    title: string;
+    routes: Array<Route>;
+    redirectTo: string;
+    onLoad: Function;
+    onExit: Function;
+}
+
+export type StateArray = [any, (newValue: any) => void, () => any, () => void, any];
+
+export type RenderOptions = {
+    app: RawElement;
+    root: HTMLElement;
+    router: { route: Route; base: string; scroll: boolean };
+    cacheSize: number;
+};
 
 export type Corners =
     | string

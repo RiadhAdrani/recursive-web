@@ -1,6 +1,6 @@
-import { RecursiveRouter } from "@riadh-adrani/recursive/";
+import { Router } from "../../use";
 
-class RecursiveWebRouter extends RecursiveRouter {
+class RecursiveWebRouter extends Router {
     constructor(route, base, scroll, manager, orchestrator) {
         super(route, base, scroll, manager, orchestrator);
     }
@@ -120,6 +120,10 @@ class RecursiveWebRouter extends RecursiveRouter {
         if (route === "/") return;
 
         this.replace(route, hash);
+    }
+
+    useRouterSetTitle(title) {
+        document.title = title;
     }
 }
 

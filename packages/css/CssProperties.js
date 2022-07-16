@@ -1906,6 +1906,7 @@ const list = {
         type: "string",
         support: [],
     },
+    right: { css: "right", values: ["auto"], methods: [], type: "string", support: [] },
     padding: { css: "padding", values: [], methods: [], type: "string", support: [] },
     paddingBlock: { css: "padding-block", values: [], methods: [], type: "string", support: [] },
     paddingBlockEnd: {
@@ -2616,16 +2617,56 @@ const list = {
 
 const regEx = /[\{\}]{1}/gm;
 
+/**
+ * Check if the given key is a valid key of a property.
+ * @param {string} key
+ * @returns
+ */
 function is(key) {
     return list[key] !== undefined && list[key].css != undefined;
 }
 
+/**
+ * Return the CSS property name of the key.
+ * @param {string} key
+ * @returns
+ */
 function get(key) {
     return list[key].css;
 }
 
+/**
+ * Check if the input is a valid CSS value.
+ * @param {string | number} value
+ * @returns
+ */
 function validValue(value) {
+    if (!["number", "string"].includes(typeof value)) return false;
     return value.toString().trim() && !regEx.test(value.toString());
+}
+
+/**
+ * Transform the given array into a CSS value.
+ * @param {Array<String | Number>} value
+ * @returns
+ */
+function renderValue(value) {
+    let _value = "";
+
+    const array = [];
+
+    if (Array.isArray(value)) array.push(...value);
+    else array.push(value);
+
+    array.forEach((item) => {
+        if (validValue(item)) {
+            _value += ` ${item}`;
+        } else {
+            console.warn(`CSS: value "${item}" of property "${property}" has been ignored.`);
+        }
+    });
+
+    return _value;
 }
 
 /**
@@ -2635,33 +2676,13 @@ function validValue(value) {
  * @returns
  */
 function render(property, value) {
-    if (!is(property) || !value) return "";
+    if (!is(property) || [undefined, null, ""].includes(value)) return "";
 
-    if (Array.isArray(value)) {
-        let _value = "";
+    const _value = renderValue(value);
 
-        value.forEach((item) => {
-            if (validValue(item)) {
-                _value += ` ${item}`;
-            } else {
-                console.warn(`CSS: value "${item}" of property "${property}" has been ignored.`);
-            }
-        });
+    if (!_value) return "";
 
-        if (!_value) return "";
-
-        return `${get(property)}:${_value};`;
-    }
-
-    value = value.toString();
-
-    if (validValue(value)) {
-        return `${get(property)}:${value};`;
-    } else {
-        console.warn(`CSS: value "${value}" of property "${property}" has been ignored.`);
-    }
-
-    return "";
+    return `${get(property)}:${_value};`;
 }
 
-module.exports = { list, globalValues, is, get, render };
+module.exports = { list, globalValues, is, get, render, renderValue };

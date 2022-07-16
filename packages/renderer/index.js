@@ -2,12 +2,14 @@ import { get as getAtt, is as isAttt, isToggle } from "../dom/DomAttributes.js";
 import { get as getEv, is as isEv, getListener, hasHandler } from "../dom/DomEvents.js";
 import { RecursiveRenderer } from "@riadh-adrani/recursive/index";
 import RecursiveCSSOM from "../css/";
+import { Renderer } from "../../use.js";
+import { renderValue } from "../css/CssProperties.js";
 
 /**
  * ### `RecursiveWeb`
  * Web implementation of the `RecursiveRenderer`
  */
-class RecursiveWebRenderer extends RecursiveRenderer {
+class RecursiveWebRenderer extends Renderer {
     /**
      * Create an instance of `RecursiveWeb`
      * @param {import("@riadh-adrani/recursive/lib.js").App} app
@@ -124,7 +126,7 @@ class RecursiveWebRenderer extends RecursiveRenderer {
 
         if (element.style && element.style.inline) {
             for (let prop in element.style.inline) {
-                instance.style[prop] = element.style.inline[prop];
+                instance.style[prop] = renderValue(element.style.inline[prop]);
             }
         }
     }
@@ -153,7 +155,12 @@ class RecursiveWebRenderer extends RecursiveRenderer {
         } else if (isToggle(attribute)) {
             instance.toggleAttribute(getAtt(attribute), value == true);
         } else {
+            // does not work with some attributes updates
             instance.setAttribute(getAtt(attribute), value);
+
+            // So we need to double check it with this one
+            // which does not work on svg elements.
+            instance[getAtt(attribute)] = value;
         }
     }
 
@@ -171,7 +178,7 @@ class RecursiveWebRenderer extends RecursiveRenderer {
                     newElement.style.inline[prop] &&
                     newElement.style.inline[prop] !== element.style.inline[prop]
                 ) {
-                    element.instance.style[prop] = newElement.style.inline[prop];
+                    element.instance.style[prop] = renderValue(newElement.style.inline[prop]);
                 } else {
                     element.instance.style[prop] = "";
                 }
@@ -180,7 +187,7 @@ class RecursiveWebRenderer extends RecursiveRenderer {
 
         if (newElement.style && newElement.style.inline) {
             for (let prop in newElement.style.inline) {
-                element.instance.style[prop] = newElement.style.inline[prop];
+                element.instance.style[prop] = renderValue(newElement.style.inline[prop]);
             }
         }
     }

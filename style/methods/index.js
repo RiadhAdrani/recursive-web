@@ -537,7 +537,7 @@ export function skewY(y) {
  * @returns
  */
 export function translate(x, y = x) {
-    return `trnaslate(${x}, ${y})`;
+    return `translate(${x}, ${y})`;
 }
 
 /**
@@ -548,7 +548,7 @@ export function translate(x, y = x) {
  * @returns
  */
 export function translate3D(tx, ty, tz) {
-    return `trnaslate3d(${joinArgs([tx, ty, tz], ", ")})`;
+    return `translate3d(${joinArgs([tx, ty, tz], ", ")})`;
 }
 
 /**
@@ -557,7 +557,7 @@ export function translate3D(tx, ty, tz) {
  * @returns
  */
 export function translateX(x) {
-    return `trnaslateX(${x})`;
+    return `translateX(${x})`;
 }
 
 /**
@@ -566,7 +566,7 @@ export function translateX(x) {
  * @returns
  */
 export function translateY(y) {
-    return `trnaslateY(${y})`;
+    return `translateY(${y})`;
 }
 
 /**
@@ -575,7 +575,7 @@ export function translateY(y) {
  * @returns
  */
 export function translateZ(z) {
-    return `trnaslateZ(${z})`;
+    return `translateZ(${z})`;
 }
 
 /**
@@ -593,7 +593,25 @@ export function url(url) {
  * @returns
  */
 export function getVar(id) {
-    return `var('--${id}')`;
+    return `var(--${id})`;
+}
+
+/**
+ * CSS's `scale()`
+ * @param {*} amount
+ * @returns
+ */
+export function scale(amount) {
+    return `scale(${amount})`;
+}
+
+/**
+ * CSS's `scaleX()`
+ * @param {*} amount
+ * @returns
+ */
+export function scaleX(amount) {
+    return `scaleX(${amount})`;
 }
 
 /**
