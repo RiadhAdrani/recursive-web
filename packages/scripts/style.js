@@ -4,7 +4,7 @@
  * use `npm run generate` instead
  */
 
-const { globalValues, list } = require("../css/CssProperties");
+const { globalValues, List: list } = require("../css/lists/Properties");
 const fs = require("fs");
 const path = require("path");
 

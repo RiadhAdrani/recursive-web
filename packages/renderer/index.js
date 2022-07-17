@@ -1,8 +1,7 @@
 import { get as getAtt, is as isAttt, isToggle } from "../dom/DomAttributes.js";
 import { get as getEv, is as isEv, getListener, hasHandler } from "../dom/DomEvents.js";
-import { RecursiveRenderer } from "@riadh-adrani/recursive/index";
 import RecursiveCSSOM from "../css/";
-import { Renderer } from "../../use.js";
+import { Console, Renderer } from "../../use.js";
 import { renderValue } from "../css/CssProperties.js";
 
 /**
@@ -126,7 +125,7 @@ class RecursiveWebRenderer extends Renderer {
 
         if (element.style && element.style.inline) {
             for (let prop in element.style.inline) {
-                instance.style[prop] = renderValue(element.style.inline[prop]);
+                instance.style[prop] = renderValue(element.style.inline[prop], prop);
             }
         }
     }
@@ -178,7 +177,7 @@ class RecursiveWebRenderer extends Renderer {
                     newElement.style.inline[prop] &&
                     newElement.style.inline[prop] !== element.style.inline[prop]
                 ) {
-                    element.instance.style[prop] = renderValue(newElement.style.inline[prop]);
+                    element.instance.style[prop] = renderValue(newElement.style.inline[prop], prop);
                 } else {
                     element.instance.style[prop] = "";
                 }
@@ -187,7 +186,7 @@ class RecursiveWebRenderer extends Renderer {
 
         if (newElement.style && newElement.style.inline) {
             for (let prop in newElement.style.inline) {
-                element.instance.style[prop] = renderValue(newElement.style.inline[prop]);
+                element.instance.style[prop] = renderValue(newElement.style.inline[prop], prop);
             }
         }
     }
@@ -277,6 +276,15 @@ class RecursiveWebRenderer extends Renderer {
     }
 
     /**
+     * Check if the `styleSheet` contains external selectors.
+     * @param {object} styleSheet
+     * @returns
+     */
+    isExternalStyleSheet(styleSheet) {
+        return styleSheet && Object.keys(styleSheet).filter((key) => key != "inline").length > 0;
+    }
+
+    /**
      * Flatten and return the `StyleSheets` of the elements' tree.
      * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
      * @returns {Array<any>}
@@ -292,8 +300,12 @@ class RecursiveWebRenderer extends Renderer {
 
         this.resolveClassName(element);
 
-        if (element.style) {
-            output.push(element.style);
+        if (element.style && this.isExternalStyleSheet(element.style)) {
+            if (element.style.className) {
+                output.push(element.style);
+            } else {
+                Console.warn("CSS: no className detected and therefore style will be ignored");
+            }
         }
 
         return output;

@@ -1,4 +1,3 @@
-import { throwError } from "@riadh-adrani/recursive/packages/error";
 import processComponentStyleSheet from "./handlers/processComponentStyleSheet.js";
 import processStyleSheets from "./handlers/mergeStyleSheets.js";
 import renderStyleSheet from "./CssRender.js";
@@ -6,12 +5,6 @@ import mergeStyleSheets from "./handlers/mergeStyleSheets.js";
 
 class RecursiveCSSOM {
     constructor() {
-        if (RecursiveCSSOM.singleton instanceof RecursiveCSSOM) {
-            throwError("RecrusiveCSSOM cannot have more than one instance", [
-                "RecrusiveCSSOM is an internal class and should not be used in development.",
-            ]);
-        }
-
         this.appStaticStyle = document.createElement("style");
         this.appDynamicStyle = document.createElement("style");
         this.appStyle = document.createElement("style");

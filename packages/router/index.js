@@ -111,17 +111,30 @@ class RecursiveWebRouter extends Router {
 
     /**
      * Execute when the app has loaded.
-     * @returns
      */
     useRouterOnLoad() {
         const route = this.useRouterGetRoute();
         const hash = location.hash;
+
+        const [routeTemplate] = this.stateManager.getReserved("route");
+
+        if (routeTemplate.title) {
+            this.useRouterSetTitle(routeTemplate.title);
+        }
+
+        if (typeof routeTemplate.onLoad == "function") {
+            routeTemplate.onLoad();
+        }
 
         if (route === "/") return;
 
         this.replace(route, hash);
     }
 
+    /**
+     * Change the tab title.
+     * @param {string} title
+     */
     useRouterSetTitle(title) {
         document.title = title;
     }

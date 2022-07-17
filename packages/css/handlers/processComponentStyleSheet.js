@@ -1,3 +1,4 @@
+import { Console } from "../../../use";
 import { isValidName } from "../CssAnimations";
 import { get as getSelector, is, customSelectorAlreadyExist } from "../CssSelectors";
 
@@ -69,7 +70,7 @@ export default function (styleSheet) {
                 if (!is(key)) {
                     const _key = customSelectorAlreadyExist(key);
                     if (_key !== false) {
-                        console.warn(
+                        Console.warn(
                             `CSSOM : Custom selector "${key}" is already defined and the custom declaration have been igonred. Use predefined selector "${_key}"`
                         );
                         break;

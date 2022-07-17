@@ -3,10 +3,26 @@ import RecursiveWebRenderer from "./packages/renderer/";
 import RecursiveWebRouter from "./packages/router";
 import { useRecursiveWindow } from "./packages/window";
 import "./packages/components/DefineElements.js";
+import { Console } from "./use";
 
+/**
+ * @type {RecursiveWebRouter}
+ */
 let appRouter = undefined;
+
+/**
+ * @type {RecursiveOrchestrator}
+ */
 let appOrchestrator = undefined;
+
+/**
+ * @type {RecursiveWebRenderer}
+ */
 let appRenderer = undefined;
+
+/**
+ * @type {RecursiveState}
+ */
 let appState = undefined;
 
 function checkRouter(callback) {
@@ -204,6 +220,15 @@ function setStyle(cssObject) {
 }
 
 /**
+ *
+ * @param {import("./lib").StyleSheet} param
+ * @returns
+ */
+function componentStyleSheet(param) {
+    return param;
+}
+
+/**
  * Create `<a>` element.
  * @param {import("./lib").AProps} props
  */
@@ -239,15 +264,16 @@ function Render(params) {
     appRenderer = new RecursiveWebRenderer(app, root);
 
     appState = new RecursiveState();
-    appRouter = router.route
-        ? new RecursiveWebRouter(
-              router.route,
-              router.base,
-              router.scroll,
-              appState,
-              appOrchestrator
-          )
-        : undefined;
+
+    if (router && router.route) {
+        appRouter = new RecursiveWebRouter(
+            router.route,
+            router.base,
+            router.scroll,
+            appState,
+            appOrchestrator
+        );
+    }
 
     appState.orchestrator = appOrchestrator;
     appOrchestrator.renderer = appRenderer;
@@ -263,6 +289,17 @@ function Render(params) {
     appRenderer.render();
 
     if (appRouter) appRouter.useRouterOnLoad();
+}
+
+/**
+ * Display a log message to the console.
+ *
+ * Logs using this method will not be displayed in production.
+ * @env development
+ * @param {any} msg
+ */
+function log(msg) {
+    Console.log(msg);
 }
 
 export {
@@ -282,4 +319,6 @@ export {
     getRef,
     updateOn,
     setStyle,
+    componentStyleSheet,
+    log,
 };

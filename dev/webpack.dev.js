@@ -1,11 +1,12 @@
 const path = require("path");
 const { merge } = require("webpack-merge");
 const common = require("./webpack.common");
+const webpack = require("webpack");
 
-const serve = JSON.parse(process.env.WEBPACK_SERVE || false);
+const mode = "development";
 
 module.exports = merge(common, {
-    mode: "development",
+    mode,
     entry: "./dev/experimental/dev.js",
     output: {
         filename: "dev.js",
@@ -14,4 +15,10 @@ module.exports = merge(common, {
     },
     devtool: "source-map",
     optimization: { minimize: false },
+    plugins: [
+        new webpack.DefinePlugin({
+            "typeof window": JSON.stringify("object"),
+            "process.env.NODE_ENV": JSON.stringify(mode),
+        }),
+    ],
 });
