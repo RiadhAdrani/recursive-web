@@ -134,7 +134,7 @@ function getState(key) {
  * If the return value of this function is a function itself,
  * it will be executed whe the state is destroyed.
  * @param {Function} onRemoved a function that will execute when the state has been destroyed.
- * @returns StateArray
+ * @returns {import("./lib").StateArray} StateArray
  */
 function setState(key, value, onInit, onRemoved) {
     return checkState((stateManager) => stateManager.setState(key, value, onInit, onRemoved));
@@ -164,7 +164,7 @@ function getCache(key) {
  * If the return value of this function is a function itself,
  * it will be executed whe the state is destroyed.
  * @param {Function} onRemoved a function that will execute when the state has been destroyed.
- * @returns StateArray
+ * @returns {import("./lib").StateArray} StateArray
  */
 function setCache(key, value, onInit, onRemoved) {
     return checkState((stateManager) => stateManager.setCache(key, value, onInit, onRemoved));

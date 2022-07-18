@@ -169,25 +169,16 @@ class RecursiveWebRenderer extends Renderer {
      * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} newElement
      */
     useRendererUpdateStyle(element, newElement) {
-        if (element.style && element.style.inline) {
-            for (let prop in element.style.inline) {
-                if (
-                    newElement.style &&
-                    newElement.style.inline &&
-                    newElement.style.inline[prop] &&
-                    newElement.style.inline[prop] !== element.style.inline[prop]
-                ) {
-                    element.instance.style[prop] = renderValue(newElement.style.inline[prop], prop);
-                } else {
-                    element.instance.style[prop] = "";
-                }
-            }
-        }
+        let inline = {};
+        let newInline = {};
 
-        if (newElement.style && newElement.style.inline) {
-            for (let prop in newElement.style.inline) {
-                element.instance.style[prop] = renderValue(newElement.style.inline[prop], prop);
-            }
+        if (element.style && element.style.inline) inline = element.style.inline;
+        if (newElement.style && newElement.style.inline) newInline = newElement.style.inline;
+
+        const combined = { ...inline, ...newInline };
+
+        for (let key in combined) {
+            element.instance.style[key] = newInline[key] != undefined ? combined[key] : "";
         }
     }
 
@@ -239,17 +230,22 @@ class RecursiveWebRenderer extends Renderer {
             const pool = [..."abcdefghijklmnopqrstuvwxyz-_0123456789"];
             const length = pool.length;
 
+            const sum = [...uid].reduce((res, val) => {
+                return res + val.charCodeAt();
+            }, 0);
+
             return [...uid]
                 .map((char, index) => {
                     return ((n) => {
                         const _char = pool[n % length];
                         return index % 3 == 0 && index != 0 ? _char.toUpperCase() : _char;
-                    })(char.charCodeAt() + index + uid.length);
+                    })(char.charCodeAt() + sum + index);
                 })
                 .join("");
         }
 
         const output = convert(uid);
+
         return output;
     }
 
@@ -317,7 +313,11 @@ class RecursiveWebRenderer extends Renderer {
      * @param {HTMLElement} instance
      */
     useRendererRemoveAttribute(attribute, instance) {
+        // works with some attributes.
         instance.removeAttribute(attribute);
+
+        // just making sure.
+        instance[attribute] = "";
     }
 
     /**
