@@ -1,4 +1,8 @@
-import { Orchestrator as RecursiveOrchestrator, State as RecursiveState } from "./use";
+import {
+    Orchestrator as RecursiveOrchestrator,
+    State as RecursiveState,
+    createElement,
+} from "./use";
 import RecursiveWebRenderer from "./packages/renderer/";
 import RecursiveWebRouter from "./packages/router";
 import { useRecursiveWindow } from "./packages/window";
@@ -233,7 +237,7 @@ function componentStyleSheet(param) {
  * @param {import("./lib").AProps} props
  */
 function Link(props) {
-    const el = { ...props, elementType: "a" };
+    const el = createElement("a", props);
 
     if (appRouter && el.href) {
         const _onClick = el.onClick || (() => {});
@@ -321,4 +325,5 @@ export {
     setStyle,
     componentStyleSheet,
     log,
+    createElement,
 };

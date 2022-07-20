@@ -1,4 +1,5 @@
 import CustomElements from "../packages/components/Utilities.js";
+import { createElement } from "..";
 
 /**
  * Create `<address>` element.
@@ -6,7 +7,7 @@ import CustomElements from "../packages/components/Utilities.js";
  * @returns Recursive Web Element
  */
 function Address(props) {
-    return { ...props, elementType: "address" };
+    return createElement("address", props);
 }
 /**
  * Create `<article>` element.
@@ -14,7 +15,7 @@ function Address(props) {
  * @returns Recursive Web Element
  */
 function Article(props) {
-    return { ...props, elementType: "article" };
+    return createElement("article", props);
 }
 /**
  * Create `<aside>` element.
@@ -22,7 +23,7 @@ function Article(props) {
  * @returns Recursive Web Element
  */
 function Aside(props) {
-    return { ...props, elementType: "aside" };
+    return createElement("aside", props);
 }
 /**
  * Create `<footer>` element.
@@ -30,7 +31,7 @@ function Aside(props) {
  * @returns Recursive Web Element
  */
 function Footer(props) {
-    return { ...props, elementType: "footer" };
+    return createElement("footer", props);
 }
 /**
  * Create `<header>` element.
@@ -38,7 +39,7 @@ function Footer(props) {
  * @returns Recursive Web Element
  */
 function Header(props) {
-    return { ...props, elementType: "header" };
+    return createElement("header", props);
 }
 /**
  * Create `<h1>` element.
@@ -46,7 +47,7 @@ function Header(props) {
  * @returns Recursive Web Element
  */
 function H1(props) {
-    return { ...props, elementType: "h1" };
+    return createElement("h1", props);
 }
 /**
  * Create `<h2>` element.
@@ -54,7 +55,7 @@ function H1(props) {
  * @returns Recursive Web Element
  */
 function H2(props) {
-    return { ...props, elementType: "h2" };
+    return createElement("h2", props);
 }
 /**
  * Create `<h3>` element.
@@ -62,7 +63,7 @@ function H2(props) {
  * @returns Recursive Web Element
  */
 function H3(props) {
-    return { ...props, elementType: "h3" };
+    return createElement("h3", props);
 }
 /**
  * Create `<h4>` element.
@@ -70,7 +71,7 @@ function H3(props) {
  * @returns Recursive Web Element
  */
 function H4(props) {
-    return { ...props, elementType: "h4" };
+    return createElement("h4", props);
 }
 /**
  * Create `<h5>` element.
@@ -78,7 +79,7 @@ function H4(props) {
  * @returns Recursive Web Element
  */
 function H5(props) {
-    return { ...props, elementType: "h5" };
+    return createElement("h5", props);
 }
 /**
  * Create `<h6>` element.
@@ -86,7 +87,7 @@ function H5(props) {
  * @returns Recursive Web Element
  */
 function H6(props) {
-    return { ...props, elementType: "h6" };
+    return createElement("h6", props);
 }
 /**
  * Create `<main>` element.
@@ -94,7 +95,7 @@ function H6(props) {
  * @returns Recursive Web Element
  */
 function Main(props) {
-    return { ...props, elementType: "main" };
+    return createElement("main", props);
 }
 /**
  * Create `<nav>` element.
@@ -102,7 +103,7 @@ function Main(props) {
  * @returns Recursive Web Element
  */
 function Nav(props) {
-    return { ...props, elementType: "nav" };
+    return createElement("nav", props);
 }
 /**
  * Create `<section>` element.
@@ -110,7 +111,7 @@ function Nav(props) {
  * @returns Recursive Web Element
  */
 function Section(props) {
-    return { ...props, elementType: "section" };
+    return createElement("section", props);
 }
 /**
  * Create `<blockquote>` element.
@@ -118,7 +119,7 @@ function Section(props) {
  * @returns Recursive Web Element
  */
 function Blockquote(props) {
-    return { ...props, elementType: "blockquote" };
+    return createElement("blockquote", props);
 }
 /**
  * Create `<dd>` element.
@@ -126,7 +127,7 @@ function Blockquote(props) {
  * @returns Recursive Web Element
  */
 function Dd(props) {
-    return { ...props, elementType: "dd" };
+    return createElement("dd", props);
 }
 /**
  * Create `<div>` element.
@@ -134,7 +135,7 @@ function Dd(props) {
  * @returns Recursive Web Element
  */
 function Div(props) {
-    return { ...props, elementType: "div" };
+    return createElement("div", props);
 }
 /**
  * Create `<dl>` element.
@@ -142,7 +143,7 @@ function Div(props) {
  * @returns Recursive Web Element
  */
 function Dl(props) {
-    return { ...props, elementType: "dl" };
+    return createElement("dl", props);
 }
 /**
  * Create `<dt>` element.
@@ -150,7 +151,7 @@ function Dl(props) {
  * @returns Recursive Web Element
  */
 function Dt(props) {
-    return { ...props, elementType: "dt" };
+    return createElement("dt", props);
 }
 /**
  * Create `<figcaption>` element.
@@ -158,7 +159,7 @@ function Dt(props) {
  * @returns Recursive Web Element
  */
 function Figcaption(props) {
-    return { ...props, elementType: "figcaption" };
+    return createElement("figcaption", props);
 }
 /**
  * Create `<figure>` element.
@@ -166,7 +167,7 @@ function Figcaption(props) {
  * @returns Recursive Web Element
  */
 function Figure(props) {
-    return { ...props, elementType: "figure" };
+    return createElement("figure", props);
 }
 /**
  * Create `<hr>` element.
@@ -174,7 +175,7 @@ function Figure(props) {
  * @returns Recursive Web Element
  */
 function Hr(props) {
-    return { ...props, elementType: "hr" };
+    return createElement("hr", props);
 }
 /**
  * Create `<li>` element.
@@ -182,7 +183,7 @@ function Hr(props) {
  * @returns Recursive Web Element
  */
 function Li(props) {
-    return { ...props, elementType: "li" };
+    return createElement("li", props);
 }
 /**
  * Create `<menu>` element.
@@ -190,7 +191,7 @@ function Li(props) {
  * @returns Recursive Web Element
  */
 function Menu(props) {
-    return { ...props, elementType: "menu" };
+    return createElement("menu", props);
 }
 /**
  * Create `<ol>` element.
@@ -198,7 +199,7 @@ function Menu(props) {
  * @returns Recursive Web Element
  */
 function Ol(props) {
-    return { ...props, elementType: "ol" };
+    return createElement("ol", props);
 }
 /**
  * Create `<p>` element.
@@ -206,7 +207,7 @@ function Ol(props) {
  * @returns Recursive Web Element
  */
 function P(props) {
-    return { ...props, elementType: "p" };
+    return createElement("p", props);
 }
 /**
  * Create `<pre>` element.
@@ -214,7 +215,7 @@ function P(props) {
  * @returns Recursive Web Element
  */
 function Pre(props) {
-    return { ...props, elementType: "pre" };
+    return createElement("pre", props);
 }
 /**
  * Create `<ul>` element.
@@ -222,7 +223,7 @@ function Pre(props) {
  * @returns Recursive Web Element
  */
 function Ul(props) {
-    return { ...props, elementType: "ul" };
+    return createElement("ul", props);
 }
 /**
  * Create `<a>` element.
@@ -230,7 +231,7 @@ function Ul(props) {
  * @returns Recursive Web Element
  */
 function A(props) {
-    return { ...props, elementType: "a" };
+    return createElement("a", props);
 }
 /**
  * Create `<abbr>` element.
@@ -238,7 +239,7 @@ function A(props) {
  * @returns Recursive Web Element
  */
 function Abbr(props) {
-    return { ...props, elementType: "abbr" };
+    return createElement("abbr", props);
 }
 /**
  * Create `<b>` element.
@@ -246,7 +247,7 @@ function Abbr(props) {
  * @returns Recursive Web Element
  */
 function B(props) {
-    return { ...props, elementType: "b" };
+    return createElement("b", props);
 }
 /**
  * Create `<bdi>` element.
@@ -254,7 +255,7 @@ function B(props) {
  * @returns Recursive Web Element
  */
 function Bdi(props) {
-    return { ...props, elementType: "bdi" };
+    return createElement("bdi", props);
 }
 /**
  * Create `<bdo>` element.
@@ -262,7 +263,7 @@ function Bdi(props) {
  * @returns Recursive Web Element
  */
 function Bdo(props) {
-    return { ...props, elementType: "bdo" };
+    return createElement("bdo", props);
 }
 /**
  * Create `<br>` element.
@@ -270,7 +271,7 @@ function Bdo(props) {
  * @returns Recursive Web Element
  */
 function Br(props) {
-    return { ...props, elementType: "br" };
+    return createElement("br", props);
 }
 /**
  * Create `<cite>` element.
@@ -278,7 +279,7 @@ function Br(props) {
  * @returns Recursive Web Element
  */
 function Cite(props) {
-    return { ...props, elementType: "cite" };
+    return createElement("cite", props);
 }
 /**
  * Create `<code>` element.
@@ -286,7 +287,7 @@ function Cite(props) {
  * @returns Recursive Web Element
  */
 function Code(props) {
-    return { ...props, elementType: "code" };
+    return createElement("code", props);
 }
 /**
  * Create `<data>` element.
@@ -294,7 +295,7 @@ function Code(props) {
  * @returns Recursive Web Element
  */
 function Data(props) {
-    return { ...props, elementType: "data" };
+    return createElement("data", props);
 }
 /**
  * Create `<dfn>` element.
@@ -302,7 +303,7 @@ function Data(props) {
  * @returns Recursive Web Element
  */
 function Dfn(props) {
-    return { ...props, elementType: "dfn" };
+    return createElement("dfn", props);
 }
 /**
  * Create `<em>` element.
@@ -310,7 +311,7 @@ function Dfn(props) {
  * @returns Recursive Web Element
  */
 function Em(props) {
-    return { ...props, elementType: "em" };
+    return createElement("em", props);
 }
 /**
  * Create `<i>` element.
@@ -318,7 +319,7 @@ function Em(props) {
  * @returns Recursive Web Element
  */
 function I(props) {
-    return { ...props, elementType: "i" };
+    return createElement("i", props);
 }
 /**
  * Create `<kbd>` element.
@@ -326,7 +327,7 @@ function I(props) {
  * @returns Recursive Web Element
  */
 function Kbd(props) {
-    return { ...props, elementType: "kbd" };
+    return createElement("kbd", props);
 }
 /**
  * Create `<mark>` element.
@@ -334,7 +335,7 @@ function Kbd(props) {
  * @returns Recursive Web Element
  */
 function Mark(props) {
-    return { ...props, elementType: "mark" };
+    return createElement("mark", props);
 }
 /**
  * Create `<q>` element.
@@ -342,7 +343,7 @@ function Mark(props) {
  * @returns Recursive Web Element
  */
 function Q(props) {
-    return { ...props, elementType: "q" };
+    return createElement("q", props);
 }
 /**
  * Create `<rp>` element.
@@ -350,7 +351,7 @@ function Q(props) {
  * @returns Recursive Web Element
  */
 function Rp(props) {
-    return { ...props, elementType: "rp" };
+    return createElement("rp", props);
 }
 /**
  * Create `<rt>` element.
@@ -358,7 +359,7 @@ function Rp(props) {
  * @returns Recursive Web Element
  */
 function Rt(props) {
-    return { ...props, elementType: "rt" };
+    return createElement("rt", props);
 }
 /**
  * Create `<ruby>` element.
@@ -366,7 +367,7 @@ function Rt(props) {
  * @returns Recursive Web Element
  */
 function Ruby(props) {
-    return { ...props, elementType: "ruby" };
+    return createElement("ruby", props);
 }
 /**
  * Create `<s>` element.
@@ -374,7 +375,7 @@ function Ruby(props) {
  * @returns Recursive Web Element
  */
 function S(props) {
-    return { ...props, elementType: "s" };
+    return createElement("s", props);
 }
 /**
  * Create `<samp>` element.
@@ -382,7 +383,7 @@ function S(props) {
  * @returns Recursive Web Element
  */
 function Samp(props) {
-    return { ...props, elementType: "samp" };
+    return createElement("samp", props);
 }
 /**
  * Create `<small>` element.
@@ -390,7 +391,7 @@ function Samp(props) {
  * @returns Recursive Web Element
  */
 function Small(props) {
-    return { ...props, elementType: "small" };
+    return createElement("small", props);
 }
 /**
  * Create `<span>` element.
@@ -398,7 +399,7 @@ function Small(props) {
  * @returns Recursive Web Element
  */
 function Span(props) {
-    return { ...props, elementType: "span" };
+    return createElement("span", props);
 }
 /**
  * Create `<strong>` element.
@@ -406,7 +407,7 @@ function Span(props) {
  * @returns Recursive Web Element
  */
 function Strong(props) {
-    return { ...props, elementType: "strong" };
+    return createElement("strong", props);
 }
 /**
  * Create `<sub>` element.
@@ -414,7 +415,7 @@ function Strong(props) {
  * @returns Recursive Web Element
  */
 function Sub(props) {
-    return { ...props, elementType: "sub" };
+    return createElement("sub", props);
 }
 /**
  * Create `<sup>` element.
@@ -422,7 +423,7 @@ function Sub(props) {
  * @returns Recursive Web Element
  */
 function Sup(props) {
-    return { ...props, elementType: "sup" };
+    return createElement("sup", props);
 }
 /**
  * Create `<time>` element.
@@ -430,7 +431,7 @@ function Sup(props) {
  * @returns Recursive Web Element
  */
 function Time(props) {
-    return { ...props, elementType: "time" };
+    return createElement("time", props);
 }
 /**
  * Create `<u>` element.
@@ -438,7 +439,7 @@ function Time(props) {
  * @returns Recursive Web Element
  */
 function U(props) {
-    return { ...props, elementType: "u" };
+    return createElement("u", props);
 }
 /**
  * Create `<var>` element.
@@ -446,7 +447,7 @@ function U(props) {
  * @returns Recursive Web Element
  */
 function Var(props) {
-    return { ...props, elementType: "var" };
+    return createElement("var", props);
 }
 /**
  * Create `<wbr>` element.
@@ -454,7 +455,7 @@ function Var(props) {
  * @returns Recursive Web Element
  */
 function Wbr(props) {
-    return { ...props, elementType: "wbr" };
+    return createElement("wbr", props);
 }
 /**
  * Create `<area>` element.
@@ -462,7 +463,7 @@ function Wbr(props) {
  * @returns Recursive Web Element
  */
 function Area(props) {
-    return { ...props, elementType: "area" };
+    return createElement("area", props);
 }
 /**
  * Create `<audio>` element.
@@ -470,7 +471,7 @@ function Area(props) {
  * @returns Recursive Web Element
  */
 function Audio(props) {
-    return { ...props, elementType: "audio" };
+    return createElement("audio", props);
 }
 /**
  * Create `<img>` element.
@@ -478,7 +479,7 @@ function Audio(props) {
  * @returns Recursive Web Element
  */
 function Img(props) {
-    return { ...props, elementType: "img" };
+    return createElement("img", props);
 }
 /**
  * Create `<map>` element.
@@ -486,7 +487,7 @@ function Img(props) {
  * @returns Recursive Web Element
  */
 function Map(props) {
-    return { ...props, elementType: "map" };
+    return createElement("map", props);
 }
 /**
  * Create `<track>` element.
@@ -494,7 +495,7 @@ function Map(props) {
  * @returns Recursive Web Element
  */
 function Track(props) {
-    return { ...props, elementType: "track" };
+    return createElement("track", props);
 }
 /**
  * Create `<video>` element.
@@ -502,7 +503,7 @@ function Track(props) {
  * @returns Recursive Web Element
  */
 function Video(props) {
-    return { ...props, elementType: "video" };
+    return createElement("video", props);
 }
 /**
  * Create `<embed>` element.
@@ -510,7 +511,7 @@ function Video(props) {
  * @returns Recursive Web Element
  */
 function Embed(props) {
-    return { ...props, elementType: "embed" };
+    return createElement("embed", props);
 }
 /**
  * Create `<iframe>` element.
@@ -518,7 +519,7 @@ function Embed(props) {
  * @returns Recursive Web Element
  */
 function Iframe(props) {
-    return { ...props, elementType: "iframe" };
+    return createElement("iframe", props);
 }
 /**
  * Create `<object>` element.
@@ -526,7 +527,7 @@ function Iframe(props) {
  * @returns Recursive Web Element
  */
 function Object(props) {
-    return { ...props, elementType: "object" };
+    return createElement("object", props);
 }
 /**
  * Create `<picture>` element.
@@ -534,7 +535,7 @@ function Object(props) {
  * @returns Recursive Web Element
  */
 function Picture(props) {
-    return { ...props, elementType: "picture" };
+    return createElement("picture", props);
 }
 /**
  * Create `<portal>` element.
@@ -542,7 +543,7 @@ function Picture(props) {
  * @returns Recursive Web Element
  */
 function Portal(props) {
-    return { ...props, elementType: "portal" };
+    return createElement("portal", props);
 }
 /**
  * Create `<source>` element.
@@ -550,7 +551,7 @@ function Portal(props) {
  * @returns Recursive Web Element
  */
 function Source(props) {
-    return { ...props, elementType: "source" };
+    return createElement("source", props);
 }
 /**
  * Create `<canvas>` element.
@@ -558,7 +559,7 @@ function Source(props) {
  * @returns Recursive Web Element
  */
 function Canvas(props) {
-    return { ...props, elementType: "canvas" };
+    return createElement("canvas", props);
 }
 /**
  * Create `<noscript>` element.
@@ -566,7 +567,7 @@ function Canvas(props) {
  * @returns Recursive Web Element
  */
 function Noscript(props) {
-    return { ...props, elementType: "noscript" };
+    return createElement("noscript", props);
 }
 /**
  * Create `<del>` element.
@@ -574,7 +575,7 @@ function Noscript(props) {
  * @returns Recursive Web Element
  */
 function Del(props) {
-    return { ...props, elementType: "del" };
+    return createElement("del", props);
 }
 /**
  * Create `<ins>` element.
@@ -582,7 +583,7 @@ function Del(props) {
  * @returns Recursive Web Element
  */
 function Ins(props) {
-    return { ...props, elementType: "ins" };
+    return createElement("ins", props);
 }
 /**
  * Create `<caption>` element.
@@ -590,7 +591,7 @@ function Ins(props) {
  * @returns Recursive Web Element
  */
 function Caption(props) {
-    return { ...props, elementType: "caption" };
+    return createElement("caption", props);
 }
 /**
  * Create `<col>` element.
@@ -598,7 +599,7 @@ function Caption(props) {
  * @returns Recursive Web Element
  */
 function Col(props) {
-    return { ...props, elementType: "col" };
+    return createElement("col", props);
 }
 /**
  * Create `<colgroup>` element.
@@ -606,7 +607,7 @@ function Col(props) {
  * @returns Recursive Web Element
  */
 function Colgroup(props) {
-    return { ...props, elementType: "colgroup" };
+    return createElement("colgroup", props);
 }
 /**
  * Create `<table>` element.
@@ -614,7 +615,7 @@ function Colgroup(props) {
  * @returns Recursive Web Element
  */
 function Table(props) {
-    return { ...props, elementType: "table" };
+    return createElement("table", props);
 }
 /**
  * Create `<tbody>` element.
@@ -622,7 +623,7 @@ function Table(props) {
  * @returns Recursive Web Element
  */
 function Tbody(props) {
-    return { ...props, elementType: "tbody" };
+    return createElement("tbody", props);
 }
 /**
  * Create `<td>` element.
@@ -630,7 +631,7 @@ function Tbody(props) {
  * @returns Recursive Web Element
  */
 function Td(props) {
-    return { ...props, elementType: "td" };
+    return createElement("td", props);
 }
 /**
  * Create `<tfoot>` element.
@@ -638,7 +639,7 @@ function Td(props) {
  * @returns Recursive Web Element
  */
 function Tfoot(props) {
-    return { ...props, elementType: "tfoot" };
+    return createElement("tfoot", props);
 }
 /**
  * Create `<th>` element.
@@ -646,7 +647,7 @@ function Tfoot(props) {
  * @returns Recursive Web Element
  */
 function Th(props) {
-    return { ...props, elementType: "th" };
+    return createElement("th", props);
 }
 /**
  * Create `<thead>` element.
@@ -654,7 +655,7 @@ function Th(props) {
  * @returns Recursive Web Element
  */
 function Thead(props) {
-    return { ...props, elementType: "thead" };
+    return createElement("thead", props);
 }
 /**
  * Create `<tr>` element.
@@ -662,7 +663,7 @@ function Thead(props) {
  * @returns Recursive Web Element
  */
 function Tr(props) {
-    return { ...props, elementType: "tr" };
+    return createElement("tr", props);
 }
 /**
  * Create `<button>` element.
@@ -670,7 +671,7 @@ function Tr(props) {
  * @returns Recursive Web Element
  */
 function Button(props) {
-    return { ...props, elementType: "button" };
+    return createElement("button", props);
 }
 /**
  * Create `<datalist>` element.
@@ -678,7 +679,7 @@ function Button(props) {
  * @returns Recursive Web Element
  */
 function Datalist(props) {
-    return { ...props, elementType: "datalist" };
+    return createElement("datalist", props);
 }
 /**
  * Create `<fieldset>` element.
@@ -686,7 +687,7 @@ function Datalist(props) {
  * @returns Recursive Web Element
  */
 function Fieldset(props) {
-    return { ...props, elementType: "fieldset" };
+    return createElement("fieldset", props);
 }
 /**
  * Create `<form>` element.
@@ -694,7 +695,7 @@ function Fieldset(props) {
  * @returns Recursive Web Element
  */
 function Form(props) {
-    return { ...props, elementType: "form" };
+    return createElement("form", props);
 }
 /**
  * Create `<input>` element.
@@ -702,7 +703,7 @@ function Form(props) {
  * @returns Recursive Web Element
  */
 function Input(props) {
-    return { ...props, elementType: "input" };
+    return createElement("input", props);
 }
 /**
  * Create `<label>` element.
@@ -710,7 +711,7 @@ function Input(props) {
  * @returns Recursive Web Element
  */
 function Label(props) {
-    return { ...props, elementType: "label" };
+    return createElement("label", props);
 }
 /**
  * Create `<legend>` element.
@@ -718,7 +719,7 @@ function Label(props) {
  * @returns Recursive Web Element
  */
 function Legend(props) {
-    return { ...props, elementType: "legend" };
+    return createElement("legend", props);
 }
 /**
  * Create `<meter>` element.
@@ -726,7 +727,7 @@ function Legend(props) {
  * @returns Recursive Web Element
  */
 function Meter(props) {
-    return { ...props, elementType: "meter" };
+    return createElement("meter", props);
 }
 /**
  * Create `<optgroup>` element.
@@ -734,7 +735,7 @@ function Meter(props) {
  * @returns Recursive Web Element
  */
 function Optgroup(props) {
-    return { ...props, elementType: "optgroup" };
+    return createElement("optgroup", props);
 }
 /**
  * Create `<option>` element.
@@ -742,7 +743,7 @@ function Optgroup(props) {
  * @returns Recursive Web Element
  */
 function Option(props) {
-    return { ...props, elementType: "option" };
+    return createElement("option", props);
 }
 /**
  * Create `<output>` element.
@@ -750,7 +751,7 @@ function Option(props) {
  * @returns Recursive Web Element
  */
 function Output(props) {
-    return { ...props, elementType: "output" };
+    return createElement("output", props);
 }
 /**
  * Create `<progress>` element.
@@ -758,7 +759,7 @@ function Output(props) {
  * @returns Recursive Web Element
  */
 function Progress(props) {
-    return { ...props, elementType: "progress" };
+    return createElement("progress", props);
 }
 /**
  * Create `<select>` element.
@@ -766,7 +767,7 @@ function Progress(props) {
  * @returns Recursive Web Element
  */
 function Select(props) {
-    return { ...props, elementType: "select" };
+    return createElement("select", props);
 }
 /**
  * Create `<textarea>` element.
@@ -774,7 +775,7 @@ function Select(props) {
  * @returns Recursive Web Element
  */
 function TextArea(props) {
-    return { ...props, elementType: "textarea" };
+    return createElement("textarea", props);
 }
 /**
  * Create `<details>` element.
@@ -782,7 +783,7 @@ function TextArea(props) {
  * @returns Recursive Web Element
  */
 function Details(props) {
-    return { ...props, elementType: "details" };
+    return createElement("details", props);
 }
 /**
  * Create `<dialog>` element.
@@ -790,7 +791,7 @@ function Details(props) {
  * @returns Recursive Web Element
  */
 function Dialog(props) {
-    return { ...props, elementType: "dialog" };
+    return createElement("dialog", props);
 }
 /**
  * Create `<summary>` element.
@@ -798,7 +799,7 @@ function Dialog(props) {
  * @returns Recursive Web Element
  */
 function Summary(props) {
-    return { ...props, elementType: "summary" };
+    return createElement("summary", props);
 }
 /**
  * Create `<slot>` element.
@@ -806,7 +807,7 @@ function Summary(props) {
  * @returns Recursive Web Element
  */
 function Slot(props) {
-    return { ...props, elementType: "slot" };
+    return createElement("slot", props);
 }
 /**
  * Create `<template>` element.
@@ -814,7 +815,7 @@ function Slot(props) {
  * @returns Recursive Web Element
  */
 function Template(props) {
-    return { ...props, elementType: "template" };
+    return createElement("template", props);
 }
 /**
  * Create `<fragment>` element.
@@ -822,7 +823,7 @@ function Template(props) {
  * @returns Recursive Web Element
  */
 function Fragment(props) {
-    const el = { ...props, elementType: "fragment" };
+    const el = createElement("fragment", props);
 
     return el;
 }
@@ -832,7 +833,7 @@ function Fragment(props) {
  * @returns Recursive Web Element
  */
 function Column(props) {
-    const el = { ...props, elementType: "column-view" };
+    const el = createElement("column-view", props);
 
     return el;
 }
@@ -842,7 +843,7 @@ function Column(props) {
  * @returns Recursive Web Element
  */
 function Row(props) {
-    const el = { ...props, elementType: "row-view" };
+    const el = createElement("row-view", props);
 
     return el;
 }
@@ -852,10 +853,8 @@ function Row(props) {
  * @returns Recursive Web Element
  */
 function Spacer(props) {
-    const el = { ...props, elementType: "spacer-view" };
-
+    const el = createElement("spacer-view", props);
     CustomElements.items.Spacer.handler(el);
-
     return el;
 }
 /**
@@ -864,10 +863,8 @@ function Spacer(props) {
  * @returns Recursive Web Element
  */
 function LazyColumn(props) {
-    const el = { ...props, elementType: "lazy-column" };
-
+    const el = createElement("lazy-column", props);
     CustomElements.items.LazyColumn.handler(el);
-
     return el;
 }
 /**
@@ -876,10 +873,8 @@ function LazyColumn(props) {
  * @returns Recursive Web Element
  */
 function LazyRow(props) {
-    const el = { ...props, elementType: "lazy-row" };
-
+    const el = createElement("lazy-row", props);
     CustomElements.items.LazyRow.handler(el);
-
     return el;
 }
 export {

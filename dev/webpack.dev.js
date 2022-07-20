@@ -7,7 +7,7 @@ const mode = "development";
 
 module.exports = merge(common, {
     mode,
-    entry: "./dev/experimental/dev.js",
+    entry: "./dev/index.js",
     output: {
         filename: "dev.js",
         path: path.resolve(__dirname, "dist"),

@@ -157,9 +157,13 @@ class RecursiveWebRenderer extends Renderer {
             // does not work with some attributes updates
             instance.setAttribute(getAtt(attribute), value);
 
-            // So we need to double check it with this one
-            // which does not work on svg elements.
-            instance[getAtt(attribute)] = value;
+            try {
+                // So we need to double check it with this one
+                // which does not work on svg elements
+                // and throws an error
+                // hence the need of a try catch block
+                instance[getAtt(attribute)] = value;
+            } catch (error) {}
         }
     }
 

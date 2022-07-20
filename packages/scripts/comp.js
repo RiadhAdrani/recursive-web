@@ -15,7 +15,7 @@ const component = (tag) => `
  * @returns Recursive Web Element
  */
 function ${tag}(props){
-    return {...props,elementType:"${tag.toLocaleLowerCase()}"};
+    return createElement("${tag.toLocaleLowerCase()}",props);
 }`;
 
 const svgComponent = (tag) => `
@@ -25,7 +25,7 @@ const svgComponent = (tag) => `
  * @returns Recursive Web Element
  */
 function ${tag}(props){
-    return {...props,rendererOptions:{ns:"http://www.w3.org/2000/svg"},elementType:"${tag.toLocaleLowerCase()}"};
+    return createElement("${tag.toLocaleLowerCase()}",{...props,rendererOptions:{ns:"http://www.w3.org/2000/svg"}})
 }`;
 
 const customComponent = (name, tag, handler) => `
@@ -35,16 +35,15 @@ const customComponent = (name, tag, handler) => `
  * @returns Recursive Web Element
  */
 function ${name}(props){
-    const el = {...props,elementType:"${tag.toLocaleLowerCase()}"}
-
+    const el = createElement("${tag.toLocaleLowerCase()}",props)
     ${handler ? `CustomElements.items.${name}.handler(el);` : ""}
-
     return el;
  
 }`;
 
 (() => {
-    let imp = `import CustomElements from "../packages/components/Utilities.js";`;
+    let imp = `import CustomElements from "../packages/components/Utilities.js";
+    import {createElement} from "..";`;
 
     let elements = "";
     let exp = "export {";
@@ -76,7 +75,7 @@ function ${name}(props){
 })();
 
 (() => {
-    let imp = ``;
+    let imp = `import {createElement} from "..";`;
 
     let elements = "";
     let exp = "export {";

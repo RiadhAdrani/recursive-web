@@ -1,10 +1,12 @@
+import { createElement } from "..";
+
 /**
  * Create `<a>` element.
  * @param {import("../lib.js").SVGAProps} props
  * @returns Recursive Web Element
  */
 function A(props) {
-    return { ...props, rendererOptions: { ns: "http://www.w3.org/2000/svg" }, elementType: "a" };
+    return createElement("a", { ...props, rendererOptions: { ns: "http://www.w3.org/2000/svg" } });
 }
 /**
  * Create `<animate>` element.
@@ -12,11 +14,10 @@ function A(props) {
  * @returns Recursive Web Element
  */
 function Animate(props) {
-    return {
+    return createElement("animate", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "animate",
-    };
+    });
 }
 /**
  * Create `<animatemotion>` element.
@@ -24,11 +25,10 @@ function Animate(props) {
  * @returns Recursive Web Element
  */
 function AnimateMotion(props) {
-    return {
+    return createElement("animatemotion", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "animatemotion",
-    };
+    });
 }
 /**
  * Create `<animatetransform>` element.
@@ -36,11 +36,10 @@ function AnimateMotion(props) {
  * @returns Recursive Web Element
  */
 function AnimateTransform(props) {
-    return {
+    return createElement("animatetransform", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "animatetransform",
-    };
+    });
 }
 /**
  * Create `<circle>` element.
@@ -48,11 +47,10 @@ function AnimateTransform(props) {
  * @returns Recursive Web Element
  */
 function Circle(props) {
-    return {
+    return createElement("circle", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "circle",
-    };
+    });
 }
 /**
  * Create `<clippath>` element.
@@ -60,11 +58,10 @@ function Circle(props) {
  * @returns Recursive Web Element
  */
 function ClipPath(props) {
-    return {
+    return createElement("clippath", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "clippath",
-    };
+    });
 }
 /**
  * Create `<defs>` element.
@@ -72,7 +69,10 @@ function ClipPath(props) {
  * @returns Recursive Web Element
  */
 function Defs(props) {
-    return { ...props, rendererOptions: { ns: "http://www.w3.org/2000/svg" }, elementType: "defs" };
+    return createElement("defs", {
+        ...props,
+        rendererOptions: { ns: "http://www.w3.org/2000/svg" },
+    });
 }
 /**
  * Create `<desc>` element.
@@ -80,7 +80,10 @@ function Defs(props) {
  * @returns Recursive Web Element
  */
 function Desc(props) {
-    return { ...props, rendererOptions: { ns: "http://www.w3.org/2000/svg" }, elementType: "desc" };
+    return createElement("desc", {
+        ...props,
+        rendererOptions: { ns: "http://www.w3.org/2000/svg" },
+    });
 }
 /**
  * Create `<discard>` element.
@@ -88,11 +91,10 @@ function Desc(props) {
  * @returns Recursive Web Element
  */
 function Discard(props) {
-    return {
+    return createElement("discard", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "discard",
-    };
+    });
 }
 /**
  * Create `<ellipse>` element.
@@ -100,11 +102,10 @@ function Discard(props) {
  * @returns Recursive Web Element
  */
 function Ellipse(props) {
-    return {
+    return createElement("ellipse", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "ellipse",
-    };
+    });
 }
 /**
  * Create `<feblend>` element.
@@ -112,11 +113,10 @@ function Ellipse(props) {
  * @returns Recursive Web Element
  */
 function FeBlend(props) {
-    return {
+    return createElement("feblend", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "feblend",
-    };
+    });
 }
 /**
  * Create `<fecolormatrix>` element.
@@ -124,11 +124,10 @@ function FeBlend(props) {
  * @returns Recursive Web Element
  */
 function FeColorMatrix(props) {
-    return {
+    return createElement("fecolormatrix", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "fecolormatrix",
-    };
+    });
 }
 /**
  * Create `<fecomponenttransfer>` element.
@@ -136,11 +135,10 @@ function FeColorMatrix(props) {
  * @returns Recursive Web Element
  */
 function FeComponentTransfer(props) {
-    return {
+    return createElement("fecomponenttransfer", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "fecomponenttransfer",
-    };
+    });
 }
 /**
  * Create `<fecomposite>` element.
@@ -148,11 +146,10 @@ function FeComponentTransfer(props) {
  * @returns Recursive Web Element
  */
 function FeComposite(props) {
-    return {
+    return createElement("fecomposite", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "fecomposite",
-    };
+    });
 }
 /**
  * Create `<feconvolvematrix>` element.
@@ -160,11 +157,10 @@ function FeComposite(props) {
  * @returns Recursive Web Element
  */
 function FeConvolveMatrix(props) {
-    return {
+    return createElement("feconvolvematrix", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "feconvolvematrix",
-    };
+    });
 }
 /**
  * Create `<fediffuselighting>` element.
@@ -172,11 +168,10 @@ function FeConvolveMatrix(props) {
  * @returns Recursive Web Element
  */
 function FeDiffuseLighting(props) {
-    return {
+    return createElement("fediffuselighting", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "fediffuselighting",
-    };
+    });
 }
 /**
  * Create `<fedisplacementmap>` element.
@@ -184,11 +179,10 @@ function FeDiffuseLighting(props) {
  * @returns Recursive Web Element
  */
 function FeDisplacementMap(props) {
-    return {
+    return createElement("fedisplacementmap", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "fedisplacementmap",
-    };
+    });
 }
 /**
  * Create `<fedistantlight>` element.
@@ -196,11 +190,10 @@ function FeDisplacementMap(props) {
  * @returns Recursive Web Element
  */
 function FeDistantLight(props) {
-    return {
+    return createElement("fedistantlight", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "fedistantlight",
-    };
+    });
 }
 /**
  * Create `<fedropshadow>` element.
@@ -208,11 +201,10 @@ function FeDistantLight(props) {
  * @returns Recursive Web Element
  */
 function FeDropShadow(props) {
-    return {
+    return createElement("fedropshadow", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "fedropshadow",
-    };
+    });
 }
 /**
  * Create `<feflood>` element.
@@ -220,11 +212,10 @@ function FeDropShadow(props) {
  * @returns Recursive Web Element
  */
 function FeFlood(props) {
-    return {
+    return createElement("feflood", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "feflood",
-    };
+    });
 }
 /**
  * Create `<fefunca>` element.
@@ -232,11 +223,10 @@ function FeFlood(props) {
  * @returns Recursive Web Element
  */
 function FeFuncA(props) {
-    return {
+    return createElement("fefunca", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "fefunca",
-    };
+    });
 }
 /**
  * Create `<fefuncb>` element.
@@ -244,11 +234,10 @@ function FeFuncA(props) {
  * @returns Recursive Web Element
  */
 function FeFuncB(props) {
-    return {
+    return createElement("fefuncb", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "fefuncb",
-    };
+    });
 }
 /**
  * Create `<fefuncg>` element.
@@ -256,11 +245,10 @@ function FeFuncB(props) {
  * @returns Recursive Web Element
  */
 function FeFuncG(props) {
-    return {
+    return createElement("fefuncg", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "fefuncg",
-    };
+    });
 }
 /**
  * Create `<fefuncr>` element.
@@ -268,11 +256,10 @@ function FeFuncG(props) {
  * @returns Recursive Web Element
  */
 function FeFuncR(props) {
-    return {
+    return createElement("fefuncr", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "fefuncr",
-    };
+    });
 }
 /**
  * Create `<fegaussianblur>` element.
@@ -280,11 +267,10 @@ function FeFuncR(props) {
  * @returns Recursive Web Element
  */
 function FeGaussianBlur(props) {
-    return {
+    return createElement("fegaussianblur", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "fegaussianblur",
-    };
+    });
 }
 /**
  * Create `<feimage>` element.
@@ -292,11 +278,10 @@ function FeGaussianBlur(props) {
  * @returns Recursive Web Element
  */
 function FeImage(props) {
-    return {
+    return createElement("feimage", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "feimage",
-    };
+    });
 }
 /**
  * Create `<femerge>` element.
@@ -304,11 +289,10 @@ function FeImage(props) {
  * @returns Recursive Web Element
  */
 function FeMerge(props) {
-    return {
+    return createElement("femerge", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "femerge",
-    };
+    });
 }
 /**
  * Create `<femergenode>` element.
@@ -316,11 +300,10 @@ function FeMerge(props) {
  * @returns Recursive Web Element
  */
 function FeMergeNode(props) {
-    return {
+    return createElement("femergenode", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "femergenode",
-    };
+    });
 }
 /**
  * Create `<femorphology>` element.
@@ -328,11 +311,10 @@ function FeMergeNode(props) {
  * @returns Recursive Web Element
  */
 function FeMorphology(props) {
-    return {
+    return createElement("femorphology", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "femorphology",
-    };
+    });
 }
 /**
  * Create `<feoffset>` element.
@@ -340,11 +322,10 @@ function FeMorphology(props) {
  * @returns Recursive Web Element
  */
 function FeOffset(props) {
-    return {
+    return createElement("feoffset", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "feoffset",
-    };
+    });
 }
 /**
  * Create `<fepointlight>` element.
@@ -352,11 +333,10 @@ function FeOffset(props) {
  * @returns Recursive Web Element
  */
 function FePointLight(props) {
-    return {
+    return createElement("fepointlight", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "fepointlight",
-    };
+    });
 }
 /**
  * Create `<fespecularlighting>` element.
@@ -364,11 +344,10 @@ function FePointLight(props) {
  * @returns Recursive Web Element
  */
 function FeSpecularLighting(props) {
-    return {
+    return createElement("fespecularlighting", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "fespecularlighting",
-    };
+    });
 }
 /**
  * Create `<fespotlight>` element.
@@ -376,11 +355,10 @@ function FeSpecularLighting(props) {
  * @returns Recursive Web Element
  */
 function FeSpotLight(props) {
-    return {
+    return createElement("fespotlight", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "fespotlight",
-    };
+    });
 }
 /**
  * Create `<fetile>` element.
@@ -388,11 +366,10 @@ function FeSpotLight(props) {
  * @returns Recursive Web Element
  */
 function FeTile(props) {
-    return {
+    return createElement("fetile", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "fetile",
-    };
+    });
 }
 /**
  * Create `<feturbulence>` element.
@@ -400,11 +377,10 @@ function FeTile(props) {
  * @returns Recursive Web Element
  */
 function FeTurbulence(props) {
-    return {
+    return createElement("feturbulence", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "feturbulence",
-    };
+    });
 }
 /**
  * Create `<filter>` element.
@@ -412,11 +388,10 @@ function FeTurbulence(props) {
  * @returns Recursive Web Element
  */
 function Filter(props) {
-    return {
+    return createElement("filter", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "filter",
-    };
+    });
 }
 /**
  * Create `<foreignobject>` element.
@@ -424,11 +399,10 @@ function Filter(props) {
  * @returns Recursive Web Element
  */
 function ForeignObject(props) {
-    return {
+    return createElement("foreignobject", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "foreignobject",
-    };
+    });
 }
 /**
  * Create `<g>` element.
@@ -436,7 +410,7 @@ function ForeignObject(props) {
  * @returns Recursive Web Element
  */
 function G(props) {
-    return { ...props, rendererOptions: { ns: "http://www.w3.org/2000/svg" }, elementType: "g" };
+    return createElement("g", { ...props, rendererOptions: { ns: "http://www.w3.org/2000/svg" } });
 }
 /**
  * Create `<hatch>` element.
@@ -444,11 +418,10 @@ function G(props) {
  * @returns Recursive Web Element
  */
 function Hatch(props) {
-    return {
+    return createElement("hatch", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "hatch",
-    };
+    });
 }
 /**
  * Create `<hatchpath>` element.
@@ -456,11 +429,10 @@ function Hatch(props) {
  * @returns Recursive Web Element
  */
 function Hatchpath(props) {
-    return {
+    return createElement("hatchpath", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "hatchpath",
-    };
+    });
 }
 /**
  * Create `<image>` element.
@@ -468,11 +440,10 @@ function Hatchpath(props) {
  * @returns Recursive Web Element
  */
 function Image(props) {
-    return {
+    return createElement("image", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "image",
-    };
+    });
 }
 /**
  * Create `<line>` element.
@@ -480,7 +451,10 @@ function Image(props) {
  * @returns Recursive Web Element
  */
 function Line(props) {
-    return { ...props, rendererOptions: { ns: "http://www.w3.org/2000/svg" }, elementType: "line" };
+    return createElement("line", {
+        ...props,
+        rendererOptions: { ns: "http://www.w3.org/2000/svg" },
+    });
 }
 /**
  * Create `<lineargradient>` element.
@@ -488,11 +462,10 @@ function Line(props) {
  * @returns Recursive Web Element
  */
 function LinearGradient(props) {
-    return {
+    return createElement("lineargradient", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "lineargradient",
-    };
+    });
 }
 /**
  * Create `<marker>` element.
@@ -500,11 +473,10 @@ function LinearGradient(props) {
  * @returns Recursive Web Element
  */
 function Marker(props) {
-    return {
+    return createElement("marker", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "marker",
-    };
+    });
 }
 /**
  * Create `<mask>` element.
@@ -512,7 +484,10 @@ function Marker(props) {
  * @returns Recursive Web Element
  */
 function Mask(props) {
-    return { ...props, rendererOptions: { ns: "http://www.w3.org/2000/svg" }, elementType: "mask" };
+    return createElement("mask", {
+        ...props,
+        rendererOptions: { ns: "http://www.w3.org/2000/svg" },
+    });
 }
 /**
  * Create `<metadata>` element.
@@ -520,11 +495,10 @@ function Mask(props) {
  * @returns Recursive Web Element
  */
 function Metadata(props) {
-    return {
+    return createElement("metadata", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "metadata",
-    };
+    });
 }
 /**
  * Create `<mpath>` element.
@@ -532,11 +506,10 @@ function Metadata(props) {
  * @returns Recursive Web Element
  */
 function Mpath(props) {
-    return {
+    return createElement("mpath", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "mpath",
-    };
+    });
 }
 /**
  * Create `<path>` element.
@@ -544,7 +517,10 @@ function Mpath(props) {
  * @returns Recursive Web Element
  */
 function Path(props) {
-    return { ...props, rendererOptions: { ns: "http://www.w3.org/2000/svg" }, elementType: "path" };
+    return createElement("path", {
+        ...props,
+        rendererOptions: { ns: "http://www.w3.org/2000/svg" },
+    });
 }
 /**
  * Create `<pattern>` element.
@@ -552,11 +528,10 @@ function Path(props) {
  * @returns Recursive Web Element
  */
 function Pattern(props) {
-    return {
+    return createElement("pattern", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "pattern",
-    };
+    });
 }
 /**
  * Create `<polygon>` element.
@@ -564,11 +539,10 @@ function Pattern(props) {
  * @returns Recursive Web Element
  */
 function Polygon(props) {
-    return {
+    return createElement("polygon", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "polygon",
-    };
+    });
 }
 /**
  * Create `<polyline>` element.
@@ -576,11 +550,10 @@ function Polygon(props) {
  * @returns Recursive Web Element
  */
 function Polyline(props) {
-    return {
+    return createElement("polyline", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "polyline",
-    };
+    });
 }
 /**
  * Create `<radialgradient>` element.
@@ -588,11 +561,10 @@ function Polyline(props) {
  * @returns Recursive Web Element
  */
 function RadialGradient(props) {
-    return {
+    return createElement("radialgradient", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "radialgradient",
-    };
+    });
 }
 /**
  * Create `<rect>` element.
@@ -600,7 +572,10 @@ function RadialGradient(props) {
  * @returns Recursive Web Element
  */
 function Rect(props) {
-    return { ...props, rendererOptions: { ns: "http://www.w3.org/2000/svg" }, elementType: "rect" };
+    return createElement("rect", {
+        ...props,
+        rendererOptions: { ns: "http://www.w3.org/2000/svg" },
+    });
 }
 /**
  * Create `<set>` element.
@@ -608,7 +583,10 @@ function Rect(props) {
  * @returns Recursive Web Element
  */
 function Set(props) {
-    return { ...props, rendererOptions: { ns: "http://www.w3.org/2000/svg" }, elementType: "set" };
+    return createElement("set", {
+        ...props,
+        rendererOptions: { ns: "http://www.w3.org/2000/svg" },
+    });
 }
 /**
  * Create `<stop>` element.
@@ -616,7 +594,10 @@ function Set(props) {
  * @returns Recursive Web Element
  */
 function Stop(props) {
-    return { ...props, rendererOptions: { ns: "http://www.w3.org/2000/svg" }, elementType: "stop" };
+    return createElement("stop", {
+        ...props,
+        rendererOptions: { ns: "http://www.w3.org/2000/svg" },
+    });
 }
 /**
  * Create `<svg>` element.
@@ -624,7 +605,10 @@ function Stop(props) {
  * @returns Recursive Web Element
  */
 function Svg(props) {
-    return { ...props, rendererOptions: { ns: "http://www.w3.org/2000/svg" }, elementType: "svg" };
+    return createElement("svg", {
+        ...props,
+        rendererOptions: { ns: "http://www.w3.org/2000/svg" },
+    });
 }
 /**
  * Create `<switch>` element.
@@ -632,11 +616,10 @@ function Svg(props) {
  * @returns Recursive Web Element
  */
 function Switch(props) {
-    return {
+    return createElement("switch", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "switch",
-    };
+    });
 }
 /**
  * Create `<symbol>` element.
@@ -644,11 +627,10 @@ function Switch(props) {
  * @returns Recursive Web Element
  */
 function Symbol(props) {
-    return {
+    return createElement("symbol", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "symbol",
-    };
+    });
 }
 /**
  * Create `<text>` element.
@@ -656,7 +638,10 @@ function Symbol(props) {
  * @returns Recursive Web Element
  */
 function Text(props) {
-    return { ...props, rendererOptions: { ns: "http://www.w3.org/2000/svg" }, elementType: "text" };
+    return createElement("text", {
+        ...props,
+        rendererOptions: { ns: "http://www.w3.org/2000/svg" },
+    });
 }
 /**
  * Create `<textpath>` element.
@@ -664,11 +649,10 @@ function Text(props) {
  * @returns Recursive Web Element
  */
 function TextPath(props) {
-    return {
+    return createElement("textpath", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "textpath",
-    };
+    });
 }
 /**
  * Create `<title>` element.
@@ -676,11 +660,10 @@ function TextPath(props) {
  * @returns Recursive Web Element
  */
 function Title(props) {
-    return {
+    return createElement("title", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "title",
-    };
+    });
 }
 /**
  * Create `<tspan>` element.
@@ -688,11 +671,10 @@ function Title(props) {
  * @returns Recursive Web Element
  */
 function Tspan(props) {
-    return {
+    return createElement("tspan", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
-        elementType: "tspan",
-    };
+    });
 }
 /**
  * Create `<use>` element.
@@ -700,7 +682,10 @@ function Tspan(props) {
  * @returns Recursive Web Element
  */
 function Use(props) {
-    return { ...props, rendererOptions: { ns: "http://www.w3.org/2000/svg" }, elementType: "use" };
+    return createElement("use", {
+        ...props,
+        rendererOptions: { ns: "http://www.w3.org/2000/svg" },
+    });
 }
 /**
  * Create `<view>` element.
@@ -708,7 +693,10 @@ function Use(props) {
  * @returns Recursive Web Element
  */
 function View(props) {
-    return { ...props, rendererOptions: { ns: "http://www.w3.org/2000/svg" }, elementType: "view" };
+    return createElement("view", {
+        ...props,
+        rendererOptions: { ns: "http://www.w3.org/2000/svg" },
+    });
 }
 export {
     A,

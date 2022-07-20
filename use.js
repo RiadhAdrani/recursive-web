@@ -7,6 +7,7 @@ import {
     RecursiveRouter,
     RecursiveState,
     RecursiveConsole,
+    createRecursiveElement,
 } from "@riadh-adrani/recursive";
 
 export {
@@ -15,4 +16,5 @@ export {
     RecursiveRouter as Router,
     RecursiveState as State,
     RecursiveConsole as Console,
+    createRecursiveElement as createElement,
 };
