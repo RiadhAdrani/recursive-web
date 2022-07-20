@@ -26,7 +26,7 @@
         "framework"
     ],
     "dependencies": {
-        "@riadh-adrani/recursive": "^0.7.28"
+        "@riadh-adrani/recursive": "^0.7.30"
     },
     "devDependencies": {
         "webpack": "^5.73.0",
