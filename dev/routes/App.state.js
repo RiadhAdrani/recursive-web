@@ -1,10 +1,10 @@
-import { getRef, setCache, setState } from "../..";
+import { WebApp } from "../";
 import { Button, Column, Input, P, Row } from "../../html";
 import { rgb } from "../../style/methods";
 
 export default () => {
-    const [value, setValue] = setState("count", 0);
-    const [text, setText] = setCache("text", "Cached text");
+    const [value, setValue] = WebApp.setState("count", 0);
+    const [text, setText] = WebApp.setCache("text", "Cached text");
 
     return Column({
         children: [
@@ -32,7 +32,7 @@ export default () => {
                     Button({
                         children: "change to random color",
                         onClick: () => {
-                            const element = getRef("get-ref");
+                            const element = WebApp.getRef("get-ref");
 
                             const randomNumber = () => Math.floor(Math.random() * 256);
 

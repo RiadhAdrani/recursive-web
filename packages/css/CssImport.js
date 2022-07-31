@@ -16,4 +16,4 @@ function render(list) {
     return output;
 }
 
-export { render };
+module.exports = { render };

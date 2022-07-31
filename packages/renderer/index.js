@@ -1,8 +1,8 @@
-import { get as getAtt, is as isAttt, isToggle } from "../dom/DomAttributes.js";
-import { get as getEv, is as isEv, getListener, hasHandler } from "../dom/DomEvents.js";
-import RecursiveCSSOM from "../css/";
-import { Console, Renderer } from "../../use.js";
-import { renderValue } from "../css/CssProperties.js";
+const { get: getAtt, is: isAttt, isToggle } = require("../dom/DomAttributes.js");
+const { get: getEv, is: isEv, getListener, hasHandler } = require("../dom/DomEvents.js");
+const RecursiveCSSOM = require("../css/");
+const { Console, Renderer } = require("../../use.js");
+const { renderValue } = require("../css/CssProperties.js");
 
 /**
  * ### `RecursiveWeb`
@@ -383,4 +383,4 @@ class RecursiveWebRenderer extends Renderer {
     }
 }
 
-export default RecursiveWebRenderer;
+module.exports = RecursiveWebRenderer;

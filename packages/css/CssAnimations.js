@@ -1,4 +1,4 @@
-import { render as renderSelector } from "./CssSelectors.js";
+const { render: renderSelector } = require("./CssSelectors");
 
 /**
  * Return if the given name is valid as an animation name.
@@ -7,6 +7,7 @@ import { render as renderSelector } from "./CssSelectors.js";
  */
 function isValidName(name) {
     if (typeof name !== "string") return false;
+    if (!name.trim()) return false;
     if (["unset", "none", "initial", "inherit"].includes(name)) return false;
     if (name.includes(" ")) return false;
     if (name.substring(0, 2) == "--") return false;
@@ -14,9 +15,30 @@ function isValidName(name) {
     return true;
 }
 
+/**
+ * Check if the provided object is represent valid animations steps.
+ * @param {Object} stepsObject
+ * @returns {boolean}
+ */
+function isValidStepsObject(stepsObject) {
+    if (typeof stepsObject != "object") return false;
+    if (Array.isArray(stepsObject)) return false;
+    if (stepsObject == null) return false;
+    if (Object.keys(stepsObject).length == 0) return false;
+
+    return true;
+}
+
+/**
+ * Convert the given animation name and steps into its CSS declaration.
+ * @param {string} name
+ * @param {Object} steps
+ * @returns
+ */
 function render(name, steps) {
-    if (!name || !steps) return "";
-    if (name.includes(";")) return "";
+    if (!isValidName(name) || !isValidStepsObject(steps)) return "";
+
+    name = name.trim();
 
     let output = `@keyframes ${name}{`;
 
@@ -29,4 +51,4 @@ function render(name, steps) {
     return output;
 }
 
-export { isValidName, render };
+module.exports = { isValidName, isValidStepsObject, render };

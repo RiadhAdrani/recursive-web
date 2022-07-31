@@ -1,5 +1,4 @@
-import { render as renderProp } from "./CssProperties";
-
+const { render: renderProp } = require("./CssProperties");
 const { List: list } = require("./lists/Selectors");
 
 /**
@@ -27,7 +26,7 @@ function get(key) {
  */
 function customSelectorAlreadyExist(selector) {
     for (let key in list) {
-        if (list[key].css == selector) {
+        if (list[key].css == selector.trim()) {
             return key;
         }
     }
@@ -41,7 +40,7 @@ function customSelectorAlreadyExist(selector) {
  * @param {import("../../lib").Selector} content
  */
 function render(selector, content) {
-    if (!selector || !content) return "";
+    if (typeof selector != "string" || !selector || !content) return "";
 
     let output = `${selector}{`;
 
@@ -54,4 +53,4 @@ function render(selector, content) {
     return output;
 }
 
-export { list, is, get, render, customSelectorAlreadyExist };
+module.exports = { list, is, get, render, customSelectorAlreadyExist };

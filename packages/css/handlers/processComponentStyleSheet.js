@@ -1,13 +1,13 @@
-import { Console } from "../../../use";
-import { isValidName } from "../CssAnimations";
-import { get as getSelector, is, customSelectorAlreadyExist } from "../CssSelectors";
+const { Console } = require("../../../use");
+const { isValidName } = require("../CssAnimations");
+const { get: getSelector, is, customSelectorAlreadyExist } = require("../CssSelectors");
 
 /**
  * Process the given component stylesheet and convert it into a unified format.
  * @param {JSON} styleSheet
  * @returns {JSON}
  */
-export default function (styleSheet) {
+function processComponentStyleSheet(styleSheet) {
     const output = {};
 
     if (!styleSheet || styleSheet.className === undefined) return output;
@@ -90,3 +90,5 @@ export default function (styleSheet) {
 
     return output;
 }
+
+module.exports = processComponentStyleSheet;

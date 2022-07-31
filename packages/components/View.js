@@ -1,4 +1,4 @@
-const { default: RecursiveCSSOM } = require("../css/");
+const RecursiveCSSOM = require("../css/");
 
 class View extends HTMLElement {
     constructor(tag) {

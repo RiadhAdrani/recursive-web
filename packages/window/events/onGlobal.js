@@ -1,7 +1,9 @@
-import on from "./on.js";
+const on = require("./on.js");
 
-export default (orchestrator, winEvent, store, listener, checkTarget = true) => {
-    if (window[store]) throw `Global event ${store} cannot be overriden.`;
+const onGlobal = (orchestrator, winEvent, store, listener, checkTarget = true) => {
+    if (window[store]) {
+        return;
+    }
 
     function clean() {
         window[store].items = window[store].items.filter((ele) => document.contains(ele));
@@ -37,3 +39,5 @@ export default (orchestrator, winEvent, store, listener, checkTarget = true) => 
         clean();
     });
 };
+
+module.exports = onGlobal;

@@ -41,4 +41,4 @@ function render(content) {
     return output;
 }
 
-export { list, is, get, render };
+module.exports = { list, is, get, render };

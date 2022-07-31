@@ -1,4 +1,4 @@
-import { View, addDefaultStyle } from "./View";
+const { View, addDefaultStyle } = require("./View");
 
 const COLUMN_VIEW = "column-view";
 const ROW_VIEW = "row-view";

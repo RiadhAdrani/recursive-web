@@ -1,7 +1,6 @@
-import processComponentStyleSheet from "./handlers/processComponentStyleSheet.js";
-import processStyleSheets from "./handlers/mergeStyleSheets.js";
-import renderStyleSheet from "./CssRender.js";
-import mergeStyleSheets from "./handlers/mergeStyleSheets.js";
+const processComponentStyleSheet = require("./handlers/processComponentStyleSheet");
+const mergeStyleSheets = require("./handlers/mergeStyleSheets");
+const renderStyleSheet = require("./CssRender");
 
 class RecursiveCSSOM {
     constructor() {
@@ -28,7 +27,7 @@ class RecursiveCSSOM {
         this.injectDynamicStyle();
 
         const res = renderStyleSheet(
-            processStyleSheets((stack || []).map((item) => processComponentStyleSheet(item)))
+            mergeStyleSheets((stack || []).map((item) => processComponentStyleSheet(item)))
         );
 
         if (this.sheet !== res) {
@@ -79,4 +78,4 @@ class RecursiveCSSOM {
     }
 }
 
-export default RecursiveCSSOM;
+module.exports = RecursiveCSSOM;

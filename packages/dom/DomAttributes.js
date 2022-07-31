@@ -412,4 +412,4 @@ function isToggle(key) {
     return is(key) && list[key].type === "toggle";
 }
 
-export { list, is, get, isToggle };
+module.exports = { list, is, get, isToggle };

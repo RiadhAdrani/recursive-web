@@ -1,4 +1,26 @@
 /**
+ * Render a single var.
+ * @param {String} key
+ * @param {String} value
+ * @returns
+ */
+function renderVar(key, value) {
+    if (typeof key != "string" || !key.trim()) return "";
+    if (key.substring(0, 2) === "--") return "";
+    if (key.includes(";")) return "";
+    if (key.includes("{")) return "";
+    if (key.includes("}")) return "";
+
+    if (!["string", "number"].includes(typeof value)) return "";
+    if (value.toString().includes(";")) return "";
+    if (value.toString().includes("{")) return "";
+    if (value.toString().includes("}")) return "";
+    if (!value.toString().trim()) return "";
+
+    return `--${key}:${value};`;
+}
+
+/**
  * Render and return statements of `--var`.
  * @param {Object} list
  * @returns
@@ -8,14 +30,12 @@ function render(list) {
 
     let output = ":root{";
 
-    for (let v in list) {
-        if (list[v].includes(";") || list[v].toString().substring(0, 2) === "--") continue;
-
-        output += `--${v}:${list[v]};`;
+    for (let key in list) {
+        output += renderVar(key, list[key]);
     }
     output += "}";
 
     return output;
 }
 
-export { render };
+module.exports = { render, renderVar };

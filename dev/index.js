@@ -1,18 +1,10 @@
-import { Link, Render, renderRoute, route, setStyle } from "..";
+import { RecursiveWebApp } from "../packages/app";
 import { Column, Hr, Row } from "../html";
-import { rgb, url } from "../style/methods";
+import { rgb } from "../style/methods";
 import AppState from "./routes/App.state";
 
-const Router = {
-    route: route({
-        path: "/",
-        component: () => {},
-        routes: [route({ path: "state", component: AppState })],
-    }),
-};
-
 const NavButton = (text, to) =>
-    Link({
+    App.Link({
         href: to,
         children: text,
         style: {
@@ -26,26 +18,53 @@ const NavButton = (text, to) =>
         },
     });
 
-Render({
-    root: document.getElementById("root"),
-    router: Router,
-    cacheSize: 2000,
-    app: () => {
-        setStyle({ selectors: { "*": { fontFamily: "monospace", fontSize: "large" } } });
+const app = () => {
+    App.setStyle({
+        selectors: { "*": { fontFamily: "monospace", fontSize: "large" } },
+    });
 
-        return Column({
-            style: {
-                inline: {
-                    padding: ["10px", "20px"],
-                },
+    return Column({
+        style: {
+            inline: {
+                padding: ["10px", "20px"],
             },
-            children: [
-                Row({
-                    children: [NavButton("home", "/"), NavButton("State", "/state")],
-                }),
-                Hr({ size: "1px", width: "100%" }),
-                renderRoute(),
-            ],
-        });
+        },
+        children: [
+            Row({
+                children: [NavButton("home", "/"), NavButton("State", "/state")],
+            }),
+            Hr({ size: "1px", width: "100%" }),
+            App.renderRoute(),
+        ],
+    });
+};
+
+/**
+ * @type {RecursiveWebApp}
+ */
+const App = new RecursiveWebApp({
+    root: document.body,
+    app: app,
+    route: {
+        path: "/",
+        component: () => "Home",
+        routes: [
+            {
+                path: "state",
+                component: AppState,
+            },
+        ],
     },
 });
+
+App.render();
+
+const Link = App.Link;
+const setState = App.setState;
+const getState = App.getState;
+const setCache = App.setCache;
+const getCache = App.getCache;
+const getRef = App.getRef;
+const goTo = App.goTo;
+
+export { App as WebApp, Link };

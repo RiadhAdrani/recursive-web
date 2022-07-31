@@ -1,7 +1,25 @@
-export default function (styleSheets) {
+/**
+ * Merge an array of style sheet into a single one.
+ * @param {Array<import("../../../core").StyleSheet>} styleSheets
+ * @returns {import("../../../core").StyleSheet}
+ */
+function mergeStyleSheets(styleSheets) {
     if (!Array.isArray(styleSheets)) return {};
 
     const output = {};
+
+    function isValidSelectorContent(content) {
+        if (
+            [null, undefined].includes(content) ||
+            ["string", "number", "bigint", "boolean", "symbol"].includes(typeof content) ||
+            Array.isArray(content)
+        )
+            return false;
+
+        if (typeof content == "object" && Object.keys(content).length == 0) return false;
+
+        return true;
+    }
 
     styleSheets.forEach((sheet) => {
         if (!sheet) return;
@@ -13,6 +31,8 @@ export default function (styleSheets) {
                         if (!sheet.animations) break;
 
                         for (let animation in sheet.animations) {
+                            if (!isValidSelectorContent(sheet.animations[animation])) continue;
+
                             if (!output.animations) output.animations = {};
 
                             // TODO : solve conflicts
@@ -26,6 +46,8 @@ export default function (styleSheets) {
                         if (!sheet.mediaQueries) break;
 
                         for (let query in sheet.mediaQueries) {
+                            if (!isValidSelectorContent(sheet.mediaQueries[query])) continue;
+
                             if (!output.mediaQueries) output.mediaQueries = {};
 
                             for (let selector in sheet.mediaQueries[query]) {
@@ -50,14 +72,20 @@ export default function (styleSheets) {
                     break;
                 case "var":
                     {
-                        if (!sheet.var) break;
+                        if (
+                            !sheet.var ||
+                            typeof sheet.var != "object" ||
+                            Array.isArray(sheet.var) ||
+                            Object.keys(sheet.var).length == 0
+                        )
+                            break;
 
                         for (let v in sheet.var) {
                             if (!output.var) output.var = {};
 
-                            if (!sheet.var[v]) continue;
-
-                            output.var[v] = sheet.var[v];
+                            if (typeof sheet.var[v] == "string" && sheet.var[v].trim()) {
+                                output.var[v] = sheet.var[v];
+                            }
                         }
                     }
                     break;
@@ -69,7 +97,10 @@ export default function (styleSheets) {
 
                         // TODO : solve conflicts
 
-                        output.imports.push(...sheet.imports);
+                        sheet.imports.forEach((item) => {
+                            if (typeof item == "string" && item.trim())
+                                output.imports.push(item.trim());
+                        });
                     }
                     break;
                 case "selectors":
@@ -77,7 +108,7 @@ export default function (styleSheets) {
                         if (!sheet.selectors) break;
 
                         for (let selector in sheet.selectors) {
-                            if (!sheet.selectors[selector]) continue;
+                            if (!isValidSelectorContent(sheet.selectors[selector])) continue;
 
                             if (!output.selectors) output.selectors = {};
 
@@ -93,3 +124,5 @@ export default function (styleSheets) {
 
     return output;
 }
+
+module.exports = mergeStyleSheets;

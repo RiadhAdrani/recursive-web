@@ -1,7 +1,7 @@
 const { Console } = require("../../use");
 const { List: list } = require("./lists/Properties.js");
 
-const regEx = /[\{\}]{1}/gm;
+const regEx = /\{|\}/g;
 
 /**
  * Check if the given key is a valid key of a property.
@@ -24,11 +24,18 @@ function get(key) {
 /**
  * Check if the input is a valid CSS value.
  * @param {string | number} value
- * @returns
+ * @returns {boolean}
  */
 function validValue(value) {
     if (!["number", "string"].includes(typeof value)) return false;
-    return value.toString().trim() && !regEx.test(value.toString());
+
+    value = value.toString().trim();
+
+    if (!value) return false;
+
+    if (value.search(regEx) != -1) return false;
+
+    return true;
 }
 
 /**
@@ -72,4 +79,4 @@ function render(property, value) {
     return `${get(property)}:${_value};`;
 }
 
-module.exports = { is, get, render, renderValue };
+module.exports = { is, get, render, renderValue, validValue };

@@ -1,4 +1,4 @@
-import { handler } from "../window/index.js";
+const { handler } = require("../window");
 
 const list = {
     // Standard Events
@@ -119,4 +119,4 @@ function getListener(key) {
     return get(key).listener;
 }
 
-export { is, get, hasHandler, getListener };
+module.exports = { is, get, hasHandler, getListener };

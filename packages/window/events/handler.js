@@ -1,4 +1,4 @@
-export default (store, type = "Event") => {
+const handler = (store, type = "Event") => {
     return {
         listener: store,
         on: "on" + store,
@@ -8,3 +8,5 @@ export default (store, type = "Event") => {
         type,
     };
 };
+
+module.exports = handler;

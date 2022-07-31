@@ -1,4 +1,4 @@
-import { Router } from "../../use";
+const { Router } = require("../../use");
 
 class RecursiveWebRouter extends Router {
     constructor(route, base, scroll, manager, orchestrator) {
@@ -140,4 +140,4 @@ class RecursiveWebRouter extends Router {
     }
 }
 
-export default RecursiveWebRouter;
+module.exports = RecursiveWebRouter;

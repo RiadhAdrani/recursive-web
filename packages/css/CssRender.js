@@ -1,15 +1,15 @@
-import { render as renderSelector } from "./CssSelectors.js";
-import { render as renderAnimation } from "./CssAnimations.js";
-import { render as renderQuery } from "./CssMediaQueries.js";
-import { render as renderFont } from "./CssFontFace.js";
-import { render as renderImport } from "./CssImport.js";
-import { render as renderVar } from "./CssVar.js";
+const { render: renderSelector } = require("./CssSelectors");
+const { render: renderAnimation } = require("./CssAnimations");
+const { render: renderQuery } = require("./CssMediaQueries");
+const { render: renderFont } = require("./CssFontFace");
+const { render: renderImport } = require("./CssImport");
+const { render: renderVar } = require("./CssVar");
 
-export default /**
+/**
  * Convert static style to string
  * @param {JSON} styleSheet static style object
  */
-function (styleSheet) {
+function renderCSS(styleSheet) {
     if (!styleSheet) return;
 
     let output = "";
@@ -43,3 +43,5 @@ function (styleSheet) {
 
     return output;
 }
+
+module.exports = renderCSS;

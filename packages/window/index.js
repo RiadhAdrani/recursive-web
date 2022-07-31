@@ -1,5 +1,5 @@
-import onGlobal from "./events/onGlobal.js";
-import handler from "./events/handler.js";
+const onGlobal = require("./events/onGlobal.js");
+const handler = require("./events/handler.js");
 
 function useRecursiveWindow(orchestrator) {
     onGlobal(orchestrator, "click", "onclickglobal", "onClickGlobal");
@@ -11,4 +11,4 @@ function useRecursiveWindow(orchestrator) {
     onGlobal(orchestrator, "beforeunload", "onbeforeunloadglobal", "onBeforeUnloadGlobal", false);
 }
 
-export { handler, useRecursiveWindow };
+module.exports = { handler, useRecursiveWindow };

@@ -1,7 +1,17 @@
-import { render as renderSelector } from "./CssSelectors.js";
+const { render: renderSelector } = require("./CssSelectors.js");
 
+/**
+ * Convert media query declaration to a string.
+ * @param {string} rule
+ * @param {import("../../lib.js").SelectorTypes} selectors
+ * @returns {String}
+ */
 function render(rule, selectors) {
-    if (!rule || !selectors) return "";
+    if (typeof rule != "string" || !rule.trim()) return "";
+    if (selectors === null) return "";
+    if (typeof selectors != "object") return "";
+    if (Array.isArray(selectors)) return "";
+    if (Object.keys(selectors).length == 0) return "";
 
     let output = `@media ${rule}{`;
     for (let selector in selectors) {
@@ -12,4 +22,4 @@ function render(rule, selectors) {
     return output;
 }
 
-export { render };
+module.exports = { render };
