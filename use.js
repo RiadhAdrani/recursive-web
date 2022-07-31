@@ -9,7 +9,7 @@ const {
     RecursiveConsole: Console,
     createRecursiveElement: createElement,
     RecursiveApp: App,
-} = require("@riadh-adrani/recursive");
+} = require("../recursive");
 
 module.exports = {
     Orchestrator,
