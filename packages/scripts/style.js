@@ -61,3 +61,5 @@ const newTypes = old.replace(
 
 fs.writeFileSync(path.join("./style/index.js"), generated);
 fs.writeFileSync(path.join("./lib.d.ts"), newTypes);
+
+console.log("StyleSheet written");

@@ -3,7 +3,7 @@
  * Do not modify this file
  */
 
-import { RawElement } from "../recursive/lib";
+import { RawElement, RecursiveElement } from "@riadh-adrani/recursive/lib";
 
 export type Color =
     | "aliceblue"
@@ -241,95 +241,12 @@ export interface Flags {
     forceRerender: boolean;
 }
 
-export interface Events {
-    onAbort: (event: Event) => {};
-    onAutoComplete: (event: Event) => {};
-    onAutoCompleteError: (event: Event) => {};
-    onBlur: (event: Event) => {};
-    onCancel: (event: Event) => {};
-    onCanPlay: (event: Event) => {};
-    onCanPlayThrough: (event: Event) => {};
-    onChange: (event: Event) => {};
-    onClick: (event: Event) => {};
-    onClose: (event: Event) => {};
-    onContextMenu: (event: Event) => {};
-    onCueChange: (event: Event) => {};
-    onDblClick: (event: Event) => {};
-    onDrag: (event: Event) => {};
-    onDragEnd: (event: Event) => {};
-    onDragEnter: (event: Event) => {};
-    onDragLeave: (event: Event) => {};
-    onDragOver: (event: Event) => {};
-    onDragStart: (event: Event) => {};
-    onDrop: (event: Event) => {};
-    onDurationChange: (event: Event) => {};
-    onEmptied: (event: Event) => {};
-    onEnded: (event: Event) => {};
-    onError: (event: Event) => {};
-    onFocus: (event: Event) => {};
-    onInput: (event: Event) => {};
-    onInvalid: (event: Event) => {};
-    onKeyDown: (event: Event) => {};
-    onKeyPress: (event: Event) => {};
-    onKeyUp: (event: Event) => {};
-    onLoad: (event: Event) => {};
-    onLoadedData: (event: Event) => {};
-    onLoadedMetadata: (event: Event) => {};
-    onLoadStart: (event: Event) => {};
-    onMouseDown: (event: Event) => {};
-    onMouseEnter: (event: Event) => {};
-    onMouseLeave: (event: Event) => {};
-    onMouseMove: (event: Event) => {};
-    onMouseOut: (event: Event) => {};
-    onMouseOver: (event: Event) => {};
-    onMouseUp: (event: Event) => {};
-    onMouseWheel: (event: Event) => {};
-    onPause: (event: Event) => {};
-    onPlay: (event: Event) => {};
-    onPlaying: (event: Event) => {};
-    onProgress: (event: Event) => {};
-    onRatechange: (event: Event) => {};
-    onReset: (event: Event) => {};
-    onResize: (event: Event) => {};
-    onScroll: (event: Event) => {};
-    onSeeked: (event: Event) => {};
-    onSeeking: (event: Event) => {};
-    onSelect: (event: Event) => {};
-    onShow: (event: Event) => {};
-    onSort: (event: Event) => {};
-    onStalled: (event: Event) => {};
-    onSubmit: (event: Event) => {};
-    onSuspend: (event: Event) => {};
-    onTimeUpdate: (event: Event) => {};
-    onToggle: (event: Event) => {};
-    onVolumeChange: (event: Event) => {};
-    onWaiting: (event: Event) => {};
-
-    onActivate: (event: Event) => {};
-    onFocusIn: (event: Event) => {};
-    onFocusOut: (event: Event) => {};
-
-    onBegin: (event: Event) => {};
-    onEnd: (event: Event) => {};
-    onRepeat: (event: Event) => {};
-
-    onCopy: (event: Event) => {};
-    onCut: (event: Event) => {};
-    onPaste: (event: Event) => {};
-
-    onClickGlobal: (event: Event, notify: Function) => void;
-    onContextMenuGlobal: (event: Event, notify: Function) => void;
-    onResizeGlobal: (event: Event, notify: Function) => void;
-    onKeyUpGlobal: (event: Event, notify: Function) => void;
-    onKeyDownGlobal: (event: Event, notify: Function) => void;
-    onScrollGlobal: (event: Event, notify: Function) => void;
-}
+export interface Events {}
 
 export interface StandardAttributes {
     key: string;
     hooks: Hooks;
     flags: Flags;
-    children: Array<any>;
     style: StyleSheet;
 }
 
@@ -369,6 +286,7 @@ export interface SVGAttributes extends StandardAttributes, Events {
     xmlLang: string;
     xmlSpace: string;
     className: string;
+    children: Array<any>;
 }
 
 export interface FreeStyleSheet {

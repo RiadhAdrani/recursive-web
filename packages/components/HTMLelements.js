@@ -28,6 +28,7 @@ const Elements = {
             size: "string",
             width: "string",
         },
+        childless: true,
     },
     Li: { props: { value: "string", type: "string" } },
     Menu: { props: {} },
@@ -51,7 +52,7 @@ const Elements = {
     B: { props: {} },
     Bdi: { props: { dir: "string" } },
     Bdo: { props: { dir: "string" } },
-    Br: { props: {} },
+    Br: { props: {}, childless: true },
     Cite: { props: {} },
     Code: { props: {} },
     Data: { props: { valeu: "string" } },
@@ -88,6 +89,7 @@ const Elements = {
             shape: "string",
             target: `"_self"|"_blank"|"_parent"|"_top"`,
         },
+        childless: true,
     },
     Audio: {
         props: {
@@ -115,10 +117,12 @@ const Elements = {
             width: "number",
             useMap: "string",
         },
+        childless: true,
     },
     Map: { props: { name: "string" } },
     Track: {
         props: { def: "string", kind: "string", label: "string", src: "string", srcLang: "string" },
+        childless: true,
     },
     Video: {
         props: {
@@ -252,6 +256,7 @@ const Elements = {
             value: "string",
             width: "number",
         },
+        childless: true,
     },
     Label: { props: { isFor: "string" } },
     Legend: { props: {} },

@@ -1,10 +1,10 @@
-import { WebApp } from "../";
+import { App } from "../";
 import { Button, Column, Input, P, Row } from "../../html";
 import { rgb } from "../../style/methods";
 
 export default () => {
-    const [value, setValue] = WebApp.setState("count", 0);
-    const [text, setText] = WebApp.setCache("text", "Cached text");
+    const [value, setValue] = App.setState("count", 0);
+    const [text, setText] = App.setCache("text", "Cached text");
 
     return Column({
         children: [
@@ -20,8 +20,18 @@ export default () => {
                 style: { inline: { justifyContent: "space-between", alignItems: "stretch" } },
                 children: [
                     P({ children: "setCache()" }),
-                    P({ children: text }),
-                    Input({ value: text, onInput: (e) => setText(e.target.value) }),
+                    P({
+                        children: text,
+                        onDragStart: (e) => {
+                            console.log(e);
+                        },
+                    }),
+                    Input({
+                        value: text,
+                        onInput: (e) => {
+                            setText(e.target.value);
+                        },
+                    }),
                 ],
             }),
             Row({
@@ -32,7 +42,7 @@ export default () => {
                     Button({
                         children: "change to random color",
                         onClick: () => {
-                            const element = WebApp.getRef("get-ref");
+                            const element = App.getRef("get-ref");
 
                             const randomNumber = () => Math.floor(Math.random() * 256);
 

@@ -1,8 +1,6 @@
 const { handler } = require("../window");
 
 const list = {
-    // Standard Events
-
     onAbort: { listener: "abort", on: "onabort", type: "Event" },
     onAnimationEnd: { listener: "animationend", on: "onanimationend", type: "Event" },
     onAnimationIteration: {
@@ -18,18 +16,9 @@ const list = {
     onCanPlay: { listener: "canplay", on: "oncanplay", type: "Event" },
     onCanPlayThrough: { listener: "canplaythrough", on: "oncanplaythroug", type: "Event" },
     onChange: { listener: "change", on: "onchange", type: "Event" },
-    onClick: { listener: "click", on: "onclick", type: "Event" },
     onContextMenu: { listener: "contextmenu", on: "oncontextmenu", type: "Event" },
     onCopy: { listener: "copy", on: "oncopy", type: "Event" },
     onCut: { listener: "cut", on: "oncut", type: "Event" },
-    onDoubleClick: { listener: "dblclick", on: "ondblclick", type: "Event" },
-    onDrag: { listener: "drag", on: "ondrag", type: "Event" },
-    onDragEnd: { listener: "dragend", on: "ondragend", type: "Event" },
-    onDragEnter: { listener: "dragenter", on: "ondragenter", type: "Event" },
-    onDragLeave: { listener: "dragleave", on: "ondragleave", type: "Event" },
-    onDragOver: { listener: "dragover", on: "ondragover", type: "Event" },
-    onDragStart: { listener: "dragstart", on: "ondragstart", type: "Event" },
-    onDrop: { listener: "drop", on: "ondrop", type: "Event" },
     onDurationChange: { listener: "durationchange", on: "ondurationchange", type: "Event" },
     onEnded: { listener: "ended", on: "onended", type: "Event" },
     onError: { listener: "error", on: "onerror", type: "Event" },
@@ -38,23 +27,12 @@ const list = {
     onFocusOut: { listener: "focusout", on: "onfocusout", type: "Event" },
     onFullScreenChange: { listener: "fullscreenchange", on: "onfullscreenchange", type: "Event" },
     onHashChange: { listener: "hashchange", on: "onhashchange", type: "Event" },
-    onInput: { listener: "input", on: "oninput", type: "Event" },
     onInvalid: { listener: "invalid", on: "oninvalid", type: "Event" },
-    onKeyDown: { listener: "keydown", on: "onkeydown", type: "Event" },
-    onKeyPress: { listener: "keypress", on: "onkeypress", type: "Event" },
-    onKeyUp: { listener: "keyup", on: "onkeyup", type: "Event" },
     onLoad: { listener: "load", on: "onload", type: "Event" },
     onLoadedData: { listener: "loadeddata", on: "onloadeddata", type: "Event" },
     onLoadedMetaData: { listener: "loadedmetadata", on: "onloadedmetadata", type: "Event" },
     onLoadStart: { listener: "loadstart", on: "onloadstart", type: "Event" },
     onMessage: { listener: "message", on: "onmessage", type: "Event" },
-    onMouseDown: { listener: "mousedown", on: "onmousedown", type: "Event" },
-    onMouseEnter: { listener: "mouseenter", on: "onmouseenter", type: "Event" },
-    onMouseLeave: { listener: "mouseleave", on: "onmouseleave", type: "Event" },
-    onMouseMove: { listener: "mousemove", on: "onmousemove", type: "Event" },
-    onMouseOver: { listener: "mouseover", on: "onmouseover", type: "Event" },
-    onMouseOut: { listener: "mouseout", on: "onmouseout", type: "Event" },
-    onMouseUp: { listener: "mouseup", on: "onmouseup", type: "Event" },
     onOffline: { listener: "offline", on: "ononffline", type: "Event" },
     onOnline: { listener: "online", on: "ononline", type: "Event" },
     onOpen: { listener: "open", on: "onopen", type: "Event" },
@@ -64,7 +42,6 @@ const list = {
     onPause: { listener: "pause", on: "onpause", type: "Event" },
     onPlay: { listener: "play", on: "onplay", type: "Event" },
     onPlaying: { listener: "playing", on: "onplaying", type: "Event" },
-    onPopState: { listener: "popstate", on: "onpopstate", type: "Event" },
     onProgress: { listener: "progress", on: "onprogress", type: "Event" },
     onRateChange: { listener: "ratechange", on: "onratechange", type: "Event" },
     onResize: { listener: "resize", on: "onresize", type: "Event" },
@@ -82,25 +59,83 @@ const list = {
     onSuspend: { listener: "suspend", on: "onsuspend", type: "Event" },
     onTimeUpdate: { listener: "timeupdate", on: "ontimeupdate", type: "Event" },
     onToggle: { listener: "toggle", on: "ontoggle", type: "Event" },
-    onTouchCancel: { listener: "touchcancel", on: "ontouchcancel", type: "Event" },
-    onTouchEnd: { listener: "touchend", on: "ontouchend", type: "Event" },
-    onTouchMove: { listener: "touchmove", on: "ontouchmove", type: "Event" },
-    onTouchStart: { listener: "touchstart", on: "ontouchstart", type: "Event" },
     onTransitionEnd: { listener: "transitionend", on: "ontransitionend", type: "Event" },
     onUnload: { listener: "unload", on: "onunload", type: "Event" },
     onVolumeChange: { listener: "volumnechange", on: "onvolumechange", type: "Event" },
     onWaiting: { listener: "waiting", on: "onwaiting", type: "Event" },
-    onWheel: { listener: "wheel", on: "onwheel", type: "Event" },
+    onWheel: { listener: "wheel", on: "onwheel", type: "WheelEvent" },
+    /**
+     * Input Events
+     */
+    onInput: { listener: "input", on: "oninput", type: "InputEvent" },
 
-    // Recursive Window events
-
-    onClickGlobal: handler("onclickglobal"),
-    onResizeGlobal: handler("onresizeglobal"),
-    onKeyUpGlobal: handler("onkeyupglobal"),
-    onKeyDownGlobal: handler("onkeydownglobal"),
-    onContextMenuGlobal: handler("oncontextmenuglobal"),
-    onScrollGlobal: handler("onscrollglobal"),
-    onBeforeUnloadGlobal: handler("onbeforeunloadglobal"),
+    /**
+     * Drag Events
+     */
+    onDrag: { listener: "drag", on: "ondrag", type: "DragEvent" },
+    onDragEnd: { listener: "dragend", on: "ondragend", type: "DragEvent" },
+    onDragEnter: { listener: "dragenter", on: "ondragenter", type: "DragEvent" },
+    onDragLeave: { listener: "dragleave", on: "ondragleave", type: "DragEvent" },
+    onDragOver: { listener: "dragover", on: "ondragover", type: "DragEvent" },
+    onDragStart: { listener: "dragstart", on: "ondragstart", type: "DragEvent" },
+    onDrop: { listener: "drop", on: "ondrop", type: "DragEvent" },
+    /**
+     * Keyboard Events
+     */
+    onKeyDown: { listener: "keydown", on: "onkeydown", type: "KeyboardEvent" },
+    onKeyPress: { listener: "keypress", on: "onkeypress", type: "KeyboardEvent" },
+    onKeyUp: { listener: "keyup", on: "onkeyup", type: "KeyboardEvent" },
+    /**
+     * Mouse Events
+     */
+    onClick: { listener: "click", on: "onclick", type: "MouseEvent" },
+    onDoubleClick: { listener: "dblclick", on: "ondblclick", type: "MouseEvent" },
+    onMouseDown: { listener: "mousedown", on: "onmousedown", type: "MouseEvent" },
+    onMouseEnter: { listener: "mouseenter", on: "onmouseenter", type: "MouseEvent" },
+    onMouseLeave: { listener: "mouseleave", on: "onmouseleave", type: "MouseEvent" },
+    onMouseMove: { listener: "mousemove", on: "onmousemove", type: "MouseEvent" },
+    onMouseOver: { listener: "mouseover", on: "onmouseover", type: "MouseEvent" },
+    onMouseOut: { listener: "mouseout", on: "onmouseout", type: "MouseEvent" },
+    onMouseUp: { listener: "mouseup", on: "onmouseup", type: "MouseEvent" },
+    /**
+     * Pointer events
+     */
+    onPointerOver: { listener: "pointerover", on: "onpointerover", type: "PointerEvent" },
+    onPointerEnter: { listener: "pointerenter", on: "onpointerenter", type: "PointerEvent" },
+    onPointerDown: { listener: "pointerdown", on: "onpointerdown", type: "PointerEvent" },
+    onPointerMove: { listener: "pointermove", on: "onpointermove", type: "PointerEvent" },
+    onPointerUp: { listener: "pointerup", on: "onpointerup", type: "PointerEvent" },
+    onPointerCancel: { listener: "pointercancel", on: "onpointercancel", type: "PointerEvent" },
+    onPointerOut: { listener: "pointerout", on: "onpointerout", type: "PointerEvent" },
+    onPointerLeave: { listener: "pointerleave", on: "onpointerleave", type: "PointerEvent" },
+    onGotPointerCapture: {
+        listener: "gotpointercapture",
+        on: "ongotpointercapture",
+        type: "PointerEvent",
+    },
+    onLostPointerCapture: {
+        listener: "lostpointercapture",
+        on: "onlostpointercapture",
+        type: "PointerEvent",
+    },
+    /**
+     * Touch events
+     */
+    onTouchCancel: { listener: "touchcancel", on: "ontouchcancel", type: "TouchEvent" },
+    onTouchEnd: { listener: "touchend", on: "ontouchend", type: "TouchEvent" },
+    onTouchMove: { listener: "touchmove", on: "ontouchmove", type: "TouchEvent" },
+    onTouchStart: { listener: "touchstart", on: "ontouchstart", type: "TouchEvent" },
+    /**
+     * Recursive Window events
+     *
+     */
+    onClickGlobal: handler("onclickglobal", "PointerEvent"),
+    onResizeGlobal: handler("onresizeglobal", "Event"),
+    onKeyUpGlobal: handler("onkeyupglobal", "KeyboardEvent"),
+    onKeyDownGlobal: handler("onkeydownglobal", "KeyboardEvent"),
+    onContextMenuGlobal: handler("oncontextmenuglobal", "PointerEvent"),
+    onScrollGlobal: handler("onscrollglobal", "Event"),
+    onBeforeUnloadGlobal: handler("onbeforeunloadglobal", "BeforeUnloadEvent"),
 };
 
 function is(key) {
@@ -119,4 +154,4 @@ function getListener(key) {
     return get(key).listener;
 }
 
-module.exports = { is, get, hasHandler, getListener };
+module.exports = { is, get, hasHandler, getListener, list };

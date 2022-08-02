@@ -12,7 +12,7 @@ const component = (tag) => `
 /**
  * Create \`<${tag.toLocaleLowerCase()}>\` element.
  * @param {import("../lib.js").${tag}Props} props 
- * @returns Recursive Web Element
+ * @returns {RecursiveElement} Recursive Web Element
  */
 function ${tag}(props){
     return createElement("${tag.toLocaleLowerCase()}",props);
@@ -22,7 +22,7 @@ const svgComponent = (tag) => `
 /**
  * Create \`<${tag.toLocaleLowerCase()}>\` element.
  * @param {import("../lib.js").SVG${tag}Props} props
- * @returns Recursive Web Element
+ * @returns {RecursiveElement} Recursive Web Element
  */
 function ${tag}(props){
     return createElement("${tag.toLocaleLowerCase()}",{...props,rendererOptions:{ns:"http://www.w3.org/2000/svg"}})
@@ -32,7 +32,7 @@ const customComponent = (name, tag, handler) => `
 /**
  * Create \`<${tag.toLocaleLowerCase()}>\` element.
  * @param {import("../lib.js").${name}Props} props 
- * @returns Recursive Web Element
+ * @returns {RecursiveElement} Recursive Web Element
  */
 function ${name}(props){
     const el = createElement("${tag.toLocaleLowerCase()}",props)

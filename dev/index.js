@@ -67,4 +67,4 @@ const getCache = App.getCache;
 const getRef = App.getRef;
 const goTo = App.goTo;
 
-export { App as WebApp, Link };
+export { App, Link, setState, getState, setCache, getCache, getRef, goTo };

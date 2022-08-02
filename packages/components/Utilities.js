@@ -34,6 +34,7 @@ module.exports = {
         Spacer: {
             tag: SPACER_VIEW,
             props: { height: "number", width: "number" },
+            childless: true,
             handler: (element) => {
                 element.style = {
                     ...element.style,
