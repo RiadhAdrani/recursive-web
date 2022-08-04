@@ -9,7 +9,10 @@ export default () => {
     return Column({
         children: [
             Row({
-                style: { inline: { justifyContent: "space-between", alignItems: "stretch" } },
+                style: {
+                    scoped: true,
+                    normal: { justifyContent: "space-between", alignItems: "stretch" },
+                },
                 children: [
                     P({ children: "setState()" }),
                     P({ children: value }),
@@ -17,7 +20,10 @@ export default () => {
                 ],
             }),
             Row({
-                style: { inline: { justifyContent: "space-between", alignItems: "stretch" } },
+                style: {
+                    scoped: true,
+                    normal: { justifyContent: "space-between", alignItems: "stretch" },
+                },
                 children: [
                     P({ children: "setCache()" }),
                     P({
@@ -35,7 +41,10 @@ export default () => {
                 ],
             }),
             Row({
-                style: { inline: { justifyContent: "space-between", alignItems: "stretch" } },
+                style: {
+                    scoped: true,
+                    normal: { justifyContent: "space-between", alignItems: "stretch" },
+                },
                 children: [
                     P({ children: "getRef()" }),
                     P({ children: "Colorful Text", hooks: { onRef: () => "get-ref" } }),

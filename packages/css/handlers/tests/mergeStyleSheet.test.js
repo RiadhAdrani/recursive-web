@@ -123,11 +123,7 @@ it("should convert media query", () => {
     ];
 
     expect(mergeStyleSheets(object)).toStrictEqual({
-        mediaQueries: {
-            customMediaQuery: {
-                normal: { color: "red" },
-            },
-        },
+        mediaQueries: [{ condition: "customMediaQuery", selectors: { normal: { color: "red" } } }],
     });
 });
 

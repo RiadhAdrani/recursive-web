@@ -1,4 +1,4 @@
-const { render } = require("../CssMediaQueries.js");
+const { render, isValidMediaQueryDeclaration } = require("../CssMediaQueries.js");
 
 it("should render a correct media queries with valid input.", () => {
     expect(
@@ -10,6 +10,13 @@ it("should render a correct media queries with valid input.", () => {
         })
     ).toBe("@media (max-width: 600px){div{background-color: red;border: 1px solid black;}}");
 });
+
+it.each([[""], ["string"], [0], [1], [null], [undefined], [[]], [{}]])(
+    "should refuse all these falsy query objects | case : (%s)",
+    (object) => {
+        expect(isValidMediaQueryDeclaration(object)).toBeFalsy();
+    }
+);
 
 it.each([
     [[], {}],

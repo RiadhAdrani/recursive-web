@@ -1,6 +1,24 @@
 const { render: renderSelector } = require("./CssSelectors.js");
 
 /**
+ * Check if a given media query object is valid or not.
+ * @param {Object} mediaQueryObject
+ * @returns {boolean}
+ */
+function isValidMediaQueryDeclaration(mediaQueryObject) {
+    if (
+        mediaQueryObject &&
+        typeof mediaQueryObject == "object" &&
+        !Array.isArray(mediaQueryObject) &&
+        Object.keys(mediaQueryObject).length > 0
+    ) {
+        return true;
+    }
+
+    return false;
+}
+
+/**
  * Convert media query declaration to a string.
  * @param {string} rule
  * @param {import("../../lib.js").SelectorTypes} selectors
@@ -22,4 +40,4 @@ function render(rule, selectors) {
     return output;
 }
 
-module.exports = { render };
+module.exports = { render, isValidMediaQueryDeclaration };

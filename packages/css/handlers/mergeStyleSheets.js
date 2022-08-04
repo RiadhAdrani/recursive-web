@@ -1,3 +1,5 @@
+const { isValidMediaQueryDeclaration } = require("../CssMediaQueries");
+
 /**
  * Merge an array of style sheet into a single one.
  * @param {Array<import("../../../core").StyleSheet>} styleSheets
@@ -35,8 +37,6 @@ function mergeStyleSheets(styleSheets) {
 
                             if (!output.animations) output.animations = {};
 
-                            // TODO : solve conflicts
-
                             output.animations[animation] = sheet.animations[animation];
                         }
                     }
@@ -46,17 +46,35 @@ function mergeStyleSheets(styleSheets) {
                         if (!sheet.mediaQueries) break;
 
                         for (let query in sheet.mediaQueries) {
-                            if (!isValidSelectorContent(sheet.mediaQueries[query])) continue;
+                            const currentQuery = sheet.mediaQueries[query];
 
-                            if (!output.mediaQueries) output.mediaQueries = {};
+                            if (!isValidMediaQueryDeclaration(currentQuery)) continue;
 
-                            for (let selector in sheet.mediaQueries[query]) {
-                                if (!output.mediaQueries[query]) output.mediaQueries[query] = {};
+                            if (!output.mediaQueries) output.mediaQueries = [];
 
-                                // TODO : solve conflicts
+                            const queryToBeAdded = {
+                                condition: query,
+                                selectors: sheet.mediaQueries[query],
+                            };
 
-                                output.mediaQueries[query][selector] =
-                                    sheet.mediaQueries[query][selector];
+                            let isValid = true;
+
+                            for (let exQuery in output.mediaQueries) {
+                                const exQueryComp = {
+                                    condition: output.mediaQueries[exQuery].condition,
+                                    selectors: output.mediaQueries[exQuery].selectors,
+                                };
+
+                                if (
+                                    JSON.stringify(exQueryComp) === JSON.stringify(queryToBeAdded)
+                                ) {
+                                    isValid = false;
+                                    break;
+                                }
+                            }
+
+                            if (isValid) {
+                                output.mediaQueries.push(queryToBeAdded);
                             }
                         }
                     }

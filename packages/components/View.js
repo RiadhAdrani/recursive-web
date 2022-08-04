@@ -6,10 +6,8 @@ class View extends HTMLElement {
     }
 }
 
-const CSSOM = new RecursiveCSSOM();
-
 function addDefaultStyle(selector, style) {
-    CSSOM.addStaticStyle({ selectors: { [selector]: style } });
+    RecursiveCSSOM.addStaticStyle({ selectors: { [selector]: style } });
 }
 
 module.exports = { View, addDefaultStyle };

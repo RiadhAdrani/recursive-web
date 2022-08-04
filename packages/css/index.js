@@ -3,18 +3,39 @@ const mergeStyleSheets = require("./handlers/mergeStyleSheets");
 const renderStyleSheet = require("./CssRender");
 
 class RecursiveCSSOM {
+    /**
+     * Used to inject static and unchanged styles.
+     * Once injected, it can't be removed.
+     */
+    static common = (() => {
+        const temp = document.createElement("style");
+        document.querySelector("head").append(temp);
+        return temp;
+    })();
+
+    /**
+     * Used for dynamic style injection.
+     * Store `imports`, `fontFace` and `charSet` declarations.
+     */
+    static highPriority = (() => {
+        const temp = document.createElement("style");
+        document.querySelector("head").append(temp);
+        return temp;
+    })();
+
+    /**
+     * Used for low priority dynamic style injection.
+     * Store `vars`, `selectos`, `animations` and `mediaQueries` declarations.
+     */
+    static lowPriority = (() => {
+        const temp = document.createElement("style");
+        document.querySelector("head").append(temp);
+        return temp;
+    })();
+
     constructor() {
-        this.appStaticStyle = document.createElement("style");
-        this.appDynamicStyle = document.createElement("style");
-        this.appStyle = document.createElement("style");
-
-        document.querySelector("head").append(this.appStaticStyle);
-        document.querySelector("head").append(this.appDynamicStyle);
-        document.querySelector("head").append(this.appStyle);
-
-        this.sheet = "";
-        this.staticSheet = "";
-        this.dynamicSheet = "";
+        this.highPriority = "";
+        this.lowPriority = "";
 
         this.dynamicStack = [];
     }
@@ -24,20 +45,32 @@ class RecursiveCSSOM {
      * @param {Object} stack contains styles declarations
      */
     update(stack) {
-        this.injectDynamicStyle();
-
-        const res = renderStyleSheet(
-            mergeStyleSheets((stack || []).map((item) => processComponentStyleSheet(item)))
+        const computedComponentStyle = (stack || []).map((item) =>
+            processComponentStyleSheet(item)
         );
 
-        if (this.sheet !== res) {
-            this.appStyle.innerHTML = res;
-            this.sheet = res;
+        const res = renderStyleSheet(
+            mergeStyleSheets([...this.dynamicStack, ...computedComponentStyle])
+        );
+
+        if (this.highPriority !== res.highPriority) {
+            RecursiveCSSOM.highPriority.innerHTML = res.highPriority;
+            this.highPriority = res.highPriority;
         }
+
+        if (this.lowPriority !== res.lowPriority) {
+            RecursiveCSSOM.lowPriority.innerHTML = res.lowPriority;
+            this.lowPriority = res.lowPriority;
+        }
+
+        this.dynamicStack = [];
     }
 
-    addStaticStyle(styleSheet) {
-        this.appStaticStyle.innerHTML += renderStyleSheet(styleSheet);
+    static addStaticStyle(styleSheet) {
+        const computed = renderStyleSheet(styleSheet);
+
+        RecursiveCSSOM.common.innerHTML += computed.highPriority;
+        RecursiveCSSOM.common.innerHTML += computed.lowPriority;
     }
 
     addDynamicDeclaration(
@@ -67,7 +100,7 @@ class RecursiveCSSOM {
     setStyle(
         cssobject = {
             var: {},
-            import: [],
+            imports: [],
             fontFace: {},
             selectors: {},
             animations: {},

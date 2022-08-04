@@ -6,38 +6,43 @@ const { render: renderImport } = require("./CssImport");
 const { render: renderVar } = require("./CssVar");
 
 /**
- * Convert static style to string
- * @param {JSON} styleSheet static style object
+ * Convert style object to string
+ * @param {import("../../core").FreeStyleSheet} styleSheet static style object
  */
 function renderCSS(styleSheet) {
-    if (!styleSheet) return;
+    const output = { lowPriority: "", highPriority: "" };
 
-    let output = "";
-    output += renderVar(styleSheet.var);
-    output += renderImport(styleSheet.imports);
-    output += renderFont(styleSheet.fontFace);
+    if (!styleSheet) return output;
+
+    output.highPriority += renderImport(styleSheet.imports);
+    output.highPriority += renderFont(styleSheet.fontFace);
 
     if (styleSheet["charset"]) {
         for (let item in styleSheet.charset) {
-            output += `@charset "${styleSheet.font[item]}";`;
+            output.highPriority += `@charset "${styleSheet.font[item]}";`;
         }
     }
 
+    output.lowPriority += renderVar(styleSheet.var);
+
     if (styleSheet["selectors"]) {
         for (let rule in styleSheet.selectors) {
-            output += renderSelector(rule, styleSheet.selectors[rule]);
+            output.lowPriority += renderSelector(rule, styleSheet.selectors[rule]);
         }
     }
 
     if (styleSheet["mediaQueries"]) {
         for (let query in styleSheet.mediaQueries) {
-            output += renderQuery(query, styleSheet.mediaQueries[query]);
+            output.lowPriority += renderQuery(
+                styleSheet.mediaQueries[query].condition,
+                styleSheet.mediaQueries[query].selectors
+            );
         }
     }
 
     if (styleSheet["animations"]) {
         for (let anim in styleSheet.animations) {
-            output += renderAnimation(anim, styleSheet.animations[anim]);
+            output.lowPriority += renderAnimation(anim, styleSheet.animations[anim]);
         }
     }
 

@@ -1238,10 +1238,11 @@ export interface SVGAttributes extends StandardAttributes, Events {
 
 export interface FreeStyleSheet {
     var: { [key: string]: string };
-    import: Array<string>;
+    imports: Array<string>;
     selectors: { [key: string]: Selector };
     mediaQueries: { [key: string]: { [key: string]: Selector } };
     animations: { [key: string]: { [key: string]: Selector } };
+    fontFace: { [key: string]: any };
 }
 
 export interface Route {
