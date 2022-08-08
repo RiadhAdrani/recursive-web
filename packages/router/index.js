@@ -22,9 +22,9 @@ class RecursiveWebRouter extends Router {
 
             const _to = this.useRouterGetRoute();
 
-            const _template = this.routes[_route] ? this.routes[_route] : this.routes["/404"];
+            const [newPath, routeForm, anchor] = this.resolvePath(_to);
 
-            this.loadRoute(_template, _to);
+            this.mountNewRoute(newPath, routeForm, anchor);
 
             e.preventDefault();
         });
@@ -69,25 +69,12 @@ class RecursiveWebRouter extends Router {
         return location.pathname;
     }
 
-    /**
-     * Replace the current history state with another one.
-     * @param {any} template
-     * @param {string} hash
-     */
-    useRouterReplaceState(template, hash) {
-        history.replaceState(
-            { route: template.route.path },
-            "",
-            this.useRouterMakeURL(`${template.path}${hash}`)
-        );
+    useRouterReplaceState(destination, routeForm, hash) {
+        history.replaceState({ route: destination }, "", this.useRouterMakeURL(destination));
     }
 
-    /**
-     * Push another history state to the stack.
-     * @param {any} template
-     */
-    useRouterPushState(template) {
-        history.pushState({ route: template.route.path }, "", this.useRouterMakeURL(template.path));
+    useRouterPushState(destination, routeForm, hash) {
+        history.pushState({ route: destination }, "", this.useRouterMakeURL(destination));
     }
 
     /**
@@ -95,11 +82,21 @@ class RecursiveWebRouter extends Router {
      * @param {string} anchor
      */
     useRouterGoToAnchor(anchor) {
-        const target = document.getElementById(anchor.replace("#", ""));
+        /**
+         * We need to wait a little bit,
+         * there is a delay between the start of the update
+         * and its finish.
+         * It is asynchronous.
+         */
+        setTimeout(() => {
+            const eleId = anchor.replace("#", "");
 
-        if (target) {
-            target.scrollIntoView();
-        }
+            const target = document.getElementById(eleId);
+
+            if (target) {
+                target.scrollIntoView({ behavior: "smooth" });
+            }
+        }, 10);
     }
 
     /**
@@ -114,9 +111,10 @@ class RecursiveWebRouter extends Router {
      */
     useRouterOnLoad() {
         const route = this.useRouterGetRoute();
+
         const hash = location.hash;
 
-        const [routeTemplate] = this.stateManager.getReserved("route");
+        const [routeTemplate] = this.getRouteState();
 
         if (routeTemplate.title) {
             this.useRouterSetTitle(routeTemplate.title);

@@ -11,7 +11,11 @@ export default () => {
             Row({
                 style: {
                     scoped: true,
-                    normal: { justifyContent: "space-between", alignItems: "stretch" },
+                    normal: {
+                        justifyContent: "space-between",
+                        alignItems: "stretch",
+                        height: "200vh",
+                    },
                 },
                 children: [
                     P({ children: "setState()" }),
@@ -46,7 +50,7 @@ export default () => {
                     normal: { justifyContent: "space-between", alignItems: "stretch" },
                 },
                 children: [
-                    P({ children: "getRef()" }),
+                    P({ children: "getRef()", id: "ref" }),
                     P({ children: "Colorful Text", hooks: { onRef: () => "get-ref" } }),
                     Button({
                         children: "change to random color",

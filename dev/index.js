@@ -39,7 +39,11 @@ const app = () => {
         },
         children: [
             Row({
-                children: [NavButton("home", "/"), NavButton("State", "/state")],
+                children: [
+                    NavButton("home", "/"),
+                    NavButton("State", "/state#ref"),
+                    NavButton("dynamic", "/id=:1;"),
+                ],
             }),
             Hr({ size: "1px", width: "100%" }),
             App.renderRoute(),
@@ -57,6 +61,10 @@ const App = new RecursiveWebApp({
         path: "/",
         component: () => "Home",
         routes: [
+            {
+                path: "id=:id;",
+                component: () => App.getParams().id,
+            },
             {
                 path: "state",
                 component: AppState,
