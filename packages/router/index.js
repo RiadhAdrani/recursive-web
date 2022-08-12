@@ -15,14 +15,10 @@ class RecursiveWebRouter extends Router {
             if (e.state) {
                 _route = e.state.route;
             } else {
-                const [template] = this.getRouteState();
-
-                _route = template;
+                _route = this.useRouterGetRoute();
             }
 
-            const _to = this.useRouterGetRoute();
-
-            const [newPath, routeForm, anchor] = this.resolvePath(_to);
+            const [newPath, routeForm, anchor] = this.resolvePath(_route);
 
             this.mountNewRoute(newPath, routeForm, anchor);
 

@@ -1081,6 +1081,7 @@ export interface Hooks {
     onRef: (el: HTMLElement) => string;
     beforeDestroyed: (el: HTMLElement) => {};
     onDestroyed: () => {};
+    onUpdated: (el: HTMLElement) => {};
 }
 
 export interface Flags {

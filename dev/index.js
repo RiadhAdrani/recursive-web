@@ -39,6 +39,7 @@ const app = () => {
         },
         children: [
             Row({
+                onClick: () => {},
                 children: [
                     NavButton("home", "/"),
                     NavButton("State", "/state#ref"),
@@ -60,14 +61,17 @@ const App = new RecursiveWebApp({
     route: {
         path: "/",
         component: () => "Home",
+        title: "Home",
         routes: [
             {
                 path: "id=:id;",
                 component: () => App.getParams().id,
+                title: "Id",
             },
             {
                 path: "state",
                 component: AppState,
+                title: "State",
             },
         ],
     },

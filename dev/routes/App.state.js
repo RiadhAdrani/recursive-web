@@ -7,6 +7,11 @@ export default () => {
     const [text, setText] = App.setCache("text", "Cached text");
 
     return Column({
+        hooks: {
+            onCreated: () => {
+                console.log("State Built");
+            },
+        },
         children: [
             Row({
                 style: {
@@ -14,12 +19,20 @@ export default () => {
                     normal: {
                         justifyContent: "space-between",
                         alignItems: "stretch",
-                        height: "200vh",
                     },
                 },
                 children: [
                     P({ children: "setState()" }),
-                    P({ children: value }),
+                    P({
+                        children: value,
+                        dataSet: { value: 1 },
+                        hooks: {
+                            onUpdated: (element) => {
+                                console.log(element);
+                                console.log("id changed");
+                            },
+                        },
+                    }),
                     Button({ children: "+1", onClick: () => setValue(value + 1) }),
                 ],
             }),
