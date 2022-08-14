@@ -15,7 +15,7 @@ const component = (tag) => `
  * @returns {RecursiveElement} Recursive Web Element
  */
 function ${tag}(props){
-    return createElement("${tag.toLocaleLowerCase()}",props);
+    return createElement("${tag.toLocaleLowerCase()}",{...props,rendererOptions:{}});
 }`;
 
 const svgComponent = (tag) => `

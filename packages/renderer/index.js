@@ -3,6 +3,7 @@ const { get: getEv, is: isEv, getListener, hasHandler } = require("../dom/DomEve
 const RecursiveCSSOM = require("../css/");
 const { Console, Renderer } = require("../../use.js");
 const { renderValue } = require("../css/CssProperties.js");
+const { ELEMENT_TYPE_TEXT_NODE } = require("@riadh-adrani/recursive/packages/constants/index.js");
 
 /**
  * ### `RecursiveWeb`
@@ -31,7 +32,8 @@ class RecursiveWebRenderer extends Renderer {
      * @returns {HTMLElement}
      */
     useRendererCreateInstance(element) {
-        if (element.elementType === "#text") return document.createTextNode(element.children);
+        if (element.elementType === ELEMENT_TYPE_TEXT_NODE)
+            return document.createTextNode(element.children);
 
         let ns = "http://www.w3.org/1999/xhtml";
 
@@ -380,6 +382,42 @@ class RecursiveWebRenderer extends Renderer {
      */
     useRendererRemoveEvent(eventName, instance) {
         instance.events[eventName] = () => {};
+    }
+
+    /**
+     * Reduce children to inner HTML.
+     * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
+     */
+    reduceChildrenToInnerHTML(element) {
+        return element.children.reduce((value, child) => {
+            return value + child.children.toString();
+        }, "");
+    }
+
+    /**
+     * Create a raw container.
+     * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
+     */
+    useRendererCreateRawContainer(element) {
+        const output = document.createElement("div");
+
+        output.innerHTML = this.reduceChildrenToInnerHTML(element);
+
+        return output;
+    }
+
+    /**
+     * Update raw containers.
+     * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
+     * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} newElement
+     */
+    useRendererUpdateRawContainersAgainstEachOthers(element, newElement) {
+        const oldInnerHTML = this.reduceChildrenToInnerHTML(element);
+        const newInnerHTML = this.reduceChildrenToInnerHTML(newElement);
+
+        if (oldInnerHTML !== newInnerHTML) {
+            element.instance.innerHTML = newInnerHTML;
+        }
     }
 }
 

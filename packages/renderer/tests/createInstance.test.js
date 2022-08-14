@@ -2,6 +2,11 @@
  * @jest-environment jsdom
  */
 
+const {
+    ELEMENT_TYPE_TEXT_NODE,
+    RECURSIVE_ELEMENT_SYMBOL,
+    ELEMENT_TYPE_RAW,
+} = require("@riadh-adrani/recursive/packages/constants");
 const { createElement } = require("../../../use");
 const { RecursiveWebApp } = require("../../app");
 
@@ -20,6 +25,23 @@ describe("create instance tests", () => {
         const div = renderer.renderInstance(createElement("#text", { children: "text" }));
 
         expect(div instanceof Text == true).toBeTruthy();
+    });
+
+    it("should create a raw container", () => {
+        const div = renderer.useRendererCreateRawContainer(
+            createElement(ELEMENT_TYPE_RAW, {
+                children: [
+                    {
+                        elementType: ELEMENT_TYPE_TEXT_NODE,
+                        $$_RecursiveSymbol: RECURSIVE_ELEMENT_SYMBOL,
+                        children: "<p></p>",
+                        instance: undefined,
+                    },
+                ],
+            })
+        );
+
+        expect(div instanceof HTMLDivElement == true).toBeTruthy();
     });
 
     it("should create an SVG element", () => {

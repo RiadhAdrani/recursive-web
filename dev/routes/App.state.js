@@ -1,5 +1,5 @@
 import { App } from "../";
-import { Button, Column, Input, P, Row } from "../../html";
+import { Button, Column, HtmlContainer, Input, P, Row } from "../../html";
 import { rgb } from "../../style/methods";
 
 export default () => {
@@ -23,15 +23,9 @@ export default () => {
                 },
                 children: [
                     P({ children: "setState()" }),
-                    P({
-                        children: value,
-                        dataSet: { value: 1 },
-                        hooks: {
-                            onUpdated: (element) => {
-                                console.log(element);
-                                console.log("id changed");
-                            },
-                        },
+                    HtmlContainer({
+                        children: [`<p>state = <strong>${value}</strong></p>`],
+                        style: { inline: { padding: "10px" } },
                     }),
                     Button({ children: "+1", onClick: () => setValue(value + 1) }),
                 ],

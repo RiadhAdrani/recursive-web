@@ -1,9 +1,12 @@
+const { ELEMENT_TYPE_RAW } = require("@riadh-adrani/recursive/packages/constants");
+
 const COLUMN_VIEW = "column-view";
 const ROW_VIEW = "row-view";
 const LAZY_COLUMN = "lazy-column";
 const LAZY_ROW = "lazy-row";
 const SPACER_VIEW = "spacer-view";
 const FRAGMENT = "fragment";
+const HTML_CONTAINER = ELEMENT_TYPE_RAW;
 
 const useObserver = (element, instance) => {
     var observer = new IntersectionObserver(
@@ -28,6 +31,7 @@ const useObserver = (element, instance) => {
 
 module.exports = {
     items: {
+        HtmlContainer: { tag: HTML_CONTAINER, props: {} },
         Fragment: { tag: FRAGMENT, props: {} },
         Column: { tag: COLUMN_VIEW, props: {} },
         Row: { tag: ROW_VIEW, props: {} },

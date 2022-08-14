@@ -60,7 +60,7 @@ const App = new RecursiveWebApp({
     app: app,
     route: {
         path: "/",
-        component: () => "Home",
+        component: () => "Hello World",
         title: "Home",
         routes: [
             {

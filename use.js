@@ -5,7 +5,14 @@
  *
  * We use the `INTERNAL` version to reference a local version
  * for development of the framework and experimental reasons,
- * it is not available if you installed thik package using npm.
+ * it is not available if you installed this package using npm.
+ *
+ * download `recursive` from https://www.npmjs.com/package/@riadh-adrani/recursive
+ * and place both `recursive-web` and `recursive` in the same directory like this:
+ *
+ * development:
+ *      - recursive
+ *      - recursive-web
  *
  * The `PRODUCTION` version is aimed for developers
  * who build applications with recursive web.
@@ -29,7 +36,7 @@ const {
     RecursiveConsole: Console,
     createRecursiveElement: createElement,
     RecursiveApp: App,
-} = require("../recursive");
+} = require("@riadh-adrani/recursive");
 
 module.exports = {
     Orchestrator,
