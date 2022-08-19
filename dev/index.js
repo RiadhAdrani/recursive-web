@@ -28,7 +28,7 @@ const app = () => {
     });
 
     App.setStyle({
-        selectors: { "*": { fontFamily: "monospace", fontSize: "large" } },
+        selectors: { "*": { fontFamily: "Cousine", fontSize: "large" } },
     });
 
     return Column({

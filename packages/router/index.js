@@ -92,7 +92,7 @@ class RecursiveWebRouter extends Router {
             if (target) {
                 target.scrollIntoView({ behavior: "smooth" });
             }
-        }, 10);
+        }, 20);
     }
 
     /**
