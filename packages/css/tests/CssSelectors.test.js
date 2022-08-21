@@ -1,11 +1,22 @@
-const { get, is, render, customSelectorAlreadyExist } = require("../CssSelectors");
+const {
+    get,
+    is,
+    render,
+    customSelectorAlreadyExist,
+} = require("../CssSelectors");
 
-it.each([[undefined], [null], [""], [{}], [0], [[]], ["string"], ["anImaginarySelector"]])(
-    "should ignore invalid falsy values and data types | case '%s'",
-    (input) => {
-        expect(is(input)).toBe(false);
-    }
-);
+it.each([
+    [undefined],
+    [null],
+    [""],
+    [{}],
+    [0],
+    [[]],
+    ["string"],
+    ["anImaginarySelector"],
+])("should ignore invalid falsy values and data types | case '%s'", (input) => {
+    expect(is(input)).toBe(false);
+});
 
 it.each([
     [""],
@@ -30,6 +41,9 @@ it.each([
     ["div", [], "div{}"],
     ["div", { color: "red" }, "div{color: red;}"],
     ["div", { culur: "red" }, "div{}"],
-])("should render selector content correctly | case '%s':'%s'", (selector, content, expected) => {
-    expect(render(selector, content)).toBe(expected);
-});
+])(
+    "should render selector content correctly | case '%s':'%s'",
+    (selector, content, expected) => {
+        expect(render(selector, content)).toBe(expected);
+    }
+);

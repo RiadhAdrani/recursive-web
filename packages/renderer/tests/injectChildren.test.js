@@ -19,7 +19,11 @@ it("should inject many children", () => {
     const renderer = app(() =>
         createElement("span", {
             id: "myId",
-            children: [createElement("p"), createElement("p"), createElement("p")],
+            children: [
+                createElement("p"),
+                createElement("p"),
+                createElement("p"),
+            ],
         })
     ).renderer;
 

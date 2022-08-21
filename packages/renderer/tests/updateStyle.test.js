@@ -10,7 +10,9 @@ it("should update inline style attribute", () => {
         createElement("span", { style: { inline: { color: "red" } } })
     ).renderer;
 
-    const newElement = createElement("span", { style: { inline: { color: "blue" } } });
+    const newElement = createElement("span", {
+        style: { inline: { color: "blue" } },
+    });
 
     renderer.render();
 
@@ -24,7 +26,9 @@ it("should reset non-existing attributes in the new element", () => {
         createElement("span", { style: { inline: { color: "red" } } })
     ).renderer;
 
-    const newElement = createElement("span", { style: { inline: { backgroundColor: "blue" } } });
+    const newElement = createElement("span", {
+        style: { inline: { backgroundColor: "blue" } },
+    });
 
     renderer.render();
 

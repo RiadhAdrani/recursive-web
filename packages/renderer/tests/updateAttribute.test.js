@@ -16,7 +16,9 @@ it("should update a given attribute", () => {
 });
 
 it("should update a togglable attribute", () => {
-    const renderer = app(() => createElement("input", { checked: false })).renderer;
+    const renderer = app(() =>
+        createElement("input", { checked: false })
+    ).renderer;
 
     renderer.render();
 

@@ -14,7 +14,10 @@ let selector = "";
 function toUpperCamelCase(input = "") {
     const sequence = input.split(/[\s-]/);
 
-    return sequence.reduce((sum, value) => sum + value[0].toUpperCase() + value.substring(1), "");
+    return sequence.reduce(
+        (sum, value) => sum + value[0].toUpperCase() + value.substring(1),
+        ""
+    );
 }
 
 function makeUtil(key, object) {

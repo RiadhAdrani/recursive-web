@@ -1,11 +1,17 @@
 const { is, render, renderValue, validValue } = require("../CssProperties");
 
-it.each([[undefined], [null], [""], [{}], [0], [[]], ["string"], ["anImaginaryProperty"]])(
-    "should ignore invalid falsy values and data types | case '%s'",
-    (input) => {
-        expect(is(input)).toBe(false);
-    }
-);
+it.each([
+    [undefined],
+    [null],
+    [""],
+    [{}],
+    [0],
+    [[]],
+    ["string"],
+    ["anImaginaryProperty"],
+])("should ignore invalid falsy values and data types | case '%s'", (input) => {
+    expect(is(input)).toBe(false);
+});
 
 it.each([
     [undefined],
@@ -59,6 +65,9 @@ it.each([
     ["color", "red", "color: red;"],
     ["backgroundColor", "blue", "background-color: blue;"],
     ["borderTopLeftRadius", "10px", "border-top-left-radius: 10px;"],
-])("should render '{property}:{value}' correctly | case '%s'", (property, value, expected) => {
-    expect(render(property, value)).toBe(expected);
-});
+])(
+    "should render '{property}:{value}' correctly | case '%s'",
+    (property, value, expected) => {
+        expect(render(property, value)).toBe(expected);
+    }
+);

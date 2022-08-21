@@ -1,6 +1,10 @@
 const { Console } = require("../../../use");
 const { isValidName } = require("../CssAnimations");
-const { get: getSelector, is, customSelectorAlreadyExist } = require("../CssSelectors");
+const {
+    get: getSelector,
+    is,
+    customSelectorAlreadyExist,
+} = require("../CssSelectors");
 
 /**
  * Process the given component stylesheet and convert it into a unified format.
@@ -57,13 +61,21 @@ function processComponentStyleSheet(styleSheet) {
                             if (!output.mediaQueries[query.condition])
                                 output.mediaQueries[query.condition] = {};
 
-                            output.mediaQueries[query.condition][res.key] = res.content;
+                            output.mediaQueries[query.condition][res.key] =
+                                res.content;
                         }
                     }
                 });
                 break;
             default:
-                if (["className", "scoped", "mediaQueries", "animations"].includes(key)) {
+                if (
+                    [
+                        "className",
+                        "scoped",
+                        "mediaQueries",
+                        "animations",
+                    ].includes(key)
+                ) {
                     break;
                 }
 
@@ -77,7 +89,11 @@ function processComponentStyleSheet(styleSheet) {
                     }
                 }
 
-                const res = makeSelectorObject(styleSheet.className, key, styleSheet[key]);
+                const res = makeSelectorObject(
+                    styleSheet.className,
+                    key,
+                    styleSheet[key]
+                );
 
                 if (res) {
                     if (!output.selectors) output.selectors = {};

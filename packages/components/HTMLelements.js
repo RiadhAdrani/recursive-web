@@ -196,7 +196,11 @@ const Elements = {
         ],
     },
     Ol: {
-        props: { reversed: "boolean", start: "string", type: `"a"|"A"|"i"|"I"|"1"` },
+        props: {
+            reversed: "boolean",
+            start: "string",
+            type: `"a"|"A"|"i"|"I"|"1"`,
+        },
         type: "HTMLElement",
         docs: [
             "The ``<ol>`` HTML element represents an ordered list of items — typically rendered as a numbered list.",
@@ -241,7 +245,9 @@ const Elements = {
     Abbr: {
         props: {},
         type: "HTMLElement",
-        docs: ["The ``<abbr>`` HTML element represents an abbreviation or acronym."],
+        docs: [
+            "The ``<abbr>`` HTML element represents an abbreviation or acronym.",
+        ],
     },
     B: {
         props: {},
@@ -490,7 +496,13 @@ const Elements = {
         ],
     },
     Track: {
-        props: { def: "string", kind: "string", label: "string", src: "string", srcLang: "string" },
+        props: {
+            def: "string",
+            kind: "string",
+            label: "string",
+            src: "string",
+            srcLang: "string",
+        },
         childless: true,
         docs: [
             "The ``<track>`` HTML element is used as a child of the media elements, audio and video. It lets you specify timed text tracks (or time-based data), for example to automatically handle subtitles. The tracks are formatted in WebVTT format (.vtt files) — Web Video Text Tracks.",
@@ -514,7 +526,12 @@ const Elements = {
         ],
     },
     Embed: {
-        props: { height: "number", src: "string", type: "string", width: "number" },
+        props: {
+            height: "number",
+            src: "string",
+            type: "string",
+            width: "number",
+        },
         type: "HTMLElement",
         docs: [
             "The ``<embed>`` HTML element embeds external content at the specified point in the document. This content is provided by an external application or other source of interactive content such as a browser plug-in.",
@@ -605,7 +622,9 @@ const Elements = {
     Caption: {
         props: {},
         type: "HTMLElement",
-        docs: ["The ``<caption>`` HTML element specifies the caption (or title) of a table."],
+        docs: [
+            "The ``<caption>`` HTML element specifies the caption (or title) of a table.",
+        ],
     },
     Col: {
         props: { span: "number" },
@@ -617,7 +636,9 @@ const Elements = {
     Colgroup: {
         props: { span: "number" },
         type: "HTMLElement",
-        docs: ["The ``<colgroup>`` HTML element defines a group of columns within a table."],
+        docs: [
+            "The ``<colgroup>`` HTML element defines a group of columns within a table.",
+        ],
     },
     Table: {
         props: {},

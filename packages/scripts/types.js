@@ -83,7 +83,8 @@ for (let prop in attrs) {
     }
 }
 
-let htmlCommonInterface = "export interface HTMLAttributes extends CommonAttributes, Events {";
+let htmlCommonInterface =
+    "export interface HTMLAttributes extends CommonAttributes, Events {";
 
 for (let prop of gProps) {
     let values = "";

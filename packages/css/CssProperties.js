@@ -56,7 +56,9 @@ function renderValue(value, propertyName) {
         if (validValue(item)) {
             _value += ` ${item}`;
         } else {
-            Console.warn(`CSS: value "${item}" of property "${propertyName}" has been ignored.`);
+            Console.warn(
+                `CSS: value "${item}" of property "${propertyName}" has been ignored.`
+            );
         }
     });
 

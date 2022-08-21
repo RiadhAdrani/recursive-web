@@ -1,9 +1,20 @@
-const { get: getAtt, is: isAttt, isToggle } = require("../dom/DomAttributes.js");
-const { get: getEv, is: isEv, getListener, hasHandler } = require("../dom/DomEvents.js");
+const {
+    get: getAtt,
+    is: isAttt,
+    isToggle,
+} = require("../dom/DomAttributes.js");
+const {
+    get: getEv,
+    is: isEv,
+    getListener,
+    hasHandler,
+} = require("../dom/DomEvents.js");
 const RecursiveCSSOM = require("../css/");
 const { Console, Renderer } = require("../../use.js");
 const { renderValue } = require("../css/CssProperties.js");
-const { ELEMENT_TYPE_TEXT_NODE } = require("@riadh-adrani/recursive/packages/constants/index.js");
+const {
+    ELEMENT_TYPE_TEXT_NODE,
+} = require("@riadh-adrani/recursive/packages/constants/index.js");
 const { HTML_CONTAINER } = require("../constants/index.js");
 
 /**
@@ -87,12 +98,15 @@ class RecursiveWebRenderer extends Renderer {
             if (hasHandler(eventName)) {
                 getEv(eventName).handler(element.instance);
             } else {
-                element.instance.addEventListener(getListener(eventName), (e) => {
-                    this.orchestrator.batchCallback(
-                        () => element.instance.events[eventName](e),
-                        eventName
-                    );
-                });
+                element.instance.addEventListener(
+                    getListener(eventName),
+                    (e) => {
+                        this.orchestrator.batchCallback(
+                            () => element.instance.events[eventName](e),
+                            eventName
+                        );
+                    }
+                );
             }
         }
     }
@@ -119,7 +133,10 @@ class RecursiveWebRenderer extends Renderer {
                 }
             } else {
                 if (isToggle(key)) {
-                    instance.toggleAttribute(getAtt(key), element.attributes[key] == true);
+                    instance.toggleAttribute(
+                        getAtt(key),
+                        element.attributes[key] == true
+                    );
                 } else {
                     instance.setAttribute(getAtt(key), element.attributes[key]);
                 }
@@ -128,7 +145,10 @@ class RecursiveWebRenderer extends Renderer {
 
         if (element.style && element.style.inline) {
             for (let prop in element.style.inline) {
-                instance.style[prop] = renderValue(element.style.inline[prop], prop);
+                instance.style[prop] = renderValue(
+                    element.style.inline[prop],
+                    prop
+                );
             }
         }
     }
@@ -179,13 +199,16 @@ class RecursiveWebRenderer extends Renderer {
         let inline = {};
         let newInline = {};
 
-        if (element.style && element.style.inline) inline = element.style.inline;
-        if (newElement.style && newElement.style.inline) newInline = newElement.style.inline;
+        if (element.style && element.style.inline)
+            inline = element.style.inline;
+        if (newElement.style && newElement.style.inline)
+            newInline = newElement.style.inline;
 
         const combined = { ...inline, ...newInline };
 
         for (let key in combined) {
-            element.instance.style[key] = newInline[key] != undefined ? combined[key] : "";
+            element.instance.style[key] =
+                newInline[key] != undefined ? combined[key] : "";
         }
     }
 
@@ -204,7 +227,10 @@ class RecursiveWebRenderer extends Renderer {
                 getEv(ev).handler(instance);
             } else {
                 instance.addEventListener(getListener(ev), (e) => {
-                    this.orchestrator.batchCallback(() => instance.events[ev](e), ev);
+                    this.orchestrator.batchCallback(
+                        () => instance.events[ev](e),
+                        ev
+                    );
                 });
             }
         }
@@ -216,7 +242,9 @@ class RecursiveWebRenderer extends Renderer {
      * @param {HTMLElement} instance
      */
     useRendererInjectChildren(element, instance) {
-        element.children.forEach((child) => instance.append(this.renderInstance(child)));
+        element.children.forEach((child) =>
+            instance.append(this.renderInstance(child))
+        );
     }
 
     /**
@@ -245,7 +273,9 @@ class RecursiveWebRenderer extends Renderer {
                 .map((char, index) => {
                     return ((n) => {
                         const _char = pool[n % length];
-                        return index % 3 == 0 && index != 0 ? _char.toUpperCase() : _char;
+                        return index % 3 == 0 && index != 0
+                            ? _char.toUpperCase()
+                            : _char;
                     })(char.charCodeAt() + sum + index);
                 })
                 .join("");
@@ -261,7 +291,10 @@ class RecursiveWebRenderer extends Renderer {
      * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
      */
     resolveClassName(element) {
-        if (element.style && (element.style.scoped || element.style.className)) {
+        if (
+            element.style &&
+            (element.style.scoped || element.style.className)
+        ) {
             let _class = element.style.className || "";
 
             if (element.style.scoped) {
@@ -270,10 +303,12 @@ class RecursiveWebRenderer extends Renderer {
                 _class += `_${this.transformUid(element.uid)}`;
             }
 
-            if (element.attributes.className) element.attributes.className += " ";
+            if (element.attributes.className)
+                element.attributes.className += " ";
             else element.attributes.className = "";
 
-            element.attributes.className = element.attributes.className + _class;
+            element.attributes.className =
+                element.attributes.className + _class;
             element.style.className = _class;
         }
     }
@@ -284,7 +319,10 @@ class RecursiveWebRenderer extends Renderer {
      * @returns
      */
     isExternalStyleSheet(styleSheet) {
-        return styleSheet && Object.keys(styleSheet).filter((key) => key != "inline").length > 0;
+        return (
+            styleSheet &&
+            Object.keys(styleSheet).filter((key) => key != "inline").length > 0
+        );
     }
 
     /**
@@ -307,7 +345,9 @@ class RecursiveWebRenderer extends Renderer {
             if (element.style.className) {
                 output.push(element.style);
             } else {
-                Console.warn("CSS: no className detected and therefore style will be ignored");
+                Console.warn(
+                    "CSS: no className detected and therefore style will be ignored"
+                );
             }
         }
 

@@ -39,5 +39,7 @@ it("should add a raw element", () => {
         renderer.current
     );
 
-    expect(document.body.children.item(0).children.item(0).innerHTML).toBe("<p>Hello</p>");
+    expect(document.body.children.item(0).children.item(0).innerHTML).toBe(
+        "<p>Hello</p>"
+    );
 });

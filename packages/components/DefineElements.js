@@ -1,4 +1,10 @@
-const { COLUMN_VIEW, ROW_VIEW, LAZY_COLUMN, LAZY_ROW, HTML_CONTAINER } = require("../constants");
+const {
+    COLUMN_VIEW,
+    ROW_VIEW,
+    LAZY_COLUMN,
+    LAZY_ROW,
+    HTML_CONTAINER,
+} = require("../constants");
 const { View, addDefaultStyle } = require("./View");
 
 class Column extends View {

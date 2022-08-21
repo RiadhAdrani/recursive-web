@@ -66,11 +66,19 @@ class RecursiveWebRouter extends Router {
     }
 
     useRouterReplaceState(destination, routeForm, hash) {
-        history.replaceState({ route: destination }, "", this.useRouterMakeURL(destination));
+        history.replaceState(
+            { route: destination },
+            "",
+            this.useRouterMakeURL(destination)
+        );
     }
 
     useRouterPushState(destination, routeForm, hash) {
-        history.pushState({ route: destination }, "", this.useRouterMakeURL(destination));
+        history.pushState(
+            { route: destination },
+            "",
+            this.useRouterMakeURL(destination)
+        );
     }
 
     /**

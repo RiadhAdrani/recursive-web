@@ -3,7 +3,8 @@ const handler = (store, type = "Event", docs = []) => {
         listener: store,
         on: "on" + store,
         handler: (element) => {
-            if (window[store] && window[store].items) window[store].items.push(element);
+            if (window[store] && window[store].items)
+                window[store].items.push(element);
         },
         type,
         docs,

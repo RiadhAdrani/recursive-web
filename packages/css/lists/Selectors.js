@@ -53,8 +53,14 @@ const List = {
     webkitScrollbar: { css: "::-webkit-scrollbar", support: {} },
     webkitScrollbarTrack: { css: "::-webkit-scrollbar-track", support: {} },
     webkitScrollbarThumb: { css: "::-webkit-scrollbar-thumb", support: {} },
-    webkitScrollbarThumbHover: { css: "::-webkit-scrollbar-thumb:hover", support: {} },
-    webkitScrollbarThumbActive: { css: "::-webkit-scrollbar-thumb:active", support: {} },
+    webkitScrollbarThumbHover: {
+        css: "::-webkit-scrollbar-thumb:hover",
+        support: {},
+    },
+    webkitScrollbarThumbActive: {
+        css: "::-webkit-scrollbar-thumb:active",
+        support: {},
+    },
 };
 
 module.exports = { List };

@@ -9,7 +9,10 @@ function beforeEach() {
 function app() {
     beforeEach();
 
-    const _app = new RecursiveWebApp({ app: () => createElement("div"), root: document.body });
+    const _app = new RecursiveWebApp({
+        app: () => createElement("div"),
+        root: document.body,
+    });
 
     _app.render();
 

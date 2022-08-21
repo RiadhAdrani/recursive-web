@@ -1,12 +1,20 @@
 const on = require("./on.js");
 
-const onGlobal = (orchestrator, winEvent, store, listener, checkTarget = true) => {
+const onGlobal = (
+    orchestrator,
+    winEvent,
+    store,
+    listener,
+    checkTarget = true
+) => {
     if (window[store]) {
         return;
     }
 
     function clean() {
-        window[store].items = window[store].items.filter((ele) => document.contains(ele));
+        window[store].items = window[store].items.filter((ele) =>
+            document.contains(ele)
+        );
     }
 
     function notify(target) {

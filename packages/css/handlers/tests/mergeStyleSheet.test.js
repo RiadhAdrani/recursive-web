@@ -1,11 +1,17 @@
 const mergeStyleSheets = require("../mergeStyleSheets");
 
-it.each([[undefined], [null], [""], [{}], [0], [[]], ["string"], [{ noAValidKey: {} }]])(
-    "input '%s' should be empty value",
-    (input) => {
-        expect(mergeStyleSheets(input)).toStrictEqual({});
-    }
-);
+it.each([
+    [undefined],
+    [null],
+    [""],
+    [{}],
+    [0],
+    [[]],
+    ["string"],
+    [{ noAValidKey: {} }],
+])("input '%s' should be empty value", (input) => {
+    expect(mergeStyleSheets(input)).toStrictEqual({});
+});
 
 it.each([["div"], [".div"], ["#div"], ["div:hover"], [""]])(
     "selector '%s' to be valid",
@@ -36,7 +42,9 @@ it("should override duplicate selectors", () => {
         },
     ];
 
-    expect(mergeStyleSheets(object)).toStrictEqual({ selectors: { ".div": { color: "blue" } } });
+    expect(mergeStyleSheets(object)).toStrictEqual({
+        selectors: { ".div": { color: "blue" } },
+    });
 });
 
 it.each([[undefined], [null], [0], ["name"], [true], [Symbol.for()], [{}]])(
@@ -55,7 +63,9 @@ it.each([[undefined], [null], [0], ["name"], [true], [Symbol.for()], [{}]])(
             },
         ];
 
-        expect(mergeStyleSheets(object)).toStrictEqual({ selectors: { ".div": { color: "red" } } });
+        expect(mergeStyleSheets(object)).toStrictEqual({
+            selectors: { ".div": { color: "red" } },
+        });
     }
 );
 
@@ -72,7 +82,12 @@ it("should convert animations", () => {
     ];
 
     expect(mergeStyleSheets(object)).toStrictEqual({
-        animations: { customAnimation: { "0%": { color: "red" }, "100%": { color: "blue" } } },
+        animations: {
+            customAnimation: {
+                "0%": { color: "red" },
+                "100%": { color: "blue" },
+            },
+        },
     });
 });
 
@@ -107,7 +122,9 @@ it.each([[undefined], [null], [0], ["name"], [true], [Symbol.for()], [{}]])(
             },
         ];
 
-        expect(mergeStyleSheets(object)).toStrictEqual({ animations: { anim: { color: "red" } } });
+        expect(mergeStyleSheets(object)).toStrictEqual({
+            animations: { anim: { color: "red" } },
+        });
     }
 );
 
@@ -123,7 +140,12 @@ it("should convert media query", () => {
     ];
 
     expect(mergeStyleSheets(object)).toStrictEqual({
-        mediaQueries: [{ condition: "customMediaQuery", selectors: { normal: { color: "red" } } }],
+        mediaQueries: [
+            {
+                condition: "customMediaQuery",
+                selectors: { normal: { color: "red" } },
+            },
+        ],
     });
 });
 

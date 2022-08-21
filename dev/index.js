@@ -7,7 +7,9 @@ const App = new RecursiveWebApp({
     app: () => {
         return Div({
             children: [
-                HtmlContainer({ children: ["<p>One</p>", {}, 0, 1, "<h1>yeet</h2>"] }),
+                HtmlContainer({
+                    children: ["<p>One</p>", {}, 0, 1, "<h1>yeet</h2>"],
+                }),
                 Input({ contentEditable: "true", placeholder: "Hello World" }),
                 Svg({ style: { onlyOfType: {}, left: {}, onlyChild: {} } }),
             ],

@@ -35,7 +35,9 @@ import {createElement} from "..";`;
             HTML_NS,
             `${element}Props`,
             Custom[element],
-            Custom[element].handler ? `CustomElements.items.${element}.handler(el);` : null
+            Custom[element].handler
+                ? `CustomElements.items.${element}.handler(el);`
+                : null
         );
     }
 
@@ -45,7 +47,10 @@ import {createElement} from "..";`;
     const path = require("path");
 
     try {
-        fs.writeFileSync(path.resolve(__dirname, "../../html/index.js"), output);
+        fs.writeFileSync(
+            path.resolve(__dirname, "../../html/index.js"),
+            output
+        );
         console.log("HTML Element written");
     } catch (error) {
         console.log("Failed to write HTML ELEMENTS");

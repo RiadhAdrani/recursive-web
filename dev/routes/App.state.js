@@ -27,13 +27,19 @@ export default () => {
                         children: [`<p>state = <strong>${value}</strong></p>`],
                         style: { inline: { padding: "10px" } },
                     }),
-                    Button({ children: "+1", onClick: () => setValue(value + 1) }),
+                    Button({
+                        children: "+1",
+                        onClick: () => setValue(value + 1),
+                    }),
                 ],
             }),
             Row({
                 style: {
                     scoped: true,
-                    normal: { justifyContent: "space-between", alignItems: "stretch" },
+                    normal: {
+                        justifyContent: "space-between",
+                        alignItems: "stretch",
+                    },
                 },
                 children: [
                     P({ children: "setCache()" }),
@@ -54,17 +60,24 @@ export default () => {
             Row({
                 style: {
                     scoped: true,
-                    normal: { justifyContent: "space-between", alignItems: "stretch" },
+                    normal: {
+                        justifyContent: "space-between",
+                        alignItems: "stretch",
+                    },
                 },
                 children: [
                     P({ children: "getRef()", id: "ref" }),
-                    P({ children: "Colorful Text", hooks: { onRef: () => "get-ref" } }),
+                    P({
+                        children: "Colorful Text",
+                        hooks: { onRef: () => "get-ref" },
+                    }),
                     Button({
                         children: "change to random color",
                         onClick: () => {
                             const element = App.getRef("get-ref");
 
-                            const randomNumber = () => Math.floor(Math.random() * 256);
+                            const randomNumber = () =>
+                                Math.floor(Math.random() * 256);
 
                             element.style.color = rgb(
                                 randomNumber(),

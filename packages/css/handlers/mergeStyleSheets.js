@@ -13,12 +13,15 @@ function mergeStyleSheets(styleSheets) {
     function isValidSelectorContent(content) {
         if (
             [null, undefined].includes(content) ||
-            ["string", "number", "bigint", "boolean", "symbol"].includes(typeof content) ||
+            ["string", "number", "bigint", "boolean", "symbol"].includes(
+                typeof content
+            ) ||
             Array.isArray(content)
         )
             return false;
 
-        if (typeof content == "object" && Object.keys(content).length == 0) return false;
+        if (typeof content == "object" && Object.keys(content).length == 0)
+            return false;
 
         return true;
     }
@@ -33,11 +36,17 @@ function mergeStyleSheets(styleSheets) {
                         if (!sheet.animations) break;
 
                         for (let animation in sheet.animations) {
-                            if (!isValidSelectorContent(sheet.animations[animation])) continue;
+                            if (
+                                !isValidSelectorContent(
+                                    sheet.animations[animation]
+                                )
+                            )
+                                continue;
 
                             if (!output.animations) output.animations = {};
 
-                            output.animations[animation] = sheet.animations[animation];
+                            output.animations[animation] =
+                                sheet.animations[animation];
                         }
                     }
                     break;
@@ -48,7 +57,8 @@ function mergeStyleSheets(styleSheets) {
                         for (let query in sheet.mediaQueries) {
                             const currentQuery = sheet.mediaQueries[query];
 
-                            if (!isValidMediaQueryDeclaration(currentQuery)) continue;
+                            if (!isValidMediaQueryDeclaration(currentQuery))
+                                continue;
 
                             if (!output.mediaQueries) output.mediaQueries = [];
 
@@ -61,12 +71,15 @@ function mergeStyleSheets(styleSheets) {
 
                             for (let exQuery in output.mediaQueries) {
                                 const exQueryComp = {
-                                    condition: output.mediaQueries[exQuery].condition,
-                                    selectors: output.mediaQueries[exQuery].selectors,
+                                    condition:
+                                        output.mediaQueries[exQuery].condition,
+                                    selectors:
+                                        output.mediaQueries[exQuery].selectors,
                                 };
 
                                 if (
-                                    JSON.stringify(exQueryComp) === JSON.stringify(queryToBeAdded)
+                                    JSON.stringify(exQueryComp) ===
+                                    JSON.stringify(queryToBeAdded)
                                 ) {
                                     isValid = false;
                                     break;
@@ -101,7 +114,10 @@ function mergeStyleSheets(styleSheets) {
                         for (let v in sheet.var) {
                             if (!output.var) output.var = {};
 
-                            if (typeof sheet.var[v] == "string" && sheet.var[v].trim()) {
+                            if (
+                                typeof sheet.var[v] == "string" &&
+                                sheet.var[v].trim()
+                            ) {
                                 output.var[v] = sheet.var[v];
                             }
                         }
@@ -126,13 +142,19 @@ function mergeStyleSheets(styleSheets) {
                         if (!sheet.selectors) break;
 
                         for (let selector in sheet.selectors) {
-                            if (!isValidSelectorContent(sheet.selectors[selector])) continue;
+                            if (
+                                !isValidSelectorContent(
+                                    sheet.selectors[selector]
+                                )
+                            )
+                                continue;
 
                             if (!output.selectors) output.selectors = {};
 
                             // TODO : solve conflicts
 
-                            output.selectors[selector] = sheet.selectors[selector];
+                            output.selectors[selector] =
+                                sheet.selectors[selector];
                         }
                     }
                     break;

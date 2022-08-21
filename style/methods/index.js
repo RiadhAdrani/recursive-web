@@ -334,7 +334,24 @@ export function matrix(a, b, c, d, tx, ty) {
  * @param {*} d4
  * @returns
  */
-export function matrix3D(a1, b1, c1, d1, a2, b2, c2, d2, a3, b3, c3, d3, a4, b4, c4, d4) {
+export function matrix3D(
+    a1,
+    b1,
+    c1,
+    d1,
+    a2,
+    b2,
+    c2,
+    d2,
+    a3,
+    b3,
+    c3,
+    d3,
+    a4,
+    b4,
+    c4,
+    d4
+) {
     return `matrix3d(${joinArgs(
         [a1, b1, c1, d1, a2, b2, c2, d2, a3, b3, c3, d3, a4, b4, c4, d4],
         ", "
@@ -623,7 +640,9 @@ export function scaleX(amount) {
  * @param {import("../../lib").Edges} input
  */
 export function edges(input) {
-    if (![input.top, input.right, input.bottom, input.left].includes(undefined)) {
+    if (
+        ![input.top, input.right, input.bottom, input.left].includes(undefined)
+    ) {
         return [input.top, input.right, input.bottom, input.left];
     }
 
@@ -649,8 +668,20 @@ export function edges(input) {
  * @param {import("../../lib").Corners} input
  */
 export function corners(input) {
-    if (![input.topLeft, input.topRight, input.bottomLeft, input.Right].includes(undefined)) {
-        return [input.topLeft, input.topRight, input.bottomRight, input.bottomLeft];
+    if (
+        ![
+            input.topLeft,
+            input.topRight,
+            input.bottomLeft,
+            input.Right,
+        ].includes(undefined)
+    ) {
+        return [
+            input.topLeft,
+            input.topRight,
+            input.bottomRight,
+            input.bottomLeft,
+        ];
     }
 
     if (![input.top, input.bottom].includes(undefined)) {
@@ -661,7 +692,11 @@ export function corners(input) {
         return [input.left, input.right, input.right, input.left];
     }
 
-    if (![input.topLeftBottomRight, input.topRightBottomLeft].includes(undefined)) {
+    if (
+        ![input.topLeftBottomRight, input.topRightBottomLeft].includes(
+            undefined
+        )
+    ) {
         return [input.topLeftBottomRight, input.topRightBottomLeft];
     }
 

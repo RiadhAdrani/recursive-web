@@ -28,7 +28,9 @@ module.exports = {
         type: "normal",
         values: "string",
         els: ["form"],
-        docs: ["The URI of a program that processes the information submitted via the form."],
+        docs: [
+            "The URI of a program that processes the information submitted via the form.",
+        ],
     },
     align: {
         name: "align",
@@ -78,7 +80,9 @@ module.exports = {
         type: "normal",
         els: true,
         values: ["off", "none", "on", "sentences", "words", "characters"],
-        docs: ["Sets whether input is automatically capitalized when entered by user"],
+        docs: [
+            "Sets whether input is automatically capitalized when entered by user",
+        ],
     },
     autoComplete: {
         name: "autocomplete",
@@ -142,7 +146,9 @@ module.exports = {
         type: "toggle",
         values: "string",
         els: ["button", "input", "keygen", "select", "textarea"],
-        docs: ["The element should be automatically focused after the page loaded."],
+        docs: [
+            "The element should be automatically focused after the page loaded.",
+        ],
     },
     autoplay: {
         name: "autoplay",
@@ -150,7 +156,12 @@ module.exports = {
         values: "boolean",
         docs: ["The audio or video should play as soon as possible."],
     },
-    allowFullScreen: { name: "allowfullscreen", type: "toggle", values: "boolean", docs: [] },
+    allowFullScreen: {
+        name: "allowfullscreen",
+        type: "toggle",
+        values: "boolean",
+        docs: [],
+    },
     allowPaymentRequest: {
         name: "allowpaymentrequest",
         type: "toggle",
@@ -175,7 +186,18 @@ module.exports = {
         name: "bgcolor",
         type: "normal",
         values: "string",
-        els: ["body", "col", "colgroup", "marquee", "table", "tbody", "tfoot", "td", "th", "tr"],
+        els: [
+            "body",
+            "col",
+            "colgroup",
+            "marquee",
+            "table",
+            "tbody",
+            "tfoot",
+            "td",
+            "th",
+            "tr",
+        ],
         docs: ["Background color of the element."],
     },
     border: {
@@ -197,14 +219,18 @@ module.exports = {
         type: "normal",
         values: ["user", "environment"],
         els: ["input"],
-        docs: ["From the Media Capture specification, specifies a new file can be captured."],
+        docs: [
+            "From the Media Capture specification, specifies a new file can be captured.",
+        ],
     },
     challenge: {
         name: "challenge",
         type: "normal",
         values: "string",
         els: ["keygen"],
-        docs: ["A challenge string that is submitted along with the public key."],
+        docs: [
+            "A challenge string that is submitted along with the public key.",
+        ],
     },
     charSet: {
         name: "charset",
@@ -225,7 +251,9 @@ module.exports = {
         type: "normal",
         values: "string",
         els: ["blockquote", "del", "ins", "q"],
-        docs: ["Contains a URI which points to the source of the quote or change."],
+        docs: [
+            "Contains a URI which points to the source of the quote or change.",
+        ],
     },
     className: {
         name: "class",
@@ -239,7 +267,9 @@ module.exports = {
         type: "normal",
         values: "string",
         els: ["applet"],
-        docs: ["Specifies the URL of the applet's class file to be loaded and executed."],
+        docs: [
+            "Specifies the URL of the applet's class file to be loaded and executed.",
+        ],
     },
     codeBase: {
         name: "codebase",
@@ -271,14 +301,18 @@ module.exports = {
         type: "normal",
         values: "string",
         els: ["td", "th"],
-        docs: ["The colspan attribute defines the number of columns a cell should span."],
+        docs: [
+            "The colspan attribute defines the number of columns a cell should span.",
+        ],
     },
     content: {
         name: "content",
         type: "string",
         values: "string",
         els: ["meta"],
-        docs: ["A value associated with http-equiv or name depending on the context."],
+        docs: [
+            "A value associated with http-equiv or name depending on the context.",
+        ],
     },
     contentEditable: {
         name: "contenteditable",
@@ -301,7 +335,9 @@ module.exports = {
         type: "toggle",
         values: "string",
         els: ["audio", "video"],
-        docs: ["Indicates whether the browser should show playback controls to the user."],
+        docs: [
+            "Indicates whether the browser should show playback controls to the user.",
+        ],
     },
     compact: {
         name: "compact",
@@ -315,7 +351,9 @@ module.exports = {
         type: "normal",
         values: "string",
         els: ["area"],
-        docs: ["A set of values specifying the coordinates of the hot-spot region."],
+        docs: [
+            "A set of values specifying the coordinates of the hot-spot region.",
+        ],
     },
     crossOrigin: {
         name: "crossorigin",
@@ -375,7 +413,9 @@ module.exports = {
         type: "normal",
         values: "string",
         els: ["script"],
-        docs: ["Indicates that the script should be executed after the page has been parsed."],
+        docs: [
+            "Indicates that the script should be executed after the page has been parsed.",
+        ],
     },
     dir: {
         name: "dir",
@@ -415,7 +455,9 @@ module.exports = {
         type: "normal",
         values: "string",
         els: ["a", "area"],
-        docs: ["Indicates that the hyperlink is to be used for downloading a resource."],
+        docs: [
+            "Indicates that the hyperlink is to be used for downloading a resource.",
+        ],
     },
     draggable: {
         name: "draggable",
@@ -427,9 +469,15 @@ module.exports = {
     encType: {
         name: "enctype",
         type: "normal",
-        values: ["application/x-www-form-urlencoded", "multipart/form-data", "text/plain"],
+        values: [
+            "application/x-www-form-urlencoded",
+            "multipart/form-data",
+            "text/plain",
+        ],
         els: ["form"],
-        docs: ["Defines the content type of the form data when the method is POST."],
+        docs: [
+            "Defines the content type of the form data when the method is POST.",
+        ],
     },
     entryKeyHint: {
         name: "entrykeyhint",
@@ -464,7 +512,9 @@ module.exports = {
         type: "normal",
         values: "string",
         els: ["button", "input"],
-        docs: ["Indicates the action of the element, overriding the action defined in the <form>."],
+        docs: [
+            "Indicates the action of the element, overriding the action defined in the <form>.",
+        ],
     },
     formEncType: {
         name: "formenctype",
@@ -612,7 +662,16 @@ module.exports = {
     inputMode: {
         name: "inputmode",
         type: "normal",
-        values: ["none", "text", "decimal", "numeric", "tel", "search", "email", "url"],
+        values: [
+            "none",
+            "text",
+            "decimal",
+            "numeric",
+            "tel",
+            "search",
+            "email",
+            "url",
+        ],
         els: ["textarea", "contenteditable"],
         docs: [
             "Provides a hint as to the type of data that might be entered by the user while editing the element or its contents. The attribute can be used with form controls (such as the value of textarea elements), or in elements in an editing host (e.g., using contenteditable attribute).",
@@ -625,7 +684,13 @@ module.exports = {
         els: ["img"],
         docs: ["Indicates that the image is part of a server-side image map."],
     },
-    itemProp: { name: "itemprop", type: "normal", values: "string", els: true, docs: [] },
+    itemProp: {
+        name: "itemprop",
+        type: "normal",
+        values: "string",
+        els: true,
+        docs: [],
+    },
     keyType: {
         name: "keytype",
         type: "normal",
@@ -636,7 +701,13 @@ module.exports = {
     kind: {
         name: "kind",
         type: "normal",
-        values: ["subtitles", "captions", "descriptions", "chapters", "metadata"],
+        values: [
+            "subtitles",
+            "captions",
+            "descriptions",
+            "chapters",
+            "metadata",
+        ],
         els: ["track"],
         docs: ["Specifies the kind of text track."],
     },
@@ -675,7 +746,9 @@ module.exports = {
         type: "normal",
         values: "string",
         els: ["input"],
-        docs: ["Identifies a list of pre-defined options to suggest to the user."],
+        docs: [
+            "Identifies a list of pre-defined options to suggest to the user.",
+        ],
     },
     loop: {
         name: "loop",
@@ -712,21 +785,27 @@ module.exports = {
         type: "normal",
         values: "string",
         els: ["input", "textarea"],
-        docs: ["Defines the maximum number of characters allowed in the element."],
+        docs: [
+            "Defines the maximum number of characters allowed in the element.",
+        ],
     },
     minLength: {
         name: "minLength",
         type: "normal",
         values: "string",
         els: ["input", "textarea"],
-        docs: ["Defines the minimum number of characters allowed in the element."],
+        docs: [
+            "Defines the minimum number of characters allowed in the element.",
+        ],
     },
     media: {
         name: "media",
         type: "normal",
         values: "string",
         els: ["a", "area", "link", "source", "style"],
-        docs: ["Specifies a hint of the media for which the linked resource was designed."],
+        docs: [
+            "Specifies a hint of the media for which the linked resource was designed.",
+        ],
     },
     method: {
         name: "method",
@@ -758,7 +837,9 @@ module.exports = {
         type: "toggle",
         values: "boolean",
         els: ["audio", "video"],
-        docs: ["Indicates whether the audio will be initially silenced on page load."],
+        docs: [
+            "Indicates whether the audio will be initially silenced on page load.",
+        ],
     },
     name: {
         name: "name",
@@ -797,7 +878,9 @@ module.exports = {
         type: "normal",
         values: "string",
         els: ["form"],
-        docs: ["This attribute indicates that the form shouldn't be validated when submitted."],
+        docs: [
+            "This attribute indicates that the form shouldn't be validated when submitted.",
+        ],
     },
     open: {
         name: "open",
@@ -820,7 +903,9 @@ module.exports = {
         type: "normal",
         values: "string",
         els: ["input"],
-        docs: ["Defines a regular expression which the element's value will be validated against."],
+        docs: [
+            "Defines a regular expression which the element's value will be validated against.",
+        ],
     },
     ping: {
         name: "ping",
@@ -836,14 +921,18 @@ module.exports = {
         type: "normal",
         values: "string",
         els: ["input", "textarea"],
-        docs: ["Provides a hint to the user of what can be entered in the field."],
+        docs: [
+            "Provides a hint to the user of what can be entered in the field.",
+        ],
     },
     poster: {
         name: "poster",
         type: "normal",
         values: "string",
         els: ["video"],
-        docs: ["A URL indicating a poster frame to show until the user plays or seeks."],
+        docs: [
+            "A URL indicating a poster frame to show until the user plays or seeks.",
+        ],
     },
     playsInline: {
         name: "playsinline",
@@ -857,7 +946,9 @@ module.exports = {
         type: "normal",
         values: "string",
         els: ["audio", "video"],
-        docs: ["Indicates whether the whole resource, parts of it or nothing should be preloaded."],
+        docs: [
+            "Indicates whether the whole resource, parts of it or nothing should be preloaded.",
+        ],
     },
     radioGroup: {
         name: "radiogroup",
@@ -921,14 +1012,18 @@ module.exports = {
             "tag",
         ],
         els: ["a", "area", "link"],
-        docs: ["Specifies the relationship of the target object to the link object."],
+        docs: [
+            "Specifies the relationship of the target object to the link object.",
+        ],
     },
     required: {
         name: "required",
         type: "toggle",
         values: "boolean",
         els: ["input", "select", "textarea"],
-        docs: ["Indicates whether this element is required to fill out or not."],
+        docs: [
+            "Indicates whether this element is required to fill out or not.",
+        ],
     },
     reversed: {
         name: "reversed",
@@ -944,7 +1039,9 @@ module.exports = {
         type: "normal",
         values: "string",
         els: true,
-        docs: ["Defines an explicit role for an element for use by assistive technologies."],
+        docs: [
+            "Defines an explicit role for an element for use by assistive technologies.",
+        ],
     },
     rows: {
         name: "rows",
@@ -989,7 +1086,9 @@ module.exports = {
         type: "normal",
         values: ["row", "col", "rowgroup", "colgroup"],
         els: ["th"],
-        docs: ["Defines the cells that the header test (defined in the th element) relates to."],
+        docs: [
+            "Defines the cells that the header test (defined in the th element) relates to.",
+        ],
     },
     selected: {
         name: "selected",
@@ -998,7 +1097,13 @@ module.exports = {
         els: ["option"],
         docs: ["Defines a value which will be selected on page load."],
     },
-    shape: { name: "shape", type: "normal", values: "string", els: ["a", "area"], docs: [] },
+    shape: {
+        name: "shape",
+        type: "normal",
+        values: "string",
+        els: ["a", "area"],
+        docs: [],
+    },
     size: {
         name: "size",
         type: "normal",
@@ -1040,11 +1145,33 @@ module.exports = {
         name: "src",
         type: "normal",
         values: "string",
-        els: ["audio", "embed", "iframe", "img", "input", "script", "source", "track", "video"],
+        els: [
+            "audio",
+            "embed",
+            "iframe",
+            "img",
+            "input",
+            "script",
+            "source",
+            "track",
+            "video",
+        ],
         docs: ["The URL of the embeddable content."],
     },
-    srcDoc: { name: "srcdoc", type: "normal", values: "string", els: ["iframe"], docs: [] },
-    srcLang: { name: "srclang", type: "normal", values: "string", els: ["track"], docs: [] },
+    srcDoc: {
+        name: "srcdoc",
+        type: "normal",
+        values: "string",
+        els: ["iframe"],
+        docs: [],
+    },
+    srcLang: {
+        name: "srclang",
+        type: "normal",
+        values: "string",
+        els: ["track"],
+        docs: [],
+    },
     srcSet: {
         name: "srcset",
         type: "normal",
@@ -1059,14 +1186,28 @@ module.exports = {
         els: ["ol"],
         docs: ["Defines the first number if other than 1."],
     },
-    step: { name: "step", type: "normal", values: "string", els: ["input"], docs: [] },
-    summary: { name: "summary", type: "normal", values: "string", els: ["table"], docs: [] },
+    step: {
+        name: "step",
+        type: "normal",
+        values: "string",
+        els: ["input"],
+        docs: [],
+    },
+    summary: {
+        name: "summary",
+        type: "normal",
+        values: "string",
+        els: ["table"],
+        docs: [],
+    },
     tabIndex: {
         name: "tabindex",
         type: "normal",
         values: "string",
         els: true,
-        docs: ["Overrides the browser's default tab order and follows the one specified instead."],
+        docs: [
+            "Overrides the browser's default tab order and follows the one specified instead.",
+        ],
     },
     target: {
         name: "target",
@@ -1082,7 +1223,9 @@ module.exports = {
         type: "normal",
         values: "string",
         els: true,
-        docs: ["Text to be displayed in a tooltip when hovering over the element."],
+        docs: [
+            "Text to be displayed in a tooltip when hovering over the element.",
+        ],
     },
     translate: {
         name: "translate",
@@ -1116,13 +1259,24 @@ module.exports = {
         type: "normal",
         values: "string",
         els: ["img", "input", "object"],
-        docs: ["Defines a default value which will be displayed in the element on page load."],
+        docs: [
+            "Defines a default value which will be displayed in the element on page load.",
+        ],
     },
     value: {
         name: "value",
         type: "normal",
         values: "string",
-        els: ["button", "data", "input", "li", "meter", "option", "progress", "param"],
+        els: [
+            "button",
+            "data",
+            "input",
+            "li",
+            "meter",
+            "option",
+            "progress",
+            "param",
+        ],
         docs: [],
     },
     width: {
@@ -1130,7 +1284,9 @@ module.exports = {
         type: "normal",
         values: "string",
         els: ["canvas", "embed", "iframe", "img", "input", "object", "video"],
-        docs: ["For the elements listed here, this establishes the element's width."],
+        docs: [
+            "For the elements listed here, this establishes the element's width.",
+        ],
     },
     wrap: {
         name: "wrap",

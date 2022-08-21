@@ -27,7 +27,10 @@ function renderCSS(styleSheet) {
 
     if (styleSheet["selectors"]) {
         for (let rule in styleSheet.selectors) {
-            output.lowPriority += renderSelector(rule, styleSheet.selectors[rule]);
+            output.lowPriority += renderSelector(
+                rule,
+                styleSheet.selectors[rule]
+            );
         }
     }
 
@@ -42,7 +45,10 @@ function renderCSS(styleSheet) {
 
     if (styleSheet["animations"]) {
         for (let anim in styleSheet.animations) {
-            output.lowPriority += renderAnimation(anim, styleSheet.animations[anim]);
+            output.lowPriority += renderAnimation(
+                anim,
+                styleSheet.animations[anim]
+            );
         }
     }
 

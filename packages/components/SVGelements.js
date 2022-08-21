@@ -1,7 +1,12 @@
 const Elements = {
     A: {
         tag: "a",
-        props: { href: "string", hrefLang: "string", target: "string", type: "string" },
+        props: {
+            href: "string",
+            hrefLang: "string",
+            target: "string",
+            type: "string",
+        },
         docs: [
             "The ``<a>`` SVG element creates a hyperlink to other web pages, files, locations in the same page, email addresses, or any other URL. It is very similar to HTML's ``<a>`` element.",
             "SVG's ``<a>`` element is a container, which means you can create a link around text (like in HTML) but also around any shape.",
@@ -49,7 +54,12 @@ const Elements = {
     },
     Circle: {
         tag: "circle",
-        props: { cx: "number", cy: "number", r: "number", pathLength: "string" },
+        props: {
+            cx: "number",
+            cy: "number",
+            r: "number",
+            pathLength: "string",
+        },
         docs: [
             "The ``<circle>`` SVG element is an SVG basic shape, used to draw circles based on a center point and a radius.",
         ],
@@ -89,7 +99,13 @@ const Elements = {
     },
     Ellipse: {
         tag: "ellipse",
-        props: { cx: "number", cy: "number", rx: "number", ry: "number", pathLength: "string" },
+        props: {
+            cx: "number",
+            cy: "number",
+            rx: "number",
+            ry: "number",
+            pathLength: "string",
+        },
         docs: [
             "The ``<ellipse>`` element is an SVG basic shape, used to create ellipses based on a center coordinate, and both their x and y radius.",
         ],
@@ -375,7 +391,13 @@ const Elements = {
     },
     Line: {
         tag: "line",
-        props: { x1: "string", x2: "string", y1: "string", y2: "string", pathLength: "string" },
+        props: {
+            x1: "string",
+            x2: "string",
+            y1: "string",
+            y2: "string",
+            pathLength: "string",
+        },
         docs: [
             "The ``<line>`` element is an SVG basic shape used to create a line connecting two points.",
         ],
@@ -633,7 +655,9 @@ const Elements = {
     View: {
         tag: "view",
         props: {},
-        docs: ["A view is a defined way to view the image, like a zoom level or a detail view."],
+        docs: [
+            "A view is a defined way to view the image, like a zoom level or a detail view.",
+        ],
     },
 };
 
