@@ -4,6 +4,7 @@ const RecursiveCSSOM = require("../css/");
 const { Console, Renderer } = require("../../use.js");
 const { renderValue } = require("../css/CssProperties.js");
 const { ELEMENT_TYPE_TEXT_NODE } = require("@riadh-adrani/recursive/packages/constants/index.js");
+const { HTML_CONTAINER } = require("../constants/index.js");
 
 /**
  * ### `RecursiveWeb`
@@ -399,7 +400,7 @@ class RecursiveWebRenderer extends Renderer {
      * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
      */
     useRendererCreateRawContainer(element) {
-        const output = document.createElement("div");
+        const output = document.createElement(HTML_CONTAINER);
 
         output.innerHTML = this.reduceChildrenToInnerHTML(element);
 

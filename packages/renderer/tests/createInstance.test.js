@@ -9,6 +9,7 @@ const {
 } = require("@riadh-adrani/recursive/packages/constants");
 const { createElement } = require("../../../use");
 const { RecursiveWebApp } = require("../../app");
+const { HTML_CONTAINER } = require("../../constants");
 
 describe("create instance tests", () => {
     let app = new RecursiveWebApp({ app: () => createElement("div"), root: document.body });
@@ -41,7 +42,7 @@ describe("create instance tests", () => {
             })
         );
 
-        expect(div instanceof HTMLDivElement == true).toBeTruthy();
+        expect(div.outerHTML).toBe(`<${HTML_CONTAINER}><p></p></${HTML_CONTAINER}>`);
     });
 
     it("should create an SVG element", () => {

@@ -1,9 +1,5 @@
+const { COLUMN_VIEW, ROW_VIEW, LAZY_COLUMN, LAZY_ROW, HTML_CONTAINER } = require("../constants");
 const { View, addDefaultStyle } = require("./View");
-
-const COLUMN_VIEW = "column-view";
-const ROW_VIEW = "row-view";
-const LAZY_COLUMN = "lazy-column";
-const LAZY_ROW = "lazy-row";
 
 class Column extends View {
     constructor() {
@@ -36,3 +32,11 @@ class LazyRow extends View {
 }
 
 addDefaultStyle("lazy-row", { display: "flex", flexDirection: "row" });
+
+class HtmlContainer extends View {
+    constructor() {
+        super(HTML_CONTAINER);
+    }
+}
+
+addDefaultStyle("html-container", { display: "inline-block" });

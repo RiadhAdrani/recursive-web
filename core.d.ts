@@ -415,7 +415,7 @@ export interface SelectorTypes {
      */
     lastOfType: Selector;
     /**
-     * ## `left`
+     * ## `:left`
      *
      * The :left CSS pseudo-class,
      * used with the ``@page`` at-rule,
@@ -451,7 +451,7 @@ export interface SelectorTypes {
      */
     modal: Selector;
     /**
-     * ## `only-child`
+     * ## `:only-child`
      *
      * The :only-child CSS pseudo-class
      * represents an element without any siblings.
@@ -463,7 +463,7 @@ export interface SelectorTypes {
      */
     onlyChild: Selector;
     /**
-     * ## `only-of-type`
+     * ## `:only-of-type`
      *
      * The :only-of-type CSS pseudo-class
      * represents an element that has no siblings of the same type.
@@ -784,7 +784,7 @@ export interface Flags {
 
 export interface Events {}
 
-export interface StandardAttributes {
+export interface CommonAttributes {
     /**
      * Element key among his siblings.
      */
@@ -803,35 +803,7 @@ export interface StandardAttributes {
     style: StyleSheet;
 }
 
-export interface HTMLAttributes extends StandardAttributes, Events {
-    accessKey: string;
-    autoCapitalize: string;
-    autoFocus: string;
-    className: string;
-    contentEditable: boolean;
-    contextMenu: string;
-    dataSet: string;
-    dir: string;
-    draggable: string;
-    enterKeyHint: string;
-    exportParts: string;
-    hidden: string;
-    id: string;
-    inputMode: string;
-    is: string;
-    itemId: string;
-    itemProp: string;
-    lang: string;
-    nonce: string;
-    part: string;
-    slot: string;
-    spellCheck: string;
-    tabIndex: string;
-    title: string;
-    translate: string;
-}
-
-export interface SVGAttributes extends StandardAttributes, Events {
+export interface SVGAttributes extends CommonAttributes, Events {
     id: string;
     lang: string;
     tabIndex: string;

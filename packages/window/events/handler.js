@@ -1,4 +1,4 @@
-const handler = (store, type = "Event") => {
+const handler = (store, type = "Event", docs = []) => {
     return {
         listener: store,
         on: "on" + store,
@@ -6,6 +6,7 @@ const handler = (store, type = "Event") => {
             if (window[store] && window[store].items) window[store].items.push(element);
         },
         type,
+        docs,
     };
 };
 

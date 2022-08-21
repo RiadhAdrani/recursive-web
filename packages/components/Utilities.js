@@ -1,12 +1,8 @@
-const { ELEMENT_TYPE_RAW } = require("@riadh-adrani/recursive/packages/constants");
-
-const COLUMN_VIEW = "column-view";
-const ROW_VIEW = "row-view";
-const LAZY_COLUMN = "lazy-column";
-const LAZY_ROW = "lazy-row";
-const SPACER_VIEW = "spacer-view";
-const FRAGMENT = "fragment";
-const HTML_CONTAINER = ELEMENT_TYPE_RAW;
+const {
+    ELEMENT_TYPE_RAW,
+    ELEMENT_TYPE_FRAGMENT,
+} = require("@riadh-adrani/recursive/packages/constants");
+const { COLUMN_VIEW, ROW_VIEW, SPACER_VIEW, LAZY_COLUMN, LAZY_ROW } = require("../constants");
 
 const useObserver = (element, instance) => {
     var observer = new IntersectionObserver(
@@ -31,10 +27,10 @@ const useObserver = (element, instance) => {
 
 module.exports = {
     items: {
-        HtmlContainer: { tag: HTML_CONTAINER, props: {} },
-        Fragment: { tag: FRAGMENT, props: {} },
-        Column: { tag: COLUMN_VIEW, props: {} },
-        Row: { tag: ROW_VIEW, props: {} },
+        HtmlContainer: { tag: ELEMENT_TYPE_RAW, props: {}, docs: [] },
+        Fragment: { tag: ELEMENT_TYPE_FRAGMENT, props: {}, docs: [] },
+        Column: { tag: COLUMN_VIEW, props: {}, docs: [] },
+        Row: { tag: ROW_VIEW, props: {}, docs: [] },
         Spacer: {
             tag: SPACER_VIEW,
             props: { height: "number", width: "number" },
@@ -54,6 +50,7 @@ module.exports = {
                     },
                 };
             },
+            docs: [],
         },
         LazyColumn: {
             tag: LAZY_COLUMN,
@@ -70,6 +67,7 @@ module.exports = {
                     return _onRef(instance);
                 };
             },
+            docs: [],
         },
         LazyRow: {
             tag: LAZY_ROW,
@@ -88,6 +86,7 @@ module.exports = {
                     useObserver(element, instance);
                 };
             },
+            docs: [],
         },
     },
 };

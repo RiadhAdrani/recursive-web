@@ -1,91 +1,289 @@
-import { RecursiveWebApp } from "../packages/app";
-import { Column, Hr, Row } from "../html";
-import { rgb } from "../style/methods";
-import AppState from "./routes/App.state";
+import { RecursiveWebApp } from "../packages/app/index";
+import { Div, HtmlContainer, Input } from "../html";
+import { Svg } from "../svg";
 
-const NavButton = (text, to) =>
-    App.Link({
-        href: to,
-        children: text,
-        style: {
-            className: "nav-button",
-            normal: {
-                padding: ["5px", "10px"],
-                margin: ["5px"],
-                backgroundColor: rgb(200, 200, 200),
-                color: "black",
-                borderRadius: "5px",
-            },
-            mediaQueries: [{ condition: "(max-width:700px)", normal: { color: "blue" } }],
-        },
-    });
-
-const app = () => {
-    App.setStyle({
-        imports: [
-            "https://fonts.googleapis.com/css2?family=Cousine:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap",
-        ],
-    });
-
-    App.setStyle({
-        selectors: { "*": { fontFamily: "Cousine", fontSize: "large" } },
-    });
-
-    return Column({
-        style: {
-            inline: {
-                padding: ["10px", "20px"],
-            },
-        },
-        children: [
-            Row({
-                onClick: () => {},
-                children: [
-                    NavButton("home", "/"),
-                    NavButton("State", "/state#ref"),
-                    NavButton("dynamic", "/id=:1;"),
-                ],
-            }),
-            Hr({ size: "1px", width: "100%" }),
-            App.renderRoute(),
-        ],
-    });
-};
-
-/**
- * @type {RecursiveWebApp}
- */
 const App = new RecursiveWebApp({
     root: document.body,
-    app: app,
-    route: {
-        path: "/",
-        component: () => "Hello World",
-        title: "Home",
-        routes: [
-            {
-                path: "id=:id;",
-                component: () => App.getParams().id,
-                title: "Id",
-            },
-            {
-                path: "state",
-                component: AppState,
-                title: "State",
-            },
-        ],
+    app: () => {
+        return Div({
+            children: [
+                HtmlContainer({ children: ["<p>One</p>", {}, 0, 1, "<h1>yeet</h2>"] }),
+                Input({ contentEditable: "true", placeholder: "Hello World" }),
+                Svg({ style: { onlyOfType: {}, left: {}, onlyChild: {} } }),
+            ],
+        });
     },
 });
 
-const Link = App.Link;
-const setState = App.setState;
-const getState = App.getState;
-const setCache = App.setCache;
-const getCache = App.getCache;
-const getRef = App.getRef;
-const goTo = App.goTo;
-const setStyle = App.setStyle;
-
 App.render();
 
-export { App, Link, setState, getState, setCache, getCache, getRef, goTo, setStyle };
+/**
+ * Return parameters as a keyed object.
+ * @returns
+ */
+function getParams() {
+    return App.getParams();
+}
+
+/**
+ * Redirect the app to the provided path.
+ * @param {string} path
+ * @returns
+ */
+function goTo(path) {
+    App.goTo(path);
+}
+
+/**
+ * Return the appropriate component.
+ *
+ * _`Do not use as the root of the app, should be nested in another element instead.`_
+ * @returns {HTMLElement | Text} component
+ */
+function renderRoute() {
+    return App.renderRoute();
+}
+
+/**
+ * Retrieve an existing stateful object from the `state` store if it exists.
+ * @param {string} key identifier
+ * @throw an error if the state does not exist.
+ * @returns {import("../lib").StateArray} StateArray
+ */
+function getState(key) {
+    return App.getState(key);
+}
+
+/**
+ * Create and save a stateful object in the `state` store within the global `StateStore`.
+ *
+ * Objects created by this method are deleted when they are not used or called in a rendering iteration.
+ * @param {string} key unique identifier of the state whithin its store.
+ * @param {any} value initial value
+ * @param {Function} onInit a function that will execute when the state is initialized.
+ * If the return value of this function is a function itself,
+ * it will be executed whe the state is destroyed.
+ * @param {Function} onRemoved a function that will execute when the state has been destroyed.
+ * @returns {import("../lib").StateArray} StateArray
+ */
+function setState(key, value, onInit, onRemoved) {
+    return App.setState(key, value, onInit, onRemoved);
+}
+
+/**
+ * Retrieve an existing stateful object from the `cache` store if it exists.
+ * @param {string} key identifier
+ * @throw an error if the state does not exist.
+ * @returns {import("../lib").StateArray} StateArray
+ */
+function getCache(key) {
+    return App.getCache(key);
+}
+
+/**
+ * Create and save a stateful object in the `cache` store within the global `StateStore`.
+ *
+ * Objects created by this method are not deleted when they are not used,
+ * unless the number of cached object exceed the maximum allocated size which is by default `1000`.
+ *
+ * Older states will be deleted first.
+ *
+ * @param {string} key unique identifier of the state whithin its store.
+ * @param {any} value initial value
+ * @param {Function} onInit a function that will execute when the state is initialized.
+ * If the return value of this function is a function itself,
+ * it will be executed whe the state is destroyed.
+ * @param {Function} onRemoved a function that will execute when the state has been destroyed.
+ * @returns {import("../lib").StateArray} StateArray
+ */
+function setCache(key, value, onInit, onRemoved) {
+    return App.setCache(key, value, onInit, onRemoved);
+}
+
+/**
+ * Retrieve an existing element from the `reference` store, or the default value.
+ * @param {string} key identifier
+ * @returns {HTMLElement} element
+ */
+function getRef(key, defaultValue = document.createElement("div")) {
+    return App.getRef(key, defaultValue);
+}
+
+/**
+ * Batch update made within the callback.
+ *
+ * Used generally to state update after an asynchronous call.
+ *
+ * The callback function should not be an asynchronous function.
+ *
+ * @example
+ * // Correct use
+ * const data = await getData();
+ * updateOn(() => {
+ *      setState1(data.value1);
+ *      setState2(data.value2);
+ * })
+ *
+ * // Bad use and can cause unexpected behavior
+ *
+ * updateOn(async () => {
+ *      const data = await getData();
+ *
+ *      setState1(data.value1);
+ *      setState2(data.value2);
+ *
+ * })
+ * @param {Function} callback
+ */
+function updateOn(callback) {
+    App.updateOn(callback);
+}
+
+/**
+ * Add a style sheet that will be evaluated every time the app is updated.
+ * @param {import("../lib").FreeStyleSheet} cssObject
+ */
+function setStyle(cssObject) {
+    App.setStyle(cssObject);
+}
+
+/**
+ *
+ * @param {import("../lib").StyleSheet} param
+ * @returns
+ */
+function createComponentStyle(param) {
+    return App.createComponentStyle(param);
+}
+
+/**
+ * Create a modifed `<a>` element for routing.
+ * @param {import("../lib").AProps} props
+ * @returns
+ */
+function Link(props) {
+    return App.Link(props);
+}
+
+/**
+ * Returns the currentl route path.
+ * @returns {string}
+ */
+function getRoute() {
+    return App.getRoute();
+}
+
+export {
+    Link,
+    goTo,
+    createComponentStyle,
+    setStyle,
+    setState,
+    updateOn,
+    getRef,
+    getState,
+    setCache,
+    getCache,
+    getParams,
+    getRoute,
+    renderRoute,
+};
+
+const arias = [
+    "aria-autocomplete",
+    "aria-checked",
+    "aria-disabled",
+    "aria-errormessage",
+    "aria-expanded",
+    "aria-haspopup",
+    "aria-hidden",
+    "aria-invalid",
+    "aria-label",
+    "aria-level",
+    "aria-modal",
+    "aria-multiline",
+    "aria-multiselectable",
+    "aria-orientation",
+    "aria-placeholder",
+    "aria-pressed",
+    "aria-readonly",
+    "aria-required",
+    "aria-selected",
+    "aria-sort",
+    "aria-valuemax",
+    "aria-valuemin",
+    "aria-valuenow",
+    "aria-valuetext",
+    "aria-busy",
+    "aria-live",
+    "aria-relevant",
+    "aria-atomic",
+    "aria-dropeffect",
+    "aria-grabbed",
+    "aria-activedescendant",
+    "aria-colcount",
+    "aria-colindex",
+    "aria-colspan",
+    "aria-controls",
+    "aria-describedby",
+    "aria-description",
+    "aria-details",
+    "aria-errormessage",
+    "aria-flowto",
+    "aria-labelledby",
+    "aria-owns",
+    "aria-posinset",
+    "aria-rowcount",
+    "aria-rowindex",
+    "aria-rowspan",
+    "aria-setsize",
+    "aria-atomic",
+    "aria-busy",
+    "aria-controls",
+    "aria-current",
+    "aria-describedby",
+    "aria-description",
+    "aria-details",
+    "aria-disabled",
+    "aria-dropeffect",
+    "aria-errormessage",
+    "aria-flowto",
+    "aria-grabbed",
+    "aria-haspopup",
+    "aria-hidden",
+    "aria-invalid",
+    "aria-keyshortcuts",
+    "aria-label",
+    "aria-labelledby",
+    "aria-live",
+    "aria-owns",
+    "aria-relevant",
+    "aria-roledescription",
+];
+
+const obj = {};
+
+arias.forEach((item) => {
+    const name = item
+        .split("-")
+        .map((part, index) => {
+            if (index > 0) {
+                return part.substring(0, 1).toUpperCase() + part.substring(1);
+            } else {
+                return part;
+            }
+        })
+        .join("");
+
+    const itemObj = {
+        name: item,
+        type: "normal",
+        values: "string",
+        els: true,
+        docs: [],
+    };
+
+    obj[name] = itemObj;
+});
+
+// console.log(obj);

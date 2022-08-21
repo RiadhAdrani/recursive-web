@@ -4,63 +4,42 @@
  * use `npm run generate` instead
  */
 
+const { HTML_NS, SVG_NS } = require("../constants/index.js");
+const { generateComponent } = require("./index.js");
 const Elements = require("../components/HTMLelements.js").items;
 const Custom = require("../components/Utilities.js").items;
 const SVG = require("../components/SVGelements.js").items;
 
-const component = (tag) => `
-/**
- * Create \`<${tag.toLocaleLowerCase()}>\` element.
- * @param {import("../lib.js").${tag}Props} props 
- * @returns {RecursiveElement} Recursive Web Element
- */
-function ${tag}(props){
-    return createElement("${tag.toLocaleLowerCase()}",{...props,rendererOptions:{}});
-}`;
-
-const svgComponent = (tag) => `
-/**
- * Create \`<${tag.toLocaleLowerCase()}>\` element.
- * @param {import("../lib.js").SVG${tag}Props} props
- * @returns {RecursiveElement} Recursive Web Element
- */
-function ${tag}(props){
-    return createElement("${tag.toLocaleLowerCase()}",{...props,rendererOptions:{ns:"http://www.w3.org/2000/svg"}})
-}`;
-
-const customComponent = (name, tag, handler) => `
-/**
- * Create \`<${tag.toLocaleLowerCase()}>\` element.
- * @param {import("../lib.js").${name}Props} props 
- * @returns {RecursiveElement} Recursive Web Element
- */
-function ${name}(props){
-    const el = createElement("${tag.toLocaleLowerCase()}",props)
-    ${handler ? `CustomElements.items.${name}.handler(el);` : ""}
-    return el;
- 
-}`;
-
 (() => {
     let imp = `import CustomElements from "../packages/components/Utilities.js";
-    import {createElement} from "..";`;
+import {createElement} from "..";`;
 
     let elements = "";
-    let exp = "export {";
 
     for (let element in Elements) {
-        elements += component(element);
-        exp += element + ",";
+        elements += generateComponent(
+            element,
+            element.toLowerCase(),
+            HTML_NS,
+            `${element}Props`,
+            Elements[element],
+            null,
+            "https://developer.mozilla.org/en-US/docs/Web/HTML/Element"
+        );
     }
 
     for (let element in Custom) {
-        elements += customComponent(element, Custom[element].tag, Custom[element].handler);
-        exp += element + ",";
+        elements += generateComponent(
+            element,
+            Custom[element].tag,
+            HTML_NS,
+            `${element}Props`,
+            Custom[element],
+            Custom[element].handler ? `CustomElements.items.${element}.handler(el);` : null
+        );
     }
 
-    exp += "}";
-
-    const output = imp + "\n" + elements + "\n" + exp;
+    const output = imp + "\n" + elements;
 
     const fs = require("fs");
     const path = require("path");
@@ -78,16 +57,20 @@ function ${name}(props){
     let imp = `import {createElement} from "..";`;
 
     let elements = "";
-    let exp = "export {";
 
     for (let element in SVG) {
-        elements += svgComponent(element);
-        exp += element + ",";
+        elements += generateComponent(
+            element,
+            element.toLocaleLowerCase(),
+            SVG_NS,
+            `SVG${element}Props`,
+            SVG[element],
+            null,
+            "https://developer.mozilla.org/en-US/docs/Web/SVG/Element"
+        );
     }
 
-    exp += "}";
-
-    const output = imp + "\n" + elements + "\n" + exp;
+    const output = imp + "\n" + elements;
 
     const fs = require("fs");
     const path = require("path");

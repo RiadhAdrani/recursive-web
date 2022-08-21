@@ -58,7 +58,7 @@ class RecursiveWebApp extends App {
     }
 
     /**
-     * Add a style sheet that will be evaluated every time the app is updated.
+     * Add a style sheet that will be evaluated every time the app rerender.
      * @param {import("../../lib").FreeStyleSheet} styleSheet
      */
     setStyle(styleSheet) {
