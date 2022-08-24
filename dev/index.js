@@ -12,12 +12,21 @@ import { G, Path, Svg } from "../svg";
 const App = new RecursiveWebApp({
     root: document.body,
     app: () => {
+        const [text, setText] = setState("text", "");
+
         return Div({
             children: [
                 HtmlContainer({
                     children: ["<p>One</p>", {}, 0, 1, "<h1>yeet</h2>"],
                 }),
-                Input({ contentEditable: "true", placeholder: "Hello World" }),
+                Input({
+                    contentEditable: "true",
+                    placeholder: "Hello World",
+                    value: text,
+                    onInput: (e) => {
+                        setText(e.target.value);
+                    },
+                }),
                 TextField({ value: "string" }),
                 DateTimeLocalPicker({}),
                 Svg({

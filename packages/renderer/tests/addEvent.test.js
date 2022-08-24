@@ -13,5 +13,5 @@ it("should add event", () => {
 
     renderer.useRendererAddEvent("onClick", () => {}, ele);
 
-    expect(eleInstance.events.onClick).toBeTruthy();
+    expect(eleInstance.onclick).toBeTruthy();
 });

@@ -12,5 +12,5 @@ it("should inject an event", () => {
 
     renderer.render();
 
-    expect(document.body.children.item(0).events.onClick).toBeTruthy();
+    expect(document.body.children.item(0).onclick).toBeTruthy();
 });

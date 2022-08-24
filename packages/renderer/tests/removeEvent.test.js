@@ -18,5 +18,5 @@ it("should remove the event callback from the dom element", () => {
 
     renderer.useRendererRemoveEvent("onClick", renderer.current.instance);
 
-    expect(document.body.childNodes.item(0).events.onClick()).toBeFalsy();
+    expect(document.body.childNodes.item(0).onclick).toBeFalsy();
 });

@@ -33,6 +33,17 @@ class RecursiveWebRenderer extends Renderer {
     }
 
     /**
+     *
+     * @param {string} onEventName
+     * @param {Function} callback
+     * @param {HTMLElement} instance
+     */
+    setElementEvent(onEventName, callback, instance) {
+        instance[onEventName] = (e) =>
+            this.orchestrator.batchCallback(() => callback(e), onEventName);
+    }
+
+    /**
      * Create HTML element.
      *
      * Use `RendererOptions.ns` property to precise the namespace of the element.
@@ -87,27 +98,38 @@ class RecursiveWebRenderer extends Renderer {
      * Add event to the provided HTML instance.
      * @param {string} eventName
      * @param {Function} callback
+     * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
      * @param {HTMLElement} instance
      */
     useRendererAddEvent(eventName, callback, element) {
-        const exists = element.events[eventName] !== undefined;
+        // const exists = element.events[eventName] !== undefined;
 
-        element.instance.events[eventName] = callback;
+        // element.instance.events[eventName] = callback;
 
-        if (!exists) {
-            if (hasHandler(eventName)) {
-                getEv(eventName).handler(element.instance);
-            } else {
-                element.instance.addEventListener(
-                    getListener(eventName),
-                    (e) => {
-                        this.orchestrator.batchCallback(
-                            () => element.instance.events[eventName](e),
-                            eventName
-                        );
-                    }
-                );
-            }
+        // if (!exists) {
+        //     if (hasHandler(eventName)) {
+        //         getEv(eventName).handler(element.instance);
+        //     } else {
+        //         element.instance.addEventListener(
+        //             getListener(eventName),
+        //             (e) => {
+        //                 this.orchestrator.batchCallback(
+        //                     () => element.instance.events[eventName](e),
+        //                     eventName
+        //                 );
+        //             }
+        //         );
+        //     }
+        // }
+
+        const eventData = getEv(eventName);
+
+        if (!eventData) return;
+
+        this.setElementEvent(eventData.on, callback, element.instance);
+
+        if (eventData.handler) {
+            eventData.handler(element.instance);
         }
     }
 
@@ -218,21 +240,14 @@ class RecursiveWebRenderer extends Renderer {
      * @param {HTMLElement} instance
      */
     useRendererInjectEvents(element, instance) {
-        instance.events = {};
+        for (let eventName in element.events) {
+            const eventData = getEv(eventName);
 
-        for (let ev in element.events) {
-            instance.events[ev] = element.events[ev];
+            if (!eventData) continue;
 
-            if (hasHandler(ev)) {
-                getEv(ev).handler(instance);
-            } else {
-                instance.addEventListener(getListener(ev), (e) => {
-                    this.orchestrator.batchCallback(
-                        () => instance.events[ev](e),
-                        ev
-                    );
-                });
-            }
+            const callback = element.events[eventName];
+
+            this.setElementEvent(eventData.on, callback, instance);
         }
     }
 
@@ -422,7 +437,11 @@ class RecursiveWebRenderer extends Renderer {
      * @param {HTMLElement} instance
      */
     useRendererRemoveEvent(eventName, instance) {
-        instance.events[eventName] = () => {};
+        const eventData = getEv(eventName);
+
+        if (!eventData) return;
+
+        instance[eventData.on] = null;
     }
 
     /**
