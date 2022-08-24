@@ -64,7 +64,11 @@ for (let ele in svg) {
     let customInterface = `export interface SVG${ele}Props extends SVGAttributes{`;
 
     for (let prop in svg[ele].props) {
-        customInterface += `${prop}:${svg[ele].props[prop]};`;
+        if (!attrs[prop]) {
+            console.log(prop);
+            continue;
+        }
+        customInterface += "\n" + generateInterfaceProp(prop, attrs[prop]);
     }
 
     customInterface += "}\n\n";

@@ -45,7 +45,7 @@ function generateComponent(
         [
             "",
             linkTemplate ? `@link ${linkTemplate}/${htmlTag}` : "",
-            `@param {import("../lib.js").${propsType}} props properties`,
+            `@param {import("../lib").${propsType}} props properties`,
             `@returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element`,
         ]
     )}

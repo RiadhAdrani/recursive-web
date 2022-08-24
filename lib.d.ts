@@ -2663,6 +2663,48 @@ export interface FragmentProps extends CommonAttributes, Events, HTMLAttributes{
 
 export interface ColumnProps extends CommonAttributes, Events, HTMLAttributes{children:Array<RecursiveElement>;}
 
+export interface CheckBoxProps extends CommonAttributes, Events, HTMLAttributes{value:string;checked:string;children:Array<RecursiveElement>;}
+
+export interface ColorPickerProps extends CommonAttributes, Events, HTMLAttributes{value:string;children:Array<RecursiveElement>;}
+
+export interface DatePickerProps extends CommonAttributes, Events, HTMLAttributes{value:string;max:string;min:string;step:string;children:Array<RecursiveElement>;}
+
+export interface DateTimeLocalPickerProps extends CommonAttributes, Events, HTMLAttributes{value:string;max:string;min:string;step:string;children:Array<RecursiveElement>;}
+
+export interface EmailFieldProps extends CommonAttributes, Events, HTMLAttributes{value:string;autoComplete:string;list:string;maxLength:string;minLength:string;multiple:string;pattern:string;placeholder:string;readOnly:string;required:boolean;size:string;children:Array<RecursiveElement>;}
+
+export interface FilePickerProps extends CommonAttributes, Events, HTMLAttributes{required:boolean;accept:string;capture:string;multiple:string;children:Array<RecursiveElement>;}
+
+export interface HiddenInputProps extends CommonAttributes, Events, HTMLAttributes{name:string;value:string;autoComplete:string;children:Array<RecursiveElement>;}
+
+export interface ImagePickerProps extends CommonAttributes, Events, HTMLAttributes{alt:string;src:string;height:string;formAction:string;formEncType:string;formMethod:string;formNoValidate:string;formTarget:string;children:Array<RecursiveElement>;}
+
+export interface MonthPickerProps extends CommonAttributes, Events, HTMLAttributes{autoComplete:string;list:string;readOnly:string;step:string;value:string;children:Array<RecursiveElement>;}
+
+export interface NumberPickerProps extends CommonAttributes, Events, HTMLAttributes{autoComplete:string;list:string;placeholder:string;readOnly:string;value:string;valueAsNumber:string;children:Array<RecursiveElement>;}
+
+export interface PasswordFieldProps extends CommonAttributes, Events, HTMLAttributes{autoComplete:string;inputMode:string;maxLength:string;minLength:string;pattern:string;placeholder:string;readOnly:string;required:string;size:string;value:string;children:Array<RecursiveElement>;}
+
+export interface RadioButtonProps extends CommonAttributes, Events, HTMLAttributes{checked:string;value:string;required:string;children:Array<RecursiveElement>;}
+
+export interface RangePickerProps extends CommonAttributes, Events, HTMLAttributes{autoComplete:string;list:string;max:string;min:string;step:string;value:string;valueAsNumber:string;children:Array<RecursiveElement>;}
+
+export interface ResetButtonProps extends CommonAttributes, Events, HTMLAttributes{value:string;children:Array<RecursiveElement>;}
+
+export interface SearchFieldProps extends CommonAttributes, Events, HTMLAttributes{autoComplete:string;list:string;maxLength:string;minLength:string;pattern:string;placeholder:string;required:string;size:string;value:string;children:Array<RecursiveElement>;}
+
+export interface SubmitButtonProps extends CommonAttributes, Events, HTMLAttributes{value:string;children:Array<RecursiveElement>;}
+
+export interface TelephoneNumberFieldProps extends CommonAttributes, Events, HTMLAttributes{autoComplete:string;list:string;maxLength:string;minLength:string;pattern:string;readOnly:string;placeholder:string;size:string;value:string;children:Array<RecursiveElement>;}
+
+export interface TextFieldProps extends CommonAttributes, Events, HTMLAttributes{autoComplete:string;list:string;maxLength:string;minLength:string;pattern:string;readOnly:string;placeholder:string;size:string;value:string;required:string;children:Array<RecursiveElement>;}
+
+export interface TimePickerProps extends CommonAttributes, Events, HTMLAttributes{autoComplete:string;list:string;readOnly:string;step:string;value:string;children:Array<RecursiveElement>;}
+
+export interface UrlFieldProps extends CommonAttributes, Events, HTMLAttributes{autoComplete:string;list:string;maxLength:string;minLength:string;pattern:string;readOnly:string;placeholder:string;size:string;value:string;required:string;children:Array<RecursiveElement>;}
+
+export interface WeekPickerProps extends CommonAttributes, Events, HTMLAttributes{autoComplete:string;list:string;readOnly:string;step:string;value:string;children:Array<RecursiveElement>;}
+
 export interface RowProps extends CommonAttributes, Events, HTMLAttributes{children:Array<RecursiveElement>;}
 
 export interface SpacerProps extends CommonAttributes, Events, HTMLAttributes{height:number;width:number;}
@@ -2671,17 +2713,216 @@ export interface LazyColumnProps extends CommonAttributes, Events, HTMLAttribute
 
 export interface LazyRowProps extends CommonAttributes, Events, HTMLAttributes{onObserved:Function;children:Array<RecursiveElement>;}
 
-export interface SVGAProps extends SVGAttributes{href:string;hrefLang:string;target:string;type:string;}
+export interface SVGAProps extends SVGAttributes{
+/**
+* ### _`href` Attribute_
+* 
+* The URL of a linked resource.
+* @used  `a` `area` `base` `link`
+*/
+href:string;
+/**
+* ### _`hreflang` Attribute_
+* 
+* Specifies the language of the linked resource.
+* @used  `a` `area` `link`
+*/
+hrefLang:string;
+/**
+* ### _`target` Attribute_
+* 
+* Specifies where to open the linked document (in the case of an ``<a>`` element) or where to display the response received (in the case of a ``<form>`` element)
+* @used  `a` `area` `base` `form`
+*/
+target:"_self" | "_blank" | "_parent" | "_top";
+/**
+* ### _`type` Attribute_
+* 
+* Defines the type of the element.
+* @used  `button` `input` `command` `embed` `object` `script` `source` `styles` `menu` `link`
+*/
+type:string;}
 
-export interface SVGAnimateProps extends SVGAttributes{begin:string;dur:string;end:string;min:min;max:string;restart:string;repeatCount:string;fill:string;calcMode:string;values:string;keyTimes:string;keySplines:string;from:string;to:string;by:string;attributeName:string;additive:string;accumulate:string;}
+export interface SVGAnimateProps extends SVGAttributes{
+/**
+* ### _`begin` Attribute_
+* 
+* The begin attribute defines when an animation should begin or when an element should be discarded.
+* @used  `animate` `animateColor` `animateMotion` `animateTransform` `discard` `set`
+*/
+begin:string;
+/**
+* ### _`dur` Attribute_
+* 
+* The dur attribute indicates the simple duration of an animation.
+* @used 
+*/
+dur:string;
+/**
+* ### _`end` Attribute_
+* 
+* The end attribute defines an end value for the animation that can constrain the active duration.
+* @used 
+*/
+end:string;
+/**
+* ### _`min` Attribute_
+* 
+* Indicates the minimum value allowed.
+* @used  `input` `meter`
+*/
+min:string;
+/**
+* ### _`max` Attribute_
+* 
+* Indicates the maximum value allowed.
+* @used  `input` `meter` `progress`
+*/
+max:string;
+/**
+* ### _`restart` Attribute_
+* 
+* @used 
+*/
+restart:string;
+/**
+* ### _`repeatCount` Attribute_
+* 
+* @used 
+*/
+repeatCount:string;
+/**
+* ### _`fill` Attribute_
+* 
+* The fill attribute has two different meanings. For shapes and text it's a presentation attribute that defines the color (or any SVG paint servers like gradients or patterns) used to paint the element; for animation it defines the final state of the animation.
+* @used 
+*/
+fill:string;
+/**
+* ### _`calcMode` Attribute_
+* 
+* The calcMode attribute specifies the interpolation mode for the animation.
+* @used 
+*/
+calcMode:string;
+/**
+* ### _`values` Attribute_
+* 
+* @used 
+*/
+values:string;
+/**
+* ### _`keyTimes` Attribute_
+* 
+* @used 
+*/
+keyTimes:string;
+/**
+* ### _`keySplines` Attribute_
+* 
+* @used 
+*/
+keySplines:string;
+/**
+* ### _`from` Attribute_
+* 
+* The from attribute indicates the initial value of the attribute that will be modified during the animation.
+* @used 
+*/
+from:string;
+/**
+* ### _`to` Attribute_
+* 
+* @used 
+*/
+to:string;
+/**
+* ### _`by` Attribute_
+* 
+* The by attribute specifies a relative offset value for an attribute that will be modified during an animation.
+* @used  `animate` `animateColor` `animateMotion` `animateTransform`
+*/
+by:string;
+/**
+* ### _`attributeName` Attribute_
+* 
+* The attributeName attribute indicates the name of the CSS property or attribute of the target element that is going to be changed during an animation.
+* @used  `animate` `animateColor` `animateTransform` `set`
+*/
+attributeName:string;
+/**
+* ### _`additive` Attribute_
+* 
+* The additive attribute controls whether or not an animation is additive.
+* @used  `animate` `animateColor` `animateMotion` `animateTransform`
+*/
+additive:"sum" | "replace";
+/**
+* ### _`accumulate` Attribute_
+* 
+* The accumulate attribute controls whether or not an animation is cumulative.
+* @used  `animate` `animateColor` `animateMotion` `animateTransform`
+*/
+accumulate:"sum" | "none";}
 
-export interface SVGAnimateMotionProps extends SVGAttributes{keyPoints:string;path:string;rotate:string;}
+export interface SVGAnimateMotionProps extends SVGAttributes{
+/**
+* ### _`keyPoints` Attribute_
+* 
+* @used 
+*/
+keyPoints:string;
+/**
+* ### _`path` Attribute_
+* 
+* @used 
+*/
+path:string;
+/**
+* ### _`rotate` Attribute_
+* 
+* @used 
+*/
+rotate:string;}
 
 export interface SVGAnimateTransformProps extends SVGAttributes{}
 
-export interface SVGCircleProps extends SVGAttributes{cx:number;cy:number;r:number;pathLength:string;}
+export interface SVGCircleProps extends SVGAttributes{
+/**
+* ### _`cx` Attribute_
+* 
+* The cx attribute define the x-axis coordinate of a center point.
+* @used 
+*/
+cx:string;
+/**
+* ### _`cy` Attribute_
+* 
+* The cy attribute define the y-axis coordinate of a center point.
+* @used 
+*/
+cy:string;
+/**
+* ### _`r` Attribute_
+* 
+* @used 
+*/
+r:string;
+/**
+* ### _`pathLength` Attribute_
+* 
+* @used 
+*/
+pathLength:string;}
 
-export interface SVGClipPathProps extends SVGAttributes{clipPathUnits:string;}
+export interface SVGClipPathProps extends SVGAttributes{
+/**
+* ### _`clipPathUnits` Attribute_
+* 
+* The clipPathUnits attribute indicates which coordinate system to use for the contents of the ``<clipPath>`` element.
+* @used  `clipPath`
+*/
+clipPathUnits:"userSpaceOnUse" | "objectBoundingBox";}
 
 export interface SVGDefsProps extends SVGAttributes{}
 
@@ -2689,17 +2930,148 @@ export interface SVGDescProps extends SVGAttributes{}
 
 export interface SVGDiscardProps extends SVGAttributes{}
 
-export interface SVGEllipseProps extends SVGAttributes{cx:number;cy:number;rx:number;ry:number;pathLength:string;}
+export interface SVGEllipseProps extends SVGAttributes{
+/**
+* ### _`cx` Attribute_
+* 
+* The cx attribute define the x-axis coordinate of a center point.
+* @used 
+*/
+cx:string;
+/**
+* ### _`cy` Attribute_
+* 
+* The cy attribute define the y-axis coordinate of a center point.
+* @used 
+*/
+cy:string;
+/**
+* ### _`rx` Attribute_
+* 
+* @used 
+*/
+rx:string;
+/**
+* ### _`ry` Attribute_
+* 
+* @used 
+*/
+ry:string;
+/**
+* ### _`pathLength` Attribute_
+* 
+* @used 
+*/
+pathLength:string;}
 
-export interface SVGFeBlendProps extends SVGAttributes{in:string;in2:string;mode:string;}
+export interface SVGFeBlendProps extends SVGAttributes{
+/**
+* ### _`in` Attribute_
+* 
+* @used 
+*/
+in:string;
+/**
+* ### _`in2` Attribute_
+* 
+* @used 
+*/
+in2:string;
+/**
+* ### _`mode` Attribute_
+* 
+* @used 
+*/
+mode:string;}
 
-export interface SVGFeColorMatrixProps extends SVGAttributes{in:string;type:string;values:string;}
+export interface SVGFeColorMatrixProps extends SVGAttributes{
+/**
+* ### _`in` Attribute_
+* 
+* @used 
+*/
+in:string;
+/**
+* ### _`type` Attribute_
+* 
+* Defines the type of the element.
+* @used  `button` `input` `command` `embed` `object` `script` `source` `styles` `menu` `link`
+*/
+type:string;
+/**
+* ### _`values` Attribute_
+* 
+* @used 
+*/
+values:string;}
 
 export interface SVGFeComponentTransferProps extends SVGAttributes{}
 
-export interface SVGFeCompositeProps extends SVGAttributes{in:string;}
+export interface SVGFeCompositeProps extends SVGAttributes{
+/**
+* ### _`in` Attribute_
+* 
+* @used 
+*/
+in:string;}
 
-export interface SVGFeConvolveMatrixProps extends SVGAttributes{in:string;order:string;kernelMatrix:string;bias:string;targetX:string;targetY:string;edgeMode:string;kernelUnitLength:string;preserveAlpha:string;}
+export interface SVGFeConvolveMatrixProps extends SVGAttributes{
+/**
+* ### _`in` Attribute_
+* 
+* @used 
+*/
+in:string;
+/**
+* ### _`order` Attribute_
+* 
+* @used 
+*/
+order:string;
+/**
+* ### _`kernelMatrix` Attribute_
+* 
+* @used 
+*/
+kernelMatrix:string;
+/**
+* ### _`bias` Attribute_
+* 
+* The bias attribute shifts the range of the filter. After applying the kernelMatrix of the ``<feConvolveMatrix>`` element to the input image to yield a number and applied the divisor attribute, the bias attribute is added to each component. This allows representation of values that would otherwise be clamped to 0 or 1.
+* @used  `feConvolveMatrix`
+*/
+bias:string;
+/**
+* ### _`targetX` Attribute_
+* 
+* @used 
+*/
+targetX:string;
+/**
+* ### _`targetY` Attribute_
+* 
+* @used 
+*/
+targetY:string;
+/**
+* ### _`edgeMode` Attribute_
+* 
+* The edgeMode attribute determines how to extend the input image as necessary with color values so that the matrix operations can be applied when the kernel is positioned at or near the edge of the input image.
+* @used 
+*/
+edgeMode:string;
+/**
+* ### _`kernelUnitLength` Attribute_
+* 
+* @used 
+*/
+kernelUnitLength:string;
+/**
+* ### _`preserveAlpha` Attribute_
+* 
+* @used 
+*/
+preserveAlpha:string;}
 
 export interface SVGFeDiffuseLightingProps extends SVGAttributes{}
 
@@ -2707,9 +3079,49 @@ export interface SVGFeDisplacementMapProps extends SVGAttributes{}
 
 export interface SVGFeDistantLightProps extends SVGAttributes{}
 
-export interface SVGFeDropShadowProps extends SVGAttributes{id:string;surfaceScale:string;diffuseConstant:string;kernelUnitLength:string;}
+export interface SVGFeDropShadowProps extends SVGAttributes{
+/**
+* ### _`id` Attribute_
+* 
+* Often used with CSS to style a specific element. The value of this attribute must be unique.
+* @used Global attribute
+*/
+id:string;
+/**
+* ### _`surfaceScale` Attribute_
+* 
+* @used 
+*/
+surfaceScale:string;
+/**
+* ### _`diffuseConstant` Attribute_
+* 
+* The diffuseConstant attribute represents the kd value in the Phong lighting model. In SVG, this can be any non-negative number.
+* @used 
+*/
+diffuseConstant:string;
+/**
+* ### _`kernelUnitLength` Attribute_
+* 
+* @used 
+*/
+kernelUnitLength:string;}
 
-export interface SVGFeFloodProps extends SVGAttributes{floodColor:string;floodOpacity:string;}
+export interface SVGFeFloodProps extends SVGAttributes{
+/**
+* ### _`flood-color` Attribute_
+* 
+* The flood-color attribute indicates what color to use to flood the current filter primitive subregion.
+* @used 
+*/
+floodColor:string;
+/**
+* ### _`flood-opacity` Attribute_
+* 
+* The flood-opacity attribute indicates the opacity value to use across the current filter primitive subregion.
+* @used 
+*/
+floodOpacity:string;}
 
 export interface SVGFeFuncAProps extends SVGAttributes{}
 
@@ -2719,31 +3131,301 @@ export interface SVGFeFuncGProps extends SVGAttributes{}
 
 export interface SVGFeFuncRProps extends SVGAttributes{}
 
-export interface SVGFeGaussianBlurProps extends SVGAttributes{in:string;stdDeviation:string;edgeMode:string;}
+export interface SVGFeGaussianBlurProps extends SVGAttributes{
+/**
+* ### _`in` Attribute_
+* 
+* @used 
+*/
+in:string;
+/**
+* ### _`stdDeviation` Attribute_
+* 
+* @used 
+*/
+stdDeviation:string;
+/**
+* ### _`edgeMode` Attribute_
+* 
+* The edgeMode attribute determines how to extend the input image as necessary with color values so that the matrix operations can be applied when the kernel is positioned at or near the edge of the input image.
+* @used 
+*/
+edgeMode:string;}
 
-export interface SVGFeImageProps extends SVGAttributes{preserveAspectRatio:string;xLinkHref:string;}
+export interface SVGFeImageProps extends SVGAttributes{
+/**
+* ### _`preserveAspectRatio` Attribute_
+* 
+* @used 
+*/
+preserveAspectRatio:string;
+/**
+* ### _`xlink:href` Attribute_
+* 
+* @used 
+*/
+xLinkHref:string;}
 
 export interface SVGFeMergeProps extends SVGAttributes{}
 
-export interface SVGFeMergeNodeProps extends SVGAttributes{in:string;}
+export interface SVGFeMergeNodeProps extends SVGAttributes{
+/**
+* ### _`in` Attribute_
+* 
+* @used 
+*/
+in:string;}
 
-export interface SVGFeMorphologyProps extends SVGAttributes{in:string;operator:string;radius:string;}
+export interface SVGFeMorphologyProps extends SVGAttributes{
+/**
+* ### _`in` Attribute_
+* 
+* @used 
+*/
+in:string;
+/**
+* ### _`operator` Attribute_
+* 
+* @used 
+*/
+operator:string;
+/**
+* ### _`radius` Attribute_
+* 
+* @used 
+*/
+radius:string;}
 
-export interface SVGFeOffsetProps extends SVGAttributes{in:string;dx:string;dy:string;}
+export interface SVGFeOffsetProps extends SVGAttributes{
+/**
+* ### _`in` Attribute_
+* 
+* @used 
+*/
+in:string;
+/**
+* ### _`dx` Attribute_
+* 
+* The dx attribute indicates a shift along the x-axis on the position of an element or its content.
+* @used 
+*/
+dx:string;
+/**
+* ### _`dy` Attribute_
+* 
+* The dy attribute indicates a shift along the y-axis on the position of an element or its content.
+* @used 
+*/
+dy:string;}
 
-export interface SVGFePointLightProps extends SVGAttributes{x:string;y:string;z:string;}
+export interface SVGFePointLightProps extends SVGAttributes{
+/**
+* ### _`x` Attribute_
+* 
+* @used 
+*/
+x:string;
+/**
+* ### _`y` Attribute_
+* 
+* @used 
+*/
+y:string;
+/**
+* ### _`z` Attribute_
+* 
+* @used 
+*/
+z:string;}
 
-export interface SVGFeSpecularLightingProps extends SVGAttributes{in:string;surfaceScale:string;specularConstant:string;specularExponent:string;kernelUnitLength:string;}
+export interface SVGFeSpecularLightingProps extends SVGAttributes{
+/**
+* ### _`in` Attribute_
+* 
+* @used 
+*/
+in:string;
+/**
+* ### _`surfaceScale` Attribute_
+* 
+* @used 
+*/
+surfaceScale:string;
+/**
+* ### _`specularConstant` Attribute_
+* 
+* @used 
+*/
+specularConstant:string;
+/**
+* ### _`specularExponent` Attribute_
+* 
+* @used 
+*/
+specularExponent:string;
+/**
+* ### _`kernelUnitLength` Attribute_
+* 
+* @used 
+*/
+kernelUnitLength:string;}
 
-export interface SVGFeSpotLightProps extends SVGAttributes{x:string;y:string;z:string;pointAtX:string;pointAtY:string;pointAtZ:string;specularExponent:string;limitingConeAngle:string;}
+export interface SVGFeSpotLightProps extends SVGAttributes{
+/**
+* ### _`x` Attribute_
+* 
+* @used 
+*/
+x:string;
+/**
+* ### _`y` Attribute_
+* 
+* @used 
+*/
+y:string;
+/**
+* ### _`z` Attribute_
+* 
+* @used 
+*/
+z:string;
+/**
+* ### _`specularExponent` Attribute_
+* 
+* @used 
+*/
+specularExponent:string;
+/**
+* ### _`limitingConeAngle` Attribute_
+* 
+* @used 
+*/
+limitingConeAngle:string;}
 
-export interface SVGFeTileProps extends SVGAttributes{in:string;}
+export interface SVGFeTileProps extends SVGAttributes{
+/**
+* ### _`in` Attribute_
+* 
+* @used 
+*/
+in:string;}
 
-export interface SVGFeTurbulenceProps extends SVGAttributes{baseFrequency:string;numOctaves:string;seed:string;stitchTiles:string;type:string;}
+export interface SVGFeTurbulenceProps extends SVGAttributes{
+/**
+* ### _`baseFrequency` Attribute_
+* 
+* The baseFrequency attribute represents the base frequency parameter for the noise function of the ``<feTurbulence>`` filter primitive.
+* @used  `feTurbulence`
+*/
+baseFrequency:string;
+/**
+* ### _`numOctaves` Attribute_
+* 
+* @used 
+*/
+numOctaves:string;
+/**
+* ### _`seed` Attribute_
+* 
+* @used 
+*/
+seed:string;
+/**
+* ### _`stitchTiles` Attribute_
+* 
+* @used 
+*/
+stitchTiles:string;
+/**
+* ### _`type` Attribute_
+* 
+* Defines the type of the element.
+* @used  `button` `input` `command` `embed` `object` `script` `source` `styles` `menu` `link`
+*/
+type:string;}
 
-export interface SVGFilterProps extends SVGAttributes{x:string;y:string;width:string;height:string;filterRes:string;filterUnits:string;primitiveUnits:string;xLinkHref:string;}
+export interface SVGFilterProps extends SVGAttributes{
+/**
+* ### _`x` Attribute_
+* 
+* @used 
+*/
+x:string;
+/**
+* ### _`y` Attribute_
+* 
+* @used 
+*/
+y:string;
+/**
+* ### _`width` Attribute_
+* 
+* For the elements listed here, this establishes the element's width.
+* @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+*/
+width:string;
+/**
+* ### _`height` Attribute_
+* 
+* Specifies the height of elements listed here. For all other elements, use the CSS height property.
+* @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+*/
+height:string;
+/**
+* ### _`filterRes` Attribute_
+* 
+* The filterRes attribute indicates the width and height of the intermediate images in pixels of a filter primitive.
+* @deprecated
+* @used 
+*/
+filterRes:string;
+/**
+* ### _`filterUnits` Attribute_
+* 
+* The filterUnits attribute defines the coordinate system for the attributes x, y, width and height.
+* @used 
+*/
+filterUnits:string;
+/**
+* ### _`primitiveUnits` Attribute_
+* 
+* @used 
+*/
+primitiveUnits:string;
+/**
+* ### _`xlink:href` Attribute_
+* 
+* @used 
+*/
+xLinkHref:string;}
 
-export interface SVGForeignObjectProps extends SVGAttributes{height:string;width:string;x:string;y:string;}
+export interface SVGForeignObjectProps extends SVGAttributes{
+/**
+* ### _`height` Attribute_
+* 
+* Specifies the height of elements listed here. For all other elements, use the CSS height property.
+* @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+*/
+height:string;
+/**
+* ### _`width` Attribute_
+* 
+* For the elements listed here, this establishes the element's width.
+* @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+*/
+width:string;
+/**
+* ### _`x` Attribute_
+* 
+* @used 
+*/
+x:string;
+/**
+* ### _`y` Attribute_
+* 
+* @used 
+*/
+y:string;}
 
 export interface SVGGProps extends SVGAttributes{}
 
@@ -2751,55 +3433,753 @@ export interface SVGHatchProps extends SVGAttributes{}
 
 export interface SVGHatchpathProps extends SVGAttributes{}
 
-export interface SVGImageProps extends SVGAttributes{x:string;y:string;width:string;height:string;href:string;xLinkHref:string;preserveAspectRatio:string;crossOrigin:string;}
+export interface SVGImageProps extends SVGAttributes{
+/**
+* ### _`x` Attribute_
+* 
+* @used 
+*/
+x:string;
+/**
+* ### _`y` Attribute_
+* 
+* @used 
+*/
+y:string;
+/**
+* ### _`width` Attribute_
+* 
+* For the elements listed here, this establishes the element's width.
+* @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+*/
+width:string;
+/**
+* ### _`height` Attribute_
+* 
+* Specifies the height of elements listed here. For all other elements, use the CSS height property.
+* @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+*/
+height:string;
+/**
+* ### _`href` Attribute_
+* 
+* The URL of a linked resource.
+* @used  `a` `area` `base` `link`
+*/
+href:string;
+/**
+* ### _`xlink:href` Attribute_
+* 
+* @used 
+*/
+xLinkHref:string;
+/**
+* ### _`preserveAspectRatio` Attribute_
+* 
+* @used 
+*/
+preserveAspectRatio:string;
+/**
+* ### _`crossorigin` Attribute_
+* 
+* How the element handles cross-origin requests
+* @used  `audio` `img` `link` `script` `video`
+*/
+crossOrigin:"use-credentials" | "anonymous";}
 
-export interface SVGLineProps extends SVGAttributes{x1:string;x2:string;y1:string;y2:string;pathLength:string;}
+export interface SVGLineProps extends SVGAttributes{
+/**
+* ### _`x1` Attribute_
+* 
+* @used 
+*/
+x1:string;
+/**
+* ### _`x2` Attribute_
+* 
+* @used 
+*/
+x2:string;
+/**
+* ### _`y1` Attribute_
+* 
+* @used 
+*/
+y1:string;
+/**
+* ### _`y2` Attribute_
+* 
+* @used 
+*/
+y2:string;
+/**
+* ### _`pathLength` Attribute_
+* 
+* @used 
+*/
+pathLength:string;}
 
-export interface SVGLinearGradientProps extends SVGAttributes{gradientUnits:string;gradientTransform:string;href:string;spreadMethod:string;x1:string;x2:string;y1:string;y2:string;}
+export interface SVGLinearGradientProps extends SVGAttributes{
+/**
+* ### _`gradientUnits` Attribute_
+* 
+* @used 
+*/
+gradientUnits:string;
+/**
+* ### _`gradientTransform` Attribute_
+* 
+* @used 
+*/
+gradientTransform:string;
+/**
+* ### _`href` Attribute_
+* 
+* The URL of a linked resource.
+* @used  `a` `area` `base` `link`
+*/
+href:string;
+/**
+* ### _`spreadMethod` Attribute_
+* 
+* @used 
+*/
+spreadMethod:string;
+/**
+* ### _`x1` Attribute_
+* 
+* @used 
+*/
+x1:string;
+/**
+* ### _`x2` Attribute_
+* 
+* @used 
+*/
+x2:string;
+/**
+* ### _`y1` Attribute_
+* 
+* @used 
+*/
+y1:string;
+/**
+* ### _`y2` Attribute_
+* 
+* @used 
+*/
+y2:string;}
 
-export interface SVGMarkerProps extends SVGAttributes{markerHeight:string;markerUnits:string;markerWidth:string;orient:string;preserveAspectRatio:string;refX:string;refY:string;viewBox:string;}
+export interface SVGMarkerProps extends SVGAttributes{
+/**
+* ### _`markerHeight` Attribute_
+* 
+* @used 
+*/
+markerHeight:string;
+/**
+* ### _`markerUnits` Attribute_
+* 
+* @used 
+*/
+markerUnits:string;
+/**
+* ### _`markerWidth` Attribute_
+* 
+* @used 
+*/
+markerWidth:string;
+/**
+* ### _`orient` Attribute_
+* 
+* @used 
+*/
+orient:string;
+/**
+* ### _`preserveAspectRatio` Attribute_
+* 
+* @used 
+*/
+preserveAspectRatio:string;
+/**
+* ### _`refX` Attribute_
+* 
+* @used 
+*/
+refX:string;
+/**
+* ### _`refY` Attribute_
+* 
+* @used 
+*/
+refY:string;
+/**
+* ### _`viewBox` Attribute_
+* 
+* @used 
+*/
+viewBox:string;}
 
-export interface SVGMaskProps extends SVGAttributes{height:string;maskContentUnits:string;maskUnits:string;x:string;y:string;width:string;}
+export interface SVGMaskProps extends SVGAttributes{
+/**
+* ### _`height` Attribute_
+* 
+* Specifies the height of elements listed here. For all other elements, use the CSS height property.
+* @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+*/
+height:string;
+/**
+* ### _`maskContentUnits` Attribute_
+* 
+* @used 
+*/
+maskContentUnits:string;
+/**
+* ### _`maskUnits` Attribute_
+* 
+* @used 
+*/
+maskUnits:string;
+/**
+* ### _`x` Attribute_
+* 
+* @used 
+*/
+x:string;
+/**
+* ### _`y` Attribute_
+* 
+* @used 
+*/
+y:string;
+/**
+* ### _`width` Attribute_
+* 
+* For the elements listed here, this establishes the element's width.
+* @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+*/
+width:string;}
 
 export interface SVGMetadataProps extends SVGAttributes{}
 
-export interface SVGMpathProps extends SVGAttributes{xLinkHref:string;}
+export interface SVGMpathProps extends SVGAttributes{
+/**
+* ### _`xlink:href` Attribute_
+* 
+* @used 
+*/
+xLinkHref:string;}
 
-export interface SVGPathProps extends SVGAttributes{d:string;pathLength:string;}
+export interface SVGPathProps extends SVGAttributes{
+/**
+* ### _`d` Attribute_
+* 
+* The d attribute defines a path to be drawn.
+* @used 
+*/
+d:string;
+/**
+* ### _`pathLength` Attribute_
+* 
+* @used 
+*/
+pathLength:string;}
 
-export interface SVGPatternProps extends SVGAttributes{height:string;href:string;patternContentUnits:string;patternTransform:string;preserveAspectRatio:string;viewBox:string;x:string;}
+export interface SVGPatternProps extends SVGAttributes{
+/**
+* ### _`height` Attribute_
+* 
+* Specifies the height of elements listed here. For all other elements, use the CSS height property.
+* @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+*/
+height:string;
+/**
+* ### _`href` Attribute_
+* 
+* The URL of a linked resource.
+* @used  `a` `area` `base` `link`
+*/
+href:string;
+/**
+* ### _`patternContentUnits` Attribute_
+* 
+* @used 
+*/
+patternContentUnits:string;
+/**
+* ### _`patternTransform` Attribute_
+* 
+* @used 
+*/
+patternTransform:string;
+/**
+* ### _`preserveAspectRatio` Attribute_
+* 
+* @used 
+*/
+preserveAspectRatio:string;
+/**
+* ### _`viewBox` Attribute_
+* 
+* @used 
+*/
+viewBox:string;
+/**
+* ### _`x` Attribute_
+* 
+* @used 
+*/
+x:string;}
 
-export interface SVGPolygonProps extends SVGAttributes{points:string;pathLength:string;}
+export interface SVGPolygonProps extends SVGAttributes{
+/**
+* ### _`points` Attribute_
+* 
+* @used 
+*/
+points:string;
+/**
+* ### _`pathLength` Attribute_
+* 
+* @used 
+*/
+pathLength:string;}
 
-export interface SVGPolylineProps extends SVGAttributes{points:string;pathLength:string;}
+export interface SVGPolylineProps extends SVGAttributes{
+/**
+* ### _`points` Attribute_
+* 
+* @used 
+*/
+points:string;
+/**
+* ### _`pathLength` Attribute_
+* 
+* @used 
+*/
+pathLength:string;}
 
-export interface SVGRadialGradientProps extends SVGAttributes{cx:string;cy:string;fr:string;fx:string;fy:string;gradientUnits:string;gradientTransform:string;href:string;r:string;spreadMethod:string;}
+export interface SVGRadialGradientProps extends SVGAttributes{
+/**
+* ### _`cx` Attribute_
+* 
+* The cx attribute define the x-axis coordinate of a center point.
+* @used 
+*/
+cx:string;
+/**
+* ### _`cy` Attribute_
+* 
+* The cy attribute define the y-axis coordinate of a center point.
+* @used 
+*/
+cy:string;
+/**
+* ### _`fr` Attribute_
+* 
+* The fr attribute defines the radius of the focal point for the radial gradient.
+* @used 
+*/
+fr:string;
+/**
+* ### _`fx` Attribute_
+* 
+* The fx attribute defines the x-axis coordinate of the focal point for a radial gradient.
+* @used 
+*/
+fx:string;
+/**
+* ### _`fy` Attribute_
+* 
+* The fy attribute defines the y-axis coordinate of the focal point for a radial gradient.
+* @used 
+*/
+fy:string;
+/**
+* ### _`gradientUnits` Attribute_
+* 
+* @used 
+*/
+gradientUnits:string;
+/**
+* ### _`gradientTransform` Attribute_
+* 
+* @used 
+*/
+gradientTransform:string;
+/**
+* ### _`href` Attribute_
+* 
+* The URL of a linked resource.
+* @used  `a` `area` `base` `link`
+*/
+href:string;
+/**
+* ### _`r` Attribute_
+* 
+* @used 
+*/
+r:string;
+/**
+* ### _`spreadMethod` Attribute_
+* 
+* @used 
+*/
+spreadMethod:string;}
 
-export interface SVGRectProps extends SVGAttributes{x:string;y:string;width:string;height:string;rx:string;ry:string;pathLength:string;}
+export interface SVGRectProps extends SVGAttributes{
+/**
+* ### _`x` Attribute_
+* 
+* @used 
+*/
+x:string;
+/**
+* ### _`y` Attribute_
+* 
+* @used 
+*/
+y:string;
+/**
+* ### _`width` Attribute_
+* 
+* For the elements listed here, this establishes the element's width.
+* @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+*/
+width:string;
+/**
+* ### _`height` Attribute_
+* 
+* Specifies the height of elements listed here. For all other elements, use the CSS height property.
+* @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+*/
+height:string;
+/**
+* ### _`rx` Attribute_
+* 
+* @used 
+*/
+rx:string;
+/**
+* ### _`ry` Attribute_
+* 
+* @used 
+*/
+ry:string;
+/**
+* ### _`pathLength` Attribute_
+* 
+* @used 
+*/
+pathLength:string;}
 
-export interface SVGSetProps extends SVGAttributes{to:string;}
+export interface SVGSetProps extends SVGAttributes{
+/**
+* ### _`to` Attribute_
+* 
+* @used 
+*/
+to:string;}
 
-export interface SVGStopProps extends SVGAttributes{stopColor:string;stopOpacity:string;}
+export interface SVGStopProps extends SVGAttributes{
+/**
+* ### _`stop-color` Attribute_
+* 
+* @used 
+*/
+stopColor:string;
+/**
+* ### _`stop-opacity` Attribute_
+* 
+* @used 
+*/
+stopOpacity:string;}
 
-export interface SVGSvgProps extends SVGAttributes{height:string;preserveAspectRatio:string;viewBox:string;width:string;x:string;y:string;}
+export interface SVGSvgProps extends SVGAttributes{
+/**
+* ### _`height` Attribute_
+* 
+* Specifies the height of elements listed here. For all other elements, use the CSS height property.
+* @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+*/
+height:string;
+/**
+* ### _`preserveAspectRatio` Attribute_
+* 
+* @used 
+*/
+preserveAspectRatio:string;
+/**
+* ### _`viewBox` Attribute_
+* 
+* @used 
+*/
+viewBox:string;
+/**
+* ### _`width` Attribute_
+* 
+* For the elements listed here, this establishes the element's width.
+* @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+*/
+width:string;
+/**
+* ### _`x` Attribute_
+* 
+* @used 
+*/
+x:string;
+/**
+* ### _`y` Attribute_
+* 
+* @used 
+*/
+y:string;}
 
 export interface SVGSwitchProps extends SVGAttributes{}
 
-export interface SVGSymbolProps extends SVGAttributes{height:string;preserveAspectRatio:string;refX:string;refY:string;viewBox:string;width:string;x:string;y:string;}
+export interface SVGSymbolProps extends SVGAttributes{
+/**
+* ### _`height` Attribute_
+* 
+* Specifies the height of elements listed here. For all other elements, use the CSS height property.
+* @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+*/
+height:string;
+/**
+* ### _`preserveAspectRatio` Attribute_
+* 
+* @used 
+*/
+preserveAspectRatio:string;
+/**
+* ### _`refX` Attribute_
+* 
+* @used 
+*/
+refX:string;
+/**
+* ### _`refY` Attribute_
+* 
+* @used 
+*/
+refY:string;
+/**
+* ### _`viewBox` Attribute_
+* 
+* @used 
+*/
+viewBox:string;
+/**
+* ### _`width` Attribute_
+* 
+* For the elements listed here, this establishes the element's width.
+* @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+*/
+width:string;
+/**
+* ### _`x` Attribute_
+* 
+* @used 
+*/
+x:string;
+/**
+* ### _`y` Attribute_
+* 
+* @used 
+*/
+y:string;}
 
-export interface SVGTextProps extends SVGAttributes{x:string;y:string;dx:string;dy:string;rotate:string;lengthAdjust:string;textLength:string;}
+export interface SVGTextProps extends SVGAttributes{
+/**
+* ### _`x` Attribute_
+* 
+* @used 
+*/
+x:string;
+/**
+* ### _`y` Attribute_
+* 
+* @used 
+*/
+y:string;
+/**
+* ### _`dx` Attribute_
+* 
+* The dx attribute indicates a shift along the x-axis on the position of an element or its content.
+* @used 
+*/
+dx:string;
+/**
+* ### _`dy` Attribute_
+* 
+* The dy attribute indicates a shift along the y-axis on the position of an element or its content.
+* @used 
+*/
+dy:string;
+/**
+* ### _`rotate` Attribute_
+* 
+* @used 
+*/
+rotate:string;
+/**
+* ### _`lengthAdjust` Attribute_
+* 
+* @used 
+*/
+lengthAdjust:string;
+/**
+* ### _`textLength` Attribute_
+* 
+* @used 
+*/
+textLength:string;}
 
-export interface SVGTextPathProps extends SVGAttributes{href:string;lengthAdjust:string;method:string;path:string;side:string;spacing:string;startOffset:string;textLength:string;}
+export interface SVGTextPathProps extends SVGAttributes{
+/**
+* ### _`href` Attribute_
+* 
+* The URL of a linked resource.
+* @used  `a` `area` `base` `link`
+*/
+href:string;
+/**
+* ### _`lengthAdjust` Attribute_
+* 
+* @used 
+*/
+lengthAdjust:string;
+/**
+* ### _`method` Attribute_
+* 
+* Defines which HTTP method to use when submitting the form. Can be GET (default) or POST.
+* @used  `form`
+*/
+method:"post" | "get" | "dialog";
+/**
+* ### _`path` Attribute_
+* 
+* @used 
+*/
+path:string;
+/**
+* ### _`spacing` Attribute_
+* 
+* @used 
+*/
+spacing:string;
+/**
+* ### _`startOffset` Attribute_
+* 
+* @used 
+*/
+startOffset:string;
+/**
+* ### _`textLength` Attribute_
+* 
+* @used 
+*/
+textLength:string;}
 
 export interface SVGTitleProps extends SVGAttributes{}
 
-export interface SVGTspanProps extends SVGAttributes{x:string;y:string;dx:string;dy:string;rotate:string;lengthAdjust:string;textLength:string;}
+export interface SVGTspanProps extends SVGAttributes{
+/**
+* ### _`x` Attribute_
+* 
+* @used 
+*/
+x:string;
+/**
+* ### _`y` Attribute_
+* 
+* @used 
+*/
+y:string;
+/**
+* ### _`dx` Attribute_
+* 
+* The dx attribute indicates a shift along the x-axis on the position of an element or its content.
+* @used 
+*/
+dx:string;
+/**
+* ### _`dy` Attribute_
+* 
+* The dy attribute indicates a shift along the y-axis on the position of an element or its content.
+* @used 
+*/
+dy:string;
+/**
+* ### _`rotate` Attribute_
+* 
+* @used 
+*/
+rotate:string;
+/**
+* ### _`lengthAdjust` Attribute_
+* 
+* @used 
+*/
+lengthAdjust:string;
+/**
+* ### _`textLength` Attribute_
+* 
+* @used 
+*/
+textLength:string;}
 
-export interface SVGUseProps extends SVGAttributes{href:string;xLinkHref:string;x:string;y:string;width:string;height:string;}
+export interface SVGUseProps extends SVGAttributes{
+/**
+* ### _`href` Attribute_
+* 
+* The URL of a linked resource.
+* @used  `a` `area` `base` `link`
+*/
+href:string;
+/**
+* ### _`xlink:href` Attribute_
+* 
+* @used 
+*/
+xLinkHref:string;
+/**
+* ### _`x` Attribute_
+* 
+* @used 
+*/
+x:string;
+/**
+* ### _`y` Attribute_
+* 
+* @used 
+*/
+y:string;
+/**
+* ### _`width` Attribute_
+* 
+* For the elements listed here, this establishes the element's width.
+* @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+*/
+width:string;
+/**
+* ### _`height` Attribute_
+* 
+* Specifies the height of elements listed here. For all other elements, use the CSS height property.
+* @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+*/
+height:string;}
 
 export interface SVGViewProps extends SVGAttributes{}
 
 export interface HTMLAttributes extends CommonAttributes, Events {/**
+* ### _`class` Attribute_
+* 
+* Often used with CSS to style elements with common properties.
+* @used Global attribute
+*/
+className:string;
+/**
 * ### _`id` Attribute_
 * 
 * Often used with CSS to style a specific element. The value of this attribute must be unique.
@@ -2827,13 +4207,6 @@ accessKey:string;
 * @used Global attribute
 */
 autoCapitalize:"off" | "none" | "on" | "sentences" | "words" | "characters";
-/**
-* ### _`class` Attribute_
-* 
-* Often used with CSS to style elements with common properties.
-* @used Global attribute
-*/
-className:string;
 /**
 * ### _`contenteditable` Attribute_
 * 
