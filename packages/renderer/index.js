@@ -361,21 +361,34 @@ class RecursiveWebRenderer extends Renderer {
      * Append an element to the DOM.
      * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
      * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} parentElement
+     * @param {number} index
      */
-    useRendererAddElement(element, parentElement) {
-        parentElement.instance.append(this.renderInstance(element));
+    useRendererAddElement(element, index = undefined) {
+        /**
+         * @type {HTMLElement}
+         */
+        const parent = element.parent.instance;
+
+        if (typeof index == "number" && parent.childNodes.length > index) {
+            const parent = element.parent.instance;
+
+            const child = parent.childNodes.item(index);
+
+            parent.insertBefore(this.renderInstance(element), child);
+        } else {
+            element.parent.instance.append(this.renderInstance(element));
+        }
     }
 
     /**
      * Change the position of an element in the given node element.
      * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
-     * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} parentElement
      * @param {number} newPosition
      */
-    useRendererChangeElementPosition(element, parentElement, newPosition) {
-        parentElement.instance.insertBefore(
+    useRendererChangeElementPosition(element, newPosition) {
+        element.parent.instance.insertBefore(
             element.instance,
-            parentElement.instance.children[newPosition]
+            element.parent.instance.children[newPosition]
         );
     }
 

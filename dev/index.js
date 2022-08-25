@@ -2,9 +2,10 @@ import { RecursiveWebApp } from "../packages/app/index";
 import {
     DateTimeLocalPicker,
     Div,
+    Fragment,
     HtmlContainer,
     Input,
-    Spacer,
+    NumberPicker,
     TextField,
 } from "../html";
 import { G, Path, Svg } from "../svg";
@@ -13,32 +14,39 @@ const App = new RecursiveWebApp({
     root: document.body,
     app: () => {
         const [text, setText] = setState("text", "");
+        const [items, setItems] = setState(
+            "items",
+            [15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70]
+        );
+
+        const filtered = items.filter((item) => item.toString().includes(text));
 
         return Div({
             children: [
-                HtmlContainer({
-                    children: ["<p>One</p>", {}, 0, 1, "<h1>yeet</h2>"],
-                }),
-                Input({
-                    contentEditable: "true",
-                    placeholder: "Hello World",
+                NumberPicker({
                     value: text,
-                    style: { inline: { color: "" } },
-                    onInput: (e) => {
-                        setText(e.target.value);
-                    },
+                    onInput: (e) => setText(e.target.value),
                 }),
-                TextField({ value: "string" }),
-                DateTimeLocalPicker({}),
-                Svg({
-                    viewBox: "0 0 24 24",
-                    height: "50px",
-                    width: "30px",
-                    children: [
-                        Path({
-                            d: "M15,5.63L20.66,12L15,18.37V15v-1h-1c-3.96,0-7.14,1-9.75,3.09c1.84-4.07,5.11-6.4,9.89-7.1L15,9.86V9V5.63 M14,3v6 C6.22,10.13,3.11,15.33,2,21c2.78-3.97,6.44-6,12-6v6l8-9L14,3L14,3z",
-                        }),
-                    ],
+                Div({
+                    children: filtered.map((item) =>
+                        Div({
+                            children: item,
+                            key: item,
+                            hooks: {
+                                onCreated: () => {
+                                    console.log("I am created : " + item);
+                                },
+                                beforeDestroyed: () => {
+                                    console.log(
+                                        "About to be destroyed : " + item
+                                    );
+                                },
+                                onDestroyed: () => {
+                                    console.log("Destroyed : " + item);
+                                },
+                            },
+                        })
+                    ),
                 }),
             ],
         });
