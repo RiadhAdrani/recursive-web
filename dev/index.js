@@ -23,6 +23,7 @@ const App = new RecursiveWebApp({
                     contentEditable: "true",
                     placeholder: "Hello World",
                     value: text,
+                    style: { inline: { color: "" } },
                     onInput: (e) => {
                         setText(e.target.value);
                     },

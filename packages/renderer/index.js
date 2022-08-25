@@ -3,12 +3,7 @@ const {
     is: isAttt,
     isToggle,
 } = require("../dom/DomAttributes.js");
-const {
-    get: getEv,
-    is: isEv,
-    getListener,
-    hasHandler,
-} = require("../dom/DomEvents.js");
+const { get: getEv, is: isEv } = require("../dom/DomEvents.js");
 const RecursiveCSSOM = require("../css/");
 const { Console, Renderer } = require("../../use.js");
 const { renderValue } = require("../css/CssProperties.js");
@@ -102,26 +97,6 @@ class RecursiveWebRenderer extends Renderer {
      * @param {HTMLElement} instance
      */
     useRendererAddEvent(eventName, callback, element) {
-        // const exists = element.events[eventName] !== undefined;
-
-        // element.instance.events[eventName] = callback;
-
-        // if (!exists) {
-        //     if (hasHandler(eventName)) {
-        //         getEv(eventName).handler(element.instance);
-        //     } else {
-        //         element.instance.addEventListener(
-        //             getListener(eventName),
-        //             (e) => {
-        //                 this.orchestrator.batchCallback(
-        //                     () => element.instance.events[eventName](e),
-        //                     eventName
-        //                 );
-        //             }
-        //         );
-        //     }
-        // }
-
         const eventData = getEv(eventName);
 
         if (!eventData) return;
@@ -147,30 +122,24 @@ class RecursiveWebRenderer extends Renderer {
      * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
      * @param {HTMLElement} instance
      */
-    useRendererInjectAttributes(element, instance) {
-        for (let key in element.attributes) {
-            if (key == "dataSet") {
-                for (let item in element.attributes.dataSet) {
-                    instance.dataset[item] = element.attributes.dataSet[item];
-                }
+    useRendererInjectAttribute(attribute, value, instance) {
+        if (attribute == "dataSet") {
+            for (let item in value) {
+                instance.dataset[item] = value[item];
+            }
+        } else {
+            if (isToggle(attribute)) {
+                instance.toggleAttribute(getAtt(attribute), value == true);
             } else {
-                if (isToggle(key)) {
-                    instance.toggleAttribute(
-                        getAtt(key),
-                        element.attributes[key] == true
-                    );
-                } else {
-                    instance.setAttribute(getAtt(key), element.attributes[key]);
-                }
+                instance.setAttribute(getAtt(attribute), value);
             }
         }
+    }
 
-        if (element.style && element.style.inline) {
-            for (let prop in element.style.inline) {
-                instance.style[prop] = renderValue(
-                    element.style.inline[prop],
-                    prop
-                );
+    useRendererInjectStyle(style, instance) {
+        if (style && style.inline) {
+            for (let prop in style.inline) {
+                instance.style[prop] = renderValue(style.inline[prop], prop);
             }
         }
     }
@@ -236,19 +205,17 @@ class RecursiveWebRenderer extends Renderer {
 
     /**
      * Inject event listeners into the HTML instance.
-     * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
+     * @param {string} event
+     * @param {Function} callback
      * @param {HTMLElement} instance
+     * @returns
      */
-    useRendererInjectEvents(element, instance) {
-        for (let eventName in element.events) {
-            const eventData = getEv(eventName);
+    useRendererInjectEvent(event, callback, instance) {
+        const eventData = getEv(event);
 
-            if (!eventData) continue;
+        if (!eventData) return;
 
-            const callback = element.events[eventName];
-
-            this.setElementEvent(eventData.on, callback, instance);
-        }
+        this.setElementEvent(eventData.on, callback, instance);
     }
 
     /**
@@ -256,10 +223,8 @@ class RecursiveWebRenderer extends Renderer {
      * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
      * @param {HTMLElement} instance
      */
-    useRendererInjectChildren(element, instance) {
-        element.children.forEach((child) =>
-            instance.append(this.renderInstance(child))
-        );
+    useRendererInjectChild(child, instance) {
+        instance.append(this.renderInstance(child));
     }
 
     /**
