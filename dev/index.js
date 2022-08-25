@@ -1,14 +1,5 @@
 import { RecursiveWebApp } from "../packages/app/index";
-import {
-    DateTimeLocalPicker,
-    Div,
-    Fragment,
-    HtmlContainer,
-    Input,
-    NumberPicker,
-    TextField,
-} from "../html";
-import { G, Path, Svg } from "../svg";
+import { Div, Input, NumberPicker, Row } from "../html";
 
 const App = new RecursiveWebApp({
     root: document.body,
@@ -28,9 +19,20 @@ const App = new RecursiveWebApp({
                     onInput: (e) => setText(e.target.value),
                 }),
                 Div({
-                    children: filtered.map((item) =>
-                        Div({
-                            children: item,
+                    children: filtered.map((item) => {
+                        const [value, setValue] = setState(
+                            item.toString(),
+                            item
+                        );
+
+                        return Row({
+                            children: [
+                                item,
+                                Input({
+                                    value,
+                                    onInput: (e) => setValue(e.target.value),
+                                }),
+                            ],
                             key: item,
                             hooks: {
                                 onCreated: () => {
@@ -45,8 +47,8 @@ const App = new RecursiveWebApp({
                                     console.log("Destroyed : " + item);
                                 },
                             },
-                        })
-                    ),
+                        });
+                    }),
                 }),
             ],
         });
@@ -226,102 +228,3 @@ export {
     getRoute,
     renderRoute,
 };
-
-const arias = [
-    "aria-autocomplete",
-    "aria-checked",
-    "aria-disabled",
-    "aria-errormessage",
-    "aria-expanded",
-    "aria-haspopup",
-    "aria-hidden",
-    "aria-invalid",
-    "aria-label",
-    "aria-level",
-    "aria-modal",
-    "aria-multiline",
-    "aria-multiselectable",
-    "aria-orientation",
-    "aria-placeholder",
-    "aria-pressed",
-    "aria-readonly",
-    "aria-required",
-    "aria-selected",
-    "aria-sort",
-    "aria-valuemax",
-    "aria-valuemin",
-    "aria-valuenow",
-    "aria-valuetext",
-    "aria-busy",
-    "aria-live",
-    "aria-relevant",
-    "aria-atomic",
-    "aria-dropeffect",
-    "aria-grabbed",
-    "aria-activedescendant",
-    "aria-colcount",
-    "aria-colindex",
-    "aria-colspan",
-    "aria-controls",
-    "aria-describedby",
-    "aria-description",
-    "aria-details",
-    "aria-errormessage",
-    "aria-flowto",
-    "aria-labelledby",
-    "aria-owns",
-    "aria-posinset",
-    "aria-rowcount",
-    "aria-rowindex",
-    "aria-rowspan",
-    "aria-setsize",
-    "aria-atomic",
-    "aria-busy",
-    "aria-controls",
-    "aria-current",
-    "aria-describedby",
-    "aria-description",
-    "aria-details",
-    "aria-disabled",
-    "aria-dropeffect",
-    "aria-errormessage",
-    "aria-flowto",
-    "aria-grabbed",
-    "aria-haspopup",
-    "aria-hidden",
-    "aria-invalid",
-    "aria-keyshortcuts",
-    "aria-label",
-    "aria-labelledby",
-    "aria-live",
-    "aria-owns",
-    "aria-relevant",
-    "aria-roledescription",
-];
-
-const obj = {};
-
-arias.forEach((item) => {
-    const name = item
-        .split("-")
-        .map((part, index) => {
-            if (index > 0) {
-                return part.substring(0, 1).toUpperCase() + part.substring(1);
-            } else {
-                return part;
-            }
-        })
-        .join("");
-
-    const itemObj = {
-        name: item,
-        type: "normal",
-        values: "string",
-        els: true,
-        docs: [],
-    };
-
-    obj[name] = itemObj;
-});
-
-// console.log(obj);
