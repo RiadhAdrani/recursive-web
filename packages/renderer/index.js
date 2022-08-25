@@ -350,13 +350,14 @@ class RecursiveWebRenderer extends Renderer {
 
     /**
      * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
+     * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} parentElement
      * @param {number} index
      */
-    useRendererAddElement(element, index = undefined) {
+    useRendererAddElement(element, parentElement, index = undefined) {
         /**
          * @type {HTMLElement}
          */
-        const parent = element.parent.instance;
+        const parent = parentElement.instance;
 
         if (typeof index == "number" && parent.childNodes.length > index) {
             const parent = element.parent.instance;
@@ -365,7 +366,7 @@ class RecursiveWebRenderer extends Renderer {
 
             parent.insertBefore(this.renderInstance(element), child);
         } else {
-            element.parent.instance.append(this.renderInstance(element));
+            parent.append(this.renderInstance(element));
         }
     }
 

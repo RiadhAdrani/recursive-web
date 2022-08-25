@@ -17,7 +17,12 @@ function emptyApp() {
 function app(myApp) {
     beforeEach();
 
-    return new RecursiveWebApp({ app: myApp, root: document.body });
+    const testApp = new RecursiveWebApp({
+        app: () => myApp(testApp),
+        root: document.body,
+    });
+
+    return testApp;
 }
 
 module.exports = { emptyApp, app };

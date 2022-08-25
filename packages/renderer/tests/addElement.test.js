@@ -17,9 +17,9 @@ it("should add an html div element", () => {
 
     const el = createElement("div");
 
-    el.parent = { instance: document.body.children.item(0) };
+    const parent = { instance: document.body.children.item(0) };
 
-    renderer.useRendererAddElement(el);
+    renderer.useRendererAddElement(el, parent);
 
     expect(document.body.children.item(0).childElementCount).toBe(1);
 });
@@ -40,9 +40,9 @@ it("should add a raw element", () => {
         ],
     });
 
-    el.parent = { instance: document.body.children.item(0) };
+    const parent = { instance: document.body.children.item(0) };
 
-    renderer.useRendererAddElement(el);
+    renderer.useRendererAddElement(el, parent);
 
     expect(document.body.children.item(0).children.item(0).innerHTML).toBe(
         "<p>Hello</p>"

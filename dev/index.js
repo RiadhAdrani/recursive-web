@@ -33,7 +33,6 @@ const App = new RecursiveWebApp({
                                     onInput: (e) => setValue(e.target.value),
                                 }),
                             ],
-                            key: item,
                             hooks: {
                                 onCreated: () => {
                                     console.log("I am created : " + item);
