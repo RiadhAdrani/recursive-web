@@ -295,7 +295,7 @@ class RecursiveWebRenderer extends Renderer {
         for (let key in combined) {
             element.instance.style[key] =
                 newInline[key] != undefined
-                    ? renderValue(combined[key], key)
+                    ? renderValue(combined[key], key).trim()
                     : "";
         }
     }

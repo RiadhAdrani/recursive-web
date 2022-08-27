@@ -4,6 +4,10 @@ const LAZY_COLUMN = "lazy-column";
 const LAZY_ROW = "lazy-row";
 const HTML_CONTAINER = "html-container";
 const SPACER_VIEW = "spacer-view";
+const CENTERED_COLUMN = "centered-column";
+const CENTERED_ROW = "centered-row";
+const HORIZONTAL_LINE = "horizontal-line";
+const VERTICAL_LINE = "vertical-line";
 
 const HTML_NS = "http://www.w3.org/1999/xhtml";
 const SVG_NS = "http://www.w3.org/2000/svg";
@@ -20,4 +24,8 @@ module.exports = {
     LAZY_ROW,
     HTML_CONTAINER,
     SPACER_VIEW,
+    CENTERED_COLUMN,
+    CENTERED_ROW,
+    HORIZONTAL_LINE,
+    VERTICAL_LINE,
 };

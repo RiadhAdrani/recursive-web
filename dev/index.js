@@ -1,53 +1,29 @@
 import { RecursiveWebApp } from "../packages/app/index";
-import { Div, Input, NumberPicker, Row } from "../html";
+import {
+    CenteredColumn,
+    CenteredRow,
+    ColorPicker,
+    Div,
+    HorizontalLine,
+    Input,
+    NumberPicker,
+    Row,
+    VerticalLine,
+} from "../html";
 
 const App = new RecursiveWebApp({
     root: document.body,
     app: () => {
-        const [text, setText] = setState("text", "");
-        const [items, setItems] = setState(
-            "items",
-            [15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70]
-        );
-
-        const filtered = items.filter((item) => item.toString().includes(text));
+        const [value, setValue] = setState("state", "#000000");
 
         return Div({
+            style: { inline: { backgroundColor: value } },
             children: [
-                NumberPicker({
-                    value: text,
-                    onInput: (e) => setText(e.target.value),
-                }),
-                Div({
-                    children: filtered.map((item) => {
-                        const [value, setValue] = setState(
-                            item.toString(),
-                            item
-                        );
-
-                        return Row({
-                            children: [
-                                item,
-                                Input({
-                                    value,
-                                    onInput: (e) => setValue(e.target.value),
-                                }),
-                            ],
-                            hooks: {
-                                onCreated: () => {
-                                    console.log("I am created : " + item);
-                                },
-                                beforeDestroyed: () => {
-                                    console.log(
-                                        "About to be destroyed : " + item
-                                    );
-                                },
-                                onDestroyed: () => {
-                                    console.log("Destroyed : " + item);
-                                },
-                            },
-                        });
-                    }),
+                ColorPicker({
+                    value,
+                    onInput: (e) => {
+                        setValue(e.target.value);
+                    },
                 }),
             ],
         });

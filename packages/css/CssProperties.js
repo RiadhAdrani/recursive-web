@@ -56,6 +56,10 @@ function renderValue(value, propertyName) {
         if (validValue(item)) {
             _value += ` ${item}`;
         } else {
+            console.log(
+                "property " + propertyName + " of " + propertyName + " igonred"
+            );
+
             Console.warn(
                 `CSS: value "${item}" of property "${propertyName}" has been ignored.`
             );

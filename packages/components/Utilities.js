@@ -8,6 +8,10 @@ const {
     SPACER_VIEW,
     LAZY_COLUMN,
     LAZY_ROW,
+    HORIZONTAL_LINE,
+    VERTICAL_LINE,
+    CENTERED_COLUMN,
+    CENTERED_ROW,
 } = require("../constants");
 
 const useObserver = (element, instance) => {
@@ -404,5 +408,59 @@ module.exports = {
             },
             docs: [],
         },
+        HorizontalLine: {
+            tag: HORIZONTAL_LINE,
+            props: {
+                thickness: "string",
+                width: "string",
+                marginVertical: "string",
+                color: "Color",
+            },
+            childless: true,
+            handler: (element) => {
+                element.style = {
+                    ...element.style,
+                    scoped: true,
+                    normal: {
+                        width: element.width || "auto",
+                        height: element.thickness || "1px",
+                        minHeight: element.thickness || "1px",
+                        maxHeight: element.thickness || "1px",
+                        backgroundColor: element.color || "black",
+                        margin: [element.marginVertical || "5px", 0],
+                        display: "block",
+                    },
+                };
+            },
+            docs: [],
+        },
+        VerticalLine: {
+            tag: VERTICAL_LINE,
+            props: {
+                thickness: "string",
+                height: "string",
+                marginHorizontal: "string",
+                color: "Color",
+            },
+            childless: true,
+            handler: (element) => {
+                element.style = {
+                    ...element.style,
+                    scoped: true,
+                    normal: {
+                        height: element.height || "5px",
+                        width: element.thickness || "1px",
+                        minWidth: element.thickness || "1px",
+                        maxWidth: element.thickness || "1px",
+                        backgroundColor: element.color || "black",
+                        margin: [0, element.marginHorizontal || "5px"],
+                        display: "inline-block",
+                    },
+                };
+            },
+            docs: [],
+        },
+        CenteredColumn: { tag: CENTERED_COLUMN, props: {}, docs: [] },
+        CenteredRow: { tag: CENTERED_ROW, props: {}, docs: [] },
     },
 };

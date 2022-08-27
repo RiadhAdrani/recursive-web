@@ -2713,6 +2713,14 @@ export interface LazyColumnProps extends CommonAttributes, Events, HTMLAttribute
 
 export interface LazyRowProps extends CommonAttributes, Events, HTMLAttributes{onObserved:Function;children:Array<RecursiveElement>;}
 
+export interface HorizontalLineProps extends CommonAttributes, Events, HTMLAttributes{thickness:string;width:string;marginVertical:string;color:Color;}
+
+export interface VerticalLineProps extends CommonAttributes, Events, HTMLAttributes{thickness:string;height:string;marginHorizontal:string;color:Color;}
+
+export interface CenteredColumnProps extends CommonAttributes, Events, HTMLAttributes{children:Array<RecursiveElement>;}
+
+export interface CenteredRowProps extends CommonAttributes, Events, HTMLAttributes{children:Array<RecursiveElement>;}
+
 export interface SVGAProps extends SVGAttributes{
 /**
 * ### _`href` Attribute_

@@ -2205,3 +2205,67 @@ export function LazyRow(props) {
     CustomElements.items.LazyRow.handler(el);
     return el;
 }
+/**
+ * ## _`HorizontalLine` Component_
+ *
+ *
+ *
+ * @param {import("../lib").HorizontalLineProps} props properties
+ * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ */
+export function HorizontalLine(props) {
+    const el = createElement("horizontal-line", {
+        ...props,
+        rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
+    });
+    CustomElements.items.HorizontalLine.handler(el);
+    return el;
+}
+/**
+ * ## _`VerticalLine` Component_
+ *
+ *
+ *
+ * @param {import("../lib").VerticalLineProps} props properties
+ * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ */
+export function VerticalLine(props) {
+    const el = createElement("vertical-line", {
+        ...props,
+        rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
+    });
+    CustomElements.items.VerticalLine.handler(el);
+    return el;
+}
+/**
+ * ## _`CenteredColumn` Component_
+ *
+ *
+ *
+ * @param {import("../lib").CenteredColumnProps} props properties
+ * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ */
+export function CenteredColumn(props) {
+    const el = createElement("centered-column", {
+        ...props,
+        rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
+    });
+
+    return el;
+}
+/**
+ * ## _`CenteredRow` Component_
+ *
+ *
+ *
+ * @param {import("../lib").CenteredRowProps} props properties
+ * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ */
+export function CenteredRow(props) {
+    const el = createElement("centered-row", {
+        ...props,
+        rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
+    });
+
+    return el;
+}
