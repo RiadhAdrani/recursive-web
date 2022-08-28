@@ -1,6 +1,6 @@
 {
     "name": "@riadh-adrani/recursive-web",
-    "version": "0.7.39",
+    "version": "0.7.40",
     "description": "Recursive Web is the web implementation of the Recursive Framework.",
     "license": "MIT",
     "main": "index.js",
@@ -12,7 +12,7 @@
         "start": "webpack-dev-server --config ./dev/webpack.dev.js --open",
         "test": "jest",
         "pretty": "prettier --write \"./**/*.{js,jsx,json}\"",
-        "generate": "node ./packages/scripts/types.js && node ./packages/scripts/style.js && node ./packages/scripts/comp.js && node ./packages/scripts/events.js && npm run pretty"
+        "generate": "node ./packages/scripts/types.js && node ./packages/scripts/style.js && node ./packages/scripts/comp.js && node ./packages/scripts/events.js && npm run pretty lib.d.ts"
     },
     "keywords": [
         "npm",
@@ -27,7 +27,7 @@
         "framework"
     ],
     "dependencies": {
-        "@riadh-adrani/recursive": "^0.7.39"
+        "@riadh-adrani/recursive": "^0.7.40"
     },
     "devDependencies": {
         "clean-webpack-plugin": "^4.0.0",

@@ -2,12 +2,14 @@
  * @jest-environment jsdom
  */
 
-const { createElement } = require("../../../use");
 const { app } = require("./test.utility");
 
 it("should inject a child", () => {
-    const renderer = app(() =>
-        createElement("span", { id: "myId", children: [createElement("p")] })
+    const renderer = app((testApp) =>
+        testApp.createElement("span", {
+            id: "myId",
+            children: [testApp.createElement("p")],
+        })
     ).renderer;
 
     renderer.render();
@@ -16,13 +18,13 @@ it("should inject a child", () => {
 });
 
 it("should inject many children", () => {
-    const renderer = app(() =>
-        createElement("span", {
+    const renderer = app((testApp) =>
+        testApp.createElement("span", {
             id: "myId",
             children: [
-                createElement("p"),
-                createElement("p"),
-                createElement("p"),
+                testApp.createElement("p"),
+                testApp.createElement("p"),
+                testApp.createElement("p"),
             ],
         })
     ).renderer;
@@ -33,8 +35,8 @@ it("should inject many children", () => {
 });
 
 it("should inject text nodes", () => {
-    const renderer = app(() =>
-        createElement("span", {
+    const renderer = app((testApp) =>
+        testApp.createElement("span", {
             id: "myId",
             children: ["Text", "Node"],
         })

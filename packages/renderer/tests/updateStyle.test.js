@@ -2,15 +2,16 @@
  * @jest-environment jsdom
  */
 
-const { createElement } = require("../../../use");
 const { app } = require("./test.utility");
 
 it("should update inline style attribute", () => {
-    const renderer = app(() =>
-        createElement("span", { style: { inline: { color: "red" } } })
-    ).renderer;
+    const testApp = app((testApp) =>
+        testApp.createElement("span", { style: { inline: { color: "red" } } })
+    );
 
-    const newElement = createElement("span", {
+    const renderer = testApp.renderer;
+
+    const newElement = testApp.createElement("span", {
         style: { inline: { color: "blue" } },
     });
 
@@ -22,11 +23,13 @@ it("should update inline style attribute", () => {
 });
 
 it("should reset non-existing attributes in the new element", () => {
-    const renderer = app(() =>
-        createElement("span", { style: { inline: { color: "red" } } })
-    ).renderer;
+    const testApp = app((testApp) =>
+        testApp.createElement("span", { style: { inline: { color: "red" } } })
+    );
 
-    const newElement = createElement("span", {
+    const renderer = testApp.renderer;
+
+    const newElement = testApp.createElement("span", {
         style: { inline: { backgroundColor: "blue" } },
     });
 

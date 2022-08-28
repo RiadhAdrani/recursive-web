@@ -2,11 +2,12 @@
  * @jest-environment jsdom
  */
 
-const { createElement } = require("../../../use");
 const { app } = require("./test.utility");
 
 it("should update a given attribute", () => {
-    const renderer = app(() => createElement("span", { id: "myId" })).renderer;
+    const renderer = app((testApp) =>
+        testApp.createElement("span", { id: "myId" })
+    ).renderer;
 
     renderer.render();
 
@@ -16,8 +17,8 @@ it("should update a given attribute", () => {
 });
 
 it("should update a togglable attribute", () => {
-    const renderer = app(() =>
-        createElement("input", { checked: false })
+    const renderer = app((testApp) =>
+        testApp.createElement("input", { checked: false })
     ).renderer;
 
     renderer.render();

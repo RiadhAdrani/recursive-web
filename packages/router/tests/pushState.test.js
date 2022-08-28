@@ -4,7 +4,7 @@
 
 const { app } = require("./test.utility");
 
-it("should build the url from a route", () => {
+it("should push state correctly", () => {
     const router = app().router;
 
     router.useRouterPushState("/myRoute", "/myRoute", "#anchor");

@@ -2,11 +2,12 @@
  * @jest-environment jsdom
  */
 
-const { createElement } = require("../../../use");
 const { app } = require("./test.utility");
 
 it("should inject attributes", () => {
-    const renderer = app(() => createElement("div", { id: "myId" })).renderer;
+    const renderer = app((testApp) =>
+        testApp.createElement("div", { id: "myId" })
+    ).renderer;
 
     renderer.render();
 

@@ -14,7 +14,10 @@ const App = new RecursiveWebApp({
         return Div({
             style: { inline: { backgroundColor: value } },
             children: [
-                Link({ href: "/route", children: "Hello World" }),
+                Link({
+                    href: "/route",
+                    children: "Hello World",
+                }),
                 ColorPicker({
                     value,
                     onInput: (e) => {
@@ -169,7 +172,7 @@ function createComponentStyle(param) {
 }
 
 /**
- * Returns the currentl route path.
+ * Returns the current route path.
  * @returns {string}
  */
 function getRoute() {

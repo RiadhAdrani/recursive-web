@@ -7,13 +7,13 @@ const {
     RECURSIVE_ELEMENT_SYMBOL,
     ELEMENT_TYPE_RAW,
 } = require("@riadh-adrani/recursive/packages/constants");
-const { createElement } = require("../../../use");
 const { emptyApp } = require("./test.utility");
 
 it("should update raw container", () => {
-    const renderer = emptyApp().renderer;
+    const app = emptyApp();
+    const renderer = app.renderer;
 
-    const text1 = createElement(ELEMENT_TYPE_RAW, {
+    const text1 = app.createElement(ELEMENT_TYPE_RAW, {
         children: [
             {
                 elementType: ELEMENT_TYPE_TEXT_NODE,
@@ -23,7 +23,7 @@ it("should update raw container", () => {
             },
         ],
     });
-    const text2 = createElement(ELEMENT_TYPE_RAW, {
+    const text2 = app.createElement(ELEMENT_TYPE_RAW, {
         children: [
             {
                 elementType: ELEMENT_TYPE_TEXT_NODE,

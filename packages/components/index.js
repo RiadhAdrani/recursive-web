@@ -55,4 +55,16 @@ function createElement(...args) {
     return getApp().createElement(...args);
 }
 
-module.exports = { getApp, useApp, createElement };
+/**
+ * create a blue print of a component.
+ * @param {object} params
+ * @param {string} params.tag a string representing the HTML tag of the element.
+ * @param {object} params.props an object containing the unique attributes of the element.
+ * @param {Array<string>} params.docs an array of string defining the component documentation.
+ * @param {import("../../core").ComponentHandler} params.handler
+ */
+function component({ tag, props = {}, docs = [], handler }) {
+    return { tag, props, docs, handler };
+}
+
+module.exports = { getApp, useApp, createElement, component };

@@ -2,14 +2,14 @@
  * @jest-environment jsdom
  */
 
-const { createElement } = require("../../../use");
 const { emptyApp } = require("./test.utility");
 
 it("should update text", () => {
-    const renderer = emptyApp().renderer;
+    const app = emptyApp();
+    const renderer = app.renderer;
 
-    const text1 = createElement("#text", { children: 1 });
-    const text2 = createElement("#text", { children: 2 });
+    const text1 = app.createElement("#text", { children: 1 });
+    const text2 = app.createElement("#text", { children: 2 });
 
     const div = renderer.renderInstance(text1);
 

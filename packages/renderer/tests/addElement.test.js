@@ -2,7 +2,6 @@
  * @jest-environment jsdom
  */
 
-const { createElement } = require("../../../use");
 const { emptyApp } = require("./test.utility");
 const {
     ELEMENT_TYPE_TEXT_NODE,
@@ -11,11 +10,12 @@ const {
 } = require("@riadh-adrani/recursive/packages/constants");
 
 it("should add an html div element", () => {
-    const renderer = emptyApp().renderer;
+    const app = emptyApp();
+    const renderer = app.renderer;
 
     renderer.render();
 
-    const el = createElement("div");
+    const el = app.createElement("div");
 
     const parent = { instance: document.body.children.item(0) };
 
@@ -25,11 +25,12 @@ it("should add an html div element", () => {
 });
 
 it("should add a raw element", () => {
-    const renderer = emptyApp().renderer;
+    const app = emptyApp();
+    const renderer = app.renderer;
 
     renderer.render();
 
-    const el = createElement(ELEMENT_TYPE_RAW, {
+    const el = app.createElement(ELEMENT_TYPE_RAW, {
         children: [
             {
                 elementType: ELEMENT_TYPE_TEXT_NODE,

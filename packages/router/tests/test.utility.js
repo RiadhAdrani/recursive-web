@@ -10,8 +10,12 @@ function app() {
     beforeEach();
 
     const _app = new RecursiveWebApp({
-        app: () => createElement("div"),
+        app: () => _app.createElement("div"),
         root: document.body,
+        route: {
+            path: "/",
+            component: () => "",
+        },
     });
 
     _app.render();

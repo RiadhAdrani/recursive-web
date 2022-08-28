@@ -9,7 +9,7 @@ it("should update the tree correctly", () => {
     const testApp = app((_app) => {
         const [count, setCount] = _app.setState("count", 0);
 
-        return createElement("div", {
+        return testApp.createElement("div", {
             children: [
                 createElement("button", {
                     children: count,
@@ -44,10 +44,10 @@ it("should update append new element to the tree", () => {
             return a;
         })();
 
-        return createElement("div", {
+        return testApp.createElement("div", {
             onClick: () => setCount(count + 1),
             children: items.map((item) => {
-                return createElement("button", {
+                return testApp.createElement("button", {
                     children: item,
                 });
             }),
@@ -79,10 +79,10 @@ it("should update remove element from the tree", () => {
             return a;
         })();
 
-        return createElement("div", {
+        return testApp.createElement("div", {
             onClick: () => setCount(count - 1),
             children: items.map((item) => {
-                return createElement("button", {
+                return testApp.createElement("button", {
                     children: item,
                 });
             }),
@@ -108,10 +108,10 @@ it("should update remove keyed elements from the tree", () => {
 
         const items = list.filter((item) => item.toString().includes(text));
 
-        return createElement("div", {
+        return testApp.createElement("div", {
             onClick: () => setText("0"),
             children: items.map((item) => {
-                return createElement("button", {
+                return testApp.createElement("button", {
                     key: item,
                     children: item,
                 });
@@ -134,10 +134,10 @@ it("should update add keyed elements to the tree", () => {
     const testApp = app((_app) => {
         const [items, setItems] = _app.setState("count", [1, 2, 3]);
 
-        return createElement("div", {
+        return testApp.createElement("div", {
             onClick: () => setItems([1, 10, 2, 20, 3, 30]),
             children: items.map((item) => {
-                return createElement("p", {
+                return testApp.createElement("p", {
                     key: item,
                     children: item,
                 });

@@ -6,9 +6,10 @@ const { createElement } = require("../../../use");
 const { emptyApp } = require("./test.utility");
 
 it("should add event", () => {
-    const renderer = emptyApp().renderer;
+    const app = emptyApp();
+    const renderer = app.renderer;
 
-    const ele = createElement("div", { events: {} });
+    const ele = app.createElement("div", { events: {} });
     const eleInstance = renderer.renderInstance(ele);
 
     renderer.useRendererAddEvent("onClick", () => {}, ele);

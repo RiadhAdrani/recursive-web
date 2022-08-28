@@ -2,7 +2,7 @@ const {
     ELEMENT_TYPE_RAW,
     ELEMENT_TYPE_FRAGMENT,
 } = require("@riadh-adrani/recursive/packages/constants");
-const { getApp } = require("..");
+const { getApp, component } = require("..");
 const { Console } = require("../../../use");
 const {
     COLUMN_VIEW,
@@ -15,18 +15,6 @@ const {
     CENTERED_COLUMN,
     CENTERED_ROW,
 } = require("../../constants");
-
-/**
- * create a blue print of a component.
- * @param {object} params
- * @param {string} params.tag a string representing the HTML tag of the element.
- * @param {object} params.props an object containing the unique attributes of the element.
- * @param {Array<string>} params.docs an array of string defining the component documentation.
- * @param {import("../../core").ComponentHandler} params.handler
- */
-function component({ tag, props = {}, docs = [], handler }) {
-    return { tag, props, docs, handler };
-}
 
 const useObserver = (element, instance) => {
     var observer = new IntersectionObserver(
@@ -479,7 +467,7 @@ module.exports = {
         Link: component({
             tag: "a",
             docs: [],
-            props: { href: "" },
+            props: { href: "string" },
             handler: (element) => {
                 if (element.href) {
                     const app = getApp();

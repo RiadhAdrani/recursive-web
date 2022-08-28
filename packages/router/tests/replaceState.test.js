@@ -4,7 +4,7 @@
 
 const { app } = require("./test.utility");
 
-it("should build the url from a route", () => {
+it("should replace the current state", () => {
     const router = app().router;
 
     router.useRouterReplaceState("/anotherRoute", "/anotherRoute", "#anchor");

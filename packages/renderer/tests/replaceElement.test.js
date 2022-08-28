@@ -2,15 +2,19 @@
  * @jest-environment jsdom
  */
 
-const { createElement } = require("../../../use");
 const { app } = require("./test.utility");
 
 it("should replace the element", () => {
-    const renderer = app(() => createElement("span")).renderer;
+    const _app = app((testApp) => testApp.createElement("span"));
+
+    const renderer = _app.renderer;
 
     renderer.render();
 
-    renderer.useRendererReplaceElement(renderer.current, createElement("div"));
+    renderer.useRendererReplaceElement(
+        renderer.current,
+        _app.createElement("div")
+    );
 
     expect(document.body.childNodes.item(0).tagName).toBe("DIV");
 });
