@@ -6,36 +6,38 @@
 
 const { HTML_NS, SVG_NS } = require("../constants/index.js");
 const { generateComponent } = require("./index.js");
-const Elements = require("../components/HTMLelements.js").items;
-const Custom = require("../components/Utilities.js").items;
-const SVG = require("../components/SVGelements.js").items;
+const HTML = require("../components/html").items;
+const Utility = require("../components/utility").items;
+const SVG = require("../components/svg").items;
+
+const createElementImport =
+    'import {createElement} from "../packages/components";';
 
 (() => {
-    let imp = `import CustomElements from "../packages/components/Utilities.js";
-import {createElement} from "..";`;
+    let imp = `import CustomElements from "../packages/components/utility";${createElementImport}`;
 
     let elements = "";
 
-    for (let element in Elements) {
+    for (let element in HTML) {
         elements += generateComponent(
             element,
             element.toLowerCase(),
             HTML_NS,
             `${element}Props`,
-            Elements[element],
+            HTML[element],
             null,
             "https://developer.mozilla.org/en-US/docs/Web/HTML/Element"
         );
     }
 
-    for (let element in Custom) {
+    for (let element in Utility) {
         elements += generateComponent(
             element,
-            Custom[element].tag,
+            Utility[element].tag,
             HTML_NS,
             `${element}Props`,
-            Custom[element],
-            Custom[element].handler
+            Utility[element],
+            Utility[element].handler
                 ? `CustomElements.items.${element}.handler(el);`
                 : null
         );
@@ -59,7 +61,7 @@ import {createElement} from "..";`;
 })();
 
 (() => {
-    let imp = `import {createElement} from "..";`;
+    let imp = createElementImport;
 
     let elements = "";
 

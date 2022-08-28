@@ -2,6 +2,8 @@ const {
     ELEMENT_TYPE_RAW,
     ELEMENT_TYPE_FRAGMENT,
 } = require("@riadh-adrani/recursive/packages/constants");
+const { getApp } = require("..");
+const { Console } = require("../../../use");
 const {
     COLUMN_VIEW,
     ROW_VIEW,
@@ -12,7 +14,19 @@ const {
     VERTICAL_LINE,
     CENTERED_COLUMN,
     CENTERED_ROW,
-} = require("../constants");
+} = require("../../constants");
+
+/**
+ * create a blue print of a component.
+ * @param {object} params
+ * @param {string} params.tag a string representing the HTML tag of the element.
+ * @param {object} params.props an object containing the unique attributes of the element.
+ * @param {Array<string>} params.docs an array of string defining the component documentation.
+ * @param {import("../../core").ComponentHandler} params.handler
+ */
+function component({ tag, props = {}, docs = [], handler }) {
+    return { tag, props, docs, handler };
+}
 
 const useObserver = (element, instance) => {
     var observer = new IntersectionObserver(
@@ -462,5 +476,40 @@ module.exports = {
         },
         CenteredColumn: { tag: CENTERED_COLUMN, props: {}, docs: [] },
         CenteredRow: { tag: CENTERED_ROW, props: {}, docs: [] },
+        Link: component({
+            tag: "a",
+            docs: [],
+            props: { href: "" },
+            handler: (element) => {
+                if (element.href) {
+                    const app = getApp();
+
+                    if (!app.router) {
+                        Console.error(
+                            "Recursive Web : Unable to initialize a Link component without the presense of a Router.",
+                            [
+                                "To initialize the Router, you need at least the root route '/'.",
+                            ]
+                        );
+                    }
+
+                    const _onClick = element.onClick || (() => {});
+
+                    const to = element.href;
+
+                    element.href = app.router.useRouterMakeURL(to);
+
+                    element.onClick = (e) => {
+                        e.preventDefault();
+
+                        app.router.goTo(to);
+
+                        _onClick(e);
+                    };
+                }
+
+                return element;
+            },
+        }),
     },
 };

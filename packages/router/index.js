@@ -1,13 +1,21 @@
-const { Router } = require("../../use");
+const { Router, State, Orchestrator } = require("../../use");
 
+/**
+ * Manage web application routing.
+ */
 class RecursiveWebRouter extends Router {
+    /**
+     * Create new instance of the Recursive Web Router.
+     * @param {import("@riadh-adrani/recursive/lib").Route} route root route.
+     * @param {string} base Aapplication base.
+     * @param {boolean} scroll Boolean indicating if the app should reset scrolling when mounting a new route.
+     * @param {State} manager Application state manager.
+     * @param {Orchestrator} orchestrator Application orchestrator.
+     */
     constructor(route, base, scroll, manager, orchestrator) {
         super(route, base, scroll, manager, orchestrator);
     }
 
-    /**
-     * Add a `popstate` event listener to the window.
-     */
     useRouterNavigationListener() {
         window.addEventListener("popstate", (e) => {
             let _route;
@@ -26,11 +34,6 @@ class RecursiveWebRouter extends Router {
         });
     }
 
-    /**
-     * Create a url from the given path.
-     * @param {string} path
-     * @returns {string}
-     */
     useRouterMakeURL(path) {
         let url = `${location.origin}/`;
 
@@ -47,20 +50,12 @@ class RecursiveWebRouter extends Router {
         return url;
     }
 
-    /**
-     * Retreive the current location.
-     * @returns {string}
-     */
     useRouterGetRoute() {
         return this.base
             ? window.location.pathname.replace("/" + this.base, "")
             : window.location.pathname;
     }
 
-    /**
-     * Retrieve the current location pathname.
-     * @returns
-     */
     useRouterGetLocationPath() {
         return location.pathname;
     }
@@ -81,10 +76,6 @@ class RecursiveWebRouter extends Router {
         );
     }
 
-    /**
-     * Scroll into the anchor view if it exists.
-     * @param {string} anchor
-     */
     useRouterGoToAnchor(anchor) {
         /**
          * We need to wait a little bit,
@@ -103,16 +94,10 @@ class RecursiveWebRouter extends Router {
         }, 100);
     }
 
-    /**
-     * Scroll to the top of the window.
-     */
     useRouterScrollToTop() {
         if (this.scroll) window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
-    /**
-     * Execute when the app has loaded.
-     */
     useRouterOnLoad() {
         const route = this.useRouterGetRoute();
 
@@ -133,10 +118,6 @@ class RecursiveWebRouter extends Router {
         this.replace(route, hash);
     }
 
-    /**
-     * Change the tab title.
-     * @param {string} title
-     */
     useRouterSetTitle(title) {
         document.title = title;
     }

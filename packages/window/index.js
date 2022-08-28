@@ -1,6 +1,11 @@
 const onGlobal = require("./events/onGlobal.js");
 const handler = require("./events/handler.js");
+const { RecursiveOrchestrator } = require("@riadh-adrani/recursive");
 
+/**
+ * Initialize the global window object with the global events.
+ * @param {RecursiveOrchestrator} orchestrator Application orchestrator.
+ */
 function useRecursiveWindow(orchestrator) {
     onGlobal(orchestrator, "click", "onclickglobal", "onClickGlobal");
     onGlobal(

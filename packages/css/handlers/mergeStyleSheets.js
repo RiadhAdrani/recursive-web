@@ -2,7 +2,7 @@ const { isValidMediaQueryDeclaration } = require("../CssMediaQueries");
 
 /**
  * Merge an array of style sheet into a single one.
- * @param {Array<import("../../../core").StyleSheet>} styleSheets
+ * @param {Array<import("../../../core").StyleSheet>} styleSheets An array of style sheets.
  * @returns {import("../../../core").StyleSheet}
  */
 function mergeStyleSheets(styleSheets) {

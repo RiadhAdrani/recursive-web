@@ -8,9 +8,9 @@ const fs = require("fs");
 const path = require("path");
 const { generateAttributeDoc, generateInterfaceProp } = require(".");
 
-const html = require("../components/HTMLelements").items;
-const svg = require("../components/SVGelements").items;
-const util = require("../components/Utilities").items;
+const html = require("../components/html").items;
+const svg = require("../components/svg").items;
+const util = require("../components/utility").items;
 const { list: attrs } = require("../dom/DomAttributes");
 
 let generated = "// This file is generated \n\n";

@@ -1,30 +1,27 @@
 import { RecursiveWebApp } from "../packages/app/index";
-import {
-    CenteredColumn,
-    CenteredRow,
-    ColorPicker,
-    Div,
-    HorizontalLine,
-    Input,
-    NumberPicker,
-    Row,
-    VerticalLine,
-} from "../html";
+import { ColorPicker, Div, Link } from "../html";
+import { useApp } from "../packages/components";
 
 const App = new RecursiveWebApp({
     root: document.body,
+    route: { path: "/", component: () => "Home" },
+    onAppInit: (_app) => {
+        useApp(_app);
+    },
     app: () => {
         const [value, setValue] = setState("state", "#000000");
 
         return Div({
             style: { inline: { backgroundColor: value } },
             children: [
+                Link({ href: "/route", children: "Hello World" }),
                 ColorPicker({
                     value,
                     onInput: (e) => {
                         setValue(e.target.value);
                     },
                 }),
+                renderRoute(),
             ],
         });
     },
@@ -169,15 +166,6 @@ function setStyle(cssObject) {
  */
 function createComponentStyle(param) {
     return App.createComponentStyle(param);
-}
-
-/**
- * Create a modifed `<a>` element for routing.
- * @param {import("../lib").AProps} props
- * @returns
- */
-function Link(props) {
-    return App.Link(props);
 }
 
 /**

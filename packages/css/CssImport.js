@@ -1,8 +1,8 @@
 /**
  * Render import statements.
  * Wrap every statement in `url()`.
- * @param {Array} list
- * @returns
+ * @param {Array<string>} list array of statements.
+ * @returns {string} Converted statement as string.
  */
 function render(list) {
     if (!Array.isArray(list)) return "";

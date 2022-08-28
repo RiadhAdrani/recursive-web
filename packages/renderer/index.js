@@ -13,14 +13,13 @@ const {
 const { HTML_CONTAINER, HTML_NS } = require("../constants/index.js");
 
 /**
- * ### `RecursiveWeb`
- * Web implementation of the `RecursiveRenderer`
+ * Perform rendering and updates to the DOM.
  */
 class RecursiveWebRenderer extends Renderer {
     /**
      * Create an instance of `RecursiveWeb`
-     * @param {import("@riadh-adrani/recursive/lib.js").App} app
-     * @param {HTMLElement} root
+     * @param {import("@riadh-adrani/recursive/lib.js").App} app Function returning a `RecursiveElement`.
+     * @param {HTMLElement} root App container.
      */
     constructor(app, root) {
         super(app, root);
@@ -28,7 +27,7 @@ class RecursiveWebRenderer extends Renderer {
     }
 
     /**
-     *
+     * Add an event to the element.
      * @param {string} onEventName
      * @param {Function} callback
      * @param {HTMLElement} instance
@@ -38,6 +37,11 @@ class RecursiveWebRenderer extends Renderer {
             this.orchestrator.batchCallback(() => callback(e), onEventName);
     }
 
+    /**
+     * Convert the UID to a UUID.
+     * @param {string} uid Element uid.
+     * @returns {string} UUID.
+     */
     transformUid(uid) {
         function convert(uid) {
             const pool = [..."abcdefghijklmnopqrstuvwxyz-_0123456789"];
@@ -93,8 +97,8 @@ class RecursiveWebRenderer extends Renderer {
 
     /**
      * Check if the `styleSheet` contains external selectors.
-     * @param {object} styleSheet
-     * @returns
+     * @param {object} styleSheet style object.
+     * @returns {boolean} Check result.
      */
     isExternalStyleSheet(styleSheet) {
         return (
@@ -106,7 +110,7 @@ class RecursiveWebRenderer extends Renderer {
     /**
      * Flatten and return the `StyleSheets` of the elements' tree.
      * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
-     * @returns {Array<any>}
+     * @returns {Array<any>} Array of style objects.
      */
     flattenStyle(element) {
         const output = [];
@@ -133,6 +137,7 @@ class RecursiveWebRenderer extends Renderer {
     }
 
     /**
+     * Convert children to a string.
      * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
      */
     reduceChildrenToInnerHTML(element) {
@@ -233,6 +238,10 @@ class RecursiveWebRenderer extends Renderer {
         }
     }
 
+    /**
+     * @param {import("../../lib.js").StyleSheet} style
+     * @param {HTMLElement} instance
+     */
     useRendererInjectStyle(style, instance) {
         if (style && style.inline) {
             for (let prop in style.inline) {

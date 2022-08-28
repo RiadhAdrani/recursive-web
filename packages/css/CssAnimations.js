@@ -2,8 +2,8 @@ const { render: renderSelector } = require("./CssSelectors");
 
 /**
  * Return if the given name is valid as an animation name.
- * @param {String} name
- * @returns {Boolean}
+ * @param {string} name Animation name.
+ * @returns {boolean} Check result.
  */
 function isValidName(name) {
     if (typeof name !== "string") return false;
@@ -17,8 +17,8 @@ function isValidName(name) {
 
 /**
  * Check if the provided object is represent valid animations steps.
- * @param {Object} stepsObject
- * @returns {boolean}
+ * @param {Object} stepsObject Object to be validated.
+ * @returns {boolean} Check result.
  */
 function isValidStepsObject(stepsObject) {
     if (typeof stepsObject != "object") return false;
@@ -31,9 +31,9 @@ function isValidStepsObject(stepsObject) {
 
 /**
  * Convert the given animation name and steps into its CSS declaration.
- * @param {string} name
- * @param {Object} steps
- * @returns
+ * @param {string} name Animation name.
+ * @param {object} steps An object containg the different steps of the animation.
+ * @returns {string} Valid CSS declaration.
  */
 function render(name, steps) {
     if (!isValidName(name) || !isValidStepsObject(steps)) return "";

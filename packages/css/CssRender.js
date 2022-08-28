@@ -8,6 +8,7 @@ const { render: renderVar } = require("./CssVar");
 /**
  * Convert style object to string
  * @param {import("../../core").FreeStyleSheet} styleSheet static style object
+ * @returns Rendered style by importance.
  */
 function renderCSS(styleSheet) {
     const output = { lowPriority: "", highPriority: "" };

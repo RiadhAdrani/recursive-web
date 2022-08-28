@@ -913,9 +913,16 @@ export type Corners =
     | { top: string; bottom: string }
     | { left: string; right: string }
     | { topLeftBottomRight: string; topRightBottomLeft: string }
-    | { topLeft: string; topRight: string; bottomRight: string; bottomLeft: string };
+    | {
+          topLeft: string;
+          topRight: string;
+          bottomRight: string;
+          bottomLeft: string;
+      };
 
 export type Edges =
     | string
     | { vertical: string; horizontal: string }
     | { top: string; right: string; bottom: string; left: string };
+
+export type ComponentHandler = (element: RecursiveElement) => RecursiveElement;

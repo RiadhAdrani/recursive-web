@@ -2,37 +2,41 @@ const processComponentStyleSheet = require("./handlers/processComponentStyleShee
 const mergeStyleSheets = require("./handlers/mergeStyleSheets");
 const renderStyleSheet = require("./CssRender");
 
+/**
+ * Create an return a style element within the `head` element.
+ * @returns {HTMLStyleElement} style element.
+ */
+function createStyleElement() {
+    const temp = document.createElement("style");
+    document.querySelector("head").append(temp);
+    return temp;
+}
+
+/**
+ * Manage CSS within a `RecursiveWebApp`.
+ */
 class RecursiveCSSOM {
     /**
      * Used to inject static and unchanged styles.
      * Once injected, it can't be removed.
      */
-    static common = (() => {
-        const temp = document.createElement("style");
-        document.querySelector("head").append(temp);
-        return temp;
-    })();
+    static common = createStyleElement();
 
     /**
      * Used for dynamic style injection.
      * Store `imports`, `fontFace` and `charSet` declarations.
      */
-    static highPriority = (() => {
-        const temp = document.createElement("style");
-        document.querySelector("head").append(temp);
-        return temp;
-    })();
+    static highPriority = createStyleElement();
 
     /**
      * Used for low priority dynamic style injection.
      * Store `vars`, `selectos`, `animations` and `mediaQueries` declarations.
      */
-    static lowPriority = (() => {
-        const temp = document.createElement("style");
-        document.querySelector("head").append(temp);
-        return temp;
-    })();
+    static lowPriority = createStyleElement();
 
+    /**
+     * Create a new CSSOM controller instance.
+     */
     constructor() {
         this.highPriority = "";
         this.lowPriority = "";
@@ -66,6 +70,10 @@ class RecursiveCSSOM {
         this.dynamicStack = [];
     }
 
+    /**
+     * Add the given style sheet as static.
+     * @param {import("../../lib").FreeStyleSheet} styleSheet style sheet declaration.
+     */
     static addStaticStyle(styleSheet) {
         const computed = renderStyleSheet(styleSheet);
 
@@ -73,41 +81,20 @@ class RecursiveCSSOM {
         RecursiveCSSOM.common.innerHTML += computed.lowPriority;
     }
 
-    addDynamicDeclaration(
-        object = {
-            var: {},
-            import: [],
-            fontFace: {},
-            selectors: {},
-            animations: {},
-            mediaQueries: {},
-        }
-    ) {
-        this.dynamicStack.push(object);
+    /**
+     * Add the style sheet object to the dynamic stack.
+     * @param {object} styleObject style sheet declaration.
+     */
+    addDynamicDeclaration(styleObject) {
+        this.dynamicStack.push(styleObject);
     }
 
-    injectDynamicStyle() {
-        const res = renderStyleSheet(mergeStyleSheets(this.dynamicStack));
-
-        if (this.dynamicSheet !== res) {
-            this.appDynamicStyle.innerHTML = res;
-            this.dynamicSheet = res;
-        }
-
-        this.dynamicStack = [];
-    }
-
-    setStyle(
-        cssobject = {
-            var: {},
-            imports: [],
-            fontFace: {},
-            selectors: {},
-            animations: {},
-            mediaQueries: {},
-        }
-    ) {
-        this.addDynamicDeclaration(cssobject);
+    /**
+     * Add a new style sheet declaration.
+     * @param {import("../../lib").FreeStyleSheet} cssDeclaration style sheet declaration.
+     */
+    setStyle(cssDeclaration) {
+        this.addDynamicDeclaration(cssDeclaration);
     }
 }
 

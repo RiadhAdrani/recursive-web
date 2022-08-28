@@ -1,5 +1,5 @@
-import CustomElements from "../packages/components/Utilities.js";
-import { createElement } from "..";
+import CustomElements from "../packages/components/utility";
+import { createElement } from "../packages/components";
 
 /**
  * ## _`Address` Component_
@@ -2267,5 +2267,21 @@ export function CenteredRow(props) {
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
+    return el;
+}
+/**
+ * ## _`Link` Component_
+ *
+ *
+ *
+ * @param {import("../lib").LinkProps} props properties
+ * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ */
+export function Link(props) {
+    const el = createElement("a", {
+        ...props,
+        rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
+    });
+    CustomElements.items.Link.handler(el);
     return el;
 }

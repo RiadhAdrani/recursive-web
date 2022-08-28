@@ -1,3 +1,9 @@
+/**
+ * Join arguments using the seperator.
+ * @param {Array<any>} args array of arguments to be joined.
+ * @param {string} seperator "space" by default.
+ * @returns
+ */
 function joinArgs(args = [], seperator = " ") {
     return args.reduce((sum, val, index) => {
         let toAdd = "";
@@ -15,9 +21,23 @@ function joinArgs(args = [], seperator = " ") {
 }
 
 /**
+ * Return the first defined value, else returns undefined.
+ * @param {Array} arrayOfValues array of values
+ * @returns {any | undefined}
+ */
+function getFirstDefinedValue(arrayOfValues) {
+    for (let val of arrayOfValues) {
+        if (val != undefined) return val;
+    }
+
+    return undefined;
+}
+
+/**
  * CSS's `attr()`
- * @param {*} attribute
- * @returns
+ *
+ * Retrieve the value of the designed HTML ``attribute``.
+ * @param {string} attribute a string representing the name of the target attribute.
  */
 export function attr(attribute) {
     return `attr(${attribute})`;
@@ -25,8 +45,9 @@ export function attr(attribute) {
 
 /**
  * CSS's ``blur()``
- * @param {*} radius
- * @returns
+ *
+ * Apply gaussian blur to the element using `filter` property.
+ * @param {string} radius a value with ``<css-unit>``.
  */
 export function blur(radius) {
     return `blur(${radius})`;
@@ -34,8 +55,11 @@ export function blur(radius) {
 
 /**
  * CSS's `brightness()`
- * @param {*} amount
- * @returns
+ *
+ * Apply a linear multiplier to the element
+ * which will make it appear brighter or darker
+ * depending on the input.
+ * @param {string} amount brightness as a `number` or `percentage`.
  */
 export function brightness(amount) {
     return `brightness(${amount})`;
@@ -43,8 +67,17 @@ export function brightness(amount) {
 
 /**
  * CSS's `calc()`
- * @param  {...any} args
- * @returns
+ *
+ * Perform calculation when specifiying CSS property values.
+ *
+ * allowed operators:
+ * * `+`
+ * * `-`
+ * * `*`
+ * * `/`
+ * @param  {...any} args a list of css values seperated by `operators`.
+ * @example
+ * calc("1px","+","10%","-","2em");
  */
 export function calc(...args) {
     return `calc(${joinArgs(args)})`;
@@ -52,8 +85,25 @@ export function calc(...args) {
 
 /**
  * CSS's `inset()`
- * @param  {...any} args
- * @returns
+ *
+ * Define an inset rectangle.
+ * @param  {...any} args values should be as following:
+ * * `<length-percentage>{1,4}` :
+ * When all of the four arguments are supplied
+ * they represent the top, right, bottom and left offsets
+ * from the reference box inward that define the positions
+ * of the edges of the inset rectangle.
+ * These arguments follow the syntax of the margin shorthand,
+ * that let you set all four insets with one, two or four values.
+ * * `<border-radius>` :
+ * The optional ``<border-radius>`` argument(s)
+ * define rounded corners for the inset rectangle
+ * using the border-radius shorthand syntax.
+ *
+ * @example
+ * inset("20px", "50px", "10px", 0, "round", "50px");
+ *
+ * @more https://developer.mozilla.org/en-US/docs/Web/CSS/basic-shape/inset
  */
 export function inset(...args) {
     return `inset(${joinArgs(args)})`;
@@ -61,8 +111,21 @@ export function inset(...args) {
 
 /**
  * CSS's `circle()`
- * @param  {...any} args
- * @returns
+ *
+ * Defines a circle using a radius and a position.
+ * @param  {...any} args arguments:
+ * * `<shape-radius>` :
+ * This may be a length,
+ * or a percentage or values closest-side and farthest-side.
+ * * `<position>` :
+ * Moves the center of the circle.
+ * May be a length, or a percentage, or a values such as left.
+ *
+ * @example circle("50px");
+ * @example circle("6rem", "at", "right", "center");
+ * @example circle("10%" "at", "2rem", "90%");
+ * @example circle("closest-side", "at", "5rem", "6rem");
+ * @example circle("farthest-side");
  */
 export function circle(...args) {
     return `circle(${joinArgs(args)})`;
@@ -70,8 +133,9 @@ export function circle(...args) {
 
 /**
  * CSS's `ellipse()`
+ *
+ * Defines an ellipse using two radii and a position.
  * @param  {...any} args
- * @returns
  */
 export function ellipse(...args) {
     return `ellipse(${joinArgs(args)})`;
@@ -79,8 +143,9 @@ export function ellipse(...args) {
 
 /**
  * CSS's `polygon()`
+ *
+ * Defines a polygon using an SVG fill-rule and a set of vertices.
  * @param  {...any} args
- * @returns
  */
 export function polygon(...args) {
     return `polygon(${joinArgs(args, ", ")})`;
@@ -88,10 +153,11 @@ export function polygon(...args) {
 
 /**
  * CSS's `clamp()`
- * @param {*} min
- * @param {*} val
- * @param {*} max
- * @returns
+ *
+ * The clamp() CSS function clamps a value between an upper and lower bound.
+ * @param {string | number} min
+ * @param {string | number} val
+ * @param {string | number} max
  */
 export function clamp(min, val, max) {
     return `clamp(${joinArgs([min, val, max], ", ")})`;
@@ -99,10 +165,13 @@ export function clamp(min, val, max) {
 
 /**
  * CSS's `rgb()`
- * @param {*} r
- * @param {*} g
- * @param {*} b
- * @returns
+ *
+ * The rgb() functional notation expresses a color
+ * according to its red, green, and blue components.
+ * An optional alpha component represents the color's transparency.
+ * @param {number} r
+ * @param {number} g
+ * @param {number} b
  */
 export function rgb(r, g, b) {
     return `rgb(${joinArgs([r, g, b], ", ")})`;
@@ -110,10 +179,10 @@ export function rgb(r, g, b) {
 
 /**
  * CSS's `rgba()`
- * @param {*} r
- * @param {*} g
- * @param {*} b
- * @param {*} a
+ * @param {number} r
+ * @param {number} g
+ * @param {number} b
+ * @param {number} a
  * @returns
  */
 export function rgba(r, g, b, a) {
@@ -633,72 +702,73 @@ export function scaleX(amount) {
 
 /**
  * Return a valid value for edge-related properties like `margin` or `padding`.
+ *
  * Possible values :
- * * `string` - '10px'
- * * `axes` - {vertical, horizontal}
- * * `sides` - {top, right, bottom, left}
+ *
+ * * `sides` : top, right, bottom, left
+ * * `axes` : vertical, horizontal
+ * * `string` : 10px
+ *
  * @param {import("../../lib").Edges} input
  */
 export function edges(input) {
-    if (
-        ![input.top, input.right, input.bottom, input.left].includes(undefined)
-    ) {
-        return [input.top, input.right, input.bottom, input.left];
-    }
+    const str = typeof input === "string" ? input : "";
 
-    if (![input.vertical, input.horizontal].includes(undefined)) {
-        return [input.vertical, input.horizontal];
-    }
+    let top = getFirstDefinedValue([input.top, input.vertical, str]);
+    let right = getFirstDefinedValue([input.right, input.horizontal, str]);
+    let bottom = getFirstDefinedValue([input.bottom, input.vertical, str]);
+    let left = getFirstDefinedValue([input.left, input.horizontal, str]);
 
-    return input;
+    return [top, right, bottom, left];
 }
 
 /**
  * Return a valid value for corner-related properties like `border-radius`.
  *
- * Possible values :
+ * Possible values:
  *
- * _note that all keys/values are necessary for each case._
+ * * `corners` : topLeft, topRight, bottomRight, bottomLeft
+ * * `horizontal sides` : left, right
+ * * `vertical sides` :  top, bottom
+ * * `diagonal` : topLeftBottomRight, topRightBottomLeft
+ * * `string` : `10px`
  *
- * * `string` - _string_ - `10px`
- * * `vertical sides` - _object_ - `top` `bottom`
- * * `horizontal sides` - _object_ - `left` `right`
- * * `diagonal` - _object_ - `topLeftBottomRight` `topRightBottomLeft`
- * * `corners` - _object_ - `topLeft` `topRight` `bottomRight` `bottomLeft`
  * @param {import("../../lib").Corners} input
  */
 export function corners(input) {
-    if (
-        ![
-            input.topLeft,
-            input.topRight,
-            input.bottomLeft,
-            input.Right,
-        ].includes(undefined)
-    ) {
-        return [
-            input.topLeft,
-            input.topRight,
-            input.bottomRight,
-            input.bottomLeft,
-        ];
-    }
+    const str = typeof input === "string" ? input : "";
 
-    if (![input.top, input.bottom].includes(undefined)) {
-        return [input.top, input.top, input.bottom, input.bottom];
-    }
+    let topLeft = getFirstDefinedValue([
+        input.topLeft,
+        input.left,
+        input.top,
+        input.topLeftBottomRight,
+        str,
+    ]);
 
-    if (![input.left, input.right].includes(undefined)) {
-        return [input.left, input.right, input.right, input.left];
-    }
+    let topRight = getFirstDefinedValue([
+        input.topRight,
+        input.right,
+        input.top,
+        input.topRightBottomLeft,
+        str,
+    ]);
 
-    if (
-        ![input.topLeftBottomRight, input.topRightBottomLeft].includes(
-            undefined
-        )
-    ) {
-        return [input.topLeftBottomRight, input.topRightBottomLeft];
-    }
+    let bottomLeft = getFirstDefinedValue([
+        input.bottomLeft,
+        input.left,
+        input.bottom,
+        input.topRightBottomLeft,
+        str,
+    ]);
 
-    return input;
+    let bottomRight = getFirstDefinedValue([
+        input.bottomRight,
+        input.right,
+        input.bottom,
+        input.topLeftBottomRight,
+        str,
+    ]);
+
+    return [topRight, bottomRight, bottomLeft, topLeft];
 }

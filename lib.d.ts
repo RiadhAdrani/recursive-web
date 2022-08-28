@@ -915,12 +915,19 @@ export type Corners =
     | { top: string; bottom: string }
     | { left: string; right: string }
     | { topLeftBottomRight: string; topRightBottomLeft: string }
-    | { topLeft: string; topRight: string; bottomRight: string; bottomLeft: string };
+    | {
+          topLeft: string;
+          topRight: string;
+          bottomRight: string;
+          bottomLeft: string;
+      };
 
 export type Edges =
     | string
     | { vertical: string; horizontal: string }
     | { top: string; right: string; bottom: string; left: string };
+
+export type ComponentHandler = (element: RecursiveElement) => RecursiveElement;
 export interface AddressProps extends CommonAttributes, Events, HTMLAttributes{
 children:Array<RecursiveElement>;}
 
@@ -2720,6 +2727,8 @@ export interface VerticalLineProps extends CommonAttributes, Events, HTMLAttribu
 export interface CenteredColumnProps extends CommonAttributes, Events, HTMLAttributes{children:Array<RecursiveElement>;}
 
 export interface CenteredRowProps extends CommonAttributes, Events, HTMLAttributes{children:Array<RecursiveElement>;}
+
+export interface LinkProps extends CommonAttributes, Events, HTMLAttributes{href:;children:Array<RecursiveElement>;}
 
 export interface SVGAProps extends SVGAttributes{
 /**
