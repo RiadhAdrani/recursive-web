@@ -1,9 +1,11 @@
 {
     "name": "@riadh-adrani/recursive-web",
-    "version": "0.7.40",
+    "version": "0.7.42",
     "description": "Recursive Web is the web implementation of the Recursive Framework.",
     "license": "MIT",
     "main": "index.js",
+    "types": "./lib.d.ts",
+    "typings": "./lib.d.ts",
     "repository": {
         "type": "git",
         "url": "https://github.com/RiadhAdrani/recursive-web"
@@ -27,7 +29,7 @@
         "framework"
     ],
     "dependencies": {
-        "@riadh-adrani/recursive": "^0.7.40"
+        "@riadh-adrani/recursive": "^0.7.42"
     },
     "devDependencies": {
         "clean-webpack-plugin": "^4.0.0",

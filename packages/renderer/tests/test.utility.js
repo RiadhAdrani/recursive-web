@@ -1,4 +1,3 @@
-const { createElement } = require("../../../use");
 const { RecursiveWebApp } = require("../../app");
 
 function beforeEach() {
@@ -8,10 +7,12 @@ function beforeEach() {
 function emptyApp() {
     beforeEach();
 
-    return new RecursiveWebApp({
-        app: () => createElement("div"),
+    const _app = new RecursiveWebApp({
+        app: () => _app.createElement("div"),
         root: document.body,
     });
+
+    return _app;
 }
 
 function app(myApp) {

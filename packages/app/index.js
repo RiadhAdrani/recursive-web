@@ -1,14 +1,14 @@
 const RecursiveWebRenderer = require("../renderer");
 const RecursiveWebRouter = require("../router");
 const { useRecursiveWindow } = require("../window");
-const { App } = require("../../use");
+const { RecursiveApp } = require("../../use");
 require("../components/custom-elements/");
 
 /**
  * Web implementation of the `RecursiveApp` class.
- * @extends {App}
+ * @extends {RecursiveApp}
  */
-class RecursiveWebApp extends App {
+class RecursiveWebApp extends RecursiveApp {
     /**
      * Create a new instance of Recursive App for the web.
      *

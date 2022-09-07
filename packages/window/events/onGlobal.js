@@ -32,7 +32,7 @@ function onGlobal(orchestrator, winEvent, store, listener, checkTarget = true) {
 
         orchestrator.batchCallback(() => {
             window[store].items.forEach((element) => {
-                if (!element.contains(target)) element.events[listener]();
+                if (!element.contains(target)) element[listener]();
             });
         });
 
@@ -50,7 +50,7 @@ function onGlobal(orchestrator, winEvent, store, listener, checkTarget = true) {
             window[store].items.forEach((element) => {
                 if (checkTarget && element.contains(target)) return;
 
-                element.events[listener](e, () => notify(e.target));
+                element[store](e, () => notify(target));
             });
         });
 

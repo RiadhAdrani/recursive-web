@@ -8,6 +8,7 @@ const {
     CENTERED_COLUMN,
     HORIZONTAL_LINE,
     VERTICAL_LINE,
+    TOGGLE_SWITCH,
 } = require("../../constants");
 const RecursiveCSSOM = require("../../css/");
 
@@ -93,6 +94,12 @@ class VerticalLine extends View {
     }
 }
 
+class ToggleSwitch extends View {
+    constructor() {
+        super(TOGGLE_SWITCH);
+    }
+}
+
 /**
  * -----------------------------------------------------------------------------------------
  * Define default style
@@ -115,4 +122,7 @@ addDefaultStyle(CENTERED_COLUMN, {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+});
+addDefaultStyle(TOGGLE_SWITCH, {
+    display: "inline-block",
 });

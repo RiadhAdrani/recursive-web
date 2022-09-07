@@ -1,21 +1,21 @@
+const { RecursiveConsole, RecursiveRenderer } = require("../../use.js");
+const RecursiveCSSOM = require("../css/");
+const { get: getEv, is: isEv, hasHandler } = require("../dom/DomEvents.js");
+const { HTML_CONTAINER, HTML_NS } = require("../constants/index.js");
+const { renderValue } = require("../css/CssProperties.js");
 const {
     get: getAtt,
     is: isAttt,
     isToggle,
 } = require("../dom/DomAttributes.js");
-const { get: getEv, is: isEv } = require("../dom/DomEvents.js");
-const RecursiveCSSOM = require("../css/");
-const { Console, Renderer } = require("../../use.js");
-const { renderValue } = require("../css/CssProperties.js");
 const {
     ELEMENT_TYPE_TEXT_NODE,
 } = require("@riadh-adrani/recursive/packages/constants/index.js");
-const { HTML_CONTAINER, HTML_NS } = require("../constants/index.js");
 
 /**
  * Perform rendering and updates to the DOM.
  */
-class RecursiveWebRenderer extends Renderer {
+class RecursiveWebRenderer extends RecursiveRenderer {
     /**
      * Create an instance of `RecursiveWeb`
      * @param {import("@riadh-adrani/recursive/lib.js").App} app Function returning a `RecursiveElement`.
@@ -23,6 +23,10 @@ class RecursiveWebRenderer extends Renderer {
      */
     constructor(app, root) {
         super(app, root);
+
+        /**
+         * @type {RecursiveCSSOM}
+         */
         this.styler = new RecursiveCSSOM();
     }
 
@@ -127,7 +131,7 @@ class RecursiveWebRenderer extends Renderer {
             if (element.style.className) {
                 output.push(element.style);
             } else {
-                Console.warn(
+                RecursiveConsole.warn(
                     "CSS: no className detected and therefore style will be ignored"
                 );
             }
@@ -195,24 +199,6 @@ class RecursiveWebRenderer extends Renderer {
     }
 
     /**
-     * @param {string} eventName
-     * @param {Function} callback
-     * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
-     * @param {HTMLElement} instance
-     */
-    useRendererAddEvent(eventName, callback, element) {
-        const eventData = getEv(eventName);
-
-        if (!eventData) return;
-
-        this.setElementEvent(eventData.on, callback, element.instance);
-
-        if (eventData.handler) {
-            eventData.handler(element.instance);
-        }
-    }
-
-    /**
      * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
      * @returns {boolean}
      */
@@ -270,19 +256,28 @@ class RecursiveWebRenderer extends Renderer {
                     instance.dataset[item] = value[item];
                 }
             }
-        } else if (isToggle(attribute)) {
-            instance.toggleAttribute(getAtt(attribute), value == true);
         } else {
-            // does not work with some attributes updates
-            instance.setAttribute(getAtt(attribute), value);
+            const attrName = getAtt(attribute);
+            const isToggleable = isToggle(attribute);
+            const reallyNewValue = isToggleable ? value == true : value;
+
+            if (isToggleable) {
+                instance.toggleAttribute(attrName, reallyNewValue);
+            } else {
+                instance.setAttribute(attrName, reallyNewValue);
+            }
 
             try {
                 // So we need to double check it with this one
                 // which does not work on svg elements
                 // and throws an error
                 // hence the need of a try catch block
-                instance[getAtt(attribute)] = value;
-            } catch (error) {}
+                instance[attrName] = reallyNewValue;
+            } catch (error) {
+                RecursiveConsole.warn(
+                    "Recursive Web Renderer : Something went wrong when trying to update an attribute."
+                );
+            }
         }
     }
 
@@ -313,7 +308,6 @@ class RecursiveWebRenderer extends Renderer {
      * @param {string} event
      * @param {Function} callback
      * @param {HTMLElement} instance
-     * @returns
      */
     useRendererInjectEvent(event, callback, instance) {
         const eventData = getEv(event);
@@ -321,6 +315,46 @@ class RecursiveWebRenderer extends Renderer {
         if (!eventData) return;
 
         this.setElementEvent(eventData.on, callback, instance);
+
+        if (hasHandler(event)) {
+            eventData.handler(instance);
+        }
+    }
+
+    /**
+     * @param {string} eventName
+     * @param {Function} callback
+     * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
+     * @param {HTMLElement} instance
+     */
+    useRendererAddEvent(eventName, callback, element) {
+        this.useRendererInjectEvent(eventName, callback, element.instance);
+    }
+
+    /**
+     *
+     * @param {string} event
+     * @param {Function} callback
+     * @param {HTMLElement} instance
+     */
+    useRendererUpdateEvent(event, callback, element) {
+        const eventData = getEv(event);
+
+        if (!eventData) return;
+
+        this.setElementEvent(eventData.on, callback, element.instance);
+    }
+
+    /**
+     * @param {string} eventName
+     * @param {HTMLElement} instance
+     */
+    useRendererRemoveEvent(eventName, instance) {
+        const eventData = getEv(eventName);
+
+        if (!eventData) return;
+
+        instance[eventData.on] = null;
     }
 
     /**
@@ -414,18 +448,6 @@ class RecursiveWebRenderer extends Renderer {
      */
     useRendererRemoveElement(element) {
         element.instance.remove();
-    }
-
-    /**
-     * @param {string} eventName
-     * @param {HTMLElement} instance
-     */
-    useRendererRemoveEvent(eventName, instance) {
-        const eventData = getEv(eventName);
-
-        if (!eventData) return;
-
-        instance[eventData.on] = null;
     }
 
     /**

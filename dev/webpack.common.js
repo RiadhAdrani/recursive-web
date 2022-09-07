@@ -10,7 +10,7 @@ module.exports = {
     },
     plugins: [new HtmlWebpackPlugin({ template: "./dev/index.html" })],
     resolve: {
-        extensions: [".tsx", ".ts", ".js"],
+        extensions: [".d.ts", ".ts", ".js"],
     },
     module: {
         rules: [

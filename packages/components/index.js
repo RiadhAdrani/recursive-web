@@ -61,10 +61,11 @@ function createElement(...args) {
  * @param {string} params.tag a string representing the HTML tag of the element.
  * @param {object} params.props an object containing the unique attributes of the element.
  * @param {Array<string>} params.docs an array of string defining the component documentation.
+ * @param {boolean} params.childless indicates if the component is childless or not.
  * @param {import("../../core").ComponentHandler} params.handler
  */
-function component({ tag, props = {}, docs = [], handler }) {
-    return { tag, props, docs, handler };
+function component({ tag, props = {}, docs = [], handler, childless = false }) {
+    return { tag, props, docs, handler, childless };
 }
 
 module.exports = { getApp, useApp, createElement, component };

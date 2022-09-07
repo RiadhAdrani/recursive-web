@@ -1,4 +1,4 @@
-const { Console } = require("../../use");
+const { RecursiveConsole } = require("../../use");
 const { List: list } = require("./lists/Properties.js");
 
 const regEx = /\{|\}/g;
@@ -56,7 +56,7 @@ function renderValue(value, propertyName) {
         if (validValue(item)) {
             _value += ` ${item}`;
         } else {
-            Console.warn(
+            RecursiveConsole.warn(
                 `CSS: value "${item}" of property "${propertyName}" has been ignored.`
             );
         }

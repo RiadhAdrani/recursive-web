@@ -29,7 +29,7 @@ for (let ele in html) {
         customInterface += generated;
     }
 
-    if (html[ele].childless == undefined) {
+    if (html[ele].childless != true) {
         customInterface += `\nchildren:Array<RecursiveElement>;`;
     }
 
@@ -48,7 +48,7 @@ for (let ele in util) {
         customInterface += `${prop}:${util[ele].props[prop]};`;
     }
 
-    if (util[ele].childless == undefined) {
+    if (util[ele].childless != true) {
         customInterface += `children:Array<RecursiveElement>;`;
     }
 

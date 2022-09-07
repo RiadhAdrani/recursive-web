@@ -1806,6 +1806,54 @@ export function Column(props) {
     return el;
 }
 /**
+ * ## _`Row` Component_
+ *
+ *
+ *
+ * @param {import("../lib").RowProps} props properties
+ * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ */
+export function Row(props) {
+    const el = createElement("row-view", {
+        ...props,
+        rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
+    });
+
+    return el;
+}
+/**
+ * ## _`CenteredColumn` Component_
+ *
+ *
+ *
+ * @param {import("../lib").CenteredColumnProps} props properties
+ * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ */
+export function CenteredColumn(props) {
+    const el = createElement("centered-column", {
+        ...props,
+        rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
+    });
+
+    return el;
+}
+/**
+ * ## _`CenteredRow` Component_
+ *
+ *
+ *
+ * @param {import("../lib").CenteredRowProps} props properties
+ * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ */
+export function CenteredRow(props) {
+    const el = createElement("centered-row", {
+        ...props,
+        rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
+    });
+
+    return el;
+}
+/**
  * ## _`CheckBox` Component_
  *
  *
@@ -2142,22 +2190,6 @@ export function WeekPicker(props) {
     return el;
 }
 /**
- * ## _`Row` Component_
- *
- *
- *
- * @param {import("../lib").RowProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
- */
-export function Row(props) {
-    const el = createElement("row-view", {
-        ...props,
-        rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
-    });
-
-    return el;
-}
-/**
  * ## _`Spacer` Component_
  *
  *
@@ -2238,38 +2270,6 @@ export function VerticalLine(props) {
     return el;
 }
 /**
- * ## _`CenteredColumn` Component_
- *
- *
- *
- * @param {import("../lib").CenteredColumnProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
- */
-export function CenteredColumn(props) {
-    const el = createElement("centered-column", {
-        ...props,
-        rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
-    });
-
-    return el;
-}
-/**
- * ## _`CenteredRow` Component_
- *
- *
- *
- * @param {import("../lib").CenteredRowProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
- */
-export function CenteredRow(props) {
-    const el = createElement("centered-row", {
-        ...props,
-        rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
-    });
-
-    return el;
-}
-/**
  * ## _`Link` Component_
  *
  *
@@ -2283,5 +2283,28 @@ export function Link(props) {
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
     CustomElements.items.Link.handler(el);
+    return el;
+}
+/**
+ * ## _`ToggleSwitch` Component_
+ *
+ * Custom element rendered as `<toggle-switch>`.
+ *
+ * Create a toggle switch button allowing the user to change settings between two states, `true` and `false`.
+ *
+ * The `checked` parameter could be assigned a boolean to set the initial value of the switch.
+ *
+ * Use `radiuxPx` to set the radius of the button knob in pixels, with wich other dimensions will be calculated automatically.
+ *
+ *
+ * @param {import("../lib").ToggleSwitchProps} props properties
+ * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ */
+export function ToggleSwitch(props) {
+    const el = createElement("toggle-switch", {
+        ...props,
+        rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
+    });
+    CustomElements.items.ToggleSwitch.handler(el);
     return el;
 }

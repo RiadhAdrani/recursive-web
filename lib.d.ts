@@ -4158,6 +4158,24 @@ export interface ColumnProps extends CommonAttributes, Events, HTMLAttributes {
     children: Array<RecursiveElement>;
 }
 
+export interface RowProps extends CommonAttributes, Events, HTMLAttributes {
+    children: Array<RecursiveElement>;
+}
+
+export interface CenteredColumnProps
+    extends CommonAttributes,
+        Events,
+        HTMLAttributes {
+    children: Array<RecursiveElement>;
+}
+
+export interface CenteredRowProps
+    extends CommonAttributes,
+        Events,
+        HTMLAttributes {
+    children: Array<RecursiveElement>;
+}
+
 export interface CheckBoxProps
     extends CommonAttributes,
         Events,
@@ -4423,10 +4441,6 @@ export interface WeekPickerProps
     children: Array<RecursiveElement>;
 }
 
-export interface RowProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
-
 export interface SpacerProps extends CommonAttributes, Events, HTMLAttributes {
     height: number;
     width: number;
@@ -4465,23 +4479,21 @@ export interface VerticalLineProps
     color: Color;
 }
 
-export interface CenteredColumnProps
-    extends CommonAttributes,
-        Events,
-        HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
-
-export interface CenteredRowProps
-    extends CommonAttributes,
-        Events,
-        HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
-
 export interface LinkProps extends CommonAttributes, Events, HTMLAttributes {
     href: string;
     children: Array<RecursiveElement>;
+}
+
+export interface ToggleSwitchProps
+    extends CommonAttributes,
+        Events,
+        HTMLAttributes {
+    radiusPx: number;
+    color: Color;
+    backgroundColor: Color;
+    onBackgroundColor: Color;
+    checked: boolean;
+    onCheckChange: (e: Event) => void;
 }
 
 export interface SVGAProps extends SVGAttributes {

@@ -2,47 +2,28 @@ const {
     ELEMENT_TYPE_RAW,
     ELEMENT_TYPE_FRAGMENT,
 } = require("@riadh-adrani/recursive/packages/constants");
-const { getApp, component } = require("..");
-const { Console } = require("../../../use");
 const {
     COLUMN_VIEW,
     ROW_VIEW,
     SPACER_VIEW,
-    LAZY_COLUMN,
-    LAZY_ROW,
-    HORIZONTAL_LINE,
-    VERTICAL_LINE,
     CENTERED_COLUMN,
     CENTERED_ROW,
 } = require("../../constants");
-
-const useObserver = (element, instance) => {
-    var observer = new IntersectionObserver(
-        (entries) => {
-            if (entries[0].isIntersecting === true) {
-                observer.unobserve(entries[0].target);
-
-                if (entries[0].target === instance.lastChild) {
-                    element.onObserved(instance);
-                }
-            }
-        },
-        { threshold: [0] }
-    );
-
-    if (instance.lastChild.nodeName != "#text")
-        observer.observe(instance.lastChild);
-    else
-        console.warn(
-            "UseObserver : Unable to observe text node. Try wrapping it in another Element"
-        );
-};
+const HorizontalLineTemplate = require("./src/HorizontalLine.template");
+const LazyColumnTemplate = require("./src/LazyColumn.template");
+const LazyRowTemplate = require("./src/LazyRow.template");
+const LinkTemplate = require("./src/Link.template");
+const ToggleSwitchTemplate = require("./src/ToggleSwitch.template");
+const VerticalLineTemplate = require("./src/VerticalLine.template");
 
 module.exports = {
     items: {
         HtmlContainer: { tag: ELEMENT_TYPE_RAW, props: {}, docs: [] },
         Fragment: { tag: ELEMENT_TYPE_FRAGMENT, props: {}, docs: [] },
         Column: { tag: COLUMN_VIEW, props: {}, docs: [] },
+        Row: { tag: ROW_VIEW, props: {}, docs: [] },
+        CenteredColumn: { tag: CENTERED_COLUMN, props: {}, docs: [] },
+        CenteredRow: { tag: CENTERED_ROW, props: {}, docs: [] },
         CheckBox: {
             tag: "input",
             props: { value: "string", checked: "string" },
@@ -346,7 +327,6 @@ module.exports = {
             },
             docs: [],
         },
-        Row: { tag: ROW_VIEW, props: {}, docs: [] },
         Spacer: {
             tag: SPACER_VIEW,
             props: { height: "number", width: "number" },
@@ -368,136 +348,11 @@ module.exports = {
             },
             docs: [],
         },
-        LazyColumn: {
-            tag: LAZY_COLUMN,
-            props: { onObserved: "Function" },
-            handler: (element) => {
-                if (!element.hooks) element.hooks = {};
-
-                const _onRef = element.hooks.onRef || (() => {});
-
-                element.hooks.onRef = (instance) => {
-                    if (
-                        instance.childNodes.length !== 0 &&
-                        typeof element.onObserved == "function"
-                    )
-                        useObserver(element, instance);
-
-                    return _onRef(instance);
-                };
-            },
-            docs: [],
-        },
-        LazyRow: {
-            tag: LAZY_ROW,
-            props: { onObserved: "Function" },
-            handler: (element) => {
-                element.hooks = {};
-
-                const _onRef = element.hooks.onRef || (() => {});
-
-                element.hooks.onRef = (instance) => {
-                    _onRef(instance);
-
-                    if (
-                        instance.childNodes.length === 0 ||
-                        typeof element.onObserved != "function"
-                    )
-                        return;
-
-                    useObserver(element, instance);
-                };
-            },
-            docs: [],
-        },
-        HorizontalLine: {
-            tag: HORIZONTAL_LINE,
-            props: {
-                thickness: "string",
-                width: "string",
-                marginVertical: "string",
-                color: "Color",
-            },
-            childless: true,
-            handler: (element) => {
-                element.style = {
-                    ...element.style,
-                    scoped: true,
-                    normal: {
-                        width: element.width || "auto",
-                        height: element.thickness || "1px",
-                        minHeight: element.thickness || "1px",
-                        maxHeight: element.thickness || "1px",
-                        backgroundColor: element.color || "black",
-                        margin: [element.marginVertical || "5px", 0],
-                        display: "block",
-                    },
-                };
-            },
-            docs: [],
-        },
-        VerticalLine: {
-            tag: VERTICAL_LINE,
-            props: {
-                thickness: "string",
-                height: "string",
-                marginHorizontal: "string",
-                color: "Color",
-            },
-            childless: true,
-            handler: (element) => {
-                element.style = {
-                    ...element.style,
-                    scoped: true,
-                    normal: {
-                        height: element.height || "5px",
-                        width: element.thickness || "1px",
-                        minWidth: element.thickness || "1px",
-                        maxWidth: element.thickness || "1px",
-                        backgroundColor: element.color || "black",
-                        margin: [0, element.marginHorizontal || "5px"],
-                        display: "inline-block",
-                    },
-                };
-            },
-            docs: [],
-        },
-        CenteredColumn: { tag: CENTERED_COLUMN, props: {}, docs: [] },
-        CenteredRow: { tag: CENTERED_ROW, props: {}, docs: [] },
-        Link: component({
-            tag: "a",
-            docs: [],
-            props: { href: "string" },
-            handler: (element) => {
-                if (element.href) {
-                    const app = getApp();
-
-                    if (!app.router) {
-                        Console.error(
-                            "Recursive Web : Unable to initialize a Link component without the presense of a Router.",
-                            [
-                                "To initialize the Router, you need at least the root route '/'.",
-                            ]
-                        );
-                    }
-
-                    const _onClick = element.onClick || (() => {});
-
-                    const to = element.href;
-
-                    element.href = app.router.useRouterMakeURL(to);
-
-                    element.onClick = (e) => {
-                        e.preventDefault();
-
-                        app.router.goTo(to);
-
-                        _onClick(e);
-                    };
-                }
-
-                return element;
-            },
-        }),
+        LazyColumn: LazyColumnTemplate(),
+        LazyRow: LazyRowTemplate(),
+        HorizontalLine: HorizontalLineTemplate(),
+        VerticalLine: VerticalLineTemplate(),
+        Link: LinkTemplate(),
+        ToggleSwitch: ToggleSwitchTemplate(),
     },
 };

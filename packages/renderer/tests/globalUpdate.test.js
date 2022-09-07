@@ -2,7 +2,6 @@
  * @jest-environment jsdom
  */
 
-const { createElement } = require("../../../use");
 const { app } = require("./test.utility");
 
 it("should update the tree correctly", () => {
@@ -11,7 +10,7 @@ it("should update the tree correctly", () => {
 
         return testApp.createElement("div", {
             children: [
-                createElement("button", {
+                _app.createElement("button", {
                     children: count,
                     onClick: () => setCount(count + 1),
                 }),
