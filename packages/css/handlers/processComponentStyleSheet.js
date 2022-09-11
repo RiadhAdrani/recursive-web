@@ -1,10 +1,10 @@
-const { Console } = require("../../../use");
-const { isValidName } = require("../CssAnimations");
+const { RecursiveConsole } = require("../../../use");
+const { isValidName } = require("../animations");
 const {
     get: getSelector,
     is,
     customSelectorAlreadyExist,
-} = require("../CssSelectors");
+} = require("../selectors");
 
 /**
  * Process the given component stylesheet and convert it into a unified format.
@@ -82,8 +82,8 @@ function processComponentStyleSheet(styleSheet) {
                 if (!is(key)) {
                     const _key = customSelectorAlreadyExist(key);
                     if (_key !== false) {
-                        Console.warn(
-                            `CSSOM : Custom selector "${key}" is already defined and the custom declaration have been igonred. Use predefined selector "${_key}"`
+                        RecursiveConsole.warn(
+                            `Recursive Web CSSOM : Custom selector "${key}" is already defined and the custom declaration have been igonred. Use predefined selector "${_key}"`
                         );
                         break;
                     }

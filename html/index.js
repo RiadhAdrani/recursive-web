@@ -1,5 +1,5 @@
-import CustomElements from "../packages/components/utility";
 import { createElement } from "../packages/components";
+import CustomElements from "../packages/components/utility";
 
 /**
  * ## _`Address` Component_
@@ -20,6 +20,7 @@ export function Address(props) {
 
     return el;
 }
+
 /**
  * ## _`Article` Component_
  *
@@ -42,6 +43,7 @@ export function Article(props) {
 
     return el;
 }
+
 /**
  * ## _`Aside` Component_
  *
@@ -61,6 +63,7 @@ export function Aside(props) {
 
     return el;
 }
+
 /**
  * ## _`Footer` Component_
  *
@@ -80,6 +83,7 @@ export function Footer(props) {
 
     return el;
 }
+
 /**
  * ## _`Header` Component_
  *
@@ -99,6 +103,7 @@ export function Header(props) {
 
     return el;
 }
+
 /**
  * ## _`H1` Component_
  *
@@ -117,6 +122,7 @@ export function H1(props) {
 
     return el;
 }
+
 /**
  * ## _`H2` Component_
  *
@@ -135,6 +141,7 @@ export function H2(props) {
 
     return el;
 }
+
 /**
  * ## _`H3` Component_
  *
@@ -153,6 +160,7 @@ export function H3(props) {
 
     return el;
 }
+
 /**
  * ## _`H4` Component_
  *
@@ -171,6 +179,7 @@ export function H4(props) {
 
     return el;
 }
+
 /**
  * ## _`H5` Component_
  *
@@ -189,6 +198,7 @@ export function H5(props) {
 
     return el;
 }
+
 /**
  * ## _`H6` Component_
  *
@@ -207,6 +217,7 @@ export function H6(props) {
 
     return el;
 }
+
 /**
  * ## _`Main` Component_
  *
@@ -227,6 +238,7 @@ export function Main(props) {
 
     return el;
 }
+
 /**
  * ## _`Nav` Component_
  *
@@ -244,6 +256,7 @@ export function Nav(props) {
 
     return el;
 }
+
 /**
  * ## _`Section` Component_
  *
@@ -261,6 +274,7 @@ export function Section(props) {
 
     return el;
 }
+
 /**
  * ## _`Blockquote` Component_
  *
@@ -278,6 +292,7 @@ export function Blockquote(props) {
 
     return el;
 }
+
 /**
  * ## _`Dd` Component_
  *
@@ -295,6 +310,7 @@ export function Dd(props) {
 
     return el;
 }
+
 /**
  * ## _`Div` Component_
  *
@@ -312,6 +328,7 @@ export function Div(props) {
 
     return el;
 }
+
 /**
  * ## _`Dl` Component_
  *
@@ -329,6 +346,7 @@ export function Dl(props) {
 
     return el;
 }
+
 /**
  * ## _`Dt` Component_
  *
@@ -346,6 +364,7 @@ export function Dt(props) {
 
     return el;
 }
+
 /**
  * ## _`Figcaption` Component_
  *
@@ -363,23 +382,25 @@ export function Figcaption(props) {
 
     return el;
 }
+
 /**
  * ## _`Figure` Component_
  *
  * The ``<figure>`` HTML element represents self-contained content, potentially with an optional caption, which is specified using the figcaption element. The figure, its caption, and its contents are referenced as a single unit.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure
+ * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/undefined
  * @param {import("../lib").FigureProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function Figure(props) {
-    const el = createElement("figure", {
+    const el = createElement("undefined", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
     return el;
 }
+
 /**
  * ## _`Hr` Component_
  *
@@ -397,6 +418,7 @@ export function Hr(props) {
 
     return el;
 }
+
 /**
  * ## _`Li` Component_
  *
@@ -414,6 +436,7 @@ export function Li(props) {
 
     return el;
 }
+
 /**
  * ## _`Menu` Component_
  *
@@ -431,6 +454,7 @@ export function Menu(props) {
 
     return el;
 }
+
 /**
  * ## _`Ol` Component_
  *
@@ -448,6 +472,7 @@ export function Ol(props) {
 
     return el;
 }
+
 /**
  * ## _`P` Component_
  *
@@ -465,6 +490,7 @@ export function P(props) {
 
     return el;
 }
+
 /**
  * ## _`Pre` Component_
  *
@@ -482,6 +508,7 @@ export function Pre(props) {
 
     return el;
 }
+
 /**
  * ## _`Ul` Component_
  *
@@ -499,6 +526,7 @@ export function Ul(props) {
 
     return el;
 }
+
 /**
  * ## _`A` Component_
  *
@@ -516,6 +544,7 @@ export function A(props) {
 
     return el;
 }
+
 /**
  * ## _`Abbr` Component_
  *
@@ -533,6 +562,7 @@ export function Abbr(props) {
 
     return el;
 }
+
 /**
  * ## _`B` Component_
  *
@@ -550,6 +580,7 @@ export function B(props) {
 
     return el;
 }
+
 /**
  * ## _`Bdi` Component_
  *
@@ -567,6 +598,7 @@ export function Bdi(props) {
 
     return el;
 }
+
 /**
  * ## _`Bdo` Component_
  *
@@ -584,6 +616,7 @@ export function Bdo(props) {
 
     return el;
 }
+
 /**
  * ## _`Br` Component_
  *
@@ -601,6 +634,7 @@ export function Br(props) {
 
     return el;
 }
+
 /**
  * ## _`Cite` Component_
  *
@@ -618,6 +652,7 @@ export function Cite(props) {
 
     return el;
 }
+
 /**
  * ## _`Code` Component_
  *
@@ -635,6 +670,7 @@ export function Code(props) {
 
     return el;
 }
+
 /**
  * ## _`Data` Component_
  *
@@ -652,6 +688,7 @@ export function Data(props) {
 
     return el;
 }
+
 /**
  * ## _`Dfn` Component_
  *
@@ -669,6 +706,7 @@ export function Dfn(props) {
 
     return el;
 }
+
 /**
  * ## _`Em` Component_
  *
@@ -686,6 +724,7 @@ export function Em(props) {
 
     return el;
 }
+
 /**
  * ## _`I` Component_
  *
@@ -703,23 +742,25 @@ export function I(props) {
 
     return el;
 }
+
 /**
  * ## _`Kbd` Component_
  *
  * The ``<kbd>`` HTML element represents a span of inline text denoting textual user input from a keyboard, voice input, or any other text entry device. By convention, the user agent defaults to rendering the contents of a ``<kbd>`` element using its default monospace font, although this is not mandated by the HTML standard.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/kbd
+ * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/kdb
  * @param {import("../lib").KbdProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function Kbd(props) {
-    const el = createElement("kbd", {
+    const el = createElement("kdb", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
     return el;
 }
+
 /**
  * ## _`Mark` Component_
  *
@@ -737,6 +778,7 @@ export function Mark(props) {
 
     return el;
 }
+
 /**
  * ## _`Q` Component_
  *
@@ -754,6 +796,7 @@ export function Q(props) {
 
     return el;
 }
+
 /**
  * ## _`Rp` Component_
  *
@@ -771,6 +814,7 @@ export function Rp(props) {
 
     return el;
 }
+
 /**
  * ## _`Rt` Component_
  *
@@ -788,6 +832,7 @@ export function Rt(props) {
 
     return el;
 }
+
 /**
  * ## _`Ruby` Component_
  *
@@ -805,6 +850,7 @@ export function Ruby(props) {
 
     return el;
 }
+
 /**
  * ## _`S` Component_
  *
@@ -822,6 +868,7 @@ export function S(props) {
 
     return el;
 }
+
 /**
  * ## _`Samp` Component_
  *
@@ -839,6 +886,7 @@ export function Samp(props) {
 
     return el;
 }
+
 /**
  * ## _`Small` Component_
  *
@@ -856,6 +904,7 @@ export function Small(props) {
 
     return el;
 }
+
 /**
  * ## _`Span` Component_
  *
@@ -873,6 +922,7 @@ export function Span(props) {
 
     return el;
 }
+
 /**
  * ## _`Strong` Component_
  *
@@ -890,6 +940,7 @@ export function Strong(props) {
 
     return el;
 }
+
 /**
  * ## _`Sub` Component_
  *
@@ -907,6 +958,7 @@ export function Sub(props) {
 
     return el;
 }
+
 /**
  * ## _`Sup` Component_
  *
@@ -924,6 +976,7 @@ export function Sup(props) {
 
     return el;
 }
+
 /**
  * ## _`Time` Component_
  *
@@ -941,6 +994,7 @@ export function Time(props) {
 
     return el;
 }
+
 /**
  * ## _`U` Component_
  *
@@ -958,6 +1012,7 @@ export function U(props) {
 
     return el;
 }
+
 /**
  * ## _`Var` Component_
  *
@@ -975,6 +1030,7 @@ export function Var(props) {
 
     return el;
 }
+
 /**
  * ## _`Wbr` Component_
  *
@@ -992,6 +1048,7 @@ export function Wbr(props) {
 
     return el;
 }
+
 /**
  * ## _`Area` Component_
  *
@@ -1009,6 +1066,7 @@ export function Area(props) {
 
     return el;
 }
+
 /**
  * ## _`Audio` Component_
  *
@@ -1026,6 +1084,7 @@ export function Audio(props) {
 
     return el;
 }
+
 /**
  * ## _`Img` Component_
  *
@@ -1043,6 +1102,7 @@ export function Img(props) {
 
     return el;
 }
+
 /**
  * ## _`Map` Component_
  *
@@ -1060,6 +1120,7 @@ export function Map(props) {
 
     return el;
 }
+
 /**
  * ## _`Track` Component_
  *
@@ -1077,6 +1138,7 @@ export function Track(props) {
 
     return el;
 }
+
 /**
  * ## _`Video` Component_
  *
@@ -1094,6 +1156,7 @@ export function Video(props) {
 
     return el;
 }
+
 /**
  * ## _`Embed` Component_
  *
@@ -1111,6 +1174,7 @@ export function Embed(props) {
 
     return el;
 }
+
 /**
  * ## _`Iframe` Component_
  *
@@ -1128,6 +1192,7 @@ export function Iframe(props) {
 
     return el;
 }
+
 /**
  * ## _`Object` Component_
  *
@@ -1145,6 +1210,7 @@ export function Object(props) {
 
     return el;
 }
+
 /**
  * ## _`Picture` Component_
  *
@@ -1162,6 +1228,7 @@ export function Picture(props) {
 
     return el;
 }
+
 /**
  * ## _`Portal` Component_
  *
@@ -1179,6 +1246,7 @@ export function Portal(props) {
 
     return el;
 }
+
 /**
  * ## _`Source` Component_
  *
@@ -1196,6 +1264,7 @@ export function Source(props) {
 
     return el;
 }
+
 /**
  * ## _`Canvas` Component_
  *
@@ -1213,6 +1282,7 @@ export function Canvas(props) {
 
     return el;
 }
+
 /**
  * ## _`Noscript` Component_
  *
@@ -1230,6 +1300,7 @@ export function Noscript(props) {
 
     return el;
 }
+
 /**
  * ## _`Del` Component_
  *
@@ -1247,6 +1318,7 @@ export function Del(props) {
 
     return el;
 }
+
 /**
  * ## _`Ins` Component_
  *
@@ -1264,6 +1336,7 @@ export function Ins(props) {
 
     return el;
 }
+
 /**
  * ## _`Caption` Component_
  *
@@ -1281,6 +1354,7 @@ export function Caption(props) {
 
     return el;
 }
+
 /**
  * ## _`Col` Component_
  *
@@ -1298,6 +1372,7 @@ export function Col(props) {
 
     return el;
 }
+
 /**
  * ## _`Colgroup` Component_
  *
@@ -1315,6 +1390,7 @@ export function Colgroup(props) {
 
     return el;
 }
+
 /**
  * ## _`Table` Component_
  *
@@ -1332,6 +1408,7 @@ export function Table(props) {
 
     return el;
 }
+
 /**
  * ## _`Tbody` Component_
  *
@@ -1349,6 +1426,7 @@ export function Tbody(props) {
 
     return el;
 }
+
 /**
  * ## _`Td` Component_
  *
@@ -1366,6 +1444,7 @@ export function Td(props) {
 
     return el;
 }
+
 /**
  * ## _`Tfoot` Component_
  *
@@ -1383,6 +1462,7 @@ export function Tfoot(props) {
 
     return el;
 }
+
 /**
  * ## _`Th` Component_
  *
@@ -1400,6 +1480,7 @@ export function Th(props) {
 
     return el;
 }
+
 /**
  * ## _`Thead` Component_
  *
@@ -1417,6 +1498,7 @@ export function Thead(props) {
 
     return el;
 }
+
 /**
  * ## _`Tr` Component_
  *
@@ -1434,6 +1516,7 @@ export function Tr(props) {
 
     return el;
 }
+
 /**
  * ## _`Button` Component_
  *
@@ -1451,6 +1534,7 @@ export function Button(props) {
 
     return el;
 }
+
 /**
  * ## _`Datalist` Component_
  *
@@ -1468,6 +1552,7 @@ export function Datalist(props) {
 
     return el;
 }
+
 /**
  * ## _`Fieldset` Component_
  *
@@ -1485,6 +1570,7 @@ export function Fieldset(props) {
 
     return el;
 }
+
 /**
  * ## _`Form` Component_
  *
@@ -1502,6 +1588,7 @@ export function Form(props) {
 
     return el;
 }
+
 /**
  * ## _`Input` Component_
  *
@@ -1519,6 +1606,7 @@ export function Input(props) {
 
     return el;
 }
+
 /**
  * ## _`Label` Component_
  *
@@ -1536,6 +1624,7 @@ export function Label(props) {
 
     return el;
 }
+
 /**
  * ## _`Legend` Component_
  *
@@ -1553,6 +1642,7 @@ export function Legend(props) {
 
     return el;
 }
+
 /**
  * ## _`Meter` Component_
  *
@@ -1570,6 +1660,7 @@ export function Meter(props) {
 
     return el;
 }
+
 /**
  * ## _`Optgroup` Component_
  *
@@ -1587,6 +1678,7 @@ export function Optgroup(props) {
 
     return el;
 }
+
 /**
  * ## _`Option` Component_
  *
@@ -1604,6 +1696,7 @@ export function Option(props) {
 
     return el;
 }
+
 /**
  * ## _`Output` Component_
  *
@@ -1621,6 +1714,7 @@ export function Output(props) {
 
     return el;
 }
+
 /**
  * ## _`Progress` Component_
  *
@@ -1638,6 +1732,7 @@ export function Progress(props) {
 
     return el;
 }
+
 /**
  * ## _`Select` Component_
  *
@@ -1655,6 +1750,7 @@ export function Select(props) {
 
     return el;
 }
+
 /**
  * ## _`TextArea` Component_
  *
@@ -1672,6 +1768,7 @@ export function TextArea(props) {
 
     return el;
 }
+
 /**
  * ## _`Details` Component_
  *
@@ -1689,6 +1786,7 @@ export function Details(props) {
 
     return el;
 }
+
 /**
  * ## _`Dialog` Component_
  *
@@ -1706,6 +1804,7 @@ export function Dialog(props) {
 
     return el;
 }
+
 /**
  * ## _`Summary` Component_
  *
@@ -1723,6 +1822,7 @@ export function Summary(props) {
 
     return el;
 }
+
 /**
  * ## _`Slot` Component_
  *
@@ -1740,6 +1840,7 @@ export function Slot(props) {
 
     return el;
 }
+
 /**
  * ## _`Template` Component_
  *
@@ -1757,9 +1858,11 @@ export function Template(props) {
 
     return el;
 }
+
 /**
  * ## _`HtmlContainer` Component_
  *
+ * Element rendering string as HTML.
  *
  *
  * @param {import("../lib").HtmlContainerProps} props properties
@@ -1773,9 +1876,12 @@ export function HtmlContainer(props) {
 
     return el;
 }
+
 /**
  * ## _`Fragment` Component_
  *
+ * Utility element used to group elements without rendering the actual container,
+ * instead children will be rendered within the parent component.
  *
  *
  * @param {import("../lib").FragmentProps} props properties
@@ -1789,9 +1895,11 @@ export function Fragment(props) {
 
     return el;
 }
+
 /**
  * ## _`Column` Component_
  *
+ * An element displaying its children vertically.
  *
  *
  * @param {import("../lib").ColumnProps} props properties
@@ -1805,9 +1913,11 @@ export function Column(props) {
 
     return el;
 }
+
 /**
  * ## _`Row` Component_
  *
+ * An element displaying its children horizontally.
  *
  *
  * @param {import("../lib").RowProps} props properties
@@ -1821,9 +1931,11 @@ export function Row(props) {
 
     return el;
 }
+
 /**
  * ## _`CenteredColumn` Component_
  *
+ * An element displaying its children vertically and centered
  *
  *
  * @param {import("../lib").CenteredColumnProps} props properties
@@ -1837,9 +1949,11 @@ export function CenteredColumn(props) {
 
     return el;
 }
+
 /**
  * ## _`CenteredRow` Component_
  *
+ * An element displaying its children horizontally and centered
  *
  *
  * @param {import("../lib").CenteredRowProps} props properties
@@ -1853,9 +1967,12 @@ export function CenteredRow(props) {
 
     return el;
 }
+
 /**
  * ## _`CheckBox` Component_
  *
+ * An element representing a boolean state of `true` or `false`.
+ * Implement `onInput` or `onChange` to trigger actions when the state changes
  *
  *
  * @param {import("../lib").CheckBoxProps} props properties
@@ -1869,9 +1986,11 @@ export function CheckBox(props) {
     CustomElements.items.CheckBox.handler(el);
     return el;
 }
+
 /**
  * ## _`ColorPicker` Component_
  *
+ * Element allowing the user to pick a color from the displayed spectrum.
  *
  *
  * @param {import("../lib").ColorPickerProps} props properties
@@ -1885,9 +2004,11 @@ export function ColorPicker(props) {
     CustomElements.items.ColorPicker.handler(el);
     return el;
 }
+
 /**
  * ## _`DatePicker` Component_
  *
+ * Element providing a method for the user to pick a specific date.
  *
  *
  * @param {import("../lib").DatePickerProps} props properties
@@ -1901,9 +2022,12 @@ export function DatePicker(props) {
     CustomElements.items.DatePicker.handler(el);
     return el;
 }
+
 /**
  * ## _`DateTimeLocalPicker` Component_
  *
+ * A more specific version of the `DatePicker` element,
+ * allowing the user to easily pick both date and time.
  *
  *
  * @param {import("../lib").DateTimeLocalPickerProps} props properties
@@ -1917,9 +2041,12 @@ export function DateTimeLocalPicker(props) {
     CustomElements.items.DateTimeLocalPicker.handler(el);
     return el;
 }
+
 /**
  * ## _`EmailField` Component_
  *
+ * Element used to let the user input one e-mail address,
+ * or multiple in case `multiple` attribute is specified.
  *
  *
  * @param {import("../lib").EmailFieldProps} props properties
@@ -1933,9 +2060,12 @@ export function EmailField(props) {
     CustomElements.items.EmailField.handler(el);
     return el;
 }
+
 /**
  * ## _`FilePicker` Component_
  *
+ * Element allowing the user to choose and select one or more files from their device storage,
+ * which can be later processed using JavaScript or uploaded directly using `form submission`.
  *
  *
  * @param {import("../lib").FilePickerProps} props properties
@@ -1949,9 +2079,12 @@ export function FilePicker(props) {
     CustomElements.items.FilePicker.handler(el);
     return el;
 }
+
 /**
  * ## _`HiddenInput` Component_
  *
+ * Element that let web developers include data that cannot be seen or modified
+ * by users when a form is submitted.
  *
  *
  * @param {import("../lib").HiddenInputProps} props properties
@@ -1965,9 +2098,12 @@ export function HiddenInput(props) {
     CustomElements.items.HiddenInput.handler(el);
     return el;
 }
+
 /**
  * ## _`ImagePicker` Component_
  *
+ * Element allowing the user to choose and select an image from their device storage,
+ * which can be later processed using JavaScript or uploaded directly using `form submission`.
  *
  *
  * @param {import("../lib").ImagePickerProps} props properties
@@ -1981,9 +2117,11 @@ export function ImagePicker(props) {
     CustomElements.items.ImagePicker.handler(el);
     return el;
 }
+
 /**
  * ## _`MonthPicker` Component_
  *
+ * Element providing a method for the user to pick a specific month.
  *
  *
  * @param {import("../lib").MonthPickerProps} props properties
@@ -1997,9 +2135,11 @@ export function MonthPicker(props) {
     CustomElements.items.MonthPicker.handler(el);
     return el;
 }
+
 /**
  * ## _`NumberPicker` Component_
  *
+ * Element providing a method for the user to pick a number in a given intervall.
  *
  *
  * @param {import("../lib").NumberPickerProps} props properties
@@ -2013,9 +2153,12 @@ export function NumberPicker(props) {
     CustomElements.items.NumberPicker.handler(el);
     return el;
 }
+
 /**
  * ## _`PasswordField` Component_
  *
+ * Element that treat the input of the user as a password and replace characters
+ * depending on the browser's `user agent` and operating system.
  *
  *
  * @param {import("../lib").PasswordFieldProps} props properties
@@ -2029,9 +2172,11 @@ export function PasswordField(props) {
     CustomElements.items.PasswordField.handler(el);
     return el;
 }
+
 /**
  * ## _`RadioButton` Component_
  *
+ * Element used generally in a group, describing a set of related options.
  *
  *
  * @param {import("../lib").RadioButtonProps} props properties
@@ -2045,9 +2190,12 @@ export function RadioButton(props) {
     CustomElements.items.RadioButton.handler(el);
     return el;
 }
+
 /**
  * ## _`RangePicker` Component_
  *
+ * Element that let the user specify a numeric value which must be no less than a given value,
+ * and no more than another given value.
  *
  *
  * @param {import("../lib").RangePickerProps} props properties
@@ -2061,9 +2209,11 @@ export function RangePicker(props) {
     CustomElements.items.RangePicker.handler(el);
     return el;
 }
+
 /**
  * ## _`ResetButton` Component_
  *
+ * Button that, by default, reset all inputs in the form to their initial values.
  *
  *
  * @param {import("../lib").ResetButtonProps} props properties
@@ -2077,9 +2227,11 @@ export function ResetButton(props) {
     CustomElements.items.ResetButton.handler(el);
     return el;
 }
+
 /**
  * ## _`SearchField` Component_
  *
+ * A Text field element designed for the user to enter search queries into.
  *
  *
  * @param {import("../lib").SearchFieldProps} props properties
@@ -2093,9 +2245,12 @@ export function SearchField(props) {
     CustomElements.items.SearchField.handler(el);
     return el;
 }
+
 /**
  * ## _`SubmitButton` Component_
  *
+ * Element rendered as a button, when it is clicked,
+ * the `user agent` (by default) attempts to submit the form to the server.
  *
  *
  * @param {import("../lib").SubmitButtonProps} props properties
@@ -2109,9 +2264,11 @@ export function SubmitButton(props) {
     CustomElements.items.SubmitButton.handler(el);
     return el;
 }
+
 /**
  * ## _`TelephoneNumberField` Component_
  *
+ * Element used to let the user enter and edit a telephone number.
  *
  *
  * @param {import("../lib").TelephoneNumberFieldProps} props properties
@@ -2125,9 +2282,11 @@ export function TelephoneNumberField(props) {
     CustomElements.items.TelephoneNumberField.handler(el);
     return el;
 }
+
 /**
  * ## _`TextField` Component_
  *
+ * Element for basic single-line text input.
  *
  *
  * @param {import("../lib").TextFieldProps} props properties
@@ -2141,9 +2300,11 @@ export function TextField(props) {
     CustomElements.items.TextField.handler(el);
     return el;
 }
+
 /**
  * ## _`TimePicker` Component_
  *
+ * Element that let the user easily enter a time (hours and minutes, and optionally seconds).
  *
  *
  * @param {import("../lib").TimePickerProps} props properties
@@ -2157,9 +2318,11 @@ export function TimePicker(props) {
     CustomElements.items.TimePicker.handler(el);
     return el;
 }
+
 /**
  * ## _`UrlField` Component_
  *
+ * Element used to let the user enter and edit an URL.
  *
  *
  * @param {import("../lib").UrlFieldProps} props properties
@@ -2173,9 +2336,11 @@ export function UrlField(props) {
     CustomElements.items.UrlField.handler(el);
     return el;
 }
+
 /**
  * ## _`WeekPicker` Component_
  *
+ * Element allowing easy entry of a year plus the ``ISO 8601`` week number during that year
  *
  *
  * @param {import("../lib").WeekPickerProps} props properties
@@ -2189,9 +2354,12 @@ export function WeekPicker(props) {
     CustomElements.items.WeekPicker.handler(el);
     return el;
 }
+
 /**
  * ## _`Spacer` Component_
  *
+ * Element allowing the user to create space between components, vertically or horizontally.
+ * The space occupied by this element is indisputed by other components.
  *
  *
  * @param {import("../lib").SpacerProps} props properties
@@ -2205,9 +2373,13 @@ export function Spacer(props) {
     CustomElements.items.Spacer.handler(el);
     return el;
 }
+
 /**
  * ## _`LazyColumn` Component_
  *
+ * Element displaying element vertically containing an `IntersectionObserver`
+ * that can watch for when the last element enter the user screen
+ * and execute the callback passed in `onObserved`.
  *
  *
  * @param {import("../lib").LazyColumnProps} props properties
@@ -2221,9 +2393,13 @@ export function LazyColumn(props) {
     CustomElements.items.LazyColumn.handler(el);
     return el;
 }
+
 /**
  * ## _`LazyRow` Component_
  *
+ * Element displaying element horizontally containing an `IntersectionObserver`
+ * that can watch for when the last element enter the user screen
+ * and execute the callback passed in `onObserved`.
  *
  *
  * @param {import("../lib").LazyRowProps} props properties
@@ -2237,9 +2413,13 @@ export function LazyRow(props) {
     CustomElements.items.LazyRow.handler(el);
     return el;
 }
+
 /**
  * ## _`HorizontalLine` Component_
  *
+ * Element representing a line break between two elements.
+ * It works similarly to `<hr>`, but with better CSS support.`
+ * `element.style.normal` can only be overriden within `element.style.mediaQueries`.
  *
  *
  * @param {import("../lib").HorizontalLineProps} props properties
@@ -2253,9 +2433,13 @@ export function HorizontalLine(props) {
     CustomElements.items.HorizontalLine.handler(el);
     return el;
 }
+
 /**
  * ## _`VerticalLine` Component_
  *
+ * Element representing a line break between two elements.
+ * It works similarly to `<hr>`, but vertically and with better CSS support.`
+ * `element.style.normal` can only be overriden within `element.style.mediaQueries`.
  *
  *
  * @param {import("../lib").VerticalLineProps} props properties
@@ -2269,9 +2453,12 @@ export function VerticalLine(props) {
     CustomElements.items.VerticalLine.handler(el);
     return el;
 }
+
 /**
  * ## _`Link` Component_
  *
+ * An anchor element that allow the user to navigate between the different routes of the application.
+ * Use `href` to pass the destination route.
  *
  *
  * @param {import("../lib").LinkProps} props properties
@@ -2285,6 +2472,7 @@ export function Link(props) {
     CustomElements.items.Link.handler(el);
     return el;
 }
+
 /**
  * ## _`ToggleSwitch` Component_
  *
@@ -2306,5 +2494,24 @@ export function ToggleSwitch(props) {
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
     CustomElements.items.ToggleSwitch.handler(el);
+    return el;
+}
+
+/**
+ * ## _`CircularSpinner` Component_
+ *
+ * Progress indicator also known as `spinner`,
+ * Used to display an undetermined wait time.
+ *
+ *
+ * @param {import("../lib").CircularSpinnerProps} props properties
+ * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ */
+export function CircularSpinner(props) {
+    const el = createElement("circular-spinner", {
+        ...props,
+        rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
+    });
+    CustomElements.items.CircularSpinner.handler(el);
     return el;
 }

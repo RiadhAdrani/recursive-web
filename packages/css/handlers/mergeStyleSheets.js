@@ -1,4 +1,4 @@
-const { isValidMediaQueryDeclaration } = require("../CssMediaQueries");
+const { isValidMediaQueryDeclaration } = require("../media-queries");
 
 /**
  * Merge an array of style sheet into a single one.

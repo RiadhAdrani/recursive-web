@@ -11,6 +11,7 @@ import { RawElement, RecursiveElement } from "@riadh-adrani/recursive/lib";
  * Standard CSS colors.
  */
 export type Color =
+    | "transparent"
     | "aliceblue"
     | "antiquewhite"
     | "aqua"
@@ -161,8 +162,16 @@ export type Color =
     | "yellowgreen";
 
 export interface Selector {
-    accentColor: Color;
-    alignContent:
+    /**
+     * ## `accentColor`
+     *
+     * _CSS property_
+     */ accentColor: Color;
+    /**
+     * ## `alignContent`
+     *
+     * _CSS property_
+     */ alignContent:
         | "center"
         | "start"
         | "end"
@@ -178,7 +187,11 @@ export interface Selector {
         | "stretch"
         | "safe center"
         | "unsafe center";
-    alignItems:
+    /**
+     * ## `alignItems`
+     *
+     * _CSS property_
+     */ alignItems:
         | "center"
         | "start"
         | "end"
@@ -191,7 +204,11 @@ export interface Selector {
         | "stretch"
         | "safe center"
         | "unsafe center";
-    alignSelf:
+    /**
+     * ## `alignSelf`
+     *
+     * _CSS property_
+     */ alignSelf:
         | "center"
         | "start"
         | "end"
@@ -209,16 +226,56 @@ export interface Selector {
         | "stretch"
         | "safe center"
         | "unsafe center";
-    alignTracks: "start" | "space-between" | "center";
-    all: string;
-    animation: string;
-    animationDelay: string;
-    animationDuration: string;
-    animationFillMode: "none" | "forwards" | "backwards" | "both";
-    animationIterationCount: number;
-    animationName: string;
-    animationPlayState: "running" | "paused";
-    animationTimingFunction:
+    /**
+     * ## `alignTracks`
+     *
+     * _CSS property_
+     */ alignTracks: "start" | "space-between" | "center";
+    /**
+     * ## `all`
+     *
+     * _CSS property_
+     */ all: string;
+    /**
+     * ## `animation`
+     *
+     * _CSS property_
+     */ animation: string;
+    /**
+     * ## `animationDelay`
+     *
+     * _CSS property_
+     */ animationDelay: string;
+    /**
+     * ## `animationDuration`
+     *
+     * _CSS property_
+     */ animationDuration: string;
+    /**
+     * ## `animationFillMode`
+     *
+     * _CSS property_
+     */ animationFillMode: "none" | "forwards" | "backwards" | "both";
+    /**
+     * ## `animationIterationCount`
+     *
+     * _CSS property_
+     */ animationIterationCount: number;
+    /**
+     * ## `animationName`
+     *
+     * _CSS property_
+     */ animationName: string;
+    /**
+     * ## `animationPlayState`
+     *
+     * _CSS property_
+     */ animationPlayState: "running" | "paused";
+    /**
+     * ## `animationTimingFunction`
+     *
+     * _CSS property_
+     */ animationTimingFunction:
         | "ease"
         | "ease-in"
         | "ease-out"
@@ -226,7 +283,11 @@ export interface Selector {
         | "linear"
         | "step-start"
         | "step-end";
-    appearance:
+    /**
+     * ## `appearance`
+     *
+     * _CSS property_
+     */ appearance:
         | "none"
         | "auto"
         | "menulist-button"
@@ -242,47 +303,187 @@ export interface Selector {
         | "menulist"
         | "meter"
         | "progress-bar";
-    ascentOverride: string;
-    aspectRatio: "auto";
-    backdropFilter: "none";
-    backfaceVisibility: "hidden" | "visible";
-    background: string;
-    backgroundAttachment: "scroll" | "fixed" | "local";
-    backgroundBlendMode: string;
-    backgroundClip: "border-box" | "padding-box" | "content-box" | "text";
-    backgroundColor: Color;
-    backgroundImage: string;
-    backgroundOrigin: "border-box" | "padding-box" | "content-box";
-    backgroundPosition: "top" | "bottom" | "left" | "right" | "center";
-    backgroundPositionX: "left" | "right" | "center";
-    backgroundPositionY: "top" | "center" | "bottom";
-    backgroundRepeat:
+    /**
+     * ## `ascentOverride`
+     *
+     * _CSS property_
+     */ ascentOverride: string;
+    /**
+     * ## `aspectRatio`
+     *
+     * _CSS property_
+     */ aspectRatio: "auto";
+    /**
+     * ## `backdropFilter`
+     *
+     * _CSS property_
+     */ backdropFilter: "none";
+    /**
+     * ## `backfaceVisibility`
+     *
+     * _CSS property_
+     */ backfaceVisibility: "hidden" | "visible";
+    /**
+     * ## `background`
+     *
+     * _CSS property_
+     */ background: string;
+    /**
+     * ## `backgroundAttachment`
+     *
+     * _CSS property_
+     */ backgroundAttachment: "scroll" | "fixed" | "local";
+    /**
+     * ## `backgroundBlendMode`
+     *
+     * _CSS property_
+     */ backgroundBlendMode: string;
+    /**
+     * ## `backgroundClip`
+     *
+     * _CSS property_
+     */ backgroundClip: "border-box" | "padding-box" | "content-box" | "text";
+    /**
+     * ## `backgroundColor`
+     *
+     * _CSS property_
+     */ backgroundColor: Color;
+    /**
+     * ## `backgroundImage`
+     *
+     * _CSS property_
+     */ backgroundImage: string;
+    /**
+     * ## `backgroundOrigin`
+     *
+     * _CSS property_
+     */ backgroundOrigin: "border-box" | "padding-box" | "content-box";
+    /**
+     * ## `backgroundPosition`
+     *
+     * _CSS property_
+     */ backgroundPosition: "top" | "bottom" | "left" | "right" | "center";
+    /**
+     * ## `backgroundPositionX`
+     *
+     * _CSS property_
+     */ backgroundPositionX: "left" | "right" | "center";
+    /**
+     * ## `backgroundPositionY`
+     *
+     * _CSS property_
+     */ backgroundPositionY: "top" | "center" | "bottom";
+    /**
+     * ## `backgroundRepeat`
+     *
+     * _CSS property_
+     */ backgroundRepeat:
         | "repeat-x"
         | "repeat-y"
         | "repeat"
         | "space"
         | "round"
         | "no-repeat";
-    backgroundSize: "cover" | "contain";
-    blockSize: "max-content" | "min-content";
-    borderBlock: string;
-    borderBlockColor: Color;
-    borderBlockStyle: "dashed" | "dotted" | "groove";
-    borderBlockWidth: "thick";
-    borderBlockEnd: string;
-    borderBlockEndColor: Color;
-    borderBlockEndStyle: "dashed" | "dotted" | "groove";
-    borderBlockEndWidth: "thick";
-    borderBlockStart: string;
-    borderBlockStartColor: Color;
-    borderBlockStartStyle: "dashed" | "dotted" | "groove";
-    borderBlockStartWidth: "thick";
-    border: string;
-    borderBottom: string;
-    borderBottomColor: Color;
-    borderBottomLeftRadius: string;
-    borderBottomRightRadius: string;
-    borderBottomStyle:
+    /**
+     * ## `backgroundSize`
+     *
+     * _CSS property_
+     */ backgroundSize: "cover" | "contain";
+    /**
+     * ## `blockSize`
+     *
+     * _CSS property_
+     */ blockSize: "max-content" | "min-content";
+    /**
+     * ## `borderBlock`
+     *
+     * _CSS property_
+     */ borderBlock: string;
+    /**
+     * ## `borderBlockColor`
+     *
+     * _CSS property_
+     */ borderBlockColor: Color;
+    /**
+     * ## `borderBlockStyle`
+     *
+     * _CSS property_
+     */ borderBlockStyle: "dashed" | "dotted" | "groove";
+    /**
+     * ## `borderBlockWidth`
+     *
+     * _CSS property_
+     */ borderBlockWidth: "thick";
+    /**
+     * ## `borderBlockEnd`
+     *
+     * _CSS property_
+     */ borderBlockEnd: string;
+    /**
+     * ## `borderBlockEndColor`
+     *
+     * _CSS property_
+     */ borderBlockEndColor: Color;
+    /**
+     * ## `borderBlockEndStyle`
+     *
+     * _CSS property_
+     */ borderBlockEndStyle: "dashed" | "dotted" | "groove";
+    /**
+     * ## `borderBlockEndWidth`
+     *
+     * _CSS property_
+     */ borderBlockEndWidth: "thick";
+    /**
+     * ## `borderBlockStart`
+     *
+     * _CSS property_
+     */ borderBlockStart: string;
+    /**
+     * ## `borderBlockStartColor`
+     *
+     * _CSS property_
+     */ borderBlockStartColor: Color;
+    /**
+     * ## `borderBlockStartStyle`
+     *
+     * _CSS property_
+     */ borderBlockStartStyle: "dashed" | "dotted" | "groove";
+    /**
+     * ## `borderBlockStartWidth`
+     *
+     * _CSS property_
+     */ borderBlockStartWidth: "thick";
+    /**
+     * ## `border`
+     *
+     * _CSS property_
+     */ border: string;
+    /**
+     * ## `borderBottom`
+     *
+     * _CSS property_
+     */ borderBottom: string;
+    /**
+     * ## `borderBottomColor`
+     *
+     * _CSS property_
+     */ borderBottomColor: Color;
+    /**
+     * ## `borderBottomLeftRadius`
+     *
+     * _CSS property_
+     */ borderBottomLeftRadius: string;
+    /**
+     * ## `borderBottomRightRadius`
+     *
+     * _CSS property_
+     */ borderBottomRightRadius: string;
+    /**
+     * ## `borderBottomStyle`
+     *
+     * _CSS property_
+     */ borderBottomStyle:
         | "none"
         | "hidden"
         | "dotted"
@@ -293,34 +494,146 @@ export interface Selector {
         | "ridge"
         | "inset"
         | "outset";
-    borderBottomWidth: "thin" | "medium" | "thick";
-    borderCollapse: "collapse" | "seperate";
-    borderColor: Color;
-    borderEndEndRadius: string;
-    borderEndStartRadius: string;
-    borderStartEndRadius: string;
-    borderStartStartRadius: string;
-    borderImage: string;
-    borderImageOutset: string;
-    borderImageRepeat: "stretch" | "repeat" | "round" | "space";
-    borderImageSlice: "fill";
-    borderImageSource: string;
-    borderImageWidth: string;
-    borderInline: Color;
-    borderInlineColor: Color;
-    borderInlineStyle: "dashed" | "dotted" | "groove";
-    borderInlineWidth: string;
-    borderInlineEnd: string;
-    borderInlineEndColor: Color;
-    borderInlineEndStyle: "dashed" | "dotted" | "groove";
-    borderInlineEndWidth: string;
-    borderStartEnd: string;
-    borderInlineStartColor: Color;
-    borderInlineStartStyle: "dashed" | "dotted" | "groove";
-    borderInlineStartWidth: string;
-    borderLeft: string;
-    borderLeftColor: Color;
-    borderLeftStyle:
+    /**
+     * ## `borderBottomWidth`
+     *
+     * _CSS property_
+     */ borderBottomWidth: "thin" | "medium" | "thick";
+    /**
+     * ## `borderCollapse`
+     *
+     * _CSS property_
+     */ borderCollapse: "collapse" | "seperate";
+    /**
+     * ## `borderColor`
+     *
+     * _CSS property_
+     */ borderColor: Color;
+    /**
+     * ## `borderEndEndRadius`
+     *
+     * _CSS property_
+     */ borderEndEndRadius: string;
+    /**
+     * ## `borderEndStartRadius`
+     *
+     * _CSS property_
+     */ borderEndStartRadius: string;
+    /**
+     * ## `borderStartEndRadius`
+     *
+     * _CSS property_
+     */ borderStartEndRadius: string;
+    /**
+     * ## `borderStartStartRadius`
+     *
+     * _CSS property_
+     */ borderStartStartRadius: string;
+    /**
+     * ## `borderImage`
+     *
+     * _CSS property_
+     */ borderImage: string;
+    /**
+     * ## `borderImageOutset`
+     *
+     * _CSS property_
+     */ borderImageOutset: string;
+    /**
+     * ## `borderImageRepeat`
+     *
+     * _CSS property_
+     */ borderImageRepeat: "stretch" | "repeat" | "round" | "space";
+    /**
+     * ## `borderImageSlice`
+     *
+     * _CSS property_
+     */ borderImageSlice: "fill";
+    /**
+     * ## `borderImageSource`
+     *
+     * _CSS property_
+     */ borderImageSource: string;
+    /**
+     * ## `borderImageWidth`
+     *
+     * _CSS property_
+     */ borderImageWidth: string;
+    /**
+     * ## `borderInline`
+     *
+     * _CSS property_
+     */ borderInline: Color;
+    /**
+     * ## `borderInlineColor`
+     *
+     * _CSS property_
+     */ borderInlineColor: Color;
+    /**
+     * ## `borderInlineStyle`
+     *
+     * _CSS property_
+     */ borderInlineStyle: "dashed" | "dotted" | "groove";
+    /**
+     * ## `borderInlineWidth`
+     *
+     * _CSS property_
+     */ borderInlineWidth: string;
+    /**
+     * ## `borderInlineEnd`
+     *
+     * _CSS property_
+     */ borderInlineEnd: string;
+    /**
+     * ## `borderInlineEndColor`
+     *
+     * _CSS property_
+     */ borderInlineEndColor: Color;
+    /**
+     * ## `borderInlineEndStyle`
+     *
+     * _CSS property_
+     */ borderInlineEndStyle: "dashed" | "dotted" | "groove";
+    /**
+     * ## `borderInlineEndWidth`
+     *
+     * _CSS property_
+     */ borderInlineEndWidth: string;
+    /**
+     * ## `borderStartEnd`
+     *
+     * _CSS property_
+     */ borderStartEnd: string;
+    /**
+     * ## `borderInlineStartColor`
+     *
+     * _CSS property_
+     */ borderInlineStartColor: Color;
+    /**
+     * ## `borderInlineStartStyle`
+     *
+     * _CSS property_
+     */ borderInlineStartStyle: "dashed" | "dotted" | "groove";
+    /**
+     * ## `borderInlineStartWidth`
+     *
+     * _CSS property_
+     */ borderInlineStartWidth: string;
+    /**
+     * ## `borderLeft`
+     *
+     * _CSS property_
+     */ borderLeft: string;
+    /**
+     * ## `borderLeftColor`
+     *
+     * _CSS property_
+     */ borderLeftColor: Color;
+    /**
+     * ## `borderLeftStyle`
+     *
+     * _CSS property_
+     */ borderLeftStyle:
         | "none"
         | "hidden"
         | "dotted"
@@ -331,11 +644,31 @@ export interface Selector {
         | "ridge"
         | "inset"
         | "outset";
-    borderLeftWidth: string;
-    borderRadius: string;
-    borderRight: string;
-    borderRightColor: Color;
-    borderRightStyle:
+    /**
+     * ## `borderLeftWidth`
+     *
+     * _CSS property_
+     */ borderLeftWidth: string;
+    /**
+     * ## `borderRadius`
+     *
+     * _CSS property_
+     */ borderRadius: string;
+    /**
+     * ## `borderRight`
+     *
+     * _CSS property_
+     */ borderRight: string;
+    /**
+     * ## `borderRightColor`
+     *
+     * _CSS property_
+     */ borderRightColor: Color;
+    /**
+     * ## `borderRightStyle`
+     *
+     * _CSS property_
+     */ borderRightStyle:
         | "none"
         | "hidden"
         | "dotted"
@@ -346,9 +679,21 @@ export interface Selector {
         | "ridge"
         | "inset"
         | "outset";
-    borderRightWidth: string;
-    borderSpacing: string;
-    borderStyle:
+    /**
+     * ## `borderRightWidth`
+     *
+     * _CSS property_
+     */ borderRightWidth: string;
+    /**
+     * ## `borderSpacing`
+     *
+     * _CSS property_
+     */ borderSpacing: string;
+    /**
+     * ## `borderStyle`
+     *
+     * _CSS property_
+     */ borderStyle:
         | "none"
         | "hidden"
         | "dotted"
@@ -359,11 +704,31 @@ export interface Selector {
         | "ridge"
         | "inset"
         | "outset";
-    borderTop: string;
-    borderTopColor: Color;
-    borderTopLeftRadius: string;
-    borderTopRightRadius: string;
-    borderTopStyle:
+    /**
+     * ## `borderTop`
+     *
+     * _CSS property_
+     */ borderTop: string;
+    /**
+     * ## `borderTopColor`
+     *
+     * _CSS property_
+     */ borderTopColor: Color;
+    /**
+     * ## `borderTopLeftRadius`
+     *
+     * _CSS property_
+     */ borderTopLeftRadius: string;
+    /**
+     * ## `borderTopRightRadius`
+     *
+     * _CSS property_
+     */ borderTopRightRadius: string;
+    /**
+     * ## `borderTopStyle`
+     *
+     * _CSS property_
+     */ borderTopStyle:
         | "none"
         | "hidden"
         | "dotted"
@@ -374,13 +739,41 @@ export interface Selector {
         | "ridge"
         | "inset"
         | "outset";
-    borderTopWidth: string;
-    borderWidth: string;
-    bottom: "auto";
-    boxDecorationBreak: "slice" | "clone";
-    boxShadow: "none";
-    boxSizing: "border-box" | "box-sizing";
-    breakAfter:
+    /**
+     * ## `borderTopWidth`
+     *
+     * _CSS property_
+     */ borderTopWidth: string;
+    /**
+     * ## `borderWidth`
+     *
+     * _CSS property_
+     */ borderWidth: string;
+    /**
+     * ## `bottom`
+     *
+     * _CSS property_
+     */ bottom: "auto";
+    /**
+     * ## `boxDecorationBreak`
+     *
+     * _CSS property_
+     */ boxDecorationBreak: "slice" | "clone";
+    /**
+     * ## `boxShadow`
+     *
+     * _CSS property_
+     */ boxShadow: "none";
+    /**
+     * ## `boxSizing`
+     *
+     * _CSS property_
+     */ boxSizing: "border-box" | "box-sizing";
+    /**
+     * ## `breakAfter`
+     *
+     * _CSS property_
+     */ breakAfter:
         | "auto"
         | "avoid"
         | "always"
@@ -395,7 +788,11 @@ export interface Selector {
         | "column"
         | "avoid-region"
         | "region";
-    breakBefore:
+    /**
+     * ## `breakBefore`
+     *
+     * _CSS property_
+     */ breakBefore:
         | "auto"
         | "avoid"
         | "always"
@@ -410,23 +807,53 @@ export interface Selector {
         | "column"
         | "avoid-region"
         | "region";
-    breakInside:
+    /**
+     * ## `breakInside`
+     *
+     * _CSS property_
+     */ breakInside:
         | "auto"
         | "avoid"
         | "avoid-page"
         | "avoid-column"
         | "avoid-region";
-    captionSide:
+    /**
+     * ## `captionSide`
+     *
+     * _CSS property_
+     */ captionSide:
         | "top"
         | "bottom"
         | "block-start"
         | "block-end"
         | "inline-start"
         | "inline-end";
-    caretColor: Color;
-    clear: "none" | "left" | "right" | "both" | "inline-start" | "inline-end";
-    clip: "auto";
-    clipPath:
+    /**
+     * ## `caretColor`
+     *
+     * _CSS property_
+     */ caretColor: Color;
+    /**
+     * ## `clear`
+     *
+     * _CSS property_
+     */ clear:
+        | "none"
+        | "left"
+        | "right"
+        | "both"
+        | "inline-start"
+        | "inline-end";
+    /**
+     * ## `clip`
+     *
+     * _CSS property_
+     */ clip: "auto";
+    /**
+     * ## `clipPath`
+     *
+     * _CSS property_
+     */ clipPath:
         | "none"
         | "margin-box"
         | "border-box"
@@ -435,15 +862,51 @@ export interface Selector {
         | "fill-box"
         | "stroke"
         | "view-box";
-    color: Color;
-    colorAdjust: string;
-    colorScheme: "normal" | "light" | "dark";
-    columnCount: "auto";
-    columnFill: "auto" | "balance" | "balance-all";
-    columnGap: "normal";
-    columnRule: string;
-    columnRuleColor: Color;
-    columnRuleStyle:
+    /**
+     * ## `color`
+     *
+     * _CSS property_
+     */ color: Color;
+    /**
+     * ## `colorAdjust`
+     *
+     * _CSS property_
+     */ colorAdjust: string;
+    /**
+     * ## `colorScheme`
+     *
+     * _CSS property_
+     */ colorScheme: "normal" | "light" | "dark";
+    /**
+     * ## `columnCount`
+     *
+     * _CSS property_
+     */ columnCount: "auto";
+    /**
+     * ## `columnFill`
+     *
+     * _CSS property_
+     */ columnFill: "auto" | "balance" | "balance-all";
+    /**
+     * ## `columnGap`
+     *
+     * _CSS property_
+     */ columnGap: "normal";
+    /**
+     * ## `columnRule`
+     *
+     * _CSS property_
+     */ columnRule: string;
+    /**
+     * ## `columnRuleColor`
+     *
+     * _CSS property_
+     */ columnRuleColor: Color;
+    /**
+     * ## `columnRuleStyle`
+     *
+     * _CSS property_
+     */ columnRuleStyle:
         | "none"
         | "hidden"
         | "dotted"
@@ -454,11 +917,31 @@ export interface Selector {
         | "ridge"
         | "inset"
         | "outset";
-    columnRuleWidth: "thin" | "medium" | "thick";
-    columnSpan: "none" | "all";
-    columnWidth: "auto";
-    columns: "auto";
-    contain:
+    /**
+     * ## `columnRuleWidth`
+     *
+     * _CSS property_
+     */ columnRuleWidth: "thin" | "medium" | "thick";
+    /**
+     * ## `columnSpan`
+     *
+     * _CSS property_
+     */ columnSpan: "none" | "all";
+    /**
+     * ## `columnWidth`
+     *
+     * _CSS property_
+     */ columnWidth: "auto";
+    /**
+     * ## `columns`
+     *
+     * _CSS property_
+     */ columns: "auto";
+    /**
+     * ## `contain`
+     *
+     * _CSS property_
+     */ contain:
         | "none"
         | "strict"
         | "content"
@@ -466,18 +949,42 @@ export interface Selector {
         | "layout"
         | "style"
         | "paint";
-    content:
+    /**
+     * ## `content`
+     *
+     * _CSS property_
+     */ content:
         | "normal"
         | "none"
         | "open-quote"
         | "close-quote"
         | "no-open-quote"
         | "no-close-quote";
-    contentVisibility: "visible" | "hidden" | "auto";
-    counterIncrement: string;
-    counterReset: string;
-    counterSet: string;
-    cursor:
+    /**
+     * ## `contentVisibility`
+     *
+     * _CSS property_
+     */ contentVisibility: "visible" | "hidden" | "auto";
+    /**
+     * ## `counterIncrement`
+     *
+     * _CSS property_
+     */ counterIncrement: string;
+    /**
+     * ## `counterReset`
+     *
+     * _CSS property_
+     */ counterReset: string;
+    /**
+     * ## `counterSet`
+     *
+     * _CSS property_
+     */ counterSet: string;
+    /**
+     * ## `cursor`
+     *
+     * _CSS property_
+     */ cursor:
         | "auto"
         | "default"
         | "none"
@@ -510,8 +1017,16 @@ export interface Selector {
         | "nwse-resize"
         | "zoom-in"
         | "zoom-out";
-    direction: "ltr" | "rtl";
-    display:
+    /**
+     * ## `direction`
+     *
+     * _CSS property_
+     */ direction: "ltr" | "rtl";
+    /**
+     * ## `display`
+     *
+     * _CSS property_
+     */ display:
         | "block"
         | "inline"
         | "inline-block"
@@ -524,18 +1039,66 @@ export interface Selector {
         | "contents"
         | "table"
         | "table-row";
-    emptyCells: "show" | "hide";
-    filter: "none";
-    flex: "auto" | "none";
-    flexBasis: "max-content" | "min-content" | "fit-content" | "auto";
-    flexDirection: "row" | "row-reverse" | "column" | "column-reverse";
-    flexFlow: string;
-    flexGrow: string;
-    flexShrink: string;
-    flexWrap: "nowrap" | "wrap" | "wrap-reverse";
-    float: "left" | "right" | "none" | "inline-start" | "inline-end";
-    font: string;
-    fontFamily:
+    /**
+     * ## `emptyCells`
+     *
+     * _CSS property_
+     */ emptyCells: "show" | "hide";
+    /**
+     * ## `filter`
+     *
+     * _CSS property_
+     */ filter: string;
+    /**
+     * ## `flex`
+     *
+     * _CSS property_
+     */ flex: "auto" | "none";
+    /**
+     * ## `flexBasis`
+     *
+     * _CSS property_
+     */ flexBasis: "max-content" | "min-content" | "fit-content" | "auto";
+    /**
+     * ## `flexDirection`
+     *
+     * _CSS property_
+     */ flexDirection: "row" | "row-reverse" | "column" | "column-reverse";
+    /**
+     * ## `flexFlow`
+     *
+     * _CSS property_
+     */ flexFlow: string;
+    /**
+     * ## `flexGrow`
+     *
+     * _CSS property_
+     */ flexGrow: string;
+    /**
+     * ## `flexShrink`
+     *
+     * _CSS property_
+     */ flexShrink: string;
+    /**
+     * ## `flexWrap`
+     *
+     * _CSS property_
+     */ flexWrap: "nowrap" | "wrap" | "wrap-reverse";
+    /**
+     * ## `float`
+     *
+     * _CSS property_
+     */ float: "left" | "right" | "none" | "inline-start" | "inline-end";
+    /**
+     * ## `font`
+     *
+     * _CSS property_
+     */ font: string;
+    /**
+     * ## `fontFamily`
+     *
+     * _CSS property_
+     */ fontFamily:
         | "serif"
         | "sans-serif"
         | "monospace"
@@ -549,9 +1112,21 @@ export interface Selector {
         | "emoji"
         | "math"
         | "fangsong";
-    fontFeatureSettings: string;
-    fontKerning: "auto" | "normal" | "none";
-    fontSize:
+    /**
+     * ## `fontFeatureSettings`
+     *
+     * _CSS property_
+     */ fontFeatureSettings: string;
+    /**
+     * ## `fontKerning`
+     *
+     * _CSS property_
+     */ fontKerning: "auto" | "normal" | "none";
+    /**
+     * ## `fontSize`
+     *
+     * _CSS property_
+     */ fontSize:
         | "xx-small"
         | "x-small"
         | "small"
@@ -560,8 +1135,16 @@ export interface Selector {
         | "x-large"
         | "xx-large"
         | "xxx-large";
-    fontSizeAdjust: "none";
-    fontStretch:
+    /**
+     * ## `fontSizeAdjust`
+     *
+     * _CSS property_
+     */ fontSizeAdjust: "none";
+    /**
+     * ## `fontStretch`
+     *
+     * _CSS property_
+     */ fontStretch:
         | "ultra-condensed"
         | "extra-condensed"
         | "condensed"
@@ -571,17 +1154,61 @@ export interface Selector {
         | "expanded"
         | "extra-expanded"
         | "ultra-expanded";
-    fontStyle: "normal" | "italic" | "oblique";
-    fontSynthesis: "none" | "weight" | "style" | "small-caps";
-    fontVariant: string;
-    fontVariantAlternates: string;
-    fontVariantCaps: string;
-    fontVariantEastAsian: string;
-    fontVariantLigatures: string;
-    fontVariantNumeric: string;
-    fontVariantPosition: string;
-    fontVariantSettings: string;
-    fontWeight:
+    /**
+     * ## `fontStyle`
+     *
+     * _CSS property_
+     */ fontStyle: "normal" | "italic" | "oblique";
+    /**
+     * ## `fontSynthesis`
+     *
+     * _CSS property_
+     */ fontSynthesis: "none" | "weight" | "style" | "small-caps";
+    /**
+     * ## `fontVariant`
+     *
+     * _CSS property_
+     */ fontVariant: string;
+    /**
+     * ## `fontVariantAlternates`
+     *
+     * _CSS property_
+     */ fontVariantAlternates: string;
+    /**
+     * ## `fontVariantCaps`
+     *
+     * _CSS property_
+     */ fontVariantCaps: string;
+    /**
+     * ## `fontVariantEastAsian`
+     *
+     * _CSS property_
+     */ fontVariantEastAsian: string;
+    /**
+     * ## `fontVariantLigatures`
+     *
+     * _CSS property_
+     */ fontVariantLigatures: string;
+    /**
+     * ## `fontVariantNumeric`
+     *
+     * _CSS property_
+     */ fontVariantNumeric: string;
+    /**
+     * ## `fontVariantPosition`
+     *
+     * _CSS property_
+     */ fontVariantPosition: string;
+    /**
+     * ## `fontVariantSettings`
+     *
+     * _CSS property_
+     */ fontVariantSettings: string;
+    /**
+     * ## `fontWeight`
+     *
+     * _CSS property_
+     */ fontWeight:
         | "normal"
         | "bold"
         | "lighter"
@@ -595,40 +1222,181 @@ export interface Selector {
         | "700"
         | "800"
         | "900";
-    forcedColorAdjust: Color;
-    gap: string;
-    grid: "none";
-    gridArea: string;
-    gridAutoColumns: "min-content" | "max-content" | "auto";
-    gridAutoFlow: "row" | "column" | "dense";
-    gridAutoRows: "min-content" | "max-content" | "auto";
-    gridColumn: "auto";
-    gridColumnEnd: "auto";
-    gridColumnGap: "auto";
-    gridColumnStart: string;
-    gridGap: string;
-    gridRow: "auto";
-    gridRowEnd: "auto";
-    gridRowGap: "auto";
-    gridRowStart: string;
-    gridTemplate: "none";
-    gridTemplateAreas: "none";
-    gridTemplateColumns: "none";
-    gridTemplateRows: "none";
-    hangingPunctuation: "none" | "first" | "last" | "force-end" | "allow-end";
-    height: "max-content" | "min-content" | "auto";
-    hyphens: "none" | "manual" | "auto";
-    isolation: "auto" | "isolate";
-    imageOrientation: "none" | "from-image";
-    imageRendering: "auto" | "crisp-edge" | "pixelated";
-    imageResolution: "from-image";
-    initialLetter: "normal";
-    inlineSize: "auto" | "max-content" | "min-content";
-    inset: "auto";
-    insetBlock: "auto";
-    insetBlockStart: "auto";
-    insetInlineStart: "auto";
-    justifyContent:
+    /**
+     * ## `forcedColorAdjust`
+     *
+     * _CSS property_
+     */ forcedColorAdjust: Color;
+    /**
+     * ## `gap`
+     *
+     * _CSS property_
+     */ gap: string;
+    /**
+     * ## `grid`
+     *
+     * _CSS property_
+     */ grid: "none";
+    /**
+     * ## `gridArea`
+     *
+     * _CSS property_
+     */ gridArea: string;
+    /**
+     * ## `gridAutoColumns`
+     *
+     * _CSS property_
+     */ gridAutoColumns: "in-content" | "max-content" | "auto";
+    /**
+     * ## `gridAutoFlow`
+     *
+     * _CSS property_
+     */ gridAutoFlow: "row" | "column" | "dense";
+    /**
+     * ## `gridAutoRows`
+     *
+     * _CSS property_
+     */ gridAutoRows: "min-content" | "max-content" | "auto";
+    /**
+     * ## `gridColumn`
+     *
+     * _CSS property_
+     */ gridColumn: "auto";
+    /**
+     * ## `gridColumnEnd`
+     *
+     * _CSS property_
+     */ gridColumnEnd: "auto";
+    /**
+     * ## `gridColumnGap`
+     *
+     * _CSS property_
+     */ gridColumnGap: "auto";
+    /**
+     * ## `gridColumnStart`
+     *
+     * _CSS property_
+     */ gridColumnStart: string;
+    /**
+     * ## `gridGap`
+     *
+     * _CSS property_
+     */ gridGap: string;
+    /**
+     * ## `gridRow`
+     *
+     * _CSS property_
+     */ gridRow: "auto";
+    /**
+     * ## `gridRowEnd`
+     *
+     * _CSS property_
+     */ gridRowEnd: "auto";
+    /**
+     * ## `gridRowGap`
+     *
+     * _CSS property_
+     */ gridRowGap: "auto";
+    /**
+     * ## `gridRowStart`
+     *
+     * _CSS property_
+     */ gridRowStart: string;
+    /**
+     * ## `gridTemplate`
+     *
+     * _CSS property_
+     */ gridTemplate: "none";
+    /**
+     * ## `gridTemplateAreas`
+     *
+     * _CSS property_
+     */ gridTemplateAreas: "none";
+    /**
+     * ## `gridTemplateColumns`
+     *
+     * _CSS property_
+     */ gridTemplateColumns: "none";
+    /**
+     * ## `gridTemplateRows`
+     *
+     * _CSS property_
+     */ gridTemplateRows: "none";
+    /**
+     * ## `hangingPunctuation`
+     *
+     * _CSS property_
+     */ hangingPunctuation:
+        | "none"
+        | "first"
+        | "last"
+        | "force-end"
+        | "allow-end";
+    /**
+     * ## `height`
+     *
+     * _CSS property_
+     */ height: "max-content" | "min-content" | "auto";
+    /**
+     * ## `hyphens`
+     *
+     * _CSS property_
+     */ hyphens: "none" | "manual" | "auto";
+    /**
+     * ## `isolation`
+     *
+     * _CSS property_
+     */ isolation: "auto" | "isolate";
+    /**
+     * ## `imageOrientation`
+     *
+     * _CSS property_
+     */ imageOrientation: "none" | "from-image";
+    /**
+     * ## `imageRendering`
+     *
+     * _CSS property_
+     */ imageRendering: "auto" | "crisp-edge" | "pixelated";
+    /**
+     * ## `imageResolution`
+     *
+     * _CSS property_
+     */ imageResolution: "from-image";
+    /**
+     * ## `initialLetter`
+     *
+     * _CSS property_
+     */ initialLetter: "normal";
+    /**
+     * ## `inlineSize`
+     *
+     * _CSS property_
+     */ inlineSize: "auto" | "max-content" | "min-content";
+    /**
+     * ## `inset`
+     *
+     * _CSS property_
+     */ inset: "auto";
+    /**
+     * ## `insetBlock`
+     *
+     * _CSS property_
+     */ insetBlock: "auto";
+    /**
+     * ## `insetBlockStart`
+     *
+     * _CSS property_
+     */ insetBlockStart: "auto";
+    /**
+     * ## `insetInlineStart`
+     *
+     * _CSS property_
+     */ insetInlineStart: "auto";
+    /**
+     * ## `justifyContent`
+     *
+     * _CSS property_
+     */ justifyContent:
         | "center"
         | "start"
         | "end"
@@ -642,7 +1410,11 @@ export interface Selector {
         | "stretch"
         | "safe center"
         | "unsafe center";
-    justifyItems:
+    /**
+     * ## `justifyItems`
+     *
+     * _CSS property_
+     */ justifyItems:
         | "center"
         | "start"
         | "end"
@@ -664,7 +1436,11 @@ export interface Selector {
         | "legacy right"
         | "legacy left"
         | "legacy center";
-    justifySelf:
+    /**
+     * ## `justifySelf`
+     *
+     * _CSS property_
+     */ justifySelf:
         | "auto"
         | "normal"
         | "stretch"
@@ -682,14 +1458,46 @@ export interface Selector {
         | "last baseline"
         | "safe center"
         | "unsafe center";
-    left: "auto";
-    letterSpacing: "normal";
-    lineHeight: "normal";
-    lineBreak: "auto" | "loose" | "normal" | "strict" | "anywhere";
-    listStyle: string;
-    listStyleImage: "none";
-    listStylePosition: "inside" | "outside";
-    listStyleType:
+    /**
+     * ## `left`
+     *
+     * _CSS property_
+     */ left: "auto";
+    /**
+     * ## `letterSpacing`
+     *
+     * _CSS property_
+     */ letterSpacing: "normal";
+    /**
+     * ## `lineHeight`
+     *
+     * _CSS property_
+     */ lineHeight: "normal";
+    /**
+     * ## `lineBreak`
+     *
+     * _CSS property_
+     */ lineBreak: "auto" | "loose" | "normal" | "strict" | "anywhere";
+    /**
+     * ## `listStyle`
+     *
+     * _CSS property_
+     */ listStyle: string;
+    /**
+     * ## `listStyleImage`
+     *
+     * _CSS property_
+     */ listStyleImage: "none";
+    /**
+     * ## `listStylePosition`
+     *
+     * _CSS property_
+     */ listStylePosition: "inside" | "outside";
+    /**
+     * ## `listStyleType`
+     *
+     * _CSS property_
+     */ listStyleType:
         | "none"
         | "disc"
         | "circle"
@@ -715,26 +1523,106 @@ export interface Selector {
         | "myanmar"
         | "oriya"
         | "telugu";
-    margin: "auto";
-    marginBlock: string;
-    marginBlockEnd: "auto";
-    marginBlockStart: "auto";
-    marginBottom: "auto";
-    marginInline: "auto";
-    marginInlineEnd: "auto";
-    marginInlineStart: "auto";
-    marginLeft: "auto";
-    marginRight: "auto";
-    marginTop: "auto";
-    mask: "none";
-    maskBorder: string;
-    maskBorderMode: "luminance" | "alpha";
-    maskBorderOutset: string;
-    maskBorderRepeat: "stretch" | "repeat" | "round" | "space";
-    maskBorderSlice: string;
-    maskBorderSource: "none";
-    maskBorderWidth: "auto";
-    maskClip:
+    /**
+     * ## `margin`
+     *
+     * _CSS property_
+     */ margin: "auto";
+    /**
+     * ## `marginBlock`
+     *
+     * _CSS property_
+     */ marginBlock: string;
+    /**
+     * ## `marginBlockEnd`
+     *
+     * _CSS property_
+     */ marginBlockEnd: "auto";
+    /**
+     * ## `marginBlockStart`
+     *
+     * _CSS property_
+     */ marginBlockStart: "auto";
+    /**
+     * ## `marginBottom`
+     *
+     * _CSS property_
+     */ marginBottom: "auto";
+    /**
+     * ## `marginInline`
+     *
+     * _CSS property_
+     */ marginInline: "auto";
+    /**
+     * ## `marginInlineEnd`
+     *
+     * _CSS property_
+     */ marginInlineEnd: "auto";
+    /**
+     * ## `marginInlineStart`
+     *
+     * _CSS property_
+     */ marginInlineStart: "auto";
+    /**
+     * ## `marginLeft`
+     *
+     * _CSS property_
+     */ marginLeft: "auto";
+    /**
+     * ## `marginRight`
+     *
+     * _CSS property_
+     */ marginRight: "auto";
+    /**
+     * ## `marginTop`
+     *
+     * _CSS property_
+     */ marginTop: "auto";
+    /**
+     * ## `mask`
+     *
+     * _CSS property_
+     */ mask: "none";
+    /**
+     * ## `maskBorder`
+     *
+     * _CSS property_
+     */ maskBorder: string;
+    /**
+     * ## `maskBorderMode`
+     *
+     * _CSS property_
+     */ maskBorderMode: "luminance" | "alpha";
+    /**
+     * ## `maskBorderOutset`
+     *
+     * _CSS property_
+     */ maskBorderOutset: string;
+    /**
+     * ## `maskBorderRepeat`
+     *
+     * _CSS property_
+     */ maskBorderRepeat: "stretch" | "repeat" | "round" | "space";
+    /**
+     * ## `maskBorderSlice`
+     *
+     * _CSS property_
+     */ maskBorderSlice: string;
+    /**
+     * ## `maskBorderSource`
+     *
+     * _CSS property_
+     */ maskBorderSource: "none";
+    /**
+     * ## `maskBorderWidth`
+     *
+     * _CSS property_
+     */ maskBorderWidth: "auto";
+    /**
+     * ## `maskClip`
+     *
+     * _CSS property_
+     */ maskClip:
         | "content-box"
         | "padding-box"
         | "border-box"
@@ -743,10 +1631,26 @@ export interface Selector {
         | "stroke-box"
         | "view-box"
         | "no-clip";
-    maskComposite: "add" | "subtract" | "intersect" | "exclude";
-    maskImage: "none";
-    maskMode: "alpha" | "luminance" | "match-source";
-    maskOrigin:
+    /**
+     * ## `maskComposite`
+     *
+     * _CSS property_
+     */ maskComposite: "add" | "subtract" | "intersect" | "exclude";
+    /**
+     * ## `maskImage`
+     *
+     * _CSS property_
+     */ maskImage: "none";
+    /**
+     * ## `maskMode`
+     *
+     * _CSS property_
+     */ maskMode: "alpha" | "luminance" | "match-source";
+    /**
+     * ## `maskOrigin`
+     *
+     * _CSS property_
+     */ maskOrigin:
         | "content-box"
         | "padding-box"
         | "border-box"
@@ -757,26 +1661,82 @@ export interface Selector {
         | "content"
         | "padding"
         | "border";
-    maskPosition: "top" | "bottom" | "left" | "right" | "center";
-    maskRepeat:
+    /**
+     * ## `maskPosition`
+     *
+     * _CSS property_
+     */ maskPosition: "top" | "bottom" | "left" | "right" | "center";
+    /**
+     * ## `maskRepeat`
+     *
+     * _CSS property_
+     */ maskRepeat:
         | "repeat-x"
         | "repeat-y"
         | "repeat"
         | "space"
         | "round"
         | "no-repeat";
-    maskSize: "cover" | "contain";
-    maskType: "alpha" | "luminance";
-    mathStyle: "normal" | "compact";
-    maxBlockSize: "none" | "max-content" | "min-content";
-    maxInlineSize: "none" | "max-content" | "min-content";
-    minBlockSize: "none" | "max-content" | "min-content";
-    minInlineSize: "none" | "max-content" | "min-content";
-    maxHeight: "none" | "max-content" | "min-content";
-    maxWidth: "none" | "max-content" | "min-content";
-    minHeight: "none" | "max-content" | "min-content";
-    minWidth: "none" | "max-content" | "min-content";
-    mixBlendMode:
+    /**
+     * ## `maskSize`
+     *
+     * _CSS property_
+     */ maskSize: "cover" | "contain";
+    /**
+     * ## `maskType`
+     *
+     * _CSS property_
+     */ maskType: "alpha" | "luminance";
+    /**
+     * ## `mathStyle`
+     *
+     * _CSS property_
+     */ mathStyle: "normal" | "compact";
+    /**
+     * ## `maxBlockSize`
+     *
+     * _CSS property_
+     */ maxBlockSize: "none" | "max-content" | "min-content";
+    /**
+     * ## `maxInlineSize`
+     *
+     * _CSS property_
+     */ maxInlineSize: "none" | "max-content" | "min-content";
+    /**
+     * ## `minBlockSize`
+     *
+     * _CSS property_
+     */ minBlockSize: "none" | "max-content" | "min-content";
+    /**
+     * ## `minInlineSize`
+     *
+     * _CSS property_
+     */ minInlineSize: "none" | "max-content" | "min-content";
+    /**
+     * ## `maxHeight`
+     *
+     * _CSS property_
+     */ maxHeight: "none" | "max-content" | "min-content";
+    /**
+     * ## `maxWidth`
+     *
+     * _CSS property_
+     */ maxWidth: "none" | "max-content" | "min-content";
+    /**
+     * ## `minHeight`
+     *
+     * _CSS property_
+     */ minHeight: "none" | "max-content" | "min-content";
+    /**
+     * ## `minWidth`
+     *
+     * _CSS property_
+     */ minWidth: "none" | "max-content" | "min-content";
+    /**
+     * ## `mixBlendMode`
+     *
+     * _CSS property_
+     */ mixBlendMode:
         | "normal"
         | "multiply"
         | "screen"
@@ -793,21 +1753,81 @@ export interface Selector {
         | "saturation"
         | "color"
         | "luminosity";
-    objectFit: "contain" | "cover" | "fill" | "none" | "scale-down";
-    objectPosition: "top" | "bottom" | "left" | "right" | "center";
-    offset: "none" | "auto";
-    offsetAnchor: "top" | "bottom" | "left" | "right" | "center" | "auto";
-    offsetDistance: string;
-    offsetPath: "none" | "margin-box" | "stroke-box";
-    offsetPosition: "top" | "bottom" | "left" | "right" | "center" | "auto";
-    offsetRotate: "auto";
-    opacity: string;
-    order: string;
-    orphans: string;
-    outline: string;
-    outlineColor: Color;
-    outlineOffset: string;
-    outlineStyle:
+    /**
+     * ## `objectFit`
+     *
+     * _CSS property_
+     */ objectFit: "contain" | "cover" | "fill" | "none" | "scale-down";
+    /**
+     * ## `objectPosition`
+     *
+     * _CSS property_
+     */ objectPosition: "top" | "bottom" | "left" | "right" | "center";
+    /**
+     * ## `offset`
+     *
+     * _CSS property_
+     */ offset: "none" | "auto";
+    /**
+     * ## `offsetAnchor`
+     *
+     * _CSS property_
+     */ offsetAnchor: "top" | "bottom" | "left" | "right" | "center" | "auto";
+    /**
+     * ## `offsetDistance`
+     *
+     * _CSS property_
+     */ offsetDistance: string;
+    /**
+     * ## `offsetPath`
+     *
+     * _CSS property_
+     */ offsetPath: "none" | "margin-box" | "stroke-box";
+    /**
+     * ## `offsetPosition`
+     *
+     * _CSS property_
+     */ offsetPosition: "top" | "bottom" | "left" | "right" | "center" | "auto";
+    /**
+     * ## `offsetRotate`
+     *
+     * _CSS property_
+     */ offsetRotate: "auto";
+    /**
+     * ## `opacity`
+     *
+     * _CSS property_
+     */ opacity: string;
+    /**
+     * ## `order`
+     *
+     * _CSS property_
+     */ order: string;
+    /**
+     * ## `orphans`
+     *
+     * _CSS property_
+     */ orphans: string;
+    /**
+     * ## `outline`
+     *
+     * _CSS property_
+     */ outline: string;
+    /**
+     * ## `outlineColor`
+     *
+     * _CSS property_
+     */ outlineColor: Color;
+    /**
+     * ## `outlineOffset`
+     *
+     * _CSS property_
+     */ outlineOffset: string;
+    /**
+     * ## `outlineStyle`
+     *
+     * _CSS property_
+     */ outlineStyle:
         | "auto"
         | "none"
         | "dotted"
@@ -818,38 +1838,166 @@ export interface Selector {
         | "ridge"
         | "inset"
         | "outset";
-    outlineWidth: "thin" | "medium" | "thick";
-    overflow: "visible" | "hidden" | "clip" | "scroll" | "auto";
-    overflowAnchor: "auto" | "none";
-    overflowBlock: "visible" | "hidden" | "scroll" | "auto";
-    overflowClipMargin: string;
-    overflowInline: "visible" | "hidden" | "scroll" | "auto";
-    overflowWrap: "normal" | "break-word" | "anywhere";
-    overflowX: "visible" | "hidden" | "clip" | "scroll" | "auto";
-    overflowY: "visible" | "hidden" | "clip" | "scroll" | "auto";
-    overscrollBehavior: "auto" | "contain" | "none";
-    overscrollBehaviorBlock: "auto" | "contain" | "none";
-    overscrollBehaviorInline: "auto" | "contain" | "none";
-    overscrollBehaviorX: "auto" | "contain" | "none";
-    overscrollBehaviorY: "auto" | "contain" | "none";
-    right: "auto";
-    padding: string;
-    paddingBlock: string;
-    paddingBlockEnd: string;
-    paddingBlockStart: string;
-    paddingBottom: string;
-    paddingInline: string;
-    paddingInlineEnd: string;
-    paddingInlineStart: string;
-    paddingLeft: string;
-    paddingRight: string;
-    paddingTop: string;
-    pageBreakAfter: string;
-    pageBreakBefore: string;
-    pageBreakInside: string;
-    perspective: "none";
-    perspectiveOrigin: "top" | "center" | "right";
-    placeContent:
+    /**
+     * ## `outlineWidth`
+     *
+     * _CSS property_
+     */ outlineWidth: "thin" | "medium" | "thick";
+    /**
+     * ## `overflow`
+     *
+     * _CSS property_
+     */ overflow: "visible" | "hidden" | "clip" | "scroll" | "auto";
+    /**
+     * ## `overflowAnchor`
+     *
+     * _CSS property_
+     */ overflowAnchor: "auto" | "none";
+    /**
+     * ## `overflowBlock`
+     *
+     * _CSS property_
+     */ overflowBlock: "visible" | "hidden" | "scroll" | "auto";
+    /**
+     * ## `overflowClipMargin`
+     *
+     * _CSS property_
+     */ overflowClipMargin: string;
+    /**
+     * ## `overflowInline`
+     *
+     * _CSS property_
+     */ overflowInline: "visible" | "hidden" | "scroll" | "auto";
+    /**
+     * ## `overflowWrap`
+     *
+     * _CSS property_
+     */ overflowWrap: "normal" | "break-word" | "anywhere";
+    /**
+     * ## `overflowX`
+     *
+     * _CSS property_
+     */ overflowX: "visible" | "hidden" | "clip" | "scroll" | "auto";
+    /**
+     * ## `overflowY`
+     *
+     * _CSS property_
+     */ overflowY: "visible" | "hidden" | "clip" | "scroll" | "auto";
+    /**
+     * ## `overscrollBehavior`
+     *
+     * _CSS property_
+     */ overscrollBehavior: "auto" | "contain" | "none";
+    /**
+     * ## `overscrollBehaviorBlock`
+     *
+     * _CSS property_
+     */ overscrollBehaviorBlock: "auto" | "contain" | "none";
+    /**
+     * ## `overscrollBehaviorInline`
+     *
+     * _CSS property_
+     */ overscrollBehaviorInline: "auto" | "contain" | "none";
+    /**
+     * ## `overscrollBehaviorX`
+     *
+     * _CSS property_
+     */ overscrollBehaviorX: "auto" | "contain" | "none";
+    /**
+     * ## `overscrollBehaviorY`
+     *
+     * _CSS property_
+     */ overscrollBehaviorY: "auto" | "contain" | "none";
+    /**
+     * ## `right`
+     *
+     * _CSS property_
+     */ right: "auto";
+    /**
+     * ## `padding`
+     *
+     * _CSS property_
+     */ padding: string;
+    /**
+     * ## `paddingBlock`
+     *
+     * _CSS property_
+     */ paddingBlock: string;
+    /**
+     * ## `paddingBlockEnd`
+     *
+     * _CSS property_
+     */ paddingBlockEnd: string;
+    /**
+     * ## `paddingBlockStart`
+     *
+     * _CSS property_
+     */ paddingBlockStart: string;
+    /**
+     * ## `paddingBottom`
+     *
+     * _CSS property_
+     */ paddingBottom: string;
+    /**
+     * ## `paddingInline`
+     *
+     * _CSS property_
+     */ paddingInline: string;
+    /**
+     * ## `paddingInlineEnd`
+     *
+     * _CSS property_
+     */ paddingInlineEnd: string;
+    /**
+     * ## `paddingInlineStart`
+     *
+     * _CSS property_
+     */ paddingInlineStart: string;
+    /**
+     * ## `paddingLeft`
+     *
+     * _CSS property_
+     */ paddingLeft: string;
+    /**
+     * ## `paddingRight`
+     *
+     * _CSS property_
+     */ paddingRight: string;
+    /**
+     * ## `paddingTop`
+     *
+     * _CSS property_
+     */ paddingTop: string;
+    /**
+     * ## `pageBreakAfter`
+     *
+     * _CSS property_
+     */ pageBreakAfter: string;
+    /**
+     * ## `pageBreakBefore`
+     *
+     * _CSS property_
+     */ pageBreakBefore: string;
+    /**
+     * ## `pageBreakInside`
+     *
+     * _CSS property_
+     */ pageBreakInside: string;
+    /**
+     * ## `perspective`
+     *
+     * _CSS property_
+     */ perspective: "none";
+    /**
+     * ## `perspectiveOrigin`
+     *
+     * _CSS property_
+     */ perspectiveOrigin: "top" | "center" | "right";
+    /**
+     * ## `placeContent`
+     *
+     * _CSS property_
+     */ placeContent:
         | "start"
         | "end"
         | "flex-start"
@@ -866,7 +2014,11 @@ export interface Selector {
         | "stretch"
         | "safe"
         | "unsafe";
-    placeItems:
+    /**
+     * ## `placeItems`
+     *
+     * _CSS property_
+     */ placeItems:
         | "start"
         | "end"
         | "flex-start"
@@ -887,7 +2039,11 @@ export interface Selector {
         | "legacy"
         | "self-start"
         | "self-end";
-    pointerEvents:
+    /**
+     * ## `pointerEvents`
+     *
+     * _CSS property_
+     */ pointerEvents:
         | "auto"
         | "none"
         | "visiblePainted"
@@ -898,39 +2054,171 @@ export interface Selector {
         | "fill"
         | "stroke"
         | "all";
-    position: "static" | "relative" | "absolute" | "fixed" | "sticky";
-    quotes: "none" | "auto";
-    resize: string;
-    rotate: "none";
-    rowGap: string;
-    rubyAlign: "start" | "center" | "space-between" | "space-around";
-    rubyPosition: "over" | "under" | "inter-character" | "alternate";
-    scale: string;
-    scrollBehavior: "auto" | "smooth";
-    scrollMargin: string;
-    scrollMarginBlock: string;
-    scrollMarginBlockEnd: string;
-    scrollMarginBlockStart: string;
-    scrollMarginBottom: string;
-    scrollMarginInline: string;
-    scrollMarginInlineEnd: string;
-    scrollMarginInlineStart: string;
-    scrollMarginLeft: string;
-    scrollMarginRight: string;
-    scrollMarginTop: string;
-    scrollPadding: string;
-    scrollPaddingBlock: string;
-    scrollPaddingBlockEnd: string;
-    scrollPaddingBlockStart: string;
-    scrollPaddingBottom: string;
-    scrollPaddingInline: string;
-    scrollPaddingInlineStart: string;
-    scrollPaddingLeft: string;
-    scrollPaddingRight: string;
-    scrollPaddingTop: string;
-    scrollSnapAlign: "none" | "start" | "end" | "center";
-    scrollSnapStop: "normal" | "always";
-    scrollSnapType:
+    /**
+     * ## `position`
+     *
+     * _CSS property_
+     */ position: "static" | "relative" | "absolute" | "fixed" | "sticky";
+    /**
+     * ## `quotes`
+     *
+     * _CSS property_
+     */ quotes: "none" | "auto";
+    /**
+     * ## `resize`
+     *
+     * _CSS property_
+     */ resize: string;
+    /**
+     * ## `rotate`
+     *
+     * _CSS property_
+     */ rotate: "none";
+    /**
+     * ## `rowGap`
+     *
+     * _CSS property_
+     */ rowGap: string;
+    /**
+     * ## `rubyAlign`
+     *
+     * _CSS property_
+     */ rubyAlign: "start" | "center" | "space-between" | "space-around";
+    /**
+     * ## `rubyPosition`
+     *
+     * _CSS property_
+     */ rubyPosition: "over" | "under" | "inter-character" | "alternate";
+    /**
+     * ## `scale`
+     *
+     * _CSS property_
+     */ scale: string;
+    /**
+     * ## `scrollBehavior`
+     *
+     * _CSS property_
+     */ scrollBehavior: "auto" | "smooth";
+    /**
+     * ## `scrollMargin`
+     *
+     * _CSS property_
+     */ scrollMargin: string;
+    /**
+     * ## `scrollMarginBlock`
+     *
+     * _CSS property_
+     */ scrollMarginBlock: string;
+    /**
+     * ## `scrollMarginBlockEnd`
+     *
+     * _CSS property_
+     */ scrollMarginBlockEnd: string;
+    /**
+     * ## `scrollMarginBlockStart`
+     *
+     * _CSS property_
+     */ scrollMarginBlockStart: string;
+    /**
+     * ## `scrollMarginBottom`
+     *
+     * _CSS property_
+     */ scrollMarginBottom: string;
+    /**
+     * ## `scrollMarginInline`
+     *
+     * _CSS property_
+     */ scrollMarginInline: string;
+    /**
+     * ## `scrollMarginInlineEnd`
+     *
+     * _CSS property_
+     */ scrollMarginInlineEnd: string;
+    /**
+     * ## `scrollMarginInlineStart`
+     *
+     * _CSS property_
+     */ scrollMarginInlineStart: string;
+    /**
+     * ## `scrollMarginLeft`
+     *
+     * _CSS property_
+     */ scrollMarginLeft: string;
+    /**
+     * ## `scrollMarginRight`
+     *
+     * _CSS property_
+     */ scrollMarginRight: string;
+    /**
+     * ## `scrollMarginTop`
+     *
+     * _CSS property_
+     */ scrollMarginTop: string;
+    /**
+     * ## `scrollPadding`
+     *
+     * _CSS property_
+     */ scrollPadding: string;
+    /**
+     * ## `scrollPaddingBlock`
+     *
+     * _CSS property_
+     */ scrollPaddingBlock: string;
+    /**
+     * ## `scrollPaddingBlockEnd`
+     *
+     * _CSS property_
+     */ scrollPaddingBlockEnd: string;
+    /**
+     * ## `scrollPaddingBlockStart`
+     *
+     * _CSS property_
+     */ scrollPaddingBlockStart: string;
+    /**
+     * ## `scrollPaddingBottom`
+     *
+     * _CSS property_
+     */ scrollPaddingBottom: string;
+    /**
+     * ## `scrollPaddingInline`
+     *
+     * _CSS property_
+     */ scrollPaddingInline: string;
+    /**
+     * ## `scrollPaddingInlineStart`
+     *
+     * _CSS property_
+     */ scrollPaddingInlineStart: string;
+    /**
+     * ## `scrollPaddingLeft`
+     *
+     * _CSS property_
+     */ scrollPaddingLeft: string;
+    /**
+     * ## `scrollPaddingRight`
+     *
+     * _CSS property_
+     */ scrollPaddingRight: string;
+    /**
+     * ## `scrollPaddingTop`
+     *
+     * _CSS property_
+     */ scrollPaddingTop: string;
+    /**
+     * ## `scrollSnapAlign`
+     *
+     * _CSS property_
+     */ scrollSnapAlign: "none" | "start" | "end" | "center";
+    /**
+     * ## `scrollSnapStop`
+     *
+     * _CSS property_
+     */ scrollSnapStop: "normal" | "always";
+    /**
+     * ## `scrollSnapType`
+     *
+     * _CSS property_
+     */ scrollSnapType:
         | "none"
         | "x"
         | "y"
@@ -939,20 +2227,56 @@ export interface Selector {
         | "both"
         | "mandatory"
         | "proximity";
-    scrollbarColor: Color;
-    scrollbarGutter: "auto" | "stable" | "both-edges";
-    scrollbarWidth: "auto" | "thin" | "none";
-    shapeImageThreshold: string;
-    shapeMargin: string;
-    shapeOutside:
+    /**
+     * ## `scrollbarColor`
+     *
+     * _CSS property_
+     */ scrollbarColor: Color;
+    /**
+     * ## `scrollbarGutter`
+     *
+     * _CSS property_
+     */ scrollbarGutter: "auto" | "stable" | "both-edges";
+    /**
+     * ## `scrollbarWidth`
+     *
+     * _CSS property_
+     */ scrollbarWidth: "auto" | "thin" | "none";
+    /**
+     * ## `shapeImageThreshold`
+     *
+     * _CSS property_
+     */ shapeImageThreshold: string;
+    /**
+     * ## `shapeMargin`
+     *
+     * _CSS property_
+     */ shapeMargin: string;
+    /**
+     * ## `shapeOutside`
+     *
+     * _CSS property_
+     */ shapeOutside:
         | "none"
         | "margin-box"
         | "content-box"
         | "border-box"
         | "padding-box";
-    tabSize: string;
-    tableLayout: "auto" | "fixed";
-    textAlign:
+    /**
+     * ## `tabSize`
+     *
+     * _CSS property_
+     */ tabSize: string;
+    /**
+     * ## `tableLayout`
+     *
+     * _CSS property_
+     */ tableLayout: "auto" | "fixed";
+    /**
+     * ## `textAlign`
+     *
+     * _CSS property_
+     */ textAlign:
         | "start"
         | "end"
         | "left"
@@ -961,17 +2285,47 @@ export interface Selector {
         | "justify"
         | "justify-all"
         | "match-parent";
-    textAlignLast: "start" | "end" | "left" | "right" | "center" | "justify";
-    textCombineUpright: "none" | "all";
-    textDecoration: "none";
-    textDecorationColor: Color;
-    textDecorationLine:
+    /**
+     * ## `textAlignLast`
+     *
+     * _CSS property_
+     */ textAlignLast:
+        | "start"
+        | "end"
+        | "left"
+        | "right"
+        | "center"
+        | "justify";
+    /**
+     * ## `textCombineUpright`
+     *
+     * _CSS property_
+     */ textCombineUpright: "none" | "all";
+    /**
+     * ## `textDecoration`
+     *
+     * _CSS property_
+     */ textDecoration: "none";
+    /**
+     * ## `textDecorationColor`
+     *
+     * _CSS property_
+     */ textDecorationColor: Color;
+    /**
+     * ## `textDecorationLine`
+     *
+     * _CSS property_
+     */ textDecorationLine:
         | "none"
         | "underline"
         | "overline"
         | "line-through"
         | "blink";
-    textDecorationSkip:
+    /**
+     * ## `textDecorationSkip`
+     *
+     * _CSS property_
+     */ textDecorationSkip:
         | "none"
         | "objects"
         | "spaces"
@@ -979,13 +2333,41 @@ export interface Selector {
         | "box-decoration"
         | "leading-spaces"
         | "trailing-spaces";
-    textDecorationSkipInk: "none" | "auto" | "all";
-    textDecorationStyle: "solid" | "double" | "dotted" | "dashed" | "wavy";
-    textDecorationThickness: "auto" | "from-font";
-    textEmphasis: "none";
-    textEmphasisColor: Color;
-    textEmphasisPosition: "over" | "under" | "right" | "left";
-    textEmphasisStyle:
+    /**
+     * ## `textDecorationSkipInk`
+     *
+     * _CSS property_
+     */ textDecorationSkipInk: "none" | "auto" | "all";
+    /**
+     * ## `textDecorationStyle`
+     *
+     * _CSS property_
+     */ textDecorationStyle: "solid" | "double" | "dotted" | "dashed" | "wavy";
+    /**
+     * ## `textDecorationThickness`
+     *
+     * _CSS property_
+     */ textDecorationThickness: "auto" | "from-font";
+    /**
+     * ## `textEmphasis`
+     *
+     * _CSS property_
+     */ textEmphasis: "none";
+    /**
+     * ## `textEmphasisColor`
+     *
+     * _CSS property_
+     */ textEmphasisColor: Color;
+    /**
+     * ## `textEmphasisPosition`
+     *
+     * _CSS property_
+     */ textEmphasisPosition: "over" | "under" | "right" | "left";
+    /**
+     * ## `textEmphasisStyle`
+     *
+     * _CSS property_
+     */ textEmphasisStyle:
         | "none"
         | "filled"
         | "open"
@@ -994,58 +2376,142 @@ export interface Selector {
         | "double-circle"
         | "triangle"
         | "sesame";
-    textIndent: string;
-    textJustify:
+    /**
+     * ## `textIndent`
+     *
+     * _CSS property_
+     */ textIndent: string;
+    /**
+     * ## `textJustify`
+     *
+     * _CSS property_
+     */ textJustify:
         | "none"
         | "auto"
         | "inter-word"
         | "inter-character"
         | "distribute";
-    textOrientation:
+    /**
+     * ## `textOrientation`
+     *
+     * _CSS property_
+     */ textOrientation:
         | "mixed"
         | "upright"
         | "sideways-right"
         | "sideways"
         | "use-glyph-orientation";
-    textOverflow: "clip" | "ellipsis";
-    textRendering:
+    /**
+     * ## `textOverflow`
+     *
+     * _CSS property_
+     */ textOverflow: "clip" | "ellipsis";
+    /**
+     * ## `textRendering`
+     *
+     * _CSS property_
+     */ textRendering:
         | "auto"
         | "optimizeSpeed"
         | "optimizeLegibility"
         | "geometricPrecision";
-    textShadow: string;
-    textSizeAdjust: string;
-    textTransform:
+    /**
+     * ## `textShadow`
+     *
+     * _CSS property_
+     */ textShadow: string;
+    /**
+     * ## `textSizeAdjust`
+     *
+     * _CSS property_
+     */ textSizeAdjust: string;
+    /**
+     * ## `textTransform`
+     *
+     * _CSS property_
+     */ textTransform:
         | "none"
         | "capitalize"
         | "uppercase"
         | "lowercase"
         | "full-width"
         | "full-size-kana";
-    textUnderlineOffset: "auto";
-    textUnderlinePosition: "auto" | "under" | "left" | "right";
-    top: "auto";
-    touchAction:
+    /**
+     * ## `textUnderlineOffset`
+     *
+     * _CSS property_
+     */ textUnderlineOffset: "auto";
+    /**
+     * ## `textUnderlinePosition`
+     *
+     * _CSS property_
+     */ textUnderlinePosition: "auto" | "under" | "left" | "right";
+    /**
+     * ## `top`
+     *
+     * _CSS property_
+     */ top: "auto";
+    /**
+     * ## `touchAction`
+     *
+     * _CSS property_
+     */ touchAction:
         | "auto"
         | "none"
         | "pan-x"
         | "pan-y"
         | "manipulation"
         | "pinch-zoom";
-    transform: string;
-    transformBox:
+    /**
+     * ## `transform`
+     *
+     * _CSS property_
+     */ transform: string;
+    /**
+     * ## `transformBox`
+     *
+     * _CSS property_
+     */ transformBox:
         | "content-box"
         | "border-box"
         | "fill-box"
         | "stroke-box"
         | "view-box";
-    transformOrigin: "left" | "center" | "right" | "top" | "bottom";
-    transformStyle: "flat" | "preserve-3d";
-    transition: string;
-    transitionDelay: string;
-    transitionDuration: string;
-    transitionProperty: string;
-    transitionTimingFunction:
+    /**
+     * ## `transformOrigin`
+     *
+     * _CSS property_
+     */ transformOrigin: "left" | "center" | "right" | "top" | "bottom";
+    /**
+     * ## `transformStyle`
+     *
+     * _CSS property_
+     */ transformStyle: "flat" | "preserve-3d";
+    /**
+     * ## `transition`
+     *
+     * _CSS property_
+     */ transition: string;
+    /**
+     * ## `transitionDelay`
+     *
+     * _CSS property_
+     */ transitionDelay: string;
+    /**
+     * ## `transitionDuration`
+     *
+     * _CSS property_
+     */ transitionDuration: string;
+    /**
+     * ## `transitionProperty`
+     *
+     * _CSS property_
+     */ transitionProperty: string;
+    /**
+     * ## `transitionTimingFunction`
+     *
+     * _CSS property_
+     */ transitionTimingFunction:
         | "ease"
         | "ease-in"
         | "ease-out"
@@ -1053,10 +2519,26 @@ export interface Selector {
         | "linear"
         | "step-start"
         | "step-end";
-    translate: "none";
-    unicodeBidi: string;
-    userSelect: "none" | "auto" | "text" | "contain" | "all";
-    verticalAlign:
+    /**
+     * ## `translate`
+     *
+     * _CSS property_
+     */ translate: "none";
+    /**
+     * ## `unicodeBidi`
+     *
+     * _CSS property_
+     */ unicodeBidi: string;
+    /**
+     * ## `userSelect`
+     *
+     * _CSS property_
+     */ userSelect: "none" | "auto" | "text" | "contain" | "all";
+    /**
+     * ## `verticalAlign`
+     *
+     * _CSS property_
+     */ verticalAlign:
         | "baseline"
         | "sub"
         | "super"
@@ -1065,311 +2547,474 @@ export interface Selector {
         | "middle"
         | "top"
         | "bottom";
-    visibility: "visible" | "hidden" | "collapse";
-    whiteSpace:
+    /**
+     * ## `visibility`
+     *
+     * _CSS property_
+     */ visibility: "visible" | "hidden" | "collapse";
+    /**
+     * ## `whiteSpace`
+     *
+     * _CSS property_
+     */ whiteSpace:
         | "normal"
         | "nowrap"
         | "pre"
         | "pre-wrap"
         | "pre-line"
         | "break-spaces";
-    width: "max-content" | "min-content" | "auto";
-    widows: string;
-    wordBreak: "normal" | "break-all" | "keep-all" | "break-word";
-    wordSpacing: "normal";
-    wordWrap: "normal" | "break-word" | "anywhere";
-    writingMode: "horizontal-tb" | "vertical-rl" | "vertical-lr";
-    zIndex: "auto";
-    zoom: string;
-    webkitLineClamp: string;
-    webkitAppearance: string;
-    webkitTextEmphasis: string;
-    webkitHyphens: string;
-    mozAppearance: string;
-    mozTabSize: string;
-    mozHyphens: string;
-    oTabSize: string;
-    msHyphens: string;
+    /**
+     * ## `width`
+     *
+     * _CSS property_
+     */ width: "max-content" | "min-content" | "auto";
+    /**
+     * ## `widows`
+     *
+     * _CSS property_
+     */ widows: string;
+    /**
+     * ## `wordBreak`
+     *
+     * _CSS property_
+     */ wordBreak: "normal" | "break-all" | "keep-all" | "break-word";
+    /**
+     * ## `wordSpacing`
+     *
+     * _CSS property_
+     */ wordSpacing: "normal";
+    /**
+     * ## `wordWrap`
+     *
+     * _CSS property_
+     */ wordWrap: "normal" | "break-word" | "anywhere";
+    /**
+     * ## `writingMode`
+     *
+     * _CSS property_
+     */ writingMode: "horizontal-tb" | "vertical-rl" | "vertical-lr";
+    /**
+     * ## `zIndex`
+     *
+     * _CSS property_
+     */ zIndex: "auto";
+    /**
+     * ## `zoom`
+     *
+     * _CSS property_
+     */ zoom: string;
+    /**
+     * ## `webkitLineClamp`
+     *
+     * _CSS property_
+     */ webkitLineClamp: string;
+    /**
+     * ## `webkitAppearance`
+     *
+     * _CSS property_
+     */ webkitAppearance: string;
+    /**
+     * ## `webkitTextEmphasis`
+     *
+     * _CSS property_
+     */ webkitTextEmphasis: string;
+    /**
+     * ## `webkitHyphens`
+     *
+     * _CSS property_
+     */ webkitHyphens: string;
+    /**
+     * ## `mozAppearance`
+     *
+     * _CSS property_
+     */ mozAppearance: string;
+    /**
+     * ## `mozTabSize`
+     *
+     * _CSS property_
+     */ mozTabSize: string;
+    /**
+     * ## `mozHyphens`
+     *
+     * _CSS property_
+     */ mozHyphens: string;
+    /**
+     * ## `oTabSize`
+     *
+     * _CSS property_
+     */ oTabSize: string;
+    /**
+     * ## `msHyphens`
+     *
+     * _CSS property_
+     */ msHyphens: string;
+    /**
+     * ## `alignmentBaseline`
+     *
+     * _CSS property_
+     */ alignmentBaseline: string;
+    /**
+     * ## `baselineShift`
+     *
+     * _CSS property_
+     */ baselineShift: string;
+    /**
+     * ## `clipRule`
+     *
+     * _CSS property_
+     */ clipRule: string;
+    /**
+     * ## `colorInterpolation`
+     *
+     * _CSS property_
+     */ colorInterpolation: string;
+    /**
+     * ## `colorInterpolationFilter`
+     *
+     * _CSS property_
+     */ colorInterpolationFilter: string;
+    /**
+     * ## `colorProfile`
+     *
+     * _CSS property_
+     */ colorProfile: string;
+    /**
+     * ## `colorRendering`
+     *
+     * _CSS property_
+     */ colorRendering: string;
+    /**
+     * ## `dominantBaseline`
+     *
+     * _CSS property_
+     */ dominantBaseline: string;
+    /**
+     * ## `enableBackground`
+     *
+     * _CSS property_
+     */ enableBackground: string;
+    /**
+     * ## `fill`
+     *
+     * _CSS property_
+     */ fill: string;
+    /**
+     * ## `fillOpacity`
+     *
+     * _CSS property_
+     */ fillOpacity: string;
+    /**
+     * ## `fillRule`
+     *
+     * _CSS property_
+     */ fillRule: string;
+    /**
+     * ## `floodColor`
+     *
+     * _CSS property_
+     */ floodColor: string;
+    /**
+     * ## `floodOpacity`
+     *
+     * _CSS property_
+     */ floodOpacity: string;
+    /**
+     * ## `glyphOrientationHorizontal`
+     *
+     * _CSS property_
+     */ glyphOrientationHorizontal: string;
+    /**
+     * ## `glyphOrientationVertical`
+     *
+     * _CSS property_
+     */ glyphOrientationVertical: string;
+    /**
+     * ## `lightingColor`
+     *
+     * _CSS property_
+     */ lightingColor: string;
+    /**
+     * ## `markerEnd`
+     *
+     * _CSS property_
+     */ markerEnd: string;
+    /**
+     * ## `markerMid`
+     *
+     * _CSS property_
+     */ markerMid: string;
+    /**
+     * ## `markerStart`
+     *
+     * _CSS property_
+     */ markerStart: string;
+    /**
+     * ## `shapeRendering`
+     *
+     * _CSS property_
+     */ shapeRendering: string;
+    /**
+     * ## `stopColor`
+     *
+     * _CSS property_
+     */ stopColor: string;
+    /**
+     * ## `stopOpacity`
+     *
+     * _CSS property_
+     */ stopOpacity: string;
+    /**
+     * ## `stroke`
+     *
+     * _CSS property_
+     */ stroke: string;
+    /**
+     * ## `strokeDasharray`
+     *
+     * _CSS property_
+     */ strokeDasharray: string;
+    /**
+     * ## `strokeDashoffset`
+     *
+     * _CSS property_
+     */ strokeDashoffset: string;
+    /**
+     * ## `strokeLinecap`
+     *
+     * _CSS property_
+     */ strokeLinecap: string;
+    /**
+     * ## `strokeLinejoin`
+     *
+     * _CSS property_
+     */ strokeLinejoin: string;
+    /**
+     * ## `strokeMiterlimit`
+     *
+     * _CSS property_
+     */ strokeMiterlimit: string;
+    /**
+     * ## `strokeOpacity`
+     *
+     * _CSS property_
+     */ strokeOpacity: string;
+    /**
+     * ## `strokeWidth`
+     *
+     * _CSS property_
+     */ strokeWidth: string;
+    /**
+     * ## `textAnchor`
+     *
+     * _CSS property_
+     */ textAnchor: string;
+    /**
+     * ## `vectorEffect`
+     *
+     * _CSS property_
+     */ vectorEffect: string;
 }
 
 export interface SelectorTypes {
     /**
-     * ## ``element.style``
-     *
-     * Inline style is used to apply the unique style rules to an element,
-     * by putting the CSS rules directly into the start tag.
-     */
-    inline: Selector;
-    /**
      * ## ``.element``
-     *
-     * Define style for the normal state of the element.
-     */
+     * Define style for the normal state of the element. */
     normal: Selector;
     /**
      * ## ``:active ``
-     *
      * Define style for the element when clicked.
      *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:active}
-     */
+     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:active} */
     active: Selector;
     /**
      * ## ``:any-link ``
-     *
      * Define the style that represents an element
      * that acts as the source anchor of a hyperlink,
      * independent of whether it has been visited.
      *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:any-link}
-     */
+     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:any-link} */
     anyLink: Selector;
     /**
      * ## `:autofill `
-     * The :autofill CSS pseudo-class matches when an <input>
+     * The :autofill CSS pseudo-class matches when an ``<input>``
      * element has its value autofilled by the browser.
      * The class stops matching if the user edits the field.
      *
-     *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:autofill}
-     */
+     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:autofill} */
     autofill: Selector;
     /**
      * ## ``:checked ``
-     *
      * The ``:checked`` CSS pseudo-class selector represents any radio
-     * (<input type="radio">), checkbox (<input type="checkbox">),
-     * or option (<option> in a <select>)
+     * (`<input type="radio">`), checkbox (``<input type="checkbox">``),
+     * or option (``<option>`` in a ``<select>``)
      * element that is checked or toggled to an on state.
      *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:checked}
-     */
+     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:checked} */
     checked: Selector;
     /**
      * ## ``:default ``
-     *
      * The :default CSS pseudo-class selects
      * form elements that are the default in a group of related elements.
      *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:default}
-     */
+     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:default} */
     default: Selector;
     /**
      * ## `:defined `
-     *
      * The :defined CSS pseudo-class
      * represents any element that has been defined.
      * This includes any standard element built in to the browser,
      * and custom elements that have been successfully defined
      * (i.e. with the CustomElementRegistry.define() method).
      *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:defined}
-     */
+     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:defined} */
     defined: Selector;
     /**
      * ## `:disabled `
-     *
      * The :disabled CSS pseudo-class represents any disabled element.
      * An element is disabled if it can't be activated
      * (selected, clicked on, typed into, etc.) or accept focus.
      * The element also has an enabled state,
      * in which it can be activated or accept focus.
      *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:disabled}
-     */
+     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:disabled} */
     disabled: Selector;
     /**
      * ## `:empty `
-     *
      * The :empty CSS pseudo-class represents any element that has no children.
      * Children can be either element nodes or text (including whitespace).
      * Comments, processing instructions,
      * and CSS content do not affect whether an element is considered empty.
-     *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:empty}
-     */
+     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:empty} */
     empty: Selector;
     /**
      * ## `:enabled `
-     *
      * The :enabled CSS pseudo-class represents any enabled element.
      * An element is enabled if it can be activated
      * (selected, clicked on, typed into, etc.) or accept focus.
      * The element also has a disabled state,
      * in which it can't be activated or accept focus.
      *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:enabled}
-     */
+     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:enabled} */
     enabled: Selector;
     /**
      * ## `:first `
-     *
      * The :first CSS pseudo-class, used with the ``@page`` at-rule,
      * represents the first page of a printed document.
      *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:first}
-     */
+     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:first} */
     first: Selector;
     /**
      * ## `:first-child `
-     *
      * The :first-child CSS pseudo-class
      * represents the first element among a group of sibling elements.
      *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:first-child}
-     */
+     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:first-child} */
     firstChild: Selector;
     /**
      * ## `:first-of-type `
-     *
      * The :first-of-type CSS pseudo-class represents
      * the first element of its type among a group of sibling elements.
      *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:first-of-type}
-     */
+     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:first-of-type} */
     firstOfType: Selector;
     /**
      * ## `:fullscreen `
-     *
      * The :fullscreen CSS pseudo-class
      * matches every element which is currently in fullscreen mode.
      * If multiple elements have been put into fullscreen mode,
      * this selects them all.
      *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:fullscreen}
-     */
+     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:fullscreen} */
     fullscreen: Selector;
     /**
      * ## `:focus `
-     *
      * The :focus CSS pseudo-class represents an element
      * (such as a form input) that has received focus.
      * It is generally triggered when the user clicks
      * or taps on an element or selects it with the keyboard's Tab key.
      *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:focus}
-     */
+     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:focus} */
     focus: Selector;
     /**
      * ## `focus-visible`
-     *
      * The :focus-visible pseudo-class applies
      * while an element matches the :focus pseudo-class and the UA (User Agent)
      * determines via heuristics that the focus should be made evident on the element.
      * (Many browsers show a "focus ring" by default in this case.)
      *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible}
-     */
+     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible} */
     focusVisible: Selector;
     /**
      * ## `:focus-within`
-     *
      * The :focus-within CSS pseudo-class
      * matches an element if the element or any of its descendants are focused.
      * In other words, it represents an element that is itself matched
      * by the :focus pseudo-class or has a descendant that is matched
      * by :focus. (This includes descendants in shadow trees.)
      *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-within}
-     */
+     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-within} */
     focusWithin: Selector;
     /**
      * ## `:host`
-     *
      * The :host CSS pseudo-class
      * selects the shadow host of the shadow DOM
-     * containing the CSS it is used inside
-     * — in other words,
+     * containing the CSS it is used inside — in other words,
      * this allows you to select a custom element from inside its shadow DOM.
      *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:host}
-     */
+     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:host} */
     host: Selector;
     /**
      * ## `:hover`
-     *
      * The :hover CSS pseudo-class
      * matches when the user interacts with an element with a pointing device,
      * but does not necessarily activate it.
      * It is generally triggered
-     * when the user hovers over an element with the cursor (mouse pointer).
-     *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:hover}
-     */
+     * when the user hovers over an element with the cursor (mouse pointer). */
     hover: Selector;
     /**
      * ## `:indeterminate`
-     *
      * The :indeterminate CSS pseudo-class
      * represents any form element whose state is indeterminate,
      * such as checkboxes which have their HTML indeterminate attribute set to true,
      * radio buttons which are members of a group in which all radio buttons are unchecked,
-     * and indeterminate ``<progress>`` elements.
-     *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:indeterminate}
-     */
+     * and indeterminate ``<progress>`` elements. */
     indeterminate: Selector;
     /**
-     * ## `:in-range`
-     *
+     * `:in-range`
      * The :in-range CSS pseudo-class represents an ``<input>`` element
-     * whose current value is within the range limits specified by the min and max attributes.
-     *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:in-range}
-     */
+     * whose current value is within the range limits specified by the min and max attributes. */
     inRange: Selector;
     /**
      * ## `:invalid`
-     *
      * The :invalid CSS pseudo-class represents
      * any ``<form>``, ``<fieldset>``, ``<input>``
-     * or other ``<form>`` element whose contents fail to validate.
-     *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:invalid}
-     */
+     * or other ``<form>`` element whose contents fail to validate. */
     invalid: Selector;
     /**
      * ## `:last-child`
-     *
      * The :last-child CSS pseudo-class
-     * represents the last element among a group of sibling elements.
-     *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:last-child}
-     */
+     * represents the last element among a group of sibling elements. */
     lastChild: Selector;
     /**
      * ## `:last-of-type`
-     *
      * The :last-of-type CSS pseudo-class
-     * represents the last element of its type among a group of sibling elements.
-     *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:last-of-type}
-     */
+     * represents the last element of its type among a group of sibling elements. */
     lastOfType: Selector;
     /**
      * ## `:left`
-     *
      * The :left CSS pseudo-class,
      * used with the ``@page`` at-rule,
-     * represents all left-hand pages of a printed document.
-     *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:left}
-     */
+     * represents all left-hand pages of a printed document. */
     left: Selector;
     /**
      * ## `:link`
-     *
      * The :link CSS pseudo-class
      * represents an element that has not yet been visited.
      * It matches every unvisited ``<a>`` or ``<area>`` element
-     * that has an href attribute.
-     *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:link}
-     */
+     * that has an href attribute. */
     link: Selector;
     /**
      * ## `:modal`
-     *
      * The :modal CSS pseudo-class
      * matches an element that is in a state
      * in which it excludes all interaction
@@ -1377,252 +3022,465 @@ export interface SelectorTypes {
      * the interaction has been dismissed.
      * Multiple elements can be selected
      * by the :modal pseudo-class at the same time,
-     * but only one of them will be active and able to receive input.
-     *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:modal}
-     */
+     * but only one of them will be active and able to receive input. */
     modal: Selector;
     /**
      * ## `:only-child`
-     *
      * The :only-child CSS pseudo-class
      * represents an element without any siblings.
      * This is the same as :first-child:last-child
      * or :nth-child(1):nth-last-child(1),
-     * but with a lower specificity.
-     *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:only-child}
-     */
+     * but with a lower specificity. */
     onlyChild: Selector;
     /**
      * ## `:only-of-type`
-     *
      * The :only-of-type CSS pseudo-class
-     * represents an element that has no siblings of the same type.
-     *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:only-of-type}
-     */
+     * represents an element that has no siblings of the same type. */
     onlyOfType: Selector;
     /**
      * ## `:optional`
-     *
-     * The :optional CSS pseudo-class represents any ``<input>``,
+     * The :optional CSS pseudo-class represents any ``<input>``
      * ``<select>``, or ``<textarea>`` element
-     * that does not have the required attribute set on it.
-     *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:optional}
-     */
+     * that does not have the required attribute set on it. */
     optional: Selector;
     /**
-     * ## `out-of-range`
-     *
+     * ## `:out-of-range`
      * The :out-of-range CSS pseudo-class
      * represents an ``<input>`` element whose current value
      * is outside the range limits specified
-     * by the min and max attributes.
-     *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:out-of-range}
-     */
+     * by the min and max attributes. */
     outOfRange: Selector;
     /**
      * ## `:picture-in-picture`
-     *
      * The :picture-in-picture CSS pseudo-class
      * matches the element which is currently
-     * in picture-in-picture mode.
-     *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:picture-in-picture}
-     */
+     * in picture-in-picture mode. */
     pictureInPicutre: Selector;
     /**
      * ## `:placeholder-shown`
-     *
      * The :placeholder-shown CSS pseudo-class
      * represents any ``<input>`` or ``<textarea>`` element
-     * that is currently displaying placeholder text.
-     *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:placeholder-shown}
-     */
+     * that is currently displaying placeholder text. */
     placeholderShown: Selector;
     /**
      * ## `:read-only`
-     *
      * The :read-only CSS pseudo-class
      * represents an element (such as input or textarea)
-     * that is not editable by the user.
-     *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:read-only}
-     */
+     * that is not editable by the user. */
     readOnly: Selector;
     /**
      * ## `:read-write`
-     *
      * The :read-write CSS pseudo-class
      * represents an element (such as input or textarea)
-     * that is editable by the user.
-     *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:read-write}
-     */
+     * that is editable by the user. */
     readWrite: Selector;
     /**
      * ## `:required`
-     *
      * The :required CSS pseudo-class
-     * epresents any ``<input>``, ``<select>``, or ``<textarea>`` element
-     * that has the required attribute set on it.
-     *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:required}
-     */
+     * represents any ``<input>``, ``<select>``, or ``<textarea>`` element
+     * that has the required attribute set on it. */
     required: Selector;
     /**
      * ## `:scope`
-     *
      * The :scope CSS pseudo-class
      * represents elements that are a reference point
-     * for selectors to match against.
-     *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:scope}
-     */
+     * for selectors to match against. */
     scope: Selector;
     /**
      * ## `:target`
-     *
      * The :target CSS pseudo-class
      * represents a unique element (the target element)
-     * with an id matching the URL's fragment.
-     *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:target}
-     */
+     * with an id matching the URL's fragment. */
     target: Selector;
     /**
      * ## `:valid`
-     *
      * The :valid CSS pseudo-class
      * represents any ``<input>`` or other ``<form>`` element
      * whose contents validate successfully.
      * This allows to easily make valid fields
      * adopt an appearance that helps the user confirm
-     * that their data is formatted properly.
-     *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:valid}
-     */
+     * that their data is formatted properly. */
     valid: Selector;
     /**
      * ## `:visited`
-     *
      * The :visited CSS pseudo-class
      * represents links that the user has already visited.
      * For privacy reasons,
      * the styles that can be modified
-     * using this selector are very limited.
-     *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:visited}
-     */
+     * using this selector are very limited. */
     visited: Selector;
     /**
      * ## `::after`
-     *
      * In CSS, ::after creates a pseudo-element
      * that is the last child of the selected element.
      * It is often used to add cosmetic content
      * to an element with the content property.
-     * It is inline by default.
-     *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/::after}
-     */
+     * It is inline by default. */
     after: Selector;
     /**
      * ## `::before`
-     *
      * In CSS, ::before creates a pseudo-element
      * that is the first child of the selected element.
      * It is often used to add cosmetic content
      * to an element with the content property.
-     * It is inline by default.
-     *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/::before}
-     */
+     * It is inline by default. */
     before: Selector;
     /**
      * ## `::cue`
-     *
      * The ::cue CSS pseudo-element matches WebVTT cues
      * within a selected element.
      * This can be used to style captions
-     * and other cues in media with VTT tracks.
-     *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/::cue}
-     */
+     * and other cues in media with VTT tracks. */
     cue: Selector;
     /**
      * ## `::first-letter`
-     *
      * The ::first-letter CSS pseudo-element
      * applies styles to the first letter
      * of the first line of a block-level element,
      * but only when not preceded by other content
-     * (such as images or inline tables).
-     *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/::first-letter}
-     */
+     * (such as images or inline tables). */
     firstLetter: Selector;
     /**
      * ## `::first-line`
-     *
      * The ::first-line CSS pseudo-element
-     * applies styles to the first line of a block-level element.
-     *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/::first-line}
-     */
+     * applies styles to the first line of a block-level element. */
     firstLine: Selector;
     /**
      * ## `::file-selector-button`
-     *
      * The ::file-selector-button CSS pseudo-element
-     * represents the button of an ``<input>`` of type="file".
-     *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/::file-selector-button}
-     */
+     * represents the button of an ``<input>`` of type="file". */
     fileSelectorButton: Selector;
     /**
      * ## `::placeholder`
-     *
      * The ::placeholder CSS pseudo-element
      * represents the placeholder text in
-     * an ``<input>`` or ``<textarea>`` element.
-     *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/::placeholder}
-     */
+     * an ``<input>`` or ``<textarea>`` element. */
     placeholder: Selector;
     /**
      * ## `::selection`
-     *
      * The ::selection CSS pseudo-element
      * applies styles to the part of a document
      * that has been highlighted by the user
-     * (such as clicking and dragging the mouse across text).
-     *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/::selection}
-     */
+     * (such as clicking and dragging the mouse across text). */
     selection: Selector;
     /**
      * ## `::marker`
-     *
      * The ::marker CSS pseudo-element selects the marker box
      * of a list item, which typically contains a bullet or number.
      * It works on any element or pseudo-element set
      * to display: list-item,
-     * such as the ``<li> ``and ``<summary>`` elements.
-     *
-     * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/::marker}
-     */
+     * such as the ``<li> ``and ``<summary>`` elements. */
     marker: Selector;
+    /**  */
     webkitScrollbar: Selector;
+    /**  */
     webkitScrollbarTrack: Selector;
+    /**  */
     webkitScrollbarThumb: Selector;
+    /**  */
     webkitScrollbarThumbHover: Selector;
+    /**  */
     webkitScrollbarThumbActive: Selector;
-    [key: string]: Selector;
+}
+
+export interface Events {
+    /**
+     * ## `onAbort` Event
+     */ onAbort: (event: Event) => void;
+    /**
+     * ## `onAnimationEnd` Event
+     */ onAnimationEnd: (event: Event) => void;
+    /**
+     * ## `onAnimationIteration` Event
+     */ onAnimationIteration: (event: Event) => void;
+    /**
+     * ## `onAnimationStart` Event
+     */ onAnimationStart: (event: Event) => void;
+    /**
+     * ## `onBeforePrint` Event
+     */ onBeforePrint: (event: Event) => void;
+    /**
+     * ## `onBeforeUnload` Event
+     */ onBeforeUnload: (event: Event) => void;
+    /**
+     * ## `onBlur` Event
+     */ onBlur: (event: Event) => void;
+    /**
+     * ## `onCanPlay` Event
+     */ onCanPlay: (event: Event) => void;
+    /**
+     * ## `onCanPlayThrough` Event
+     */ onCanPlayThrough: (event: Event) => void;
+    /**
+     * ## `onChange` Event
+     */ onChange: (event: Event) => void;
+    /**
+     * ## `onContextMenu` Event
+     */ onContextMenu: (event: Event) => void;
+    /**
+     * ## `onCopy` Event
+     */ onCopy: (event: Event) => void;
+    /**
+     * ## `onCut` Event
+     */ onCut: (event: Event) => void;
+    /**
+     * ## `onDurationChange` Event
+     */ onDurationChange: (event: Event) => void;
+    /**
+     * ## `onEnded` Event
+     */ onEnded: (event: Event) => void;
+    /**
+     * ## `onError` Event
+     */ onError: (event: Event) => void;
+    /**
+     * ## `onFocus` Event
+     */ onFocus: (event: Event) => void;
+    /**
+     * ## `onFocusIn` Event
+     */ onFocusIn: (event: Event) => void;
+    /**
+     * ## `onFocusOut` Event
+     */ onFocusOut: (event: Event) => void;
+    /**
+     * ## `onFullScreenChange` Event
+     */ onFullScreenChange: (event: Event) => void;
+    /**
+     * ## `onHashChange` Event
+     */ onHashChange: (event: Event) => void;
+    /**
+     * ## `onInvalid` Event
+     */ onInvalid: (event: Event) => void;
+    /**
+     * ## `onLoad` Event
+     */ onLoad: (event: Event) => void;
+    /**
+     * ## `onLoadedData` Event
+     */ onLoadedData: (event: Event) => void;
+    /**
+     * ## `onLoadedMetaData` Event
+     */ onLoadedMetaData: (event: Event) => void;
+    /**
+     * ## `onLoadStart` Event
+     */ onLoadStart: (event: Event) => void;
+    /**
+     * ## `onMessage` Event
+     */ onMessage: (event: Event) => void;
+    /**
+     * ## `onOffline` Event
+     */ onOffline: (event: Event) => void;
+    /**
+     * ## `onOnline` Event
+     */ onOnline: (event: Event) => void;
+    /**
+     * ## `onOpen` Event
+     */ onOpen: (event: Event) => void;
+    /**
+     * ## `onPageHide` Event
+     */ onPageHide: (event: Event) => void;
+    /**
+     * ## `onPageShow` Event
+     */ onPageShow: (event: Event) => void;
+    /**
+     * ## `onPaste` Event
+     */ onPaste: (event: Event) => void;
+    /**
+     * ## `onPause` Event
+     */ onPause: (event: Event) => void;
+    /**
+     * ## `onPlay` Event
+     */ onPlay: (event: Event) => void;
+    /**
+     * ## `onPlaying` Event
+     */ onPlaying: (event: Event) => void;
+    /**
+     * ## `onProgress` Event
+     */ onProgress: (event: Event) => void;
+    /**
+     * ## `onRateChange` Event
+     */ onRateChange: (event: Event) => void;
+    /**
+     * ## `onResize` Event
+     */ onResize: (event: Event) => void;
+    /**
+     * ## `onReset` Event
+     */ onReset: (event: Event) => void;
+    /**
+     * ## `onScroll` Event
+     */ onScroll: (event: Event) => void;
+    /**
+     * ## `onSearch` Event
+     */ onSearch: (event: Event) => void;
+    /**
+     * ## `onSeeked` Event
+     */ onSeeked: (event: Event) => void;
+    /**
+     * ## `onSeeking` Event
+     */ onSeeking: (event: Event) => void;
+    /**
+     * ## `onSelect` Event
+     */ onSelect: (event: Event) => void;
+    /**
+     * ## `onSelectionChange` Event
+     */ onSelectionChange: (event: Event) => void;
+    /**
+     * ## `onShow` Event
+     */ onShow: (event: Event) => void;
+    /**
+     * ## `onStalled` Event
+     */ onStalled: (event: Event) => void;
+    /**
+     * ## `onStorage` Event
+     */ onStorage: (event: Event) => void;
+    /**
+     * ## `onSubmit` Event
+     */ onSubmit: (event: Event) => void;
+    /**
+     * ## `onSuspend` Event
+     */ onSuspend: (event: Event) => void;
+    /**
+     * ## `onTimeUpdate` Event
+     */ onTimeUpdate: (event: Event) => void;
+    /**
+     * ## `onToggle` Event
+     */ onToggle: (event: Event) => void;
+    /**
+     * ## `onTransitionEnd` Event
+     */ onTransitionEnd: (event: Event) => void;
+    /**
+     * ## `onUnload` Event
+     */ onUnload: (event: Event) => void;
+    /**
+     * ## `onVolumeChange` Event
+     */ onVolumeChange: (event: Event) => void;
+    /**
+     * ## `onWaiting` Event
+     */ onWaiting: (event: Event) => void;
+    /**
+     * ## `onWheel` Event
+     */ onWheel: (event: WheelEvent) => void;
+    /**
+     * ## `onInput` Event
+     */ onInput: (event: InputEvent) => void;
+    /**
+     * ## `onDrag` Event
+     */ onDrag: (event: DragEvent) => void;
+    /**
+     * ## `onDragEnd` Event
+     */ onDragEnd: (event: DragEvent) => void;
+    /**
+     * ## `onDragEnter` Event
+     */ onDragEnter: (event: DragEvent) => void;
+    /**
+     * ## `onDragLeave` Event
+     */ onDragLeave: (event: DragEvent) => void;
+    /**
+     * ## `onDragOver` Event
+     */ onDragOver: (event: DragEvent) => void;
+    /**
+     * ## `onDragStart` Event
+     */ onDragStart: (event: DragEvent) => void;
+    /**
+     * ## `onDrop` Event
+     */ onDrop: (event: DragEvent) => void;
+    /**
+     * ## `onKeyDown` Event
+     */ onKeyDown: (event: KeyboardEvent) => void;
+    /**
+     * ## `onKeyPress` Event
+     */ onKeyPress: (event: KeyboardEvent) => void;
+    /**
+     * ## `onKeyUp` Event
+     */ onKeyUp: (event: KeyboardEvent) => void;
+    /**
+     * ## `onClick` Event
+     */ onClick: (event: MouseEvent) => void;
+    /**
+     * ## `onDoubleClick` Event
+     */ onDoubleClick: (event: MouseEvent) => void;
+    /**
+     * ## `onMouseDown` Event
+     */ onMouseDown: (event: MouseEvent) => void;
+    /**
+     * ## `onMouseEnter` Event
+     */ onMouseEnter: (event: MouseEvent) => void;
+    /**
+     * ## `onMouseLeave` Event
+     */ onMouseLeave: (event: MouseEvent) => void;
+    /**
+     * ## `onMouseMove` Event
+     */ onMouseMove: (event: MouseEvent) => void;
+    /**
+     * ## `onMouseOver` Event
+     */ onMouseOver: (event: MouseEvent) => void;
+    /**
+     * ## `onMouseOut` Event
+     */ onMouseOut: (event: MouseEvent) => void;
+    /**
+     * ## `onMouseUp` Event
+     */ onMouseUp: (event: MouseEvent) => void;
+    /**
+     * ## `onPointerOver` Event
+     */ onPointerOver: (event: PointerEvent) => void;
+    /**
+     * ## `onPointerEnter` Event
+     */ onPointerEnter: (event: PointerEvent) => void;
+    /**
+     * ## `onPointerDown` Event
+     */ onPointerDown: (event: PointerEvent) => void;
+    /**
+     * ## `onPointerMove` Event
+     */ onPointerMove: (event: PointerEvent) => void;
+    /**
+     * ## `onPointerUp` Event
+     */ onPointerUp: (event: PointerEvent) => void;
+    /**
+     * ## `onPointerCancel` Event
+     */ onPointerCancel: (event: PointerEvent) => void;
+    /**
+     * ## `onPointerOut` Event
+     */ onPointerOut: (event: PointerEvent) => void;
+    /**
+     * ## `onPointerLeave` Event
+     */ onPointerLeave: (event: PointerEvent) => void;
+    /**
+     * ## `onGotPointerCapture` Event
+     */ onGotPointerCapture: (event: PointerEvent) => void;
+    /**
+     * ## `onLostPointerCapture` Event
+     */ onLostPointerCapture: (event: PointerEvent) => void;
+    /**
+     * ## `onTouchCancel` Event
+     */ onTouchCancel: (event: TouchEvent) => void;
+    /**
+     * ## `onTouchEnd` Event
+     */ onTouchEnd: (event: TouchEvent) => void;
+    /**
+     * ## `onTouchMove` Event
+     */ onTouchMove: (event: TouchEvent) => void;
+    /**
+     * ## `onTouchStart` Event
+     */ onTouchStart: (event: TouchEvent) => void;
+    /**
+     * ## `onClickGlobal` Event
+     */ onClickGlobal: (event: PointerEvent) => void;
+    /**
+     * ## `onResizeGlobal` Event
+     */ onResizeGlobal: (event: Event) => void;
+    /**
+     * ## `onKeyUpGlobal` Event
+     */ onKeyUpGlobal: (event: KeyboardEvent) => void;
+    /**
+     * ## `onKeyDownGlobal` Event
+     */ onKeyDownGlobal: (event: KeyboardEvent) => void;
+    /**
+     * ## `onContextMenuGlobal` Event
+     */ onContextMenuGlobal: (event: PointerEvent) => void;
+    /**
+     * ## `onScrollGlobal` Event
+     */ onScrollGlobal: (event: Event) => void;
+    /**
+     * ## `onBeforeUnloadGlobal` Event
+     */ onBeforeUnloadGlobal: (event: BeforeUnloadEvent) => void;
 }
 
 export interface Animation {
@@ -1641,6 +3499,7 @@ export interface MediaQuery extends SelectorTypes {
      * Media query condition.
      */
     condition: string;
+    [key: string]: Selector;
 }
 
 export interface StyleSheet extends SelectorTypes {
@@ -1663,6 +3522,7 @@ export interface StyleSheet extends SelectorTypes {
      * Media queries of the current element.
      */
     mediaQueries: Array<MediaQuery>;
+    [key: string]: Selector;
 }
 
 export interface Hooks {
@@ -1712,108 +3572,6 @@ export interface Flags {
      * element event if they have the same type.
      */
     forceRerender: boolean;
-}
-
-export interface Events {
-    onAbort: (event: Event) => void;
-    onAnimationEnd: (event: Event) => void;
-    onAnimationIteration: (event: Event) => void;
-    onAnimationStart: (event: Event) => void;
-    onBeforePrint: (event: Event) => void;
-    onBeforeUnload: (event: Event) => void;
-    onBlur: (event: Event) => void;
-    onCanPlay: (event: Event) => void;
-    onCanPlayThrough: (event: Event) => void;
-    onChange: (event: Event) => void;
-    onContextMenu: (event: Event) => void;
-    onCopy: (event: Event) => void;
-    onCut: (event: Event) => void;
-    onDurationChange: (event: Event) => void;
-    onEnded: (event: Event) => void;
-    onError: (event: Event) => void;
-    onFocus: (event: Event) => void;
-    onFocusIn: (event: Event) => void;
-    onFocusOut: (event: Event) => void;
-    onFullScreenChange: (event: Event) => void;
-    onHashChange: (event: Event) => void;
-    onInvalid: (event: Event) => void;
-    onLoad: (event: Event) => void;
-    onLoadedData: (event: Event) => void;
-    onLoadedMetaData: (event: Event) => void;
-    onLoadStart: (event: Event) => void;
-    onMessage: (event: Event) => void;
-    onOffline: (event: Event) => void;
-    onOnline: (event: Event) => void;
-    onOpen: (event: Event) => void;
-    onPageHide: (event: Event) => void;
-    onPageShow: (event: Event) => void;
-    onPaste: (event: Event) => void;
-    onPause: (event: Event) => void;
-    onPlay: (event: Event) => void;
-    onPlaying: (event: Event) => void;
-    onProgress: (event: Event) => void;
-    onRateChange: (event: Event) => void;
-    onResize: (event: Event) => void;
-    onReset: (event: Event) => void;
-    onScroll: (event: Event) => void;
-    onSearch: (event: Event) => void;
-    onSeeked: (event: Event) => void;
-    onSeeking: (event: Event) => void;
-    onSelect: (event: Event) => void;
-    onSelectionChange: (event: Event) => void;
-    onShow: (event: Event) => void;
-    onStalled: (event: Event) => void;
-    onStorage: (event: Event) => void;
-    onSubmit: (event: Event) => void;
-    onSuspend: (event: Event) => void;
-    onTimeUpdate: (event: Event) => void;
-    onToggle: (event: Event) => void;
-    onTransitionEnd: (event: Event) => void;
-    onUnload: (event: Event) => void;
-    onVolumeChange: (event: Event) => void;
-    onWaiting: (event: Event) => void;
-    onWheel: (event: WheelEvent) => void;
-    onInput: (event: InputEvent) => void;
-    onDrag: (event: DragEvent) => void;
-    onDragEnd: (event: DragEvent) => void;
-    onDragEnter: (event: DragEvent) => void;
-    onDragLeave: (event: DragEvent) => void;
-    onDragOver: (event: DragEvent) => void;
-    onDragStart: (event: DragEvent) => void;
-    onDrop: (event: DragEvent) => void;
-    onKeyDown: (event: KeyboardEvent) => void;
-    onKeyPress: (event: KeyboardEvent) => void;
-    onKeyUp: (event: KeyboardEvent) => void;
-    onClick: (event: MouseEvent) => void;
-    onDoubleClick: (event: MouseEvent) => void;
-    onMouseDown: (event: MouseEvent) => void;
-    onMouseEnter: (event: MouseEvent) => void;
-    onMouseLeave: (event: MouseEvent) => void;
-    onMouseMove: (event: MouseEvent) => void;
-    onMouseOver: (event: MouseEvent) => void;
-    onMouseOut: (event: MouseEvent) => void;
-    onMouseUp: (event: MouseEvent) => void;
-    onPointerOver: (event: PointerEvent) => void;
-    onPointerEnter: (event: PointerEvent) => void;
-    onPointerDown: (event: PointerEvent) => void;
-    onPointerMove: (event: PointerEvent) => void;
-    onPointerUp: (event: PointerEvent) => void;
-    onPointerCancel: (event: PointerEvent) => void;
-    onPointerOut: (event: PointerEvent) => void;
-    onPointerLeave: (event: PointerEvent) => void;
-    onGotPointerCapture: (event: PointerEvent) => void;
-    onLostPointerCapture: (event: PointerEvent) => void;
-    onTouchCancel: (event: TouchEvent) => void;
-    onTouchEnd: (event: TouchEvent) => void;
-    onTouchMove: (event: TouchEvent) => void;
-    onTouchStart: (event: TouchEvent) => void;
-    onClickGlobal: (event: PointerEvent) => void;
-    onResizeGlobal: (event: Event) => void;
-    onKeyUpGlobal: (event: KeyboardEvent) => void;
-    onKeyDownGlobal: (event: KeyboardEvent) => void;
-    onContextMenuGlobal: (event: PointerEvent) => void;
-    onScrollGlobal: (event: Event) => void;
-    onBeforeUnloadGlobal: (event: BeforeUnloadEvent) => void;
 }
 
 export interface CommonAttributes {
@@ -2430,7 +4188,7 @@ export interface AreaProps extends CommonAttributes, Events, HTMLAttributes {
      * Alternative text in case an image can't be displayed.
      * @used  `applet` `area` `img` `input`
      */
-    alt: boolean;
+    alt: string;
     /**
      * ### _`coords` Attribute_
      *
@@ -2589,7 +4347,7 @@ export interface ImgProps extends CommonAttributes, Events, HTMLAttributes {
      * Alternative text in case an image can't be displayed.
      * @used  `applet` `area` `img` `input`
      */
-    alt: boolean;
+    alt: string;
     /**
      * ### _`crossorigin` Attribute_
      *
@@ -3444,7 +5202,7 @@ export interface InputProps extends CommonAttributes, Events, HTMLAttributes {
      * Alternative text in case an image can't be displayed.
      * @used  `applet` `area` `img` `input`
      */
-    alt: boolean;
+    alt: string;
     /**
      * ### _`autocomplete` Attribute_
      *
@@ -4494,6 +6252,15 @@ export interface ToggleSwitchProps
     onBackgroundColor: Color;
     checked: boolean;
     onCheckChange: (e: Event) => void;
+}
+
+export interface CircularSpinnerProps
+    extends CommonAttributes,
+        Events,
+        HTMLAttributes {
+    color: Color;
+    thickness: number;
+    size: number;
 }
 
 export interface SVGAProps extends SVGAttributes {

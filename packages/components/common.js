@@ -32,4 +32,38 @@ function useIntersectionObserver(instance, callback) {
     }
 }
 
-module.exports = { useIntersectionObserver };
+function createAnimationName(...args) {
+    return "_Rec_Animation_" + transformString(args.join("_"));
+}
+
+function transformString(uid) {
+    function convert(uid) {
+        const pool = [..."abcdefghijklmnopqrstuvwxyz-_0123456789"];
+        const length = pool.length;
+
+        const sum = [...uid].reduce((res, val) => {
+            return res + val.charCodeAt();
+        }, 0);
+
+        return [...uid]
+            .map((char, index) => {
+                return ((n) => {
+                    const _char = pool[n % length];
+                    return index % 3 == 0 && index != 0
+                        ? _char.toUpperCase()
+                        : _char;
+                })(char.charCodeAt() + sum + index);
+            })
+            .join("");
+    }
+
+    const output = convert(uid);
+
+    return output;
+}
+
+module.exports = {
+    useIntersectionObserver,
+    createAnimationName,
+    transformString,
+};

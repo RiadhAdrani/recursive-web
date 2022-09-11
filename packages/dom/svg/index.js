@@ -1,34 +1,36 @@
+const { attribute } = require("../../templates");
+
 module.exports = {
-    accentHeight: {
+    accentHeight: attribute({
         name: "accent-height",
-        type: "normal",
+
         values: "string",
         docs: [
             "The accent-height attribute defines the distance from the origin to the top of accent characters, measured by a distance within the font coordinate system.",
             "@deprecated",
         ],
-    },
-    accumulate: {
+    }),
+    accumulate: attribute({
         name: "accumulate",
-        type: "normal",
+
         values: ["sum", "none"],
         els: ["animate", "animateColor", "animateMotion", "animateTransform"],
         docs: [
             "The accumulate attribute controls whether or not an animation is cumulative.",
         ],
-    },
-    additive: {
+    }),
+    additive: attribute({
         name: "additive",
-        type: "normal",
+
         values: ["sum", "replace"],
         els: ["animate", "animateColor", "animateMotion", "animateTransform"],
         docs: [
             "The additive attribute controls whether or not an animation is additive.",
         ],
-    },
-    alignmentBaseline: {
+    }),
+    alignmentBaseline: attribute({
         name: "alignment-baseline",
-        type: "normal",
+
         values: [
             "auto",
             "baseline",
@@ -51,18 +53,18 @@ module.exports = {
             ,
             "The alignment-baseline attribute specifies how an object is aligned with respect to its parent. This property specifies which baseline of this element is to be aligned with the corresponding baseline of the parent. For example, this allows alphabetic baselines in Roman text to stay aligned across font size changes. It defaults to the baseline with the same name as the computed value of the alignment-baseline property.",
         ],
-    },
-    alphabetic: {
+    }),
+    alphabetic: attribute({
         name: "alphabetic",
-        type: "normal",
+
         values: "string",
         els: ["font-face"],
         docs: [
             "The alphabetic attribute defines the lower baseline of a font. It has the same syntax and semantics as the baseline descriptor within an @font-face.",
             "@deprecated",
         ],
-    },
-    amplitude: {
+    }),
+    amplitude: attribute({
         name: "amplitude",
         type: "number",
         values: [1],
@@ -70,96 +72,96 @@ module.exports = {
         docs: [
             "The amplitude attribute controls the amplitude of the gamma function of a component transfer element when its type attribute is gamma.",
         ],
-    },
-    arabicForm: {
+    }),
+    arabicForm: attribute({
         name: "arabic-form",
-        type: "normal",
+
         values: "string",
         els: ["glyph"],
         docs: [
             "The arabic-form attribute indicates which of the four possible forms an Arabic glyph represents.",
             "@deprecated",
         ],
-    },
-    ascent: {
+    }),
+    ascent: attribute({
         name: "ascent",
-        type: "normal",
+
         values: "string",
         els: ["font-face"],
         docs: [
             "The ascent attribute defines the maximum unaccented height of the font within the font coordinate system.",
             "@deprecated",
         ],
-    },
-    attributeName: {
+    }),
+    attributeName: attribute({
         name: "attributeName",
-        type: "normal",
+
         values: "string",
         els: ["animate", "animateColor", "animateTransform", "set"],
         docs: [
             "The attributeName attribute indicates the name of the CSS property or attribute of the target element that is going to be changed during an animation.",
         ],
-    },
-    attributeType: {
+    }),
+    attributeType: attribute({
         name: "attributeType",
-        type: "normal",
+
         values: "string",
         els: ["animate", "animateColor", "animateTransform", "set"],
         docs: [
             "The attributeType attribute specifies the namespace in which the target attribute and its associated values are defined.",
             "@deprecated",
         ],
-    },
-    azimuth: {
+    }),
+    azimuth: attribute({
         name: "azimuth",
-        type: "normal",
+
         values: "number",
         els: ["feDistantLight"],
         docs: [
             "The azimuth attribute specifies the direction angle for the light source on the XY plane (clockwise), in degrees from the x axis.",
         ],
-    },
-    baseFrequency: {
+    }),
+    baseFrequency: attribute({
         name: "baseFrequency",
-        type: "normal",
+
         values: "string",
         els: ["feTurbulence"],
         docs: [
             "The baseFrequency attribute represents the base frequency parameter for the noise function of the ``<feTurbulence>`` filter primitive.",
         ],
-    },
-    baselineShift: {
+    }),
+    baselineShift: attribute({
         name: "baseline-shift",
-        type: "normal",
+
         values: ["sub", "super"],
         els: ["altGlyph", "textPath", "tref", "tspan"],
         docs: [
             "The baseline-shift attribute allows repositioning of the dominant-baseline relative to the dominant-baseline of the parent text content element. The shifted object might be a sub- or superscript.",
         ],
-    },
-    baseProfile: {
+    }),
+    baseProfile: attribute({
         name: "baseProfile",
-        type: "normal",
+
         values: "string",
         els: ["svg"],
         docs: [
             "The baseProfile attribute describes the minimum SVG language profile that the author believes is necessary to correctly render the content. The attribute does not specify any processing restrictions; It can be considered metadata.",
             "@deprecated",
         ],
-    },
-    bbox: {
+    }),
+    bbox: attribute({
         name: "bbox",
-        type: "normal",
+
         values: "string",
         els: ["font-face"],
         docs: [
             "The bbox attribute defines the maximal bounding box of a font.",
             "@deprecated",
         ],
-    },
-    begin: {
+    }),
+    begin: attribute({
         name: "begin",
-        type: "normal",
+
         values: "string",
         els: [
             "animate",
@@ -172,72 +174,72 @@ module.exports = {
         docs: [
             "The begin attribute defines when an animation should begin or when an element should be discarded.",
         ],
-    },
-    bias: {
+    }),
+    bias: attribute({
         name: "bias",
-        type: "normal",
+
         values: "string",
         els: ["feConvolveMatrix"],
         docs: [
             "The bias attribute shifts the range of the filter. After applying the kernelMatrix of the ``<feConvolveMatrix>`` element to the input image to yield a number and applied the divisor attribute, the bias attribute is added to each component. This allows representation of values that would otherwise be clamped to 0 or 1.",
         ],
-    },
-    by: {
+    }),
+    by: attribute({
         name: "by",
-        type: "normal",
+
         values: "string",
         els: ["animate", "animateColor", "animateMotion", "animateTransform"],
         docs: [
             "The by attribute specifies a relative offset value for an attribute that will be modified during an animation.",
         ],
-    },
-    calcMode: {
+    }),
+    calcMode: attribute({
         name: "calcMode",
-        type: "normal",
+
         values: "string",
         docs: [
             "The calcMode attribute specifies the interpolation mode for the animation.",
         ],
-    },
-    capHeight: {
+    }),
+    capHeight: attribute({
         name: "cap-height",
-        type: "normal",
+
         values: ["discrete", "linear", "paced", "spline"],
         els: ["animate", "animateColor", "animateMotion", "animateTransform"],
         docs: [
             "The cap-height attribute defines the height of uppercase glyphs of the font within the font coordinate system.",
             "@deprecated",
         ],
-    },
-    className: {
+    }),
+    className: attribute({
         name: "class",
-        type: "normal",
+
         values: "string",
         els: true,
         docs: ["Often used with CSS to style elements with common properties."],
-    },
-    clip: {
+    }),
+    clip: attribute({
         name: "clip",
-        type: "normal",
+
         values: "string",
         els: ["font-face"],
         docs: [
             "The clip attribute is a presentation attribute defining the visible region of an element.",
             "@deprecated",
         ],
-    },
-    clipPathUnits: {
+    }),
+    clipPathUnits: attribute({
         name: "clipPathUnits",
-        type: "normal",
+
         values: ["userSpaceOnUse", "objectBoundingBox"],
         els: ["clipPath"],
         docs: [
             "The clipPathUnits attribute indicates which coordinate system to use for the contents of the ``<clipPath>`` element.",
         ],
-    },
-    clipPath: {
+    }),
+    clipPath: attribute({
         name: "clip-path",
-        type: "normal",
+
         values: "string",
         els: [
             "a",
@@ -263,1507 +265,1507 @@ module.exports = {
         docs: [
             "The clip-path presentation attribute defines or associates a clipping path with the element it is related to.",
         ],
-    },
-    clipRule: {
+    }),
+    clipRule: attribute({
         name: "clip-rule",
-        type: "normal",
+
         values: ["nonzero", "evenodd"],
         els: [],
         docs: [
             "The clip-rule attribute only applies to graphics elements that are contained within a ``<clipPath>`` element. The clip-rule attribute basically works as the fill-rule attribute, except that it applies to ``<clipPath>`` definitions.",
         ],
-    },
-    color: {
+    }),
+    color: attribute({
         name: "color",
-        type: "normal",
+
         values: "Color",
         els: [],
         docs: [
             "The color attribute is used to provide a potential indirect value, currentcolor, for the fill, stroke, stop-color, flood-color, and lighting-color attributes.",
         ],
-    },
-    colorInterpolation: {
+    }),
+    colorInterpolation: attribute({
         name: "color-interpolation",
-        type: "normal",
+
         values: "string",
         docs: [
             "The color-interpolation attribute specifies the color space for gradient interpolations, color animations, and alpha compositing.",
         ],
-    },
-    colorInterpolationFilters: {
+    }),
+    colorInterpolationFilters: attribute({
         name: "color-interpolation-filters",
-        type: "normal",
+
         values: "string",
         docs: [
             "The color-interpolation-filters attribute specifies the color space for imaging operations performed via filter effects.",
         ],
-    },
-    colorProfile: {
+    }),
+    colorProfile: attribute({
         name: "color-profile",
-        type: "normal",
+
         values: "string",
         docs: [
             "The color-profile attribute is used to define which color profile a raster image included through the ``<image>`` element should use.",
         ],
-    },
-    colorRendering: {
+    }),
+    colorRendering: attribute({
         name: "color-rendering",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    contentScriptType: {
+    }),
+    contentScriptType: attribute({
         name: "contentScriptType",
-        type: "normal",
+
         values: "string",
         docs: [
             "The contentScriptType attribute specifies the default scripting language for the given document fragment on the ``<svg>`` element.",
         ],
-    },
-    contentStyleType: {
+    }),
+    contentStyleType: attribute({
         name: "contentStyleType",
-        type: "normal",
+
         values: "string",
         docs: [
             "The contentStyleType attribute specifies the style sheet language for the given document fragment on the ``<svg>`` element.",
             "@deprecated",
         ],
-    },
-    crossorigin: {
+    }),
+    crossorigin: attribute({
         name: "crossorigin",
-        type: "normal",
+
         values: "string",
         docs: [
             "The crossorigin attribute, valid on the ``<image>`` element, provides support for CORS, defining how the element handles crossorigin requests, thereby enabling the configuration of the CORS requests for the element's fetched data. It is a CORS settings attribute.",
         ],
-    },
-    cursor: {
+    }),
+    cursor: attribute({
         name: "cursor",
-        type: "normal",
+
         values: "string",
         docs: [
             "The cursor attribute specifies the mouse cursor displayed when the mouse pointer is over an element.",
         ],
-    },
-    cx: {
+    }),
+    cx: attribute({
         name: "cx",
-        type: "normal",
+
         values: "string",
         docs: [
             "The cx attribute define the x-axis coordinate of a center point.",
         ],
-    },
-    cy: {
+    }),
+    cy: attribute({
         name: "cy",
-        type: "normal",
+
         values: "string",
         docs: [
             "The cy attribute define the y-axis coordinate of a center point.",
         ],
-    },
-    d: {
+    }),
+    d: attribute({
         name: "d",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: ["The d attribute defines a path to be drawn."],
-    },
-    decelerate: {
+    }),
+    decelerate: attribute({
         name: "decelerate",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    descent: {
+    }),
+    descent: attribute({
         name: "descent",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [
             "The descent attribute defines the maximum unaccented depth of the font.",
             "@deprecated",
         ],
-    },
-    diffuseConstant: {
+    }),
+    diffuseConstant: attribute({
         name: "diffuseConstant",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [
             "The diffuseConstant attribute represents the kd value in the Phong lighting model. In SVG, this can be any non-negative number.",
         ],
-    },
-    direction: {
+    }),
+    direction: attribute({
         name: "direction",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [
             "The direction attribute specifies the inline-base direction of a ``<text>`` or ``<tspan>`` element. It defines the start and end points of a line of text as used by the text-anchor and inline-size properties. It also may affect the direction in which characters are positioned if the unicode-bidi property's value is either embed or bidi-override.",
         ],
-    },
-    display: {
+    }),
+    display: attribute({
         name: "display",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [
             "The display attribute lets you control the rendering of graphical or container elements.",
         ],
-    },
-    divisor: {
+    }),
+    divisor: attribute({
         name: "divisor",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [
             "The divisor attribute specifies the value by which the resulting number of applying the kernelMatrix of a ``<feConvolveMatrix>`` element to the input image color value is divided to yield the destination color value.",
         ],
-    },
-    dominantBaseline: {
+    }),
+    dominantBaseline: attribute({
         name: "dominant-baseline",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [
             "The dominant-baseline attribute specifies the dominant baseline, which is the baseline used to align the box's text and inline-level contents. It also indicates the default alignment baseline of any boxes participating in baseline alignment in the box's alignment context.",
         ],
-    },
-    dur: {
+    }),
+    dur: attribute({
         name: "dur",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [
             "The dur attribute indicates the simple duration of an animation.",
         ],
-    },
-    dx: {
+    }),
+    dx: attribute({
         name: "dx",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [
             "The dx attribute indicates a shift along the x-axis on the position of an element or its content.",
         ],
-    },
-    dy: {
+    }),
+    dy: attribute({
         name: "dy",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [
             "The dy attribute indicates a shift along the y-axis on the position of an element or its content.",
         ],
-    },
-    edgeMode: {
+    }),
+    edgeMode: attribute({
         name: "edgeMode",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [
             "The edgeMode attribute determines how to extend the input image as necessary with color values so that the matrix operations can be applied when the kernel is positioned at or near the edge of the input image.",
         ],
-    },
-    elevation: {
+    }),
+    elevation: attribute({
         name: "elevation",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [
             "The elevation attribute specifies the direction angle for the light source from the XY plane towards the Z-axis, in degrees. Note that the positive Z-axis points towards the viewer of the content.",
         ],
-    },
-    enableBackground: {
+    }),
+    enableBackground: attribute({
         name: "enable-background",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [
             "The enable-background attribute specifies how the accumulation of the background image is managed.",
             "@deprecated",
         ],
-    },
-    end: {
+    }),
+    end: attribute({
         name: "end",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [
             "The end attribute defines an end value for the animation that can constrain the active duration.",
         ],
-    },
-    exponent: {
+    }),
+    exponent: attribute({
         name: "exponent",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [
             "The exponent attribute defines the exponent of the gamma function.",
         ],
-    },
-    fill: {
+    }),
+    fill: attribute({
         name: "fill",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [
             "The fill attribute has two different meanings. For shapes and text it's a presentation attribute that defines the color (or any SVG paint servers like gradients or patterns) used to paint the element; for animation it defines the final state of the animation.",
         ],
-    },
-    fillOpacity: {
+    }),
+    fillOpacity: attribute({
         name: "fill-opacity",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [
             "The fill-opacity attribute is a presentation attribute defining the opacity of the paint server (color, gradient, pattern, etc.) applied to a shape.",
         ],
-    },
-    fillRule: {
+    }),
+    fillRule: attribute({
         name: "fill-rule",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [
             "The fill-rule attribute is a presentation attribute defining the algorithm to use to determine the inside part of a shape.",
         ],
-    },
-    filter: {
+    }),
+    filter: attribute({
         name: "filter",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [
             "The filter attribute specifies the filter effects defined by the ``<filter>`` element that shall be applied to its element.",
         ],
-    },
-    filterRes: {
+    }),
+    filterRes: attribute({
         name: "filterRes",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [
             "The filterRes attribute indicates the width and height of the intermediate images in pixels of a filter primitive.",
             "@deprecated",
         ],
-    },
-    filterUnits: {
+    }),
+    filterUnits: attribute({
         name: "filterUnits",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [
             "The filterUnits attribute defines the coordinate system for the attributes x, y, width and height.",
         ],
-    },
-    floodColor: {
+    }),
+    floodColor: attribute({
         name: "flood-color",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [
             "The flood-color attribute indicates what color to use to flood the current filter primitive subregion.",
         ],
-    },
-    floodOpacity: {
+    }),
+    floodOpacity: attribute({
         name: "flood-opacity",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [
             "The flood-opacity attribute indicates the opacity value to use across the current filter primitive subregion.",
         ],
-    },
-    fontFamily: {
+    }),
+    fontFamily: attribute({
         name: "font-family",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [
             "The font-family attribute indicates which font family will be used to render the text, specified as a prioritized list of font family names and/or generic family names.",
         ],
-    },
-    fontSize: {
+    }),
+    fontSize: attribute({
         name: "font-size",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [
             "The font-size attribute refers to the size of the font from baseline to baseline when multiple lines of text are set solid in a multiline layout environment.",
         ],
-    },
-    fontSizeAdjust: {
+    }),
+    fontSizeAdjust: attribute({
         name: "font-size-adjust",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [
             "The font-size-adjust attribute allows authors to specify an aspect value for an element that will preserve the x-height of the first choice font in a substitute font.",
         ],
-    },
-    fontStretch: {
+    }),
+    fontStretch: attribute({
         name: "font-stretch",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [
             "The font-stretch attribute indicates the desired amount of condensing or expansion in the glyphs used to render the text.",
         ],
-    },
-    fontStyle: {
+    }),
+    fontStyle: attribute({
         name: "font-style",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [
             "The font-style attribute specifies whether the text is to be rendered using a normal, italic, or oblique face.",
         ],
-    },
-    fontVariant: {
+    }),
+    fontVariant: attribute({
         name: "font-variant",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [
             "The font-variant attribute indicates whether the text is to be rendered using variations of the font's glyphs.",
         ],
-    },
-    fontWeight: {
+    }),
+    fontWeight: attribute({
         name: "font-weight",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [
             "The font-weight attribute refers to the boldness or lightness of the glyphs used to render the text, relative to other fonts in the same font family.",
         ],
-    },
-    format: {
+    }),
+    format: attribute({
         name: "format",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [
             "The format attribute indicates the format of the given font.",
             "@deprecated",
         ],
-    },
-    from: {
+    }),
+    from: attribute({
         name: "from",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [
             "The from attribute indicates the initial value of the attribute that will be modified during the animation.",
         ],
-    },
-    fr: {
+    }),
+    fr: attribute({
         name: "fr",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [
             "The fr attribute defines the radius of the focal point for the radial gradient.",
         ],
-    },
-    fx: {
+    }),
+    fx: attribute({
         name: "fx",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [
             "The fx attribute defines the x-axis coordinate of the focal point for a radial gradient.",
         ],
-    },
-    fy: {
+    }),
+    fy: attribute({
         name: "fy",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [
             "The fy attribute defines the y-axis coordinate of the focal point for a radial gradient.",
         ],
-    },
-    g1: { name: "g1", type: "normal", values: "string", els: [], docs: [] },
-    g2: { name: "g2", type: "normal", values: "string", els: [], docs: [] },
-    glyphName: {
+    }),
+    g1: attribute({ name: "g1", values: "string", els: [], docs: [] }),
+    g2: attribute({ name: "g2", values: "string", els: [], docs: [] }),
+    glyphName: attribute({
         name: "glyph-name",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    glyphOrientationHorizontal: {
+    }),
+    glyphOrientationHorizontal: attribute({
         name: "glyph-orientation-horizontal",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    glyphOrientationVertical: {
+    }),
+    glyphOrientationVertical: attribute({
         name: "glyph-orientation-vertical",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    glyphRef: {
+    }),
+    glyphRef: attribute({
         name: "glyphRef",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    gradientTransform: {
+    }),
+    gradientTransform: attribute({
         name: "gradientTransform",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    gradientUnits: {
+    }),
+    gradientUnits: attribute({
         name: "gradientUnits",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    hanging: {
+    }),
+    hanging: attribute({
         name: "hanging",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    height: {
+    }),
+    height: attribute({
         name: "height",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    href: { name: "href", type: "normal", values: "string", els: [], docs: [] },
-    hreflang: {
+    }),
+    href: attribute({ name: "href", values: "string", els: [], docs: [] }),
+    hreflang: attribute({
         name: "hreflang",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    horizAdvX: {
+    }),
+    horizAdvX: attribute({
         name: "horiz-adv-x",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    horizOriginX: {
+    }),
+    horizOriginX: attribute({
         name: "horiz-origin-x",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    id: { name: "id", type: "normal", values: "string", els: [], docs: [] },
-    ideographic: {
+    }),
+    id: attribute({ name: "id", values: "string", els: [], docs: [] }),
+    ideographic: attribute({
         name: "ideographic",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    imageRendering: {
+    }),
+    imageRendering: attribute({
         name: "image-rendering",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    in: { name: "in", type: "normal", values: "string", els: [], docs: [] },
-    in2: { name: "in2", type: "normal", values: "string", els: [], docs: [] },
-    intercept: {
+    }),
+    in: attribute({ name: "in", values: "string", els: [], docs: [] }),
+    in2: attribute({ name: "in2", values: "string", els: [], docs: [] }),
+    intercept: attribute({
         name: "intercept",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    k: { name: "k", type: "normal", values: "string", els: [], docs: [] },
-    k1: { name: "k1", type: "normal", values: "string", els: [], docs: [] },
-    k2: { name: "k2", type: "normal", values: "string", els: [], docs: [] },
-    k3: { name: "k3", type: "normal", values: "string", els: [], docs: [] },
-    k4: { name: "k4", type: "normal", values: "string", els: [], docs: [] },
-    kernelMatrix: {
+    }),
+    k: attribute({ name: "k", values: "string", els: [], docs: [] }),
+    k1: attribute({ name: "k1", values: "string", els: [], docs: [] }),
+    k2: attribute({ name: "k2", values: "string", els: [], docs: [] }),
+    k3: attribute({ name: "k3", values: "string", els: [], docs: [] }),
+    k4: attribute({ name: "k4", values: "string", els: [], docs: [] }),
+    kernelMatrix: attribute({
         name: "kernelMatrix",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    kernelUnitLength: {
+    }),
+    kernelUnitLength: attribute({
         name: "kernelUnitLength",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    kerning: {
+    }),
+    kerning: attribute({
         name: "kerning",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    keyPoints: {
+    }),
+    keyPoints: attribute({
         name: "keyPoints",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    keySplines: {
+    }),
+    keySplines: attribute({
         name: "keySplines",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    keyTimes: {
+    }),
+    keyTimes: attribute({
         name: "keyTimes",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    lang: { name: "lang", type: "normal", values: "string", els: [], docs: [] },
-    lengthAdjust: {
+    }),
+    lang: attribute({ name: "lang", values: "string", els: [], docs: [] }),
+    lengthAdjust: attribute({
         name: "lengthAdjust",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    letterSpacing: {
+    }),
+    letterSpacing: attribute({
         name: "letter-spacing",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    lightingColor: {
+    }),
+    lightingColor: attribute({
         name: "lighting-color",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    limitingConeAngle: {
+    }),
+    limitingConeAngle: attribute({
         name: "limitingConeAngle",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    local: {
+    }),
+    local: attribute({
         name: "local",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    markerEnd: {
+    }),
+    markerEnd: attribute({
         name: "marker-end",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    markerMid: {
+    }),
+    markerMid: attribute({
         name: "marker-mid",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    markerStart: {
+    }),
+    markerStart: attribute({
         name: "marker-start",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    markerHeight: {
+    }),
+    markerHeight: attribute({
         name: "markerHeight",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    markerUnits: {
+    }),
+    markerUnits: attribute({
         name: "markerUnits",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    markerWidth: {
+    }),
+    markerWidth: attribute({
         name: "markerWidth",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    mask: { name: "mask", type: "normal", values: "string", els: [], docs: [] },
-    maskContentUnits: {
+    }),
+    mask: attribute({ name: "mask", values: "string", els: [], docs: [] }),
+    maskContentUnits: attribute({
         name: "maskContentUnits",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    maskUnits: {
+    }),
+    maskUnits: attribute({
         name: "maskUnits",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    mathematical: {
+    }),
+    mathematical: attribute({
         name: "mathematical",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    max: { name: "max", type: "normal", values: "string", els: [], docs: [] },
-    media: {
+    }),
+    max: attribute({ name: "max", values: "string", els: [], docs: [] }),
+    media: attribute({
         name: "media",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    method: {
+    }),
+    method: attribute({
         name: "method",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    min: { name: "min", type: "normal", values: "string", els: [], docs: [] },
-    mode: { name: "mode", type: "normal", values: "string", els: [], docs: [] },
-    name: { name: "name", type: "normal", values: "string", els: [], docs: [] },
-    numOctaves: {
+    }),
+    min: attribute({ name: "min", values: "string", els: [], docs: [] }),
+    mode: attribute({ name: "mode", values: "string", els: [], docs: [] }),
+    name: attribute({ name: "name", values: "string", els: [], docs: [] }),
+    numOctaves: attribute({
         name: "numOctaves",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    offset: {
+    }),
+    offset: attribute({
         name: "offset",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    opacity: {
+    }),
+    opacity: attribute({
         name: "opacity",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    operator: {
+    }),
+    operator: attribute({
         name: "operator",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    order: {
+    }),
+    order: attribute({
         name: "order",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    orient: {
+    }),
+    orient: attribute({
         name: "orient",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    orientation: {
+    }),
+    orientation: attribute({
         name: "orientation",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    origin: {
+    }),
+    origin: attribute({
         name: "origin",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    overflow: {
+    }),
+    overflow: attribute({
         name: "overflow",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    overlinePosition: {
+    }),
+    overlinePosition: attribute({
         name: "overline-position",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    overlineThickness: {
+    }),
+    overlineThickness: attribute({
         name: "overline-thickness",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    panose1: {
+    }),
+    panose1: attribute({
         name: "panose-1",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    paintOrder: {
+    }),
+    paintOrder: attribute({
         name: "paint-order",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    path: { name: "path", type: "normal", values: "string", els: [], docs: [] },
-    pathLength: {
+    }),
+    path: attribute({ name: "path", values: "string", els: [], docs: [] }),
+    pathLength: attribute({
         name: "pathLength",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    patternContentUnits: {
+    }),
+    patternContentUnits: attribute({
         name: "patternContentUnits",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    patternTransform: {
+    }),
+    patternTransform: attribute({
         name: "patternTransform",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    patternUnits: {
+    }),
+    patternUnits: attribute({
         name: "patternUnits",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    ping: { name: "ping", type: "normal", values: "string", els: [], docs: [] },
-    pointerEvents: {
+    }),
+    ping: attribute({ name: "ping", values: "string", els: [], docs: [] }),
+    pointerEvents: attribute({
         name: "pointer-events",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    points: {
+    }),
+    points: attribute({
         name: "points",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    pointsAtX: {
+    }),
+    pointsAtX: attribute({
         name: "pointsAtX",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    pointsAtY: {
+    }),
+    pointsAtY: attribute({
         name: "pointsAtY",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    pointsAtZ: {
+    }),
+    pointsAtZ: attribute({
         name: "pointsAtZ",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    preserveAlpha: {
+    }),
+    preserveAlpha: attribute({
         name: "preserveAlpha",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    preserveAspectRatio: {
+    }),
+    preserveAspectRatio: attribute({
         name: "preserveAspectRatio",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    primitiveUnits: {
+    }),
+    primitiveUnits: attribute({
         name: "primitiveUnits",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    r: { name: "r", type: "normal", values: "string", els: [], docs: [] },
-    radius: {
+    }),
+    r: attribute({ name: "r", values: "string", els: [], docs: [] }),
+    radius: attribute({
         name: "radius",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    referrerPolicy: {
+    }),
+    referrerPolicy: attribute({
         name: "referrerPolicy",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    refX: { name: "refX", type: "normal", values: "string", els: [], docs: [] },
-    refY: { name: "refY", type: "normal", values: "string", els: [], docs: [] },
-    rel: { name: "rel", type: "normal", values: "string", els: [], docs: [] },
-    renderingIntent: {
+    }),
+    refX: attribute({ name: "refX", values: "string", els: [], docs: [] }),
+    refY: attribute({ name: "refY", values: "string", els: [], docs: [] }),
+    rel: attribute({ name: "rel", values: "string", els: [], docs: [] }),
+    renderingIntent: attribute({
         name: "rendering-intent",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    repeatCount: {
+    }),
+    repeatCount: attribute({
         name: "repeatCount",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    repeatDur: {
+    }),
+    repeatDur: attribute({
         name: "repeatDur",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    requiredExtensions: {
+    }),
+    requiredExtensions: attribute({
         name: "requiredExtensions",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    requiredFeatures: {
+    }),
+    requiredFeatures: attribute({
         name: "requiredFeatures",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    restart: {
+    }),
+    restart: attribute({
         name: "restart",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    result: {
+    }),
+    result: attribute({
         name: "result",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    rotate: {
+    }),
+    rotate: attribute({
         name: "rotate",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    rx: { name: "rx", type: "normal", values: "string", els: [], docs: [] },
-    ry: { name: "ry", type: "normal", values: "string", els: [], docs: [] },
-    scale: {
+    }),
+    rx: attribute({ name: "rx", values: "string", els: [], docs: [] }),
+    ry: attribute({ name: "ry", values: "string", els: [], docs: [] }),
+    scale: attribute({
         name: "scale",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    seed: { name: "seed", type: "normal", values: "string", els: [], docs: [] },
-    shapeRendering: {
+    }),
+    seed: attribute({ name: "seed", values: "string", els: [], docs: [] }),
+    shapeRendering: attribute({
         name: "shape-rendering",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    slope: {
+    }),
+    slope: attribute({
         name: "slope",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    spacing: {
+    }),
+    spacing: attribute({
         name: "spacing",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    specularConstant: {
+    }),
+    specularConstant: attribute({
         name: "specularConstant",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    specularExponent: {
+    }),
+    specularExponent: attribute({
         name: "specularExponent",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    speed: {
+    }),
+    speed: attribute({
         name: "speed",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    spreadMethod: {
+    }),
+    spreadMethod: attribute({
         name: "spreadMethod",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    startOffset: {
+    }),
+    startOffset: attribute({
         name: "startOffset",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    stdDeviation: {
+    }),
+    stdDeviation: attribute({
         name: "stdDeviation",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    stemh: {
+    }),
+    stemh: attribute({
         name: "stemh",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    stemv: {
+    }),
+    stemv: attribute({
         name: "stemv",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    stitchTiles: {
+    }),
+    stitchTiles: attribute({
         name: "stitchTiles",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    stopColor: {
+    }),
+    stopColor: attribute({
         name: "stop-color",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    stopOpacity: {
+    }),
+    stopOpacity: attribute({
         name: "stop-opacity",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    strikethroughPosition: {
+    }),
+    strikethroughPosition: attribute({
         name: "strikethrough-position",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    strikethroughThickness: {
+    }),
+    strikethroughThickness: attribute({
         name: "strikethrough-thickness",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    string: {
+    }),
+    string: attribute({
         name: "string",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    stroke: {
+    }),
+    stroke: attribute({
         name: "stroke",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    strokeDasharray: {
+    }),
+    strokeDasharray: attribute({
         name: "stroke-dasharray",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    strokeDashoffset: {
+    }),
+    strokeDashoffset: attribute({
         name: "stroke-dashoffset",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    strokeLinecap: {
+    }),
+    strokeLinecap: attribute({
         name: "stroke-linecap",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    strokeLinejoin: {
+    }),
+    strokeLinejoin: attribute({
         name: "stroke-linejoin",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    strokeMiterlimit: {
+    }),
+    strokeMiterlimit: attribute({
         name: "stroke-miterlimit",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    strokeOpacity: {
+    }),
+    strokeOpacity: attribute({
         name: "stroke-opacity",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    strokeWidth: {
+    }),
+    strokeWidth: attribute({
         name: "stroke-width",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    surfaceScale: {
+    }),
+    surfaceScale: attribute({
         name: "surfaceScale",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    systemLanguage: {
+    }),
+    systemLanguage: attribute({
         name: "systemLanguage",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    tabindex: {
+    }),
+    tabindex: attribute({
         name: "tabindex",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    tableValues: {
+    }),
+    tableValues: attribute({
         name: "tableValues",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    target: {
+    }),
+    target: attribute({
         name: "target",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    targetX: {
+    }),
+    targetX: attribute({
         name: "targetX",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    targetY: {
+    }),
+    targetY: attribute({
         name: "targetY",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    textAnchor: {
+    }),
+    textAnchor: attribute({
         name: "text-anchor",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    textDecoration: {
+    }),
+    textDecoration: attribute({
         name: "text-decoration",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    textRendering: {
+    }),
+    textRendering: attribute({
         name: "text-rendering",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    textLength: {
+    }),
+    textLength: attribute({
         name: "textLength",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    to: { name: "to", type: "normal", values: "string", els: [], docs: [] },
-    transform: {
+    }),
+    to: attribute({ name: "to", values: "string", els: [], docs: [] }),
+    transform: attribute({
         name: "transform",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    transformOrigin: {
+    }),
+    transformOrigin: attribute({
         name: "transform-origin",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    type: { name: "type", type: "normal", values: "string", els: [], docs: [] },
-    u1: { name: "u1", type: "normal", values: "string", els: [], docs: [] },
-    u2: { name: "u2", type: "normal", values: "string", els: [], docs: [] },
-    underlinePosition: {
+    }),
+    type: attribute({ name: "type", values: "string", els: [], docs: [] }),
+    u1: attribute({ name: "u1", values: "string", els: [], docs: [] }),
+    u2: attribute({ name: "u2", values: "string", els: [], docs: [] }),
+    underlinePosition: attribute({
         name: "underline-position",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    underlineThickness: {
+    }),
+    underlineThickness: attribute({
         name: "underline-thickness",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    unicode: {
+    }),
+    unicode: attribute({
         name: "unicode",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    unicodeBidi: {
+    }),
+    unicodeBidi: attribute({
         name: "unicode-bidi",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    unicodeRange: {
+    }),
+    unicodeRange: attribute({
         name: "unicode-range",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    unitsPerEm: {
+    }),
+    unitsPerEm: attribute({
         name: "units-per-em",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    vAlphabetic: {
+    }),
+    vAlphabetic: attribute({
         name: "v-alphabetic",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    vHanging: {
+    }),
+    vHanging: attribute({
         name: "v-hanging",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    vIdeographic: {
+    }),
+    vIdeographic: attribute({
         name: "v-ideographic",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    vMathematical: {
+    }),
+    vMathematical: attribute({
         name: "v-mathematical",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    values: {
+    }),
+    values: attribute({
         name: "values",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    vectorEffect: {
+    }),
+    vectorEffect: attribute({
         name: "vector-effect",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    version: {
+    }),
+    version: attribute({
         name: "version",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    vertAdvY: {
+    }),
+    vertAdvY: attribute({
         name: "vert-adv-y",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    vertOriginX: {
+    }),
+    vertOriginX: attribute({
         name: "vert-origin-x",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    vertOriginY: {
+    }),
+    vertOriginY: attribute({
         name: "vert-origin-y",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    viewBox: {
+    }),
+    viewBox: attribute({
         name: "viewBox",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    viewTarget: {
+    }),
+    viewTarget: attribute({
         name: "viewTarget",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    visibility: {
+    }),
+    visibility: attribute({
         name: "visibility",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    width: {
+    }),
+    width: attribute({
         name: "width",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    widths: {
+    }),
+    widths: attribute({
         name: "widths",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    wordSpacing: {
+    }),
+    wordSpacing: attribute({
         name: "word-spacing",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    writingMode: {
+    }),
+    writingMode: attribute({
         name: "writing-mode",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    x: { name: "x", type: "normal", values: "string", els: [], docs: [] },
-    xHeight: {
+    }),
+    x: attribute({ name: "x", values: "string", els: [], docs: [] }),
+    xHeight: attribute({
         name: "x-height",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    x1: { name: "x1", type: "normal", values: "string", els: [], docs: [] },
-    x2: { name: "x2", type: "normal", values: "string", els: [], docs: [] },
-    xChannelSelector: {
+    }),
+    x1: attribute({ name: "x1", values: "string", els: [], docs: [] }),
+    x2: attribute({ name: "x2", values: "string", els: [], docs: [] }),
+    xChannelSelector: attribute({
         name: "xChannelSelector",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    xlinkActuate: {
+    }),
+    xlinkActuate: attribute({
         name: "xlink:actuate",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    xlinkArcrole: {
+    }),
+    xlinkArcrole: attribute({
         name: "xlink:arcrole",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    xLinkHref: {
+    }),
+    xLinkHref: attribute({
         name: "xlink:href",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    xlinkRole: {
+    }),
+    xlinkRole: attribute({
         name: "xlink:role",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    xlinkShow: {
+    }),
+    xlinkShow: attribute({
         name: "xlink:show",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    xlinkTitle: {
+    }),
+    xlinkTitle: attribute({
         name: "xlink:title",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    xlinkType: {
+    }),
+    xlinkType: attribute({
         name: "xlink:type",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    xmlBase: {
+    }),
+    xmlBase: attribute({
         name: "xml:base",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    xmlLang: {
+    }),
+    xmlLang: attribute({
         name: "xml:lang",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    xmlSpace: {
+    }),
+    xmlSpace: attribute({
         name: "xml:space",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    y: { name: "y", type: "normal", values: "string", els: [], docs: [] },
-    y1: { name: "y1", type: "normal", values: "string", els: [], docs: [] },
-    y2: { name: "y2", type: "normal", values: "string", els: [], docs: [] },
-    yChannelSelector: {
+    }),
+    y: attribute({ name: "y", values: "string", els: [], docs: [] }),
+    y1: attribute({ name: "y1", values: "string", els: [], docs: [] }),
+    y2: attribute({ name: "y2", values: "string", els: [], docs: [] }),
+    yChannelSelector: attribute({
         name: "yChannelSelector",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    z: { name: "z", type: "normal", values: "string", els: [], docs: [] },
-    zoomAndPan: {
+    }),
+    z: attribute({ name: "z", values: "string", els: [], docs: [] }),
+    zoomAndPan: attribute({
         name: "zoomAndPan",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    autoReverse: {
+    }),
+    autoReverse: attribute({
         name: "autoReverse",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
-    accelerate: {
+    }),
+    accelerate: attribute({
         name: "accelerate",
-        type: "normal",
+
         values: "string",
         els: [],
         docs: [],
-    },
+    }),
 };

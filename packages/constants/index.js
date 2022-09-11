@@ -9,6 +9,7 @@ const CENTERED_ROW = "centered-row";
 const HORIZONTAL_LINE = "horizontal-line";
 const VERTICAL_LINE = "vertical-line";
 const TOGGLE_SWITCH = "toggle-switch";
+const CIRCULAR_SPINNER = "circular-spinner";
 
 const HTML_NS = "http://www.w3.org/1999/xhtml";
 const SVG_NS = "http://www.w3.org/2000/svg";
@@ -30,4 +31,5 @@ module.exports = {
     HORIZONTAL_LINE,
     VERTICAL_LINE,
     TOGGLE_SWITCH,
+    CIRCULAR_SPINNER,
 };

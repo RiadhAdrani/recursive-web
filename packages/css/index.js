@@ -1,6 +1,6 @@
 const processComponentStyleSheet = require("./handlers/processComponentStyleSheet");
 const mergeStyleSheets = require("./handlers/mergeStyleSheets");
-const renderStyleSheet = require("./CssRender");
+const renderStyleSheet = require("./render");
 
 /**
  * Create an return a style element within the `head` element.

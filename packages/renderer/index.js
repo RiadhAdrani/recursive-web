@@ -1,16 +1,18 @@
 const { RecursiveConsole, RecursiveRenderer } = require("../../use.js");
 const RecursiveCSSOM = require("../css/");
-const { get: getEv, is: isEv, hasHandler } = require("../dom/DomEvents.js");
 const { HTML_CONTAINER, HTML_NS } = require("../constants/index.js");
-const { renderValue } = require("../css/CssProperties.js");
-const {
-    get: getAtt,
-    is: isAttt,
-    isToggle,
-} = require("../dom/DomAttributes.js");
+const { renderValue } = require("../css/properties");
 const {
     ELEMENT_TYPE_TEXT_NODE,
 } = require("@riadh-adrani/recursive/packages/constants/index.js");
+const {
+    isEvent,
+    isAttribute,
+    isToggleableAttribute,
+    getAttributeName,
+    getEvent,
+    eventHasHandler,
+} = require("../dom/index.js");
 
 /**
  * Perform rendering and updates to the DOM.
@@ -187,7 +189,7 @@ class RecursiveWebRenderer extends RecursiveRenderer {
      * @returns {boolean}
      */
     useRendererIsAttribute(attribute) {
-        return isAttt(attribute);
+        return isAttribute(attribute);
     }
 
     /**
@@ -195,7 +197,7 @@ class RecursiveWebRenderer extends RecursiveRenderer {
      * @returns {boolean}
      */
     useRendererIsEvent(event) {
-        return isEv(event);
+        return isEvent(event);
     }
 
     /**
@@ -216,10 +218,13 @@ class RecursiveWebRenderer extends RecursiveRenderer {
                 instance.dataset[item] = value[item];
             }
         } else {
-            if (isToggle(attribute)) {
-                instance.toggleAttribute(getAtt(attribute), value == true);
+            if (isToggleableAttribute(attribute)) {
+                instance.toggleAttribute(
+                    getAttributeName(attribute),
+                    value == true
+                );
             } else {
-                instance.setAttribute(getAtt(attribute), value);
+                instance.setAttribute(getAttributeName(attribute), value);
             }
         }
     }
@@ -257,8 +262,8 @@ class RecursiveWebRenderer extends RecursiveRenderer {
                 }
             }
         } else {
-            const attrName = getAtt(attribute);
-            const isToggleable = isToggle(attribute);
+            const attrName = getAttributeName(attribute);
+            const isToggleable = isToggleableAttribute(attribute);
             const reallyNewValue = isToggleable ? value == true : value;
 
             if (isToggleable) {
@@ -310,13 +315,13 @@ class RecursiveWebRenderer extends RecursiveRenderer {
      * @param {HTMLElement} instance
      */
     useRendererInjectEvent(event, callback, instance) {
-        const eventData = getEv(event);
+        const eventData = getEvent(event);
 
         if (!eventData) return;
 
         this.setElementEvent(eventData.on, callback, instance);
 
-        if (hasHandler(event)) {
+        if (eventHasHandler(event)) {
             eventData.handler(instance);
         }
     }
@@ -338,7 +343,7 @@ class RecursiveWebRenderer extends RecursiveRenderer {
      * @param {HTMLElement} instance
      */
     useRendererUpdateEvent(event, callback, element) {
-        const eventData = getEv(event);
+        const eventData = getEvent(event);
 
         if (!eventData) return;
 
@@ -350,7 +355,7 @@ class RecursiveWebRenderer extends RecursiveRenderer {
      * @param {HTMLElement} instance
      */
     useRendererRemoveEvent(eventName, instance) {
-        const eventData = getEv(eventName);
+        const eventData = getEvent(eventName);
 
         if (!eventData) return;
 

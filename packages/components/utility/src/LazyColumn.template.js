@@ -21,6 +21,10 @@ module.exports = () => {
                 return _onRef(instance);
             };
         },
-        docs: [],
+        docs: [
+            "Element displaying element vertically containing an `IntersectionObserver` ",
+            "that can watch for when the last element enter the user screen ",
+            "and execute the callback passed in `onObserved`.",
+        ],
     });
 };

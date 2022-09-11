@@ -4,7 +4,10 @@ const { component, getApp } = require("../..");
 module.exports = () => {
     return component({
         tag: "a",
-        docs: [],
+        docs: [
+            "An anchor element that allow the user to navigate between the different routes of the application. ",
+            "Use `href` to pass the destination route.",
+        ],
         props: { href: "string" },
         handler: (element) => {
             if (element.href) {

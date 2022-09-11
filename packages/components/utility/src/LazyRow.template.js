@@ -23,6 +23,10 @@ module.exports = () => {
                 useIntersectionObserver(instance, element.onObserved);
             };
         },
-        docs: [],
+        docs: [
+            "Element displaying element horizontally containing an `IntersectionObserver` ",
+            "that can watch for when the last element enter the user screen ",
+            "and execute the callback passed in `onObserved`.",
+        ],
     });
 };

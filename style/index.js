@@ -87,14 +87,6 @@ export const AlignTracks = {
     SpaceBetween: "space-between",
     Center: "center",
 };
-export const AnimationDelay = {
-    Inherit: "inherit",
-    Initial: "initial",
-    Revert: "revert",
-    Unset: "unset",
-    Revert: "revert",
-    RevertLayer: "revert-layer",
-};
 export const AnimationFillMode = {
     Inherit: "inherit",
     Initial: "initial",
@@ -896,15 +888,6 @@ export const EmptyCells = {
     Show: "show",
     Hide: "hide",
 };
-export const Filter = {
-    Inherit: "inherit",
-    Initial: "initial",
-    Revert: "revert",
-    Unset: "unset",
-    Revert: "revert",
-    RevertLayer: "revert-layer",
-    None: "none",
-};
 export const Flex = {
     Inherit: "inherit",
     Initial: "initial",
@@ -1107,7 +1090,7 @@ export const GridAutoColumns = {
     Unset: "unset",
     Revert: "revert",
     RevertLayer: "revert-layer",
-    MinContent: "min-content",
+    InContent: "in-content",
     MaxContent: "max-content",
     Auto: "auto",
 };
@@ -2269,14 +2252,6 @@ export const Quotes = {
     None: "none",
     Auto: "auto",
 };
-export const Resize = {
-    Inherit: "inherit",
-    Initial: "initial",
-    Revert: "revert",
-    Unset: "unset",
-    Revert: "revert",
-    RevertLayer: "revert-layer",
-};
 export const Rotate = {
     Inherit: "inherit",
     Initial: "initial",
@@ -2309,14 +2284,6 @@ export const RubyPosition = {
     Under: "under",
     InterCharacter: "inter-character",
     Alternate: "alternate",
-};
-export const Scale = {
-    Inherit: "inherit",
-    Initial: "initial",
-    Revert: "revert",
-    Unset: "unset",
-    Revert: "revert",
-    RevertLayer: "revert-layer",
 };
 export const ScrollBehavior = {
     Inherit: "inherit",

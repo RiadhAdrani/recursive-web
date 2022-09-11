@@ -26,6 +26,10 @@ module.exports = () => {
                 },
             };
         },
-        docs: [],
+        docs: [
+            "Element representing a line break between two elements. ",
+            "It works similarly to `<hr>`, but vertically and with better CSS support.`",
+            "`element.style.normal` can only be overriden within `element.style.mediaQueries`.",
+        ],
     });
 };

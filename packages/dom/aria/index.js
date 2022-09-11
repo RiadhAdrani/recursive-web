@@ -1,345 +1,301 @@
+const { attribute } = require("../../templates");
+
+/**
+ * @credit MDN (2022) - https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes
+ */
 module.exports = {
-    ariaAutocomplete: {
+    ariaAutocomplete: attribute({
         name: "aria-autocomplete",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaChecked: {
+    }),
+    ariaChecked: attribute({
         name: "aria-checked",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaDisabled: {
+    }),
+    ariaDisabled: attribute({
         name: "aria-disabled",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaErrormessage: {
+    }),
+    ariaErrormessage: attribute({
         name: "aria-errormessage",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaExpanded: {
+    }),
+    ariaExpanded: attribute({
         name: "aria-expanded",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaHaspopup: {
+    }),
+    ariaHaspopup: attribute({
         name: "aria-haspopup",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaHidden: {
+    }),
+    ariaHidden: attribute({
         name: "aria-hidden",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaInvalid: {
+    }),
+    ariaInvalid: attribute({
         name: "aria-invalid",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaLabel: {
+    }),
+    ariaLabel: attribute({
         name: "aria-label",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaLevel: {
+    }),
+    ariaLevel: attribute({
         name: "aria-level",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaModal: {
+    }),
+    ariaModal: attribute({
         name: "aria-modal",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaMultiline: {
+    }),
+    ariaMultiline: attribute({
         name: "aria-multiline",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaMultiselectable: {
+    }),
+    ariaMultiselectable: attribute({
         name: "aria-multiselectable",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaOrientation: {
+    }),
+    ariaOrientation: attribute({
         name: "aria-orientation",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaPlaceholder: {
+    }),
+    ariaPlaceholder: attribute({
         name: "aria-placeholder",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaPressed: {
+    }),
+    ariaPressed: attribute({
         name: "aria-pressed",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaReadonly: {
+    }),
+    ariaReadonly: attribute({
         name: "aria-readonly",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaRequired: {
+    }),
+    ariaRequired: attribute({
         name: "aria-required",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaSelected: {
+    }),
+    ariaSelected: attribute({
         name: "aria-selected",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaSort: {
+    }),
+    ariaSort: attribute({
         name: "aria-sort",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaValuemax: {
+    }),
+    ariaValuemax: attribute({
         name: "aria-valuemax",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaValuemin: {
+    }),
+    ariaValuemin: attribute({
         name: "aria-valuemin",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaValuenow: {
+    }),
+    ariaValuenow: attribute({
         name: "aria-valuenow",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaValuetext: {
+    }),
+    ariaValuetext: attribute({
         name: "aria-valuetext",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaBusy: {
+    }),
+    ariaBusy: attribute({
         name: "aria-busy",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaLive: {
+    }),
+    ariaLive: attribute({
         name: "aria-live",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaRelevant: {
+    }),
+    ariaRelevant: attribute({
         name: "aria-relevant",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaAtomic: {
+    }),
+    ariaAtomic: attribute({
         name: "aria-atomic",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaDropeffect: {
+    }),
+    ariaDropeffect: attribute({
         name: "aria-dropeffect",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaGrabbed: {
+    }),
+    ariaGrabbed: attribute({
         name: "aria-grabbed",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaActivedescendant: {
+    }),
+    ariaActivedescendant: attribute({
         name: "aria-activedescendant",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaColcount: {
+    }),
+    ariaColcount: attribute({
         name: "aria-colcount",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaColindex: {
+    }),
+    ariaColindex: attribute({
         name: "aria-colindex",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaColspan: {
+    }),
+    ariaColspan: attribute({
         name: "aria-colspan",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaControls: {
+    }),
+    ariaControls: attribute({
         name: "aria-controls",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaDescribedby: {
+    }),
+    ariaDescribedby: attribute({
         name: "aria-describedby",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaDescription: {
+    }),
+    ariaDescription: attribute({
         name: "aria-description",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaDetails: {
+    }),
+    ariaDetails: attribute({
         name: "aria-details",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaFlowto: {
+    }),
+    ariaFlowto: attribute({
         name: "aria-flowto",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaLabelledby: {
+    }),
+    ariaLabelledby: attribute({
         name: "aria-labelledby",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaOwns: {
+    }),
+    ariaOwns: attribute({
         name: "aria-owns",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaPosinset: {
+    }),
+    ariaPosinset: attribute({
         name: "aria-posinset",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaRowcount: {
+    }),
+    ariaRowcount: attribute({
         name: "aria-rowcount",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaRowindex: {
+    }),
+    ariaRowindex: attribute({
         name: "aria-rowindex",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaRowspan: {
+    }),
+    ariaRowspan: attribute({
         name: "aria-rowspan",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaSetsize: {
+    }),
+    ariaSetsize: attribute({
         name: "aria-setsize",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaCurrent: {
+    }),
+    ariaCurrent: attribute({
         name: "aria-current",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaKeyshortcuts: {
+    }),
+    ariaKeyshortcuts: attribute({
         name: "aria-keyshortcuts",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
-    ariaRoledescription: {
+    }),
+    ariaRoledescription: attribute({
         name: "aria-roledescription",
-        type: "normal",
         values: "string",
         els: true,
         docs: [],
-    },
+    }),
 };

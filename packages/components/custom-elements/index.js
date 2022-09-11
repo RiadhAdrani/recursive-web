@@ -9,6 +9,7 @@ const {
     HORIZONTAL_LINE,
     VERTICAL_LINE,
     TOGGLE_SWITCH,
+    CIRCULAR_SPINNER,
 } = require("../../constants");
 const RecursiveCSSOM = require("../../css/");
 
@@ -100,6 +101,12 @@ class ToggleSwitch extends View {
     }
 }
 
+class CircularSpinner extends View {
+    constructor() {
+        super(CIRCULAR_SPINNER);
+    }
+}
+
 /**
  * -----------------------------------------------------------------------------------------
  * Define default style
@@ -125,4 +132,9 @@ addDefaultStyle(CENTERED_COLUMN, {
 });
 addDefaultStyle(TOGGLE_SWITCH, {
     display: "inline-block",
+});
+addDefaultStyle(CIRCULAR_SPINNER, {
+    display: "inline-block",
+    width: "min-content",
+    height: "min-content",
 });

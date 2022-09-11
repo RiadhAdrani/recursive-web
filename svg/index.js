@@ -18,6 +18,7 @@ export function A(props) {
 
     return el;
 }
+
 /**
  * ## _`Animate` Component_
  *
@@ -35,40 +36,43 @@ export function Animate(props) {
 
     return el;
 }
+
 /**
  * ## _`AnimateMotion` Component_
  *
  * The SVG ``<animateMotion>`` element provides a way to define how an element moves along a motion path.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animatemotion
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animateMotion
  * @param {import("../lib").SVGAnimateMotionProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function AnimateMotion(props) {
-    const el = createElement("animatemotion", {
+    const el = createElement("animateMotion", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
     });
 
     return el;
 }
+
 /**
  * ## _`AnimateTransform` Component_
  *
  * The animateTransform element animates a transformation attribute on its target element, thereby allowing animations to control translation, scaling, rotation, and/or skewing.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animatetransform
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animateTransform
  * @param {import("../lib").SVGAnimateTransformProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function AnimateTransform(props) {
-    const el = createElement("animatetransform", {
+    const el = createElement("animateTransform", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
     });
 
     return el;
 }
+
 /**
  * ## _`Circle` Component_
  *
@@ -86,24 +90,26 @@ export function Circle(props) {
 
     return el;
 }
+
 /**
  * ## _`ClipPath` Component_
  *
  * The ``<clipPath>`` SVG element defines a clipping path, to be used by the clip-path property.
  * A clipping path restricts the region to which paint can be applied. Conceptually, parts of the drawing that lie outside of the region bounded by the clipping path are not drawn.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/clippath
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/clipPath
  * @param {import("../lib").SVGClipPathProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function ClipPath(props) {
-    const el = createElement("clippath", {
+    const el = createElement("clipPath", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
     });
 
     return el;
 }
+
 /**
  * ## _`Defs` Component_
  *
@@ -122,6 +128,7 @@ export function Defs(props) {
 
     return el;
 }
+
 /**
  * ## _`Desc` Component_
  *
@@ -141,6 +148,7 @@ export function Desc(props) {
 
     return el;
 }
+
 /**
  * ## _`Discard` Component_
  *
@@ -159,6 +167,7 @@ export function Discard(props) {
 
     return el;
 }
+
 /**
  * ## _`Ellipse` Component_
  *
@@ -176,109 +185,116 @@ export function Ellipse(props) {
 
     return el;
 }
+
 /**
  * ## _`FeBlend` Component_
  *
  * The ``<feBlend>`` SVG filter primitive composes two objects together ruled by a certain blending mode. This is similar to what is known from image editing software when blending two layers. The mode is defined by the mode attribute.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feblend
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feBlend
  * @param {import("../lib").SVGFeBlendProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function FeBlend(props) {
-    const el = createElement("feblend", {
+    const el = createElement("feBlend", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
     });
 
     return el;
 }
+
 /**
  * ## _`FeColorMatrix` Component_
  *
  * The ``<feColorMatrix>`` SVG filter element changes colors based on a transformation matrix. Every pixel's color value [R,G,B,A] is matrix multiplied by a 5 by 5 color matrix to create new color [R',G',B',A'].
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/fecolormatrix
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feColorMatrix
  * @param {import("../lib").SVGFeColorMatrixProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function FeColorMatrix(props) {
-    const el = createElement("fecolormatrix", {
+    const el = createElement("feColorMatrix", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
     });
 
     return el;
 }
+
 /**
  * ## _`FeComponentTransfer` Component_
  *
  * The ``<feComponentTransfer>`` SVG filter primitive performs color-component-wise remapping of data for each pixel. It allows operations like brightness adjustment, contrast adjustment, color balance or thresholding.
  * The calculations are performed on non-premultiplied color values. The colors are modified by changing each channel (R, G, B, and A) to the result of what the children ``<feFuncR>``, ``<feFuncB>``, ``<feFuncG>``, and ``<feFuncA>`` return.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/fecomponenttransfer
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feComponentTransfer
  * @param {import("../lib").SVGFeComponentTransferProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function FeComponentTransfer(props) {
-    const el = createElement("fecomponenttransfer", {
+    const el = createElement("feComponentTransfer", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
     });
 
     return el;
 }
+
 /**
  * ## _`FeComposite` Component_
  *
  * The ``<feComposite>`` SVG filter primitive performs the combination of two input images pixel-wise in image space using one of the Porter-Duff compositing operations: over, in, atop, out, xor, lighter, or arithmetic.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/fecomposite
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feComposite
  * @param {import("../lib").SVGFeCompositeProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function FeComposite(props) {
-    const el = createElement("fecomposite", {
+    const el = createElement("feComposite", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
     });
 
     return el;
 }
+
 /**
  * ## _`FeConvolveMatrix` Component_
  *
  * The ``<feConvolveMatrix>`` SVG filter primitive applies a matrix convolution filter effect. A convolution combines pixels in the input image with neighboring pixels to produce a resulting image. A wide variety of imaging operations can be achieved through convolutions, including blurring, edge detection, sharpening, embossing and beveling.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feconvolvematrix
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feConvolveMatrix
  * @param {import("../lib").SVGFeConvolveMatrixProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function FeConvolveMatrix(props) {
-    const el = createElement("feconvolvematrix", {
+    const el = createElement("feConvolveMatrix", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
     });
 
     return el;
 }
+
 /**
  * ## _`FeDiffuseLighting` Component_
  *
  * The ``<feDiffuseLighting>`` SVG filter primitive lights an image using the alpha channel as a bump map. The resulting image, which is an RGBA opaque image, depends on the light color, light position and surface geometry of the input bump map.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/fediffuselighting
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feDiffuseLighting
  * @param {import("../lib").SVGFeDiffuseLightingProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function FeDiffuseLighting(props) {
-    const el = createElement("fediffuselighting", {
+    const el = createElement("feDiffuseLighting", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
     });
 
     return el;
 }
+
 /**
  * ## _`FeDisplacementMap` Component_
  *
@@ -288,324 +304,343 @@ export function FeDiffuseLighting(props) {
  * ``P'(x,y) ← P(x + scale * (XC(x,y) - 0.5), y + scale * (YC(x,y) - 0.5))``
  * where P(x,y) is the input image, in, and P'(x,y) is the destination. XC(x,y) and YC(x,y) are the component values of the channel designated by xChannelSelector and yChannelSelector.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/fedisplacementmap
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feDisplacementMap
  * @param {import("../lib").SVGFeDisplacementMapProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function FeDisplacementMap(props) {
-    const el = createElement("fedisplacementmap", {
+    const el = createElement("feDisplacementMap", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
     });
 
     return el;
 }
+
 /**
  * ## _`FeDistantLight` Component_
  *
  * The ``<feDistantLight>`` filter primitive defines a distant light source that can be used within a lighting filter primitive: ``<feDiffuseLighting>`` or ``<feSpecularLighting>``.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/fedistantlight
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feDistantLight
  * @param {import("../lib").SVGFeDistantLightProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function FeDistantLight(props) {
-    const el = createElement("fedistantlight", {
+    const el = createElement("feDistantLight", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
     });
 
     return el;
 }
+
 /**
  * ## _`FeDropShadow` Component_
  *
  * The SVG ``<feDropShadow>`` filter primitive creates a drop shadow of the input image. It can only be used inside a ``<filter>`` element.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/fedropshadow
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feDropShadow
  * @param {import("../lib").SVGFeDropShadowProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function FeDropShadow(props) {
-    const el = createElement("fedropshadow", {
+    const el = createElement("feDropShadow", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
     });
 
     return el;
 }
+
 /**
  * ## _`FeFlood` Component_
  *
  * The ``<feFlood>`` SVG filter primitive fills the filter subregion with the color and opacity defined by flood-color and flood-opacity.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feflood
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feFlood
  * @param {import("../lib").SVGFeFloodProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function FeFlood(props) {
-    const el = createElement("feflood", {
+    const el = createElement("feFlood", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
     });
 
     return el;
 }
+
 /**
  * ## _`FeFuncA` Component_
  *
  * The ``<feFuncA>`` SVG filter primitive defines the transfer function for the alpha component of the input graphic of its parent ``<feComponentTransfer>`` element.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/fefunca
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feFuncA
  * @param {import("../lib").SVGFeFuncAProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function FeFuncA(props) {
-    const el = createElement("fefunca", {
+    const el = createElement("feFuncA", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
     });
 
     return el;
 }
+
 /**
  * ## _`FeFuncB` Component_
  *
  * The ``<feFuncB>`` SVG filter primitive defines the transfer function for the blue component of the input graphic of its parent ``<feComponentTransfer>`` element.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/fefuncb
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feFuncB
  * @param {import("../lib").SVGFeFuncBProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function FeFuncB(props) {
-    const el = createElement("fefuncb", {
+    const el = createElement("feFuncB", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
     });
 
     return el;
 }
+
 /**
  * ## _`FeFuncG` Component_
  *
  * The ``<feFuncG>`` SVG filter primitive defines the transfer function for the green component of the input graphic of its parent ``<feComponentTransfer>`` element.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/fefuncg
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feFuncG
  * @param {import("../lib").SVGFeFuncGProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function FeFuncG(props) {
-    const el = createElement("fefuncg", {
+    const el = createElement("feFuncG", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
     });
 
     return el;
 }
+
 /**
  * ## _`FeFuncR` Component_
  *
  * The ``<feFuncR>`` SVG filter primitive defines the transfer function for the red component of the input graphic of its parent ``<feComponentTransfer>`` element.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/fefuncr
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feFuncR
  * @param {import("../lib").SVGFeFuncRProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function FeFuncR(props) {
-    const el = createElement("fefuncr", {
+    const el = createElement("feFuncR", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
     });
 
     return el;
 }
+
 /**
  * ## _`FeGaussianBlur` Component_
  *
  * The ``<feGaussianBlur>`` SVG filter primitive blurs the input image by the amount specified in stdDeviation, which defines the bell-curve.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/fegaussianblur
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feGaussianBlur
  * @param {import("../lib").SVGFeGaussianBlurProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function FeGaussianBlur(props) {
-    const el = createElement("fegaussianblur", {
+    const el = createElement("feGaussianBlur", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
     });
 
     return el;
 }
+
 /**
  * ## _`FeImage` Component_
  *
  * The ``<feImage>`` SVG filter primitive fetches image data from an external source and provides the pixel data as output (meaning if the external source is an SVG image, it is rasterized.)
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feimage
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feImage
  * @param {import("../lib").SVGFeImageProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function FeImage(props) {
-    const el = createElement("feimage", {
+    const el = createElement("feImage", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
     });
 
     return el;
 }
+
 /**
  * ## _`FeMerge` Component_
  *
  * The ``<feMerge>`` SVG element allows filter effects to be applied concurrently instead of sequentially. This is achieved by other filters storing their output via the result attribute and then accessing it in a ``<feMergeNode>`` child.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/femerge
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feMerge
  * @param {import("../lib").SVGFeMergeProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function FeMerge(props) {
-    const el = createElement("femerge", {
+    const el = createElement("feMerge", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
     });
 
     return el;
 }
+
 /**
  * ## _`FeMergeNode` Component_
  *
  * The feMergeNode takes the result of another filter to be processed by its parent ``<feMerge>``.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/femergenode
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feMergeNode
  * @param {import("../lib").SVGFeMergeNodeProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function FeMergeNode(props) {
-    const el = createElement("femergenode", {
+    const el = createElement("feMergeNode", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
     });
 
     return el;
 }
+
 /**
  * ## _`FeMorphology` Component_
  *
  * The ``<feMorphology>`` SVG filter primitive is used to erode or dilate the input image. Its usefulness lies especially in fattening or thinning effects.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/femorphology
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feMorphology
  * @param {import("../lib").SVGFeMorphologyProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function FeMorphology(props) {
-    const el = createElement("femorphology", {
+    const el = createElement("feMorphology", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
     });
 
     return el;
 }
+
 /**
  * ## _`FeOffset` Component_
  *
  * The ``<feOffset>`` SVG filter primitive allows to offset the input image. The input image as a whole is offset by the values specified in the dx and dy attributes.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feoffset
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feOffset
  * @param {import("../lib").SVGFeOffsetProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function FeOffset(props) {
-    const el = createElement("feoffset", {
+    const el = createElement("feOffset", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
     });
 
     return el;
 }
+
 /**
  * ## _`FePointLight` Component_
  *
  * The ``<fePointLight>`` filter primitive defines a light source which allows to create a point light effect. It that can be used within a lighting filter primitive: ``<feDiffuseLighting>`` or ``<feSpecularLighting>``.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/fepointlight
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/fePointLight
  * @param {import("../lib").SVGFePointLightProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function FePointLight(props) {
-    const el = createElement("fepointlight", {
+    const el = createElement("fePointLight", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
     });
 
     return el;
 }
+
 /**
  * ## _`FeSpecularLighting` Component_
  *
  * The ``<feSpecularLighting>`` SVG filter primitive lights a source graphic using the alpha channel as a bump map. The resulting image is an RGBA image based on the light color. The lighting calculation follows the standard specular component of the Phong lighting model. The resulting image depends on the light color, light position and surface geometry of the input bump map. The result of the lighting calculation is added. The filter primitive assumes that the viewer is at infinity in the z direction.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/fespecularlighting
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feSpecularLighting
  * @param {import("../lib").SVGFeSpecularLightingProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function FeSpecularLighting(props) {
-    const el = createElement("fespecularlighting", {
+    const el = createElement("feSpecularLighting", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
     });
 
     return el;
 }
+
 /**
  * ## _`FeSpotLight` Component_
  *
  * The ``<feSpotLight>`` SVG filter primitive defines a light source that can be used to create a spotlight effect. It is used within a lighting filter primitive: <feDiffuseLighting> or ``<feSpecularLighting>``.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/fespotlight
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feSpotLight
  * @param {import("../lib").SVGFeSpotLightProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function FeSpotLight(props) {
-    const el = createElement("fespotlight", {
+    const el = createElement("feSpotLight", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
     });
 
     return el;
 }
+
 /**
  * ## _`FeTile` Component_
  *
  * The ``<feTile>`` SVG filter primitive allows to fill a target rectangle with a repeated, tiled pattern of an input image. The effect is similar to the one of a ``<pattern>``.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/fetile
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feTile
  * @param {import("../lib").SVGFeTileProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function FeTile(props) {
-    const el = createElement("fetile", {
+    const el = createElement("feTile", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
     });
 
     return el;
 }
+
 /**
  * ## _`FeTurbulence` Component_
  *
  * The ``<feTurbulence>`` SVG filter primitive creates an image using the Perlin turbulence function. It allows the synthesis of artificial textures like clouds or marble. The resulting image will fill the entire filter primitive subregion.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feturbulence
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feTurbulence
  * @param {import("../lib").SVGFeTurbulenceProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function FeTurbulence(props) {
-    const el = createElement("feturbulence", {
+    const el = createElement("feTurbulence", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
     });
 
     return el;
 }
+
 /**
  * ## _`Filter` Component_
  *
@@ -623,23 +658,25 @@ export function Filter(props) {
 
     return el;
 }
+
 /**
  * ## _`ForeignObject` Component_
  *
  * The ``<foreignObject>`` SVG element includes elements from a different XML namespace. In the context of a browser, it is most likely (X)HTML.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/foreignobject
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/foreignObject
  * @param {import("../lib").SVGForeignObjectProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function ForeignObject(props) {
-    const el = createElement("foreignobject", {
+    const el = createElement("foreignObject", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
     });
 
     return el;
 }
+
 /**
  * ## _`G` Component_
  *
@@ -658,6 +695,7 @@ export function G(props) {
 
     return el;
 }
+
 /**
  * ## _`Hatch` Component_
  *
@@ -674,6 +712,7 @@ export function Hatch(props) {
 
     return el;
 }
+
 /**
  * ## _`Hatchpath` Component_
  *
@@ -690,6 +729,7 @@ export function Hatchpath(props) {
 
     return el;
 }
+
 /**
  * ## _`Image` Component_
  *
@@ -709,6 +749,7 @@ export function Image(props) {
 
     return el;
 }
+
 /**
  * ## _`Line` Component_
  *
@@ -726,23 +767,25 @@ export function Line(props) {
 
     return el;
 }
+
 /**
  * ## _`LinearGradient` Component_
  *
  * The ``<linearGradient>`` element lets authors define linear gradients to apply to other SVG elements.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/lineargradient
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient
  * @param {import("../lib").SVGLinearGradientProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function LinearGradient(props) {
-    const el = createElement("lineargradient", {
+    const el = createElement("linearGradient", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
     });
 
     return el;
 }
+
 /**
  * ## _`Marker` Component_
  *
@@ -761,6 +804,7 @@ export function Marker(props) {
 
     return el;
 }
+
 /**
  * ## _`Mask` Component_
  *
@@ -778,6 +822,7 @@ export function Mask(props) {
 
     return el;
 }
+
 /**
  * ## _`Metadata` Component_
  *
@@ -795,6 +840,7 @@ export function Metadata(props) {
 
     return el;
 }
+
 /**
  * ## _`Mpath` Component_
  *
@@ -812,6 +858,7 @@ export function Mpath(props) {
 
     return el;
 }
+
 /**
  * ## _`Path` Component_
  *
@@ -829,6 +876,7 @@ export function Path(props) {
 
     return el;
 }
+
 /**
  * ## _`Pattern` Component_
  *
@@ -847,6 +895,7 @@ export function Pattern(props) {
 
     return el;
 }
+
 /**
  * ## _`Polygon` Component_
  *
@@ -865,6 +914,7 @@ export function Polygon(props) {
 
     return el;
 }
+
 /**
  * ## _`Polyline` Component_
  *
@@ -882,23 +932,25 @@ export function Polyline(props) {
 
     return el;
 }
+
 /**
  * ## _`RadialGradient` Component_
  *
  * The ``<radialGradient>`` element lets authors define radial gradients that can be applied to fill or stroke of graphical elements.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/radialgradient
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/radialGradient
  * @param {import("../lib").SVGRadialGradientProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function RadialGradient(props) {
-    const el = createElement("radialgradient", {
+    const el = createElement("radialGradient", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
     });
 
     return el;
 }
+
 /**
  * ## _`Rect` Component_
  *
@@ -916,6 +968,7 @@ export function Rect(props) {
 
     return el;
 }
+
 /**
  * ## _`Set` Component_
  *
@@ -933,6 +986,7 @@ export function Set(props) {
 
     return el;
 }
+
 /**
  * ## _`Stop` Component_
  *
@@ -950,6 +1004,7 @@ export function Stop(props) {
 
     return el;
 }
+
 /**
  * ## _`Svg` Component_
  *
@@ -967,6 +1022,7 @@ export function Svg(props) {
 
     return el;
 }
+
 /**
  * ## _`Switch` Component_
  *
@@ -984,6 +1040,7 @@ export function Switch(props) {
 
     return el;
 }
+
 /**
  * ## _`Symbol` Component_
  *
@@ -1001,6 +1058,7 @@ export function Symbol(props) {
 
     return el;
 }
+
 /**
  * ## _`Text` Component_
  *
@@ -1018,23 +1076,25 @@ export function Text(props) {
 
     return el;
 }
+
 /**
  * ## _`TextPath` Component_
  *
  * To render text along the shape of a ``<path>``, enclose the text in a <textPath> element that has an href attribute with a reference to the ``<path>`` element.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/textpath
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/textPath
  * @param {import("../lib").SVGTextPathProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function TextPath(props) {
-    const el = createElement("textpath", {
+    const el = createElement("textPath", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/2000/svg" },
     });
 
     return el;
 }
+
 /**
  * ## _`Title` Component_
  *
@@ -1052,6 +1112,7 @@ export function Title(props) {
 
     return el;
 }
+
 /**
  * ## _`Tspan` Component_
  *
@@ -1069,6 +1130,7 @@ export function Tspan(props) {
 
     return el;
 }
+
 /**
  * ## _`Use` Component_
  *
@@ -1086,6 +1148,7 @@ export function Use(props) {
 
     return el;
 }
+
 /**
  * ## _`View` Component_
  *

@@ -1,16 +1,5 @@
 import { RecursiveWebApp } from "../packages/app/index";
-import {
-    Button,
-    CheckBox,
-    Column,
-    HorizontalLine,
-    LazyColumn,
-    LazyRow,
-    P,
-    TextField,
-    ToggleSwitch,
-    VerticalLine,
-} from "../html";
+import { Column, Details, NumberPicker, P, Summary, TextField } from "../html";
 import { useApp } from "../packages/components";
 
 const App = new RecursiveWebApp({
@@ -19,22 +8,82 @@ const App = new RecursiveWebApp({
         useApp(_app);
     },
     app: () => {
-        const [checked, setChecked] = setState("checked", true);
-        const [text, setText] = setState("text", "text");
+        setStyle({
+            animations: {
+                hello: { world: { color: "red" }, y: { color: "blue" } },
+            },
+            selectors: {
+                "*": {
+                    color: "yellowgreen",
+                },
+            },
+            var: {
+                yeet: "1px",
+            },
+            fontFace: [
+                { fontWeight: "bold", fontFamily: "red", fontStyle: "italic" },
+                { fontWeight: "bold", fontFamily: "red", fontStyle: "italic" },
+            ],
+            imports: ["http://localhost:8080/"],
+            mediaQueries: {
+                "(max-width:600px)": { "*": { fontSize: "1.5em" } },
+            },
+        });
+
+        const [count, setCount] = setState("count", 0);
+        const [text, setText] = setState("text", "bruh");
+
+        setEffect("log count when updated", [count], () => {
+            const timeOut = setTimeout(() => {
+                console.log("count is ", count);
+            }, 2000);
+
+            return () => clearTimeout(timeOut);
+        });
 
         return Column({
             children: [
-                LazyColumn({
-                    children: P({ children: "Hello World" }),
-                    onObserved: () => {
-                        console.log("yeet");
+                TextField({
+                    value: text,
+                    onInput: (e) => setText(e.target.value),
+                    style: {
+                        scoped: true,
+                        normal: {
+                            animation: ["bruh", "1s", "infinite"],
+                        },
+                        hover: { color: "red" },
+                        mediaQueries: [
+                            {
+                                condition: "(max-width:1000px)",
+                                hover: { color: "blue" },
+                            },
+                        ],
+                        animations: [
+                            {
+                                name: "bruh",
+                                steps: {
+                                    from: { color: "orange" },
+                                    to: { color: "green" },
+                                },
+                            },
+                        ],
                     },
                 }),
-                LazyRow({
-                    children: "text",
-                    onObserved: () => {
-                        console.log("yeet");
-                    },
+                NumberPicker({
+                    max: 10,
+                    min: 5,
+                    value: count,
+                    onInput: (e) => setCount(e.target.value),
+                }),
+                Details({
+                    children: [
+                        Summary({ children: "Hello World" }),
+                        P({
+                            onToggle: () => {},
+                            children:
+                                "The open function is called when we want to expand the accordion. This function does not control the animation of the accordion yet. First, we calculate the height of the <details> element and we apply this height with inline styles on it. Once it’s done, we can set the open attribute on it to make the content visible but hiding as we have an overflow: hidden and a fixed height on the element. We then wait for the next frame to call the expand function and animate the element.",
+                        }),
+                    ],
                 }),
             ],
         });
@@ -190,6 +239,16 @@ function getRoute() {
     return App.getRoute();
 }
 
+/**
+ * Execute a new effect.
+ * @param {string} key identifier.
+ * @param {Function} callback callback to be executed.
+ * @param {Array<>} dependencies effect dependencies that will decide if the effect should be called again.
+ */
+function setEffect(key, dependencies, callback) {
+    App.setEffect(key, callback, dependencies);
+}
+
 export {
     goTo,
     createComponentStyle,
@@ -203,4 +262,5 @@ export {
     getParams,
     getRoute,
     renderRoute,
+    setEffect,
 };
