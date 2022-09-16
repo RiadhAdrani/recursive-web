@@ -1,5 +1,5 @@
 const { RecursiveApp } = require("@riadh-adrani/recursive");
-const { Console } = require("../../use");
+const { RecursiveConsole } = require("../../use");
 const { component } = require("../templates");
 
 /**
@@ -14,7 +14,7 @@ let _app = undefined;
  */
 function getApp() {
     if (!_app) {
-        Console.error(
+        RecursiveConsole.error(
             "Recursive Web : Failed to load the current App instance.",
             [
                 "This error is caused by an element that needs to use some methods from the app instance",
@@ -34,7 +34,7 @@ function useApp(app) {
     if (app) {
         _app = app;
     } else {
-        Console.error(
+        RecursiveConsole.error(
             "Recursive Web : The app used by the components is not of type RecursiveApp."
         );
     }
@@ -48,7 +48,7 @@ function createElement(...args) {
     const app = getApp();
 
     if (!app) {
-        Console.error(
+        RecursiveConsole.error(
             "Recursive Web : The app used by the components is not of type RecursiveApp."
         );
     }

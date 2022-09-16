@@ -25,6 +25,17 @@ function get(key) {
 }
 
 /**
+ * Return the list of support properties in browsers.
+ * @param {string} key
+ * @returns {Array<string>}
+ */
+function getPropertySupport(key) {
+    if (!is(key)) return [];
+
+    return ListOfCssProperties[key].support;
+}
+
+/**
  * Check if the input is a valid CSS value.
  * @param {string | number} value Property value to be checked.
  * @returns {boolean} Check result.
@@ -81,7 +92,15 @@ function renderProperty(property, value) {
 
     if (!_value) return "";
 
-    return `${get(property)}:${_value};`;
+    const output = [];
+
+    getPropertySupport(property).forEach((item) => {
+        output.push(`${item}:${_value};`);
+    });
+
+    output.push(`${get(property)}:${_value};`);
+
+    return output.join("");
 }
 
 module.exports = {

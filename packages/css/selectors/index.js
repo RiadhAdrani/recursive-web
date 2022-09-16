@@ -57,10 +57,22 @@ function renderSelector(selector, content) {
     return output;
 }
 
+/**
+ * Retrieve selector support versions.
+ * @param {string} key selector name.
+ * @returns {Array<string>} selector support.
+ */
+function getSelectorSupport(key) {
+    if (!is(key)) return [];
+
+    return ListOfCssSelectors[key].support;
+}
+
 module.exports = {
     ListOfCssSelectors,
     is,
     get,
     renderSelector,
     customSelectorAlreadyExist,
+    getSelectorSupport,
 };

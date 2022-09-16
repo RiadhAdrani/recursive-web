@@ -58,7 +58,6 @@ function generateComponent(
 
 function generateAttributeDoc(attrName, data) {
     let used = "";
-    let values = "";
 
     if (data.els) {
         used =
@@ -77,7 +76,7 @@ function generateAttributeDoc(attrName, data) {
 
     return `${makeJsDocBlock(
         data.docs,
-        ["### _`" + data.name + "` Attribute_", ""],
+        ["## `" + data.name + "`", ""],
         [`@used ${used}`]
     )}`;
 }

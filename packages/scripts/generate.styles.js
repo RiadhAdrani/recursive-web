@@ -49,19 +49,25 @@ function addToSelector(key, object) {
         type = object.type;
     }
 
-    return `${makeJsDocBlock(object.docs, [
-        "## `" + key + "`",
-        "",
-        "_CSS property_",
-    ])}${key}:${type};`;
+    return `${makeJsDocBlock(
+        object.docs,
+        ["## `" + object.css + "`", ""],
+        [
+            ...object.decorators.map((item) => `@${item}`),
+            ...object.links.map((link) => `@see {@link ${link}}`),
+        ]
+    )}${key}:${type};`;
 }
 
 function addSelectorType(key, object) {
-    const docs = object.docs.reduce((sum, item) => {
-        return sum + `\n * ${item}`;
-    }, "");
-
-    return `/** ${docs} */\n${key}:Selector;\n`;
+    return `${makeJsDocBlock(
+        object.docs,
+        ["## `.element" + object.css + "`", ""],
+        [
+            ...object.decorators.map((item) => `@${item}`),
+            ...object.links.map((link) => `@see {@link ${link}}`),
+        ]
+    )}${key}:Selector;\n`;
 }
 
 module.exports = () => {

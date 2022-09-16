@@ -3,7 +3,6 @@ const { attribute } = require("../../templates");
 module.exports = {
     accentHeight: attribute({
         name: "accent-height",
-
         values: "string",
         docs: [
             "The accent-height attribute defines the distance from the origin to the top of accent characters, measured by a distance within the font coordinate system.",
@@ -12,7 +11,6 @@ module.exports = {
     }),
     accumulate: attribute({
         name: "accumulate",
-
         values: ["sum", "none"],
         els: ["animate", "animateColor", "animateMotion", "animateTransform"],
         docs: [
@@ -21,7 +19,6 @@ module.exports = {
     }),
     additive: attribute({
         name: "additive",
-
         values: ["sum", "replace"],
         els: ["animate", "animateColor", "animateMotion", "animateTransform"],
         docs: [

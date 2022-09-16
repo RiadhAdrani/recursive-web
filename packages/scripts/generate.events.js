@@ -13,9 +13,16 @@ module.exports = () => {
     let eventsContent = "";
 
     for (let event in ListOfEvents) {
-        eventsContent += `${makeJsDocBlock(ListOfEvents[event].docs, [
-            "## `" + event + "` Event",
-        ])}${event}:(event : ${ListOfEvents[event].type}) => void;`;
+        eventsContent += `${makeJsDocBlock(
+            ListOfEvents[event].docs,
+            ["## `" + event + "`"],
+            [
+                ...ListOfEvents[event].decorators.map((item) => `@${item}`),
+                ...ListOfEvents[event].links.map(
+                    (item) => `@see {@link ${item}}`
+                ),
+            ]
+        )}${event}:(event : ${ListOfEvents[event].type}) => void;`;
     }
 
     const old = fs.readFileSync(path.join("./lib.d.ts"), { encoding: "utf-8" });

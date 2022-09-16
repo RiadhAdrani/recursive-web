@@ -8,7 +8,7 @@ const { event } = require("../../templates");
  * @param {Array<string>} params.docs Used to generate documentation for the event.
  * @returns {object} event template
  */
-function handler({ store, type = "Event", docs = [] }) {
+function handler({ store, type = "Event", docs = [], ...arg }) {
     return event({
         listener: store,
         on: store,
@@ -19,6 +19,7 @@ function handler({ store, type = "Event", docs = [] }) {
         },
         type,
         docs,
+        ...arg,
     });
 }
 

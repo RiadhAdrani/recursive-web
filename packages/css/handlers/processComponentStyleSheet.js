@@ -4,6 +4,7 @@ const {
     get: getSelector,
     is,
     customSelectorAlreadyExist,
+    getSelectorSupport,
 } = require("../selectors");
 
 /**
@@ -98,6 +99,17 @@ function processComponentStyleSheet(styleSheet) {
                 if (res) {
                     if (!output.selectors) output.selectors = {};
                     output.selectors[res.key] = res.content;
+
+                    const support = getSelectorSupport(key);
+
+                    support.forEach((item) => {
+                        const _res = {
+                            key: "." + styleSheet.className + item,
+                            content: res.content,
+                        };
+
+                        output.selectors[_res.key] = _res.content;
+                    });
                 }
 
                 break;

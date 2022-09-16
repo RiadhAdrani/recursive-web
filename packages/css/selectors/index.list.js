@@ -1,120 +1,104 @@
 const { selector } = require("../../templates");
 
 const ListOfCssSelectors = {
+    inline: selector({
+        css: "",
+        docs: ["Define inline element style having the top priority."],
+    }),
     normal: selector({
         css: "",
-        docs: [
-            "## ``.element``",
-            "Define style for the normal state of the element.",
+        docs: ["Define style for the normal state of the element."],
+        links: [
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors",
         ],
     }),
     active: selector({
         css: ":active",
-        docs: [
-            "## ``:active ``",
-            "Define style for the element when clicked.",
-            "",
-            "@link {https://developer.mozilla.org/en-US/docs/Web/CSS/:active}",
-        ],
+        docs: ["Define style for the element when clicked."],
+        links: ["https://developer.mozilla.org/en-US/docs/Web/CSS/:active"],
     }),
     anyLink: selector({
         css: ":any-link",
         docs: [
-            "## ``:any-link ``",
             "Define the style that represents an element",
             "that acts as the source anchor of a hyperlink,",
             "independent of whether it has been visited.",
-            "",
-            "@link {https://developer.mozilla.org/en-US/docs/Web/CSS/:any-link}",
         ],
+        links: ["https://developer.mozilla.org/en-US/docs/Web/CSS/:any-link"],
     }),
     autofill: selector({
         css: ":autofill",
         docs: [
-            "## `:autofill `",
             "The :autofill CSS pseudo-class matches when an ``<input>``",
             "element has its value autofilled by the browser.",
             "The class stops matching if the user edits the field.",
-            "",
-            "@link {https://developer.mozilla.org/en-US/docs/Web/CSS/:autofill}",
         ],
+        links: ["https://developer.mozilla.org/en-US/docs/Web/CSS/:autofill"],
     }),
     checked: selector({
         css: ":checked",
         docs: [
-            "## ``:checked ``",
             "The ``:checked`` CSS pseudo-class selector represents any radio",
             '(`<input type="radio">`), checkbox (``<input type="checkbox">``),',
             "or option (``<option>`` in a ``<select>``)",
             "element that is checked or toggled to an on state.",
-            "",
-            "@link {https://developer.mozilla.org/en-US/docs/Web/CSS/:checked}",
         ],
+        link: ["https://developer.mozilla.org/en-US/docs/Web/CSS/:checked"],
     }),
     default: selector({
         css: ":default",
         docs: [
-            "## ``:default ``",
             "The :default CSS pseudo-class selects",
             "form elements that are the default in a group of related elements.",
-            "",
-            "@link {https://developer.mozilla.org/en-US/docs/Web/CSS/:default}",
         ],
+        links: ["https://developer.mozilla.org/en-US/docs/Web/CSS/:default"],
     }),
     defined: selector({
         css: ":defined",
         docs: [
-            "## `:defined `",
             "The :defined CSS pseudo-class",
             "represents any element that has been defined.",
             "This includes any standard element built in to the browser,",
             "and custom elements that have been successfully defined",
             "(i.e. with the CustomElementRegistry.define() method).",
-            "",
-            "@link {https://developer.mozilla.org/en-US/docs/Web/CSS/:defined}",
         ],
+        links: ["https://developer.mozilla.org/en-US/docs/Web/CSS/:defined"],
     }),
     disabled: selector({
         css: ":disabled",
         docs: [
-            "## `:disabled `",
             "The :disabled CSS pseudo-class represents any disabled element.",
             "An element is disabled if it can't be activated",
             "(selected, clicked on, typed into, etc.) or accept focus.",
             "The element also has an enabled state,",
             "in which it can be activated or accept focus.",
-            "",
-            "@link {https://developer.mozilla.org/en-US/docs/Web/CSS/:disabled}",
         ],
+        links: ["https://developer.mozilla.org/en-US/docs/Web/CSS/:disabled"],
     }),
     empty: selector({
         css: ":empty",
         docs: [
-            "## `:empty `",
             "The :empty CSS pseudo-class represents any element that has no children.",
             "Children can be either element nodes or text (including whitespace).",
             "Comments, processing instructions,",
             "and CSS content do not affect whether an element is considered empty.",
-            "@link {https://developer.mozilla.org/en-US/docs/Web/CSS/:empty}",
         ],
+        links: ["https://developer.mozilla.org/en-US/docs/Web/CSS/:empty"],
     }),
     enabled: selector({
         css: ":enabled",
         docs: [
-            "## `:enabled `",
             "The :enabled CSS pseudo-class represents any enabled element.",
             "An element is enabled if it can be activated",
             "(selected, clicked on, typed into, etc.) or accept focus.",
             "The element also has a disabled state,",
             "in which it can't be activated or accept focus.",
-            "",
-            "@link {https://developer.mozilla.org/en-US/docs/Web/CSS/:enabled}",
         ],
+        links: ["https://developer.mozilla.org/en-US/docs/Web/CSS/:enabled"],
     }),
     first: selector({
         css: ":first",
         docs: [
-            "## `:first `",
             "The :first CSS pseudo-class, used with the ``@page`` at-rule,",
             "represents the first page of a printed document.",
             "",
@@ -124,63 +108,58 @@ const ListOfCssSelectors = {
     firstChild: selector({
         css: ":first-child",
         docs: [
-            "## `:first-child `",
             "The :first-child CSS pseudo-class",
             "represents the first element among a group of sibling elements.",
-            "",
-            "@link {https://developer.mozilla.org/en-US/docs/Web/CSS/:first-child}",
+        ],
+        links: [
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/:first-child",
         ],
     }),
     firstOfType: selector({
         css: ":first-of-type",
         docs: [
-            "## `:first-of-type `",
             "The :first-of-type CSS pseudo-class represents",
             "the first element of its type among a group of sibling elements.",
-            "",
-            "@link {https://developer.mozilla.org/en-US/docs/Web/CSS/:first-of-type}",
+        ],
+        links: [
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/:first-of-type",
         ],
     }),
     fullscreen: selector({
         css: "fullscreen",
         docs: [
-            "## `:fullscreen `",
             "The :fullscreen CSS pseudo-class",
             "matches every element which is currently in fullscreen mode.",
             "If multiple elements have been put into fullscreen mode,",
             "this selects them all.",
-            "",
-            "@link {https://developer.mozilla.org/en-US/docs/Web/CSS/:fullscreen}",
         ],
+        links: ["https://developer.mozilla.org/en-US/docs/Web/CSS/:fullscreen"],
     }),
     focus: selector({
         css: ":focus",
         docs: [
-            "## `:focus `",
             "The :focus CSS pseudo-class represents an element",
             "(such as a form input) that has received focus.",
             "It is generally triggered when the user clicks",
             "or taps on an element or selects it with the keyboard's Tab key.",
-            "",
-            "@link {https://developer.mozilla.org/en-US/docs/Web/CSS/:focus}",
         ],
+        links: ["https://developer.mozilla.org/en-US/docs/Web/CSS/:focus"],
     }),
     focusVisible: selector({
         css: ":focus-visible",
         docs: [
-            "## `focus-visible`",
             "The :focus-visible pseudo-class applies",
             "while an element matches the :focus pseudo-class and the UA (User Agent)",
             "determines via heuristics that the focus should be made evident on the element.",
             '(Many browsers show a "focus ring" by default in this case.)',
-            "",
-            "@link {https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible}",
+        ],
+        links: [
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible",
         ],
     }),
     focusWithin: selector({
         css: ":focus-within",
         docs: [
-            "## `:focus-within`",
             "The :focus-within CSS pseudo-class",
             "matches an element if the element or any of its descendants are focused.",
             "In other words, it represents an element that is itself matched",
@@ -193,14 +172,12 @@ const ListOfCssSelectors = {
     host: selector({
         css: ":host",
         docs: [
-            "## `:host`",
             "The :host CSS pseudo-class",
             "selects the shadow host of the shadow DOM",
             "containing the CSS it is used inside — in other words,",
             "this allows you to select a custom element from inside its shadow DOM.",
-            "",
-            "@link {https://developer.mozilla.org/en-US/docs/Web/CSS/:host}",
         ],
+        links: ["https://developer.mozilla.org/en-US/docs/Web/CSS/:host"],
     }),
     hover: selector({
         css: ":hover",
@@ -212,74 +189,78 @@ const ListOfCssSelectors = {
             "It is generally triggered",
             "when the user hovers over an element with the cursor (mouse pointer).",
         ],
+        links: ["https://developer.mozilla.org/en-US/docs/Web/CSS/:hover"],
     }),
     indeterminate: selector({
         css: ":indeterminate",
         docs: [
-            "## `:indeterminate`",
             "The :indeterminate CSS pseudo-class",
             "represents any form element whose state is indeterminate,",
             "such as checkboxes which have their HTML indeterminate attribute set to true,",
             "radio buttons which are members of a group in which all radio buttons are unchecked,",
             "and indeterminate ``<progress>`` elements.",
         ],
+        links: [
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/:indeterminate",
+        ],
     }),
     inRange: selector({
         css: ":in-range",
         docs: [
-            "`:in-range`",
             "The :in-range CSS pseudo-class represents an ``<input>`` element",
             "whose current value is within the range limits specified by the min and max attributes.",
         ],
+        links: ["https://developer.mozilla.org/en-US/docs/Web/CSS/:in-range"],
     }),
     invalid: selector({
         css: ":invalid",
         docs: [
-            "## `:invalid`",
             "The :invalid CSS pseudo-class represents",
             "any ``<form>``, ``<fieldset>``, ``<input>``",
             "or other ``<form>`` element whose contents fail to validate.",
         ],
+        links: ["https://developer.mozilla.org/en-US/docs/Web/CSS/:invalid"],
     }),
     lastChild: selector({
         css: ":last-child",
         docs: [
-            "## `:last-child`",
             "The :last-child CSS pseudo-class",
             "represents the last element among a group of sibling elements.",
         ],
+        links: ["https://developer.mozilla.org/en-US/docs/Web/CSS/:last-child"],
     }),
     lastOfType: selector({
         css: ":last-of-type",
         docs: [
-            "## `:last-of-type`",
             "The :last-of-type CSS pseudo-class",
             "represents the last element of its type among a group of sibling elements.",
+        ],
+        links: [
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/:last-of-type",
         ],
     }),
     left: selector({
         css: ":left",
         docs: [
-            "## `:left`",
             "The :left CSS pseudo-class,",
             "used with the ``@page`` at-rule,",
             "represents all left-hand pages of a printed document.",
         ],
+        links: ["https://developer.mozilla.org/en-US/docs/Web/CSS/:left"],
     }),
     link: selector({
         css: ":link",
         docs: [
-            "## `:link`",
             "The :link CSS pseudo-class",
             "represents an element that has not yet been visited.",
             "It matches every unvisited ``<a>`` or ``<area>`` element",
             "that has an href attribute.",
         ],
+        links: ["https://developer.mozilla.org/en-US/docs/Web/CSS/:link"],
     }),
     modal: selector({
         css: ":modal",
         docs: [
-            "## `:modal`",
             "The :modal CSS pseudo-class",
             "matches an element that is in a state",
             "in which it excludes all interaction",
@@ -289,113 +270,120 @@ const ListOfCssSelectors = {
             "by the :modal pseudo-class at the same time,",
             "but only one of them will be active and able to receive input.",
         ],
+        links: ["https://developer.mozilla.org/en-US/docs/Web/CSS/:modal"],
     }),
     onlyChild: selector({
         css: ":only-child",
         docs: [
-            "## `:only-child`",
             "The :only-child CSS pseudo-class",
             "represents an element without any siblings.",
             "This is the same as :first-child:last-child",
             "or :nth-child(1):nth-last-child(1),",
             "but with a lower specificity.",
         ],
+        links: ["https://developer.mozilla.org/en-US/docs/Web/CSS/:only-child"],
     }),
     onlyOfType: selector({
         css: ":only-of-type",
         docs: [
-            "## `:only-of-type`",
             "The :only-of-type CSS pseudo-class",
             "represents an element that has no siblings of the same type.",
+        ],
+        links: [
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/:only-of-type",
         ],
     }),
     optional: selector({
         css: ":optional",
         docs: [
-            "## `:optional`",
             "The :optional CSS pseudo-class represents any ``<input>``",
-            ,
             "``<select>``, or ``<textarea>`` element",
             "that does not have the required attribute set on it.",
         ],
+        links: ["https://developer.mozilla.org/en-US/docs/Web/CSS/:optional"],
     }),
     outOfRange: selector({
         css: ":out-of-range",
         docs: [
-            "## `:out-of-range`",
             "The :out-of-range CSS pseudo-class",
             "represents an ``<input>`` element whose current value",
             "is outside the range limits specified",
             "by the min and max attributes.",
         ],
+        links: [
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/:out-of-range",
+        ],
     }),
     pictureInPicutre: selector({
         css: ":picture-in-picture",
         docs: [
-            "## `:picture-in-picture`",
             "The :picture-in-picture CSS pseudo-class",
             "matches the element which is currently",
             "in picture-in-picture mode.",
+        ],
+        links: [
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/:picture-in-picture",
         ],
     }),
     placeholderShown: selector({
         css: ":placeholder-shown",
         docs: [
-            "## `:placeholder-shown`",
             "The :placeholder-shown CSS pseudo-class",
             "represents any ``<input>`` or ``<textarea>`` element",
             "that is currently displaying placeholder text.",
+        ],
+        links: [
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/:placeholder-shown",
         ],
     }),
     readOnly: selector({
         css: ":read-only",
         docs: [
-            "## `:read-only`",
             "The :read-only CSS pseudo-class",
             "represents an element (such as input or textarea)",
             "that is not editable by the user.",
         ],
+        links: ["https://developer.mozilla.org/en-US/docs/Web/CSS/:read-only"],
     }),
     readWrite: selector({
         css: ":read-write",
         docs: [
-            "## `:read-write`",
             "The :read-write CSS pseudo-class",
             "represents an element (such as input or textarea)",
             "that is editable by the user.",
         ],
+        links: ["https://developer.mozilla.org/en-US/docs/Web/CSS/:read-write"],
     }),
     required: selector({
         css: ":required",
         docs: [
-            "## `:required`",
             "The :required CSS pseudo-class",
             "represents any ``<input>``, ``<select>``, or ``<textarea>`` element",
             "that has the required attribute set on it.",
         ],
+        links: ["https://developer.mozilla.org/en-US/docs/Web/CSS/:required"],
     }),
     scope: selector({
         css: ":scope",
         docs: [
-            "## `:scope`",
             "The :scope CSS pseudo-class",
             "represents elements that are a reference point",
             "for selectors to match against.",
         ],
+        links: ["https://developer.mozilla.org/en-US/docs/Web/CSS/:scope"],
     }),
     target: selector({
         css: ":target",
         docs: [
-            "## `:target`",
             "The :target CSS pseudo-class",
             "represents a unique element (the target element)",
             "with an id matching the URL's fragment.",
         ],
+        links: ["https://developer.mozilla.org/en-US/docs/Web/CSS/:target"],
     }),
     valid: selector({
         css: ":valid",
         docs: [
-            "## `:valid`",
             "The :valid CSS pseudo-class",
             "represents any ``<input>`` or other ``<form>`` element",
             "whose contents validate successfully.",
@@ -403,109 +391,129 @@ const ListOfCssSelectors = {
             "adopt an appearance that helps the user confirm",
             "that their data is formatted properly.",
         ],
+        links: ["https://developer.mozilla.org/en-US/docs/Web/CSS/:valid"],
     }),
     visited: selector({
         css: ":visited",
         docs: [
-            "## `:visited`",
             "The :visited CSS pseudo-class",
             "represents links that the user has already visited.",
             "For privacy reasons,",
             "the styles that can be modified",
             "using this selector are very limited.",
         ],
+        links: ["https://developer.mozilla.org/en-US/docs/Web/CSS/:visited"],
     }),
 
     after: selector({
         css: "::after",
         docs: [
-            "## `::after`",
             "In CSS, ::after creates a pseudo-element",
             "that is the last child of the selected element.",
             "It is often used to add cosmetic content",
             "to an element with the content property.",
             "It is inline by default.",
         ],
+        links: ["https://developer.mozilla.org/en-US/docs/Web/CSS/::after"],
     }),
     before: selector({
         css: "::before",
         docs: [
-            "## `::before`",
             "In CSS, ::before creates a pseudo-element",
             "that is the first child of the selected element.",
             "It is often used to add cosmetic content",
             "to an element with the content property.",
             "It is inline by default.",
         ],
+        links: ["https://developer.mozilla.org/en-US/docs/Web/CSS/::before"],
     }),
     cue: selector({
         css: "::cue",
         docs: [
-            "## `::cue`",
             "The ::cue CSS pseudo-element matches WebVTT cues",
             "within a selected element.",
             "This can be used to style captions",
             "and other cues in media with VTT tracks.",
         ],
+        links: ["https://developer.mozilla.org/en-US/docs/Web/CSS/::cue"],
     }),
     firstLetter: selector({
         css: "::first-letter",
         docs: [
-            "## `::first-letter`",
             "The ::first-letter CSS pseudo-element",
             "applies styles to the first letter",
             "of the first line of a block-level element,",
             "but only when not preceded by other content",
             "(such as images or inline tables).",
         ],
+        links: [
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/::first-letter",
+        ],
     }),
     firstLine: selector({
         css: "::first-line",
         docs: [
-            "## `::first-line`",
             "The ::first-line CSS pseudo-element",
             "applies styles to the first line of a block-level element.",
+        ],
+        links: [
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/::first-line",
         ],
     }),
     fileSelectorButton: selector({
         css: "::file-selector-button",
         docs: [
-            "## `::file-selector-button`",
             "The ::file-selector-button CSS pseudo-element",
             'represents the button of an ``<input>`` of type="file".',
+        ],
+        links: [
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/::file-selector-button",
         ],
     }),
     placeholder: selector({
         css: "::placeholder",
         docs: [
-            "## `::placeholder`",
             "The ::placeholder CSS pseudo-element",
             "represents the placeholder text in",
             "an ``<input>`` or ``<textarea>`` element.",
+        ],
+        links: [
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/::placeholder",
         ],
     }),
     selection: selector({
         css: "::selection",
         docs: [
-            "## `::selection`",
             "The ::selection CSS pseudo-element",
             "applies styles to the part of a document",
             "that has been highlighted by the user",
             "(such as clicking and dragging the mouse across text).",
         ],
+        links: ["https://developer.mozilla.org/en-US/docs/Web/CSS/::selection"],
     }),
     marker: selector({
         css: "::marker",
         docs: [
-            "## `::marker`",
             "The ::marker CSS pseudo-element selects the marker box",
             "of a list item, which typically contains a bullet or number.",
             "It works on any element or pseudo-element set",
             "to display: list-item,",
             "such as the ``<li> ``and ``<summary>`` elements.",
         ],
+        links: ["https://developer.mozilla.org/en-US/docs/Web/CSS/:marker"],
     }),
-
+    userInvalid: selector({
+        css: ":user-invalid",
+        docs: [
+            "The :user-invalid CSS pseudo-class represents any validated form ",
+            "element whose value isn't valid based on their validation constraints, ",
+            "after the user has interacted with it.",
+        ],
+        links: [
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/:user-invalid",
+        ],
+        support: [":-moz-ui-invalid"],
+    }),
     webkitScrollbar: selector({ css: "::-webkit-scrollbar" }),
     webkitScrollbarTrack: selector({ css: "::-webkit-scrollbar-track" }),
     webkitScrollbarThumb: selector({ css: "::-webkit-scrollbar-thumb" }),
