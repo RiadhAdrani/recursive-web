@@ -16,8 +16,8 @@ class RecursiveWebRouter extends RecursiveRouter {
      * @param {RecursiveState} manager Application state manager.
      * @param {RecursiveOrchestrator} orchestrator Application orchestrator.
      */
-    constructor(route, base, scroll, manager, orchestrator) {
-        super(route, base, scroll, manager, orchestrator);
+    constructor(route, base, scroll, app) {
+        super(route, base, scroll, app);
     }
 
     useRouterNavigationListener() {
@@ -95,7 +95,7 @@ class RecursiveWebRouter extends RecursiveRouter {
             if (target) {
                 target.scrollIntoView({ behavior: "smooth" });
             }
-        }, 100);
+        }, 200);
     }
 
     useRouterScrollToTop() {

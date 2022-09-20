@@ -23,8 +23,8 @@ class RecursiveWebRenderer extends RecursiveRenderer {
      * @param {import("@riadh-adrani/recursive/lib.js").App} app Function returning a `RecursiveElement`.
      * @param {HTMLElement} root App container.
      */
-    constructor(app, root) {
-        super(app, root);
+    constructor(app, root, bootstrapper) {
+        super(app, root, bootstrapper);
 
         /**
          * @type {RecursiveCSSOM}

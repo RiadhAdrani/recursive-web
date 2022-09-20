@@ -2,11 +2,11 @@ const RecursiveWebRenderer = require("../renderer");
 const RecursiveWebRouter = require("../router");
 const { useRecursiveWindow } = require("../window");
 const { RecursiveApp } = require("../../use");
+const { setBootstrappingApplication } = require("../components");
 require("../components/custom-elements/");
 
 /**
  * Web implementation of the `RecursiveApp` class.
- * @extends {RecursiveApp}
  */
 class RecursiveWebApp extends RecursiveApp {
     /**
@@ -36,20 +36,22 @@ class RecursiveWebApp extends RecursiveApp {
         onAppInit,
     }) {
         super({
-            renderer: new RecursiveWebRenderer(app, root),
             cacheSize,
+            buildRenderer: (_app) => {
+                return new RecursiveWebRenderer(app, root, _app);
+            },
             buildRouter: (_app) => {
                 if (typeof route == "object") {
                     return new RecursiveWebRouter(
                         route,
                         base,
                         scrollCorrection,
-                        _app.stateManager,
-                        _app.orchestrator
+                        _app
                     );
                 }
             },
             onAppInit: (_app) => {
+                setBootstrappingApplication(_app);
                 useRecursiveWindow(_app.orchestrator);
 
                 if (typeof onAppInit == "function") onAppInit(_app);

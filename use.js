@@ -35,7 +35,8 @@ const {
     RecursiveState,
     RecursiveConsole,
     RecursiveApp,
-} = require("@riadh-adrani/recursive/index.js");
+    createElement,
+} = require("../recursive/index.js");
 
 module.exports = {
     RecursiveOrchestrator,
@@ -44,4 +45,5 @@ module.exports = {
     RecursiveState,
     RecursiveApp,
     RecursiveConsole,
+    createElement,
 };
