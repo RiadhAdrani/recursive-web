@@ -1,9 +1,10 @@
 const RecursiveWebRenderer = require("../renderer");
 const RecursiveWebRouter = require("../router");
-const { useRecursiveWindow } = require("../window");
 const { RecursiveApp } = require("../../use");
-const { setBootstrappingApplication } = require("../components");
-require("../components/custom-elements/");
+const { useRecursiveWindow } = require("../window");
+const { useRecursiveComponents } = require("../components");
+
+require("../components/custom-elements");
 
 /**
  * Web implementation of the `RecursiveApp` class.
@@ -51,8 +52,8 @@ class RecursiveWebApp extends RecursiveApp {
                 }
             },
             onAppInit: (_app) => {
-                setBootstrappingApplication(_app);
-                useRecursiveWindow(_app.orchestrator);
+                useRecursiveComponents(_app);
+                useRecursiveWindow(_app);
 
                 if (typeof onAppInit == "function") onAppInit(_app);
             },

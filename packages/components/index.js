@@ -28,7 +28,7 @@ function getApp() {
  * Set the instance of the app to be used by the components.
  * @param {RecursiveApp} app current app instance.
  */
-function setBootstrappingApplication(app) {
+function useRecursiveComponents(app) {
     bootstrapper = app;
 }
 
@@ -36,5 +36,5 @@ module.exports = {
     createElement,
     component,
     getApp,
-    setBootstrappingApplication,
+    useRecursiveComponents,
 };

@@ -1,3 +1,12 @@
+const {
+    WINDOW_ON_CLICK,
+    WINDOW_ON_RESIZE,
+    WINDOW_ON_KEY_UP,
+    WINDOW_ON_KEY_DOWN,
+    WINDOW_ON_CONTEXT_MENU,
+    WINDOW_ON_SCROLL,
+    WINDOW_ON_BEFORE_UNLOAD,
+} = require("../../constants");
 const { event, EventTypes } = require("../../templates");
 const { handler } = require("../../window");
 
@@ -993,52 +1002,52 @@ module.exports = {
     /**
      * Recursive Window events
      */
-    onClickGlobal: handler({
-        store: "onclickglobal",
+    [WINDOW_ON_CLICK]: handler({
+        store: WINDOW_ON_CLICK.toLowerCase(),
         type: EventTypes.PointerEvent,
         docs: [
             "The `onClickGlobal` event is fired when another element is clicked in the DOM.",
         ],
         decorators: ["recursive-event"],
     }),
-    onResizeGlobal: handler({
-        store: "onresizeglobal",
+    [WINDOW_ON_RESIZE]: handler({
+        store: WINDOW_ON_RESIZE.toLowerCase(),
         docs: [
             "The `onResizeGlobal` event is fired when the window is being resized.",
         ],
         decorators: ["recursive-event"],
     }),
-    onKeyUpGlobal: handler({
-        store: "onkeyupglobal",
+    [WINDOW_ON_KEY_UP]: handler({
+        store: WINDOW_ON_KEY_UP.toLowerCase(),
         type: EventTypes.KeyboardEvent,
         docs: ["The `onKeyUpGlobal` event is fired when a key is released."],
         decorators: ["recursive-event"],
     }),
-    onKeyDownGlobal: handler({
-        store: "onkeydownglobal",
+    [WINDOW_ON_KEY_DOWN]: handler({
+        store: WINDOW_ON_KEY_DOWN.toLowerCase(),
         type: EventTypes.KeyboardEvent,
         docs: [
             "The `onKeyUpGlobal` event is fired when a key is being pressed.",
         ],
         decorators: ["recursive-event"],
     }),
-    onContextMenuGlobal: handler({
-        store: "oncontextmenuglobal",
+    [WINDOW_ON_CONTEXT_MENU]: handler({
+        store: WINDOW_ON_CONTEXT_MENU.toLowerCase(),
         type: EventTypes.PointerEvent,
         docs: [
             "The `onContextMenuGlobal` event is fired when another element is being right-clicked.",
         ],
         decorators: ["recursive-event"],
     }),
-    onScrollGlobal: handler({
-        store: "onscrollglobal",
+    [WINDOW_ON_SCROLL]: handler({
+        store: WINDOW_ON_SCROLL.toLowerCase(),
         docs: [
             "The `onScrollGlobal` event is fired when the window is being scrolled into.",
         ],
         decorators: ["recursive-event"],
     }),
-    onBeforeUnloadGlobal: handler({
-        store: "onbeforeunloadglobal",
+    [WINDOW_ON_BEFORE_UNLOAD]: handler({
+        store: WINDOW_ON_BEFORE_UNLOAD.toLowerCase(),
         type: "BeforeUnloadEvent",
         docs: [
             "The `onBeforeUnloadGlobal` event is fired when the user attempt to leave the page.",
