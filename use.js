@@ -36,7 +36,7 @@ const {
     RecursiveConsole,
     RecursiveApp,
     createElement,
-} = require("../recursive/index.js");
+} = require("@riadh-adrani/recursive/index");
 
 module.exports = {
     RecursiveOrchestrator,
