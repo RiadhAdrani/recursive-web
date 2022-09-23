@@ -1,9 +1,7 @@
 const { renderSelector } = require("../selectors/index.js");
 
 /**
- * Check if a given media query object is valid or not.
- * @param {Object} mediaQueryObject Media query object.
- * @returns {boolean} Check result.
+ * @param {Object} mediaQueryObject
  */
 function isValidMediaQueryDeclaration(mediaQueryObject) {
     if (
@@ -19,10 +17,8 @@ function isValidMediaQueryDeclaration(mediaQueryObject) {
 }
 
 /**
- * Convert media query declaration to a string.
- * @param {string} rule Condition of the media query.
- * @param {import("../../../lib.js").SelectorTypes} selectors Selectors within the media query.
- * @returns {String} Valid CSS media query declaration.
+ * @param {string} rule
+ * @param {import("../../../lib.js").SelectorTypes} selectors
  */
 function renderMediaQuery(rule, selectors) {
     if (typeof rule != "string" || !rule.trim()) return "";

@@ -1,8 +1,6 @@
 /**
- * Render a single CSS variable.
- * @param {string} key Variable name.
- * @param {string} value Variable value.
- * @returns {string} CSS variable declaration.
+ * @param {string} key
+ * @param {string} value
  */
 function renderVar(key, value) {
     if (typeof key != "string" || !key.trim()) return "";
@@ -21,9 +19,7 @@ function renderVar(key, value) {
 }
 
 /**
- * Render and return statements of `--var`.
- * @param {object} list list containing key-value pairs of CSS variables.
- * @returns {string} Transformed list.
+ * @param {object} list
  */
 function renderVars(list) {
     if (!list) return "";
