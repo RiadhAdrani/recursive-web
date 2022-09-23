@@ -917,3 +917,34 @@ export function corners(input) {
 
     return [topRight, bottomRight, bottomLeft, topLeft];
 }
+
+/**
+ * creates a media query for when size is less than the given value.
+ * @param {string} size value in `px`, `em` ...
+ * @param {import("../../lib").Selectors} content media query content
+ */
+export function whenLessThan(size, content) {
+    return { condition: `(max-width:${size})`, ...content };
+}
+
+/**
+ * creates a media query for when size is greater than the given value.
+ * @param {string} size value in `px`, `em` ...
+ * @param {import("../../lib").Selectors} content media query content
+ */
+export function whenGreaterThan(size, content) {
+    return { condition: `(min-width:${size})`, ...content };
+}
+
+/**
+ * creates a media query for when the size of screen is between the `min` and `max` values.
+ * @param {string} min value in `px`, `em` ...
+ * @param {string} max value in `px`, `em` ...
+ * @param {import("../../lib").Selectors} content media query content
+ */
+export function whenBetween(min, max, content) {
+    return {
+        condition: `(min-width:${min}) and (max-width:${max})`,
+        ...content,
+    };
+}

@@ -184,6 +184,10 @@ export interface MediaQuery extends SelectorTypes {
     [key: string]: Selector;
 }
 
+export interface Selectors extends SelectorTypes {
+    [key: string]: Selector;
+}
+
 export interface StyleSheet extends SelectorTypes {
     /**
      * Define if the current stylesheet
