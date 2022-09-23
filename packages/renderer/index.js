@@ -14,14 +14,10 @@ const {
     eventHasHandler,
 } = require("../dom/index.js");
 
-/**
- * Perform rendering and updates to the DOM.
- */
 class RecursiveWebRenderer extends RecursiveRenderer {
     /**
-     * Create an instance of `RecursiveWeb`
-     * @param {import("@riadh-adrani/recursive/lib.js").App} app Function returning a `RecursiveElement`.
-     * @param {HTMLElement} root App container.
+     * @param {import("@riadh-adrani/recursive/lib.js").App} app
+     * @param {HTMLElement} root
      */
     constructor(app, root, bootstrapper) {
         super(app, root, bootstrapper);
@@ -33,7 +29,6 @@ class RecursiveWebRenderer extends RecursiveRenderer {
     }
 
     /**
-     * Add an event to the element.
      * @param {string} onEventName
      * @param {Function} callback
      * @param {HTMLElement} instance
@@ -44,9 +39,7 @@ class RecursiveWebRenderer extends RecursiveRenderer {
     }
 
     /**
-     * Convert the UID to a UUID.
-     * @param {string} uid Element uid.
-     * @returns {string} UUID.
+     * @param {string} uid
      */
     transformUid(uid) {
         function convert(uid) {
@@ -75,7 +68,6 @@ class RecursiveWebRenderer extends RecursiveRenderer {
     }
 
     /**
-     * Check and update the `className` of the element.
      * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
      */
     resolveClassName(element) {
@@ -102,9 +94,8 @@ class RecursiveWebRenderer extends RecursiveRenderer {
     }
 
     /**
-     * Check if the `styleSheet` contains external selectors.
-     * @param {object} styleSheet style object.
-     * @returns {boolean} Check result.
+
+     * @param {object} styleSheet
      */
     isExternalStyleSheet(styleSheet) {
         return (
@@ -114,9 +105,7 @@ class RecursiveWebRenderer extends RecursiveRenderer {
     }
 
     /**
-     * Flatten and return the `StyleSheets` of the elements' tree.
      * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
-     * @returns {Array<any>} Array of style objects.
      */
     flattenStyle(element) {
         const output = [];
@@ -143,7 +132,6 @@ class RecursiveWebRenderer extends RecursiveRenderer {
     }
 
     /**
-     * Convert children to a string.
      * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
      */
     reduceChildrenToInnerHTML(element) {
