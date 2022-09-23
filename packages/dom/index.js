@@ -18,18 +18,14 @@ const ListOfAttributes = {
 };
 
 /**
- * Return if the given key correspond to an attribute within the current list of attributes.
- * @param {string} key attribute key.
- * @returns {boolean}
+ * @param {string} key
  */
 function isAttribute(key) {
     return ListOfAttributes.hasOwnProperty(key);
 }
 
 /**
- * Retrieve the attribute name if it exists.
- * @param {string} key attribute identifier
- * @returns {string} attribute name.
+ * @param {string} key
  */
 function getAttributeName(key) {
     if (!isAttribute(key)) {
@@ -43,30 +39,21 @@ function getAttributeName(key) {
 }
 
 /**
- * Return if an attribute is toggleable or not.
- *
- * A toggleable attribute accepts only boolean values.
- *
- * @param {string} key attribute identifier
- * @returns {boolean}
+ * @param {string} key
  */
 function isToggleableAttribute(key) {
     return isAttribute(key) && ListOfAttributes[key]["toggleable"] === true;
 }
 
 /**
- * Return if the given key correspond to an event within the current list of events.
  * @param {string} key
- * @returns {boolean}
  */
 function isEvent(key) {
     return ListOfEvents.hasOwnProperty(key);
 }
 
 /**
- * Return the event data template with the given key if it exists.
- * @param {string} key event name.
- * @returns {object}
+ * @param {string} key
  */
 function getEvent(key) {
     if (!isEvent(key)) {
@@ -80,18 +67,14 @@ function getEvent(key) {
 }
 
 /**
- * Return if the event has a custom handler.
- * @param {string} key event name.
- * @returns {boolean}
+ * @param {string} key
  */
 function eventHasHandler(key) {
     return isEvent(key) && typeof ListOfEvents[key]["handler"] === "function";
 }
 
 /**
- * Return the event listener with the given key if it exists.
- * @param {string} key event name.
- * @returns {string}
+ * @param {string} key
  */
 function getEventListener(key) {
     if (!isEvent(key)) {
