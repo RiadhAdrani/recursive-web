@@ -6,10 +6,6 @@ const { component } = require("../templates");
  */
 let bootstrapper = undefined;
 
-/**
- * Retrieve the current app instance.
- * @returns {RecursiveApp}
- */
 function getApp() {
     if (!bootstrapper instanceof RecursiveApp) {
         RecursiveConsole.error(
@@ -25,8 +21,7 @@ function getApp() {
 }
 
 /**
- * Set the instance of the app to be used by the components.
- * @param {RecursiveApp} app current app instance.
+ * @param {RecursiveApp} app
  */
 function useRecursiveComponents(app) {
     bootstrapper = app;
