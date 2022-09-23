@@ -16,27 +16,10 @@ function createStyleElement() {
  * Manage CSS within a `RecursiveWebApp`.
  */
 class RecursiveCSSOM {
-    /**
-     * Used to inject static and unchanged styles.
-     * Once injected, it can't be removed.
-     */
     static common = createStyleElement();
-
-    /**
-     * Used for dynamic style injection.
-     * Store `imports`, `fontFace` and `charSet` declarations.
-     */
     static highPriority = createStyleElement();
-
-    /**
-     * Used for low priority dynamic style injection.
-     * Store `vars`, `selectos`, `animations` and `mediaQueries` declarations.
-     */
     static lowPriority = createStyleElement();
 
-    /**
-     * Create a new CSSOM controller instance.
-     */
     constructor() {
         this.highPriority = "";
         this.lowPriority = "";
@@ -45,7 +28,6 @@ class RecursiveCSSOM {
     }
 
     /**
-     * Update component's and dynamic styles of the application.
      * @param {Object} stack contains styles declarations
      */
     update(stack) {
@@ -71,7 +53,6 @@ class RecursiveCSSOM {
     }
 
     /**
-     * Add the given style sheet as static.
      * @param {import("../../lib").FreeStyleSheet} styleSheet style sheet declaration.
      */
     static addStaticStyle(styleSheet) {
@@ -82,7 +63,6 @@ class RecursiveCSSOM {
     }
 
     /**
-     * Add the style sheet object to the dynamic stack.
      * @param {object} styleObject style sheet declaration.
      */
     addDynamicDeclaration(styleObject) {
@@ -90,7 +70,6 @@ class RecursiveCSSOM {
     }
 
     /**
-     * Add a new style sheet declaration.
      * @param {import("../../lib").FreeStyleSheet} cssDeclaration style sheet declaration.
      */
     setStyle(cssDeclaration) {
