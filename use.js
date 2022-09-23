@@ -21,9 +21,9 @@
  *
  * https://github.com/RiadhAdrani/recursive-web/issues
  *
- * INTERNAL : "../recursive/index.js"
+ * INTERNAL : "../recursive"
  *
- * PRODUCTION : "@riadh-adrani/recursive/index.js"
+ * PRODUCTION : "@riadh-adrani/recursive"
  *
  * Before publishing to NPM, make sure to switch to production.
  */
@@ -36,7 +36,7 @@ const {
     RecursiveConsole,
     RecursiveApp,
     createElement,
-} = require("../recursive");
+} = require("@riadh-adrani/recursive");
 
 module.exports = {
     RecursiveOrchestrator,

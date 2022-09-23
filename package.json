@@ -29,7 +29,7 @@
         "framework"
     ],
     "dependencies": {
-        "@riadh-adrani/recursive": "^0.7.45"
+        "@riadh-adrani/recursive": "^0.7.46"
     },
     "devDependencies": {
         "jest": "^28.1.3",

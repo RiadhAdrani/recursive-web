@@ -5,7 +5,7 @@
  * Do not modify this file
  */
 
-import { RawElement, RecursiveElement } from "@riadh-adrani/recursive/lib";
+import { BaseElement, RecursiveElement } from "@riadh-adrani/recursive/lib";
 
 /**
  * Standard CSS colors.
@@ -4413,7 +4413,7 @@ export type StateArray = [
 ];
 
 export type RenderOptions = {
-    app: RawElement;
+    app: BaseElement;
     root: HTMLElement;
     router: { route: Route; base: string; scroll: boolean };
     cacheSize: number;
