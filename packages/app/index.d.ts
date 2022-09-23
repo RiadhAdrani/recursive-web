@@ -48,7 +48,19 @@ export class RecursiveWebApp extends RecursiveApp {
      */
     constructor(params: RecursiveWebAppConstructorParams);
 
+    /**
+     * Add a style sheet that will be evaluated every time the app rerender.
+     *
+     * Can be used multiple times, at any depth within the tree of components.
+     *
+     * @param styleSheet style sheet declaration.
+     */
     setStyle(styleSheet: FreeStyleSheet): void;
 
-    createComponentStyle(styleSheet: StyleSheet): void;
+    /**
+     * Helper function to create a style for a components.
+     *
+     * @param styleSheet style sheet object.
+     */
+    createComponentStyle(styleSheet: StyleSheet): StyleSheet;
 }
