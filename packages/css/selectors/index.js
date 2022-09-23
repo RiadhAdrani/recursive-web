@@ -2,9 +2,7 @@ const { renderProperty } = require("../properties");
 const { ListOfCssSelectors } = require("./index.list");
 
 /**
- * Check if the given exist in the list of predefined selectors.
- * @param {string} key String representing the selector.
- * @returns {boolean} Check result.
+ * @param {string} key
  */
 function is(key) {
     return (
@@ -14,18 +12,14 @@ function is(key) {
 }
 
 /**
- * Get the corresponding CSS selector.
- * @param {string} key String representing the selector.
- * @returns {string} CSS version of the selector.
+ * @param {string} key
  */
 function get(key) {
     return is(key) ? ListOfCssSelectors[key].css : key;
 }
 
 /**
- * Check if the selector already exist in the list of selectors
- * @param {string} selector String representing the selector.
- * @returns {boolean} Check result.
+ * @param {string} selector
  */
 function customSelectorAlreadyExist(selector) {
     for (let key in ListOfCssSelectors) {
@@ -38,10 +32,8 @@ function customSelectorAlreadyExist(selector) {
 }
 
 /**
- * Render a selector declaration
- * @param {String} selector String representing the selector.
- * @param {import("../../../lib").Selector} content Object representing the selector's content.
- * @returns {string} Valid CSS selector declaration.
+ * @param {String} selector
+ * @param {import("../../../lib").Selector} content
  */
 function renderSelector(selector, content) {
     if (typeof selector != "string" || !selector || !content) return "";
@@ -58,9 +50,7 @@ function renderSelector(selector, content) {
 }
 
 /**
- * Retrieve selector support versions.
- * @param {string} key selector name.
- * @returns {Array<string>} selector support.
+ * @param {string} key
  */
 function getSelectorSupport(key) {
     if (!is(key)) return [];

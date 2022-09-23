@@ -1,7 +1,6 @@
 /**
- * Attach a new event listener to the global window object.
- * @param {string} winEvent Event name.
- * @param {(event:Event) => void} callback Event callback.
+ * @param {string} winEvent
+ * @param {(event:Event) => void} callback
  */
 function on(winEvent, callback) {
     window.addEventListener(winEvent, callback);

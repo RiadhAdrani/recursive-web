@@ -4,9 +4,7 @@ const { ListOfCssProperties, globalValues } = require("./index.list");
 const regEx = /\{|\}/g;
 
 /**
- * Check if the given key is a valid key of a property.
- * @param {string} key string representing the property.
- * @returns {boolean} Check result.
+ * @param {string} key
  */
 function is(key) {
     return (
@@ -16,18 +14,14 @@ function is(key) {
 }
 
 /**
- * Return the CSS property name of the key.
- * @param {string} key string representing the property.
- * @returns {string} CSS version of the property.
+ * @param {string} key
  */
 function get(key) {
     return ListOfCssProperties[key].css;
 }
 
 /**
- * Return the list of support properties in browsers.
  * @param {string} key
- * @returns {Array<string>}
  */
 function getPropertySupport(key) {
     if (!is(key)) return [];
@@ -36,9 +30,7 @@ function getPropertySupport(key) {
 }
 
 /**
- * Check if the input is a valid CSS value.
- * @param {string | number} value Property value to be checked.
- * @returns {boolean} Check result.
+ * @param {string | number} value
  */
 function validValue(value) {
     if (!["number", "string"].includes(typeof value)) return false;
@@ -53,10 +45,8 @@ function validValue(value) {
 }
 
 /**
- * Transform the given array into a CSS value.
- * @param {Array<String | Number>} value Property value.
- * @param {string} propertyName Property name. needed to display warnings.
- * @returns {string} Processed value.
+ * @param {Array<String | Number>} value
+ * @param {string} propertyName
  */
 function renderValue(value, propertyName) {
     let _value = "";
@@ -80,10 +70,8 @@ function renderValue(value, propertyName) {
 }
 
 /**
- * Render a css property declaration.
- * @param {String} property Property as string.
- * @param {String | Array<string>} value Property value as string or array.
- * @returns {string} Valid property-value pair.
+ * @param {String} property
+ * @param {String | Array<string>} value
  */
 function renderProperty(property, value) {
     if (!is(property) || [undefined, null, ""].includes(value)) return "";
