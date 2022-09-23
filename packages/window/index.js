@@ -1,5 +1,5 @@
-const onGlobal = require("./events/onGlobal.js");
-const handler = require("./events/handler.js");
+const onGlobal = require("./events/onGlobal");
+const handler = require("./events/handler");
 const { RecursiveApp } = require("../../use");
 const {
     WINDOW_ON_CLICK,
@@ -9,11 +9,10 @@ const {
     WINDOW_ON_KEY_DOWN,
     WINDOW_ON_SCROLL,
     WINDOW_ON_BEFORE_UNLOAD,
-} = require("../constants/index.js");
+} = require("../constants/index");
 
 /**
- * Initialize the global window object with the global events.
- * @param {RecursiveApp} app Application orchestrator.
+ * @param {RecursiveApp} app
  */
 function useRecursiveWindow(app) {
     const orchestrator = app.orchestrator;

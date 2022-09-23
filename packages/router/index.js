@@ -1,21 +1,6 @@
-const {
-    RecursiveRouter,
-    RecursiveState,
-    RecursiveOrchestrator,
-} = require("../../use");
+const { RecursiveRouter, RecursiveApp } = require("../../use");
 
-/**
- * Manage web application routing.
- */
 class RecursiveWebRouter extends RecursiveRouter {
-    /**
-     * Create new instance of the Recursive Web Router.
-     * @param {import("@riadh-adrani/recursive/lib").Route} route root route.
-     * @param {string} base Aapplication base.
-     * @param {boolean} scroll Boolean indicating if the app should reset scrolling when mounting a new route.
-     * @param {RecursiveState} manager Application state manager.
-     * @param {RecursiveOrchestrator} orchestrator Application orchestrator.
-     */
     constructor(route, base, scroll, app) {
         super(route, base, scroll, app);
     }

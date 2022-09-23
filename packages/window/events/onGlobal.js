@@ -2,12 +2,11 @@ const { RecursiveOrchestrator } = require("@riadh-adrani/recursive");
 const on = require("./on.js");
 
 /**
- * Create a new global event listener.
- * @param {RecursiveOrchestrator} orchestrator Application orchestrator.
- * @param {string} winEvent Event type.
- * @param {string} store Store name.
- * @param {string} listener Listener within the element.
- * @param {boolean} checkTarget If true, the global event will not fire for the elements which are contained within `event.target`.
+ * @param {RecursiveOrchestrator} orchestrator
+ * @param {string} winEvent
+ * @param {string} store
+ * @param {string} listener
+ * @param {boolean} checkTarget
  */
 function onGlobal(orchestrator, winEvent, store, listener, checkTarget = true) {
     if (window[store]) {
