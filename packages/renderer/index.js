@@ -91,7 +91,7 @@ class RecursiveWebRenderer extends RecursiveRenderer {
 
         let _class = element.style.className || "";
 
-        if (element.style.scoped || this.scopedStyle) {
+        if (this.scopedStyle && element.style.scoped !== false) {
             if (_class) _class += "-";
 
             _class += `_${this.transformUid(element.uid)}`;
