@@ -1,3 +1,3 @@
-const { RecursiveWebApp } = require("./packages/app");
+const { RecursiveWebApp, createComponentStyle } = require("./packages/app");
 
-module.exports = { RecursiveWebApp };
+module.exports = { RecursiveWebApp, createComponentStyle };

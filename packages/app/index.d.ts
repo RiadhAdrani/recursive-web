@@ -2,6 +2,13 @@ import { RecursiveElement, Route } from "@riadh-adrani/recursive/lib";
 import { FreeStyleSheet, StyleSheet } from "../../lib";
 import { RecursiveApp } from "../../use";
 
+/**
+ * create a style for a component.
+ *
+ * @param params style sheet object.
+ */
+export function createComponentStyle(params: StyleSheet): StyleSheet;
+
 export interface RecursiveWebAppConstructorParams {
     /**
      * root element in which the app will be injected.
@@ -56,11 +63,4 @@ export class RecursiveWebApp extends RecursiveApp {
      * @param styleSheet style sheet declaration.
      */
     setStyle(styleSheet: FreeStyleSheet): void;
-
-    /**
-     * Helper function to create a style for a components.
-     *
-     * @param styleSheet style sheet object.
-     */
-    createComponentStyle(styleSheet: StyleSheet): StyleSheet;
 }

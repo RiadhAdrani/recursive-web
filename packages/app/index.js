@@ -48,14 +48,13 @@ class RecursiveWebApp extends RecursiveApp {
     setStyle(styleSheet) {
         this.renderer.styler.setStyle(styleSheet);
     }
-
-    /**
-     * @param {import("../../lib").StyleSheet} styleSheet
-     * @returns {import("../../lib").StyleSheet}
-     */
-    createComponentStyle(styleSheet) {
-        return styleSheet;
-    }
 }
 
-module.exports = { RecursiveWebApp };
+/**
+ * @param {import("../../lib").StyleSheet} params
+ */
+function createComponentStyle(params) {
+    return { ...params };
+}
+
+module.exports = { RecursiveWebApp, createComponentStyle };
