@@ -3,14 +3,14 @@ const { isValidName } = require("../animations");
 const {
     get: getSelector,
     is,
-    customSelectorAlreadyExist,
+    customSelectorAlreadyExists,
     getSelectorSupport,
 } = require("../selectors");
 
 /**
  * Process the given component stylesheet and convert it into a unified format.
- * @param {JSON} styleSheet
- * @returns {JSON}
+ * @param {import("../../../lib").StyleSheet} styleSheet
+ * @returns {object}
  */
 function processComponentStyleSheet(styleSheet) {
     const output = {};
@@ -52,6 +52,16 @@ function processComponentStyleSheet(styleSheet) {
                     if (!query.condition) return;
 
                     for (let selector in query) {
+                        if (selector === "condition") {
+                            if (typeof query.condition !== "string") {
+                                RecursiveConsole.warn(
+                                    'Recursive CSSOM : the word "condition" cannot be used as name for a component style selector.'
+                                );
+                            }
+
+                            continue;
+                        }
+
                         const res = makeSelectorObject(
                             styleSheet.className,
                             selector,
@@ -81,7 +91,7 @@ function processComponentStyleSheet(styleSheet) {
                 }
 
                 if (!is(key)) {
-                    const _key = customSelectorAlreadyExist(key);
+                    const _key = customSelectorAlreadyExists(key);
                     if (_key !== false) {
                         RecursiveConsole.warn(
                             `Recursive Web CSSOM : Custom selector "${key}" is already defined and the custom declaration have been igonred. Use predefined selector "${_key}"`

@@ -1,6 +1,13 @@
-import { RecursiveElement } from "@riadh-adrani/recursive";
+import { RecursiveApp, RecursiveElement } from "@riadh-adrani/recursive";
 import { RecursiveRenderer } from "../../use";
 import RecursiveCSSOM from "../css";
+
+interface RecursiveWebRendererOptions {
+    /**
+     * decides if all component styles should be scoped by default.
+     */
+    scopedStyle: boolean;
+}
 
 /**
  * Perform rendering and updates to the DOM.
@@ -13,11 +20,13 @@ export default class RecursiveWebRenderer extends RecursiveRenderer {
      * @param app callback returning tha elements tree.
      * @param root html container element.
      * @param bootstrapper the current instance of the recursive app.
+     * @param options web options.
      */
     constructor(
         app: () => RecursiveElement,
         root: HTMLElement,
-        bootstrapper: RecursiveApp
+        bootstrapper: RecursiveApp,
+        options: WebRendererOptions
     );
 
     /**

@@ -38,6 +38,10 @@ export interface RecursiveWebAppConstructorParams {
      * callback that will be executed when the app is initialized.
      */
     onAppInit: (app: RecursiveWebApp) => void;
+    /**
+     * decides if all component styles should be scoped by default.
+     */
+    scopedStyle: boolean;
 }
 
 /**

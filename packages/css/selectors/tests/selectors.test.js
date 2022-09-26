@@ -1,4 +1,4 @@
-const { is, renderSelector, customSelectorAlreadyExist } = require("..");
+const { is, renderSelector, customSelectorAlreadyExists } = require("..");
 
 it.each([
     [undefined],
@@ -21,7 +21,7 @@ it.each([
     [" ::-webkit-scrollbar "],
     [" ::-webkit-scrollbar-thumb:active "],
 ])("should be able to detect existing selectors | case '%s'", (input) => {
-    expect(typeof customSelectorAlreadyExist(input)).toBe("string");
+    expect(typeof customSelectorAlreadyExists(input)).toBe("string");
 });
 
 it.each([

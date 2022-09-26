@@ -21,7 +21,7 @@ function get(key) {
 /**
  * @param {string} selector
  */
-function customSelectorAlreadyExist(selector) {
+function customSelectorAlreadyExists(selector) {
     for (let key in ListOfCssSelectors) {
         if (ListOfCssSelectors[key].css == selector.trim()) {
             return key;
@@ -63,6 +63,6 @@ module.exports = {
     is,
     get,
     renderSelector,
-    customSelectorAlreadyExist,
+    customSelectorAlreadyExists,
     getSelectorSupport,
 };

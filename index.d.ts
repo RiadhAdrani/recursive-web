@@ -1,3 +1,3 @@
-import { RecursiveWebApp } from "./packages/app";
+import { RecursiveWebApp, createComponentStyle } from "./packages/app";
 
-export { RecursiveWebApp };
+export { RecursiveWebApp, createComponentStyle };

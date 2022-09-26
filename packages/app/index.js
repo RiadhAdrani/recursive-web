@@ -17,11 +17,14 @@ class RecursiveWebApp extends RecursiveApp {
         scrollCorrection = false,
         cacheSize = 1000,
         onAppInit,
+        scopedStyle,
     }) {
         super({
             cacheSize,
             buildRenderer: (_app) => {
-                return new RecursiveWebRenderer(app, root, _app);
+                return new RecursiveWebRenderer(app, root, _app, {
+                    scopedStyle,
+                });
             },
             buildRouter: (_app) => {
                 if (typeof route == "object") {

@@ -13,19 +13,24 @@ const {
     getEvent,
     eventHasHandler,
 } = require("../dom/index.js");
+const { copy } = require("@riadh-adrani/recursive/packages/common");
 
 class RecursiveWebRenderer extends RecursiveRenderer {
     /**
      * @param {import("@riadh-adrani/recursive/lib.js").App} app
      * @param {HTMLElement} root
      */
-    constructor(app, root, bootstrapper) {
+    constructor(app, root, bootstrapper, options = {}) {
         super(app, root, bootstrapper);
 
         /**
          * @type {RecursiveCSSOM}
          */
         this.styler = new RecursiveCSSOM();
+
+        this.scopedStyle =
+            options.hasOwnProperty("scopedStyle") &&
+            options.scopedStyle === true;
     }
 
     /**
@@ -71,26 +76,32 @@ class RecursiveWebRenderer extends RecursiveRenderer {
      * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
      */
     resolveClassName(element) {
+        if (typeof element.style !== "object") return;
+
+        element.style = copy(element.style);
+
+        if (!this.isExternalStyleSheet(element.style)) return;
+
         if (
-            element.style &&
-            (element.style.scoped || element.style.className)
-        ) {
-            let _class = element.style.className || "";
+            !this.scopedStyle &&
+            !element.style.scoped &&
+            !element.style.className
+        )
+            return;
 
-            if (element.style.scoped) {
-                if (_class) _class += "-";
+        let _class = element.style.className || "";
 
-                _class += `_${this.transformUid(element.uid)}`;
-            }
+        if (element.style.scoped || this.scopedStyle) {
+            if (_class) _class += "-";
 
-            if (element.attributes.className)
-                element.attributes.className += " ";
-            else element.attributes.className = "";
-
-            element.attributes.className =
-                element.attributes.className + _class;
-            element.style.className = _class;
+            _class += `_${this.transformUid(element.uid)}`;
         }
+
+        if (element.attributes.className) element.attributes.className += " ";
+        else element.attributes.className = "";
+
+        element.attributes.className = element.attributes.className + _class;
+        element.style.className = _class;
     }
 
     /**
@@ -99,7 +110,7 @@ class RecursiveWebRenderer extends RecursiveRenderer {
      */
     isExternalStyleSheet(styleSheet) {
         return (
-            styleSheet &&
+            typeof styleSheet === "object" &&
             Object.keys(styleSheet).filter((key) => key != "inline").length > 0
         );
     }
