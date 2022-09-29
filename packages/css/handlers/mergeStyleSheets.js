@@ -1,13 +1,17 @@
 const { isValidMediaQueryDeclaration } = require("../media-queries");
+const { areEqual } = require("@riadh-adrani/recursive/packages/common");
 
 /**
  * Merge an array of style sheet into a single one.
- * @param {Array<import("../../../core").StyleSheet>} styleSheets An array of style sheets.
- * @returns {import("../../../core").StyleSheet}
+ * @param {Array<import("../../../lib").FreeStyleSheet>} styleSheets An array of style sheets.
+ * @returns {import("../../../lib").ComputedStyleSheets}
  */
 function mergeStyleSheets(styleSheets) {
     if (!Array.isArray(styleSheets)) return {};
 
+    /**
+     * @type {import("../../../lib").ComputedStyleSheets}
+     */
     const output = {};
 
     function isValidSelectorContent(content) {
@@ -139,7 +143,7 @@ function mergeStyleSheets(styleSheets) {
                     break;
                 case "selectors":
                     {
-                        if (!sheet.selectors) break;
+                        if (!sheet.hasOwnProperty("selectors")) break;
 
                         for (let selector in sheet.selectors) {
                             if (
@@ -149,12 +153,27 @@ function mergeStyleSheets(styleSheets) {
                             )
                                 continue;
 
-                            if (!output.selectors) output.selectors = {};
+                            if (!output.hasOwnProperty("selectors"))
+                                output.selectors = [];
 
-                            // TODO : solve conflicts
+                            const newSelector = {
+                                selector,
+                                content: sheet.selectors[selector],
+                            };
 
-                            output.selectors[selector] =
-                                sheet.selectors[selector];
+                            function selectorAlreadyExist() {
+                                for (let _selector of output.selectors) {
+                                    if (areEqual(newSelector, _selector)) {
+                                        return true;
+                                    }
+                                }
+
+                                return false;
+                            }
+
+                            if (!selectorAlreadyExist()) {
+                                output.selectors.push(newSelector);
+                            }
                         }
                     }
                     break;

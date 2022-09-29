@@ -56,7 +56,7 @@ class RecursiveCSSOM {
      * @param {import("../../lib").FreeStyleSheet} styleSheet style sheet declaration.
      */
     static addStaticStyle(styleSheet) {
-        const computed = renderStyleSheet(styleSheet);
+        const computed = renderStyleSheet(mergeStyleSheets([styleSheet]));
 
         RecursiveCSSOM.common.innerHTML += computed.highPriority;
         RecursiveCSSOM.common.innerHTML += computed.lowPriority;

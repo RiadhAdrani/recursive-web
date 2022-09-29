@@ -7,7 +7,7 @@ const { renderVars } = require("./vars");
 
 /**
  * Convert style object to string
- * @param {import("../../core").FreeStyleSheet} styleSheet static style object
+ * @param {import("../../lib").ComputedStyleSheets} styleSheet static style object
  * @returns Rendered style by importance.
  */
 function renderCSS(styleSheet) {
@@ -27,10 +27,10 @@ function renderCSS(styleSheet) {
     output.lowPriority += renderVars(styleSheet.var);
 
     if (styleSheet["selectors"]) {
-        for (let rule in styleSheet.selectors) {
+        for (let selector of styleSheet.selectors) {
             output.lowPriority += renderSelector(
-                rule,
-                styleSheet.selectors[rule]
+                selector.selector,
+                selector.content
             );
         }
     }

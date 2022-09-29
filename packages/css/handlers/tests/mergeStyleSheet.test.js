@@ -23,12 +23,12 @@ it.each([["div"], [".div"], ["#div"], ["div:hover"], [""]])(
         };
 
         expect(mergeStyleSheets([object])).toStrictEqual({
-            selectors: { [selector]: { color: "red" } },
+            selectors: [{ selector, content: { color: "red" } }],
         });
     }
 );
 
-it("should override duplicate selectors", () => {
+it("should keep duplicate selectors with different content", () => {
     const object = [
         {
             selectors: {
@@ -43,7 +43,10 @@ it("should override duplicate selectors", () => {
     ];
 
     expect(mergeStyleSheets(object)).toStrictEqual({
-        selectors: { ".div": { color: "blue" } },
+        selectors: [
+            { selector: ".div", content: { color: "red" } },
+            { selector: ".div", content: { color: "blue" } },
+        ],
     });
 });
 
@@ -52,19 +55,15 @@ it.each([[undefined], [null], [0], ["name"], [true], [Symbol.for()], [{}]])(
     (selectorContent) => {
         const object = [
             {
-                selectors: {
-                    ".div": { color: "red" },
-                },
+                selectors: { ".div": { color: "red" } },
             },
             {
-                selectors: {
-                    ".div": selectorContent,
-                },
+                selectors: { ".div": selectorContent },
             },
         ];
 
         expect(mergeStyleSheets(object)).toStrictEqual({
-            selectors: { ".div": { color: "red" } },
+            selectors: [{ selector: ".div", content: { color: "red" } }],
         });
     }
 );

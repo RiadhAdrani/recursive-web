@@ -4250,6 +4250,15 @@ export interface StyleSheet extends SelectorTypes {
     [key: string]: Selector;
 }
 
+export interface ComputedStyleSheets {
+    vars: { [key: string]: string };
+    fontFace: { [key: string]: any };
+    selectors: Array<{ selector: string; content: Selector }>;
+    mediaQueries: Array<MediaQuery>;
+    animations: Array<Animation>;
+    imports: Array<string>;
+}
+
 export interface Hooks {
     /**
      * ### `onCreated`
@@ -4347,7 +4356,9 @@ export interface FreeStyleSheet {
     /**
      * Media Queries.
      */
-    mediaQueries: { [key: string]: { [key: string]: Selector } };
+    mediaQueries: {
+        [key: string]: { condition: string; [key: string]: Selector };
+    };
     /**
      * Animations.
      */
