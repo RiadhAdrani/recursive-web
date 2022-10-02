@@ -5,7 +5,16 @@
  * Do not modify this file
  */
 
-import { BaseElement, RecursiveElement } from "@riadh-adrani/recursive/lib";
+import {
+    BaseElement,
+    RecursiveElement,
+    Hooks,
+    Flags,
+    Route,
+    StateArray,
+} from "@riadh-adrani/recursive/lib";
+
+export { Route, StateArray };
 
 /**
  * Standard CSS colors.
@@ -4215,17 +4224,13 @@ export interface Animation {
     steps: { [key: string]: Selector };
 }
 
-export interface MediaQuery extends SelectorTypes {
-    /**
-     * Media query condition.
-     */
-    condition: string;
-    [key: string]: Selector;
-}
+export type MediaQuery = SelectorTypes & { condition: string };
 
 export interface Selectors extends SelectorTypes {
     [key: string]: Selector;
 }
+
+export type ElementMediaQuery = MediaQuery & Selectors;
 
 export interface StyleSheet extends SelectorTypes {
     /**
@@ -4246,8 +4251,7 @@ export interface StyleSheet extends SelectorTypes {
     /**
      * Media queries of the current element.
      */
-    mediaQueries: Array<MediaQuery>;
-    [key: string]: Selector;
+    mediaQueries: Array<ElementMediaQuery>;
 }
 
 export interface ComputedStyleSheets {
@@ -4259,55 +4263,6 @@ export interface ComputedStyleSheets {
     imports: Array<string>;
 }
 
-export interface Hooks {
-    /**
-     * ### `onCreated`
-     *
-     * Hook executed when the element
-     * is rendered for the first time.
-     * When an element
-     * gets updated with another one having the same type,
-     * the `onCreated` hook of the new one won't be executed,
-     * the operation is not considered as a creation of a new element.
-     */
-    onCreated: (el: HTMLElement) => {};
-    /**
-     * ### `onRef`
-     *
-     * Executed everytime the app is updated.
-     * Return a string that will serve as the reference key.
-     */
-    onRef: (el: HTMLElement) => string;
-    /**
-     * ### `beforeDestroyed`
-     *
-     * Executed before the element get removed from the DOM.
-     */
-    beforeDestroyed: (el: HTMLElement) => {};
-    /**
-     * ### `onDestroyed`
-     *
-     * Executed after the element get removed from the DOM.
-     */
-    onDestroyed: () => {};
-}
-
-export interface Flags {
-    /**
-     * ### ``renderIf``
-     *
-     * If set to `false`, the element won't be rendered.
-     */
-    renderIf: boolean;
-    /**
-     * ### `forceRerender`
-     *
-     * if set to `true`, this element will replace the old
-     * element event if they have the same type.
-     */
-    forceRerender: boolean;
-}
-
 export interface CommonAttributes {
     /**
      * Element key among his siblings.
@@ -4316,7 +4271,7 @@ export interface CommonAttributes {
     /**
      * Element lifecycle hooks.
      */
-    hooks: Hooks;
+    hooks: Hooks<HTMLElement>;
     /**
      * Renderer flags.
      */
@@ -4357,7 +4312,7 @@ export interface FreeStyleSheet {
      * Media Queries.
      */
     mediaQueries: {
-        [key: string]: { condition: string; [key: string]: Selector };
+        [key: string]: MediaQuery;
     };
     /**
      * Animations.
@@ -4368,64 +4323,6 @@ export interface FreeStyleSheet {
      */
     fontFace: { [key: string]: any };
 }
-
-export interface Route {
-    /**
-     * Route path, without `/`,
-     * apart from the root route.
-     */
-    path: string;
-    /**
-     * Function returning the element
-     * representing the given route.
-     */
-    component: () => RecursiveElement;
-    /**
-     * Title that will be displayed
-     * in the tab.
-     */
-    title: string;
-    /**
-     * An array of the nested routes.
-     */
-    routes: Array<Route>;
-    /**
-     * The path that the app will try to redirect to
-     * when the current route is mounted.
-     */
-    redirectTo: string;
-    /**
-     * Callback executing when the route has loaded.
-     */
-    onLoad: () => void;
-    /**
-     * Callback executing when the route is unloaded.
-     */
-    onExit: () => void;
-}
-
-export type StateArray = [
-    /**
-     * The value of the state at the current rendering iteration.
-     */
-    any,
-    /**
-     * Used to update the state.
-     */
-    (newValue: any) => void,
-    /**
-     * Used to retrieve the currently stored value of the state
-     */
-    () => any,
-    /**
-     * Used to reset the state to its initial value
-     */
-    () => void,
-    /**
-     * The previous value of the state.
-     */
-    any
-];
 
 export type RenderOptions = {
     app: BaseElement;
