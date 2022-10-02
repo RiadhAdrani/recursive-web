@@ -22,7 +22,9 @@ module.exports = () => {
                     (item) => `@see {@link ${item}}`
                 ),
             ]
-        )}${event}:(event : ${ListOfEvents[event].type}) => void;`;
+        )}${event}:EventCallback<${
+            ListOfEvents[event].type
+        }> | Array<EventCallback<${ListOfEvents[event].type}>>`;
     }
 
     const old = fs.readFileSync(path.join("./lib.d.ts"), { encoding: "utf-8" });

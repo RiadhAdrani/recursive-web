@@ -35,12 +35,30 @@ class RecursiveWebRenderer extends RecursiveRenderer {
 
     /**
      * @param {string} onEventName
-     * @param {Function} callback
+     * @param {import("../../lib.js").EventCallback} callback
      * @param {HTMLElement} instance
      */
     setElementEvent(onEventName, callback, instance) {
+        let _callback = () => {
+            throw "Error";
+        };
+
+        if (typeof callback === "function") {
+            _callback = callback;
+        } else if (Array.isArray(callback)) {
+            _callback = (e) => {
+                for (let callbackItem of callback) {
+                    const res = callbackItem(e);
+
+                    if (res !== undefined) return res;
+                }
+            };
+        }
+
         instance[onEventName] = (e) =>
-            this.orchestrator.batchCallback(() => callback(e), onEventName);
+            this.orchestrator.batchCallback(() => {
+                _callback(e);
+            }, onEventName);
     }
 
     /**

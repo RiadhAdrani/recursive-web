@@ -172,6 +172,8 @@ export interface Selector {}
 
 export interface SelectorTypes {}
 
+export type EventCallback<T = Event> = (event: T) => void;
+
 export interface Events {}
 
 export interface Animation {
