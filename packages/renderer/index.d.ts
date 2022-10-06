@@ -42,6 +42,18 @@ export default class RecursiveWebRenderer extends RecursiveRenderer {
     ): void;
 
     /**
+     * set an attribute.
+     * @param attribute attribute name.
+     * @param value attribute value.
+     * @param instance target html element.
+     */
+    setElementAttribute(
+        attribute: string,
+        value: string | Array<string>,
+        instance: HTMLElement
+    ): void;
+
+    /**
      * transform a given uid.
      * @param uid unique identifier.
      */

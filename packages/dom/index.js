@@ -24,6 +24,28 @@ function isAttribute(key) {
     return ListOfAttributes.hasOwnProperty(key);
 }
 
+function getAttributeJoiner(key) {
+    return ListOfAttributes.hasOwnProperty(key)
+        ? ListOfAttributes[key].joiner
+        : " ";
+}
+
+function renderAttributeValue(key, value) {
+    if (typeof value !== "string" && !Array.isArray(value)) {
+        return value;
+    }
+
+    const array = [];
+
+    if (Array.isArray(value)) {
+        array.push(...value);
+    } else {
+        array.push(value);
+    }
+
+    return array.join(getAttributeJoiner(key));
+}
+
 /**
  * @param {string} key
  */
@@ -90,6 +112,7 @@ function getEventListener(key) {
 module.exports = {
     isAttribute,
     getAttributeName,
+    renderAttributeValue,
     isToggleableAttribute,
     isEvent,
     getEvent,

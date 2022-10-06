@@ -7,6 +7,22 @@ import { AttributeTemplate, EventTemplate } from "../templates";
 export function isAttribute(key: string): boolean;
 
 /**
+ * return the given attribute joiner. return ` ` by default.
+ * @param key attribute name.
+ */
+export function getAttributeJoiner(key: string): string;
+
+/**
+ * render the value of an attributes
+ * @param key attribute name.
+ * @param value attribute value.
+ */
+export function renderAttributeValue(
+    key: string,
+    value: string | Array<string>
+): string;
+
+/**
  * retrieve the attribute name if it exists.
  * @param key attribute name.
  */

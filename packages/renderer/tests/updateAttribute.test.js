@@ -16,7 +16,7 @@ it("should update a given attribute", () => {
     expect(document.body.childNodes.item(0).id).toBe("myNewId");
 });
 
-it("should update a togglable attribute", () => {
+it("should update a toggleable attribute", () => {
     const renderer = app((testApp) =>
         testApp.createElement("input", { checked: false })
     ).renderer;

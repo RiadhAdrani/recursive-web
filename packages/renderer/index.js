@@ -4,6 +4,7 @@ const { HTML_CONTAINER, HTML_NS } = require("../constants/index.js");
 const { renderValue } = require("../css/properties");
 const {
     ELEMENT_TYPE_TEXT_NODE,
+    ELEMENT_TYPE_FRAGMENT,
 } = require("@riadh-adrani/recursive/packages/constants/index.js");
 const {
     isEvent,
@@ -12,6 +13,7 @@ const {
     getAttributeName,
     getEvent,
     eventHasHandler,
+    renderAttributeValue,
 } = require("../dom/index.js");
 const { copy } = require("@riadh-adrani/recursive/packages/common");
 
@@ -62,6 +64,34 @@ class RecursiveWebRenderer extends RecursiveRenderer {
     }
 
     /**
+     *
+     * @param {string} attribute
+     * @param {string | Array<string>} value
+     * @param {HTMLElement} instance
+     */
+    setElementAttribute(attribute, value, instance) {
+        const _value = renderAttributeValue(attribute, value);
+
+        if (isToggleableAttribute(attribute)) {
+            instance.toggleAttribute(attribute, _value === true);
+        } else {
+            instance.setAttribute(attribute, _value);
+
+            try {
+                // So we need to double check it with this one
+                // which does not work on svg elements
+                // and throws an error
+                // hence the need of a try catch block
+                instance[attribute] = _value;
+            } catch (error) {
+                RecursiveConsole.warn(
+                    "Recursive Web Renderer : Something went wrong when trying to update an attribute."
+                );
+            }
+        }
+    }
+
+    /**
      * @param {string} uid
      */
     transformUid(uid) {
@@ -94,6 +124,21 @@ class RecursiveWebRenderer extends RecursiveRenderer {
      * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
      */
     resolveClassName(element) {
+        if (
+            [ELEMENT_TYPE_FRAGMENT, ELEMENT_TYPE_TEXT_NODE].includes(
+                element.elementType
+            )
+        ) {
+            return;
+        }
+
+        if (element.attributes.hasOwnProperty("className")) {
+            element.attributes.className = renderAttributeValue(
+                "className",
+                element.attributes.className
+            );
+        }
+
         if (typeof element.style !== "object") return;
 
         element.style = copy(element.style);
@@ -235,14 +280,7 @@ class RecursiveWebRenderer extends RecursiveRenderer {
                 instance.dataset[item] = value[item];
             }
         } else {
-            if (isToggleableAttribute(attribute)) {
-                instance.toggleAttribute(
-                    getAttributeName(attribute),
-                    value == true
-                );
-            } else {
-                instance.setAttribute(getAttributeName(attribute), value);
-            }
+            this.setElementAttribute(attribute, value, instance);
         }
     }
 
@@ -283,23 +321,7 @@ class RecursiveWebRenderer extends RecursiveRenderer {
             const isToggleable = isToggleableAttribute(attribute);
             const reallyNewValue = isToggleable ? value == true : value;
 
-            if (isToggleable) {
-                instance.toggleAttribute(attrName, reallyNewValue);
-            } else {
-                instance.setAttribute(attrName, reallyNewValue);
-            }
-
-            try {
-                // So we need to double check it with this one
-                // which does not work on svg elements
-                // and throws an error
-                // hence the need of a try catch block
-                instance[attrName] = reallyNewValue;
-            } catch (error) {
-                RecursiveConsole.warn(
-                    "Recursive Web Renderer : Something went wrong when trying to update an attribute."
-                );
-            }
+            this.setElementAttribute(attrName, reallyNewValue, instance);
         }
     }
 
