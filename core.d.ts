@@ -172,10 +172,20 @@ export interface Selector {}
 
 export interface SelectorTypes {}
 
-export type EventCallback<T = Event> = (event: T) => void;
+export type WebEventTarget<T = HTMLElement> = EventTarget & T;
 
-export interface Events {}
+export type WebEvent<E = Event, T = HTMLElement> = E & {
+    target: WebEventTarget<HTMLElement>;
+    currentTarget: WebEventTarget<T>;
+};
 
+export type EventCallback<E, T> = (event: WebEvent<E, T>) => void;
+
+export interface Events<E = HTMLElement> {}
+
+export interface ElementChildren {
+    children: Array<RecursiveElement>;
+}
 export interface Animation {
     /**
      * Name of the animation

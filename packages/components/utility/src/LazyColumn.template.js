@@ -4,6 +4,7 @@ const { useIntersectionObserver } = require("../../common");
 
 module.exports = () => {
     return component({
+        nativeInterface: "HTMLElement",
         tag: LAZY_COLUMN,
         props: { onObserved: "Function" },
         handler: (element) => {

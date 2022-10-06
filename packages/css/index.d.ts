@@ -18,7 +18,7 @@ export default class RecursiveCSSOM {
 
     /**
      * Used for low priority dynamic style injection.
-     * Store `vars`, `selectos`, `animations` and `mediaQueries` declarations.
+     * Store `vars`, `selectors`, `animations` and `mediaQueries` declarations.
      */
     static lowPriority: HTMLStyleElement;
 
@@ -43,7 +43,7 @@ export default class RecursiveCSSOM {
      * Add the style sheet object to the dynamic stack.
      * @param styleSheet sheet declaration.
      */
-    addDyanmicDeclaration(styleSheet: Map<string, any>): void;
+    addDynamicDeclaration(styleSheet: Map<string, any>): void;
 
     /**
      * Add a new style sheet declaration.

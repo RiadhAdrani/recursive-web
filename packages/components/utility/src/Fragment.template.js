@@ -5,6 +5,7 @@ const { component } = require("../..");
 
 module.exports = () =>
     component({
+        nativeInterface: "HTMLElement",
         tag: ELEMENT_TYPE_FRAGMENT,
         props: {},
         docs: [

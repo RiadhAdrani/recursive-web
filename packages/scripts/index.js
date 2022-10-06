@@ -56,7 +56,7 @@ function generateComponent(
     }`;
 }
 
-function generateAttributeDoc(attrName, data) {
+function generateAttributeDoc(data) {
     let used = "";
 
     if (data.els) {
@@ -116,9 +116,9 @@ function capitalize(input) {
 }
 
 function generateInterfaceProp(name, data) {
-    let values = "";
+    let values = "string";
 
-    if (data.values) {
+    if (data && data.values) {
         values = Array.isArray(data.values)
             ? data.values.map((val) => `"${val}"`).join(" | ")
             : data.values;

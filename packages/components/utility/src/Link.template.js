@@ -3,6 +3,7 @@ const { component, getApp } = require("../..");
 
 module.exports = () => {
     return component({
+        nativeInterface: "HTMLAnchorElement",
         tag: "a",
         docs: [
             "An anchor element that allow the user to navigate between the different routes of the application. ",

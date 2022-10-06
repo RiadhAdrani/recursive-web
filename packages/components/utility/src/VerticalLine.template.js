@@ -3,6 +3,7 @@ const { VERTICAL_LINE } = require("../../../constants");
 
 module.exports = () => {
     return component({
+        nativeInterface: "HTMLElement",
         tag: VERTICAL_LINE,
         props: {
             thickness: "string",

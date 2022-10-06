@@ -3,6 +3,7 @@ const { SPACER_VIEW } = require("../../../constants");
 
 module.exports = () =>
     component({
+        nativeInterface: "HTMLElement",
         tag: SPACER_VIEW,
         props: { height: "number", width: "number" },
         childless: true,

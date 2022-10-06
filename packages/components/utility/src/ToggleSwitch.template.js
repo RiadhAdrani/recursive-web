@@ -3,6 +3,7 @@ const { TOGGLE_SWITCH } = require("../../../constants");
 
 module.exports = () => {
     return component({
+        nativeInterface: "HTMLInputElement",
         tag: TOGGLE_SWITCH,
         docs: [
             "Custom element rendered as `<" + TOGGLE_SWITCH + ">`.",

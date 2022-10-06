@@ -2,6 +2,7 @@ const { component } = require("../..");
 
 module.exports = () =>
     component({
+        nativeInterface: "HTMLInputElement",
         tag: "input",
         props: {
             checked: "string",

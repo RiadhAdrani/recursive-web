@@ -18,7 +18,6 @@ export interface EventTypes {
     InputEvent: string;
     DragEvent: string;
     KeyboardEvent: string;
-    MouseEvent: string;
     PointerEvent: string;
     TouchEvent: string;
 }
@@ -91,6 +90,10 @@ export interface ComponentTemplate extends Template {
      * indicates if the component is childless or not.
      */
     childless: boolean;
+    /**
+     * web interface of the native element
+     */
+    nativeInterface: string;
 }
 
 export interface CssPropertyTemplate extends Template {

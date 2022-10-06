@@ -16,65 +16,83 @@ let generated = "// This file is generated \n\n";
 
 generated += fs.readFileSync(path.join("./core.d.ts"), { encoding: "utf-8" });
 
+function createElementPropsInterface(name, extending = [], content = "") {
+    let _interface = `export interface ${name} `;
+    _interface += extending.length > 0 ? `extends ${extending.join(",")}` : "";
+    _interface += "{";
+    _interface += content;
+    _interface += "}\n\n";
+
+    return _interface;
+}
+
 /**
  * Generates utility interfaces for common HTML elements
  */
 for (let ele in html) {
-    let customInterface = `export interface ${ele}Props extends CommonAttributes, Events, HTMLAttributes{`;
+    let _content = ``;
 
     for (let prop in html[ele].props) {
         const generated =
             "\n" + generateInterfaceProp(prop, ListOfAttributes[prop]);
 
-        customInterface += generated;
+        _content += generated;
     }
 
-    if (html[ele].childless != true) {
-        customInterface += `\nchildren:Array<RecursiveElement>;`;
-    }
+    const _name = `${ele}Props`;
+    const _header = [
+        "CommonAttributes",
+        `Events<${html[ele].nativeInterface}>`,
+        "HTMLAttributes",
+    ];
 
-    customInterface += "}\n\n";
+    if (html[ele].childless != true) _header.push("ElementChildren");
 
-    generated += customInterface;
+    generated += createElementPropsInterface(_name, _header, _content);
 }
 
 /**
  * Generates utility interfaces for utility HTML elements
  */
 for (let ele in util) {
-    let customInterface = `export interface ${ele}Props extends CommonAttributes, Events, HTMLAttributes{`;
+    let _content = ``;
 
     for (let prop in util[ele].props) {
-        customInterface += `${prop}:${util[ele].props[prop]};`;
+        _content += `${prop}:${util[ele].props[prop]};`;
     }
 
-    if (util[ele].childless != true) {
-        customInterface += `children:Array<RecursiveElement>;`;
-    }
+    const _name = `${ele}Props`;
+    const _header = [
+        "CommonAttributes",
+        `Events<${util[ele].nativeInterface}>`,
+        "HTMLAttributes",
+    ];
 
-    customInterface += "}\n\n";
+    if (util[ele].childless != true) _header.push("ElementChildren");
 
-    generated += customInterface;
+    generated += createElementPropsInterface(_name, _header, _content);
 }
 
 /**
  * Generates utility interfaces for SVG elements
  */
 for (let ele in svg) {
-    let customInterface = `export interface SVG${ele}Props extends SVGAttributes{`;
+    let _content = ``;
 
     for (let prop in svg[ele].props) {
-        if (!ListOfAttributes[prop]) {
-            console.log(prop);
-            continue;
-        }
-        customInterface +=
-            "\n" + generateInterfaceProp(prop, ListOfAttributes[prop]);
+        _content += "\n" + generateInterfaceProp(prop, ListOfAttributes[prop]);
     }
 
-    customInterface += "}\n\n";
+    const _name = `SVG${ele}Props`;
+    const _header = [
+        "CommonAttributes",
+        `Events<${svg[ele].nativeInterface}>`,
+        "HTMLAttributes",
+    ];
 
-    generated += customInterface;
+    if (svg[ele].childless != true) _header.push("ElementChildren");
+
+    generated += createElementPropsInterface(_name, _header, _content);
 }
 
 /**

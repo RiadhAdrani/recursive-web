@@ -2,6 +2,7 @@ const { component } = require("../../templates");
 
 const Elements = {
     A: component({
+        nativeInterface: "SVGAElement",
         tag: "a",
         props: {
             href: "string",
@@ -15,6 +16,7 @@ const Elements = {
         ],
     }),
     Animate: component({
+        nativeInterface: "SVGAnimateElement",
         tag: "animate",
         props: {
             begin: "string",
@@ -41,6 +43,7 @@ const Elements = {
         ],
     }),
     AnimateMotion: component({
+        nativeInterface: "SVGAnimateMotionElement",
         tag: "animateMotion",
         props: { keyPoints: "string", path: "string", rotate: "string" },
         docs: [
@@ -48,6 +51,7 @@ const Elements = {
         ],
     }),
     AnimateTransform: component({
+        nativeInterface: "SVGAnimateTransformElement",
         tag: "animateTransform",
         props: {},
         docs: [
@@ -55,6 +59,7 @@ const Elements = {
         ],
     }),
     Circle: component({
+        nativeInterface: "SVGCircleElement",
         tag: "circle",
         props: {
             cx: "number",
@@ -67,6 +72,7 @@ const Elements = {
         ],
     }),
     ClipPath: component({
+        nativeInterface: "SVGClipPathElement",
         tag: "clipPath",
         props: { clipPathUnits: "string" },
         docs: [
@@ -75,6 +81,7 @@ const Elements = {
         ],
     }),
     Defs: component({
+        nativeInterface: "SVGDefsElement",
         tag: "defs",
         props: {},
         docs: [
@@ -83,6 +90,7 @@ const Elements = {
         ],
     }),
     Desc: component({
+        nativeInterface: "SVGDescElement",
         tag: "desc",
         props: {},
         docs: [
@@ -92,6 +100,7 @@ const Elements = {
         ],
     }),
     Discard: component({
+        nativeInterface: "SVGElement",
         tag: "discard",
         props: {},
         docs: [
@@ -100,6 +109,7 @@ const Elements = {
         ],
     }),
     Ellipse: component({
+        nativeInterface: "SVGEllipseElement",
         tag: "ellipse",
         props: {
             cx: "number",
@@ -113,6 +123,7 @@ const Elements = {
         ],
     }),
     FeBlend: component({
+        nativeInterface: "SVGFEBlendElement",
         tag: "feBlend",
         props: {
             in: "string",
@@ -124,6 +135,7 @@ const Elements = {
         ],
     }),
     FeColorMatrix: component({
+        nativeInterface: "SVGFEColorMatrixElement",
         tag: "feColorMatrix",
         props: { in: "string", type: "string", values: "string" },
         docs: [
@@ -131,6 +143,7 @@ const Elements = {
         ],
     }),
     FeComponentTransfer: component({
+        nativeInterface: "SVGFEComponentTransferElement",
         tag: "feComponentTransfer",
         props: {},
         docs: [
@@ -139,6 +152,7 @@ const Elements = {
         ],
     }),
     FeComposite: component({
+        nativeInterface: "SVGFECompositeElement",
         tag: "feComposite",
         props: { in: "string" },
         docs: [
@@ -146,6 +160,7 @@ const Elements = {
         ],
     }),
     FeConvolveMatrix: component({
+        nativeInterface: "SVGFEConvolveMatrixElement",
         tag: "feConvolveMatrix",
         props: {
             in: "string",
@@ -163,6 +178,7 @@ const Elements = {
         ],
     }),
     FeDiffuseLighting: component({
+        nativeInterface: "SVGFEDiffuseLightingElement",
         tag: "feDiffuseLighting",
         props: {},
         docs: [
@@ -170,6 +186,7 @@ const Elements = {
         ],
     }),
     FeDisplacementMap: component({
+        nativeInterface: "SVGFEDisplacementMapElement",
         tag: "feDisplacementMap",
         props: {},
         docs: [
@@ -181,6 +198,7 @@ const Elements = {
         ],
     }),
     FeDistantLight: component({
+        nativeInterface: "SVGFEDistantLightElement",
         tag: "feDistantLight",
         props: {},
         docs: [
@@ -188,6 +206,7 @@ const Elements = {
         ],
     }),
     FeDropShadow: component({
+        nativeInterface: "SVGFEDropShadowElement",
         tag: "feDropShadow",
         props: {
             id: "string",
@@ -200,6 +219,7 @@ const Elements = {
         ],
     }),
     FeFlood: component({
+        nativeInterface: "SVGFEFloodElement",
         tag: "feFlood",
         props: { floodColor: "string", floodOpacity: "string" },
         docs: [
@@ -207,6 +227,7 @@ const Elements = {
         ],
     }),
     FeFuncA: component({
+        nativeInterface: "SVGFEFuncAElement",
         tag: "feFuncA",
         props: {},
         docs: [
@@ -214,6 +235,7 @@ const Elements = {
         ],
     }),
     FeFuncB: component({
+        nativeInterface: "SVGFEFuncBElement",
         tag: "feFuncB",
         props: {},
         docs: [
@@ -221,6 +243,7 @@ const Elements = {
         ],
     }),
     FeFuncG: component({
+        nativeInterface: "SVGFEFuncGElement",
         tag: "feFuncG",
         props: {},
         docs: [
@@ -228,6 +251,7 @@ const Elements = {
         ],
     }),
     FeFuncR: component({
+        nativeInterface: "SVGFEFuncRElement",
         tag: "feFuncR",
         props: {},
         docs: [
@@ -235,6 +259,7 @@ const Elements = {
         ],
     }),
     FeGaussianBlur: component({
+        nativeInterface: "SVGFEGaussianBlurElement",
         tag: "feGaussianBlur",
         props: {
             in: "string",
@@ -246,6 +271,7 @@ const Elements = {
         ],
     }),
     FeImage: component({
+        nativeInterface: "SVGFEImageElement",
         tag: "feImage",
         props: { preserveAspectRatio: "string", xLinkHref: "string" },
         docs: [
@@ -253,6 +279,7 @@ const Elements = {
         ],
     }),
     FeMerge: component({
+        nativeInterface: "SVGFEMergeElement",
         tag: "feMerge",
         props: {},
         docs: [
@@ -260,6 +287,7 @@ const Elements = {
         ],
     }),
     FeMergeNode: component({
+        nativeInterface: "SVGFEMergeNodeElement",
         tag: "feMergeNode",
         props: { in: "string" },
         docs: [
@@ -267,6 +295,7 @@ const Elements = {
         ],
     }),
     FeMorphology: component({
+        nativeInterface: "SVGFEMorphologyElement",
         tag: "feMorphology",
         props: {
             in: "string",
@@ -278,6 +307,7 @@ const Elements = {
         ],
     }),
     FeOffset: component({
+        nativeInterface: "SVGFEOffsetElement",
         tag: "feOffset",
         props: { in: "string", dx: "string", dy: "string" },
         docs: [
@@ -285,6 +315,7 @@ const Elements = {
         ],
     }),
     FePointLight: component({
+        nativeInterface: "SVGFEPointLightElement",
         tag: "fePointLight",
         props: { x: "string", y: "string", z: "string" },
         docs: [
@@ -292,6 +323,7 @@ const Elements = {
         ],
     }),
     FeSpecularLighting: component({
+        nativeInterface: "SVGFESpecularLightingElement",
         tag: "feSpecularLighting",
         props: {
             in: "string",
@@ -305,6 +337,7 @@ const Elements = {
         ],
     }),
     FeSpotLight: component({
+        nativeInterface: "SVGFESpotLightElement",
         tag: "feSpotLight",
         props: {
             x: "string",
@@ -321,6 +354,7 @@ const Elements = {
         ],
     }),
     FeTile: component({
+        nativeInterface: "SVGFETileElement",
         tag: "feTile",
         props: { in: "string" },
         docs: [
@@ -328,6 +362,7 @@ const Elements = {
         ],
     }),
     FeTurbulence: component({
+        nativeInterface: "SVGFETurbulenceElement",
         tag: "feTurbulence",
         props: {
             baseFrequency: "string",
@@ -341,6 +376,7 @@ const Elements = {
         ],
     }),
     Filter: component({
+        nativeInterface: "SVGFilterElement",
         tag: "filter",
         props: {
             x: "string",
@@ -357,6 +393,7 @@ const Elements = {
         ],
     }),
     ForeignObject: component({
+        nativeInterface: "SVGForeignObjectElement",
         tag: "foreignObject",
         props: { height: "string", width: "string", x: "string", y: "string" },
         docs: [
@@ -364,6 +401,7 @@ const Elements = {
         ],
     }),
     G: component({
+        nativeInterface: "SVGGElement",
         tag: "g",
         props: {},
         docs: [
@@ -371,9 +409,18 @@ const Elements = {
             "Transformations applied to the ``<g>`` element are performed on its child elements, and its attributes are inherited by its children. It can also group multiple elements to be referenced later with the ``<use>`` element.",
         ],
     }),
-    Hatch: component({ tag: "hatch", props: {} }),
-    Hatchpath: component({ tag: "hatchpath", props: {} }),
+    Hatch: component({
+        nativeInterface: "SVGElement",
+        tag: "hatch",
+        props: {},
+    }),
+    Hatchpath: component({
+        nativeInterface: "SVGElement",
+        tag: "hatchpath",
+        props: {},
+    }),
     Image: component({
+        nativeInterface: "SVGImageElement",
         tag: "image",
         props: {
             x: "string",
@@ -392,6 +439,7 @@ const Elements = {
         ],
     }),
     Line: component({
+        nativeInterface: "SVGLineElement",
         tag: "line",
         props: {
             x1: "string",
@@ -405,6 +453,7 @@ const Elements = {
         ],
     }),
     LinearGradient: component({
+        nativeInterface: "SVGLinearGradientElement",
         tag: "linearGradient",
         props: {
             gradientUnits: "string",
@@ -421,6 +470,7 @@ const Elements = {
         ],
     }),
     Marker: component({
+        nativeInterface: "SVGMarkerElement",
         tag: "marker",
         props: {
             markerHeight: "string",
@@ -438,6 +488,7 @@ const Elements = {
         ],
     }),
     Mask: component({
+        nativeInterface: "SVGMaskElement",
         tag: "mask",
         props: {
             height: "string",
@@ -452,6 +503,7 @@ const Elements = {
         ],
     }),
     Metadata: component({
+        nativeInterface: "SVGMetadataElement",
         tag: "metadata",
         props: {},
         docs: [
@@ -459,6 +511,7 @@ const Elements = {
         ],
     }),
     Mpath: component({
+        nativeInterface: "SVGMPathElement",
         tag: "mpath",
         props: { xLinkHref: "string" },
         docs: [
@@ -466,6 +519,7 @@ const Elements = {
         ],
     }),
     Path: component({
+        nativeInterface: "SVGPathElement",
         tag: "path",
         props: { d: "string", pathLength: "string" },
         docs: [
@@ -473,6 +527,7 @@ const Elements = {
         ],
     }),
     Pattern: component({
+        nativeInterface: "SVGPatternElement",
         tag: "pattern",
         props: {
             height: "string",
@@ -489,6 +544,7 @@ const Elements = {
         ],
     }),
     Polygon: component({
+        nativeInterface: "SVGPolygonElement",
         tag: "polygon",
         props: { points: "string", pathLength: "string" },
         docs: [
@@ -497,6 +553,7 @@ const Elements = {
         ],
     }),
     Polyline: component({
+        nativeInterface: "SVGPolylineElement",
         tag: "polyline",
         props: { points: "string", pathLength: "string" },
         docs: [
@@ -504,6 +561,7 @@ const Elements = {
         ],
     }),
     RadialGradient: component({
+        nativeInterface: "SVGRadialGradientElement",
         tag: "radialGradient",
         props: {
             cx: "string",
@@ -522,6 +580,7 @@ const Elements = {
         ],
     }),
     Rect: component({
+        nativeInterface: "SVGRectElement",
         tag: "rect",
         props: {
             x: "string",
@@ -537,6 +596,7 @@ const Elements = {
         ],
     }),
     Set: component({
+        nativeInterface: "SVGSetElement",
         tag: "set",
         props: { to: "string" },
         docs: [
@@ -544,6 +604,7 @@ const Elements = {
         ],
     }),
     Stop: component({
+        nativeInterface: "SVGStopElement",
         tag: "stop",
         props: { stopColor: "string", stopOpacity: "string" },
         docs: [
@@ -551,6 +612,7 @@ const Elements = {
         ],
     }),
     Svg: component({
+        nativeInterface: "SVGSVGElement",
         tag: "svg",
         props: {
             height: "string",
@@ -565,6 +627,7 @@ const Elements = {
         ],
     }),
     Switch: component({
+        nativeInterface: "SVGSwitchElement",
         tag: "switch",
         props: {},
         docs: [
@@ -572,6 +635,7 @@ const Elements = {
         ],
     }),
     Symbol: component({
+        nativeInterface: "SVGSymbolElement",
         tag: "symbol",
         props: {
             height: "string",
@@ -588,6 +652,7 @@ const Elements = {
         ],
     }),
     Text: component({
+        nativeInterface: "SVGTextElement",
         tag: "text",
         props: {
             x: "string",
@@ -603,6 +668,7 @@ const Elements = {
         ],
     }),
     TextPath: component({
+        nativeInterface: "SVGTextPathElement",
         tag: "textPath",
         props: {
             href: "string",
@@ -619,6 +685,7 @@ const Elements = {
         ],
     }),
     Title: component({
+        nativeInterface: "SVGTitleElement",
         tag: "title",
         props: {},
         docs: [
@@ -626,6 +693,7 @@ const Elements = {
         ],
     }),
     Tspan: component({
+        nativeInterface: "SVGTSpanElement",
         tag: "tspan",
         props: {
             x: "string",
@@ -641,6 +709,7 @@ const Elements = {
         ],
     }),
     Use: component({
+        nativeInterface: "SVGUseElement",
         tag: "use",
         props: {
             href: "string",
@@ -655,6 +724,7 @@ const Elements = {
         ],
     }),
     View: component({
+        nativeInterface: "SVGViewElement",
         tag: "view",
         props: {},
         docs: [

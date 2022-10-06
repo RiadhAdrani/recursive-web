@@ -13,6 +13,8 @@ module.exports = () => {
     let eventsContent = "";
 
     for (let event in ListOfEvents) {
+        const eventCallbackType = `EventCallback<${ListOfEvents[event].type},E>`;
+
         eventsContent += `${makeJsDocBlock(
             ListOfEvents[event].docs,
             ["## `" + event + "`"],
@@ -22,15 +24,13 @@ module.exports = () => {
                     (item) => `@see {@link ${item}}`
                 ),
             ]
-        )}${event}:EventCallback<${
-            ListOfEvents[event].type
-        }> | Array<EventCallback<${ListOfEvents[event].type}>>`;
+        )}${event}:${eventCallbackType} | Array<${eventCallbackType}>`;
     }
 
     const old = fs.readFileSync(path.join("./lib.d.ts"), { encoding: "utf-8" });
     const newEvents = old.replace(
-        "export interface Events {}",
-        `export interface Events {${eventsContent}}`
+        "interface Events<E = HTMLElement> {}",
+        `interface Events<E = HTMLElement> {${eventsContent}}`
     );
 
     fs.writeFileSync(path.join("./lib.d.ts"), newEvents);

@@ -314,7 +314,7 @@ export function Dd(props) {
 /**
  * ## _`Div` Component_
  *
- * The ``<div>`` HTML element is the generic container for flow content. It has no effect on the content or layout until styled in some way using CSS (e.g. styling is directly applied to it, or some kind of layout model like Flexbox is applied to its parent element).
+ * The ``<div>`` HTML element is the generic container for flow content. It has no effect on the content or layout until styled in some way using CSS (e.g. styling is directly applied to it, or some kind of layout model like FlexBox is applied to its parent element).
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div
  * @param {import("../lib").DivProps} props properties
@@ -388,12 +388,12 @@ export function Figcaption(props) {
  *
  * The ``<figure>`` HTML element represents self-contained content, potentially with an optional caption, which is specified using the figcaption element. The figure, its caption, and its contents are referenced as a single unit.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/undefined
+ * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure
  * @param {import("../lib").FigureProps} props properties
  * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
  */
 export function Figure(props) {
-    const el = createElement("undefined", {
+    const el = createElement("figure", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });

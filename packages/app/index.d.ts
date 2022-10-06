@@ -67,4 +67,6 @@ export class RecursiveWebApp extends RecursiveApp {
      * @param styleSheet style sheet declaration.
      */
     setStyle(styleSheet: FreeStyleSheet): void;
+
+    getRef<T = HTMLElement>(key: string, defaultValue: T): T;
 }

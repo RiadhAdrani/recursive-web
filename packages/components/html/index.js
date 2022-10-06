@@ -4,7 +4,7 @@ const Elements = {
     Address: component({
         tag: "address",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The `<address>` HTML element indicates that",
             "the enclosed HTML provides contact information ",
@@ -14,7 +14,7 @@ const Elements = {
     Article: component({
         tag: "article",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The `<article>` HTML element represents a self-contained composition in a",
             "document, page, application, or site, which is intended to be independently",
@@ -27,7 +27,7 @@ const Elements = {
     Aside: component({
         tag: "aside",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<aside>`` HTML element represents a portion of a document whose",
             "content is only indirectly related to the document's main content. Asides are",
@@ -37,7 +37,7 @@ const Elements = {
     Footer: component({
         tag: "footer",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<footer>`` HTML element represents a footer for its nearest ancestor",
             "sectioning content or sectioning root element. A <footer> typically contains",
@@ -47,7 +47,7 @@ const Elements = {
     Header: component({
         tag: "header",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<header>`` HTML element represents introductory content, typically a",
             "group of introductory or navigational aids. It may contain some heading",
@@ -57,7 +57,7 @@ const Elements = {
     H1: component({
         tag: "h1",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLHeadingElement",
         docs: [
             "The ``<h1>`` to ``<h6>`` HTML elements represent six levels of section headings.",
             "``<h1>`` is the highest section level and ``<h6>`` is the lowest.",
@@ -66,7 +66,7 @@ const Elements = {
     H2: component({
         tag: "h2",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLHeadingElement",
         docs: [
             "The ``<h1>`` to ``<h6>`` HTML elements represent six levels of section headings.",
             "``<h1>`` is the highest section level and ``<h6>`` is the lowest.",
@@ -75,7 +75,7 @@ const Elements = {
     H3: component({
         tag: "h3",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLHeadingElement",
         docs: [
             "The ``<h1>`` to ``<h6>`` HTML elements represent six levels of section headings.",
             "``<h1>`` is the highest section level and ``<h6>`` is the lowest.",
@@ -84,7 +84,7 @@ const Elements = {
     H4: component({
         tag: "h4",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLHeadingElement",
         docs: [
             "The ``<h1>`` to ``<h6>`` HTML elements represent six levels of section headings.",
             "``<h1>`` is the highest section level and ``<h6>`` is the lowest.",
@@ -93,7 +93,7 @@ const Elements = {
     H5: component({
         tag: "h5",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLHeadingElement",
         docs: [
             "The ``<h1>`` to ``<h6>`` HTML elements represent six levels of section headings.",
             "``<h1>`` is the highest section level and ``<h6>`` is the lowest.",
@@ -102,7 +102,7 @@ const Elements = {
     H6: component({
         tag: "h6",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLHeadingElement",
         docs: [
             "The ``<h1>`` to ``<h6>`` HTML elements represent six levels of section headings.",
             "``<h1>`` is the highest section level and ``<h6>`` is the lowest.",
@@ -111,7 +111,7 @@ const Elements = {
     Main: component({
         tag: "main",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The <main> HTML element represents the dominant content of the body of",
             "a document. The main content area consists of content that is directly related",
@@ -122,7 +122,7 @@ const Elements = {
     Nav: component({
         tag: "nav",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<nav>`` HTML element represents a section of a page whose purpose is to provide navigation links, either within the current document or to other documents. Common examples of navigation sections are menus, tables of contents, and indexes.",
         ],
@@ -130,7 +130,7 @@ const Elements = {
     Section: component({
         tag: "section",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<section>`` HTML element represents a generic standalone section of a document, which doesn't have a more specific semantic element to represent it. Sections should always have a heading, with very few exceptions.",
         ],
@@ -138,7 +138,7 @@ const Elements = {
     Blockquote: component({
         tag: "blockquote",
         props: { cite: "string" },
-        type: "HTMLElement",
+        nativeInterface: "HTMLQuoteElement",
         docs: [
             "The ``<blockquote>`` HTML element indicates that the enclosed text is an extended quotation. Usually, this is rendered visually by indentation (see Notes for how to change it). A URL for the source of the quotation may be given using the cite attribute, while a text representation of the source can be given using the cite element.",
         ],
@@ -146,7 +146,7 @@ const Elements = {
     Dd: component({
         tag: "dd",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<dd>`` HTML element provides the description, definition, or value for the preceding term (dt) in a description list (dl).",
         ],
@@ -154,15 +154,15 @@ const Elements = {
     Div: component({
         tag: "div",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLDivElement",
         docs: [
-            "The ``<div>`` HTML element is the generic container for flow content. It has no effect on the content or layout until styled in some way using CSS (e.g. styling is directly applied to it, or some kind of layout model like Flexbox is applied to its parent element).",
+            "The ``<div>`` HTML element is the generic container for flow content. It has no effect on the content or layout until styled in some way using CSS (e.g. styling is directly applied to it, or some kind of layout model like FlexBox is applied to its parent element).",
         ],
     }),
     Dl: component({
         tag: "dl",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLDListElement",
         docs: [
             "The ``<dl>`` HTML element represents a description list. The element encloses a list of groups of terms (specified using the dt element) and descriptions (provided by dd elements). Common uses for this element are to implement a glossary or to display metadata (a list of key-value pairs).",
         ],
@@ -170,7 +170,7 @@ const Elements = {
     Dt: component({
         tag: "dt",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<dt>`` HTML element specifies a term in a description or definition list, and as such must be used inside a dl element. It is usually followed by a dd element; however, multiple <dt> elements in a row indicate several terms that are all defined by the immediate next dd element.",
         ],
@@ -178,20 +178,22 @@ const Elements = {
     Figcaption: component({
         tag: "figcaption",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<figcaption>`` HTML element represents a caption or legend describing the rest of the contents of its parent figure element.",
         ],
     }),
-    Figure: {
+    Figure: component({
+        tag: "figure",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<figure>`` HTML element represents self-contained content, potentially with an optional caption, which is specified using the figcaption element. The figure, its caption, and its contents are referenced as a single unit.",
         ],
-    },
+    }),
     Hr: component({
         tag: "hr",
+        nativeInterface: "HTMLHRElement",
         props: {
             align: "string",
             color: "Color",
@@ -207,7 +209,7 @@ const Elements = {
     Li: component({
         tag: "li",
         props: { value: "string", type: "string" },
-        type: "HTMLElement",
+        nativeInterface: "HTMLLIElement",
         docs: [
             "The ``<li>`` HTML element is used to represent an item in a list. It must be contained in a parent element: an ordered list (ol), an unordered list (ul), or a menu (menu). In menus and unordered lists, list items are usually displayed using bullet points. In ordered lists, they are usually displayed with an ascending counter on the left, such as a number or letter.",
         ],
@@ -215,7 +217,7 @@ const Elements = {
     Menu: component({
         tag: "menu",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLMenuElement",
         docs: [
             "The ``<menu>`` HTML element is described in the HTML specification as a semantic alternative to ul, but treated by browsers (and exposed through the accessibility tree) as no different than ul. It represents an unordered list of items (which are represented by li elements).",
         ],
@@ -227,7 +229,7 @@ const Elements = {
             start: "string",
             type: `"a"|"A"|"i"|"I"|"1"`,
         },
-        type: "HTMLElement",
+        nativeInterface: "HTMLOListElement",
         docs: [
             "The ``<ol>`` HTML element represents an ordered list of items — typically rendered as a numbered list.",
         ],
@@ -235,7 +237,7 @@ const Elements = {
     P: component({
         tag: "p",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLParagraphElement",
         docs: [
             "The ``<p>`` HTML element represents a paragraph. Paragraphs are usually represented in visual media as blocks of text separated from adjacent blocks by blank lines and/or first-line indentation, but HTML paragraphs can be any structural grouping of related content, such as images or form fields.",
         ],
@@ -243,7 +245,7 @@ const Elements = {
     Pre: component({
         tag: "pre",
         props: { cols: "string", width: "string", wrap: "string" },
-        type: "HTMLElement",
+        nativeInterface: "HTMLPreElement",
         docs: [
             "The ``<pre>`` HTML element represents preformatted text which is to be presented exactly as written in the HTML file. The text is typically rendered using a non-proportional, or monospaced, font. Whitespace inside this element is displayed as written.",
         ],
@@ -251,13 +253,14 @@ const Elements = {
     Ul: component({
         tag: "ul",
         props: { compact: "boolean", type: "string" },
-        type: "HTMLElement",
+        nativeInterface: "HTMLUListElement",
         docs: [
             "The ``<ul>`` HTML element represents an unordered list of items, typically rendered as a bulleted list.",
         ],
     }),
     A: component({
         tag: "a",
+        nativeInterface: "HTMLAnchorElement",
         props: {
             download: "string",
             href: "string",
@@ -275,7 +278,7 @@ const Elements = {
     Abbr: component({
         tag: "abbr",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<abbr>`` HTML element represents an abbreviation or acronym.",
         ],
@@ -283,7 +286,7 @@ const Elements = {
     B: component({
         tag: "b",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<b>`` HTML element is used to draw the reader's attention to the element's contents, which are not otherwise granted special importance. This was formerly known as the Boldface element, and most browsers still draw the text in boldface. However, you should not use ``<b>`` for styling text; instead, you should use the CSS font-weight property to create boldface text, or the strong element to indicate that text is of special importance.",
         ],
@@ -291,7 +294,7 @@ const Elements = {
     Bdi: component({
         tag: "bdi",
         props: { dir: "string" },
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<bdi>`` HTML element tells the browser's bidirectional algorithm to treat the text it contains in isolation from its surrounding text. It's particularly useful when a website dynamically inserts some text and doesn't know the directionality of the text being inserted.",
         ],
@@ -299,7 +302,7 @@ const Elements = {
     Bdo: component({
         tag: "bdo",
         props: { dir: "string" },
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<bdo> ``HTML element overrides the current directionality of text, so that the text within is rendered in a different direction.",
         ],
@@ -308,6 +311,7 @@ const Elements = {
         tag: "br",
         props: {},
         childless: true,
+        nativeInterface: "HTMLBRElement",
         docs: [
             "The ``<br>`` HTML element produces a line break in text (carriage-return). It is useful for writing a poem or an address, where the division of lines is significant.",
         ],
@@ -315,7 +319,7 @@ const Elements = {
     Cite: component({
         tag: "cite",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<cite>`` HTML element is used to describe a reference to a cited creative work, and must include the title of that work. The reference may be in an abbreviated form according to context-appropriate conventions related to citation metadata.",
         ],
@@ -323,7 +327,7 @@ const Elements = {
     Code: component({
         tag: "code",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<code>`` HTML element displays its contents styled in a fashion intended to indicate that the text is a short fragment of computer code. By default, the content text is displayed using the user agent default monospace font.",
         ],
@@ -331,7 +335,7 @@ const Elements = {
     Data: component({
         tag: "data",
         props: { value: "string" },
-        type: "HTMLElement",
+        nativeInterface: "HTMLDataElement",
         docs: [
             "The ``<data>`` HTML element links a given piece of content with a machine-readable translation. If the content is time- or date-related, the time element must be used.",
         ],
@@ -339,7 +343,7 @@ const Elements = {
     Dfn: component({
         tag: "dfn",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<dfn>`` HTML element is used to indicate the term being defined within the context of a definition phrase or sentence. The p element, the dt/dd pairing, or the section element which is the nearest ancestor of the ``<dfn>`` is considered to be the definition of the term.",
         ],
@@ -347,7 +351,7 @@ const Elements = {
     Em: component({
         tag: "em",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<em>`` HTML element marks text that has stress emphasis. The ``<em>`` element can be nested, with each level of nesting indicating a greater degree of emphasis.",
         ],
@@ -355,7 +359,7 @@ const Elements = {
     I: component({
         tag: "i",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<i>`` HTML element represents a range of text that is set off from the normal text for some reason, such as idiomatic text, technical terms, taxonomical designations, among others. Historically, these have been presented using italicized type, which is the original source of the ``<i>`` naming of this element.",
         ],
@@ -363,7 +367,7 @@ const Elements = {
     Kbd: component({
         tag: "kdb",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<kbd>`` HTML element represents a span of inline text denoting textual user input from a keyboard, voice input, or any other text entry device. By convention, the user agent defaults to rendering the contents of a ``<kbd>`` element using its default monospace font, although this is not mandated by the HTML standard.",
         ],
@@ -371,7 +375,7 @@ const Elements = {
     Mark: component({
         tag: "mark",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<mark>`` HTML element represents text which is marked or highlighted for reference or notation purposes, due to the marked passage's relevance or importance in the enclosing context.",
         ],
@@ -379,7 +383,7 @@ const Elements = {
     Q: component({
         tag: "q",
         props: { cite: "string" },
-        type: "HTMLElement",
+        nativeInterface: "HTMLQuoteElement",
         docs: [
             "The ``<q>`` HTML element indicates that the enclosed text is a short inline quotation. Most modern browsers implement this by surrounding the text in quotation marks. This element is intended for short quotations that don't require paragraph breaks; for long quotations use the blockquote element.",
         ],
@@ -387,7 +391,7 @@ const Elements = {
     Rp: component({
         tag: "rp",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<rp>`` HTML element is used to provide fall-back parentheses for browsers that do not support display of ruby annotations using the ruby element. One ``<rp>`` element should enclose each of the opening and closing parentheses that wrap the rt element that contains the annotation's text.",
         ],
@@ -395,7 +399,7 @@ const Elements = {
     Rt: component({
         tag: "rt",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<rt>`` HTML element specifies the ruby text component of a ruby annotation, which is used to provide pronunciation, translation, or transliteration information for East Asian typography. The ``<rt>`` element must always be contained within a ruby element.",
         ],
@@ -403,7 +407,7 @@ const Elements = {
     Ruby: component({
         tag: "ruby",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<ruby>`` HTML element represents small annotations that are rendered above, below, or next to base text, usually used for showing the pronunciation of East Asian characters. It can also be used for annotating other kinds of text, but this usage is less common.",
         ],
@@ -411,7 +415,7 @@ const Elements = {
     S: component({
         tag: "s",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<s>`` HTML element renders text with a strikethrough, or a line through it. Use the <s> element to represent things that are no longer relevant or no longer accurate. However, <s> is not appropriate when indicating document edits; for that, use the del and ins elements, as appropriate.",
         ],
@@ -419,7 +423,7 @@ const Elements = {
     Samp: component({
         tag: "samp",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<samp>`` HTML element is used to enclose inline text which represents sample (or quoted) output from a computer program. Its contents are typically rendered using the browser's default monospaced font (such as Courier or Lucida Console).",
         ],
@@ -427,7 +431,7 @@ const Elements = {
     Small: component({
         tag: "small",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<small>`` HTML element represents side-comments and small print, like copyright and legal text, independent of its styled presentation. By default, it renders text within it one font-size smaller, such as from small to x-small.",
         ],
@@ -435,7 +439,7 @@ const Elements = {
     Span: component({
         tag: "span",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLSpanElement",
         docs: [
             "The ``<span>`` HTML element is a generic inline container for phrasing content, which does not inherently represent anything. It can be used to group elements for styling purposes (using the class or id attributes), or because they share attribute values, such as lang. It should be used only when no other semantic element is appropriate. ``<span>`` is very much like a div element, but div is a block-level element whereas a ``<span>`` is an inline element.",
         ],
@@ -443,7 +447,7 @@ const Elements = {
     Strong: component({
         tag: "strong",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<strong>`` HTML element indicates that its contents have strong importance, seriousness, or urgency. Browsers typically render the contents in bold type.",
         ],
@@ -451,7 +455,7 @@ const Elements = {
     Sub: component({
         tag: "sub",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<sub>`` HTML element specifies inline text which should be displayed as subscript for solely typographical reasons. Subscripts are typically rendered with a lowered baseline using smaller text.",
         ],
@@ -459,7 +463,7 @@ const Elements = {
     Sup: component({
         tag: "sup",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<sup>`` HTML element specifies inline text which is to be displayed as superscript for solely typographical reasons. Superscripts are usually rendered with a raised baseline using smaller text.",
         ],
@@ -467,7 +471,7 @@ const Elements = {
     Time: component({
         tag: "time",
         props: { dateTime: "string" },
-        type: "HTMLElement",
+        nativeInterface: "HTMLTimeElement",
         docs: [
             "The ``<time>`` HTML element represents a specific period in time. It may include the datetime attribute to translate dates into machine-readable format, allowing for better search engine results or custom features such as reminders.",
         ],
@@ -475,7 +479,7 @@ const Elements = {
     U: component({
         tag: "u",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<u>`` HTML element represents a span of inline text which should be rendered in a way that indicates that it has a non-textual annotation. This is rendered by default as a simple solid underline, but may be altered using CSS.",
         ],
@@ -483,7 +487,7 @@ const Elements = {
     Var: component({
         tag: "var",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<var>`` HTML element represents the name of a variable in a mathematical expression or a programming context. It's typically presented using an italicized version of the current typeface, although that behavior is browser-dependent.",
         ],
@@ -491,7 +495,7 @@ const Elements = {
     Wbr: component({
         tag: "wbr",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<wbr>`` HTML element represents a word break opportunity—a position within text where the browser may optionally break a line, though its line-breaking rules would not otherwise create a break at that location",
         ],
@@ -511,12 +515,14 @@ const Elements = {
             target: `"_self"|"_blank"|"_parent"|"_top"`,
         },
         childless: true,
+        nativeInterface: "HTMLAreaElement",
         docs: [
             "The ``<area>`` HTML element defines an area inside an image map that has predefined clickable areas. An image map allows geometric areas on an image to be associated with Hyperlink.",
         ],
     }),
     Audio: component({
         tag: "audio",
+        nativeInterface: "HTMLAudioElement",
         props: {
             autoplay: "boolean",
             controls: "boolean",
@@ -532,6 +538,7 @@ const Elements = {
     }),
     Img: component({
         tag: "img",
+        nativeInterface: "HTMLImageElement",
         props: {
             alt: "string",
             crossOrigin: "string",
@@ -552,7 +559,7 @@ const Elements = {
     Map: component({
         tag: "map",
         props: { name: "string" },
-        type: "HTMLElement",
+        nativeInterface: "HTMLMapElement",
         docs: [
             "The ``<map>`` HTML element is used with area elements to define an image map (a clickable link area).",
         ],
@@ -567,6 +574,7 @@ const Elements = {
             srcLang: "string",
         },
         childless: true,
+        nativeInterface: "HTMLTrackElement",
         docs: [
             "The ``<track>`` HTML element is used as a child of the media elements, audio and video. It lets you specify timed text tracks (or time-based data), for example to automatically handle subtitles. The tracks are formatted in WebVTT format (.vtt files) — Web Video Text Tracks.",
         ],
@@ -585,6 +593,7 @@ const Elements = {
             src: "string",
             width: "number",
         },
+        nativeInterface: "HTMLVideoElement",
         docs: [
             "The ``<video>`` HTML element embeds a media player which supports video playback into the document. You can use ``<video>`` for audio content as well, but the audio element may provide a more appropriate user experience.",
         ],
@@ -597,7 +606,7 @@ const Elements = {
             type: "string",
             width: "number",
         },
-        type: "HTMLElement",
+        nativeInterface: "HTMLEmbedElement",
         docs: [
             "The ``<embed>`` HTML element embeds external content at the specified point in the document. This content is provided by an external application or other source of interactive content such as a browser plug-in.",
         ],
@@ -618,6 +627,7 @@ const Elements = {
             srcDoc: "string",
             width: "number",
         },
+        nativeInterface: "HTMLIFrameElement",
         docs: [
             "The ``<iframe>`` HTML element represents a nested browsing context, embedding another HTML page into the current one.",
         ],
@@ -633,6 +643,7 @@ const Elements = {
             useMap: "string",
             width: "number",
         },
+        nativeInterface: "HTMLObjectElement",
         docs: [
             "The ``<object>`` HTML element represents an external resource, which can be treated as an image, a nested browsing context, or a resource to be handled by a plugin.",
         ],
@@ -640,7 +651,7 @@ const Elements = {
     Picture: component({
         tag: "picture",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLPictureElement",
         docs: [
             "The ``<picture>`` HTML element contains zero or more source elements and one img element to offer alternative versions of an image for different display/device scenarios.",
         ],
@@ -648,7 +659,7 @@ const Elements = {
     Portal: component({
         tag: "portal",
         props: { src: "string" },
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<portal>`` HTML element enables the embedding of another HTML page into the current one for the purposes of allowing smoother navigation into new pages.",
         ],
@@ -656,7 +667,7 @@ const Elements = {
     Source: component({
         tag: "source",
         props: { type: "string" },
-        type: "HTMLElement",
+        nativeInterface: "HTMLSourceElement",
         docs: [
             "The ``<source>`` HTML element specifies multiple media resources for the picture, the audio element, or the video element. It is an empty element, meaning that it has no content and does not have a closing tag. It is commonly used to offer the same media content in multiple file formats in order to provide compatibility with a broad range of browsers given their differing support for image file formats and media file formats.",
         ],
@@ -664,7 +675,7 @@ const Elements = {
     Canvas: component({
         tag: "canvas",
         props: { height: "number", width: "number" },
-        type: "HTMLElement",
+        nativeInterface: "HTMLCanvasElement",
         docs: [
             "Use the HTML ``<canvas>`` element with either the canvas scripting API or the WebGL API to draw graphics and animations.",
         ],
@@ -672,7 +683,7 @@ const Elements = {
     Noscript: component({
         tag: "noscript",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<noscript>`` HTML element defines a section of HTML to be inserted if a script type on the page is unsupported or if scripting is currently turned off in the browser.",
         ],
@@ -680,7 +691,7 @@ const Elements = {
     Del: component({
         tag: "del",
         props: { cite: "string", dateTime: "string" },
-        type: "HTMLElement",
+        nativeInterface: "HTMLModElement",
         docs: [
             'The ``<del>`` HTML element represents a range of text that has been deleted from a document. This can be used when rendering "track changes" or source code diff information, for example. The ins element can be used for the opposite purpose: to indicate text that has been added to the document.',
         ],
@@ -688,7 +699,7 @@ const Elements = {
     Ins: component({
         tag: "ins",
         props: { cite: "string", dateTime: "string" },
-        type: "HTMLElement",
+        nativeInterface: "HTMLModElement",
         docs: [
             "The ``<ins>`` HTML element represents a range of text that has been added to a document. You can use the del element to similarly represent a range of text that has been deleted from the document.",
         ],
@@ -696,7 +707,7 @@ const Elements = {
     Caption: component({
         tag: "caption",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLTableCaptionElement",
         docs: [
             "The ``<caption>`` HTML element specifies the caption (or title) of a table.",
         ],
@@ -704,7 +715,7 @@ const Elements = {
     Col: component({
         tag: "col",
         props: { span: "number" },
-        type: "HTMLElement",
+        nativeInterface: "HTMLTableColElement",
         docs: [
             "The ``<col>`` HTML element defines a column within a table and is used for defining common semantics on all common cells. It is generally found within a colgroup element.",
         ],
@@ -712,7 +723,7 @@ const Elements = {
     Colgroup: component({
         tag: "colgroup",
         props: { span: "number" },
-        type: "HTMLElement",
+        nativeInterface: "HTMLTableColElement",
         docs: [
             "The ``<colgroup>`` HTML element defines a group of columns within a table.",
         ],
@@ -720,7 +731,7 @@ const Elements = {
     Table: component({
         tag: "table",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLTableElement",
         docs: [
             "The ``<table>`` HTML element represents tabular data — that is, information presented in a two-dimensional table comprised of rows and columns of cells containing data.",
         ],
@@ -728,7 +739,7 @@ const Elements = {
     Tbody: component({
         tag: "tbody",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLTableSectionElement",
         docs: [
             "The ``<tbody>`` HTML element encapsulates a set of table rows (tr elements), indicating that they comprise the body of the table (table).",
         ],
@@ -736,7 +747,7 @@ const Elements = {
     Td: component({
         tag: "td",
         props: { colSpan: "number", headers: "string", rowSpan: "number" },
-        type: "HTMLElement",
+        nativeInterface: "HTMLTableCellElement",
         docs: [
             "The ``<td>`` HTML element defines a cell of a table that contains data. It participates in the table model.",
         ],
@@ -744,7 +755,7 @@ const Elements = {
     Tfoot: component({
         tag: "tfoot",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLTableSectionElement",
         docs: [
             "The ``<tfoot>`` HTML element defines a set of rows summarizing the columns of the table.",
         ],
@@ -761,11 +772,12 @@ const Elements = {
         docs: [
             "The ``<th>`` HTML element defines a cell as header of a group of table cells. The exact nature of this group is defined by the scope and headers attributes.",
         ],
+        nativeInterface: "HTMLTableCellElement",
     }),
     Thead: component({
         tag: "thead",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLTableSectionElement",
         docs: [
             "The ``<thead>`` HTML element defines a set of rows defining the head of the columns of the table.",
         ],
@@ -773,14 +785,14 @@ const Elements = {
     Tr: component({
         tag: "tr",
         props: {},
-        type: "HTMLElement",
-
+        nativeInterface: "HTMLTableRowElement",
         docs: [
             "The ``<tr>`` HTML element defines a row of cells in a table. The row's cells can then be established using a mix of td (data cell) and th (header cell) elements.",
         ],
     }),
     Button: component({
         tag: "button",
+        nativeInterface: "HTMLButtonElement",
         props: {
             autoFocus: "boolean",
             disabled: "boolean",
@@ -801,7 +813,7 @@ const Elements = {
     Datalist: component({
         tag: "datalist",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLDataListElement",
         docs: [
             "The ``<datalist>`` HTML element contains a set of option elements that represent the permissible or recommended options available to choose from within other controls.",
         ],
@@ -809,13 +821,14 @@ const Elements = {
     Fieldset: component({
         tag: "fieldset",
         props: { disabled: "boolean", form: "string", name: "string" },
-        type: "HTMLElement",
+        nativeInterface: "HTMLFieldSetElement",
         docs: [
             "The ``<fieldset>`` HTML element is used to group several controls as well as labels (label) within a web form.",
         ],
     }),
     Form: component({
         tag: "form",
+        nativeInterface: "HTMLFormElement",
         props: {
             acceptCharSet: "string",
             autoComplete: "string",
@@ -833,6 +846,7 @@ const Elements = {
     }),
     Input: component({
         tag: "input",
+        nativeInterface: "HTMLInputElement",
         props: {
             accept: "string",
             alt: "string",
@@ -875,7 +889,7 @@ const Elements = {
     Label: component({
         tag: "label",
         props: { isFor: "string" },
-        type: "HTMLElement",
+        nativeInterface: "HTMLLabelElement",
         docs: [
             "The ``<label>`` HTML element represents a caption for an item in a user interface.",
         ],
@@ -883,13 +897,14 @@ const Elements = {
     Legend: component({
         tag: "legend",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLLegendElement",
         docs: [
             "The ``<legend>`` HTML element represents a caption for the content of its parent fieldset.",
         ],
     }),
     Meter: component({
         tag: "meter",
+        nativeInterface: "HTMLMeterElement",
         props: {
             value: "number",
             min: "number",
@@ -905,13 +920,14 @@ const Elements = {
     Optgroup: component({
         tag: "optgroup",
         props: { disabled: "boolean", label: "string" },
-        type: "HTMLElement",
+        nativeInterface: "HTMLOptGroupElement",
         docs: [
             "The ``<optgroup>`` HTML element creates a grouping of options within a select element.",
         ],
     }),
     Option: component({
         tag: "option",
+        nativeInterface: "HTMLOptionElement",
         props: {
             disabled: "boolean",
             label: "string",
@@ -925,7 +941,7 @@ const Elements = {
     Output: component({
         tag: "output",
         props: { isFor: "string", form: "string", name: "string" },
-        type: "HTMLElement",
+        nativeInterface: "HTMLOutputElement",
         docs: [
             "The ``<output>`` HTML element is a container element into which a site or app can inject the results of a calculation or the outcome of a user action.",
         ],
@@ -933,13 +949,14 @@ const Elements = {
     Progress: component({
         tag: "progress",
         props: { max: "number", value: "number" },
-        type: "HTMLElement",
+        nativeInterface: "HTMLProgressElement",
         docs: [
             "The ``<progress>`` HTML element displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
         ],
     }),
     Select: component({
         tag: "select",
+        nativeInterface: "HTMLSelectElement",
         props: {
             autoComplete: "string",
             autoFocus: "boolean",
@@ -956,6 +973,7 @@ const Elements = {
     }),
     TextArea: component({
         tag: "textarea",
+        nativeInterface: "HTMLTextAreaElement",
         props: {
             autoComplete: "string",
             autoFocus: "boolean",
@@ -977,7 +995,7 @@ const Elements = {
     Details: component({
         tag: "details",
         props: { open: "boolean" },
-        type: "HTMLElement",
+        nativeInterface: "HTMLDetailsElement",
         docs: [
             'The ``<details>`` HTML element creates a disclosure widget in which information is visible only when the widget is toggled into an "open" state. A summary or label must be provided using the summary element.',
         ],
@@ -985,7 +1003,7 @@ const Elements = {
     Dialog: component({
         tag: "dialog",
         props: { open: "boolean" },
-        type: "HTMLElement",
+        nativeInterface: "HTMLDialogElement",
         docs: [
             "The ``<dialog>`` HTML element represents a dialog box or other interactive component, such as a dismissible alert, inspector, or subwindow.",
         ],
@@ -993,7 +1011,7 @@ const Elements = {
     Summary: component({
         tag: "summary",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLElement",
         docs: [
             "The ``<summary>`` HTML element specifies a summary, caption, or legend for a details element's disclosure box. Clicking the <summary> element toggles the state of the parent <details> element open and closed.",
         ],
@@ -1001,7 +1019,7 @@ const Elements = {
     Slot: component({
         tag: "slot",
         props: { name: "string" },
-        type: "HTMLElement",
+        nativeInterface: "HTMLSlotElement",
         docs: [
             "The ``<slot>`` HTML element—part of the Web Components technology suite—is a placeholder inside a web component that you can fill with your own markup, which lets you create separate DOM trees and present them together.",
         ],
@@ -1009,7 +1027,7 @@ const Elements = {
     Template: component({
         tag: "template",
         props: {},
-        type: "HTMLElement",
+        nativeInterface: "HTMLTemplateElement",
         docs: [
             "The ``<template>`` HTML element is a mechanism for holding HTML that is not to be rendered immediately when a page is loaded but may be instantiated subsequently during runtime using JavaScript.",
         ],

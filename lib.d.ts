@@ -3718,591 +3718,645 @@ export interface SelectorTypes {
      */ webkitScrollbarThumbActive: Selector;
 }
 
-export type EventCallback<T = Event> = (event: T) => void;
+export type WebEventTarget<T = HTMLElement> = EventTarget & T;
 
-export interface Events {
+export type WebEvent<E = Event, T = HTMLElement> = E & {
+    target: WebEventTarget<HTMLElement>;
+    currentTarget: WebEventTarget<T>;
+};
+
+export type EventCallback<E, T> = (event: WebEvent<E, T>) => void;
+
+export interface Events<E = HTMLElement> {
     /**
      * ## `onAbort`
      * The abort event is fired when the resource was not fully loaded, but not as the result of an error.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/abort_event}
-     */ onAbort: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onAbort: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
     /**
      * ## `onAnimationEnd`
      * The animationend event is fired when a CSS Animation has completed. If the animation aborts before reaching completion, such as if the element is removed from the DOM or the animation is removed from the element, the animationend event is not fired.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/animationend_event}
      */ onAnimationEnd:
-        | EventCallback<AnimationEvent>
-        | Array<EventCallback<AnimationEvent>>;
+        | EventCallback<AnimationEvent, E>
+        | Array<EventCallback<AnimationEvent, E>>;
     /**
      * ## `onAnimationIteration`
      * The animationiteration event is fired when an iteration of a CSS Animation ends, and another one begins. This event does not occur at the same time as the animationend event, and therefore does not occur for animations with an animation-iteration-count of one.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/animationiteration_event}
      */ onAnimationIteration:
-        | EventCallback<AnimationEvent>
-        | Array<EventCallback<AnimationEvent>>;
+        | EventCallback<AnimationEvent, E>
+        | Array<EventCallback<AnimationEvent, E>>;
     /**
      * ## `onAnimationStart`
      * The animationstart event is fired when a CSS Animation has started. If there is an animation-delay, this event will fire once the delay period has expired. A negative delay will cause the event to fire with an elapsedTime equal to the absolute value of the delay (and, correspondingly, the animation will begin playing at that time index into the sequence).
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/animationstart_event}
      */ onAnimationStart:
-        | EventCallback<AnimationEvent>
-        | Array<EventCallback<AnimationEvent>>;
+        | EventCallback<AnimationEvent, E>
+        | Array<EventCallback<AnimationEvent, E>>;
     /**
      * ## `onBeforePrint`
      * The beforeprint event is fired when the associated document is about to be printed or previewed for printing.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeprint_event}
-     */ onBeforePrint: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onBeforePrint: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
     /**
      * ## `onBeforeUnload`
      * The beforeunload event is fired when the window, the document and its resources are about to be unloaded. The document is still visible and the event is still cancelable at this point.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event}
      */ onBeforeUnload:
-        | EventCallback<BeforeUnloadEvent>
-        | Array<EventCallback<BeforeUnloadEvent>>;
+        | EventCallback<BeforeUnloadEvent, E>
+        | Array<EventCallback<BeforeUnloadEvent, E>>;
     /**
      * ## `onBlur`
      * The blur event fires when an element has lost focus.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Window/blur_event}
-     */ onBlur: EventCallback<FocusEvent> | Array<EventCallback<FocusEvent>>;
+     */ onBlur:
+        | EventCallback<FocusEvent, E>
+        | Array<EventCallback<FocusEvent, E>>;
     /**
      * ## `onCanPlay`
      * The canplay event is fired when the user agent can play the media, but estimates that not enough data has been loaded to play the media up to its end without having to stop for further buffering of content.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/canplay_event}
-     */ onCanPlay: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onCanPlay: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
     /**
      * ## `onCanPlayThrough`
      * The canplaythrough event is fired when the user agent can play the media, and estimates that enough data has been loaded to play the media up to its end without having to stop for further buffering of content.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/canplaythrough_event}
-     */ onCanPlayThrough: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onCanPlayThrough:
+        | EventCallback<Event, E>
+        | Array<EventCallback<Event, E>>;
     /**
      * ## `onChange`
      * The change event is fired for ``<input>``, ``<select>``, and ``<textarea>`` elements when the user modifies the element's value. Unlike the input event, the change event is not necessarily fired for each alteration to an element's value.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event}
-     */ onChange: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onChange: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
     /**
      * ## `onContextMenu`
      * The contextmenu event fires when the user attempts to open a context menu. This event is typically triggered by clicking the right mouse button, or by pressing the context menu key.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/contextmenu_event}
      */ onContextMenu:
-        | EventCallback<MouseEvent>
-        | Array<EventCallback<MouseEvent>>;
+        | EventCallback<MouseEvent, E>
+        | Array<EventCallback<MouseEvent, E>>;
     /**
      * ## `onCopy`
      * The copy event fires when the user initiates a copy action through the browser's user interface.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/copy_event}
      */ onCopy:
-        | EventCallback<ClipboardEvent>
-        | Array<EventCallback<ClipboardEvent>>;
+        | EventCallback<ClipboardEvent, E>
+        | Array<EventCallback<ClipboardEvent, E>>;
     /**
      * ## `onCut`
      * The cut event is fired when the user has initiated a "cut" action through the browser's user interface.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/cut_event}
      */ onCut:
-        | EventCallback<ClipboardEvent>
-        | Array<EventCallback<ClipboardEvent>>;
+        | EventCallback<ClipboardEvent, E>
+        | Array<EventCallback<ClipboardEvent, E>>;
     /**
      * ## `onDurationChange`
      * The durationchange event is fired when the duration attribute has been updated.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/durationchange_event}
-     */ onDurationChange: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onDurationChange:
+        | EventCallback<Event, E>
+        | Array<EventCallback<Event, E>>;
     /**
      * ## `onEnded`
      * The ended event is fired when playback or streaming has stopped because the end of the media was reached or because no further data is available.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/ended_event}
-     */ onEnded: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onEnded: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
     /**
      * ## `onError`
      * The error event is fired on a Window object when a resource failed to load or couldn't be used — for example if a script has an execution error.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Window/error_event}
-     */ onError: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onError: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
     /**
      * ## `onFocus`
      * The focus event fires when an element has received focus. The main difference between this event and focusin is that focusin bubbles while focus does not.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/focus_event}
-     */ onFocus: EventCallback<FocusEvent> | Array<EventCallback<FocusEvent>>;
+     */ onFocus:
+        | EventCallback<FocusEvent, E>
+        | Array<EventCallback<FocusEvent, E>>;
     /**
      * ## `onFocusIn`
      * The focusin event fires when an element is about to receive focus. The main difference between this event and focus is that focusin bubbles while focus does not.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/focusin_event}
-     */ onFocusIn: EventCallback<FocusEvent> | Array<EventCallback<FocusEvent>>;
+     */ onFocusIn:
+        | EventCallback<FocusEvent, E>
+        | Array<EventCallback<FocusEvent, E>>;
     /**
      * ## `onFocusOut`
      * The focusout event fires when an element is about to lose focus. The main difference between this event and blur is that focusout bubbles while blur does not.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/focusout_event}
      */ onFocusOut:
-        | EventCallback<FocusEvent>
-        | Array<EventCallback<FocusEvent>>;
+        | EventCallback<FocusEvent, E>
+        | Array<EventCallback<FocusEvent, E>>;
     /**
      * ## `onFullScreenChange`
      * The fullscreenchange event is fired immediately after the browser switches into or out of fullscreen mode.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Document/fullscreenchange_event}
-     */ onFullScreenChange: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onFullScreenChange:
+        | EventCallback<Event, E>
+        | Array<EventCallback<Event, E>>;
     /**
      * ## `onHashChange`
      * The hashchange event is fired when the fragment identifier of the URL has changed (the part of the URL beginning with and following the # symbol).
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Window/hashchange_event}
      */ onHashChange:
-        | EventCallback<HashChangeEvent>
-        | Array<EventCallback<HashChangeEvent>>;
+        | EventCallback<HashChangeEvent, E>
+        | Array<EventCallback<HashChangeEvent, E>>;
     /**
      * ## `onInvalid`
      * The invalid event fires when a submittable element has been checked for validity and doesn't satisfy its constraints.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/invalid_event}
-     */ onInvalid: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onInvalid: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
     /**
      * ## `onLoad`
      * The load event is fired when the whole page has loaded, including all dependent resources such as stylesheets and images. This is in contrast to DOMContentLoaded, which is fired as soon as the page DOM has been loaded, without waiting for resources to finish loading.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event}
-     */ onLoad: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onLoad: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
     /**
      * ## `onLoadedData`
      * The loadeddata event is fired when the frame at the current playback position of the media has finished loading; often the first frame.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/loadeddata_event}
-     */ onLoadedData: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onLoadedData: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
     /**
      * ## `onLoadedMetaData`
      * The loadedmetadata event is fired when the metadata has been loaded.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/loadedmetadata_event}
-     */ onLoadedMetaData: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onLoadedMetaData:
+        | EventCallback<Event, E>
+        | Array<EventCallback<Event, E>>;
     /**
      * ## `onLoadStart`
      * The loadstart event is fired when the browser has started to load a resource.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/loadstart_event}
-     */ onLoadStart: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onLoadStart: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
     /**
      * ## `onMessage`
      * The message event is fired on a Window object when the window receives a message, for example from a call to Window.postMessage() from another browsing context.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Window/message_event}
-     */ onMessage: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onMessage: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
     /**
      * ## `onOffline`
      * The offline event of the Window interface is fired when the browser has lost access to the network and the value of Navigator.onLine switches to false.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Window/offline_event}
-     */ onOffline: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onOffline: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
     /**
      * ## `onOnline`
      * The online event of the Window interface is fired when the browser has gained access to the network and the value of Navigator.onLine switches to true.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Window/online_event}
-     */ onOnline: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onOnline: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
     /**
      * ## `onPageHide`
      * The pagehide event is sent to a Window when the browser hides the current page in the process of presenting a different page from the session's history.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Window/pagehide_event}
      */ onPageHide:
-        | EventCallback<PageTransitionEvent>
-        | Array<EventCallback<PageTransitionEvent>>;
+        | EventCallback<PageTransitionEvent, E>
+        | Array<EventCallback<PageTransitionEvent, E>>;
     /**
      * ## `onPageShow`
      * The pageshow event is sent to a Window when the browser displays the window's document due to navigation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Window/pageshow_event}
      */ onPageShow:
-        | EventCallback<PageTransitionEvent>
-        | Array<EventCallback<PageTransitionEvent>>;
+        | EventCallback<PageTransitionEvent, E>
+        | Array<EventCallback<PageTransitionEvent, E>>;
     /**
      * ## `onPaste`
      * The paste event is fired when the user has initiated a "paste" action through the browser's user interface.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/paste_event}
      */ onPaste:
-        | EventCallback<ClipboardEvent>
-        | Array<EventCallback<ClipboardEvent>>;
+        | EventCallback<ClipboardEvent, E>
+        | Array<EventCallback<ClipboardEvent, E>>;
     /**
      * ## `onPause`
      * The pause event is sent when a request to pause an activity is handled and the activity has entered its paused state, most commonly after the media has been paused through a call to the element's pause() method.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/pause_event}
-     */ onPause: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onPause: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
     /**
      * ## `onPlay`
      * The play event is fired when the paused property is changed from true to false, as a result of the play method, or the autoplay attribute.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/play_event}
-     */ onPlay: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onPlay: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
     /**
      * ## `onPlaying`
      * The playing event is fired after playback is first started, and whenever it is restarted. For example it is fired when playback resumes after having been paused or delayed due to lack of data.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/playing_event}
-     */ onPlaying: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onPlaying: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
     /**
      * ## `onProgress`
      * The progress event is fired periodically as the browser loads a resource.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/progress_event}
-     */ onProgress: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onProgress: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
     /**
      * ## `onRateChange`
      * The ratechange event is fired when the playback rate has changed.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/ratechange_event}
-     */ onRateChange: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onRateChange: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
     /**
      * ## `onResize`
      * The resize event fires when the document view (window) has been resized.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Window/resize_event}
-     */ onResize: EventCallback<UIEvent> | Array<EventCallback<UIEvent>>;
+     */ onResize: EventCallback<UIEvent, E> | Array<EventCallback<UIEvent, E>>;
     /**
      * ## `onReset`
      * The reset event fires when a ``<form>`` is reset.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/reset_event}
-     */ onReset: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onReset: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
     /**
      * ## `onScroll`
      * The scroll event fires when the document view has been scrolled. For element scrolling, see Element: scroll event.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Document/scroll_event}
-     */ onScroll: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onScroll: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
     /**
      * ## `onSearch`
-     */ onSearch: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onSearch: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
     /**
      * ## `onSeeked`
      * The search event is fired when a search is initiated using an ``<input>`` element of type="search".
      * @non-standard
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/search_event}
-     */ onSeeked: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onSeeked: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
     /**
      * ## `onSeeking`
      * The seeking event is fired when a seek operation starts, meaning the Boolean seeking attribute has changed to true and the media is seeking a new position.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/seeking_event}
-     */ onSeeking: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onSeeking: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
     /**
      * ## `onSelect`
      * The select event fires when some text has been selected.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/select_event}
-     */ onSelect: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onSelect: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
     /**
      * ## `onSelectionChange`
      * The selectionchange event of the Selection API is fired when the current Selection of a Document is changed.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Document/selectionchange_event}
-     */ onSelectionChange: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onSelectionChange:
+        | EventCallback<Event, E>
+        | Array<EventCallback<Event, E>>;
     /**
      * ## `onShow`
      * The show event is fired when a contextmenu event was fired on/bubbled to an element that has a contextmenu attribute.
      * @deprecated
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/show_event}
-     */ onShow: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onShow: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
     /**
      * ## `onStalled`
      * The stalled event is fired when the user agent is trying to fetch media data, but data is unexpectedly not forthcoming.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/stalled_event}
-     */ onStalled: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onStalled: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
     /**
      * ## `onStorage`
      * The storage event of the Window interface fires when a storage area (localStorage) has been modified in the context of another document.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Window/storage_event}
      */ onStorage:
-        | EventCallback<StorageEvent>
-        | Array<EventCallback<StorageEvent>>;
+        | EventCallback<StorageEvent, E>
+        | Array<EventCallback<StorageEvent, E>>;
     /**
      * ## `onSubmit`
      * The submit event fires when a ``<form>`` is submitted.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event}
      */ onSubmit:
-        | EventCallback<SubmitEvent>
-        | Array<EventCallback<SubmitEvent>>;
+        | EventCallback<SubmitEvent, E>
+        | Array<EventCallback<SubmitEvent, E>>;
     /**
      * ## `onSuspend`
      * The suspend event is fired when media data loading has been suspended.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/suspend_event}
-     */ onSuspend: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onSuspend: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
     /**
      * ## `onTimeUpdate`
      * The timeupdate event is fired when the time indicated by the currentTime attribute has been updated.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/timeupdate_event}
-     */ onTimeUpdate: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onTimeUpdate: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
     /**
      * ## `onToggle`
      * The toggle event fires when the open/closed state of a ``<details>`` element is toggled.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLDetailsElement/toggle_event}
-     */ onToggle: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onToggle: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
     /**
      * ## `onTransitionEnd`
      * The transitionend event is fired when a CSS transition has completed. In the case where a transition is removed before completion, such as if the transition-property is removed or display is set to none, then the event will not be generated.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/transitionend_event}
      */ onTransitionEnd:
-        | EventCallback<TransitionEvent>
-        | Array<EventCallback<TransitionEvent>>;
+        | EventCallback<TransitionEvent, E>
+        | Array<EventCallback<TransitionEvent, E>>;
     /**
      * ## `onUnload`
      * The unload event is fired when the document or a child resource is being unloaded.
      * @avoid
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Window/unload_event}
-     */ onUnload: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onUnload: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
     /**
      * ## `onVolumeChange`
      * The volumechange event is fired when the volume has changed.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/volumechange_event}
-     */ onVolumeChange: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onVolumeChange:
+        | EventCallback<Event, E>
+        | Array<EventCallback<Event, E>>;
     /**
      * ## `onWaiting`
      * The waiting event is fired when playback has stopped because of a temporary lack of data.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/waiting_event}
-     */ onWaiting: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onWaiting: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
     /**
      * ## `onWheel`
      * The wheel event fires when the user rotates a wheel button on a pointing device (typically a mouse).
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/wheel_event}
-     */ onWheel: EventCallback<WheelEvent> | Array<EventCallback<WheelEvent>>;
+     */ onWheel:
+        | EventCallback<WheelEvent, E>
+        | Array<EventCallback<WheelEvent, E>>;
     /**
      * ## `onInput`
      * The input event fires when the value of an ``<input>``, ``<select>``, or ``<textarea>`` element has been changed.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event}
-     */ onInput: EventCallback<InputEvent> | Array<EventCallback<InputEvent>>;
+     */ onInput:
+        | EventCallback<InputEvent, E>
+        | Array<EventCallback<InputEvent, E>>;
     /**
      * ## `onDrag`
      * The DragEvent interface is a DOM event that represents a drag and drop interaction. The user initiates a drag by placing a pointer device (such as a mouse) on the touch surface and then dragging the pointer to a new location (such as another DOM element). Applications are free to interpret a drag and drop interaction in an application-specific way.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/DragEvent}
-     */ onDrag: EventCallback<DragEvent> | Array<EventCallback<DragEvent>>;
+     */ onDrag:
+        | EventCallback<DragEvent, E>
+        | Array<EventCallback<DragEvent, E>>;
     /**
      * ## `onDragEnd`
      * The dragend event is fired when a drag operation is being ended (by releasing a mouse button or hitting the escape key).
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dragend_event}
-     */ onDragEnd: EventCallback<DragEvent> | Array<EventCallback<DragEvent>>;
+     */ onDragEnd:
+        | EventCallback<DragEvent, E>
+        | Array<EventCallback<DragEvent, E>>;
     /**
      * ## `onDragEnter`
      * The dragenter event is fired when a dragged element or text selection enters a valid drop target.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dragenter_event}
-     */ onDragEnter: EventCallback<DragEvent> | Array<EventCallback<DragEvent>>;
+     */ onDragEnter:
+        | EventCallback<DragEvent, E>
+        | Array<EventCallback<DragEvent, E>>;
     /**
      * ## `onDragLeave`
      * https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dragleave_event
      * @see {@link The dragleave event is fired when a dragged element or text selection leaves a valid drop target.}
-     */ onDragLeave: EventCallback<DragEvent> | Array<EventCallback<DragEvent>>;
+     */ onDragLeave:
+        | EventCallback<DragEvent, E>
+        | Array<EventCallback<DragEvent, E>>;
     /**
      * ## `onDragOver`
      * The dragover event is fired when an element or text selection is being dragged over a valid drop target (every few hundred milliseconds).
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dragover_event}
-     */ onDragOver: EventCallback<DragEvent> | Array<EventCallback<DragEvent>>;
+     */ onDragOver:
+        | EventCallback<DragEvent, E>
+        | Array<EventCallback<DragEvent, E>>;
     /**
      * ## `onDragStart`
      * The dragstart event is fired when the user starts dragging an element or text selection.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dragstart_event}
-     */ onDragStart: EventCallback<DragEvent> | Array<EventCallback<DragEvent>>;
+     */ onDragStart:
+        | EventCallback<DragEvent, E>
+        | Array<EventCallback<DragEvent, E>>;
     /**
      * ## `onDrop`
      * The drop event is fired when an element or text selection is dropped on a valid drop target.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/drop_event}
-     */ onDrop: EventCallback<DragEvent> | Array<EventCallback<DragEvent>>;
+     */ onDrop:
+        | EventCallback<DragEvent, E>
+        | Array<EventCallback<DragEvent, E>>;
     /**
      * ## `onKeyDown`
      * The keydown event is fired when a key is pressed.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event}
      */ onKeyDown:
-        | EventCallback<KeyboardEvent>
-        | Array<EventCallback<KeyboardEvent>>;
+        | EventCallback<KeyboardEvent, E>
+        | Array<EventCallback<KeyboardEvent, E>>;
     /**
      * ## `onKeyPress`
      * The keypress event is fired when a key that produces a character value is pressed down.
      * @deprecated
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/keypress_event}
      */ onKeyPress:
-        | EventCallback<KeyboardEvent>
-        | Array<EventCallback<KeyboardEvent>>;
+        | EventCallback<KeyboardEvent, E>
+        | Array<EventCallback<KeyboardEvent, E>>;
     /**
      * ## `onKeyUp`
      * The keyup event is fired when a key is released.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/keyup_event}
      */ onKeyUp:
-        | EventCallback<KeyboardEvent>
-        | Array<EventCallback<KeyboardEvent>>;
+        | EventCallback<KeyboardEvent, E>
+        | Array<EventCallback<KeyboardEvent, E>>;
     /**
      * ## `onClick`
      * An element receives a click event when a pointing device button (such as a mouse's primary mouse button) is both pressed and released while the pointer is located inside the element.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event}
-     */ onClick: EventCallback<MouseEvent> | Array<EventCallback<MouseEvent>>;
+     */ onClick:
+        | EventCallback<MouseEvent, E>
+        | Array<EventCallback<MouseEvent, E>>;
     /**
      * ## `onDoubleClick`
      * The dblclick event fires when a pointing device button (such as a mouse's primary button) is double-clicked; that is, when it's rapidly clicked twice on a single element within a very short span of time.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/dblclick_event}
      */ onDoubleClick:
-        | EventCallback<MouseEvent>
-        | Array<EventCallback<MouseEvent>>;
+        | EventCallback<MouseEvent, E>
+        | Array<EventCallback<MouseEvent, E>>;
     /**
      * ## `onMouseDown`
      * The mousedown event is fired at an Element when a pointing device button is pressed while the pointer is inside the element.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/mousedown_event}
      */ onMouseDown:
-        | EventCallback<MouseEvent>
-        | Array<EventCallback<MouseEvent>>;
+        | EventCallback<MouseEvent, E>
+        | Array<EventCallback<MouseEvent, E>>;
     /**
      * ## `onMouseEnter`
      * The mouseenter event is fired at an Element when a pointing device (usually a mouse) is initially moved so that its hotspot is within the element at which the event was fired.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseenter_event}
      */ onMouseEnter:
-        | EventCallback<MouseEvent>
-        | Array<EventCallback<MouseEvent>>;
+        | EventCallback<MouseEvent, E>
+        | Array<EventCallback<MouseEvent, E>>;
     /**
      * ## `onMouseLeave`
      * The mouseleave event is fired at an Element when the cursor of a pointing device (usually a mouse) is moved out of it.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseleave_event}
      */ onMouseLeave:
-        | EventCallback<MouseEvent>
-        | Array<EventCallback<MouseEvent>>;
+        | EventCallback<MouseEvent, E>
+        | Array<EventCallback<MouseEvent, E>>;
     /**
      * ## `onMouseMove`
      * The mousemove event is fired at an element when a pointing device (usually a mouse) is moved while the cursor's hotspot is inside it.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/mousemove_event}
      */ onMouseMove:
-        | EventCallback<MouseEvent>
-        | Array<EventCallback<MouseEvent>>;
+        | EventCallback<MouseEvent, E>
+        | Array<EventCallback<MouseEvent, E>>;
     /**
      * ## `onMouseOver`
      * The mouseover event is fired at an Element when a pointing device (such as a mouse or trackpad) is used to move the cursor onto the element or one of its child elements.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseover_event}
      */ onMouseOver:
-        | EventCallback<MouseEvent>
-        | Array<EventCallback<MouseEvent>>;
+        | EventCallback<MouseEvent, E>
+        | Array<EventCallback<MouseEvent, E>>;
     /**
      * ## `onMouseOut`
      * The mouseout event is fired at an Element when a pointing device (usually a mouse) is used to move the cursor so that it is no longer contained within the element or one of its children.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseout_event}
      */ onMouseOut:
-        | EventCallback<MouseEvent>
-        | Array<EventCallback<MouseEvent>>;
+        | EventCallback<MouseEvent, E>
+        | Array<EventCallback<MouseEvent, E>>;
     /**
      * ## `onMouseUp`
      * The mouseup event is fired at an Element when a button on a pointing device (such as a mouse or trackpad) is released while the pointer is located inside it.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseup_event}
-     */ onMouseUp: EventCallback<MouseEvent> | Array<EventCallback<MouseEvent>>;
+     */ onMouseUp:
+        | EventCallback<MouseEvent, E>
+        | Array<EventCallback<MouseEvent, E>>;
     /**
      * ## `onPointerOver`
      * The pointerover event is fired when a pointing device is moved into an element's hit test boundaries.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/pointerover_event}
      */ onPointerOver:
-        | EventCallback<PointerEvent>
-        | Array<EventCallback<PointerEvent>>;
+        | EventCallback<PointerEvent, E>
+        | Array<EventCallback<PointerEvent, E>>;
     /**
      * ## `onPointerEnter`
      * The pointerenter event fires when a pointing device is moved into the hit test boundaries of an element or one of its descendants, including as a result of a pointerdown event from a device that does not support hover (see pointerdown).
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/pointerenter_event}
      */ onPointerEnter:
-        | EventCallback<PointerEvent>
-        | Array<EventCallback<PointerEvent>>;
+        | EventCallback<PointerEvent, E>
+        | Array<EventCallback<PointerEvent, E>>;
     /**
      * ## `onPointerDown`
      * The pointerdown event is fired when a pointer becomes active. For mouse, it is fired when the device transitions from no buttons pressed to at least one button pressed. For touch, it is fired when physical contact is made with the digitizer. For pen, it is fired when the stylus makes physical contact with the digitizer.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/pointerdown_event}
      */ onPointerDown:
-        | EventCallback<PointerEvent>
-        | Array<EventCallback<PointerEvent>>;
+        | EventCallback<PointerEvent, E>
+        | Array<EventCallback<PointerEvent, E>>;
     /**
      * ## `onPointerMove`
      * The pointermove event is fired when a pointer changes coordinates, and the pointer has not been canceled by a browser touch-action.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/pointermove_event}
      */ onPointerMove:
-        | EventCallback<PointerEvent>
-        | Array<EventCallback<PointerEvent>>;
+        | EventCallback<PointerEvent, E>
+        | Array<EventCallback<PointerEvent, E>>;
     /**
      * ## `onPointerUp`
      * The pointerup event is fired when a pointer is no longer active.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/pointerup_event}
      */ onPointerUp:
-        | EventCallback<PointerEvent>
-        | Array<EventCallback<PointerEvent>>;
+        | EventCallback<PointerEvent, E>
+        | Array<EventCallback<PointerEvent, E>>;
     /**
      * ## `onPointerCancel`
      * The pointercancel event is fired when the browser determines that there are unlikely to be any more pointer events, or if after the pointerdown event is fired, the pointer is then used to manipulate the viewport by panning, zooming, or scrolling.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/pointercancel_event}
      */ onPointerCancel:
-        | EventCallback<PointerEvent>
-        | Array<EventCallback<PointerEvent>>;
+        | EventCallback<PointerEvent, E>
+        | Array<EventCallback<PointerEvent, E>>;
     /**
      * ## `onPointerOut`
      * The pointerout event is fired for several reasons including: pointing device is moved out of the hit test boundaries of an element; firing the pointerup event for a device that does not support hover (see pointerup); after firing the pointercancel event (see pointercancel); when a pen stylus leaves the hover range detectable by the digitizer.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/pointerout_event}
      */ onPointerOut:
-        | EventCallback<PointerEvent>
-        | Array<EventCallback<PointerEvent>>;
+        | EventCallback<PointerEvent, E>
+        | Array<EventCallback<PointerEvent, E>>;
     /**
      * ## `onPointerLeave`
      * The pointerleave event is fired when a pointing device is moved out of the hit test boundaries of an element. For pen devices, this event is fired when the stylus leaves the hover range detectable by the digitizer.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/pointerleave_event}
      */ onPointerLeave:
-        | EventCallback<PointerEvent>
-        | Array<EventCallback<PointerEvent>>;
+        | EventCallback<PointerEvent, E>
+        | Array<EventCallback<PointerEvent, E>>;
     /**
      * ## `onGotPointerCapture`
      * The gotpointercapture event is fired when an element captures a pointer using setPointerCapture().
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/gotpointercapture_event}
      */ onGotPointerCapture:
-        | EventCallback<PointerEvent>
-        | Array<EventCallback<PointerEvent>>;
+        | EventCallback<PointerEvent, E>
+        | Array<EventCallback<PointerEvent, E>>;
     /**
      * ## `onLostPointerCapture`
      * The lostpointercapture event is fired when a captured pointer is released.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/lostpointercapture_event}
      */ onLostPointerCapture:
-        | EventCallback<PointerEvent>
-        | Array<EventCallback<PointerEvent>>;
+        | EventCallback<PointerEvent, E>
+        | Array<EventCallback<PointerEvent, E>>;
     /**
      * ## `onTouchCancel`
      * The touchcancel event is fired when one or more touch points have been disrupted in an implementation-specific manner (for example, too many touch points are created).
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/touchcancel_event}
      */ onTouchCancel:
-        | EventCallback<TouchEvent>
-        | Array<EventCallback<TouchEvent>>;
+        | EventCallback<TouchEvent, E>
+        | Array<EventCallback<TouchEvent, E>>;
     /**
      * ## `onTouchEnd`
      * The touchend event fires when one or more touch points are removed from the touch surface.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/touchend_event}
      */ onTouchEnd:
-        | EventCallback<TouchEvent>
-        | Array<EventCallback<TouchEvent>>;
+        | EventCallback<TouchEvent, E>
+        | Array<EventCallback<TouchEvent, E>>;
     /**
      * ## `onTouchMove`
      * The touchcancel event is fired when one or more touch points have been disrupted in an implementation-specific manner (for example, too many touch points are created).
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/touchcancel_event}
      */ onTouchMove:
-        | EventCallback<TouchEvent>
-        | Array<EventCallback<TouchEvent>>;
+        | EventCallback<TouchEvent, E>
+        | Array<EventCallback<TouchEvent, E>>;
     /**
      * ## `onTouchStart`
      * The touchstart event is fired when one or more touch points are placed on the touch surface.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/touchstart_event}
      */ onTouchStart:
-        | EventCallback<TouchEvent>
-        | Array<EventCallback<TouchEvent>>;
+        | EventCallback<TouchEvent, E>
+        | Array<EventCallback<TouchEvent, E>>;
     /**
      * ## `onClickGlobal`
      * The `onClickGlobal` event is fired when another element is clicked in the DOM.
      * @recursive-event
      */ onClickGlobal:
-        | EventCallback<PointerEvent>
-        | Array<EventCallback<PointerEvent>>;
+        | EventCallback<PointerEvent, E>
+        | Array<EventCallback<PointerEvent, E>>;
     /**
      * ## `onResizeGlobal`
      * The `onResizeGlobal` event is fired when the window is being resized.
      * @recursive-event
-     */ onResizeGlobal: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onResizeGlobal:
+        | EventCallback<Event, E>
+        | Array<EventCallback<Event, E>>;
     /**
      * ## `onKeyUpGlobal`
      * The `onKeyUpGlobal` event is fired when a key is released.
      * @recursive-event
      */ onKeyUpGlobal:
-        | EventCallback<KeyboardEvent>
-        | Array<EventCallback<KeyboardEvent>>;
+        | EventCallback<KeyboardEvent, E>
+        | Array<EventCallback<KeyboardEvent, E>>;
     /**
      * ## `onKeyDownGlobal`
      * The `onKeyUpGlobal` event is fired when a key is being pressed.
      * @recursive-event
      */ onKeyDownGlobal:
-        | EventCallback<KeyboardEvent>
-        | Array<EventCallback<KeyboardEvent>>;
+        | EventCallback<KeyboardEvent, E>
+        | Array<EventCallback<KeyboardEvent, E>>;
     /**
      * ## `onContextMenuGlobal`
      * The `onContextMenuGlobal` event is fired when another element is being right-clicked.
      * @recursive-event
      */ onContextMenuGlobal:
-        | EventCallback<PointerEvent>
-        | Array<EventCallback<PointerEvent>>;
+        | EventCallback<PointerEvent, E>
+        | Array<EventCallback<PointerEvent, E>>;
     /**
      * ## `onScrollGlobal`
      * The `onScrollGlobal` event is fired when the window is being scrolled into.
      * @recursive-event
-     */ onScrollGlobal: EventCallback<Event> | Array<EventCallback<Event>>;
+     */ onScrollGlobal:
+        | EventCallback<Event, E>
+        | Array<EventCallback<Event, E>>;
     /**
      * ## `onBeforeUnloadGlobal`
      * The `onBeforeUnloadGlobal` event is fired when the user attempt to leave the page.
      * @recursive-event
      */ onBeforeUnloadGlobal:
-        | EventCallback<BeforeUnloadEvent>
-        | Array<EventCallback<BeforeUnloadEvent>>;
+        | EventCallback<BeforeUnloadEvent, E>
+        | Array<EventCallback<BeforeUnloadEvent, E>>;
 }
 
+export interface ElementChildren {
+    children: Array<RecursiveElement>;
+}
 export interface Animation {
     /**
      * Name of the animation
@@ -4439,267 +4493,308 @@ export type Edges =
     | { top: string; right: string; bottom: string; left: string };
 
 export type ComponentHandler = (element: RecursiveElement) => RecursiveElement;
-export interface AddressProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface AddressProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface ArticleProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface ArticleProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface AsideProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface AsideProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface FooterProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface FooterProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface HeaderProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface HeaderProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface H1Props extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface H1Props
+    extends CommonAttributes,
+        Events<HTMLHeadingElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface H2Props extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface H2Props
+    extends CommonAttributes,
+        Events<HTMLHeadingElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface H3Props extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface H3Props
+    extends CommonAttributes,
+        Events<HTMLHeadingElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface H4Props extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface H4Props
+    extends CommonAttributes,
+        Events<HTMLHeadingElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface H5Props extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface H5Props
+    extends CommonAttributes,
+        Events<HTMLHeadingElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface H6Props extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface H6Props
+    extends CommonAttributes,
+        Events<HTMLHeadingElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface MainProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface MainProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface NavProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface NavProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface SectionProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface SectionProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
 export interface BlockquoteProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
+        Events<HTMLQuoteElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `cite`
+     * ## `undefined`
      *
-     * Contains a URI which points to the source of the quote or change.
-     * @used  `blockquote` `del` `ins` `q`
+     * @used
      */
     cite: string;
-    children: Array<RecursiveElement>;
 }
 
-export interface DdProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface DdProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface DivProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface DivProps
+    extends CommonAttributes,
+        Events<HTMLDivElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface DlProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface DlProps
+    extends CommonAttributes,
+        Events<HTMLDListElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface DtProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface DtProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
 export interface FigcaptionProps
     extends CommonAttributes,
-        Events,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
+
+export interface FigureProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
+
+export interface HrProps
+    extends CommonAttributes,
+        Events<HTMLHRElement>,
         HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
-
-export interface FigureProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
-
-export interface HrProps extends CommonAttributes, Events, HTMLAttributes {
     /**
-     * ## `align`
+     * ## `undefined`
      *
-     * Specifies the horizontal alignment of the element.
-     * @used  `applet` `caption` `col` `colgroup` `hr` `iframe` `img` `table` `tbody` `td` `tfoot` `th` `thead` `tr`
+     * @used
      */
     align: string;
     /**
-     * ## `color`
+     * ## `undefined`
      *
-     * This attribute sets the text color using either a named color or a color specified in the hexadecimal #RRGGBB format.
-     * @used  `font` `hr`
+     * @used
      */
     color: string;
     /**
-     * ## `noshade`
+     * ## `undefined`
      *
-     * The HTML ``<hr>`` noshade Attribute is the boolean value and used to specify the solid horizontal line instead of shaded lines.
-     * @used  `hr`
+     * @used
      */
     noShade: boolean;
     /**
-     * ## `size`
+     * ## `undefined`
      *
-     * Defines the width of the element (in pixels). If the element's type attribute is text or password then it's the number of characters.
-     * @used  `input` `select`
+     * @used
      */
     size: string;
     /**
-     * ## `width`
+     * ## `undefined`
      *
-     * For the elements listed here, this establishes the element's width.
-     * @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+     * @used
      */
     width: string;
 }
 
-export interface LiProps extends CommonAttributes, Events, HTMLAttributes {
+export interface LiProps
+    extends CommonAttributes,
+        Events<HTMLLIElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `value`
+     * ## `undefined`
      *
-     * @used  `button` `data` `input` `li` `meter` `option` `progress` `param`
+     * @used
      */
     value: string;
     /**
-     * ## `type`
+     * ## `undefined`
      *
-     * Defines the type of the element.
-     * @used  `button` `input` `command` `embed` `object` `script` `source` `styles` `menu` `link`
+     * @used
      */
     type: string;
-    children: Array<RecursiveElement>;
 }
 
-export interface MenuProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface MenuProps
+    extends CommonAttributes,
+        Events<HTMLMenuElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface OlProps extends CommonAttributes, Events, HTMLAttributes {
+export interface OlProps
+    extends CommonAttributes,
+        Events<HTMLOListElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `reversed`
+     * ## `undefined`
      *
-     * Indicates whether the list should be displayed in a descending order instead of a ascending.
-     * @used  `ol`
+     * @used
      */
     reversed: boolean;
     /**
-     * ## `start`
+     * ## `undefined`
      *
-     * Defines the first number if other than 1.
-     * @used  `ol`
+     * @used
      */
     start: string;
     /**
-     * ## `type`
+     * ## `undefined`
      *
-     * Defines the type of the element.
-     * @used  `button` `input` `command` `embed` `object` `script` `source` `styles` `menu` `link`
+     * @used
      */
     type: string;
-    children: Array<RecursiveElement>;
 }
 
-export interface PProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface PProps
+    extends CommonAttributes,
+        Events<HTMLParagraphElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface PreProps extends CommonAttributes, Events, HTMLAttributes {
+export interface PreProps
+    extends CommonAttributes,
+        Events<HTMLPreElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `cols`
+     * ## `undefined`
      *
-     * Defines the number of columns in a textarea.
-     * @used  `textarea`
+     * @used
      */
     cols: number;
     /**
-     * ## `width`
+     * ## `undefined`
      *
-     * For the elements listed here, this establishes the element's width.
-     * @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+     * @used
      */
     width: string;
     /**
-     * ## `wrap`
+     * ## `undefined`
      *
-     * Indicates whether the text should be wrapped.
-     * @used  `textarea`
+     * @used
      */
     wrap: "hard" | "soft" | "off";
-    children: Array<RecursiveElement>;
 }
 
-export interface UlProps extends CommonAttributes, Events, HTMLAttributes {
+export interface UlProps
+    extends CommonAttributes,
+        Events<HTMLUListElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `compact`
+     * ## `undefined`
      *
-     * @used Global attribute
+     * @used
      */
     compact: string;
     /**
-     * ## `type`
+     * ## `undefined`
      *
-     * Defines the type of the element.
-     * @used  `button` `input` `command` `embed` `object` `script` `source` `styles` `menu` `link`
+     * @used
      */
     type: string;
-    children: Array<RecursiveElement>;
 }
 
-export interface AProps extends CommonAttributes, Events, HTMLAttributes {
+export interface AProps
+    extends CommonAttributes,
+        Events<HTMLAnchorElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `download`
+     * ## `undefined`
      *
-     * Indicates that the hyperlink is to be used for downloading a resource.
-     * @used  `a` `area`
+     * @used
      */
     download: string;
     /**
-     * ## `href`
+     * ## `undefined`
      *
-     * The URL of a linked resource.
-     * @used  `a` `area` `base` `link`
+     * @used
      */
     href: string;
     /**
-     * ## `hreflang`
+     * ## `undefined`
      *
-     * Specifies the language of the linked resource.
-     * @used  `a` `area` `link`
+     * @used
      */
     hrefLang: string;
     /**
-     * ## `ping`
+     * ## `undefined`
      *
-     * The ping attribute specifies a space-separated list of URLs to be notified if a user follows the hyperlink.
-     * @used  `a` `area`
+     * @used
      */
     ping: string;
     /**
-     * ## `referrerpolicy`
+     * ## `undefined`
      *
-     * Specifies which referrer is sent when fetching the resource.
-     * @used  `a` `area` `iframe` `img` `link` `script`
+     * @used
      */
     referrerPolicy:
         | "no-referrer"
@@ -4711,10 +4806,9 @@ export interface AProps extends CommonAttributes, Events, HTMLAttributes {
         | "strict-origin-when-cross-origin"
         | "unsafe-url";
     /**
-     * ## `rel`
+     * ## `undefined`
      *
-     * Specifies the relationship of the target object to the link object.
-     * @used  `a` `area` `link`
+     * @used
      */
     rel:
         | "alternate"
@@ -4744,214 +4838,265 @@ export interface AProps extends CommonAttributes, Events, HTMLAttributes {
         | "stylesheet"
         | "tag";
     /**
-     * ## `target`
+     * ## `undefined`
      *
-     * Specifies where to open the linked document (in the case of an ``<a>`` element) or where to display the response received (in the case of a ``<form>`` element)
-     * @used  `a` `area` `base` `form`
+     * @used
      */
     target: "_self" | "_blank" | "_parent" | "_top";
     /**
-     * ## `type`
+     * ## `undefined`
      *
-     * Defines the type of the element.
-     * @used  `button` `input` `command` `embed` `object` `script` `source` `styles` `menu` `link`
+     * @used
      */
     type: string;
-    children: Array<RecursiveElement>;
 }
 
-export interface AbbrProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface AbbrProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface BProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface BProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface BdiProps extends CommonAttributes, Events, HTMLAttributes {
+export interface BdiProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `dir`
+     * ## `undefined`
      *
-     * Defines the text direction. Allowed values are ltr (Left-To-Right) or rtl (Right-To-Left)
-     * @used Global attribute
+     * @used
      */
     dir: "ltr" | "rtl" | "auto";
-    children: Array<RecursiveElement>;
 }
 
-export interface BdoProps extends CommonAttributes, Events, HTMLAttributes {
+export interface BdoProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `dir`
+     * ## `undefined`
      *
-     * Defines the text direction. Allowed values are ltr (Left-To-Right) or rtl (Right-To-Left)
-     * @used Global attribute
+     * @used
      */
     dir: "ltr" | "rtl" | "auto";
-    children: Array<RecursiveElement>;
 }
 
-export interface BrProps extends CommonAttributes, Events, HTMLAttributes {}
+export interface BrProps
+    extends CommonAttributes,
+        Events<HTMLBRElement>,
+        HTMLAttributes {}
 
-export interface CiteProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface CiteProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface CodeProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface CodeProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface DataProps extends CommonAttributes, Events, HTMLAttributes {
+export interface DataProps
+    extends CommonAttributes,
+        Events<HTMLDataElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `value`
+     * ## `undefined`
      *
-     * @used  `button` `data` `input` `li` `meter` `option` `progress` `param`
+     * @used
      */
     value: string;
-    children: Array<RecursiveElement>;
 }
 
-export interface DfnProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface DfnProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface EmProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface EmProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface IProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface IProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface KbdProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface KbdProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface MarkProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface MarkProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface QProps extends CommonAttributes, Events, HTMLAttributes {
+export interface QProps
+    extends CommonAttributes,
+        Events<HTMLQuoteElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `cite`
+     * ## `undefined`
      *
-     * Contains a URI which points to the source of the quote or change.
-     * @used  `blockquote` `del` `ins` `q`
+     * @used
      */
     cite: string;
-    children: Array<RecursiveElement>;
 }
 
-export interface RpProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface RpProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface RtProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface RtProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface RubyProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface RubyProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface SProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface SProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface SampProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface SampProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface SmallProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface SmallProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface SpanProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface SpanProps
+    extends CommonAttributes,
+        Events<HTMLSpanElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface StrongProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface StrongProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface SubProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface SubProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface SupProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface SupProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface TimeProps extends CommonAttributes, Events, HTMLAttributes {
+export interface TimeProps
+    extends CommonAttributes,
+        Events<HTMLTimeElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `datetime`
+     * ## `undefined`
      *
-     * Indicates the date and time associated with the element.
-     * @used  `del` `ins` `time`
+     * @used
      */
     dateTime: string;
-    children: Array<RecursiveElement>;
 }
 
-export interface UProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface UProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface VarProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface VarProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface WbrProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface WbrProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface AreaProps extends CommonAttributes, Events, HTMLAttributes {
+export interface AreaProps
+    extends CommonAttributes,
+        Events<HTMLAreaElement>,
+        HTMLAttributes {
     /**
-     * ## `alt`
+     * ## `undefined`
      *
-     * Alternative text in case an image can't be displayed.
-     * @used  `applet` `area` `img` `input`
+     * @used
      */
     alt: string;
     /**
-     * ## `coords`
+     * ## `undefined`
      *
-     * A set of values specifying the coordinates of the hot-spot region.
-     * @used  `area`
+     * @used
      */
     coords: string;
     /**
-     * ## `download`
+     * ## `undefined`
      *
-     * Indicates that the hyperlink is to be used for downloading a resource.
-     * @used  `a` `area`
+     * @used
      */
     download: string;
     /**
-     * ## `href`
+     * ## `undefined`
      *
-     * The URL of a linked resource.
-     * @used  `a` `area` `base` `link`
+     * @used
      */
     href: string;
     /**
-     * ## `hreflang`
+     * ## `undefined`
      *
-     * Specifies the language of the linked resource.
-     * @used  `a` `area` `link`
+     * @used
      */
     hrefLang: string;
     /**
-     * ## `ping`
+     * ## `undefined`
      *
-     * The ping attribute specifies a space-separated list of URLs to be notified if a user follows the hyperlink.
-     * @used  `a` `area`
+     * @used
      */
     ping: string;
     /**
-     * ## `referrerpolicy`
+     * ## `undefined`
      *
-     * Specifies which referrer is sent when fetching the resource.
-     * @used  `a` `area` `iframe` `img` `link` `script`
+     * @used
      */
     referrerPolicy:
         | "no-referrer"
@@ -4963,10 +5108,9 @@ export interface AreaProps extends CommonAttributes, Events, HTMLAttributes {
         | "strict-origin-when-cross-origin"
         | "unsafe-url";
     /**
-     * ## `rel`
+     * ## `undefined`
      *
-     * Specifies the relationship of the target object to the link object.
-     * @used  `a` `area` `link`
+     * @used
      */
     rel:
         | "alternate"
@@ -4996,121 +5140,112 @@ export interface AreaProps extends CommonAttributes, Events, HTMLAttributes {
         | "stylesheet"
         | "tag";
     /**
-     * ## `shape`
+     * ## `undefined`
      *
-     * @used  `a` `area`
+     * @used
      */
     shape: string;
     /**
-     * ## `target`
+     * ## `undefined`
      *
-     * Specifies where to open the linked document (in the case of an ``<a>`` element) or where to display the response received (in the case of a ``<form>`` element)
-     * @used  `a` `area` `base` `form`
+     * @used
      */
     target: "_self" | "_blank" | "_parent" | "_top";
 }
 
-export interface AudioProps extends CommonAttributes, Events, HTMLAttributes {
+export interface AudioProps
+    extends CommonAttributes,
+        Events<HTMLAudioElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `autoplay`
+     * ## `undefined`
      *
-     * The audio or video should play as soon as possible.
      * @used
      */
     autoplay: boolean;
     /**
-     * ## `controls`
+     * ## `undefined`
      *
-     * Indicates whether the browser should show playback controls to the user.
-     * @used  `audio` `video`
+     * @used
      */
     controls: string;
     /**
-     * ## `crossorigin`
+     * ## `undefined`
      *
-     * How the element handles cross-origin requests
-     * @used  `audio` `img` `link` `script` `video`
+     * @used
      */
     crossOrigin: "use-credentials" | "anonymous";
     /**
-     * ## `loop`
+     * ## `undefined`
      *
-     * Indicates whether the media should start playing from the start when it's finished.
-     * @used  `audio` `bgsound` `marquee` `video`
+     * @used
      */
     loop: boolean;
     /**
-     * ## `muted`
+     * ## `undefined`
      *
-     * Indicates whether the audio will be initially silenced on page load.
-     * @used  `audio` `video`
+     * @used
      */
     muted: boolean;
     /**
-     * ## `preload`
+     * ## `undefined`
      *
-     * Indicates whether the whole resource, parts of it or nothing should be preloaded.
-     * @used  `audio` `video`
+     * @used
      */
     preload: string;
     /**
-     * ## `src`
+     * ## `undefined`
      *
-     * The URL of the embeddable content.
-     * @used  `audio` `embed` `iframe` `img` `input` `script` `source` `track` `video`
+     * @used
      */
     src: string;
-    children: Array<RecursiveElement>;
 }
 
-export interface ImgProps extends CommonAttributes, Events, HTMLAttributes {
+export interface ImgProps
+    extends CommonAttributes,
+        Events<HTMLImageElement>,
+        HTMLAttributes {
     /**
-     * ## `alt`
+     * ## `undefined`
      *
-     * Alternative text in case an image can't be displayed.
-     * @used  `applet` `area` `img` `input`
+     * @used
      */
     alt: string;
     /**
-     * ## `crossorigin`
+     * ## `undefined`
      *
-     * How the element handles cross-origin requests
-     * @used  `audio` `img` `link` `script` `video`
+     * @used
      */
     crossOrigin: "use-credentials" | "anonymous";
     /**
-     * ## `decoding`
+     * ## `undefined`
      *
-     * Indicates the preferred method to decode the image.
-     * @used  `img`
+     * @used
      */
     decoding: "sync" | "async" | "auto";
     /**
-     * ## `height`
+     * ## `undefined`
      *
-     * Specifies the height of elements listed here. For all other elements, use the CSS height property.
-     * @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+     * @used
      */
     height: string;
     /**
-     * ## `ismap`
+     * ## `undefined`
      *
-     * Indicates that the image is part of a server-side image map.
-     * @used  `img`
+     * @used
      */
     isMap: boolean;
     /**
-     * ## `loading`
+     * ## `undefined`
      *
-     * Indicates if the element should be loaded lazily (loading="lazy") or loaded immediately (loading="eager").
-     * @used  `img` `iframe`
+     * @used
      */
     loading: "lazy" | "eager";
     /**
-     * ## `referrerpolicy`
+     * ## `undefined`
      *
-     * Specifies which referrer is sent when fetching the resource.
-     * @used  `a` `area` `iframe` `img` `link` `script`
+     * @used
      */
     referrerPolicy:
         | "no-referrer"
@@ -5122,240 +5257,229 @@ export interface ImgProps extends CommonAttributes, Events, HTMLAttributes {
         | "strict-origin-when-cross-origin"
         | "unsafe-url";
     /**
-     * ## `sizes`
+     * ## `undefined`
      *
-     * @used  `link` `img` `source`
+     * @used
      */
     sizes: string;
     /**
-     * ## `src`
+     * ## `undefined`
      *
-     * The URL of the embeddable content.
-     * @used  `audio` `embed` `iframe` `img` `input` `script` `source` `track` `video`
+     * @used
      */
     src: string;
     /**
-     * ## `srcset`
+     * ## `undefined`
      *
-     * One or more responsive image candidates.
-     * @used  `img` `source`
+     * @used
      */
     srcSet: string;
     /**
-     * ## `width`
+     * ## `undefined`
      *
-     * For the elements listed here, this establishes the element's width.
-     * @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+     * @used
      */
     width: string;
     /**
-     * ## `usemap`
+     * ## `undefined`
      *
-     * Defines a default value which will be displayed in the element on page load.
-     * @used  `img` `input` `object`
+     * @used
      */
     useMap: string;
 }
 
-export interface MapProps extends CommonAttributes, Events, HTMLAttributes {
+export interface MapProps
+    extends CommonAttributes,
+        Events<HTMLMapElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `name`
+     * ## `undefined`
      *
-     * Name of the element. For example used by the server to identify the fields in form submits.
-     * @used  `button` `form` `fieldset` `iframe` `input` `keygen` `object` `output` `select` `textarea` `map` `meta` `param`
+     * @used
      */
     name: string;
-    children: Array<RecursiveElement>;
 }
 
-export interface TrackProps extends CommonAttributes, Events, HTMLAttributes {
+export interface TrackProps
+    extends CommonAttributes,
+        Events<HTMLTrackElement>,
+        HTMLAttributes {
     /**
-     * ## `default`
+     * ## `undefined`
      *
-     * Indicates that the track should be enabled unless the user's preferences indicate something different.
-     * @used  `track`
+     * @used
      */
     def: string;
     /**
-     * ## `kind`
+     * ## `undefined`
      *
-     * Specifies the kind of text track.
-     * @used  `track`
+     * @used
      */
     kind: "subtitles" | "captions" | "descriptions" | "chapters" | "metadata";
     /**
-     * ## `label`
+     * ## `undefined`
      *
-     * Specifies a user-readable title of the element.
-     * @used  `optgroup` `option` `track`
+     * @used
      */
     label: string;
     /**
-     * ## `src`
+     * ## `undefined`
      *
-     * The URL of the embeddable content.
-     * @used  `audio` `embed` `iframe` `img` `input` `script` `source` `track` `video`
+     * @used
      */
     src: string;
     /**
-     * ## `srclang`
+     * ## `undefined`
      *
-     * @used  `track`
+     * @used
      */
     srcLang: string;
 }
 
-export interface VideoProps extends CommonAttributes, Events, HTMLAttributes {
+export interface VideoProps
+    extends CommonAttributes,
+        Events<HTMLVideoElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `autoplay`
+     * ## `undefined`
      *
-     * The audio or video should play as soon as possible.
      * @used
      */
     autoplay: boolean;
     /**
-     * ## `crossorigin`
+     * ## `undefined`
      *
-     * How the element handles cross-origin requests
-     * @used  `audio` `img` `link` `script` `video`
+     * @used
      */
     crossOrigin: "use-credentials" | "anonymous";
     /**
-     * ## `height`
+     * ## `undefined`
      *
-     * Specifies the height of elements listed here. For all other elements, use the CSS height property.
-     * @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+     * @used
      */
     height: string;
     /**
-     * ## `loop`
+     * ## `undefined`
      *
-     * Indicates whether the media should start playing from the start when it's finished.
-     * @used  `audio` `bgsound` `marquee` `video`
+     * @used
      */
     loop: boolean;
     /**
-     * ## `muted`
+     * ## `undefined`
      *
-     * Indicates whether the audio will be initially silenced on page load.
-     * @used  `audio` `video`
+     * @used
      */
     muted: boolean;
     /**
-     * ## `playsinline`
+     * ## `undefined`
      *
-     * @used Global attribute
+     * @used
      */
     playsInline: string;
     /**
-     * ## `poster`
+     * ## `undefined`
      *
-     * A URL indicating a poster frame to show until the user plays or seeks.
-     * @used  `video`
+     * @used
      */
     poster: string;
     /**
-     * ## `preload`
+     * ## `undefined`
      *
-     * Indicates whether the whole resource, parts of it or nothing should be preloaded.
-     * @used  `audio` `video`
+     * @used
      */
     preload: string;
     /**
-     * ## `src`
+     * ## `undefined`
      *
-     * The URL of the embeddable content.
-     * @used  `audio` `embed` `iframe` `img` `input` `script` `source` `track` `video`
+     * @used
      */
     src: string;
     /**
-     * ## `width`
+     * ## `undefined`
      *
-     * For the elements listed here, this establishes the element's width.
-     * @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+     * @used
      */
     width: string;
-    children: Array<RecursiveElement>;
 }
 
-export interface EmbedProps extends CommonAttributes, Events, HTMLAttributes {
+export interface EmbedProps
+    extends CommonAttributes,
+        Events<HTMLEmbedElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `height`
+     * ## `undefined`
      *
-     * Specifies the height of elements listed here. For all other elements, use the CSS height property.
-     * @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+     * @used
      */
     height: string;
     /**
-     * ## `src`
+     * ## `undefined`
      *
-     * The URL of the embeddable content.
-     * @used  `audio` `embed` `iframe` `img` `input` `script` `source` `track` `video`
+     * @used
      */
     src: string;
     /**
-     * ## `type`
+     * ## `undefined`
      *
-     * Defines the type of the element.
-     * @used  `button` `input` `command` `embed` `object` `script` `source` `styles` `menu` `link`
+     * @used
      */
     type: string;
     /**
-     * ## `width`
+     * ## `undefined`
      *
-     * For the elements listed here, this establishes the element's width.
-     * @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+     * @used
      */
     width: string;
-    children: Array<RecursiveElement>;
 }
 
-export interface IframeProps extends CommonAttributes, Events, HTMLAttributes {
+export interface IframeProps
+    extends CommonAttributes,
+        Events<HTMLIFrameElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `allow`
+     * ## `undefined`
      *
-     * Specifies a feature-policy for the iframe.
-     * @used  `iframe`
+     * @used
      */
     allow: string;
     /**
-     * ## `allowfullscreen`
+     * ## `undefined`
      *
      * @used
      */
     allowFullScreen: boolean;
     /**
-     * ## `allowpaymentrequest`
+     * ## `undefined`
      *
      * @used
      */
     allowPaymentRequest: string;
     /**
-     * ## `height`
+     * ## `undefined`
      *
-     * Specifies the height of elements listed here. For all other elements, use the CSS height property.
-     * @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+     * @used
      */
     height: string;
     /**
-     * ## `loading`
+     * ## `undefined`
      *
-     * Indicates if the element should be loaded lazily (loading="lazy") or loaded immediately (loading="eager").
-     * @used  `img` `iframe`
+     * @used
      */
     loading: "lazy" | "eager";
     /**
-     * ## `name`
+     * ## `undefined`
      *
-     * Name of the element. For example used by the server to identify the fields in form submits.
-     * @used  `button` `form` `fieldset` `iframe` `input` `keygen` `object` `output` `select` `textarea` `map` `meta` `param`
+     * @used
      */
     name: string;
     /**
-     * ## `referrerpolicy`
+     * ## `undefined`
      *
-     * Specifies which referrer is sent when fetching the resource.
-     * @used  `a` `area` `iframe` `img` `link` `script`
+     * @used
      */
     referrerPolicy:
         | "no-referrer"
@@ -5367,10 +5491,9 @@ export interface IframeProps extends CommonAttributes, Events, HTMLAttributes {
         | "strict-origin-when-cross-origin"
         | "unsafe-url";
     /**
-     * ## `sandbox`
+     * ## `undefined`
      *
-     * Stops a document loaded in an iframe from using certain features (such as submitting forms or opening new windows).
-     * @used  `iframe`
+     * @used
      */
     sandbox:
         | "allow-downloads-without-user-activation"
@@ -5388,400 +5511,406 @@ export interface IframeProps extends CommonAttributes, Events, HTMLAttributes {
         | "allow-top-navigation"
         | "allow-top-navigation-by-user-activation";
     /**
-     * ## `src`
+     * ## `undefined`
      *
-     * The URL of the embeddable content.
-     * @used  `audio` `embed` `iframe` `img` `input` `script` `source` `track` `video`
+     * @used
      */
     src: string;
     /**
-     * ## `srcdoc`
+     * ## `undefined`
      *
-     * @used  `iframe`
+     * @used
      */
     srcDoc: string;
     /**
-     * ## `width`
+     * ## `undefined`
      *
-     * For the elements listed here, this establishes the element's width.
-     * @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+     * @used
      */
     width: string;
-    children: Array<RecursiveElement>;
 }
 
-export interface ObjectProps extends CommonAttributes, Events, HTMLAttributes {
+export interface ObjectProps
+    extends CommonAttributes,
+        Events<HTMLObjectElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `data`
+     * ## `undefined`
      *
-     * Specifies the URL of the resource.
-     * @used  `object`
+     * @used
      */
     data: string;
     /**
-     * ## `form`
+     * ## `undefined`
      *
-     * Indicates the form that is the owner of the element.
-     * @used  `button` `fieldset` `input` `keygen` `label` `meter` `object` `output` `progress` `select` `textarea`
+     * @used
      */
     form: string;
     /**
-     * ## `height`
+     * ## `undefined`
      *
-     * Specifies the height of elements listed here. For all other elements, use the CSS height property.
-     * @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+     * @used
      */
     height: string;
     /**
-     * ## `name`
+     * ## `undefined`
      *
-     * Name of the element. For example used by the server to identify the fields in form submits.
-     * @used  `button` `form` `fieldset` `iframe` `input` `keygen` `object` `output` `select` `textarea` `map` `meta` `param`
+     * @used
      */
     name: string;
     /**
-     * ## `type`
+     * ## `undefined`
      *
-     * Defines the type of the element.
-     * @used  `button` `input` `command` `embed` `object` `script` `source` `styles` `menu` `link`
+     * @used
      */
     type: string;
     /**
-     * ## `usemap`
+     * ## `undefined`
      *
-     * Defines a default value which will be displayed in the element on page load.
-     * @used  `img` `input` `object`
+     * @used
      */
     useMap: string;
     /**
-     * ## `width`
+     * ## `undefined`
      *
-     * For the elements listed here, this establishes the element's width.
-     * @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+     * @used
      */
     width: string;
-    children: Array<RecursiveElement>;
 }
 
-export interface PictureProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface PictureProps
+    extends CommonAttributes,
+        Events<HTMLPictureElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface PortalProps extends CommonAttributes, Events, HTMLAttributes {
+export interface PortalProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `src`
+     * ## `undefined`
      *
-     * The URL of the embeddable content.
-     * @used  `audio` `embed` `iframe` `img` `input` `script` `source` `track` `video`
+     * @used
      */
     src: string;
-    children: Array<RecursiveElement>;
 }
 
-export interface SourceProps extends CommonAttributes, Events, HTMLAttributes {
+export interface SourceProps
+    extends CommonAttributes,
+        Events<HTMLSourceElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `type`
+     * ## `undefined`
      *
-     * Defines the type of the element.
-     * @used  `button` `input` `command` `embed` `object` `script` `source` `styles` `menu` `link`
+     * @used
      */
     type: string;
-    children: Array<RecursiveElement>;
 }
 
-export interface CanvasProps extends CommonAttributes, Events, HTMLAttributes {
+export interface CanvasProps
+    extends CommonAttributes,
+        Events<HTMLCanvasElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `height`
+     * ## `undefined`
      *
-     * Specifies the height of elements listed here. For all other elements, use the CSS height property.
-     * @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+     * @used
      */
     height: string;
     /**
-     * ## `width`
+     * ## `undefined`
      *
-     * For the elements listed here, this establishes the element's width.
-     * @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+     * @used
      */
     width: string;
-    children: Array<RecursiveElement>;
 }
 
 export interface NoscriptProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface DelProps extends CommonAttributes, Events, HTMLAttributes {
+export interface DelProps
+    extends CommonAttributes,
+        Events<HTMLModElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `cite`
+     * ## `undefined`
      *
-     * Contains a URI which points to the source of the quote or change.
-     * @used  `blockquote` `del` `ins` `q`
+     * @used
      */
     cite: string;
     /**
-     * ## `datetime`
+     * ## `undefined`
      *
-     * Indicates the date and time associated with the element.
-     * @used  `del` `ins` `time`
+     * @used
      */
     dateTime: string;
-    children: Array<RecursiveElement>;
 }
 
-export interface InsProps extends CommonAttributes, Events, HTMLAttributes {
+export interface InsProps
+    extends CommonAttributes,
+        Events<HTMLModElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `cite`
+     * ## `undefined`
      *
-     * Contains a URI which points to the source of the quote or change.
-     * @used  `blockquote` `del` `ins` `q`
+     * @used
      */
     cite: string;
     /**
-     * ## `datetime`
+     * ## `undefined`
      *
-     * Indicates the date and time associated with the element.
-     * @used  `del` `ins` `time`
+     * @used
      */
     dateTime: string;
-    children: Array<RecursiveElement>;
 }
 
-export interface CaptionProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface CaptionProps
+    extends CommonAttributes,
+        Events<HTMLTableCaptionElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface ColProps extends CommonAttributes, Events, HTMLAttributes {
+export interface ColProps
+    extends CommonAttributes,
+        Events<HTMLTableColElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `span`
+     * ## `undefined`
      *
-     * @used  `col` `colgroup`
+     * @used
      */
     span: string;
-    children: Array<RecursiveElement>;
 }
 
 export interface ColgroupProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
+        Events<HTMLTableColElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `span`
+     * ## `undefined`
      *
-     * @used  `col` `colgroup`
+     * @used
      */
     span: string;
-    children: Array<RecursiveElement>;
 }
 
-export interface TableProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface TableProps
+    extends CommonAttributes,
+        Events<HTMLTableElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface TbodyProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface TbodyProps
+    extends CommonAttributes,
+        Events<HTMLTableSectionElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface TdProps extends CommonAttributes, Events, HTMLAttributes {
+export interface TdProps
+    extends CommonAttributes,
+        Events<HTMLTableCellElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `colSpan`
+     * ## `undefined`
      *
-     * The colspan attribute defines the number of columns a cell should span.
-     * @used  `td` `th`
+     * @used
      */
     colSpan: string;
     /**
-     * ## `headers`
+     * ## `undefined`
      *
-     * IDs of the ``<th>`` elements which applies to this element.
-     * @used  `td` `th`
+     * @used
      */
     headers: string;
     /**
-     * ## `rowspan`
+     * ## `undefined`
      *
-     * Defines the number of rows a table cell should span over.
-     * @used  `td` `th`
+     * @used
      */
     rowSpan: string;
-    children: Array<RecursiveElement>;
 }
 
-export interface TfootProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface TfootProps
+    extends CommonAttributes,
+        Events<HTMLTableSectionElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface ThProps extends CommonAttributes, Events, HTMLAttributes {
+export interface ThProps
+    extends CommonAttributes,
+        Events<HTMLTableCellElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `colSpan`
+     * ## `undefined`
      *
-     * The colspan attribute defines the number of columns a cell should span.
-     * @used  `td` `th`
+     * @used
      */
     colSpan: string;
     /**
-     * ## `headers`
+     * ## `undefined`
      *
-     * IDs of the ``<th>`` elements which applies to this element.
-     * @used  `td` `th`
+     * @used
      */
     headers: string;
     /**
-     * ## `rowspan`
+     * ## `undefined`
      *
-     * Defines the number of rows a table cell should span over.
-     * @used  `td` `th`
+     * @used
      */
     rowSpan: string;
     /**
-     * ## `scope`
+     * ## `undefined`
      *
-     * Defines the cells that the header test (defined in the th element) relates to.
-     * @used  `th`
+     * @used
      */
     scope: "row" | "col" | "rowgroup" | "colgroup";
-    children: Array<RecursiveElement>;
 }
 
-export interface TheadProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface TheadProps
+    extends CommonAttributes,
+        Events<HTMLTableSectionElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface TrProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface TrProps
+    extends CommonAttributes,
+        Events<HTMLTableRowElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface ButtonProps extends CommonAttributes, Events, HTMLAttributes {
+export interface ButtonProps
+    extends CommonAttributes,
+        Events<HTMLButtonElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `autofocus`
+     * ## `undefined`
      *
-     * The element should be automatically focused after the page loaded.
-     * @used  `button` `input` `keygen` `select` `textarea`
+     * @used
      */
     autoFocus: string;
     /**
-     * ## `disabled`
+     * ## `undefined`
      *
-     * Indicates whether the user can interact with the element.
-     * @used  `button` `command` `fieldset` `input` `keygen` `optgroup` `option` `select` `textarea`
+     * @used
      */
     disabled: boolean;
     /**
-     * ## `form`
+     * ## `undefined`
      *
-     * Indicates the form that is the owner of the element.
-     * @used  `button` `fieldset` `input` `keygen` `label` `meter` `object` `output` `progress` `select` `textarea`
+     * @used
      */
     form: string;
     /**
-     * ## `formaction`
+     * ## `undefined`
      *
-     * Indicates the action of the element, overriding the action defined in the <form>.
-     * @used  `button` `input`
+     * @used
      */
     formAction: string;
     /**
-     * ## `formenctype`
+     * ## `undefined`
      *
-     * If the button/input is a submit button (type="submit"), this attribute sets the encoding type to use during form submission. If this attribute is specified, it overrides the enctype attribute of the button's form owner.
-     * @used  `button` `input`
+     * @used
      */
     formEncType: string;
     /**
-     * ## `formmethod`
+     * ## `undefined`
      *
-     * If the button/input is a submit button (type="submit"), this attribute sets the submission method to use during form submission (GET, POST, etc.). If this attribute is specified, it overrides the method attribute of the button's form owner.
-     * @used  `button` `input`
+     * @used
      */
     formMethod: string;
     /**
-     * ## `formnovalidate`
+     * ## `undefined`
      *
-     * If the button/input is a submit button (type="submit"), this boolean attribute specifies that the form is not to be validated when it is submitted. If this attribute is specified, it overrides the novalidate attribute of the button's form owner.
-     * @used  `button` `input`
+     * @used
      */
     formNoValidate: string;
     /**
-     * ## `formtarget`
+     * ## `undefined`
      *
-     * The formtarget attribute specifies a name or a keyword that indicates where to display the response that is received after submitting the form.
-     * @used  `_self` `_blank` `_parent` `_top`
+     * @used
      */
     formTarget: string;
     /**
-     * ## `name`
+     * ## `undefined`
      *
-     * Name of the element. For example used by the server to identify the fields in form submits.
-     * @used  `button` `form` `fieldset` `iframe` `input` `keygen` `object` `output` `select` `textarea` `map` `meta` `param`
+     * @used
      */
     name: string;
     /**
-     * ## `type`
+     * ## `undefined`
      *
-     * Defines the type of the element.
-     * @used  `button` `input` `command` `embed` `object` `script` `source` `styles` `menu` `link`
+     * @used
      */
     type: string;
     /**
-     * ## `value`
+     * ## `undefined`
      *
-     * @used  `button` `data` `input` `li` `meter` `option` `progress` `param`
+     * @used
      */
     value: string;
-    children: Array<RecursiveElement>;
 }
 
 export interface DatalistProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+        Events<HTMLDataListElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
 export interface FieldsetProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
+        Events<HTMLFieldSetElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `disabled`
+     * ## `undefined`
      *
-     * Indicates whether the user can interact with the element.
-     * @used  `button` `command` `fieldset` `input` `keygen` `optgroup` `option` `select` `textarea`
+     * @used
      */
     disabled: boolean;
     /**
-     * ## `form`
+     * ## `undefined`
      *
-     * Indicates the form that is the owner of the element.
-     * @used  `button` `fieldset` `input` `keygen` `label` `meter` `object` `output` `progress` `select` `textarea`
+     * @used
      */
     form: string;
     /**
-     * ## `name`
+     * ## `undefined`
      *
-     * Name of the element. For example used by the server to identify the fields in form submits.
-     * @used  `button` `form` `fieldset` `iframe` `input` `keygen` `object` `output` `select` `textarea` `map` `meta` `param`
+     * @used
      */
     name: string;
-    children: Array<RecursiveElement>;
 }
 
-export interface FormProps extends CommonAttributes, Events, HTMLAttributes {
+export interface FormProps
+    extends CommonAttributes,
+        Events<HTMLFormElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `acceptcharset`
+     * ## `undefined`
      *
-     * List of supported charsets.
-     * @used  `form`
+     * @used
      */
     acceptCharSet: string;
     /**
-     * ## `autocomplete`
+     * ## `undefined`
      *
-     * Indicates whether controls in this form can by default have their values automatically completed by the browser.
-     * @used  `form` `input` `select` `textarea`
+     * @used
      */
     autoComplete:
         | "off"
@@ -5832,17 +5961,15 @@ export interface FormProps extends CommonAttributes, Events, HTMLAttributes {
         | "url"
         | "photo";
     /**
-     * ## `name`
+     * ## `undefined`
      *
-     * Name of the element. For example used by the server to identify the fields in form submits.
-     * @used  `button` `form` `fieldset` `iframe` `input` `keygen` `object` `output` `select` `textarea` `map` `meta` `param`
+     * @used
      */
     name: string;
     /**
-     * ## `rel`
+     * ## `undefined`
      *
-     * Specifies the relationship of the target object to the link object.
-     * @used  `a` `area` `link`
+     * @used
      */
     rel:
         | "alternate"
@@ -5872,65 +5999,60 @@ export interface FormProps extends CommonAttributes, Events, HTMLAttributes {
         | "stylesheet"
         | "tag";
     /**
-     * ## `action`
+     * ## `undefined`
      *
-     * @used  `audio` `video`
+     * @used
      */
     action: string;
     /**
-     * ## `enctype`
+     * ## `undefined`
      *
-     * Defines the content type of the form data when the method is POST.
-     * @used  `form`
+     * @used
      */
     encType:
         | "application/x-www-form-urlencoded"
         | "multipart/form-data"
         | "text/plain";
     /**
-     * ## `method`
+     * ## `undefined`
      *
-     * Defines which HTTP method to use when submitting the form. Can be GET (default) or POST.
-     * @used  `form`
+     * @used
      */
     method: "post" | "get" | "dialog";
     /**
-     * ## `novalidate`
+     * ## `undefined`
      *
-     * This attribute indicates that the form shouldn't be validated when submitted.
-     * @used  `form`
+     * @used
      */
     noValidate: string;
     /**
-     * ## `target`
+     * ## `undefined`
      *
-     * Specifies where to open the linked document (in the case of an ``<a>`` element) or where to display the response received (in the case of a ``<form>`` element)
-     * @used  `a` `area` `base` `form`
+     * @used
      */
     target: "_self" | "_blank" | "_parent" | "_top";
-    children: Array<RecursiveElement>;
 }
 
-export interface InputProps extends CommonAttributes, Events, HTMLAttributes {
+export interface InputProps
+    extends CommonAttributes,
+        Events<HTMLInputElement>,
+        HTMLAttributes {
     /**
-     * ## `accept`
+     * ## `undefined`
      *
-     * List of types the server accepts, typically a file type.
-     * @used  `form` `input`
+     * @used
      */
     accept: "audio/*" | "video/*" | "image/*";
     /**
-     * ## `alt`
+     * ## `undefined`
      *
-     * Alternative text in case an image can't be displayed.
-     * @used  `applet` `area` `img` `input`
+     * @used
      */
     alt: string;
     /**
-     * ## `autocomplete`
+     * ## `undefined`
      *
-     * Indicates whether controls in this form can by default have their values automatically completed by the browser.
-     * @used  `form` `input` `select` `textarea`
+     * @used
      */
     autoComplete:
         | "off"
@@ -5981,363 +6103,340 @@ export interface InputProps extends CommonAttributes, Events, HTMLAttributes {
         | "url"
         | "photo";
     /**
-     * ## `capture`
+     * ## `undefined`
      *
-     * From the Media Capture specification, specifies a new file can be captured.
-     * @used  `input`
+     * @used
      */
     capture: "user" | "environment";
     /**
-     * ## `checked`
+     * ## `undefined`
      *
-     * Indicates whether the element should be checked on page load.
-     * @used  `command` `input`
+     * @used
      */
     checked: string;
     /**
-     * ## `dirname`
+     * ## `undefined`
      *
-     * @used  `input` `textarea`
+     * @used
      */
     dirName: string;
     /**
-     * ## `disabled`
+     * ## `undefined`
      *
-     * Indicates whether the user can interact with the element.
-     * @used  `button` `command` `fieldset` `input` `keygen` `optgroup` `option` `select` `textarea`
+     * @used
      */
     disabled: boolean;
     /**
-     * ## `form`
+     * ## `undefined`
      *
-     * Indicates the form that is the owner of the element.
-     * @used  `button` `fieldset` `input` `keygen` `label` `meter` `object` `output` `progress` `select` `textarea`
+     * @used
      */
     form: string;
     /**
-     * ## `formaction`
+     * ## `undefined`
      *
-     * Indicates the action of the element, overriding the action defined in the <form>.
-     * @used  `button` `input`
+     * @used
      */
     formAction: string;
     /**
-     * ## `formenctype`
+     * ## `undefined`
      *
-     * If the button/input is a submit button (type="submit"), this attribute sets the encoding type to use during form submission. If this attribute is specified, it overrides the enctype attribute of the button's form owner.
-     * @used  `button` `input`
+     * @used
      */
     formEncType: string;
     /**
-     * ## `formmethod`
+     * ## `undefined`
      *
-     * If the button/input is a submit button (type="submit"), this attribute sets the submission method to use during form submission (GET, POST, etc.). If this attribute is specified, it overrides the method attribute of the button's form owner.
-     * @used  `button` `input`
+     * @used
      */
     formMethod: string;
     /**
-     * ## `formnovalidate`
+     * ## `undefined`
      *
-     * If the button/input is a submit button (type="submit"), this boolean attribute specifies that the form is not to be validated when it is submitted. If this attribute is specified, it overrides the novalidate attribute of the button's form owner.
-     * @used  `button` `input`
+     * @used
      */
     formNoValidate: string;
     /**
-     * ## `formtarget`
+     * ## `undefined`
      *
-     * The formtarget attribute specifies a name or a keyword that indicates where to display the response that is received after submitting the form.
-     * @used  `_self` `_blank` `_parent` `_top`
+     * @used
      */
     formTarget: string;
     /**
-     * ## `height`
+     * ## `undefined`
      *
-     * Specifies the height of elements listed here. For all other elements, use the CSS height property.
-     * @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+     * @used
      */
     height: string;
     /**
-     * ## `list`
+     * ## `undefined`
      *
-     * Identifies a list of pre-defined options to suggest to the user.
-     * @used  `input`
+     * @used
      */
     list: string;
     /**
-     * ## `max`
+     * ## `undefined`
      *
-     * Indicates the maximum value allowed.
-     * @used  `input` `meter` `progress`
+     * @used
      */
     max: string;
     /**
-     * ## `maxLength`
+     * ## `undefined`
      *
-     * Defines the maximum number of characters allowed in the element.
-     * @used  `input` `textarea`
+     * @used
      */
     maxLength: string;
     /**
-     * ## `min`
+     * ## `undefined`
      *
-     * Indicates the minimum value allowed.
-     * @used  `input` `meter`
+     * @used
      */
     min: string;
     /**
-     * ## `minLength`
+     * ## `undefined`
      *
-     * Defines the minimum number of characters allowed in the element.
-     * @used  `input` `textarea`
+     * @used
      */
     minLength: string;
     /**
-     * ## `multiple`
+     * ## `undefined`
      *
-     * Indicates whether multiple values can be entered in an input of the type email or file.
-     * @used  `input` `select`
+     * @used
      */
     multiple: boolean;
     /**
-     * ## `name`
+     * ## `undefined`
      *
-     * Name of the element. For example used by the server to identify the fields in form submits.
-     * @used  `button` `form` `fieldset` `iframe` `input` `keygen` `object` `output` `select` `textarea` `map` `meta` `param`
+     * @used
      */
     name: string;
     /**
-     * ## `pattern`
+     * ## `undefined`
      *
-     * Defines a regular expression which the element's value will be validated against.
-     * @used  `input`
+     * @used
      */
     pattern: string;
     /**
-     * ## `placeholder`
+     * ## `undefined`
      *
-     * Provides a hint to the user of what can be entered in the field.
-     * @used  `input` `textarea`
+     * @used
      */
     placeholder: string;
     /**
-     * ## `readonly`
+     * ## `undefined`
      *
-     * Indicates whether the element can be edited.
-     * @used  `input` `textarea`
+     * @used
      */
     readOnly: boolean;
     /**
-     * ## `required`
+     * ## `undefined`
      *
-     * Indicates whether this element is required to fill out or not.
-     * @used  `input` `select` `textarea`
+     * @used
      */
     required: boolean;
     /**
-     * ## `size`
+     * ## `undefined`
      *
-     * Defines the width of the element (in pixels). If the element's type attribute is text or password then it's the number of characters.
-     * @used  `input` `select`
+     * @used
      */
     size: string;
     /**
-     * ## `src`
+     * ## `undefined`
      *
-     * The URL of the embeddable content.
-     * @used  `audio` `embed` `iframe` `img` `input` `script` `source` `track` `video`
+     * @used
      */
     src: string;
     /**
-     * ## `step`
+     * ## `undefined`
      *
-     * @used  `input`
+     * @used
      */
     step: string;
     /**
-     * ## `type`
+     * ## `undefined`
      *
-     * Defines the type of the element.
-     * @used  `button` `input` `command` `embed` `object` `script` `source` `styles` `menu` `link`
+     * @used
      */
     type: string;
     /**
-     * ## `value`
+     * ## `undefined`
      *
-     * @used  `button` `data` `input` `li` `meter` `option` `progress` `param`
+     * @used
      */
     value: string;
     /**
-     * ## `width`
+     * ## `undefined`
      *
-     * For the elements listed here, this establishes the element's width.
-     * @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+     * @used
      */
     width: string;
 }
 
-export interface LabelProps extends CommonAttributes, Events, HTMLAttributes {
+export interface LabelProps
+    extends CommonAttributes,
+        Events<HTMLLabelElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `for`
+     * ## `undefined`
      *
-     * Describes elements which belongs to this one.
-     * @used  `label` `output`
+     * @used
      */
     isFor: string;
-    children: Array<RecursiveElement>;
 }
 
-export interface LegendProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface LegendProps
+    extends CommonAttributes,
+        Events<HTMLLegendElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface MeterProps extends CommonAttributes, Events, HTMLAttributes {
+export interface MeterProps
+    extends CommonAttributes,
+        Events<HTMLMeterElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `value`
+     * ## `undefined`
      *
-     * @used  `button` `data` `input` `li` `meter` `option` `progress` `param`
+     * @used
      */
     value: string;
     /**
-     * ## `min`
+     * ## `undefined`
      *
-     * Indicates the minimum value allowed.
-     * @used  `input` `meter`
+     * @used
      */
     min: string;
     /**
-     * ## `max`
+     * ## `undefined`
      *
-     * Indicates the maximum value allowed.
-     * @used  `input` `meter` `progress`
+     * @used
      */
     max: string;
     /**
-     * ## `low`
+     * ## `undefined`
      *
-     * Indicates the upper bound of the lower range.
-     * @used  `meter`
+     * @used
      */
     low: string;
     /**
-     * ## `high`
+     * ## `undefined`
      *
-     * Indicates the lower bound of the upper range.
-     * @used  `meter`
+     * @used
      */
     high: string;
     /**
-     * ## `optimum`
+     * ## `undefined`
      *
-     * Indicates the optimal numeric value.
-     * @used  `meter`
+     * @used
      */
     optimum: string;
-    children: Array<RecursiveElement>;
 }
 
 export interface OptgroupProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
+        Events<HTMLOptGroupElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `disabled`
+     * ## `undefined`
      *
-     * Indicates whether the user can interact with the element.
-     * @used  `button` `command` `fieldset` `input` `keygen` `optgroup` `option` `select` `textarea`
+     * @used
      */
     disabled: boolean;
     /**
-     * ## `label`
+     * ## `undefined`
      *
-     * Specifies a user-readable title of the element.
-     * @used  `optgroup` `option` `track`
+     * @used
      */
     label: string;
-    children: Array<RecursiveElement>;
 }
 
-export interface OptionProps extends CommonAttributes, Events, HTMLAttributes {
+export interface OptionProps
+    extends CommonAttributes,
+        Events<HTMLOptionElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `disabled`
+     * ## `undefined`
      *
-     * Indicates whether the user can interact with the element.
-     * @used  `button` `command` `fieldset` `input` `keygen` `optgroup` `option` `select` `textarea`
+     * @used
      */
     disabled: boolean;
     /**
-     * ## `label`
+     * ## `undefined`
      *
-     * Specifies a user-readable title of the element.
-     * @used  `optgroup` `option` `track`
+     * @used
      */
     label: string;
     /**
-     * ## `selected`
+     * ## `undefined`
      *
-     * Defines a value which will be selected on page load.
-     * @used  `option`
+     * @used
      */
     selected: boolean;
     /**
-     * ## `value`
+     * ## `undefined`
      *
-     * @used  `button` `data` `input` `li` `meter` `option` `progress` `param`
+     * @used
      */
     value: string;
-    children: Array<RecursiveElement>;
 }
 
-export interface OutputProps extends CommonAttributes, Events, HTMLAttributes {
+export interface OutputProps
+    extends CommonAttributes,
+        Events<HTMLOutputElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `for`
+     * ## `undefined`
      *
-     * Describes elements which belongs to this one.
-     * @used  `label` `output`
+     * @used
      */
     isFor: string;
     /**
-     * ## `form`
+     * ## `undefined`
      *
-     * Indicates the form that is the owner of the element.
-     * @used  `button` `fieldset` `input` `keygen` `label` `meter` `object` `output` `progress` `select` `textarea`
+     * @used
      */
     form: string;
     /**
-     * ## `name`
+     * ## `undefined`
      *
-     * Name of the element. For example used by the server to identify the fields in form submits.
-     * @used  `button` `form` `fieldset` `iframe` `input` `keygen` `object` `output` `select` `textarea` `map` `meta` `param`
+     * @used
      */
     name: string;
-    children: Array<RecursiveElement>;
 }
 
 export interface ProgressProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
+        Events<HTMLProgressElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `max`
+     * ## `undefined`
      *
-     * Indicates the maximum value allowed.
-     * @used  `input` `meter` `progress`
+     * @used
      */
     max: string;
     /**
-     * ## `value`
+     * ## `undefined`
      *
-     * @used  `button` `data` `input` `li` `meter` `option` `progress` `param`
+     * @used
      */
     value: string;
-    children: Array<RecursiveElement>;
 }
 
-export interface SelectProps extends CommonAttributes, Events, HTMLAttributes {
+export interface SelectProps
+    extends CommonAttributes,
+        Events<HTMLSelectElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `autocomplete`
+     * ## `undefined`
      *
-     * Indicates whether controls in this form can by default have their values automatically completed by the browser.
-     * @used  `form` `input` `select` `textarea`
+     * @used
      */
     autoComplete:
         | "off"
@@ -6388,66 +6487,58 @@ export interface SelectProps extends CommonAttributes, Events, HTMLAttributes {
         | "url"
         | "photo";
     /**
-     * ## `autofocus`
+     * ## `undefined`
      *
-     * The element should be automatically focused after the page loaded.
-     * @used  `button` `input` `keygen` `select` `textarea`
+     * @used
      */
     autoFocus: string;
     /**
-     * ## `disabled`
+     * ## `undefined`
      *
-     * Indicates whether the user can interact with the element.
-     * @used  `button` `command` `fieldset` `input` `keygen` `optgroup` `option` `select` `textarea`
+     * @used
      */
     disabled: boolean;
     /**
-     * ## `form`
+     * ## `undefined`
      *
-     * Indicates the form that is the owner of the element.
-     * @used  `button` `fieldset` `input` `keygen` `label` `meter` `object` `output` `progress` `select` `textarea`
+     * @used
      */
     form: string;
     /**
-     * ## `multiple`
+     * ## `undefined`
      *
-     * Indicates whether multiple values can be entered in an input of the type email or file.
-     * @used  `input` `select`
+     * @used
      */
     multiple: boolean;
     /**
-     * ## `name`
+     * ## `undefined`
      *
-     * Name of the element. For example used by the server to identify the fields in form submits.
-     * @used  `button` `form` `fieldset` `iframe` `input` `keygen` `object` `output` `select` `textarea` `map` `meta` `param`
+     * @used
      */
     name: string;
     /**
-     * ## `required`
+     * ## `undefined`
      *
-     * Indicates whether this element is required to fill out or not.
-     * @used  `input` `select` `textarea`
+     * @used
      */
     required: boolean;
     /**
-     * ## `size`
+     * ## `undefined`
      *
-     * Defines the width of the element (in pixels). If the element's type attribute is text or password then it's the number of characters.
-     * @used  `input` `select`
+     * @used
      */
     size: string;
-    children: Array<RecursiveElement>;
 }
 
 export interface TextAreaProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
+        Events<HTMLTextAreaElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `autocomplete`
+     * ## `undefined`
      *
-     * Indicates whether controls in this form can by default have their values automatically completed by the browser.
-     * @used  `form` `input` `select` `textarea`
+     * @used
      */
     autoComplete:
         | "off"
@@ -6498,208 +6589,204 @@ export interface TextAreaProps
         | "url"
         | "photo";
     /**
-     * ## `autofocus`
+     * ## `undefined`
      *
-     * The element should be automatically focused after the page loaded.
-     * @used  `button` `input` `keygen` `select` `textarea`
+     * @used
      */
     autoFocus: string;
     /**
-     * ## `cols`
+     * ## `undefined`
      *
-     * Defines the number of columns in a textarea.
-     * @used  `textarea`
+     * @used
      */
     cols: number;
     /**
-     * ## `disabled`
+     * ## `undefined`
      *
-     * Indicates whether the user can interact with the element.
-     * @used  `button` `command` `fieldset` `input` `keygen` `optgroup` `option` `select` `textarea`
+     * @used
      */
     disabled: boolean;
     /**
-     * ## `form`
+     * ## `undefined`
      *
-     * Indicates the form that is the owner of the element.
-     * @used  `button` `fieldset` `input` `keygen` `label` `meter` `object` `output` `progress` `select` `textarea`
+     * @used
      */
     form: string;
     /**
-     * ## `maxLength`
+     * ## `undefined`
      *
-     * Defines the maximum number of characters allowed in the element.
-     * @used  `input` `textarea`
+     * @used
      */
     maxLength: string;
     /**
-     * ## `name`
+     * ## `undefined`
      *
-     * Name of the element. For example used by the server to identify the fields in form submits.
-     * @used  `button` `form` `fieldset` `iframe` `input` `keygen` `object` `output` `select` `textarea` `map` `meta` `param`
+     * @used
      */
     name: string;
     /**
-     * ## `placeholder`
+     * ## `undefined`
      *
-     * Provides a hint to the user of what can be entered in the field.
-     * @used  `input` `textarea`
+     * @used
      */
     placeholder: string;
     /**
-     * ## `readonly`
+     * ## `undefined`
      *
-     * Indicates whether the element can be edited.
-     * @used  `input` `textarea`
+     * @used
      */
     readOnly: boolean;
     /**
-     * ## `required`
+     * ## `undefined`
      *
-     * Indicates whether this element is required to fill out or not.
-     * @used  `input` `select` `textarea`
+     * @used
      */
     required: boolean;
     /**
-     * ## `spellcheck`
+     * ## `undefined`
      *
-     * Indicates whether spell checking is allowed for the element.
-     * @used Global attribute
+     * @used
      */
     spellCheck: "true" | "false";
     /**
-     * ## `wrap`
+     * ## `undefined`
      *
-     * Indicates whether the text should be wrapped.
-     * @used  `textarea`
+     * @used
      */
     wrap: "hard" | "soft" | "off";
-    children: Array<RecursiveElement>;
 }
 
-export interface DetailsProps extends CommonAttributes, Events, HTMLAttributes {
+export interface DetailsProps
+    extends CommonAttributes,
+        Events<HTMLDetailsElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `open`
+     * ## `undefined`
      *
-     * Indicates whether the contents are currently visible (in the case of a ``<details>`` element) or whether the dialog is active and can be interacted with (in the case of a ``<dialog>`` element).
-     * @used  `details` `dialog`
+     * @used
      */
     open: boolean;
-    children: Array<RecursiveElement>;
 }
 
-export interface DialogProps extends CommonAttributes, Events, HTMLAttributes {
+export interface DialogProps
+    extends CommonAttributes,
+        Events<HTMLDialogElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `open`
+     * ## `undefined`
      *
-     * Indicates whether the contents are currently visible (in the case of a ``<details>`` element) or whether the dialog is active and can be interacted with (in the case of a ``<dialog>`` element).
-     * @used  `details` `dialog`
+     * @used
      */
     open: boolean;
-    children: Array<RecursiveElement>;
 }
 
-export interface SummaryProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface SummaryProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface SlotProps extends CommonAttributes, Events, HTMLAttributes {
+export interface SlotProps
+    extends CommonAttributes,
+        Events<HTMLSlotElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `name`
+     * ## `undefined`
      *
-     * Name of the element. For example used by the server to identify the fields in form submits.
-     * @used  `button` `form` `fieldset` `iframe` `input` `keygen` `object` `output` `select` `textarea` `map` `meta` `param`
+     * @used
      */
     name: string;
-    children: Array<RecursiveElement>;
 }
 
 export interface TemplateProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+        Events<HTMLTemplateElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
 export interface HtmlContainerProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
 export interface FragmentProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface ColumnProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface ColumnProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface RowProps extends CommonAttributes, Events, HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+export interface RowProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
 export interface CenteredColumnProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
 export interface CenteredRowProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
-    children: Array<RecursiveElement>;
-}
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
 export interface CheckBoxProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
+        Events<HTMLInputElement>,
+        HTMLAttributes,
+        ElementChildren {
     value: string;
     checked: string;
-    children: Array<RecursiveElement>;
 }
 
 export interface ColorPickerProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
+        Events<HTMLInputElement>,
+        HTMLAttributes,
+        ElementChildren {
     value: string;
-    children: Array<RecursiveElement>;
 }
 
 export interface DatePickerProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
+        Events<HTMLInputElement>,
+        HTMLAttributes,
+        ElementChildren {
     value: string;
     max: string;
     min: string;
     step: string;
-    children: Array<RecursiveElement>;
 }
 
 export interface DateTimeLocalPickerProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
+        Events<HTMLInputElement>,
+        HTMLAttributes,
+        ElementChildren {
     value: string;
     max: string;
     min: string;
     step: string;
-    children: Array<RecursiveElement>;
 }
 
 export interface EmailFieldProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
+        Events<HTMLInputElement>,
+        HTMLAttributes,
+        ElementChildren {
     value: string;
     autoComplete: string;
     list: string;
@@ -6711,34 +6798,34 @@ export interface EmailFieldProps
     readOnly: string;
     required: boolean;
     size: string;
-    children: Array<RecursiveElement>;
 }
 
 export interface FilePickerProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
+        Events<HTMLInputElement>,
+        HTMLAttributes,
+        ElementChildren {
     required: boolean;
     accept: string;
     capture: string;
     multiple: string;
-    children: Array<RecursiveElement>;
 }
 
 export interface HiddenInputProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
+        Events<HTMLInputElement>,
+        HTMLAttributes,
+        ElementChildren {
     name: string;
     value: string;
     autoComplete: string;
-    children: Array<RecursiveElement>;
 }
 
 export interface ImagePickerProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
+        Events<HTMLInputElement>,
+        HTMLAttributes,
+        ElementChildren {
     alt: string;
     src: string;
     height: string;
@@ -6747,38 +6834,38 @@ export interface ImagePickerProps
     formMethod: string;
     formNoValidate: string;
     formTarget: string;
-    children: Array<RecursiveElement>;
 }
 
 export interface MonthPickerProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
+        Events<HTMLInputElement>,
+        HTMLAttributes,
+        ElementChildren {
     autoComplete: string;
     list: string;
     readOnly: string;
     step: string;
     value: string;
-    children: Array<RecursiveElement>;
 }
 
 export interface NumberPickerProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
+        Events<HTMLInputElement>,
+        HTMLAttributes,
+        ElementChildren {
     autoComplete: string;
     list: string;
     placeholder: string;
     readOnly: string;
     value: string;
     valueAsNumber: string;
-    children: Array<RecursiveElement>;
 }
 
 export interface PasswordFieldProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
+        Events<HTMLInputElement>,
+        HTMLAttributes,
+        ElementChildren {
     autoComplete: string;
     inputMode: string;
     maxLength: string;
@@ -6789,23 +6876,23 @@ export interface PasswordFieldProps
     required: string;
     size: string;
     value: string;
-    children: Array<RecursiveElement>;
 }
 
 export interface RadioButtonProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
+        Events<HTMLInputElement>,
+        HTMLAttributes,
+        ElementChildren {
     checked: string;
     value: string;
     required: string;
-    children: Array<RecursiveElement>;
 }
 
 export interface RangePickerProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
+        Events<HTMLInputElement>,
+        HTMLAttributes,
+        ElementChildren {
     autoComplete: string;
     list: string;
     max: string;
@@ -6813,21 +6900,21 @@ export interface RangePickerProps
     step: string;
     value: string;
     valueAsNumber: string;
-    children: Array<RecursiveElement>;
 }
 
 export interface ResetButtonProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
+        Events<HTMLInputElement>,
+        HTMLAttributes,
+        ElementChildren {
     value: string;
-    children: Array<RecursiveElement>;
 }
 
 export interface SearchFieldProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
+        Events<HTMLInputElement>,
+        HTMLAttributes,
+        ElementChildren {
     autoComplete: string;
     list: string;
     maxLength: string;
@@ -6837,21 +6924,21 @@ export interface SearchFieldProps
     required: string;
     size: string;
     value: string;
-    children: Array<RecursiveElement>;
 }
 
 export interface SubmitButtonProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
+        Events<HTMLInputElement>,
+        HTMLAttributes,
+        ElementChildren {
     value: string;
-    children: Array<RecursiveElement>;
 }
 
 export interface TelephoneNumberFieldProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
+        Events<HTMLInputElement>,
+        HTMLAttributes,
+        ElementChildren {
     autoComplete: string;
     list: string;
     maxLength: string;
@@ -6861,13 +6948,13 @@ export interface TelephoneNumberFieldProps
     placeholder: string;
     size: string;
     value: string;
-    children: Array<RecursiveElement>;
 }
 
 export interface TextFieldProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
+        Events<HTMLInputElement>,
+        HTMLAttributes,
+        ElementChildren {
     autoComplete: string;
     list: string;
     maxLength: string;
@@ -6878,25 +6965,25 @@ export interface TextFieldProps
     size: string;
     value: string;
     required: string;
-    children: Array<RecursiveElement>;
 }
 
 export interface TimePickerProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
+        Events<HTMLInputElement>,
+        HTMLAttributes,
+        ElementChildren {
     autoComplete: string;
     list: string;
     readOnly: string;
     step: string;
     value: string;
-    children: Array<RecursiveElement>;
 }
 
 export interface UrlFieldProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
+        Events<HTMLInputElement>,
+        HTMLAttributes,
+        ElementChildren {
     autoComplete: string;
     list: string;
     maxLength: string;
@@ -6907,42 +6994,47 @@ export interface UrlFieldProps
     size: string;
     value: string;
     required: string;
-    children: Array<RecursiveElement>;
 }
 
 export interface WeekPickerProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
+        Events<HTMLInputElement>,
+        HTMLAttributes,
+        ElementChildren {
     autoComplete: string;
     list: string;
     readOnly: string;
     step: string;
     value: string;
-    children: Array<RecursiveElement>;
 }
 
-export interface SpacerProps extends CommonAttributes, Events, HTMLAttributes {
+export interface SpacerProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes {
     height: number;
     width: number;
 }
 
 export interface LazyColumnProps
     extends CommonAttributes,
-        Events,
-        HTMLAttributes {
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {
     onObserved: Function;
-    children: Array<RecursiveElement>;
 }
 
-export interface LazyRowProps extends CommonAttributes, Events, HTMLAttributes {
+export interface LazyRowProps
+    extends CommonAttributes,
+        Events<HTMLElement>,
+        HTMLAttributes,
+        ElementChildren {
     onObserved: Function;
-    children: Array<RecursiveElement>;
 }
 
 export interface HorizontalLineProps
     extends CommonAttributes,
-        Events,
+        Events<HTMLElement>,
         HTMLAttributes {
     thickness: string;
     width: string;
@@ -6952,7 +7044,7 @@ export interface HorizontalLineProps
 
 export interface VerticalLineProps
     extends CommonAttributes,
-        Events,
+        Events<HTMLElement>,
         HTMLAttributes {
     thickness: string;
     height: string;
@@ -6960,14 +7052,17 @@ export interface VerticalLineProps
     color: Color;
 }
 
-export interface LinkProps extends CommonAttributes, Events, HTMLAttributes {
+export interface LinkProps
+    extends CommonAttributes,
+        Events<HTMLAnchorElement>,
+        HTMLAttributes,
+        ElementChildren {
     href: string;
-    children: Array<RecursiveElement>;
 }
 
 export interface ToggleSwitchProps
     extends CommonAttributes,
-        Events,
+        Events<HTMLInputElement>,
         HTMLAttributes {
     radiusPx: number;
     color: Color;
@@ -6979,1550 +7074,1754 @@ export interface ToggleSwitchProps
 
 export interface CircularSpinnerProps
     extends CommonAttributes,
-        Events,
+        Events<HTMLElement>,
         HTMLAttributes {
     color: Color;
     thickness: number;
     size: number;
 }
 
-export interface SVGAProps extends SVGAttributes {
+export interface SVGAProps
+    extends CommonAttributes,
+        Events<SVGAElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `href`
+     * ## `undefined`
      *
-     * The URL of a linked resource.
-     * @used  `a` `area` `base` `link`
+     * @used
      */
     href: string;
     /**
-     * ## `hreflang`
+     * ## `undefined`
      *
-     * Specifies the language of the linked resource.
-     * @used  `a` `area` `link`
+     * @used
      */
     hrefLang: string;
     /**
-     * ## `target`
+     * ## `undefined`
      *
-     * Specifies where to open the linked document (in the case of an ``<a>`` element) or where to display the response received (in the case of a ``<form>`` element)
-     * @used  `a` `area` `base` `form`
+     * @used
      */
     target: "_self" | "_blank" | "_parent" | "_top";
     /**
-     * ## `type`
+     * ## `undefined`
      *
-     * Defines the type of the element.
-     * @used  `button` `input` `command` `embed` `object` `script` `source` `styles` `menu` `link`
+     * @used
      */
     type: string;
 }
 
-export interface SVGAnimateProps extends SVGAttributes {
+export interface SVGAnimateProps
+    extends CommonAttributes,
+        Events<SVGAnimateElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `begin`
+     * ## `undefined`
      *
-     * The begin attribute defines when an animation should begin or when an element should be discarded.
-     * @used  `animate` `animateColor` `animateMotion` `animateTransform` `discard` `set`
+     * @used
      */
     begin: string;
     /**
-     * ## `dur`
+     * ## `undefined`
      *
-     * The dur attribute indicates the simple duration of an animation.
      * @used
      */
     dur: string;
     /**
-     * ## `end`
+     * ## `undefined`
      *
-     * The end attribute defines an end value for the animation that can constrain the active duration.
      * @used
      */
     end: string;
     /**
-     * ## `min`
+     * ## `undefined`
      *
-     * Indicates the minimum value allowed.
-     * @used  `input` `meter`
+     * @used
      */
     min: string;
     /**
-     * ## `max`
+     * ## `undefined`
      *
-     * Indicates the maximum value allowed.
-     * @used  `input` `meter` `progress`
+     * @used
      */
     max: string;
     /**
-     * ## `restart`
+     * ## `undefined`
      *
      * @used
      */
     restart: string;
     /**
-     * ## `repeatCount`
+     * ## `undefined`
      *
      * @used
      */
     repeatCount: string;
     /**
-     * ## `fill`
+     * ## `undefined`
      *
-     * The fill attribute has two different meanings. For shapes and text it's a presentation attribute that defines the color (or any SVG paint servers like gradients or patterns) used to paint the element; for animation it defines the final state of the animation.
      * @used
      */
     fill: string;
     /**
-     * ## `calcMode`
+     * ## `undefined`
      *
-     * The calcMode attribute specifies the interpolation mode for the animation.
      * @used
      */
     calcMode: string;
     /**
-     * ## `values`
+     * ## `undefined`
      *
      * @used
      */
     values: string;
     /**
-     * ## `keyTimes`
+     * ## `undefined`
      *
      * @used
      */
     keyTimes: string;
     /**
-     * ## `keySplines`
+     * ## `undefined`
      *
      * @used
      */
     keySplines: string;
     /**
-     * ## `from`
+     * ## `undefined`
      *
-     * The from attribute indicates the initial value of the attribute that will be modified during the animation.
      * @used
      */
     from: string;
     /**
-     * ## `to`
+     * ## `undefined`
      *
      * @used
      */
     to: string;
     /**
-     * ## `by`
+     * ## `undefined`
      *
-     * The by attribute specifies a relative offset value for an attribute that will be modified during an animation.
-     * @used  `animate` `animateColor` `animateMotion` `animateTransform`
+     * @used
      */
     by: string;
     /**
-     * ## `attributeName`
+     * ## `undefined`
      *
-     * The attributeName attribute indicates the name of the CSS property or attribute of the target element that is going to be changed during an animation.
-     * @used  `animate` `animateColor` `animateTransform` `set`
+     * @used
      */
     attributeName: string;
     /**
-     * ## `additive`
+     * ## `undefined`
      *
-     * The additive attribute controls whether or not an animation is additive.
-     * @used  `animate` `animateColor` `animateMotion` `animateTransform`
+     * @used
      */
     additive: "sum" | "replace";
     /**
-     * ## `accumulate`
+     * ## `undefined`
      *
-     * The accumulate attribute controls whether or not an animation is cumulative.
-     * @used  `animate` `animateColor` `animateMotion` `animateTransform`
+     * @used
      */
     accumulate: "sum" | "none";
 }
 
-export interface SVGAnimateMotionProps extends SVGAttributes {
+export interface SVGAnimateMotionProps
+    extends CommonAttributes,
+        Events<SVGAnimateMotionElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `keyPoints`
+     * ## `undefined`
      *
      * @used
      */
     keyPoints: string;
     /**
-     * ## `path`
+     * ## `undefined`
      *
      * @used
      */
     path: string;
     /**
-     * ## `rotate`
+     * ## `undefined`
      *
      * @used
      */
     rotate: string;
 }
 
-export interface SVGAnimateTransformProps extends SVGAttributes {}
+export interface SVGAnimateTransformProps
+    extends CommonAttributes,
+        Events<SVGAnimateTransformElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface SVGCircleProps extends SVGAttributes {
+export interface SVGCircleProps
+    extends CommonAttributes,
+        Events<SVGCircleElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `cx`
+     * ## `undefined`
      *
-     * The cx attribute define the x-axis coordinate of a center point.
      * @used
      */
     cx: string;
     /**
-     * ## `cy`
+     * ## `undefined`
      *
-     * The cy attribute define the y-axis coordinate of a center point.
      * @used
      */
     cy: string;
     /**
-     * ## `r`
+     * ## `undefined`
      *
      * @used
      */
     r: string;
     /**
-     * ## `pathLength`
+     * ## `undefined`
      *
      * @used
      */
     pathLength: string;
 }
 
-export interface SVGClipPathProps extends SVGAttributes {
+export interface SVGClipPathProps
+    extends CommonAttributes,
+        Events<SVGClipPathElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `clipPathUnits`
+     * ## `undefined`
      *
-     * The clipPathUnits attribute indicates which coordinate system to use for the contents of the ``<clipPath>`` element.
-     * @used  `clipPath`
+     * @used
      */
     clipPathUnits: "userSpaceOnUse" | "objectBoundingBox";
 }
 
-export interface SVGDefsProps extends SVGAttributes {}
+export interface SVGDefsProps
+    extends CommonAttributes,
+        Events<SVGDefsElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface SVGDescProps extends SVGAttributes {}
+export interface SVGDescProps
+    extends CommonAttributes,
+        Events<SVGDescElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface SVGDiscardProps extends SVGAttributes {}
+export interface SVGDiscardProps
+    extends CommonAttributes,
+        Events<SVGElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface SVGEllipseProps extends SVGAttributes {
+export interface SVGEllipseProps
+    extends CommonAttributes,
+        Events<SVGEllipseElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `cx`
+     * ## `undefined`
      *
-     * The cx attribute define the x-axis coordinate of a center point.
      * @used
      */
     cx: string;
     /**
-     * ## `cy`
+     * ## `undefined`
      *
-     * The cy attribute define the y-axis coordinate of a center point.
      * @used
      */
     cy: string;
     /**
-     * ## `rx`
+     * ## `undefined`
      *
      * @used
      */
     rx: string;
     /**
-     * ## `ry`
+     * ## `undefined`
      *
      * @used
      */
     ry: string;
     /**
-     * ## `pathLength`
+     * ## `undefined`
      *
      * @used
      */
     pathLength: string;
 }
 
-export interface SVGFeBlendProps extends SVGAttributes {
+export interface SVGFeBlendProps
+    extends CommonAttributes,
+        Events<SVGFEBlendElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `in`
+     * ## `undefined`
      *
      * @used
      */
     in: string;
     /**
-     * ## `in2`
+     * ## `undefined`
      *
      * @used
      */
     in2: string;
     /**
-     * ## `mode`
+     * ## `undefined`
      *
      * @used
      */
     mode: string;
 }
 
-export interface SVGFeColorMatrixProps extends SVGAttributes {
+export interface SVGFeColorMatrixProps
+    extends CommonAttributes,
+        Events<SVGFEColorMatrixElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `in`
+     * ## `undefined`
      *
      * @used
      */
     in: string;
     /**
-     * ## `type`
+     * ## `undefined`
      *
-     * Defines the type of the element.
-     * @used  `button` `input` `command` `embed` `object` `script` `source` `styles` `menu` `link`
+     * @used
      */
     type: string;
     /**
-     * ## `values`
+     * ## `undefined`
      *
      * @used
      */
     values: string;
 }
 
-export interface SVGFeComponentTransferProps extends SVGAttributes {}
+export interface SVGFeComponentTransferProps
+    extends CommonAttributes,
+        Events<SVGFEComponentTransferElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface SVGFeCompositeProps extends SVGAttributes {
+export interface SVGFeCompositeProps
+    extends CommonAttributes,
+        Events<SVGFECompositeElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `in`
+     * ## `undefined`
      *
      * @used
      */
     in: string;
 }
 
-export interface SVGFeConvolveMatrixProps extends SVGAttributes {
+export interface SVGFeConvolveMatrixProps
+    extends CommonAttributes,
+        Events<SVGFEConvolveMatrixElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `in`
+     * ## `undefined`
      *
      * @used
      */
     in: string;
     /**
-     * ## `order`
+     * ## `undefined`
      *
      * @used
      */
     order: string;
     /**
-     * ## `kernelMatrix`
+     * ## `undefined`
      *
      * @used
      */
     kernelMatrix: string;
     /**
-     * ## `bias`
+     * ## `undefined`
      *
-     * The bias attribute shifts the range of the filter. After applying the kernelMatrix of the ``<feConvolveMatrix>`` element to the input image to yield a number and applied the divisor attribute, the bias attribute is added to each component. This allows representation of values that would otherwise be clamped to 0 or 1.
-     * @used  `feConvolveMatrix`
+     * @used
      */
     bias: string;
     /**
-     * ## `targetX`
+     * ## `undefined`
      *
      * @used
      */
     targetX: string;
     /**
-     * ## `targetY`
+     * ## `undefined`
      *
      * @used
      */
     targetY: string;
     /**
-     * ## `edgeMode`
+     * ## `undefined`
      *
-     * The edgeMode attribute determines how to extend the input image as necessary with color values so that the matrix operations can be applied when the kernel is positioned at or near the edge of the input image.
      * @used
      */
     edgeMode: string;
     /**
-     * ## `kernelUnitLength`
+     * ## `undefined`
      *
      * @used
      */
     kernelUnitLength: string;
     /**
-     * ## `preserveAlpha`
+     * ## `undefined`
      *
      * @used
      */
     preserveAlpha: string;
 }
 
-export interface SVGFeDiffuseLightingProps extends SVGAttributes {}
+export interface SVGFeDiffuseLightingProps
+    extends CommonAttributes,
+        Events<SVGFEDiffuseLightingElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface SVGFeDisplacementMapProps extends SVGAttributes {}
+export interface SVGFeDisplacementMapProps
+    extends CommonAttributes,
+        Events<SVGFEDisplacementMapElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface SVGFeDistantLightProps extends SVGAttributes {}
+export interface SVGFeDistantLightProps
+    extends CommonAttributes,
+        Events<SVGFEDistantLightElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface SVGFeDropShadowProps extends SVGAttributes {
+export interface SVGFeDropShadowProps
+    extends CommonAttributes,
+        Events<SVGFEDropShadowElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `id`
+     * ## `undefined`
      *
-     * Often used with CSS to style a specific element. The value of this attribute must be unique.
-     * @used Global attribute
+     * @used
      */
     id: string;
     /**
-     * ## `surfaceScale`
+     * ## `undefined`
      *
      * @used
      */
     surfaceScale: string;
     /**
-     * ## `diffuseConstant`
+     * ## `undefined`
      *
-     * The diffuseConstant attribute represents the kd value in the Phong lighting model. In SVG, this can be any non-negative number.
      * @used
      */
     diffuseConstant: string;
     /**
-     * ## `kernelUnitLength`
+     * ## `undefined`
      *
      * @used
      */
     kernelUnitLength: string;
 }
 
-export interface SVGFeFloodProps extends SVGAttributes {
+export interface SVGFeFloodProps
+    extends CommonAttributes,
+        Events<SVGFEFloodElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `flood-color`
+     * ## `undefined`
      *
-     * The flood-color attribute indicates what color to use to flood the current filter primitive subregion.
      * @used
      */
     floodColor: string;
     /**
-     * ## `flood-opacity`
+     * ## `undefined`
      *
-     * The flood-opacity attribute indicates the opacity value to use across the current filter primitive subregion.
      * @used
      */
     floodOpacity: string;
 }
 
-export interface SVGFeFuncAProps extends SVGAttributes {}
+export interface SVGFeFuncAProps
+    extends CommonAttributes,
+        Events<SVGFEFuncAElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface SVGFeFuncBProps extends SVGAttributes {}
+export interface SVGFeFuncBProps
+    extends CommonAttributes,
+        Events<SVGFEFuncBElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface SVGFeFuncGProps extends SVGAttributes {}
+export interface SVGFeFuncGProps
+    extends CommonAttributes,
+        Events<SVGFEFuncGElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface SVGFeFuncRProps extends SVGAttributes {}
+export interface SVGFeFuncRProps
+    extends CommonAttributes,
+        Events<SVGFEFuncRElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface SVGFeGaussianBlurProps extends SVGAttributes {
+export interface SVGFeGaussianBlurProps
+    extends CommonAttributes,
+        Events<SVGFEGaussianBlurElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `in`
+     * ## `undefined`
      *
      * @used
      */
     in: string;
     /**
-     * ## `stdDeviation`
+     * ## `undefined`
      *
      * @used
      */
     stdDeviation: string;
     /**
-     * ## `edgeMode`
+     * ## `undefined`
      *
-     * The edgeMode attribute determines how to extend the input image as necessary with color values so that the matrix operations can be applied when the kernel is positioned at or near the edge of the input image.
      * @used
      */
     edgeMode: string;
 }
 
-export interface SVGFeImageProps extends SVGAttributes {
+export interface SVGFeImageProps
+    extends CommonAttributes,
+        Events<SVGFEImageElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `preserveAspectRatio`
+     * ## `undefined`
      *
      * @used
      */
     preserveAspectRatio: string;
     /**
-     * ## `xlink:href`
+     * ## `undefined`
      *
      * @used
      */
     xLinkHref: string;
 }
 
-export interface SVGFeMergeProps extends SVGAttributes {}
+export interface SVGFeMergeProps
+    extends CommonAttributes,
+        Events<SVGFEMergeElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface SVGFeMergeNodeProps extends SVGAttributes {
+export interface SVGFeMergeNodeProps
+    extends CommonAttributes,
+        Events<SVGFEMergeNodeElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `in`
+     * ## `undefined`
      *
      * @used
      */
     in: string;
 }
 
-export interface SVGFeMorphologyProps extends SVGAttributes {
+export interface SVGFeMorphologyProps
+    extends CommonAttributes,
+        Events<SVGFEMorphologyElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `in`
+     * ## `undefined`
      *
      * @used
      */
     in: string;
     /**
-     * ## `operator`
+     * ## `undefined`
      *
      * @used
      */
     operator: string;
     /**
-     * ## `radius`
+     * ## `undefined`
      *
      * @used
      */
     radius: string;
 }
 
-export interface SVGFeOffsetProps extends SVGAttributes {
+export interface SVGFeOffsetProps
+    extends CommonAttributes,
+        Events<SVGFEOffsetElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `in`
+     * ## `undefined`
      *
      * @used
      */
     in: string;
     /**
-     * ## `dx`
+     * ## `undefined`
      *
-     * The dx attribute indicates a shift along the x-axis on the position of an element or its content.
      * @used
      */
     dx: string;
     /**
-     * ## `dy`
+     * ## `undefined`
      *
-     * The dy attribute indicates a shift along the y-axis on the position of an element or its content.
      * @used
      */
     dy: string;
 }
 
-export interface SVGFePointLightProps extends SVGAttributes {
+export interface SVGFePointLightProps
+    extends CommonAttributes,
+        Events<SVGFEPointLightElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `x`
+     * ## `undefined`
      *
      * @used
      */
     x: string;
     /**
-     * ## `y`
+     * ## `undefined`
      *
      * @used
      */
     y: string;
     /**
-     * ## `z`
+     * ## `undefined`
      *
      * @used
      */
     z: string;
 }
 
-export interface SVGFeSpecularLightingProps extends SVGAttributes {
+export interface SVGFeSpecularLightingProps
+    extends CommonAttributes,
+        Events<SVGFESpecularLightingElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `in`
+     * ## `undefined`
      *
      * @used
      */
     in: string;
     /**
-     * ## `surfaceScale`
+     * ## `undefined`
      *
      * @used
      */
     surfaceScale: string;
     /**
-     * ## `specularConstant`
+     * ## `undefined`
      *
      * @used
      */
     specularConstant: string;
     /**
-     * ## `specularExponent`
+     * ## `undefined`
      *
      * @used
      */
     specularExponent: string;
     /**
-     * ## `kernelUnitLength`
+     * ## `undefined`
      *
      * @used
      */
     kernelUnitLength: string;
 }
 
-export interface SVGFeSpotLightProps extends SVGAttributes {
+export interface SVGFeSpotLightProps
+    extends CommonAttributes,
+        Events<SVGFESpotLightElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `x`
+     * ## `undefined`
      *
      * @used
      */
     x: string;
     /**
-     * ## `y`
+     * ## `undefined`
      *
      * @used
      */
     y: string;
     /**
-     * ## `z`
+     * ## `undefined`
      *
      * @used
      */
     z: string;
     /**
-     * ## `specularExponent`
+     * ## `undefined`
+     *
+     * @used
+     */
+    pointAtX: string;
+    /**
+     * ## `undefined`
+     *
+     * @used
+     */
+    pointAtY: string;
+    /**
+     * ## `undefined`
+     *
+     * @used
+     */
+    pointAtZ: string;
+    /**
+     * ## `undefined`
      *
      * @used
      */
     specularExponent: string;
     /**
-     * ## `limitingConeAngle`
+     * ## `undefined`
      *
      * @used
      */
     limitingConeAngle: string;
 }
 
-export interface SVGFeTileProps extends SVGAttributes {
+export interface SVGFeTileProps
+    extends CommonAttributes,
+        Events<SVGFETileElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `in`
+     * ## `undefined`
      *
      * @used
      */
     in: string;
 }
 
-export interface SVGFeTurbulenceProps extends SVGAttributes {
+export interface SVGFeTurbulenceProps
+    extends CommonAttributes,
+        Events<SVGFETurbulenceElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `baseFrequency`
+     * ## `undefined`
      *
-     * The baseFrequency attribute represents the base frequency parameter for the noise function of the ``<feTurbulence>`` filter primitive.
-     * @used  `feTurbulence`
+     * @used
      */
     baseFrequency: string;
     /**
-     * ## `numOctaves`
+     * ## `undefined`
      *
      * @used
      */
     numOctaves: string;
     /**
-     * ## `seed`
+     * ## `undefined`
      *
      * @used
      */
     seed: string;
     /**
-     * ## `stitchTiles`
+     * ## `undefined`
      *
      * @used
      */
     stitchTiles: string;
     /**
-     * ## `type`
+     * ## `undefined`
      *
-     * Defines the type of the element.
-     * @used  `button` `input` `command` `embed` `object` `script` `source` `styles` `menu` `link`
+     * @used
      */
     type: string;
 }
 
-export interface SVGFilterProps extends SVGAttributes {
+export interface SVGFilterProps
+    extends CommonAttributes,
+        Events<SVGFilterElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `x`
+     * ## `undefined`
      *
      * @used
      */
     x: string;
     /**
-     * ## `y`
+     * ## `undefined`
      *
      * @used
      */
     y: string;
     /**
-     * ## `width`
+     * ## `undefined`
      *
-     * For the elements listed here, this establishes the element's width.
-     * @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+     * @used
      */
     width: string;
     /**
-     * ## `height`
+     * ## `undefined`
      *
-     * Specifies the height of elements listed here. For all other elements, use the CSS height property.
-     * @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+     * @used
      */
     height: string;
     /**
-     * ## `filterRes`
+     * ## `undefined`
      *
-     * The filterRes attribute indicates the width and height of the intermediate images in pixels of a filter primitive.
-     * @deprecated
      * @used
      */
     filterRes: string;
     /**
-     * ## `filterUnits`
+     * ## `undefined`
      *
-     * The filterUnits attribute defines the coordinate system for the attributes x, y, width and height.
      * @used
      */
     filterUnits: string;
     /**
-     * ## `primitiveUnits`
+     * ## `undefined`
      *
      * @used
      */
     primitiveUnits: string;
     /**
-     * ## `xlink:href`
+     * ## `undefined`
      *
      * @used
      */
     xLinkHref: string;
 }
 
-export interface SVGForeignObjectProps extends SVGAttributes {
+export interface SVGForeignObjectProps
+    extends CommonAttributes,
+        Events<SVGForeignObjectElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `height`
+     * ## `undefined`
      *
-     * Specifies the height of elements listed here. For all other elements, use the CSS height property.
-     * @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+     * @used
      */
     height: string;
     /**
-     * ## `width`
+     * ## `undefined`
      *
-     * For the elements listed here, this establishes the element's width.
-     * @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+     * @used
      */
     width: string;
     /**
-     * ## `x`
+     * ## `undefined`
      *
      * @used
      */
     x: string;
     /**
-     * ## `y`
+     * ## `undefined`
      *
      * @used
      */
     y: string;
 }
 
-export interface SVGGProps extends SVGAttributes {}
+export interface SVGGProps
+    extends CommonAttributes,
+        Events<SVGGElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface SVGHatchProps extends SVGAttributes {}
+export interface SVGHatchProps
+    extends CommonAttributes,
+        Events<SVGElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface SVGHatchpathProps extends SVGAttributes {}
+export interface SVGHatchpathProps
+    extends CommonAttributes,
+        Events<SVGElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface SVGImageProps extends SVGAttributes {
+export interface SVGImageProps
+    extends CommonAttributes,
+        Events<SVGImageElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `x`
+     * ## `undefined`
      *
      * @used
      */
     x: string;
     /**
-     * ## `y`
+     * ## `undefined`
      *
      * @used
      */
     y: string;
     /**
-     * ## `width`
+     * ## `undefined`
      *
-     * For the elements listed here, this establishes the element's width.
-     * @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+     * @used
      */
     width: string;
     /**
-     * ## `height`
+     * ## `undefined`
      *
-     * Specifies the height of elements listed here. For all other elements, use the CSS height property.
-     * @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+     * @used
      */
     height: string;
     /**
-     * ## `href`
+     * ## `undefined`
      *
-     * The URL of a linked resource.
-     * @used  `a` `area` `base` `link`
+     * @used
      */
     href: string;
     /**
-     * ## `xlink:href`
+     * ## `undefined`
      *
      * @used
      */
     xLinkHref: string;
     /**
-     * ## `preserveAspectRatio`
+     * ## `undefined`
      *
      * @used
      */
     preserveAspectRatio: string;
     /**
-     * ## `crossorigin`
+     * ## `undefined`
      *
-     * How the element handles cross-origin requests
-     * @used  `audio` `img` `link` `script` `video`
+     * @used
      */
     crossOrigin: "use-credentials" | "anonymous";
 }
 
-export interface SVGLineProps extends SVGAttributes {
+export interface SVGLineProps
+    extends CommonAttributes,
+        Events<SVGLineElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `x1`
+     * ## `undefined`
      *
      * @used
      */
     x1: string;
     /**
-     * ## `x2`
+     * ## `undefined`
      *
      * @used
      */
     x2: string;
     /**
-     * ## `y1`
+     * ## `undefined`
      *
      * @used
      */
     y1: string;
     /**
-     * ## `y2`
+     * ## `undefined`
      *
      * @used
      */
     y2: string;
     /**
-     * ## `pathLength`
+     * ## `undefined`
      *
      * @used
      */
     pathLength: string;
 }
 
-export interface SVGLinearGradientProps extends SVGAttributes {
+export interface SVGLinearGradientProps
+    extends CommonAttributes,
+        Events<SVGLinearGradientElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `gradientUnits`
+     * ## `undefined`
      *
      * @used
      */
     gradientUnits: string;
     /**
-     * ## `gradientTransform`
+     * ## `undefined`
      *
      * @used
      */
     gradientTransform: string;
     /**
-     * ## `href`
+     * ## `undefined`
      *
-     * The URL of a linked resource.
-     * @used  `a` `area` `base` `link`
+     * @used
      */
     href: string;
     /**
-     * ## `spreadMethod`
+     * ## `undefined`
      *
      * @used
      */
     spreadMethod: string;
     /**
-     * ## `x1`
+     * ## `undefined`
      *
      * @used
      */
     x1: string;
     /**
-     * ## `x2`
+     * ## `undefined`
      *
      * @used
      */
     x2: string;
     /**
-     * ## `y1`
+     * ## `undefined`
      *
      * @used
      */
     y1: string;
     /**
-     * ## `y2`
+     * ## `undefined`
      *
      * @used
      */
     y2: string;
 }
 
-export interface SVGMarkerProps extends SVGAttributes {
+export interface SVGMarkerProps
+    extends CommonAttributes,
+        Events<SVGMarkerElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `markerHeight`
+     * ## `undefined`
      *
      * @used
      */
     markerHeight: string;
     /**
-     * ## `markerUnits`
+     * ## `undefined`
      *
      * @used
      */
     markerUnits: string;
     /**
-     * ## `markerWidth`
+     * ## `undefined`
      *
      * @used
      */
     markerWidth: string;
     /**
-     * ## `orient`
+     * ## `undefined`
      *
      * @used
      */
     orient: string;
     /**
-     * ## `preserveAspectRatio`
+     * ## `undefined`
      *
      * @used
      */
     preserveAspectRatio: string;
     /**
-     * ## `refX`
+     * ## `undefined`
      *
      * @used
      */
     refX: string;
     /**
-     * ## `refY`
+     * ## `undefined`
      *
      * @used
      */
     refY: string;
     /**
-     * ## `viewBox`
+     * ## `undefined`
      *
      * @used
      */
     viewBox: string;
 }
 
-export interface SVGMaskProps extends SVGAttributes {
+export interface SVGMaskProps
+    extends CommonAttributes,
+        Events<SVGMaskElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `height`
+     * ## `undefined`
      *
-     * Specifies the height of elements listed here. For all other elements, use the CSS height property.
-     * @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+     * @used
      */
     height: string;
     /**
-     * ## `maskContentUnits`
+     * ## `undefined`
      *
      * @used
      */
     maskContentUnits: string;
     /**
-     * ## `maskUnits`
+     * ## `undefined`
      *
      * @used
      */
     maskUnits: string;
     /**
-     * ## `x`
+     * ## `undefined`
      *
      * @used
      */
     x: string;
     /**
-     * ## `y`
+     * ## `undefined`
      *
      * @used
      */
     y: string;
     /**
-     * ## `width`
+     * ## `undefined`
      *
-     * For the elements listed here, this establishes the element's width.
-     * @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+     * @used
      */
     width: string;
 }
 
-export interface SVGMetadataProps extends SVGAttributes {}
+export interface SVGMetadataProps
+    extends CommonAttributes,
+        Events<SVGMetadataElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface SVGMpathProps extends SVGAttributes {
+export interface SVGMpathProps
+    extends CommonAttributes,
+        Events<SVGMPathElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `xlink:href`
+     * ## `undefined`
      *
      * @used
      */
     xLinkHref: string;
 }
 
-export interface SVGPathProps extends SVGAttributes {
+export interface SVGPathProps
+    extends CommonAttributes,
+        Events<SVGPathElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `d`
+     * ## `undefined`
      *
-     * The d attribute defines a path to be drawn.
      * @used
      */
     d: string;
     /**
-     * ## `pathLength`
+     * ## `undefined`
      *
      * @used
      */
     pathLength: string;
 }
 
-export interface SVGPatternProps extends SVGAttributes {
+export interface SVGPatternProps
+    extends CommonAttributes,
+        Events<SVGPatternElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `height`
+     * ## `undefined`
      *
-     * Specifies the height of elements listed here. For all other elements, use the CSS height property.
-     * @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+     * @used
      */
     height: string;
     /**
-     * ## `href`
+     * ## `undefined`
      *
-     * The URL of a linked resource.
-     * @used  `a` `area` `base` `link`
+     * @used
      */
     href: string;
     /**
-     * ## `patternContentUnits`
+     * ## `undefined`
      *
      * @used
      */
     patternContentUnits: string;
     /**
-     * ## `patternTransform`
+     * ## `undefined`
      *
      * @used
      */
     patternTransform: string;
     /**
-     * ## `preserveAspectRatio`
+     * ## `undefined`
      *
      * @used
      */
     preserveAspectRatio: string;
     /**
-     * ## `viewBox`
+     * ## `undefined`
      *
      * @used
      */
     viewBox: string;
     /**
-     * ## `x`
+     * ## `undefined`
      *
      * @used
      */
     x: string;
 }
 
-export interface SVGPolygonProps extends SVGAttributes {
+export interface SVGPolygonProps
+    extends CommonAttributes,
+        Events<SVGPolygonElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `points`
+     * ## `undefined`
      *
      * @used
      */
     points: string;
     /**
-     * ## `pathLength`
+     * ## `undefined`
      *
      * @used
      */
     pathLength: string;
 }
 
-export interface SVGPolylineProps extends SVGAttributes {
+export interface SVGPolylineProps
+    extends CommonAttributes,
+        Events<SVGPolylineElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `points`
+     * ## `undefined`
      *
      * @used
      */
     points: string;
     /**
-     * ## `pathLength`
+     * ## `undefined`
      *
      * @used
      */
     pathLength: string;
 }
 
-export interface SVGRadialGradientProps extends SVGAttributes {
+export interface SVGRadialGradientProps
+    extends CommonAttributes,
+        Events<SVGRadialGradientElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `cx`
+     * ## `undefined`
      *
-     * The cx attribute define the x-axis coordinate of a center point.
      * @used
      */
     cx: string;
     /**
-     * ## `cy`
+     * ## `undefined`
      *
-     * The cy attribute define the y-axis coordinate of a center point.
      * @used
      */
     cy: string;
     /**
-     * ## `fr`
+     * ## `undefined`
      *
-     * The fr attribute defines the radius of the focal point for the radial gradient.
      * @used
      */
     fr: string;
     /**
-     * ## `fx`
+     * ## `undefined`
      *
-     * The fx attribute defines the x-axis coordinate of the focal point for a radial gradient.
      * @used
      */
     fx: string;
     /**
-     * ## `fy`
+     * ## `undefined`
      *
-     * The fy attribute defines the y-axis coordinate of the focal point for a radial gradient.
      * @used
      */
     fy: string;
     /**
-     * ## `gradientUnits`
+     * ## `undefined`
      *
      * @used
      */
     gradientUnits: string;
     /**
-     * ## `gradientTransform`
+     * ## `undefined`
      *
      * @used
      */
     gradientTransform: string;
     /**
-     * ## `href`
+     * ## `undefined`
      *
-     * The URL of a linked resource.
-     * @used  `a` `area` `base` `link`
+     * @used
      */
     href: string;
     /**
-     * ## `r`
+     * ## `undefined`
      *
      * @used
      */
     r: string;
     /**
-     * ## `spreadMethod`
+     * ## `undefined`
      *
      * @used
      */
     spreadMethod: string;
 }
 
-export interface SVGRectProps extends SVGAttributes {
+export interface SVGRectProps
+    extends CommonAttributes,
+        Events<SVGRectElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `x`
+     * ## `undefined`
      *
      * @used
      */
     x: string;
     /**
-     * ## `y`
+     * ## `undefined`
      *
      * @used
      */
     y: string;
     /**
-     * ## `width`
+     * ## `undefined`
      *
-     * For the elements listed here, this establishes the element's width.
-     * @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+     * @used
      */
     width: string;
     /**
-     * ## `height`
+     * ## `undefined`
      *
-     * Specifies the height of elements listed here. For all other elements, use the CSS height property.
-     * @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+     * @used
      */
     height: string;
     /**
-     * ## `rx`
+     * ## `undefined`
      *
      * @used
      */
     rx: string;
     /**
-     * ## `ry`
+     * ## `undefined`
      *
      * @used
      */
     ry: string;
     /**
-     * ## `pathLength`
+     * ## `undefined`
      *
      * @used
      */
     pathLength: string;
 }
 
-export interface SVGSetProps extends SVGAttributes {
+export interface SVGSetProps
+    extends CommonAttributes,
+        Events<SVGSetElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `to`
+     * ## `undefined`
      *
      * @used
      */
     to: string;
 }
 
-export interface SVGStopProps extends SVGAttributes {
+export interface SVGStopProps
+    extends CommonAttributes,
+        Events<SVGStopElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `stop-color`
+     * ## `undefined`
      *
      * @used
      */
     stopColor: string;
     /**
-     * ## `stop-opacity`
+     * ## `undefined`
      *
      * @used
      */
     stopOpacity: string;
 }
 
-export interface SVGSvgProps extends SVGAttributes {
+export interface SVGSvgProps
+    extends CommonAttributes,
+        Events<SVGSVGElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `height`
+     * ## `undefined`
      *
-     * Specifies the height of elements listed here. For all other elements, use the CSS height property.
-     * @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+     * @used
      */
     height: string;
     /**
-     * ## `preserveAspectRatio`
+     * ## `undefined`
      *
      * @used
      */
     preserveAspectRatio: string;
     /**
-     * ## `viewBox`
+     * ## `undefined`
      *
      * @used
      */
     viewBox: string;
     /**
-     * ## `width`
+     * ## `undefined`
      *
-     * For the elements listed here, this establishes the element's width.
-     * @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+     * @used
      */
     width: string;
     /**
-     * ## `x`
+     * ## `undefined`
      *
      * @used
      */
     x: string;
     /**
-     * ## `y`
+     * ## `undefined`
      *
      * @used
      */
     y: string;
 }
 
-export interface SVGSwitchProps extends SVGAttributes {}
+export interface SVGSwitchProps
+    extends CommonAttributes,
+        Events<SVGSwitchElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface SVGSymbolProps extends SVGAttributes {
+export interface SVGSymbolProps
+    extends CommonAttributes,
+        Events<SVGSymbolElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `height`
+     * ## `undefined`
      *
-     * Specifies the height of elements listed here. For all other elements, use the CSS height property.
-     * @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+     * @used
      */
     height: string;
     /**
-     * ## `preserveAspectRatio`
+     * ## `undefined`
      *
      * @used
      */
     preserveAspectRatio: string;
     /**
-     * ## `refX`
+     * ## `undefined`
      *
      * @used
      */
     refX: string;
     /**
-     * ## `refY`
+     * ## `undefined`
      *
      * @used
      */
     refY: string;
     /**
-     * ## `viewBox`
+     * ## `undefined`
      *
      * @used
      */
     viewBox: string;
     /**
-     * ## `width`
+     * ## `undefined`
      *
-     * For the elements listed here, this establishes the element's width.
-     * @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+     * @used
      */
     width: string;
     /**
-     * ## `x`
+     * ## `undefined`
      *
      * @used
      */
     x: string;
     /**
-     * ## `y`
+     * ## `undefined`
      *
      * @used
      */
     y: string;
 }
 
-export interface SVGTextProps extends SVGAttributes {
+export interface SVGTextProps
+    extends CommonAttributes,
+        Events<SVGTextElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `x`
+     * ## `undefined`
      *
      * @used
      */
     x: string;
     /**
-     * ## `y`
+     * ## `undefined`
      *
      * @used
      */
     y: string;
     /**
-     * ## `dx`
+     * ## `undefined`
      *
-     * The dx attribute indicates a shift along the x-axis on the position of an element or its content.
      * @used
      */
     dx: string;
     /**
-     * ## `dy`
+     * ## `undefined`
      *
-     * The dy attribute indicates a shift along the y-axis on the position of an element or its content.
      * @used
      */
     dy: string;
     /**
-     * ## `rotate`
+     * ## `undefined`
      *
      * @used
      */
     rotate: string;
     /**
-     * ## `lengthAdjust`
+     * ## `undefined`
      *
      * @used
      */
     lengthAdjust: string;
     /**
-     * ## `textLength`
+     * ## `undefined`
      *
      * @used
      */
     textLength: string;
 }
 
-export interface SVGTextPathProps extends SVGAttributes {
+export interface SVGTextPathProps
+    extends CommonAttributes,
+        Events<SVGTextPathElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `href`
+     * ## `undefined`
      *
-     * The URL of a linked resource.
-     * @used  `a` `area` `base` `link`
+     * @used
      */
     href: string;
     /**
-     * ## `lengthAdjust`
+     * ## `undefined`
      *
      * @used
      */
     lengthAdjust: string;
     /**
-     * ## `method`
+     * ## `undefined`
      *
-     * Defines which HTTP method to use when submitting the form. Can be GET (default) or POST.
-     * @used  `form`
+     * @used
      */
     method: "post" | "get" | "dialog";
     /**
-     * ## `path`
+     * ## `undefined`
      *
      * @used
      */
     path: string;
     /**
-     * ## `spacing`
+     * ## `undefined`
+     *
+     * @used
+     */
+    side: string;
+    /**
+     * ## `undefined`
      *
      * @used
      */
     spacing: string;
     /**
-     * ## `startOffset`
+     * ## `undefined`
      *
      * @used
      */
     startOffset: string;
     /**
-     * ## `textLength`
+     * ## `undefined`
      *
      * @used
      */
     textLength: string;
 }
 
-export interface SVGTitleProps extends SVGAttributes {}
+export interface SVGTitleProps
+    extends CommonAttributes,
+        Events<SVGTitleElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
-export interface SVGTspanProps extends SVGAttributes {
+export interface SVGTspanProps
+    extends CommonAttributes,
+        Events<SVGTSpanElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `x`
+     * ## `undefined`
      *
      * @used
      */
     x: string;
     /**
-     * ## `y`
+     * ## `undefined`
      *
      * @used
      */
     y: string;
     /**
-     * ## `dx`
+     * ## `undefined`
      *
-     * The dx attribute indicates a shift along the x-axis on the position of an element or its content.
      * @used
      */
     dx: string;
     /**
-     * ## `dy`
+     * ## `undefined`
      *
-     * The dy attribute indicates a shift along the y-axis on the position of an element or its content.
      * @used
      */
     dy: string;
     /**
-     * ## `rotate`
+     * ## `undefined`
      *
      * @used
      */
     rotate: string;
     /**
-     * ## `lengthAdjust`
+     * ## `undefined`
      *
      * @used
      */
     lengthAdjust: string;
     /**
-     * ## `textLength`
+     * ## `undefined`
      *
      * @used
      */
     textLength: string;
 }
 
-export interface SVGUseProps extends SVGAttributes {
+export interface SVGUseProps
+    extends CommonAttributes,
+        Events<SVGUseElement>,
+        HTMLAttributes,
+        ElementChildren {
     /**
-     * ## `href`
+     * ## `undefined`
      *
-     * The URL of a linked resource.
-     * @used  `a` `area` `base` `link`
+     * @used
      */
     href: string;
     /**
-     * ## `xlink:href`
+     * ## `undefined`
      *
      * @used
      */
     xLinkHref: string;
     /**
-     * ## `x`
+     * ## `undefined`
      *
      * @used
      */
     x: string;
     /**
-     * ## `y`
+     * ## `undefined`
      *
      * @used
      */
     y: string;
     /**
-     * ## `width`
+     * ## `undefined`
      *
-     * For the elements listed here, this establishes the element's width.
-     * @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+     * @used
      */
     width: string;
     /**
-     * ## `height`
+     * ## `undefined`
      *
-     * Specifies the height of elements listed here. For all other elements, use the CSS height property.
-     * @used  `canvas` `embed` `iframe` `img` `input` `object` `video`
+     * @used
      */
     height: string;
 }
 
-export interface SVGViewProps extends SVGAttributes {}
+export interface SVGViewProps
+    extends CommonAttributes,
+        Events<SVGViewElement>,
+        HTMLAttributes,
+        ElementChildren {}
 
 export interface HTMLAttributes extends CommonAttributes, Events {
     /**
-     * ## `class`
+     * ## `undefined`
      *
-     * Often used with CSS to style elements with common properties.
-     * @used Global attribute
+     * @used
      */
     className: string;
     /**
-     * ## `id`
+     * ## `undefined`
      *
-     * Often used with CSS to style a specific element. The value of this attribute must be unique.
-     * @used Global attribute
+     * @used
      */
     id: string;
     /**
-     * ## `lang`
+     * ## `undefined`
      *
-     * Defines the language used in the element.
-     * @used Global attribute
+     * @used
      */
     lang: string;
     /**
-     * ## `accesskey`
+     * ## `undefined`
      *
-     * Keyboard shortcut to activate or add focus to the element.
-     * @used Global attribute
+     * @used
      */
     accessKey: string;
     /**
-     * ## `autocapitalize`
+     * ## `undefined`
      *
-     * Sets whether input is automatically capitalized when entered by user
-     * @used Global attribute
+     * @used
      */
     autoCapitalize:
         | "off"
@@ -8532,441 +8831,381 @@ export interface HTMLAttributes extends CommonAttributes, Events {
         | "words"
         | "characters";
     /**
-     * ## `contenteditable`
+     * ## `undefined`
      *
-     * Indicates whether the element's content is editable.
-     * @used Global attribute
+     * @used
      */
     contentEditable: "true" | "false";
     /**
-     * ## `contextmenu`
+     * ## `undefined`
      *
-     * Defines the ID of a ``<menu>`` element which will serve as the element's context menu.
-     * @used Global attribute
+     * @used
      */
     contextMenu: string;
     /**
-     * ## `compact`
+     * ## `undefined`
      *
-     * @used Global attribute
+     * @used
      */
     compact: string;
     /**
-     * ## `dir`
+     * ## `undefined`
      *
-     * Defines the text direction. Allowed values are ltr (Left-To-Right) or rtl (Right-To-Left)
-     * @used Global attribute
+     * @used
      */
     dir: "ltr" | "rtl" | "auto";
     /**
-     * ## `draggable`
+     * ## `undefined`
      *
-     * Defines whether the element can be dragged.
-     * @used Global attribute
+     * @used
      */
     draggable: "true" | "false";
     /**
-     * ## `hidden`
+     * ## `undefined`
      *
-     * Prevents rendering of given element, while keeping child elements, e.g. script elements, active.
-     * @used Global attribute
+     * @used
      */
     hidden: boolean;
     /**
-     * ## `itemprop`
+     * ## `undefined`
      *
-     * @used Global attribute
+     * @used
      */
     itemProp: string;
     /**
-     * ## `playsinline`
+     * ## `undefined`
      *
-     * @used Global attribute
+     * @used
      */
     playsInline: string;
     /**
-     * ## `role`
+     * ## `undefined`
      *
-     * Defines an explicit role for an element for use by assistive technologies.
-     * @used Global attribute
+     * @used
      */
     role: string;
     /**
-     * ## `slot`
+     * ## `undefined`
      *
-     * Assigns a slot in a shadow DOM shadow tree to an element.
-     * @used Global attribute
+     * @used
      */
     slot: string;
     /**
-     * ## `spellcheck`
+     * ## `undefined`
      *
-     * Indicates whether spell checking is allowed for the element.
-     * @used Global attribute
+     * @used
      */
     spellCheck: "true" | "false";
     /**
-     * ## `tabindex`
+     * ## `undefined`
      *
-     * Overrides the browser's default tab order and follows the one specified instead.
-     * @used Global attribute
+     * @used
      */
     tabIndex: string;
     /**
-     * ## `title`
+     * ## `undefined`
      *
-     * Text to be displayed in a tooltip when hovering over the element.
-     * @used Global attribute
+     * @used
      */
     title: string;
     /**
-     * ## `translate`
+     * ## `undefined`
      *
-     * Specify whether an element's attribute values and the values of its Text node children are to be translated when the page is localized, or whether to leave them unchanged.
-     * @used Global attribute
+     * @used
      */
     translate: "yes" | "no";
     /**
-     * ## `aria-autocomplete`
+     * ## `undefined`
      *
-     * The aria-autocomplete attribute indicates whether inputting text could trigger display of one or more predictions of the user's intended value for a combobox, searchbox, or textbox and specifies how predictions will be presented if they are made.
-     * @used Global attribute
+     * @used
      */
     ariaAutocomplete: "none" | "inline" | "list" | "both";
     /**
-     * ## `aria-checked`
+     * ## `undefined`
      *
-     * The aria-checked attribute indicates the current "checked" state of checkboxes, radio buttons, and other widgets.
-     * @used Global attribute
+     * @used
      */
     ariaChecked: "false" | "true" | "mixed" | "undefined";
     /**
-     * ## `aria-disabled`
+     * ## `undefined`
      *
-     * The aria-disabled state indicates that the element is perceivable but disabled, so it is not editable or otherwise operable.
-     * @used Global attribute
+     * @used
      */
     ariaDisabled: "true" | "false";
     /**
-     * ## `aria-errormessage`
+     * ## `undefined`
      *
-     * The aria-errormessage attribute on an object identifies the element that provides an error message for that object.
-     * @used Global attribute
+     * @used
      */
     ariaErrormessage: string;
     /**
-     * ## `aria-expanded`
+     * ## `undefined`
      *
-     * The aria-expanded attribute is set on an element to indicate if a control is expanded or collapsed, and whether or not its child elements are displayed or hidden.
-     * @used Global attribute
+     * @used
      */
     ariaExpanded: string;
     /**
-     * ## `aria-haspopup`
+     * ## `undefined`
      *
-     * The aria-haspopup attribute indicates the availability and type of interactive popup element that can be triggered by the element on which the attribute is set.
-     * @used Global attribute
+     * @used
      */
     ariaHaspopup: string;
     /**
-     * ## `aria-hidden`
+     * ## `undefined`
      *
-     * The aria-hidden state indicates whether the element is exposed to an accessibility API.
-     * @used Global attribute
+     * @used
      */
     ariaHidden: string;
     /**
-     * ## `aria-invalid`
+     * ## `undefined`
      *
-     * The aria-invalid state indicates the entered value does not conform to the format expected by the application.
-     * @used Global attribute
+     * @used
      */
     ariaInvalid: string;
     /**
-     * ## `aria-label`
+     * ## `undefined`
      *
-     * The aria-label attribute defines a string value that labels an interactive element.
-     * @used Global attribute
+     * @used
      */
     ariaLabel: string;
     /**
-     * ## `aria-level`
+     * ## `undefined`
      *
-     * The aria-level attribute defines the hierarchical level of an element within a structure.
-     * @used Global attribute
+     * @used
      */
     ariaLevel: string;
     /**
-     * ## `aria-modal`
+     * ## `undefined`
      *
-     * The aria-modal attribute indicates whether an element is modal when displayed.
-     * @used Global attribute
+     * @used
      */
     ariaModal: string;
     /**
-     * ## `aria-multiline`
+     * ## `undefined`
      *
-     * The aria-multiline attribute indicates whether a textbox accepts multiple lines of input or only a single line.
-     * @used Global attribute
+     * @used
      */
     ariaMultiline: string;
     /**
-     * ## `aria-multiselectable`
+     * ## `undefined`
      *
-     * The aria-multiselectable attribute indicates that the user may select more than one item from the current selectable descendants.
-     * @used Global attribute
+     * @used
      */
     ariaMultiselectable: string;
     /**
-     * ## `aria-orientation`
+     * ## `undefined`
      *
-     * The aria-orientation attribute indicates whether the element's orientation is horizontal, vertical, or unknown/ambiguous.
-     * @used Global attribute
+     * @used
      */
     ariaOrientation: string;
     /**
-     * ## `aria-placeholder`
+     * ## `undefined`
      *
-     * The aria-placeholder attribute defines a short hint (a word or short phrase) intended to help the user with data entry when a form control has no value. The hint can be a sample value or a brief description of the expected format.
-     * @used Global attribute
+     * @used
      */
     ariaPlaceholder: string;
     /**
-     * ## `aria-pressed`
+     * ## `undefined`
      *
-     * The aria-pressed attribute indicates the current "pressed" state of a toggle button.
-     * @used Global attribute
+     * @used
      */
     ariaPressed: string;
     /**
-     * ## `aria-readonly`
+     * ## `undefined`
      *
-     * The aria-readonly attribute indicates that the element is not editable, but is otherwise operable.
-     * @used Global attribute
+     * @used
      */
     ariaReadonly: string;
     /**
-     * ## `aria-required`
+     * ## `undefined`
      *
-     * The aria-required attribute indicates that user input is required on the element before a form may be submitted.
-     * @used Global attribute
+     * @used
      */
     ariaRequired: string;
     /**
-     * ## `aria-selected`
+     * ## `undefined`
      *
-     * The aria-selected attribute indicates the current "selected" state of various widgets.
-     * @used Global attribute
+     * @used
      */
     ariaSelected: string;
     /**
-     * ## `aria-sort`
+     * ## `undefined`
      *
-     * The aria-sort attribute indicates if items in a table or grid are sorted in ascending or descending order.
-     * @used Global attribute
+     * @used
      */
     ariaSort: string;
     /**
-     * ## `aria-valuemax`
+     * ## `undefined`
      *
-     * The aria-valuemax attribute defines the maximum allowed value for a range widget.
-     * @used Global attribute
+     * @used
      */
     ariaValuemax: string;
     /**
-     * ## `aria-valuemin`
+     * ## `undefined`
      *
-     * The aria-valuemin attribute defines the minimum allowed value for a range widget.
-     * @used Global attribute
+     * @used
      */
     ariaValuemin: string;
     /**
-     * ## `aria-valuenow`
+     * ## `undefined`
      *
-     * The aria-valuenow attribute defines the current value for a range widget.
-     * @used Global attribute
+     * @used
      */
     ariaValuenow: string;
     /**
-     * ## `aria-valuetext`
+     * ## `undefined`
      *
-     * The aria-valuetext attribute defines the human readable text alternative of aria-valuenow for a range widget.
-     * @used Global attribute
+     * @used
      */
     ariaValuetext: string;
     /**
-     * ## `aria-busy`
+     * ## `undefined`
      *
-     * Used in ARIA live regions, the global aria-busy state indicates an element is being modified and that assistive technologies may want to wait until the changes are complete before informing the user about the update.
-     * @used Global attribute
+     * @used
      */
     ariaBusy: string;
     /**
-     * ## `aria-live`
+     * ## `undefined`
      *
-     * The global aria-live attribute indicates that an element will be updated, and describes the types of updates the user agents, assistive technologies, and user can expect from the live region.
-     * @used Global attribute
+     * @used
      */
     ariaLive: string;
     /**
-     * ## `aria-relevant`
+     * ## `undefined`
      *
-     * Used in ARIA live regions, the global aria-relevant attribute indicates what notifications the user agent will trigger when the accessibility tree within a live region is modified.
-     * @used Global attribute
+     * @used
      */
     ariaRelevant: string;
     /**
-     * ## `aria-atomic`
+     * ## `undefined`
      *
-     * In ARIA live regions, the global aria-atomic attribute indicates whether assistive technologies such as a screen reader will present all, or only parts of, the changed region based on the change notifications defined by the aria-relevant attribute.
-     * @used Global attribute
+     * @used
      */
     ariaAtomic: string;
     /**
-     * ## `aria-dropeffect`
+     * ## `undefined`
      *
-     * The global aria-dropeffect attribute indicates what functions may be performed when a dragged object is released on the drop target. Deprecated
-     * @used Global attribute
+     * @used
      */
     ariaDropeffect: string;
     /**
-     * ## `aria-grabbed`
+     * ## `undefined`
      *
-     * The aria-grabbed state indicates an element's "grabbed" state in a drag-and-drop operation. Deprecated
-     * @used Global attribute
+     * @used
      */
     ariaGrabbed: string;
     /**
-     * ## `aria-activedescendant`
+     * ## `undefined`
      *
-     * The aria-activedescendant attribute identifies the currently active element when focus is on a composite widget, combobox, textbox, group, or application.
-     * @used Global attribute
+     * @used
      */
     ariaActivedescendant: string;
     /**
-     * ## `aria-colcount`
+     * ## `undefined`
      *
-     * The aria-colcount attribute defines the total number of columns in a table, grid, or treegrid when not all columns are present in the DOM.
-     * @used Global attribute
+     * @used
      */
     ariaColcount: string;
     /**
-     * ## `aria-colindex`
+     * ## `undefined`
      *
-     * The aria-colindex attribute defines an element's column index or position with respect to the total number of columns within a table, grid, or treegrid.
-     * @used Global attribute
+     * @used
      */
     ariaColindex: string;
     /**
-     * ## `aria-colspan`
+     * ## `undefined`
      *
-     * The aria-colspan attribute defines the number of columns spanned by a cell or gridcell within a table, grid, or treegrid.
-     * @used Global attribute
+     * @used
      */
     ariaColspan: string;
     /**
-     * ## `aria-controls`
+     * ## `undefined`
      *
-     * The global aria-controls property identifies the element (or elements) whose contents or presence are controlled by the element on which this attribute is set.
-     * @used Global attribute
+     * @used
      */
     ariaControls: string;
     /**
-     * ## `aria-describedby`
+     * ## `undefined`
      *
-     * The global aria-describedby attribute identifies the element (or elements) that describes the element on which the attribute is set.
-     * @used Global attribute
+     * @used
      */
     ariaDescribedby: string;
     /**
-     * ## `aria-description`
+     * ## `undefined`
      *
-     * The global aria-description attribute defines a string value that describes or annotates the current element.
-     * @used Global attribute
+     * @used
      */
     ariaDescription: string;
     /**
-     * ## `aria-details`
+     * ## `undefined`
      *
-     * The global aria-details attribute identifies the element (or elements) that provide additional information related to the object.
-     * @used Global attribute
+     * @used
      */
     ariaDetails: string;
     /**
-     * ## `aria-flowto`
+     * ## `undefined`
      *
-     * The global aria-flowto attribute identifies the next element (or elements) in an alternate reading order of content. This allows assistive technology to override the general default of reading in document source order at the user's discretion.
-     * @used Global attribute
+     * @used
      */
     ariaFlowto: string;
     /**
-     * ## `aria-labelledby`
+     * ## `undefined`
      *
-     * The aria-labelledby attribute identifies the element (or elements) that labels the element it is applied to.
-     * @used Global attribute
+     * @used
      */
     ariaLabelledby: string;
     /**
-     * ## `aria-owns`
+     * ## `undefined`
      *
-     * The aria-owns attribute identifies an element (or elements) in order to define a visual, functional, or contextual relationship between a parent and its child elements when the DOM hierarchy cannot be used to represent the relationship.
-     * @used Global attribute
+     * @used
      */
     ariaOwns: string;
     /**
-     * ## `aria-posinset`
+     * ## `undefined`
      *
-     * The aria-posinset attribute defines an element's number or position in the current set of listitems or treeitems when not all items are present in the DOM.
-     * @used Global attribute
+     * @used
      */
     ariaPosinset: string;
     /**
-     * ## `aria-rowcount`
+     * ## `undefined`
      *
-     * The aria-rowcount attribute defines the total number of rows in a table, grid, or treegrid.
-     * @used Global attribute
+     * @used
      */
     ariaRowcount: string;
     /**
-     * ## `aria-rowindex`
+     * ## `undefined`
      *
-     * The aria-rowindex attribute defines an element's position with respect to the total number of rows within a table, grid, or treegrid.
-     * @used Global attribute
+     * @used
      */
     ariaRowindex: string;
     /**
-     * ## `aria-rowspan`
+     * ## `undefined`
      *
-     * The aria-rowspan attribute defines the number of rows spanned by a cell or gridcell within a table, grid, or treegrid.
-     * @used Global attribute
+     * @used
      */
     ariaRowspan: string;
     /**
-     * ## `aria-setsize`
+     * ## `undefined`
      *
-     * The aria-setsize attribute defines the number of items in the current set of listitems or treeitems when not all items in the set are present in the DOM.
-     * @used Global attribute
+     * @used
      */
     ariaSetsize: string;
     /**
-     * ## `aria-current`
+     * ## `undefined`
      *
-     * A non-null aria-current state on an element indicates that this element represents the current item within a container or set of related elements.
-     * @used Global attribute
+     * @used
      */
     ariaCurrent: string;
     /**
-     * ## `aria-keyshortcuts`
+     * ## `undefined`
      *
-     * The global aria-keyshortcuts attribute indicates keyboard shortcuts that an author has implemented to activate or give focus to an element.
-     * @used Global attribute
+     * @used
      */
     ariaKeyshortcuts: string;
     /**
-     * ## `aria-roledescription`
+     * ## `undefined`
      *
-     * The aria-roledescription attribute defines a human-readable, author-localized description for the role of an element.
-     * @used Global attribute
+     * @used
      */
     ariaRoledescription: string;
 }

@@ -66,8 +66,18 @@ function component({
     childless = false,
     links = [],
     decorators = [],
+    nativeInterface = "HTMLElement",
 }) {
-    return { tag, props, docs, handler, childless, links, decorators };
+    return {
+        tag,
+        props,
+        docs,
+        handler,
+        childless,
+        links,
+        decorators,
+        nativeInterface,
+    };
 }
 
 /**

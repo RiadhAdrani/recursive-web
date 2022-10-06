@@ -5,6 +5,7 @@ const { createAnimationName } = require("../../common");
 
 module.exports = () => {
     return component({
+        nativeInterface: "HTMLElement",
         tag: CIRCULAR_SPINNER,
         childless: true,
         docs: [

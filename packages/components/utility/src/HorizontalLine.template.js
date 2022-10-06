@@ -3,6 +3,7 @@ const { HORIZONTAL_LINE } = require("../../../constants");
 
 module.exports = () => {
     return component({
+        nativeInterface: "HTMLElement",
         tag: HORIZONTAL_LINE,
         props: {
             thickness: "string",
