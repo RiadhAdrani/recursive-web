@@ -49,23 +49,28 @@ it.each([
     ["lorem}", ""],
     ["lorem{}", ""],
     ["{}lorem", ""],
-    ["red", " red"],
-    ["data:local_url", " data:local_url"],
-    [["red"], " red"],
-    [["red", "green", "blue"], " red green blue"],
-    [["", "green", "blue"], " green blue"],
-    [["red", "", "blue"], " red blue"],
-    [["red", "green", ""], " red green"],
+    ["red", "red"],
+    ["data:local_url", "data:local_url"],
+    [["red"], "red"],
+    [["red", "green", "blue"], "red green blue"],
+    [["", "green", "blue"], "green blue"],
+    [["red", "", "blue"], "red blue"],
+    [["red", "green", ""], "red green"],
     [["", "", ""], ""],
 ])("should render the correct value | case '%s'", (input, expected) => {
     expect(renderValue(input)).toBe(expected);
 });
 
 it.each([
-    ["color", "red", "color: red;"],
-    ["backgroundColor", "blue", "background-color: blue;"],
-    ["borderTopLeftRadius", "10px", "border-top-left-radius: 10px;"],
-    ["my-custom-property", "value", "my-custom-property: value;"],
+    ["color", "red", "color:red;"],
+    ["backgroundColor", "blue", "background-color:blue;"],
+    ["borderTopLeftRadius", "10px", "border-top-left-radius:10px;"],
+    ["my-custom-property", "value", "my-custom-property:value;"],
+    [
+        "transitionProperty",
+        ["color", "background-color"],
+        "transition-property:color, background-color;",
+    ],
 ])(
     "should render '{property}:{value}' correctly | case '%s'",
     (property, value, expected) => {

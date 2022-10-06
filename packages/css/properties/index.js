@@ -56,15 +56,22 @@ function renderValue(value, propertyName) {
     if (Array.isArray(value)) array.push(...value);
     else array.push(value);
 
+    const filteredArray = [];
+
     array.forEach((item) => {
-        if (validValue(item)) {
-            _value += ` ${item}`;
-        } else {
+        if (validValue(item)) filteredArray.push(item);
+        else {
             RecursiveConsole.warn(
                 `Recursive Web CSSOM: value "${item}" of property "${propertyName}" has been ignored.`
             );
         }
     });
+
+    const joiner = is(propertyName)
+        ? ListOfCssProperties[propertyName].joiner
+        : " ";
+
+    _value = filteredArray.join(joiner);
 
     return _value;
 }

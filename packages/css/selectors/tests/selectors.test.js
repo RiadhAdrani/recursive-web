@@ -34,8 +34,8 @@ it.each([
     ["div", null, ""],
     ["div", 0, ""],
     ["div", [], "div{}"],
-    ["div", { color: "red" }, "div{color: red;}"],
-    ["div", { myColor: "red" }, "div{myColor: red;}"],
+    ["div", { color: "red" }, "div{color:red;}"],
+    ["div", { myColor: "red" }, "div{myColor:red;}"],
 ])(
     "should render selector content correctly | case '%s':'%s'",
     (selector, content, expected) => {

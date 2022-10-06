@@ -9,7 +9,7 @@ it("should render a correct media queries with valid input.", () => {
             },
         })
     ).toBe(
-        "@media (max-width: 600px){div{background-color: red;border: 1px solid black;}}"
+        "@media (max-width: 600px){div{background-color:red;border:1px solid black;}}"
     );
 });
 

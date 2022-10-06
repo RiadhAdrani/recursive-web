@@ -35,8 +35,9 @@ function attribute({
     docs = [],
     links = [],
     decorators = [],
+    joiner = " ",
 }) {
-    return { name, toggleable, values, els, docs, links, decorators };
+    return { name, toggleable, values, els, docs, links, decorators, joiner };
 }
 
 /**
@@ -91,8 +92,9 @@ function property({
     docs = [],
     links = [],
     decorators = [],
+    joiner = " ",
 }) {
-    return { css, values, type, support, docs, links, decorators };
+    return { css, values, type, support, docs, links, decorators, joiner };
 }
 
 /**

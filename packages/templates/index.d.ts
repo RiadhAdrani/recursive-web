@@ -54,6 +54,10 @@ export interface AttributeTemplate extends Template {
      * elements in which this attribute is usable. Set to `true` if it is a global attribute.
      */
     els: Array<string> | true;
+    /**
+     * Used to join inputs of type array.
+     */
+    joiner: string;
 }
 
 export type EventTemplateHandler = (element: HTMLElement) => void;
@@ -113,6 +117,10 @@ export interface CssPropertyTemplate extends Template {
      * property support in different browsers.
      */
     support: Array<string>;
+    /**
+     * Used to join inputs of type array.
+     */
+    joiner: string;
 }
 
 export interface CssSelectorTemplate extends Template {

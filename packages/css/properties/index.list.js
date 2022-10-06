@@ -4384,6 +4384,7 @@ const ListOfCssProperties = {
         links: [
             "https://developer.mozilla.org/en-US/docs/Web/CSS/transition-property",
         ],
+        joiner: ", ",
     }),
     transitionTimingFunction: property({
         css: "transition-timing-function",

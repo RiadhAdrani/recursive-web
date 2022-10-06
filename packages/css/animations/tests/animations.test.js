@@ -32,7 +32,7 @@ it.each([
             "50%": { color: "blue" },
             "100%": { color: "yellow" },
         },
-        "@keyframes anim{0%{color: red;}50%{color: blue;}100%{color: yellow;}}",
+        "@keyframes anim{0%{color:red;}50%{color:blue;}100%{color:yellow;}}",
     ],
     [
         "anim",
@@ -40,14 +40,14 @@ it.each([
             "0%": { color: "red" },
             "100%": { color: "blue" },
         },
-        "@keyframes anim{0%{color: red;}100%{color: blue;}}",
+        "@keyframes anim{0%{color:red;}100%{color:blue;}}",
     ],
     [
         "anim",
         {
             "100%": { color: "blue" },
         },
-        "@keyframes anim{100%{color: blue;}}",
+        "@keyframes anim{100%{color:blue;}}",
     ],
     [
         "anim",
