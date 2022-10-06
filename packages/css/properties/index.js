@@ -74,7 +74,9 @@ function renderValue(value, propertyName) {
  * @param {String | Array<string>} value
  */
 function renderProperty(property, value) {
-    if (!is(property) || [undefined, null, ""].includes(value)) return "";
+    const propertyName = is(property) ? get(property) : property;
+
+    if (!propertyName || [undefined, null, ""].includes(value)) return "";
 
     const _value = renderValue(value, property);
 
@@ -86,7 +88,7 @@ function renderProperty(property, value) {
         output.push(`${item}:${_value};`);
     });
 
-    output.push(`${get(property)}:${_value};`);
+    output.push(`${propertyName}:${_value};`);
 
     return output.join("");
 }

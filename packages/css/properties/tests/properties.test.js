@@ -65,6 +65,7 @@ it.each([
     ["color", "red", "color: red;"],
     ["backgroundColor", "blue", "background-color: blue;"],
     ["borderTopLeftRadius", "10px", "border-top-left-radius: 10px;"],
+    ["my-custom-property", "value", "my-custom-property: value;"],
 ])(
     "should render '{property}:{value}' correctly | case '%s'",
     (property, value, expected) => {
