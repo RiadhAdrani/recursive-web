@@ -1,4 +1,4 @@
-const { RecursiveRouter, RecursiveApp } = require("../../use");
+const { RecursiveRouter } = require("../../use");
 
 class RecursiveWebRouter extends RecursiveRouter {
     constructor(route, base, scroll, app) {

@@ -29,7 +29,8 @@
         "framework"
     ],
     "dependencies": {
-        "@riadh-adrani/recursive": "^0.7.48"
+        "@riadh-adrani/recursive": "^0.7.48",
+        "@riadh-adrani/utility-js" :"^0.0.3"
     },
     "devDependencies": {
         "jest": "^28.1.3",

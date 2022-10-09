@@ -1,5 +1,5 @@
 const { isValidMediaQueryDeclaration } = require("../media-queries");
-const { areEqual } = require("@riadh-adrani/recursive/packages/common");
+const { areEqual } = require("@riadh-adrani/utility-js");
 
 /**
  * Merge an array of style sheet into a single one.
