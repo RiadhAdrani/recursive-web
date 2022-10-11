@@ -15,7 +15,7 @@ const {
     eventHasHandler,
     renderAttributeValue,
 } = require("../dom/index.js");
-const { copy } = require("@riadh-adrani/recursive/packages/common");
+const { copy } = require("@riadh-adrani/utility-js");
 
 class RecursiveWebRenderer extends RecursiveRenderer {
     /**
