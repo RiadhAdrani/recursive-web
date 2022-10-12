@@ -1,5 +1,6 @@
 const { isValidMediaQueryDeclaration } = require("../media-queries");
 const { areEqual } = require("@riadh-adrani/utility-js");
+const { RecursiveConsole } = require("../../../use");
 
 /**
  * Merge an array of style sheet into a single one.
@@ -98,7 +99,13 @@ function mergeStyleSheets(styleSheets) {
                     break;
                 case "fontFace":
                     {
-                        if (!Array.isArray(sheet.fontFace)) break;
+                        if (!Array.isArray(sheet.fontFace)) {
+                            RecursiveConsole.warn(
+                                "Recursive CSSOM : fontFace property is not of type array and therefore it was ignored."
+                            );
+
+                            break;
+                        }
 
                         if (!output.fontFace) output.fontFace = [];
 

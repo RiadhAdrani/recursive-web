@@ -168,6 +168,8 @@ export type Color =
     | "yellow"
     | "yellowgreen";
 
+export interface FontFace {}
+
 export interface Selector {}
 
 export interface SelectorTypes {}

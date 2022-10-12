@@ -27,7 +27,7 @@ export function getPropertySupport(key: string): Array<string>;
 export function validValue(value: string | number): boolean;
 
 /**
- * tansform the given array into a CSS value.
+ * transform the given array into a CSS value.
  * @param value Property value.
  * @param propertyName Property name. needed to display warnings.
  */
