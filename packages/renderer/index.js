@@ -72,10 +72,12 @@ class RecursiveWebRenderer extends RecursiveRenderer {
     setElementAttribute(attribute, value, instance) {
         const _value = renderAttributeValue(attribute, value);
 
+        const _attributeName = getAttributeName(attribute);
+
         if (isToggleableAttribute(attribute)) {
-            instance.toggleAttribute(attribute, _value === true);
+            instance.toggleAttribute(_attributeName, _value === true);
         } else {
-            instance.setAttribute(attribute, _value);
+            instance.setAttribute(_attributeName, _value);
 
             try {
                 // So we need to double check it with this one
@@ -317,11 +319,7 @@ class RecursiveWebRenderer extends RecursiveRenderer {
                 }
             }
         } else {
-            const attrName = getAttributeName(attribute);
-            const isToggleable = isToggleableAttribute(attribute);
-            const reallyNewValue = isToggleable ? value == true : value;
-
-            this.setElementAttribute(attrName, reallyNewValue, instance);
+            this.setElementAttribute(attribute, value, instance);
         }
     }
 

@@ -210,7 +210,6 @@ module.exports = {
     }),
     className: attribute({
         name: "class",
-
         values: "string",
         els: true,
         docs: ["Often used with CSS to style elements with common properties."],

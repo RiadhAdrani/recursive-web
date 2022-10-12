@@ -208,6 +208,7 @@ const ListOfCssProperties = {
         links: [
             "https://developer.mozilla.org/en-US/docs/Web/CSS/animation-name",
         ],
+        joiner: ", ",
     }),
     animationPlayState: property({
         css: "animation-play-state",

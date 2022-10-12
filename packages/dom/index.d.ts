@@ -13,7 +13,7 @@ export function isAttribute(key: string): boolean;
 export function getAttributeJoiner(key: string): string;
 
 /**
- * render the value of an attributes
+ * render the value of an attribute
  * @param key attribute name.
  * @param value attribute value.
  */
