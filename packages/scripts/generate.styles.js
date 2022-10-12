@@ -5,6 +5,7 @@
  */
 
 const { globalValues, ListOfCssProperties } = require("../css/properties");
+const { ListOfFontFaceProperties } = require("../css/font-face/");
 const { ListOfCssSelectors } = require("../css/selectors");
 const fs = require("fs");
 const path = require("path");
@@ -70,6 +71,28 @@ function addSelectorType(key, object) {
     )}${key}:Selector;\n`;
 }
 
+function addFontFace() {
+    return Object.keys(ListOfFontFaceProperties)
+        .map((prop) => {
+            const object = ListOfFontFaceProperties[prop];
+
+            const type =
+                object.values.length > 0
+                    ? object.values.map((val) => `"${val}"`).join(" | ")
+                    : object.type;
+
+            return `${makeJsDocBlock(
+                object.docs,
+                ["## `" + object.css + "`", ""],
+                [
+                    ...object.decorators.map((item) => `@${item}`),
+                    ...object.links.map((link) => `@see {@link ${link}}`),
+                ]
+            )}${prop}:${type};`;
+        })
+        .join("\n");
+}
+
 module.exports = () => {
     for (let key in ListOfCssProperties) {
         selector += addToSelector(key, ListOfCssProperties[key]);
@@ -91,6 +114,10 @@ module.exports = () => {
         .replace(
             "export interface SelectorTypes {}",
             `export interface SelectorTypes {${selectorsType}}`
+        )
+        .replace(
+            "export interface FontFace {}",
+            `export interface FontFace {${addFontFace()}}`
         );
 
     fs.writeFileSync(path.join("./style/index.js"), generated);

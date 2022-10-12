@@ -296,7 +296,7 @@ export interface FreeStyleSheet {
     /**
      * Font Face
      */
-    fontFace: { [key: string]: any };
+    fontFace: Array<FontFace>;
 }
 
 export type RenderOptions = {
