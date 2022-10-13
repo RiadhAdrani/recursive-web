@@ -1,3 +1,5 @@
+import { wrap, isBlank } from "@riadh-adrani/utility-js/string";
+
 /**
  * Join arguments using the seperator.
  * @param {Array<any>} args array of arguments to be joined.
@@ -360,11 +362,23 @@ export function fitContent(value) {
 
 /**
  * ## CSS's `format()`
- * @param {*} type
- * @see
+ *
+ * specify font type in `@font-face`.
+ *
+ * @param {string} value
  */
-export function format(type) {
-    return `format(${type})`;
+export function format(value) {
+    if (!isBlank(value)) {
+        return `format(${wrap(value, "'")})`;
+    }
+
+    return {
+        eot: `format(${wrap("embedded-opentype", "'")})`,
+        woff2: `format(${wrap("'woff2", "'")})`,
+        woff: `format(${wrap("'woff", "'")})`,
+        ttf: `format(${wrap("'truetype", "'")})`,
+        svg: `format(${wrap("'svg", "'")})`,
+    };
 }
 
 /**

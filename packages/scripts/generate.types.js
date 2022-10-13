@@ -107,7 +107,7 @@ for (let prop in ListOfAttributes) {
 }
 
 let htmlCommonInterface =
-    "export interface HTMLAttributes extends CommonAttributes, Events {";
+    "export interface HTMLAttributes extends CommonAttributes {";
 
 for (let prop of gProps) {
     let values = "";

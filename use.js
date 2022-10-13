@@ -1,5 +1,5 @@
 /**
- * Do not touch this file, unless you are a contribitor.
+ * Do not touch this file, unless you are a contributor.
  *
  * It is used to reference the correct version of recursive.
  *

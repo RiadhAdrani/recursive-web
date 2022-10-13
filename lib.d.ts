@@ -14,161 +14,24 @@ import {
     StateArray,
 } from "@riadh-adrani/recursive/lib";
 
-export { Route, StateArray };
+import { Color } from "./packages/css/color";
 
-/**
- * Standard CSS colors.
- */
-export type Color =
-    | "transparent"
-    | "aliceblue"
-    | "antiquewhite"
-    | "aqua"
-    | "aquamarine"
-    | "azure"
-    | "beige"
-    | "bisque"
-    | "black"
-    | "blanchedalmond"
-    | "blue"
-    | "blueviolet"
-    | "brown"
-    | "burlywood"
-    | "cadetblue"
-    | "chartreuse"
-    | "chocolate"
-    | "coral"
-    | "cornflowerblue"
-    | "cornsilk"
-    | "crimson"
-    | "cyan"
-    | "darkblue"
-    | "darkcyan"
-    | "darkgoldenrod"
-    | "darkgray"
-    | "darkgreen"
-    | "darkgrey"
-    | "darkkhaki"
-    | "darkmagenta"
-    | "darkolivegreen"
-    | "darkorange"
-    | "darkorchid"
-    | "darkred"
-    | "darksalmon"
-    | "darkseagreen"
-    | "darkslateblue"
-    | "darkslategray"
-    | "darkslategrey"
-    | "darkturquoise"
-    | "darkviolet"
-    | "deeppink"
-    | "deepskyblue"
-    | "dimgray"
-    | "dimgrey"
-    | "dodgerblue"
-    | "firebrick"
-    | "floralwhite"
-    | "forestgreen"
-    | "fuchsia"
-    | "gainsboro"
-    | "ghostwhite"
-    | "goldenrod"
-    | "gold"
-    | "gray"
-    | "green"
-    | "greenyellow"
-    | "grey"
-    | "honeydew"
-    | "hotpink"
-    | "indianred"
-    | "indigo"
-    | "ivory"
-    | "khaki"
-    | "lavenderblush"
-    | "lavender"
-    | "lawngreen"
-    | "lemonchiffon"
-    | "lightblue"
-    | "lightcoral"
-    | "lightcyan"
-    | "lightgoldenrodyellow"
-    | "lightgray"
-    | "lightgreen"
-    | "lightgrey"
-    | "lightpink"
-    | "lightsalmon"
-    | "lightseagreen"
-    | "lightskyblue"
-    | "lightslategray"
-    | "lightslategrey"
-    | "lightsteelblue"
-    | "lightyellow"
-    | "lime"
-    | "limegreen"
-    | "linen"
-    | "magenta"
-    | "maroon"
-    | "mediumaquamarine"
-    | "mediumblue"
-    | "mediumorchid"
-    | "mediumpurple"
-    | "mediumseagreen"
-    | "mediumslateblue"
-    | "mediumspringgreen"
-    | "mediumturquoise"
-    | "mediumvioletred"
-    | "midnightblue"
-    | "mintcream"
-    | "mistyrose"
-    | "moccasin"
-    | "navajowhite"
-    | "navy"
-    | "oldlace"
-    | "olive"
-    | "olivedrab"
-    | "orange"
-    | "orangered"
-    | "orchid"
-    | "palegoldenrod"
-    | "palegreen"
-    | "paleturquoise"
-    | "palevioletred"
-    | "papayawhip"
-    | "peachpuff"
-    | "peru"
-    | "pink"
-    | "plum"
-    | "powderblue"
-    | "purple"
-    | "rebeccapurple"
-    | "red"
-    | "rosybrown"
-    | "royalblue"
-    | "saddlebrown"
-    | "salmon"
-    | "sandybrown"
-    | "seagreen"
-    | "seashell"
-    | "sienna"
-    | "silver"
-    | "skyblue"
-    | "slateblue"
-    | "slategray"
-    | "slategrey"
-    | "snow"
-    | "springgreen"
-    | "steelblue"
-    | "tan"
-    | "teal"
-    | "thistle"
-    | "tomato"
-    | "turquoise"
-    | "violet"
-    | "wheat"
-    | "white"
-    | "whitesmoke"
-    | "yellow"
-    | "yellowgreen";
+import {
+    WebEventTarget,
+    WebEvent,
+    EventCallback,
+    EventDeclaration,
+} from "./packages/dom/event";
+
+export {
+    Route,
+    StateArray,
+    Color,
+    WebEventTarget,
+    WebEvent,
+    EventCallback,
+    EventDeclaration,
+};
 
 export interface FontFace {
     /**
@@ -3808,640 +3671,499 @@ export interface SelectorTypes {
      */ webkitScrollbarThumbActive: Selector;
 }
 
-export type WebEventTarget<T = HTMLElement> = EventTarget & T;
-
-export type WebEvent<E = Event, T = HTMLElement> = E & {
-    target: WebEventTarget<HTMLElement>;
-    currentTarget: WebEventTarget<T>;
-};
-
-export type EventCallback<E, T> = (event: WebEvent<E, T>) => void;
-
 export interface Events<E = HTMLElement> {
     /**
      * ## `onAbort`
      * The abort event is fired when the resource was not fully loaded, but not as the result of an error.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/abort_event}
-     */ onAbort: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
+     */ onAbort: EventDeclaration<Event, E>;
     /**
      * ## `onAnimationEnd`
      * The animationend event is fired when a CSS Animation has completed. If the animation aborts before reaching completion, such as if the element is removed from the DOM or the animation is removed from the element, the animationend event is not fired.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/animationend_event}
-     */ onAnimationEnd:
-        | EventCallback<AnimationEvent, E>
-        | Array<EventCallback<AnimationEvent, E>>;
+     */ onAnimationEnd: EventDeclaration<AnimationEvent, E>;
     /**
      * ## `onAnimationIteration`
      * The animationiteration event is fired when an iteration of a CSS Animation ends, and another one begins. This event does not occur at the same time as the animationend event, and therefore does not occur for animations with an animation-iteration-count of one.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/animationiteration_event}
-     */ onAnimationIteration:
-        | EventCallback<AnimationEvent, E>
-        | Array<EventCallback<AnimationEvent, E>>;
+     */ onAnimationIteration: EventDeclaration<AnimationEvent, E>;
     /**
      * ## `onAnimationStart`
      * The animationstart event is fired when a CSS Animation has started. If there is an animation-delay, this event will fire once the delay period has expired. A negative delay will cause the event to fire with an elapsedTime equal to the absolute value of the delay (and, correspondingly, the animation will begin playing at that time index into the sequence).
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/animationstart_event}
-     */ onAnimationStart:
-        | EventCallback<AnimationEvent, E>
-        | Array<EventCallback<AnimationEvent, E>>;
+     */ onAnimationStart: EventDeclaration<AnimationEvent, E>;
     /**
      * ## `onBeforePrint`
      * The beforeprint event is fired when the associated document is about to be printed or previewed for printing.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeprint_event}
-     */ onBeforePrint: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
+     */ onBeforePrint: EventDeclaration<Event, E>;
     /**
      * ## `onBeforeUnload`
      * The beforeunload event is fired when the window, the document and its resources are about to be unloaded. The document is still visible and the event is still cancelable at this point.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event}
-     */ onBeforeUnload:
-        | EventCallback<BeforeUnloadEvent, E>
-        | Array<EventCallback<BeforeUnloadEvent, E>>;
+     */ onBeforeUnload: EventDeclaration<BeforeUnloadEvent, E>;
     /**
      * ## `onBlur`
      * The blur event fires when an element has lost focus.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Window/blur_event}
-     */ onBlur:
-        | EventCallback<FocusEvent, E>
-        | Array<EventCallback<FocusEvent, E>>;
+     */ onBlur: EventDeclaration<FocusEvent, E>;
     /**
      * ## `onCanPlay`
      * The canplay event is fired when the user agent can play the media, but estimates that not enough data has been loaded to play the media up to its end without having to stop for further buffering of content.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/canplay_event}
-     */ onCanPlay: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
+     */ onCanPlay: EventDeclaration<Event, E>;
     /**
      * ## `onCanPlayThrough`
      * The canplaythrough event is fired when the user agent can play the media, and estimates that enough data has been loaded to play the media up to its end without having to stop for further buffering of content.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/canplaythrough_event}
-     */ onCanPlayThrough:
-        | EventCallback<Event, E>
-        | Array<EventCallback<Event, E>>;
+     */ onCanPlayThrough: EventDeclaration<Event, E>;
     /**
      * ## `onChange`
      * The change event is fired for ``<input>``, ``<select>``, and ``<textarea>`` elements when the user modifies the element's value. Unlike the input event, the change event is not necessarily fired for each alteration to an element's value.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event}
-     */ onChange: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
+     */ onChange: EventDeclaration<Event, E>;
     /**
      * ## `onContextMenu`
      * The contextmenu event fires when the user attempts to open a context menu. This event is typically triggered by clicking the right mouse button, or by pressing the context menu key.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/contextmenu_event}
-     */ onContextMenu:
-        | EventCallback<MouseEvent, E>
-        | Array<EventCallback<MouseEvent, E>>;
+     */ onContextMenu: EventDeclaration<MouseEvent, E>;
     /**
      * ## `onCopy`
      * The copy event fires when the user initiates a copy action through the browser's user interface.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/copy_event}
-     */ onCopy:
-        | EventCallback<ClipboardEvent, E>
-        | Array<EventCallback<ClipboardEvent, E>>;
+     */ onCopy: EventDeclaration<ClipboardEvent, E>;
     /**
      * ## `onCut`
      * The cut event is fired when the user has initiated a "cut" action through the browser's user interface.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/cut_event}
-     */ onCut:
-        | EventCallback<ClipboardEvent, E>
-        | Array<EventCallback<ClipboardEvent, E>>;
+     */ onCut: EventDeclaration<ClipboardEvent, E>;
     /**
      * ## `onDurationChange`
      * The durationchange event is fired when the duration attribute has been updated.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/durationchange_event}
-     */ onDurationChange:
-        | EventCallback<Event, E>
-        | Array<EventCallback<Event, E>>;
+     */ onDurationChange: EventDeclaration<Event, E>;
     /**
      * ## `onEnded`
      * The ended event is fired when playback or streaming has stopped because the end of the media was reached or because no further data is available.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/ended_event}
-     */ onEnded: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
+     */ onEnded: EventDeclaration<Event, E>;
     /**
      * ## `onError`
      * The error event is fired on a Window object when a resource failed to load or couldn't be used — for example if a script has an execution error.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Window/error_event}
-     */ onError: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
+     */ onError: EventDeclaration<Event, E>;
     /**
      * ## `onFocus`
      * The focus event fires when an element has received focus. The main difference between this event and focusin is that focusin bubbles while focus does not.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/focus_event}
-     */ onFocus:
-        | EventCallback<FocusEvent, E>
-        | Array<EventCallback<FocusEvent, E>>;
+     */ onFocus: EventDeclaration<FocusEvent, E>;
     /**
      * ## `onFocusIn`
      * The focusin event fires when an element is about to receive focus. The main difference between this event and focus is that focusin bubbles while focus does not.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/focusin_event}
-     */ onFocusIn:
-        | EventCallback<FocusEvent, E>
-        | Array<EventCallback<FocusEvent, E>>;
+     */ onFocusIn: EventDeclaration<FocusEvent, E>;
     /**
      * ## `onFocusOut`
      * The focusout event fires when an element is about to lose focus. The main difference between this event and blur is that focusout bubbles while blur does not.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/focusout_event}
-     */ onFocusOut:
-        | EventCallback<FocusEvent, E>
-        | Array<EventCallback<FocusEvent, E>>;
+     */ onFocusOut: EventDeclaration<FocusEvent, E>;
     /**
      * ## `onFullScreenChange`
      * The fullscreenchange event is fired immediately after the browser switches into or out of fullscreen mode.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Document/fullscreenchange_event}
-     */ onFullScreenChange:
-        | EventCallback<Event, E>
-        | Array<EventCallback<Event, E>>;
+     */ onFullScreenChange: EventDeclaration<Event, E>;
     /**
      * ## `onHashChange`
      * The hashchange event is fired when the fragment identifier of the URL has changed (the part of the URL beginning with and following the # symbol).
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Window/hashchange_event}
-     */ onHashChange:
-        | EventCallback<HashChangeEvent, E>
-        | Array<EventCallback<HashChangeEvent, E>>;
+     */ onHashChange: EventDeclaration<HashChangeEvent, E>;
     /**
      * ## `onInvalid`
      * The invalid event fires when a submittable element has been checked for validity and doesn't satisfy its constraints.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/invalid_event}
-     */ onInvalid: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
+     */ onInvalid: EventDeclaration<Event, E>;
     /**
      * ## `onLoad`
      * The load event is fired when the whole page has loaded, including all dependent resources such as stylesheets and images. This is in contrast to DOMContentLoaded, which is fired as soon as the page DOM has been loaded, without waiting for resources to finish loading.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event}
-     */ onLoad: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
+     */ onLoad: EventDeclaration<Event, E>;
     /**
      * ## `onLoadedData`
      * The loadeddata event is fired when the frame at the current playback position of the media has finished loading; often the first frame.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/loadeddata_event}
-     */ onLoadedData: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
+     */ onLoadedData: EventDeclaration<Event, E>;
     /**
      * ## `onLoadedMetaData`
      * The loadedmetadata event is fired when the metadata has been loaded.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/loadedmetadata_event}
-     */ onLoadedMetaData:
-        | EventCallback<Event, E>
-        | Array<EventCallback<Event, E>>;
+     */ onLoadedMetaData: EventDeclaration<Event, E>;
     /**
      * ## `onLoadStart`
      * The loadstart event is fired when the browser has started to load a resource.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/loadstart_event}
-     */ onLoadStart: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
+     */ onLoadStart: EventDeclaration<Event, E>;
     /**
      * ## `onMessage`
      * The message event is fired on a Window object when the window receives a message, for example from a call to Window.postMessage() from another browsing context.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Window/message_event}
-     */ onMessage: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
+     */ onMessage: EventDeclaration<Event, E>;
     /**
      * ## `onOffline`
      * The offline event of the Window interface is fired when the browser has lost access to the network and the value of Navigator.onLine switches to false.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Window/offline_event}
-     */ onOffline: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
+     */ onOffline: EventDeclaration<Event, E>;
     /**
      * ## `onOnline`
      * The online event of the Window interface is fired when the browser has gained access to the network and the value of Navigator.onLine switches to true.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Window/online_event}
-     */ onOnline: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
+     */ onOnline: EventDeclaration<Event, E>;
     /**
      * ## `onPageHide`
      * The pagehide event is sent to a Window when the browser hides the current page in the process of presenting a different page from the session's history.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Window/pagehide_event}
-     */ onPageHide:
-        | EventCallback<PageTransitionEvent, E>
-        | Array<EventCallback<PageTransitionEvent, E>>;
+     */ onPageHide: EventDeclaration<PageTransitionEvent, E>;
     /**
      * ## `onPageShow`
      * The pageshow event is sent to a Window when the browser displays the window's document due to navigation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Window/pageshow_event}
-     */ onPageShow:
-        | EventCallback<PageTransitionEvent, E>
-        | Array<EventCallback<PageTransitionEvent, E>>;
+     */ onPageShow: EventDeclaration<PageTransitionEvent, E>;
     /**
      * ## `onPaste`
      * The paste event is fired when the user has initiated a "paste" action through the browser's user interface.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/paste_event}
-     */ onPaste:
-        | EventCallback<ClipboardEvent, E>
-        | Array<EventCallback<ClipboardEvent, E>>;
+     */ onPaste: EventDeclaration<ClipboardEvent, E>;
     /**
      * ## `onPause`
      * The pause event is sent when a request to pause an activity is handled and the activity has entered its paused state, most commonly after the media has been paused through a call to the element's pause() method.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/pause_event}
-     */ onPause: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
+     */ onPause: EventDeclaration<Event, E>;
     /**
      * ## `onPlay`
      * The play event is fired when the paused property is changed from true to false, as a result of the play method, or the autoplay attribute.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/play_event}
-     */ onPlay: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
+     */ onPlay: EventDeclaration<Event, E>;
     /**
      * ## `onPlaying`
      * The playing event is fired after playback is first started, and whenever it is restarted. For example it is fired when playback resumes after having been paused or delayed due to lack of data.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/playing_event}
-     */ onPlaying: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
+     */ onPlaying: EventDeclaration<Event, E>;
     /**
      * ## `onProgress`
      * The progress event is fired periodically as the browser loads a resource.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/progress_event}
-     */ onProgress: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
+     */ onProgress: EventDeclaration<Event, E>;
     /**
      * ## `onRateChange`
      * The ratechange event is fired when the playback rate has changed.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/ratechange_event}
-     */ onRateChange: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
+     */ onRateChange: EventDeclaration<Event, E>;
     /**
      * ## `onResize`
      * The resize event fires when the document view (window) has been resized.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Window/resize_event}
-     */ onResize: EventCallback<UIEvent, E> | Array<EventCallback<UIEvent, E>>;
+     */ onResize: EventDeclaration<UIEvent, E>;
     /**
      * ## `onReset`
      * The reset event fires when a ``<form>`` is reset.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/reset_event}
-     */ onReset: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
+     */ onReset: EventDeclaration<Event, E>;
     /**
      * ## `onScroll`
      * The scroll event fires when the document view has been scrolled. For element scrolling, see Element: scroll event.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Document/scroll_event}
-     */ onScroll: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
+     */ onScroll: EventDeclaration<Event, E>;
     /**
      * ## `onSearch`
-     */ onSearch: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
+     */ onSearch: EventDeclaration<Event, E>;
     /**
      * ## `onSeeked`
      * The search event is fired when a search is initiated using an ``<input>`` element of type="search".
      * @non-standard
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/search_event}
-     */ onSeeked: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
+     */ onSeeked: EventDeclaration<Event, E>;
     /**
      * ## `onSeeking`
      * The seeking event is fired when a seek operation starts, meaning the Boolean seeking attribute has changed to true and the media is seeking a new position.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/seeking_event}
-     */ onSeeking: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
+     */ onSeeking: EventDeclaration<Event, E>;
     /**
      * ## `onSelect`
      * The select event fires when some text has been selected.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/select_event}
-     */ onSelect: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
+     */ onSelect: EventDeclaration<Event, E>;
     /**
      * ## `onSelectionChange`
      * The selectionchange event of the Selection API is fired when the current Selection of a Document is changed.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Document/selectionchange_event}
-     */ onSelectionChange:
-        | EventCallback<Event, E>
-        | Array<EventCallback<Event, E>>;
+     */ onSelectionChange: EventDeclaration<Event, E>;
     /**
      * ## `onShow`
      * The show event is fired when a contextmenu event was fired on/bubbled to an element that has a contextmenu attribute.
      * @deprecated
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/show_event}
-     */ onShow: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
+     */ onShow: EventDeclaration<Event, E>;
     /**
      * ## `onStalled`
      * The stalled event is fired when the user agent is trying to fetch media data, but data is unexpectedly not forthcoming.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/stalled_event}
-     */ onStalled: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
+     */ onStalled: EventDeclaration<Event, E>;
     /**
      * ## `onStorage`
      * The storage event of the Window interface fires when a storage area (localStorage) has been modified in the context of another document.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Window/storage_event}
-     */ onStorage:
-        | EventCallback<StorageEvent, E>
-        | Array<EventCallback<StorageEvent, E>>;
+     */ onStorage: EventDeclaration<StorageEvent, E>;
     /**
      * ## `onSubmit`
      * The submit event fires when a ``<form>`` is submitted.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event}
-     */ onSubmit:
-        | EventCallback<SubmitEvent, E>
-        | Array<EventCallback<SubmitEvent, E>>;
+     */ onSubmit: EventDeclaration<SubmitEvent, E>;
     /**
      * ## `onSuspend`
      * The suspend event is fired when media data loading has been suspended.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/suspend_event}
-     */ onSuspend: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
+     */ onSuspend: EventDeclaration<Event, E>;
     /**
      * ## `onTimeUpdate`
      * The timeupdate event is fired when the time indicated by the currentTime attribute has been updated.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/timeupdate_event}
-     */ onTimeUpdate: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
+     */ onTimeUpdate: EventDeclaration<Event, E>;
     /**
      * ## `onToggle`
      * The toggle event fires when the open/closed state of a ``<details>`` element is toggled.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLDetailsElement/toggle_event}
-     */ onToggle: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
+     */ onToggle: EventDeclaration<Event, E>;
     /**
      * ## `onTransitionEnd`
      * The transitionend event is fired when a CSS transition has completed. In the case where a transition is removed before completion, such as if the transition-property is removed or display is set to none, then the event will not be generated.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/transitionend_event}
-     */ onTransitionEnd:
-        | EventCallback<TransitionEvent, E>
-        | Array<EventCallback<TransitionEvent, E>>;
+     */ onTransitionEnd: EventDeclaration<TransitionEvent, E>;
     /**
      * ## `onUnload`
      * The unload event is fired when the document or a child resource is being unloaded.
      * @avoid
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Window/unload_event}
-     */ onUnload: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
+     */ onUnload: EventDeclaration<Event, E>;
     /**
      * ## `onVolumeChange`
      * The volumechange event is fired when the volume has changed.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/volumechange_event}
-     */ onVolumeChange:
-        | EventCallback<Event, E>
-        | Array<EventCallback<Event, E>>;
+     */ onVolumeChange: EventDeclaration<Event, E>;
     /**
      * ## `onWaiting`
      * The waiting event is fired when playback has stopped because of a temporary lack of data.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/waiting_event}
-     */ onWaiting: EventCallback<Event, E> | Array<EventCallback<Event, E>>;
+     */ onWaiting: EventDeclaration<Event, E>;
     /**
      * ## `onWheel`
      * The wheel event fires when the user rotates a wheel button on a pointing device (typically a mouse).
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/wheel_event}
-     */ onWheel:
-        | EventCallback<WheelEvent, E>
-        | Array<EventCallback<WheelEvent, E>>;
+     */ onWheel: EventDeclaration<WheelEvent, E>;
     /**
      * ## `onInput`
      * The input event fires when the value of an ``<input>``, ``<select>``, or ``<textarea>`` element has been changed.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event}
-     */ onInput:
-        | EventCallback<InputEvent, E>
-        | Array<EventCallback<InputEvent, E>>;
+     */ onInput: EventDeclaration<InputEvent, E>;
     /**
      * ## `onDrag`
      * The DragEvent interface is a DOM event that represents a drag and drop interaction. The user initiates a drag by placing a pointer device (such as a mouse) on the touch surface and then dragging the pointer to a new location (such as another DOM element). Applications are free to interpret a drag and drop interaction in an application-specific way.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/DragEvent}
-     */ onDrag:
-        | EventCallback<DragEvent, E>
-        | Array<EventCallback<DragEvent, E>>;
+     */ onDrag: EventDeclaration<DragEvent, E>;
     /**
      * ## `onDragEnd`
      * The dragend event is fired when a drag operation is being ended (by releasing a mouse button or hitting the escape key).
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dragend_event}
-     */ onDragEnd:
-        | EventCallback<DragEvent, E>
-        | Array<EventCallback<DragEvent, E>>;
+     */ onDragEnd: EventDeclaration<DragEvent, E>;
     /**
      * ## `onDragEnter`
      * The dragenter event is fired when a dragged element or text selection enters a valid drop target.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dragenter_event}
-     */ onDragEnter:
-        | EventCallback<DragEvent, E>
-        | Array<EventCallback<DragEvent, E>>;
+     */ onDragEnter: EventDeclaration<DragEvent, E>;
     /**
      * ## `onDragLeave`
      * https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dragleave_event
      * @see {@link The dragleave event is fired when a dragged element or text selection leaves a valid drop target.}
-     */ onDragLeave:
-        | EventCallback<DragEvent, E>
-        | Array<EventCallback<DragEvent, E>>;
+     */ onDragLeave: EventDeclaration<DragEvent, E>;
     /**
      * ## `onDragOver`
      * The dragover event is fired when an element or text selection is being dragged over a valid drop target (every few hundred milliseconds).
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dragover_event}
-     */ onDragOver:
-        | EventCallback<DragEvent, E>
-        | Array<EventCallback<DragEvent, E>>;
+     */ onDragOver: EventDeclaration<DragEvent, E>;
     /**
      * ## `onDragStart`
      * The dragstart event is fired when the user starts dragging an element or text selection.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dragstart_event}
-     */ onDragStart:
-        | EventCallback<DragEvent, E>
-        | Array<EventCallback<DragEvent, E>>;
+     */ onDragStart: EventDeclaration<DragEvent, E>;
     /**
      * ## `onDrop`
      * The drop event is fired when an element or text selection is dropped on a valid drop target.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/drop_event}
-     */ onDrop:
-        | EventCallback<DragEvent, E>
-        | Array<EventCallback<DragEvent, E>>;
+     */ onDrop: EventDeclaration<DragEvent, E>;
     /**
      * ## `onKeyDown`
      * The keydown event is fired when a key is pressed.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event}
-     */ onKeyDown:
-        | EventCallback<KeyboardEvent, E>
-        | Array<EventCallback<KeyboardEvent, E>>;
+     */ onKeyDown: EventDeclaration<KeyboardEvent, E>;
     /**
      * ## `onKeyPress`
      * The keypress event is fired when a key that produces a character value is pressed down.
      * @deprecated
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/keypress_event}
-     */ onKeyPress:
-        | EventCallback<KeyboardEvent, E>
-        | Array<EventCallback<KeyboardEvent, E>>;
+     */ onKeyPress: EventDeclaration<KeyboardEvent, E>;
     /**
      * ## `onKeyUp`
      * The keyup event is fired when a key is released.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/keyup_event}
-     */ onKeyUp:
-        | EventCallback<KeyboardEvent, E>
-        | Array<EventCallback<KeyboardEvent, E>>;
+     */ onKeyUp: EventDeclaration<KeyboardEvent, E>;
     /**
      * ## `onClick`
      * An element receives a click event when a pointing device button (such as a mouse's primary mouse button) is both pressed and released while the pointer is located inside the element.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event}
-     */ onClick:
-        | EventCallback<MouseEvent, E>
-        | Array<EventCallback<MouseEvent, E>>;
+     */ onClick: EventDeclaration<MouseEvent, E>;
     /**
      * ## `onDoubleClick`
      * The dblclick event fires when a pointing device button (such as a mouse's primary button) is double-clicked; that is, when it's rapidly clicked twice on a single element within a very short span of time.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/dblclick_event}
-     */ onDoubleClick:
-        | EventCallback<MouseEvent, E>
-        | Array<EventCallback<MouseEvent, E>>;
+     */ onDoubleClick: EventDeclaration<MouseEvent, E>;
     /**
      * ## `onMouseDown`
      * The mousedown event is fired at an Element when a pointing device button is pressed while the pointer is inside the element.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/mousedown_event}
-     */ onMouseDown:
-        | EventCallback<MouseEvent, E>
-        | Array<EventCallback<MouseEvent, E>>;
+     */ onMouseDown: EventDeclaration<MouseEvent, E>;
     /**
      * ## `onMouseEnter`
      * The mouseenter event is fired at an Element when a pointing device (usually a mouse) is initially moved so that its hotspot is within the element at which the event was fired.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseenter_event}
-     */ onMouseEnter:
-        | EventCallback<MouseEvent, E>
-        | Array<EventCallback<MouseEvent, E>>;
+     */ onMouseEnter: EventDeclaration<MouseEvent, E>;
     /**
      * ## `onMouseLeave`
      * The mouseleave event is fired at an Element when the cursor of a pointing device (usually a mouse) is moved out of it.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseleave_event}
-     */ onMouseLeave:
-        | EventCallback<MouseEvent, E>
-        | Array<EventCallback<MouseEvent, E>>;
+     */ onMouseLeave: EventDeclaration<MouseEvent, E>;
     /**
      * ## `onMouseMove`
      * The mousemove event is fired at an element when a pointing device (usually a mouse) is moved while the cursor's hotspot is inside it.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/mousemove_event}
-     */ onMouseMove:
-        | EventCallback<MouseEvent, E>
-        | Array<EventCallback<MouseEvent, E>>;
+     */ onMouseMove: EventDeclaration<MouseEvent, E>;
     /**
      * ## `onMouseOver`
      * The mouseover event is fired at an Element when a pointing device (such as a mouse or trackpad) is used to move the cursor onto the element or one of its child elements.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseover_event}
-     */ onMouseOver:
-        | EventCallback<MouseEvent, E>
-        | Array<EventCallback<MouseEvent, E>>;
+     */ onMouseOver: EventDeclaration<MouseEvent, E>;
     /**
      * ## `onMouseOut`
      * The mouseout event is fired at an Element when a pointing device (usually a mouse) is used to move the cursor so that it is no longer contained within the element or one of its children.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseout_event}
-     */ onMouseOut:
-        | EventCallback<MouseEvent, E>
-        | Array<EventCallback<MouseEvent, E>>;
+     */ onMouseOut: EventDeclaration<MouseEvent, E>;
     /**
      * ## `onMouseUp`
      * The mouseup event is fired at an Element when a button on a pointing device (such as a mouse or trackpad) is released while the pointer is located inside it.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseup_event}
-     */ onMouseUp:
-        | EventCallback<MouseEvent, E>
-        | Array<EventCallback<MouseEvent, E>>;
+     */ onMouseUp: EventDeclaration<MouseEvent, E>;
     /**
      * ## `onPointerOver`
      * The pointerover event is fired when a pointing device is moved into an element's hit test boundaries.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/pointerover_event}
-     */ onPointerOver:
-        | EventCallback<PointerEvent, E>
-        | Array<EventCallback<PointerEvent, E>>;
+     */ onPointerOver: EventDeclaration<PointerEvent, E>;
     /**
      * ## `onPointerEnter`
      * The pointerenter event fires when a pointing device is moved into the hit test boundaries of an element or one of its descendants, including as a result of a pointerdown event from a device that does not support hover (see pointerdown).
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/pointerenter_event}
-     */ onPointerEnter:
-        | EventCallback<PointerEvent, E>
-        | Array<EventCallback<PointerEvent, E>>;
+     */ onPointerEnter: EventDeclaration<PointerEvent, E>;
     /**
      * ## `onPointerDown`
      * The pointerdown event is fired when a pointer becomes active. For mouse, it is fired when the device transitions from no buttons pressed to at least one button pressed. For touch, it is fired when physical contact is made with the digitizer. For pen, it is fired when the stylus makes physical contact with the digitizer.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/pointerdown_event}
-     */ onPointerDown:
-        | EventCallback<PointerEvent, E>
-        | Array<EventCallback<PointerEvent, E>>;
+     */ onPointerDown: EventDeclaration<PointerEvent, E>;
     /**
      * ## `onPointerMove`
      * The pointermove event is fired when a pointer changes coordinates, and the pointer has not been canceled by a browser touch-action.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/pointermove_event}
-     */ onPointerMove:
-        | EventCallback<PointerEvent, E>
-        | Array<EventCallback<PointerEvent, E>>;
+     */ onPointerMove: EventDeclaration<PointerEvent, E>;
     /**
      * ## `onPointerUp`
      * The pointerup event is fired when a pointer is no longer active.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/pointerup_event}
-     */ onPointerUp:
-        | EventCallback<PointerEvent, E>
-        | Array<EventCallback<PointerEvent, E>>;
+     */ onPointerUp: EventDeclaration<PointerEvent, E>;
     /**
      * ## `onPointerCancel`
      * The pointercancel event is fired when the browser determines that there are unlikely to be any more pointer events, or if after the pointerdown event is fired, the pointer is then used to manipulate the viewport by panning, zooming, or scrolling.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/pointercancel_event}
-     */ onPointerCancel:
-        | EventCallback<PointerEvent, E>
-        | Array<EventCallback<PointerEvent, E>>;
+     */ onPointerCancel: EventDeclaration<PointerEvent, E>;
     /**
      * ## `onPointerOut`
      * The pointerout event is fired for several reasons including: pointing device is moved out of the hit test boundaries of an element; firing the pointerup event for a device that does not support hover (see pointerup); after firing the pointercancel event (see pointercancel); when a pen stylus leaves the hover range detectable by the digitizer.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/pointerout_event}
-     */ onPointerOut:
-        | EventCallback<PointerEvent, E>
-        | Array<EventCallback<PointerEvent, E>>;
+     */ onPointerOut: EventDeclaration<PointerEvent, E>;
     /**
      * ## `onPointerLeave`
      * The pointerleave event is fired when a pointing device is moved out of the hit test boundaries of an element. For pen devices, this event is fired when the stylus leaves the hover range detectable by the digitizer.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/pointerleave_event}
-     */ onPointerLeave:
-        | EventCallback<PointerEvent, E>
-        | Array<EventCallback<PointerEvent, E>>;
+     */ onPointerLeave: EventDeclaration<PointerEvent, E>;
     /**
      * ## `onGotPointerCapture`
      * The gotpointercapture event is fired when an element captures a pointer using setPointerCapture().
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/gotpointercapture_event}
-     */ onGotPointerCapture:
-        | EventCallback<PointerEvent, E>
-        | Array<EventCallback<PointerEvent, E>>;
+     */ onGotPointerCapture: EventDeclaration<PointerEvent, E>;
     /**
      * ## `onLostPointerCapture`
      * The lostpointercapture event is fired when a captured pointer is released.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/lostpointercapture_event}
-     */ onLostPointerCapture:
-        | EventCallback<PointerEvent, E>
-        | Array<EventCallback<PointerEvent, E>>;
+     */ onLostPointerCapture: EventDeclaration<PointerEvent, E>;
     /**
      * ## `onTouchCancel`
      * The touchcancel event is fired when one or more touch points have been disrupted in an implementation-specific manner (for example, too many touch points are created).
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/touchcancel_event}
-     */ onTouchCancel:
-        | EventCallback<TouchEvent, E>
-        | Array<EventCallback<TouchEvent, E>>;
+     */ onTouchCancel: EventDeclaration<TouchEvent, E>;
     /**
      * ## `onTouchEnd`
      * The touchend event fires when one or more touch points are removed from the touch surface.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/touchend_event}
-     */ onTouchEnd:
-        | EventCallback<TouchEvent, E>
-        | Array<EventCallback<TouchEvent, E>>;
+     */ onTouchEnd: EventDeclaration<TouchEvent, E>;
     /**
      * ## `onTouchMove`
      * The touchcancel event is fired when one or more touch points have been disrupted in an implementation-specific manner (for example, too many touch points are created).
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/touchcancel_event}
-     */ onTouchMove:
-        | EventCallback<TouchEvent, E>
-        | Array<EventCallback<TouchEvent, E>>;
+     */ onTouchMove: EventDeclaration<TouchEvent, E>;
     /**
      * ## `onTouchStart`
      * The touchstart event is fired when one or more touch points are placed on the touch surface.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/touchstart_event}
-     */ onTouchStart:
-        | EventCallback<TouchEvent, E>
-        | Array<EventCallback<TouchEvent, E>>;
+     */ onTouchStart: EventDeclaration<TouchEvent, E>;
     /**
      * ## `onClickGlobal`
      * The `onClickGlobal` event is fired when another element is clicked in the DOM.
      * @recursive-event
-     */ onClickGlobal:
-        | EventCallback<PointerEvent, E>
-        | Array<EventCallback<PointerEvent, E>>;
+     */ onClickGlobal: EventDeclaration<PointerEvent, E>;
     /**
      * ## `onResizeGlobal`
      * The `onResizeGlobal` event is fired when the window is being resized.
      * @recursive-event
-     */ onResizeGlobal:
-        | EventCallback<Event, E>
-        | Array<EventCallback<Event, E>>;
+     */ onResizeGlobal: EventDeclaration<Event, E>;
     /**
      * ## `onKeyUpGlobal`
      * The `onKeyUpGlobal` event is fired when a key is released.
      * @recursive-event
-     */ onKeyUpGlobal:
-        | EventCallback<KeyboardEvent, E>
-        | Array<EventCallback<KeyboardEvent, E>>;
+     */ onKeyUpGlobal: EventDeclaration<KeyboardEvent, E>;
     /**
      * ## `onKeyDownGlobal`
      * The `onKeyUpGlobal` event is fired when a key is being pressed.
      * @recursive-event
-     */ onKeyDownGlobal:
-        | EventCallback<KeyboardEvent, E>
-        | Array<EventCallback<KeyboardEvent, E>>;
+     */ onKeyDownGlobal: EventDeclaration<KeyboardEvent, E>;
     /**
      * ## `onContextMenuGlobal`
      * The `onContextMenuGlobal` event is fired when another element is being right-clicked.
      * @recursive-event
-     */ onContextMenuGlobal:
-        | EventCallback<PointerEvent, E>
-        | Array<EventCallback<PointerEvent, E>>;
+     */ onContextMenuGlobal: EventDeclaration<PointerEvent, E>;
     /**
      * ## `onScrollGlobal`
      * The `onScrollGlobal` event is fired when the window is being scrolled into.
      * @recursive-event
-     */ onScrollGlobal:
-        | EventCallback<Event, E>
-        | Array<EventCallback<Event, E>>;
+     */ onScrollGlobal: EventDeclaration<Event, E>;
     /**
      * ## `onBeforeUnloadGlobal`
      * The `onBeforeUnloadGlobal` event is fired when the user attempt to leave the page.
      * @recursive-event
-     */ onBeforeUnloadGlobal:
-        | EventCallback<BeforeUnloadEvent, E>
-        | Array<EventCallback<BeforeUnloadEvent, E>>;
+     */ onBeforeUnloadGlobal: EventDeclaration<BeforeUnloadEvent, E>;
 }
 
 export interface ElementChildren {
@@ -4516,7 +4238,7 @@ export interface CommonAttributes {
     style: StyleSheet;
 }
 
-export interface SVGAttributes extends CommonAttributes, Events {
+export interface SVGAttributes extends CommonAttributes {
     id: string;
     lang: string;
     tabIndex: string;
@@ -4524,7 +4246,6 @@ export interface SVGAttributes extends CommonAttributes, Events {
     xmlLang: string;
     xmlSpace: string;
     className: string;
-    children: Array<any>;
 }
 
 export interface FreeStyleSheet {
@@ -8883,7 +8604,7 @@ export interface SVGViewProps
         HTMLAttributes,
         ElementChildren {}
 
-export interface HTMLAttributes extends CommonAttributes, Events {
+export interface HTMLAttributes extends CommonAttributes {
     /**
      * ## `undefined`
      *

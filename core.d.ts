@@ -12,176 +12,30 @@ import {
     StateArray,
 } from "@riadh-adrani/recursive/lib";
 
-export { Route, StateArray };
+import { Color } from "./packages/css/color";
 
-/**
- * Standard CSS colors.
- */
-export type Color =
-    | "transparent"
-    | "aliceblue"
-    | "antiquewhite"
-    | "aqua"
-    | "aquamarine"
-    | "azure"
-    | "beige"
-    | "bisque"
-    | "black"
-    | "blanchedalmond"
-    | "blue"
-    | "blueviolet"
-    | "brown"
-    | "burlywood"
-    | "cadetblue"
-    | "chartreuse"
-    | "chocolate"
-    | "coral"
-    | "cornflowerblue"
-    | "cornsilk"
-    | "crimson"
-    | "cyan"
-    | "darkblue"
-    | "darkcyan"
-    | "darkgoldenrod"
-    | "darkgray"
-    | "darkgreen"
-    | "darkgrey"
-    | "darkkhaki"
-    | "darkmagenta"
-    | "darkolivegreen"
-    | "darkorange"
-    | "darkorchid"
-    | "darkred"
-    | "darksalmon"
-    | "darkseagreen"
-    | "darkslateblue"
-    | "darkslategray"
-    | "darkslategrey"
-    | "darkturquoise"
-    | "darkviolet"
-    | "deeppink"
-    | "deepskyblue"
-    | "dimgray"
-    | "dimgrey"
-    | "dodgerblue"
-    | "firebrick"
-    | "floralwhite"
-    | "forestgreen"
-    | "fuchsia"
-    | "gainsboro"
-    | "ghostwhite"
-    | "goldenrod"
-    | "gold"
-    | "gray"
-    | "green"
-    | "greenyellow"
-    | "grey"
-    | "honeydew"
-    | "hotpink"
-    | "indianred"
-    | "indigo"
-    | "ivory"
-    | "khaki"
-    | "lavenderblush"
-    | "lavender"
-    | "lawngreen"
-    | "lemonchiffon"
-    | "lightblue"
-    | "lightcoral"
-    | "lightcyan"
-    | "lightgoldenrodyellow"
-    | "lightgray"
-    | "lightgreen"
-    | "lightgrey"
-    | "lightpink"
-    | "lightsalmon"
-    | "lightseagreen"
-    | "lightskyblue"
-    | "lightslategray"
-    | "lightslategrey"
-    | "lightsteelblue"
-    | "lightyellow"
-    | "lime"
-    | "limegreen"
-    | "linen"
-    | "magenta"
-    | "maroon"
-    | "mediumaquamarine"
-    | "mediumblue"
-    | "mediumorchid"
-    | "mediumpurple"
-    | "mediumseagreen"
-    | "mediumslateblue"
-    | "mediumspringgreen"
-    | "mediumturquoise"
-    | "mediumvioletred"
-    | "midnightblue"
-    | "mintcream"
-    | "mistyrose"
-    | "moccasin"
-    | "navajowhite"
-    | "navy"
-    | "oldlace"
-    | "olive"
-    | "olivedrab"
-    | "orange"
-    | "orangered"
-    | "orchid"
-    | "palegoldenrod"
-    | "palegreen"
-    | "paleturquoise"
-    | "palevioletred"
-    | "papayawhip"
-    | "peachpuff"
-    | "peru"
-    | "pink"
-    | "plum"
-    | "powderblue"
-    | "purple"
-    | "rebeccapurple"
-    | "red"
-    | "rosybrown"
-    | "royalblue"
-    | "saddlebrown"
-    | "salmon"
-    | "sandybrown"
-    | "seagreen"
-    | "seashell"
-    | "sienna"
-    | "silver"
-    | "skyblue"
-    | "slateblue"
-    | "slategray"
-    | "slategrey"
-    | "snow"
-    | "springgreen"
-    | "steelblue"
-    | "tan"
-    | "teal"
-    | "thistle"
-    | "tomato"
-    | "turquoise"
-    | "violet"
-    | "wheat"
-    | "white"
-    | "whitesmoke"
-    | "yellow"
-    | "yellowgreen";
+import {
+    WebEventTarget,
+    WebEvent,
+    EventCallback,
+    EventDeclaration,
+} from "./packages/dom/event";
+
+export {
+    Route,
+    StateArray,
+    Color,
+    WebEventTarget,
+    WebEvent,
+    EventCallback,
+    EventDeclaration,
+};
 
 export interface FontFace {}
 
 export interface Selector {}
 
 export interface SelectorTypes {}
-
-export type WebEventTarget<T = HTMLElement> = EventTarget & T;
-
-export type WebEvent<E = Event, T = HTMLElement> = E & {
-    target: WebEventTarget<HTMLElement>;
-    currentTarget: WebEventTarget<T>;
-};
-
-export type EventCallback<E, T> = (event: WebEvent<E, T>) => void;
 
 export interface Events<E = HTMLElement> {}
 
@@ -257,7 +111,7 @@ export interface CommonAttributes {
     style: StyleSheet;
 }
 
-export interface SVGAttributes extends CommonAttributes, Events {
+export interface SVGAttributes extends CommonAttributes {
     id: string;
     lang: string;
     tabIndex: string;
@@ -265,7 +119,6 @@ export interface SVGAttributes extends CommonAttributes, Events {
     xmlLang: string;
     xmlSpace: string;
     className: string;
-    children: Array<any>;
 }
 
 export interface FreeStyleSheet {
