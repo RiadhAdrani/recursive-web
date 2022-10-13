@@ -131,7 +131,9 @@ class RecursiveWebRenderer extends RecursiveRenderer {
                 element.elementType
             )
         ) {
-            return;
+            {
+                return;
+            }
         }
 
         if (element.attributes.hasOwnProperty("className")) {
@@ -141,22 +143,27 @@ class RecursiveWebRenderer extends RecursiveRenderer {
             );
         }
 
-        if (typeof element.style !== "object") return;
+        if (typeof element.style !== "object") {
+            return;
+        }
 
         element.style = copy(element.style);
 
-        if (!this.isExternalStyleSheet(element.style)) return;
+        if (!this.isExternalStyleSheet(element.style)) {
+            return;
+        }
 
         if (
             !this.scopedStyle &&
             !element.style.scoped &&
             !element.style.className
-        )
+        ) {
             return;
+        }
 
         let _class = element.style.className || "";
 
-        if (this.scopedStyle && element.style.scoped !== false) {
+        if (this.scopedStyle || element.style.scoped !== false) {
             if (_class) _class += "-";
 
             _class += `_${this.transformUid(element.uid)}`;
@@ -167,6 +174,8 @@ class RecursiveWebRenderer extends RecursiveRenderer {
 
         element.attributes.className = element.attributes.className + _class;
         element.style.className = _class;
+
+        console.log(element.style);
     }
 
     /**
