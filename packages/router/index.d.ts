@@ -6,7 +6,7 @@ import { RecursiveRouter, RecursiveApp } from "../../use";
  */
 export default class RecursiveWebRouter extends RecursiveRouter {
     /**
-     * ceate new instance of the Recursive Web Router.
+     * create new instance of the Recursive Web Router.
      * @param route root route.
      * @param base application base.
      * @param scroll Boolean indicating if the app should reset scrolling when mounting a new route.

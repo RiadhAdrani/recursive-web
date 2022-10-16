@@ -1,19 +1,20 @@
 const { component } = require("../..");
+const { ListOfAttributes } = require("../../../dom");
 
 module.exports = () =>
     component({
         nativeInterface: "HTMLInputElement",
         tag: "input",
         props: {
-            autoComplete: "string",
-            list: "string",
-            maxLength: "string",
-            minLength: "string",
-            pattern: "string",
-            readOnly: "string",
-            placeholder: "string",
-            size: "string",
-            value: "string",
+            readOnly: ListOfAttributes.readOnly,
+            autoComplete: ListOfAttributes.list,
+            list: ListOfAttributes.list,
+            maxLength: ListOfAttributes.maxLength,
+            minLength: ListOfAttributes.minLength,
+            pattern: ListOfAttributes.pattern,
+            placeholder: ListOfAttributes.placeholder,
+            size: ListOfAttributes.size,
+            value: ListOfAttributes.value,
         },
         handler: (element) => {
             element.type = "tel";

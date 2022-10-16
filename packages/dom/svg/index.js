@@ -1745,21 +1745,18 @@ module.exports = {
     z: attribute({ name: "z", values: "string", els: [], docs: [] }),
     zoomAndPan: attribute({
         name: "zoomAndPan",
-
         values: "string",
         els: [],
         docs: [],
     }),
     autoReverse: attribute({
         name: "autoReverse",
-
         values: "string",
         els: [],
         docs: [],
     }),
     accelerate: attribute({
         name: "accelerate",
-
         values: "string",
         els: [],
         docs: [],

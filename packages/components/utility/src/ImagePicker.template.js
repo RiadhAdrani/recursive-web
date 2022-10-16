@@ -1,18 +1,19 @@
 const { component } = require("../..");
+const { ListOfAttributes } = require("../../../dom");
 
 module.exports = () =>
     component({
         nativeInterface: "HTMLInputElement",
         tag: "input",
         props: {
-            alt: "string",
-            src: "string",
-            height: "string",
-            formAction: "string",
-            formEncType: "string",
-            formMethod: "string",
-            formNoValidate: "string",
-            formTarget: "string",
+            alt: ListOfAttributes.alt,
+            src: ListOfAttributes.src,
+            height: ListOfAttributes.height,
+            formAction: ListOfAttributes.formAction,
+            formEncType: ListOfAttributes.formEncType,
+            formMethod: ListOfAttributes.formMethod,
+            formNoValidate: ListOfAttributes.formNoValidate,
+            formTarget: ListOfAttributes.formTarget,
         },
         handler: (element) => {
             element.type = "image";

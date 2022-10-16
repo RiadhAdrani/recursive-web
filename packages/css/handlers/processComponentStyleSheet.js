@@ -9,7 +9,7 @@ const {
 
 /**
  * Process the given component stylesheet and convert it into a unified format.
- * @param {import("../../../lib").StyleSheet} styleSheet
+ * @param {import("../../../lib").ComponentStyleSheet} styleSheet
  * @returns {object}
  */
 function processComponentStyleSheet(styleSheet) {

@@ -1,3 +1,5 @@
+import { BaseElement } from "@riadh-adrani/recursive/lib";
+
 /**
  * Event Types
  */
@@ -98,6 +100,11 @@ export interface ComponentTemplate extends Template {
      * web interface of the native element
      */
     nativeInterface: string;
+    /**
+     * define custom handler for the component which
+     * will be executed before the tree building.
+     */
+    handler: false | ((element: BaseElement) => void);
 }
 
 export interface CssPropertyTemplate extends Template {

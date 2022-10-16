@@ -1,9 +1,11 @@
-const generateComponents = require("./generate.components");
-const generateEvents = require("./generate.events");
-const generateStyles = require("./generate.styles");
-const generateTypes = require("./generate.types");
+const components = require("./gen/components");
+const events = require("./gen/events");
+const selector = require("./gen/selector");
+const htmlCommon = require("./gen/htmlCommon");
+const fontFace = require("./gen/fontFace");
 
-generateTypes();
-generateStyles();
-generateComponents();
-generateEvents();
+htmlCommon();
+selector();
+components();
+events();
+fontFace();

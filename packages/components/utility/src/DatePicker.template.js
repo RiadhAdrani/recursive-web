@@ -1,14 +1,15 @@
 const { component } = require("../..");
+const { ListOfAttributes } = require("../../../dom");
 
 module.exports = () => {
     return component({
         nativeInterface: "HTMLInputElement",
         tag: "input",
         props: {
-            value: "string",
-            max: "string",
-            min: "string",
-            step: "string",
+            value: ListOfAttributes.value,
+            max: ListOfAttributes.max,
+            min: ListOfAttributes.min,
+            step: ListOfAttributes.step,
         },
         handler: (element) => {
             element.type = "date";

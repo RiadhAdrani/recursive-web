@@ -1,5 +1,7 @@
 const { component, createElement } = require("../..");
 const { TOGGLE_SWITCH } = require("../../../constants");
+const { ListOfAttributes } = require("../../../dom");
+const { attribute } = require("../../../templates");
 
 module.exports = () => {
     return component({
@@ -15,12 +17,17 @@ module.exports = () => {
             "Use `radiuxPx` to set the radius of the button knob in pixels, with wich other dimensions will be calculated automatically.",
         ],
         props: {
-            radiusPx: "number",
-            color: "Color",
-            backgroundColor: "Color",
-            onBackgroundColor: "Color",
-            checked: "boolean",
-            onCheckChange: "(e: Event) => void",
+            radiusPx: attribute({ name: "radiusPx", values: "string" }),
+            color: attribute({ name: "color", values: "Colors" }),
+            backgroundColor: attribute({
+                name: "backgroundColor",
+                values: "Color",
+            }),
+            onBackgroundColor: attribute({
+                name: "onBackgroundColor",
+                values: "Color",
+            }),
+            checked: ListOfAttributes.checked,
         },
         childless: true,
         handler: (element) => {

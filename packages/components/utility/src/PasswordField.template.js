@@ -1,20 +1,21 @@
 const { component } = require("../..");
+const { ListOfAttributes } = require("../../../dom");
 
 module.exports = () =>
     component({
         nativeInterface: "HTMLInputElement",
         tag: "input",
         props: {
-            autoComplete: "string",
-            inputMode: "string",
-            maxLength: "string",
-            minLength: "string",
-            pattern: "string",
-            placeholder: "string",
-            readOnly: "string",
-            required: "string",
-            size: "string",
-            value: "string",
+            autoComplete: ListOfAttributes.autoComplete,
+            inputMode: ListOfAttributes.inputMode,
+            maxLength: ListOfAttributes.maxLength,
+            minLength: ListOfAttributes.minLength,
+            pattern: ListOfAttributes.pattern,
+            placeholder: ListOfAttributes.placeholder,
+            readOnly: ListOfAttributes.readOnly,
+            required: ListOfAttributes.required,
+            size: ListOfAttributes.size,
+            value: ListOfAttributes.value,
         },
         handler: (element) => {
             element.type = "password";

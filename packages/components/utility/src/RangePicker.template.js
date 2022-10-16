@@ -1,17 +1,18 @@
 const { component } = require("../..");
+const { ListOfAttributes } = require("../../../dom");
 
 module.exports = () =>
     component({
         nativeInterface: "HTMLInputElement",
         tag: "input",
         props: {
-            autoComplete: "string",
-            list: "string",
-            max: "string",
-            min: "string",
-            step: "string",
-            value: "string",
-            valueAsNumber: "string",
+            autoComplete: ListOfAttributes.autoComplete,
+            list: ListOfAttributes.list,
+            max: ListOfAttributes.max,
+            min: ListOfAttributes.min,
+            step: ListOfAttributes.step,
+            value: ListOfAttributes.value,
+            valueAsNumber: ListOfAttributes.valueAsNumber,
         },
         handler: (element) => {
             element.type = "range";

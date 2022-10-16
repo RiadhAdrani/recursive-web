@@ -1,13 +1,14 @@
 const { component } = require("../..");
+const { ListOfAttributes } = require("../../../dom");
 
 module.exports = () => {
     return component({
         nativeInterface: "HTMLInputElement",
         tag: "input",
         props: {
-            name: "string",
-            value: "string",
-            autoComplete: "string",
+            name: ListOfAttributes.name,
+            value: ListOfAttributes.value,
+            autoComplete: ListOfAttributes.autoComplete,
         },
         handler: (element) => {
             element.type = "hidden";

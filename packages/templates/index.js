@@ -30,7 +30,7 @@ const EventTypes = {
 function attribute({
     name,
     toggleable = false,
-    values = [],
+    values = "string",
     els = [],
     docs = [],
     links = [],
@@ -63,7 +63,7 @@ function component({
     tag,
     props = {},
     docs = [],
-    handler,
+    handler = false,
     childless = false,
     links = [],
     decorators = [],

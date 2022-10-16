@@ -1,14 +1,15 @@
 const { component } = require("../..");
+const { ListOfAttributes } = require("../../../dom");
 
 module.exports = () => {
     return component({
         nativeInterface: "HTMLInputElement",
         tag: "input",
         props: {
-            required: "boolean",
-            accept: "string",
-            capture: "string",
-            multiple: "string",
+            required: ListOfAttributes.required,
+            accept: ListOfAttributes.accept,
+            capture: ListOfAttributes.capture,
+            multiple: ListOfAttributes.multiple,
         },
         handler: (element) => {
             element.type = "file";

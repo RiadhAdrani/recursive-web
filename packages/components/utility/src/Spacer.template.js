@@ -1,11 +1,15 @@
 const { component } = require("../..");
 const { SPACER_VIEW } = require("../../../constants");
+const { attribute } = require("../../../templates");
 
 module.exports = () =>
     component({
         nativeInterface: "HTMLElement",
         tag: SPACER_VIEW,
-        props: { height: "number", width: "number" },
+        props: {
+            height: attribute({ name: "height", values: "string" }),
+            width: attribute({ name: "width", values: "string" }),
+        },
         childless: true,
         handler: (element) => {
             element.children = [];

@@ -2,2480 +2,1939 @@ import { createElement } from "../packages/components";
 import CustomElements from "../packages/components/utility";
 
 /**
- * ## _`Address` Component_
- *
+ * ## Address
  * The `<address>` HTML element indicates that
  * the enclosed HTML provides contact information
  * for a person or people, or for an organization.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/address
- * @param {import("../lib").AddressProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').AddressParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Address(props) {
-    const el = createElement("address", {
+    const element = createElement("address", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Article` Component_
- *
+ * ## Article
  * The `<article>` HTML element represents a self-contained composition in a
  * document, page, application, or site, which is intended to be independently
  * distributable or reusable (e.g., in syndication). Examples include: a forum post,
  * a magazine or newspaper article, or a blog entry, a product card, a user-
  * submitted comment, an interactive widget or gadget, or any other
  * independent item of content.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article
- * @param {import("../lib").ArticleProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').ArticleParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Article(props) {
-    const el = createElement("article", {
+    const element = createElement("article", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Aside` Component_
- *
+ * ## Aside
  * The ``<aside>`` HTML element represents a portion of a document whose
  * content is only indirectly related to the document's main content. Asides are
  * frequently presented as sidebars or call-out boxes.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside
- * @param {import("../lib").AsideProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').AsideParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Aside(props) {
-    const el = createElement("aside", {
+    const element = createElement("aside", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Footer` Component_
- *
+ * ## Footer
  * The ``<footer>`` HTML element represents a footer for its nearest ancestor
  * sectioning content or sectioning root element. A <footer> typically contains
  * information about the author of the section, copyright data or links to related documents.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer
- * @param {import("../lib").FooterProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').FooterParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Footer(props) {
-    const el = createElement("footer", {
+    const element = createElement("footer", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Header` Component_
- *
+ * ## Header
  * The ``<header>`` HTML element represents introductory content, typically a
  * group of introductory or navigational aids. It may contain some heading
  * elements but also a logo, a search form, an author name, and other elements.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header
- * @param {import("../lib").HeaderProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').HeaderParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Header(props) {
-    const el = createElement("header", {
+    const element = createElement("header", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`H1` Component_
- *
+ * ## H1
  * The ``<h1>`` to ``<h6>`` HTML elements represent six levels of section headings.
  * ``<h1>`` is the highest section level and ``<h6>`` is the lowest.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/h1
- * @param {import("../lib").H1Props} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').H1Params} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function H1(props) {
-    const el = createElement("h1", {
+    const element = createElement("h1", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`H2` Component_
- *
+ * ## H2
  * The ``<h1>`` to ``<h6>`` HTML elements represent six levels of section headings.
  * ``<h1>`` is the highest section level and ``<h6>`` is the lowest.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/h2
- * @param {import("../lib").H2Props} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').H2Params} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function H2(props) {
-    const el = createElement("h2", {
+    const element = createElement("h2", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`H3` Component_
- *
+ * ## H3
  * The ``<h1>`` to ``<h6>`` HTML elements represent six levels of section headings.
  * ``<h1>`` is the highest section level and ``<h6>`` is the lowest.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/h3
- * @param {import("../lib").H3Props} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').H3Params} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function H3(props) {
-    const el = createElement("h3", {
+    const element = createElement("h3", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`H4` Component_
- *
+ * ## H4
  * The ``<h1>`` to ``<h6>`` HTML elements represent six levels of section headings.
  * ``<h1>`` is the highest section level and ``<h6>`` is the lowest.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/h4
- * @param {import("../lib").H4Props} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').H4Params} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function H4(props) {
-    const el = createElement("h4", {
+    const element = createElement("h4", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`H5` Component_
- *
+ * ## H5
  * The ``<h1>`` to ``<h6>`` HTML elements represent six levels of section headings.
  * ``<h1>`` is the highest section level and ``<h6>`` is the lowest.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/h5
- * @param {import("../lib").H5Props} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').H5Params} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function H5(props) {
-    const el = createElement("h5", {
+    const element = createElement("h5", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`H6` Component_
- *
+ * ## H6
  * The ``<h1>`` to ``<h6>`` HTML elements represent six levels of section headings.
  * ``<h1>`` is the highest section level and ``<h6>`` is the lowest.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/h6
- * @param {import("../lib").H6Props} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').H6Params} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function H6(props) {
-    const el = createElement("h6", {
+    const element = createElement("h6", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Main` Component_
- *
+ * ## Main
  * The <main> HTML element represents the dominant content of the body of
  * a document. The main content area consists of content that is directly related
  * to or expands upon the central topic of a document, or the central
  * functionality of an application.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main
- * @param {import("../lib").MainProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').MainParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Main(props) {
-    const el = createElement("main", {
+    const element = createElement("main", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Nav` Component_
- *
+ * ## Nav
  * The ``<nav>`` HTML element represents a section of a page whose purpose is to provide navigation links, either within the current document or to other documents. Common examples of navigation sections are menus, tables of contents, and indexes.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav
- * @param {import("../lib").NavProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').NavParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Nav(props) {
-    const el = createElement("nav", {
+    const element = createElement("nav", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Section` Component_
- *
+ * ## Section
  * The ``<section>`` HTML element represents a generic standalone section of a document, which doesn't have a more specific semantic element to represent it. Sections should always have a heading, with very few exceptions.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/section
- * @param {import("../lib").SectionProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').SectionParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Section(props) {
-    const el = createElement("section", {
+    const element = createElement("section", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Blockquote` Component_
- *
+ * ## Blockquote
  * The ``<blockquote>`` HTML element indicates that the enclosed text is an extended quotation. Usually, this is rendered visually by indentation (see Notes for how to change it). A URL for the source of the quotation may be given using the cite attribute, while a text representation of the source can be given using the cite element.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote
- * @param {import("../lib").BlockquoteProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').BlockquoteParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Blockquote(props) {
-    const el = createElement("blockquote", {
+    const element = createElement("blockquote", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Dd` Component_
- *
+ * ## Dd
  * The ``<dd>`` HTML element provides the description, definition, or value for the preceding term (dt) in a description list (dl).
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dd
- * @param {import("../lib").DdProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').DdParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Dd(props) {
-    const el = createElement("dd", {
+    const element = createElement("dd", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Div` Component_
- *
+ * ## Div
  * The ``<div>`` HTML element is the generic container for flow content. It has no effect on the content or layout until styled in some way using CSS (e.g. styling is directly applied to it, or some kind of layout model like FlexBox is applied to its parent element).
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div
- * @param {import("../lib").DivProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').DivParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Div(props) {
-    const el = createElement("div", {
+    const element = createElement("div", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Dl` Component_
- *
+ * ## Dl
  * The ``<dl>`` HTML element represents a description list. The element encloses a list of groups of terms (specified using the dt element) and descriptions (provided by dd elements). Common uses for this element are to implement a glossary or to display metadata (a list of key-value pairs).
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl
- * @param {import("../lib").DlProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').DlParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Dl(props) {
-    const el = createElement("dl", {
+    const element = createElement("dl", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Dt` Component_
- *
+ * ## Dt
  * The ``<dt>`` HTML element specifies a term in a description or definition list, and as such must be used inside a dl element. It is usually followed by a dd element; however, multiple <dt> elements in a row indicate several terms that are all defined by the immediate next dd element.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dt
- * @param {import("../lib").DtProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').DtParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Dt(props) {
-    const el = createElement("dt", {
+    const element = createElement("dt", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Figcaption` Component_
- *
+ * ## Figcaption
  * The ``<figcaption>`` HTML element represents a caption or legend describing the rest of the contents of its parent figure element.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figcaption
- * @param {import("../lib").FigcaptionProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').FigcaptionParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Figcaption(props) {
-    const el = createElement("figcaption", {
+    const element = createElement("figcaption", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Figure` Component_
- *
+ * ## Figure
  * The ``<figure>`` HTML element represents self-contained content, potentially with an optional caption, which is specified using the figcaption element. The figure, its caption, and its contents are referenced as a single unit.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure
- * @param {import("../lib").FigureProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').FigureParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Figure(props) {
-    const el = createElement("figure", {
+    const element = createElement("figure", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Hr` Component_
- *
+ * ## Hr
  * The ``<hr>`` HTML element represents a thematic break between paragraph-level elements: for example, a change of scene in a story, or a shift of topic within a section.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr
- * @param {import("../lib").HrProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').HrParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Hr(props) {
-    const el = createElement("hr", {
+    const element = createElement("hr", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Li` Component_
- *
+ * ## Li
  * The ``<li>`` HTML element is used to represent an item in a list. It must be contained in a parent element: an ordered list (ol), an unordered list (ul), or a menu (menu). In menus and unordered lists, list items are usually displayed using bullet points. In ordered lists, they are usually displayed with an ascending counter on the left, such as a number or letter.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li
- * @param {import("../lib").LiProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').LiParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Li(props) {
-    const el = createElement("li", {
+    const element = createElement("li", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Menu` Component_
- *
+ * ## Menu
  * The ``<menu>`` HTML element is described in the HTML specification as a semantic alternative to ul, but treated by browsers (and exposed through the accessibility tree) as no different than ul. It represents an unordered list of items (which are represented by li elements).
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menu
- * @param {import("../lib").MenuProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').MenuParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Menu(props) {
-    const el = createElement("menu", {
+    const element = createElement("menu", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Ol` Component_
- *
+ * ## Ol
  * The ``<ol>`` HTML element represents an ordered list of items — typically rendered as a numbered list.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol
- * @param {import("../lib").OlProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').OlParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Ol(props) {
-    const el = createElement("ol", {
+    const element = createElement("ol", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`P` Component_
- *
+ * ## P
  * The ``<p>`` HTML element represents a paragraph. Paragraphs are usually represented in visual media as blocks of text separated from adjacent blocks by blank lines and/or first-line indentation, but HTML paragraphs can be any structural grouping of related content, such as images or form fields.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p
- * @param {import("../lib").PProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').PParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function P(props) {
-    const el = createElement("p", {
+    const element = createElement("p", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Pre` Component_
- *
+ * ## Pre
  * The ``<pre>`` HTML element represents preformatted text which is to be presented exactly as written in the HTML file. The text is typically rendered using a non-proportional, or monospaced, font. Whitespace inside this element is displayed as written.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/pre
- * @param {import("../lib").PreProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').PreParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Pre(props) {
-    const el = createElement("pre", {
+    const element = createElement("pre", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Ul` Component_
- *
+ * ## Ul
  * The ``<ul>`` HTML element represents an unordered list of items, typically rendered as a bulleted list.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul
- * @param {import("../lib").UlProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').UlParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Ul(props) {
-    const el = createElement("ul", {
+    const element = createElement("ul", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`A` Component_
- *
+ * ## A
  * The ``<a>`` HTML element (or anchor element), with its href attribute, creates a hyperlink to web pages, files, email addresses, locations in the same page, or anything else a URL can address.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
- * @param {import("../lib").AProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').AParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function A(props) {
-    const el = createElement("a", {
+    const element = createElement("a", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Abbr` Component_
- *
+ * ## Abbr
  * The ``<abbr>`` HTML element represents an abbreviation or acronym.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr
- * @param {import("../lib").AbbrProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').AbbrParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Abbr(props) {
-    const el = createElement("abbr", {
+    const element = createElement("abbr", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`B` Component_
- *
+ * ## B
  * The ``<b>`` HTML element is used to draw the reader's attention to the element's contents, which are not otherwise granted special importance. This was formerly known as the Boldface element, and most browsers still draw the text in boldface. However, you should not use ``<b>`` for styling text; instead, you should use the CSS font-weight property to create boldface text, or the strong element to indicate that text is of special importance.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/b
- * @param {import("../lib").BProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').BParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function B(props) {
-    const el = createElement("b", {
+    const element = createElement("b", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Bdi` Component_
- *
+ * ## Bdi
  * The ``<bdi>`` HTML element tells the browser's bidirectional algorithm to treat the text it contains in isolation from its surrounding text. It's particularly useful when a website dynamically inserts some text and doesn't know the directionality of the text being inserted.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bdi
- * @param {import("../lib").BdiProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').BdiParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Bdi(props) {
-    const el = createElement("bdi", {
+    const element = createElement("bdi", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Bdo` Component_
- *
+ * ## Bdo
  * The ``<bdo> ``HTML element overrides the current directionality of text, so that the text within is rendered in a different direction.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bdo
- * @param {import("../lib").BdoProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').BdoParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Bdo(props) {
-    const el = createElement("bdo", {
+    const element = createElement("bdo", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Br` Component_
- *
+ * ## Br
  * The ``<br>`` HTML element produces a line break in text (carriage-return). It is useful for writing a poem or an address, where the division of lines is significant.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br
- * @param {import("../lib").BrProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').BrParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Br(props) {
-    const el = createElement("br", {
+    const element = createElement("br", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Cite` Component_
- *
+ * ## Cite
  * The ``<cite>`` HTML element is used to describe a reference to a cited creative work, and must include the title of that work. The reference may be in an abbreviated form according to context-appropriate conventions related to citation metadata.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/cite
- * @param {import("../lib").CiteProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').CiteParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Cite(props) {
-    const el = createElement("cite", {
+    const element = createElement("cite", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Code` Component_
- *
+ * ## Code
  * The ``<code>`` HTML element displays its contents styled in a fashion intended to indicate that the text is a short fragment of computer code. By default, the content text is displayed using the user agent default monospace font.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/code
- * @param {import("../lib").CodeProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').CodeParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Code(props) {
-    const el = createElement("code", {
+    const element = createElement("code", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Data` Component_
- *
+ * ## Data
  * The ``<data>`` HTML element links a given piece of content with a machine-readable translation. If the content is time- or date-related, the time element must be used.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/data
- * @param {import("../lib").DataProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').DataParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Data(props) {
-    const el = createElement("data", {
+    const element = createElement("data", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Dfn` Component_
- *
+ * ## Dfn
  * The ``<dfn>`` HTML element is used to indicate the term being defined within the context of a definition phrase or sentence. The p element, the dt/dd pairing, or the section element which is the nearest ancestor of the ``<dfn>`` is considered to be the definition of the term.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dfn
- * @param {import("../lib").DfnProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').DfnParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Dfn(props) {
-    const el = createElement("dfn", {
+    const element = createElement("dfn", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Em` Component_
- *
+ * ## Em
  * The ``<em>`` HTML element marks text that has stress emphasis. The ``<em>`` element can be nested, with each level of nesting indicating a greater degree of emphasis.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/em
- * @param {import("../lib").EmProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').EmParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Em(props) {
-    const el = createElement("em", {
+    const element = createElement("em", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`I` Component_
- *
+ * ## I
  * The ``<i>`` HTML element represents a range of text that is set off from the normal text for some reason, such as idiomatic text, technical terms, taxonomical designations, among others. Historically, these have been presented using italicized type, which is the original source of the ``<i>`` naming of this element.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/i
- * @param {import("../lib").IProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').IParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function I(props) {
-    const el = createElement("i", {
+    const element = createElement("i", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Kbd` Component_
- *
+ * ## Kbd
  * The ``<kbd>`` HTML element represents a span of inline text denoting textual user input from a keyboard, voice input, or any other text entry device. By convention, the user agent defaults to rendering the contents of a ``<kbd>`` element using its default monospace font, although this is not mandated by the HTML standard.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/kdb
- * @param {import("../lib").KbdProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').KbdParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Kbd(props) {
-    const el = createElement("kdb", {
+    const element = createElement("kdb", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Mark` Component_
- *
+ * ## Mark
  * The ``<mark>`` HTML element represents text which is marked or highlighted for reference or notation purposes, due to the marked passage's relevance or importance in the enclosing context.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/mark
- * @param {import("../lib").MarkProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').MarkParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Mark(props) {
-    const el = createElement("mark", {
+    const element = createElement("mark", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Q` Component_
- *
+ * ## Q
  * The ``<q>`` HTML element indicates that the enclosed text is a short inline quotation. Most modern browsers implement this by surrounding the text in quotation marks. This element is intended for short quotations that don't require paragraph breaks; for long quotations use the blockquote element.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q
- * @param {import("../lib").QProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').QParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Q(props) {
-    const el = createElement("q", {
+    const element = createElement("q", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Rp` Component_
- *
+ * ## Rp
  * The ``<rp>`` HTML element is used to provide fall-back parentheses for browsers that do not support display of ruby annotations using the ruby element. One ``<rp>`` element should enclose each of the opening and closing parentheses that wrap the rt element that contains the annotation's text.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rp
- * @param {import("../lib").RpProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').RpParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Rp(props) {
-    const el = createElement("rp", {
+    const element = createElement("rp", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Rt` Component_
- *
+ * ## Rt
  * The ``<rt>`` HTML element specifies the ruby text component of a ruby annotation, which is used to provide pronunciation, translation, or transliteration information for East Asian typography. The ``<rt>`` element must always be contained within a ruby element.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rt
- * @param {import("../lib").RtProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').RtParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Rt(props) {
-    const el = createElement("rt", {
+    const element = createElement("rt", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Ruby` Component_
- *
+ * ## Ruby
  * The ``<ruby>`` HTML element represents small annotations that are rendered above, below, or next to base text, usually used for showing the pronunciation of East Asian characters. It can also be used for annotating other kinds of text, but this usage is less common.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ruby
- * @param {import("../lib").RubyProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').RubyParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Ruby(props) {
-    const el = createElement("ruby", {
+    const element = createElement("ruby", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`S` Component_
- *
+ * ## S
  * The ``<s>`` HTML element renders text with a strikethrough, or a line through it. Use the <s> element to represent things that are no longer relevant or no longer accurate. However, <s> is not appropriate when indicating document edits; for that, use the del and ins elements, as appropriate.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/s
- * @param {import("../lib").SProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').SParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function S(props) {
-    const el = createElement("s", {
+    const element = createElement("s", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Samp` Component_
- *
+ * ## Samp
  * The ``<samp>`` HTML element is used to enclose inline text which represents sample (or quoted) output from a computer program. Its contents are typically rendered using the browser's default monospaced font (such as Courier or Lucida Console).
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/samp
- * @param {import("../lib").SampProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').SampParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Samp(props) {
-    const el = createElement("samp", {
+    const element = createElement("samp", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Small` Component_
- *
+ * ## Small
  * The ``<small>`` HTML element represents side-comments and small print, like copyright and legal text, independent of its styled presentation. By default, it renders text within it one font-size smaller, such as from small to x-small.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/small
- * @param {import("../lib").SmallProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').SmallParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Small(props) {
-    const el = createElement("small", {
+    const element = createElement("small", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Span` Component_
- *
+ * ## Span
  * The ``<span>`` HTML element is a generic inline container for phrasing content, which does not inherently represent anything. It can be used to group elements for styling purposes (using the class or id attributes), or because they share attribute values, such as lang. It should be used only when no other semantic element is appropriate. ``<span>`` is very much like a div element, but div is a block-level element whereas a ``<span>`` is an inline element.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/span
- * @param {import("../lib").SpanProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').SpanParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Span(props) {
-    const el = createElement("span", {
+    const element = createElement("span", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Strong` Component_
- *
+ * ## Strong
  * The ``<strong>`` HTML element indicates that its contents have strong importance, seriousness, or urgency. Browsers typically render the contents in bold type.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong
- * @param {import("../lib").StrongProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').StrongParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Strong(props) {
-    const el = createElement("strong", {
+    const element = createElement("strong", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Sub` Component_
- *
+ * ## Sub
  * The ``<sub>`` HTML element specifies inline text which should be displayed as subscript for solely typographical reasons. Subscripts are typically rendered with a lowered baseline using smaller text.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sub
- * @param {import("../lib").SubProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').SubParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Sub(props) {
-    const el = createElement("sub", {
+    const element = createElement("sub", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Sup` Component_
- *
+ * ## Sup
  * The ``<sup>`` HTML element specifies inline text which is to be displayed as superscript for solely typographical reasons. Superscripts are usually rendered with a raised baseline using smaller text.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sup
- * @param {import("../lib").SupProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').SupParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Sup(props) {
-    const el = createElement("sup", {
+    const element = createElement("sup", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Time` Component_
- *
+ * ## Time
  * The ``<time>`` HTML element represents a specific period in time. It may include the datetime attribute to translate dates into machine-readable format, allowing for better search engine results or custom features such as reminders.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time
- * @param {import("../lib").TimeProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').TimeParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Time(props) {
-    const el = createElement("time", {
+    const element = createElement("time", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`U` Component_
- *
+ * ## U
  * The ``<u>`` HTML element represents a span of inline text which should be rendered in a way that indicates that it has a non-textual annotation. This is rendered by default as a simple solid underline, but may be altered using CSS.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/u
- * @param {import("../lib").UProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').UParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function U(props) {
-    const el = createElement("u", {
+    const element = createElement("u", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Var` Component_
- *
+ * ## Var
  * The ``<var>`` HTML element represents the name of a variable in a mathematical expression or a programming context. It's typically presented using an italicized version of the current typeface, although that behavior is browser-dependent.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/var
- * @param {import("../lib").VarProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').VarParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Var(props) {
-    const el = createElement("var", {
+    const element = createElement("var", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Wbr` Component_
- *
+ * ## Wbr
  * The ``<wbr>`` HTML element represents a word break opportunity—a position within text where the browser may optionally break a line, though its line-breaking rules would not otherwise create a break at that location
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/wbr
- * @param {import("../lib").WbrProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').WbrParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Wbr(props) {
-    const el = createElement("wbr", {
+    const element = createElement("wbr", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Area` Component_
- *
+ * ## Area
  * The ``<area>`` HTML element defines an area inside an image map that has predefined clickable areas. An image map allows geometric areas on an image to be associated with Hyperlink.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area
- * @param {import("../lib").AreaProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').AreaParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Area(props) {
-    const el = createElement("area", {
+    const element = createElement("area", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Audio` Component_
- *
+ * ## Audio
  * The ``<audio>`` HTML element is used to embed sound content in documents. It may contain one or more audio sources, represented using the src attribute or the source element: the browser will choose the most suitable one. It can also be the destination for streamed media, using a MediaStream.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
- * @param {import("../lib").AudioProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').AudioParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Audio(props) {
-    const el = createElement("audio", {
+    const element = createElement("audio", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Img` Component_
- *
+ * ## Img
  * 	The ``<img>`` HTML element embeds an image into the document.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img
- * @param {import("../lib").ImgProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').ImgParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Img(props) {
-    const el = createElement("img", {
+    const element = createElement("img", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Map` Component_
- *
+ * ## Map
  * The ``<map>`` HTML element is used with area elements to define an image map (a clickable link area).
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map
- * @param {import("../lib").MapProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').MapParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Map(props) {
-    const el = createElement("map", {
+    const element = createElement("map", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Track` Component_
- *
+ * ## Track
  * The ``<track>`` HTML element is used as a child of the media elements, audio and video. It lets you specify timed text tracks (or time-based data), for example to automatically handle subtitles. The tracks are formatted in WebVTT format (.vtt files) — Web Video Text Tracks.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/track
- * @param {import("../lib").TrackProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').TrackParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Track(props) {
-    const el = createElement("track", {
+    const element = createElement("track", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Video` Component_
- *
+ * ## Video
  * The ``<video>`` HTML element embeds a media player which supports video playback into the document. You can use ``<video>`` for audio content as well, but the audio element may provide a more appropriate user experience.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
- * @param {import("../lib").VideoProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').VideoParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Video(props) {
-    const el = createElement("video", {
+    const element = createElement("video", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Embed` Component_
- *
+ * ## Embed
  * The ``<embed>`` HTML element embeds external content at the specified point in the document. This content is provided by an external application or other source of interactive content such as a browser plug-in.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/embed
- * @param {import("../lib").EmbedProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').EmbedParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Embed(props) {
-    const el = createElement("embed", {
+    const element = createElement("embed", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Iframe` Component_
- *
+ * ## Iframe
  * The ``<iframe>`` HTML element represents a nested browsing context, embedding another HTML page into the current one.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
- * @param {import("../lib").IframeProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').IframeParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Iframe(props) {
-    const el = createElement("iframe", {
+    const element = createElement("iframe", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Object` Component_
- *
+ * ## Object
  * The ``<object>`` HTML element represents an external resource, which can be treated as an image, a nested browsing context, or a resource to be handled by a plugin.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/object
- * @param {import("../lib").ObjectProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').ObjectParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Object(props) {
-    const el = createElement("object", {
+    const element = createElement("object", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Picture` Component_
- *
+ * ## Picture
  * The ``<picture>`` HTML element contains zero or more source elements and one img element to offer alternative versions of an image for different display/device scenarios.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture
- * @param {import("../lib").PictureProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').PictureParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Picture(props) {
-    const el = createElement("picture", {
+    const element = createElement("picture", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Portal` Component_
- *
+ * ## Portal
  * The ``<portal>`` HTML element enables the embedding of another HTML page into the current one for the purposes of allowing smoother navigation into new pages.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/portal
- * @param {import("../lib").PortalProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').PortalParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Portal(props) {
-    const el = createElement("portal", {
+    const element = createElement("portal", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Source` Component_
- *
+ * ## Source
  * The ``<source>`` HTML element specifies multiple media resources for the picture, the audio element, or the video element. It is an empty element, meaning that it has no content and does not have a closing tag. It is commonly used to offer the same media content in multiple file formats in order to provide compatibility with a broad range of browsers given their differing support for image file formats and media file formats.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source
- * @param {import("../lib").SourceProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').SourceParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Source(props) {
-    const el = createElement("source", {
+    const element = createElement("source", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Canvas` Component_
- *
+ * ## Canvas
  * Use the HTML ``<canvas>`` element with either the canvas scripting API or the WebGL API to draw graphics and animations.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas
- * @param {import("../lib").CanvasProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').CanvasParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Canvas(props) {
-    const el = createElement("canvas", {
+    const element = createElement("canvas", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Noscript` Component_
- *
+ * ## Noscript
  * The ``<noscript>`` HTML element defines a section of HTML to be inserted if a script type on the page is unsupported or if scripting is currently turned off in the browser.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript
- * @param {import("../lib").NoscriptProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').NoscriptParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Noscript(props) {
-    const el = createElement("noscript", {
+    const element = createElement("noscript", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Del` Component_
- *
+ * ## Del
  * The ``<del>`` HTML element represents a range of text that has been deleted from a document. This can be used when rendering "track changes" or source code diff information, for example. The ins element can be used for the opposite purpose: to indicate text that has been added to the document.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/del
- * @param {import("../lib").DelProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').DelParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Del(props) {
-    const el = createElement("del", {
+    const element = createElement("del", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Ins` Component_
- *
+ * ## Ins
  * The ``<ins>`` HTML element represents a range of text that has been added to a document. You can use the del element to similarly represent a range of text that has been deleted from the document.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ins
- * @param {import("../lib").InsProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').InsParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Ins(props) {
-    const el = createElement("ins", {
+    const element = createElement("ins", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Caption` Component_
- *
+ * ## Caption
  * The ``<caption>`` HTML element specifies the caption (or title) of a table.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/caption
- * @param {import("../lib").CaptionProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').CaptionParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Caption(props) {
-    const el = createElement("caption", {
+    const element = createElement("caption", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Col` Component_
- *
+ * ## Col
  * The ``<col>`` HTML element defines a column within a table and is used for defining common semantics on all common cells. It is generally found within a colgroup element.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/col
- * @param {import("../lib").ColProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').ColParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Col(props) {
-    const el = createElement("col", {
+    const element = createElement("col", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Colgroup` Component_
- *
+ * ## Colgroup
  * The ``<colgroup>`` HTML element defines a group of columns within a table.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/colgroup
- * @param {import("../lib").ColgroupProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').ColgroupParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Colgroup(props) {
-    const el = createElement("colgroup", {
+    const element = createElement("colgroup", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Table` Component_
- *
+ * ## Table
  * The ``<table>`` HTML element represents tabular data — that is, information presented in a two-dimensional table comprised of rows and columns of cells containing data.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
- * @param {import("../lib").TableProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').TableParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Table(props) {
-    const el = createElement("table", {
+    const element = createElement("table", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Tbody` Component_
- *
+ * ## Tbody
  * The ``<tbody>`` HTML element encapsulates a set of table rows (tr elements), indicating that they comprise the body of the table (table).
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tbody
- * @param {import("../lib").TbodyProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').TbodyParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Tbody(props) {
-    const el = createElement("tbody", {
+    const element = createElement("tbody", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Td` Component_
- *
+ * ## Td
  * The ``<td>`` HTML element defines a cell of a table that contains data. It participates in the table model.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td
- * @param {import("../lib").TdProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').TdParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Td(props) {
-    const el = createElement("td", {
+    const element = createElement("td", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Tfoot` Component_
- *
+ * ## Tfoot
  * The ``<tfoot>`` HTML element defines a set of rows summarizing the columns of the table.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tfoot
- * @param {import("../lib").TfootProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').TfootParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Tfoot(props) {
-    const el = createElement("tfoot", {
+    const element = createElement("tfoot", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Th` Component_
- *
+ * ## Th
  * The ``<th>`` HTML element defines a cell as header of a group of table cells. The exact nature of this group is defined by the scope and headers attributes.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th
- * @param {import("../lib").ThProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').ThParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Th(props) {
-    const el = createElement("th", {
+    const element = createElement("th", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Thead` Component_
- *
+ * ## Thead
  * The ``<thead>`` HTML element defines a set of rows defining the head of the columns of the table.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead
- * @param {import("../lib").TheadProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').TheadParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Thead(props) {
-    const el = createElement("thead", {
+    const element = createElement("thead", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Tr` Component_
- *
+ * ## Tr
  * The ``<tr>`` HTML element defines a row of cells in a table. The row's cells can then be established using a mix of td (data cell) and th (header cell) elements.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr
- * @param {import("../lib").TrProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').TrParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Tr(props) {
-    const el = createElement("tr", {
+    const element = createElement("tr", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Button` Component_
- *
+ * ## Button
  * The ``<button>`` HTML element is an interactive element activated by a user with a mouse, keyboard, finger, voice command, or other assistive technology. Once activated, it then performs a programmable action, such as submitting a form or opening a dialog.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
- * @param {import("../lib").ButtonProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').ButtonParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Button(props) {
-    const el = createElement("button", {
+    const element = createElement("button", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Datalist` Component_
- *
+ * ## Datalist
  * The ``<datalist>`` HTML element contains a set of option elements that represent the permissible or recommended options available to choose from within other controls.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist
- * @param {import("../lib").DatalistProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').DatalistParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Datalist(props) {
-    const el = createElement("datalist", {
+    const element = createElement("datalist", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Fieldset` Component_
- *
+ * ## Fieldset
  * The ``<fieldset>`` HTML element is used to group several controls as well as labels (label) within a web form.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset
- * @param {import("../lib").FieldsetProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').FieldsetParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Fieldset(props) {
-    const el = createElement("fieldset", {
+    const element = createElement("fieldset", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Form` Component_
- *
+ * ## Form
  * The ``<form>`` HTML element represents a document section containing interactive controls for submitting information.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
- * @param {import("../lib").FormProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').FormParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Form(props) {
-    const el = createElement("form", {
+    const element = createElement("form", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Input` Component_
- *
+ * ## Input
  * The ``<input>`` HTML element is used to create interactive controls for web-based forms in order to accept data from the user; a wide variety of types of input data and control widgets are available, depending on the device and user agent. The <input> element is one of the most powerful and complex in all of HTML due to the sheer number of combinations of input types and attributes.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
- * @param {import("../lib").InputProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').InputParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Input(props) {
-    const el = createElement("input", {
+    const element = createElement("input", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Label` Component_
- *
+ * ## Label
  * The ``<label>`` HTML element represents a caption for an item in a user interface.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label
- * @param {import("../lib").LabelProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').LabelParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Label(props) {
-    const el = createElement("label", {
+    const element = createElement("label", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Legend` Component_
- *
+ * ## Legend
  * The ``<legend>`` HTML element represents a caption for the content of its parent fieldset.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/legend
- * @param {import("../lib").LegendProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').LegendParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Legend(props) {
-    const el = createElement("legend", {
+    const element = createElement("legend", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Meter` Component_
- *
+ * ## Meter
  * The ``<meter>`` HTML element represents either a scalar value within a known range or a fractional value.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meter
- * @param {import("../lib").MeterProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').MeterParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Meter(props) {
-    const el = createElement("meter", {
+    const element = createElement("meter", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Optgroup` Component_
- *
+ * ## Optgroup
  * The ``<optgroup>`` HTML element creates a grouping of options within a select element.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/optgroup
- * @param {import("../lib").OptgroupProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').OptgroupParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Optgroup(props) {
-    const el = createElement("optgroup", {
+    const element = createElement("optgroup", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Option` Component_
- *
+ * ## Option
  * The <option> HTML element is used to define an item contained in a select, an optgroup, or a datalist element. As such, <option> can represent menu items in popups and other lists of items in an HTML document.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option
- * @param {import("../lib").OptionProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').OptionParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Option(props) {
-    const el = createElement("option", {
+    const element = createElement("option", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Output` Component_
- *
+ * ## Output
  * The ``<output>`` HTML element is a container element into which a site or app can inject the results of a calculation or the outcome of a user action.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/output
- * @param {import("../lib").OutputProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').OutputParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Output(props) {
-    const el = createElement("output", {
+    const element = createElement("output", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Progress` Component_
- *
+ * ## Progress
  * The ``<progress>`` HTML element displays an indicator showing the completion progress of a task, typically displayed as a progress bar.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress
- * @param {import("../lib").ProgressProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').ProgressParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Progress(props) {
-    const el = createElement("progress", {
+    const element = createElement("progress", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Select` Component_
- *
+ * ## Select
  * The ``<select>`` HTML element represents a control that provides a menu of options.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select
- * @param {import("../lib").SelectProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').SelectParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Select(props) {
-    const el = createElement("select", {
+    const element = createElement("select", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`TextArea` Component_
- *
+ * ## TextArea
  * The ``<textarea>`` HTML element represents a multi-line plain-text editing control, useful when you want to allow users to enter a sizeable amount of free-form text, for example a comment on a review or feedback form.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea
- * @param {import("../lib").TextAreaProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').TextAreaParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function TextArea(props) {
-    const el = createElement("textarea", {
+    const element = createElement("textarea", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Details` Component_
- *
+ * ## Details
  * The ``<details>`` HTML element creates a disclosure widget in which information is visible only when the widget is toggled into an "open" state. A summary or label must be provided using the summary element.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details
- * @param {import("../lib").DetailsProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').DetailsParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Details(props) {
-    const el = createElement("details", {
+    const element = createElement("details", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Dialog` Component_
- *
+ * ## Dialog
  * The ``<dialog>`` HTML element represents a dialog box or other interactive component, such as a dismissible alert, inspector, or subwindow.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
- * @param {import("../lib").DialogProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').DialogParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Dialog(props) {
-    const el = createElement("dialog", {
+    const element = createElement("dialog", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Summary` Component_
- *
+ * ## Summary
  * The ``<summary>`` HTML element specifies a summary, caption, or legend for a details element's disclosure box. Clicking the <summary> element toggles the state of the parent <details> element open and closed.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary
- * @param {import("../lib").SummaryProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').SummaryParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Summary(props) {
-    const el = createElement("summary", {
+    const element = createElement("summary", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Slot` Component_
- *
+ * ## Slot
  * The ``<slot>`` HTML element—part of the Web Components technology suite—is a placeholder inside a web component that you can fill with your own markup, which lets you create separate DOM trees and present them together.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot
- * @param {import("../lib").SlotProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').SlotParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Slot(props) {
-    const el = createElement("slot", {
+    const element = createElement("slot", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Template` Component_
- *
+ * ## Template
  * The ``<template>`` HTML element is a mechanism for holding HTML that is not to be rendered immediately when a page is loaded but may be instantiated subsequently during runtime using JavaScript.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template
- * @param {import("../lib").TemplateProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').TemplateParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Template(props) {
-    const el = createElement("template", {
+    const element = createElement("template", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`HtmlContainer` Component_
- *
+ * ## HtmlContainer
  * Element rendering string as HTML.
- *
- *
- * @param {import("../lib").HtmlContainerProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').HtmlContainerParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function HtmlContainer(props) {
-    const el = createElement("#raw", {
+    const element = createElement("#raw", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Fragment` Component_
- *
+ * ## Fragment
  * Utility element used to group elements without rendering the actual container,
  * instead children will be rendered within the parent component.
- *
- *
- * @param {import("../lib").FragmentProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').FragmentParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Fragment(props) {
-    const el = createElement("fragment", {
+    const element = createElement("fragment", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Column` Component_
- *
+ * ## Column
  * An element displaying its children vertically.
- *
- *
- * @param {import("../lib").ColumnProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').ColumnParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Column(props) {
-    const el = createElement("column-view", {
+    const element = createElement("column-view", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`Row` Component_
- *
+ * ## Row
  * An element displaying its children horizontally.
- *
- *
- * @param {import("../lib").RowProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').RowParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Row(props) {
-    const el = createElement("row-view", {
+    const element = createElement("row-view", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`CenteredColumn` Component_
- *
+ * ## CenteredColumn
  * An element displaying its children vertically and centered
- *
- *
- * @param {import("../lib").CenteredColumnProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').CenteredColumnParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function CenteredColumn(props) {
-    const el = createElement("centered-column", {
+    const element = createElement("centered-column", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`CenteredRow` Component_
- *
+ * ## CenteredRow
  * An element displaying its children horizontally and centered
- *
- *
- * @param {import("../lib").CenteredRowProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').CenteredRowParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function CenteredRow(props) {
-    const el = createElement("centered-row", {
+    const element = createElement("centered-row", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
 
-    return el;
+    return element;
 }
-
 /**
- * ## _`CheckBox` Component_
- *
+ * ## CheckBox
  * An element representing a boolean state of `true` or `false`.
  * Implement `onInput` or `onChange` to trigger actions when the state changes
- *
- *
- * @param {import("../lib").CheckBoxProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').CheckBoxParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function CheckBox(props) {
-    const el = createElement("input", {
+    const element = createElement("input", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
-    CustomElements.items.CheckBox.handler(el);
-    return el;
+    CustomElements.items.CheckBox.handler(element);
+    return element;
 }
-
 /**
- * ## _`ColorPicker` Component_
- *
+ * ## ColorPicker
  * Element allowing the user to pick a color from the displayed spectrum.
- *
- *
- * @param {import("../lib").ColorPickerProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').ColorPickerParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function ColorPicker(props) {
-    const el = createElement("input", {
+    const element = createElement("input", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
-    CustomElements.items.ColorPicker.handler(el);
-    return el;
+    CustomElements.items.ColorPicker.handler(element);
+    return element;
 }
-
 /**
- * ## _`DatePicker` Component_
- *
+ * ## DatePicker
  * Element providing a method for the user to pick a specific date.
- *
- *
- * @param {import("../lib").DatePickerProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').DatePickerParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function DatePicker(props) {
-    const el = createElement("input", {
+    const element = createElement("input", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
-    CustomElements.items.DatePicker.handler(el);
-    return el;
+    CustomElements.items.DatePicker.handler(element);
+    return element;
 }
-
 /**
- * ## _`DateTimeLocalPicker` Component_
- *
+ * ## DateTimeLocalPicker
  * A more specific version of the `DatePicker` element,
  * allowing the user to easily pick both date and time.
- *
- *
- * @param {import("../lib").DateTimeLocalPickerProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').DateTimeLocalPickerParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function DateTimeLocalPicker(props) {
-    const el = createElement("input", {
+    const element = createElement("input", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
-    CustomElements.items.DateTimeLocalPicker.handler(el);
-    return el;
+    CustomElements.items.DateTimeLocalPicker.handler(element);
+    return element;
 }
-
 /**
- * ## _`EmailField` Component_
- *
+ * ## EmailField
  * Element used to let the user input one e-mail address,
  * or multiple in case `multiple` attribute is specified.
- *
- *
- * @param {import("../lib").EmailFieldProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').EmailFieldParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function EmailField(props) {
-    const el = createElement("input", {
+    const element = createElement("input", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
-    CustomElements.items.EmailField.handler(el);
-    return el;
+    CustomElements.items.EmailField.handler(element);
+    return element;
 }
-
 /**
- * ## _`FilePicker` Component_
- *
+ * ## FilePicker
  * Element allowing the user to choose and select one or more files from their device storage,
  * which can be later processed using JavaScript or uploaded directly using `form submission`.
- *
- *
- * @param {import("../lib").FilePickerProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').FilePickerParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function FilePicker(props) {
-    const el = createElement("input", {
+    const element = createElement("input", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
-    CustomElements.items.FilePicker.handler(el);
-    return el;
+    CustomElements.items.FilePicker.handler(element);
+    return element;
 }
-
 /**
- * ## _`HiddenInput` Component_
- *
+ * ## HiddenInput
  * Element that let web developers include data that cannot be seen or modified
  * by users when a form is submitted.
- *
- *
- * @param {import("../lib").HiddenInputProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').HiddenInputParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function HiddenInput(props) {
-    const el = createElement("input", {
+    const element = createElement("input", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
-    CustomElements.items.HiddenInput.handler(el);
-    return el;
+    CustomElements.items.HiddenInput.handler(element);
+    return element;
 }
-
 /**
- * ## _`ImagePicker` Component_
- *
+ * ## ImagePicker
  * Element allowing the user to choose and select an image from their device storage,
  * which can be later processed using JavaScript or uploaded directly using `form submission`.
- *
- *
- * @param {import("../lib").ImagePickerProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').ImagePickerParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function ImagePicker(props) {
-    const el = createElement("input", {
+    const element = createElement("input", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
-    CustomElements.items.ImagePicker.handler(el);
-    return el;
+    CustomElements.items.ImagePicker.handler(element);
+    return element;
 }
-
 /**
- * ## _`MonthPicker` Component_
- *
+ * ## MonthPicker
  * Element providing a method for the user to pick a specific month.
- *
- *
- * @param {import("../lib").MonthPickerProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').MonthPickerParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function MonthPicker(props) {
-    const el = createElement("input", {
+    const element = createElement("input", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
-    CustomElements.items.MonthPicker.handler(el);
-    return el;
+    CustomElements.items.MonthPicker.handler(element);
+    return element;
 }
-
 /**
- * ## _`NumberPicker` Component_
- *
+ * ## NumberPicker
  * Element providing a method for the user to pick a number in a given intervall.
- *
- *
- * @param {import("../lib").NumberPickerProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').NumberPickerParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function NumberPicker(props) {
-    const el = createElement("input", {
+    const element = createElement("input", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
-    CustomElements.items.NumberPicker.handler(el);
-    return el;
+    CustomElements.items.NumberPicker.handler(element);
+    return element;
 }
-
 /**
- * ## _`PasswordField` Component_
- *
+ * ## PasswordField
  * Element that treat the input of the user as a password and replace characters
  * depending on the browser's `user agent` and operating system.
- *
- *
- * @param {import("../lib").PasswordFieldProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').PasswordFieldParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function PasswordField(props) {
-    const el = createElement("input", {
+    const element = createElement("input", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
-    CustomElements.items.PasswordField.handler(el);
-    return el;
+    CustomElements.items.PasswordField.handler(element);
+    return element;
 }
-
 /**
- * ## _`RadioButton` Component_
- *
+ * ## RadioButton
  * Element used generally in a group, describing a set of related options.
- *
- *
- * @param {import("../lib").RadioButtonProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').RadioButtonParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function RadioButton(props) {
-    const el = createElement("input", {
+    const element = createElement("input", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
-    CustomElements.items.RadioButton.handler(el);
-    return el;
+    CustomElements.items.RadioButton.handler(element);
+    return element;
 }
-
 /**
- * ## _`RangePicker` Component_
- *
+ * ## RangePicker
  * Element that let the user specify a numeric value which must be no less than a given value,
  * and no more than another given value.
- *
- *
- * @param {import("../lib").RangePickerProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').RangePickerParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function RangePicker(props) {
-    const el = createElement("input", {
+    const element = createElement("input", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
-    CustomElements.items.RangePicker.handler(el);
-    return el;
+    CustomElements.items.RangePicker.handler(element);
+    return element;
 }
-
 /**
- * ## _`ResetButton` Component_
- *
+ * ## ResetButton
  * Button that, by default, reset all inputs in the form to their initial values.
- *
- *
- * @param {import("../lib").ResetButtonProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').ResetButtonParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function ResetButton(props) {
-    const el = createElement("input", {
+    const element = createElement("input", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
-    CustomElements.items.ResetButton.handler(el);
-    return el;
+    CustomElements.items.ResetButton.handler(element);
+    return element;
 }
-
 /**
- * ## _`SearchField` Component_
- *
+ * ## SearchField
  * A Text field element designed for the user to enter search queries into.
- *
- *
- * @param {import("../lib").SearchFieldProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').SearchFieldParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function SearchField(props) {
-    const el = createElement("input", {
+    const element = createElement("input", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
-    CustomElements.items.SearchField.handler(el);
-    return el;
+    CustomElements.items.SearchField.handler(element);
+    return element;
 }
-
 /**
- * ## _`SubmitButton` Component_
- *
+ * ## SubmitButton
  * Element rendered as a button, when it is clicked,
  * the `user agent` (by default) attempts to submit the form to the server.
- *
- *
- * @param {import("../lib").SubmitButtonProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').SubmitButtonParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function SubmitButton(props) {
-    const el = createElement("input", {
+    const element = createElement("input", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
-    CustomElements.items.SubmitButton.handler(el);
-    return el;
+    CustomElements.items.SubmitButton.handler(element);
+    return element;
 }
-
 /**
- * ## _`TelephoneNumberField` Component_
- *
+ * ## TelephoneNumberField
  * Element used to let the user enter and edit a telephone number.
- *
- *
- * @param {import("../lib").TelephoneNumberFieldProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').TelephoneNumberFieldParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function TelephoneNumberField(props) {
-    const el = createElement("input", {
+    const element = createElement("input", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
-    CustomElements.items.TelephoneNumberField.handler(el);
-    return el;
+    CustomElements.items.TelephoneNumberField.handler(element);
+    return element;
 }
-
 /**
- * ## _`TextField` Component_
- *
+ * ## TextField
  * Element for basic single-line text input.
- *
- *
- * @param {import("../lib").TextFieldProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').TextFieldParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function TextField(props) {
-    const el = createElement("input", {
+    const element = createElement("input", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
-    CustomElements.items.TextField.handler(el);
-    return el;
+    CustomElements.items.TextField.handler(element);
+    return element;
 }
-
 /**
- * ## _`TimePicker` Component_
- *
+ * ## TimePicker
  * Element that let the user easily enter a time (hours and minutes, and optionally seconds).
- *
- *
- * @param {import("../lib").TimePickerProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').TimePickerParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function TimePicker(props) {
-    const el = createElement("input", {
+    const element = createElement("input", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
-    CustomElements.items.TimePicker.handler(el);
-    return el;
+    CustomElements.items.TimePicker.handler(element);
+    return element;
 }
-
 /**
- * ## _`UrlField` Component_
- *
+ * ## UrlField
  * Element used to let the user enter and edit an URL.
- *
- *
- * @param {import("../lib").UrlFieldProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').UrlFieldParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function UrlField(props) {
-    const el = createElement("input", {
+    const element = createElement("input", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
-    CustomElements.items.UrlField.handler(el);
-    return el;
+    CustomElements.items.UrlField.handler(element);
+    return element;
 }
-
 /**
- * ## _`WeekPicker` Component_
- *
+ * ## WeekPicker
  * Element allowing easy entry of a year plus the ``ISO 8601`` week number during that year
- *
- *
- * @param {import("../lib").WeekPickerProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').WeekPickerParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function WeekPicker(props) {
-    const el = createElement("input", {
+    const element = createElement("input", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
-    CustomElements.items.WeekPicker.handler(el);
-    return el;
+    CustomElements.items.WeekPicker.handler(element);
+    return element;
 }
-
 /**
- * ## _`Spacer` Component_
- *
+ * ## Spacer
  * Element allowing the user to create space between components, vertically or horizontally.
- * The space occupied by this element is indisputed by other components.
- *
- *
- * @param {import("../lib").SpacerProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * The space occupied by this element is undisputed by other components.
+ * @param {import('./index').SpacerParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Spacer(props) {
-    const el = createElement("spacer-view", {
+    const element = createElement("spacer-view", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
-    CustomElements.items.Spacer.handler(el);
-    return el;
+    CustomElements.items.Spacer.handler(element);
+    return element;
 }
-
 /**
- * ## _`LazyColumn` Component_
- *
+ * ## LazyColumn
  * Element displaying element vertically containing an `IntersectionObserver`
  * that can watch for when the last element enter the user screen
  * and execute the callback passed in `onObserved`.
- *
- *
- * @param {import("../lib").LazyColumnProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').LazyColumnParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function LazyColumn(props) {
-    const el = createElement("lazy-column", {
+    const element = createElement("lazy-column", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
-    CustomElements.items.LazyColumn.handler(el);
-    return el;
+    CustomElements.items.LazyColumn.handler(element);
+    return element;
 }
-
 /**
- * ## _`LazyRow` Component_
- *
+ * ## LazyRow
  * Element displaying element horizontally containing an `IntersectionObserver`
  * that can watch for when the last element enter the user screen
  * and execute the callback passed in `onObserved`.
- *
- *
- * @param {import("../lib").LazyRowProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').LazyRowParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function LazyRow(props) {
-    const el = createElement("lazy-row", {
+    const element = createElement("lazy-row", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
-    CustomElements.items.LazyRow.handler(el);
-    return el;
+    CustomElements.items.LazyRow.handler(element);
+    return element;
 }
-
 /**
- * ## _`HorizontalLine` Component_
- *
+ * ## HorizontalLine
  * Element representing a line break between two elements.
  * It works similarly to `<hr>`, but with better CSS support.`
  * `element.style.normal` can only be overriden within `element.style.mediaQueries`.
- *
- *
- * @param {import("../lib").HorizontalLineProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').HorizontalLineParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function HorizontalLine(props) {
-    const el = createElement("horizontal-line", {
+    const element = createElement("horizontal-line", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
-    CustomElements.items.HorizontalLine.handler(el);
-    return el;
+    CustomElements.items.HorizontalLine.handler(element);
+    return element;
 }
-
 /**
- * ## _`VerticalLine` Component_
- *
+ * ## VerticalLine
  * Element representing a line break between two elements.
  * It works similarly to `<hr>`, but vertically and with better CSS support.`
  * `element.style.normal` can only be overriden within `element.style.mediaQueries`.
- *
- *
- * @param {import("../lib").VerticalLineProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').VerticalLineParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function VerticalLine(props) {
-    const el = createElement("vertical-line", {
+    const element = createElement("vertical-line", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
-    CustomElements.items.VerticalLine.handler(el);
-    return el;
+    CustomElements.items.VerticalLine.handler(element);
+    return element;
 }
-
 /**
- * ## _`Link` Component_
- *
+ * ## Link
  * An anchor element that allow the user to navigate between the different routes of the application.
  * Use `href` to pass the destination route.
- *
- *
- * @param {import("../lib").LinkProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').LinkParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function Link(props) {
-    const el = createElement("a", {
+    const element = createElement("a", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
-    CustomElements.items.Link.handler(el);
-    return el;
+    CustomElements.items.Link.handler(element);
+    return element;
 }
-
 /**
- * ## _`ToggleSwitch` Component_
- *
+ * ## ToggleSwitch
  * Custom element rendered as `<toggle-switch>`.
  *
  * Create a toggle switch button allowing the user to change settings between two states, `true` and `false`.
@@ -2483,35 +1942,29 @@ export function Link(props) {
  * The `checked` parameter could be assigned a boolean to set the initial value of the switch.
  *
  * Use `radiuxPx` to set the radius of the button knob in pixels, with wich other dimensions will be calculated automatically.
- *
- *
- * @param {import("../lib").ToggleSwitchProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').ToggleSwitchParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function ToggleSwitch(props) {
-    const el = createElement("toggle-switch", {
+    const element = createElement("toggle-switch", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
-    CustomElements.items.ToggleSwitch.handler(el);
-    return el;
+    CustomElements.items.ToggleSwitch.handler(element);
+    return element;
 }
-
 /**
- * ## _`CircularSpinner` Component_
- *
+ * ## CircularSpinner
  * Progress indicator also known as `spinner`,
  * Used to display an undetermined wait time.
- *
- *
- * @param {import("../lib").CircularSpinnerProps} props properties
- * @returns {import("@riadh-adrani/recursive/lib").RecursiveElement} element
+ * @param {import('./index').CircularSpinnerParams} props
+ * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
 export function CircularSpinner(props) {
-    const el = createElement("circular-spinner", {
+    const element = createElement("circular-spinner", {
         ...props,
         rendererOptions: { ns: "http://www.w3.org/1999/xhtml" },
     });
-    CustomElements.items.CircularSpinner.handler(el);
-    return el;
+    CustomElements.items.CircularSpinner.handler(element);
+    return element;
 }

@@ -1,4 +1,4 @@
-import { FreeStyleSheet, StyleSheet } from "../../lib";
+import { FreeStyleSheet, ComponentStyleSheet } from "../../lib";
 
 /**
  * Manage CSS within a `RecursiveWebApp`.
@@ -37,7 +37,7 @@ export default class RecursiveCSSOM {
      * Update component's and dynamic styles of the application.
      * @param stack contains styles declarations
      */
-    update(stack: Array<StyleSheet>): void;
+    update(stack: Array<ComponentStyleSheet>): void;
 
     /**
      * Add the style sheet object to the dynamic stack.

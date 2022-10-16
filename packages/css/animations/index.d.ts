@@ -1,7 +1,7 @@
 import { Selector } from "../../../lib";
 
 /**
- * rturn if the given name is valid as an animation name.
+ * return if the given name is valid as an animation name.
  * @param name animation name.
  */
 export function isValidName(name: string): boolean;

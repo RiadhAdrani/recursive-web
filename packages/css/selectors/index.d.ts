@@ -1,3 +1,4 @@
+import { CssSelectorTemplate as SelectorTemplate } from "../../templates";
 import { Selector } from "../../../lib";
 
 /**
@@ -31,4 +32,4 @@ export function renderSelector(selector: string, content: Selector): string;
  */
 export function getSelectorSupport(key: string): Array<string>;
 
-export const ListOfCssSelectors: { [key: string]: Selector };
+export const ListOfCssSelectors: { [key: string]: SelectorTemplate };

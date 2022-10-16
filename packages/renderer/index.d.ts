@@ -1,4 +1,5 @@
-import { RecursiveApp, RecursiveElement } from "@riadh-adrani/recursive";
+import { RecursiveApp } from "@riadh-adrani/recursive";
+import { RecursiveElement } from "@riadh-adrani/recursive/lib";
 import { RecursiveRenderer } from "../../use";
 import RecursiveCSSOM from "../css";
 

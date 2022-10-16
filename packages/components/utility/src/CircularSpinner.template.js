@@ -2,6 +2,7 @@ const { component, createElement } = require("../..");
 const { RecursiveConsole } = require("../../../../use");
 const { CIRCULAR_SPINNER, SVG_NS } = require("../../../constants");
 const { createAnimationName } = require("../../common");
+const { attribute } = require("../../../templates");
 
 module.exports = () => {
     return component({
@@ -13,9 +14,9 @@ module.exports = () => {
             "Used to display an undetermined wait time.",
         ],
         props: {
-            color: "Color",
-            thickness: "number",
-            size: "number",
+            color: attribute({ values: "Color", name: "color" }),
+            thickness: attribute({ values: "number", name: "thickness" }),
+            size: attribute({ values: "number", name: "size" }),
         },
         handler: (element) => {
             const color = element.color || "black";

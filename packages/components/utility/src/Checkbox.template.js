@@ -1,10 +1,14 @@
 const { component } = require("../..");
+const { ListOfAttributes } = require("../../../dom");
 
 module.exports = () => {
     return component({
         nativeInterface: "HTMLInputElement",
         tag: "input",
-        props: { value: "string", checked: "string" },
+        props: {
+            value: ListOfAttributes.value,
+            checked: ListOfAttributes.checked,
+        },
         handler: (element) => {
             element.type = "checkbox";
         },

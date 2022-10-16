@@ -17,53 +17,27 @@ const {
 function useRecursiveWindow(app) {
     const orchestrator = app.orchestrator;
 
-    onGlobal(
-        orchestrator,
-        "click",
-        WINDOW_ON_CLICK.toLowerCase(),
-        WINDOW_ON_CLICK
-    );
-    onGlobal(
-        orchestrator,
-        "contextmenu",
-        WINDOW_ON_CONTEXT_MENU.toLowerCase(),
-        WINDOW_ON_CONTEXT_MENU
-    );
-    onGlobal(
-        orchestrator,
-        "resize",
-        WINDOW_ON_RESIZE.toLowerCase(),
-        WINDOW_ON_RESIZE,
-        false
-    );
-    onGlobal(
-        orchestrator,
-        "keyup",
-        WINDOW_ON_KEY_UP.toLowerCase(),
-        WINDOW_ON_KEY_UP,
-        false
-    );
-    onGlobal(
-        orchestrator,
-        "keydown",
-        WINDOW_ON_KEY_DOWN.toLowerCase(),
-        WINDOW_ON_KEY_DOWN,
-        false
-    );
-    onGlobal(
-        orchestrator,
-        "scroll",
-        WINDOW_ON_SCROLL.toLowerCase(),
-        WINDOW_ON_SCROLL,
-        false
-    );
-    onGlobal(
-        orchestrator,
-        "beforeunload",
-        WINDOW_ON_BEFORE_UNLOAD.toLowerCase(),
-        WINDOW_ON_BEFORE_UNLOAD,
-        false
-    );
+    /**
+     * @param {string} store
+     * @param {string} event
+     */
+    const registerEvent = (event, store, checkTarget = false) => {
+        onGlobal(
+            orchestrator,
+            event,
+            store.toLocaleLowerCase(),
+            store,
+            checkTarget
+        );
+    };
+
+    registerEvent("click", WINDOW_ON_CLICK);
+    registerEvent("contextmenu", WINDOW_ON_CONTEXT_MENU);
+    registerEvent("resize", WINDOW_ON_RESIZE, false);
+    registerEvent("keyup", WINDOW_ON_KEY_UP, false);
+    registerEvent("keydown", WINDOW_ON_KEY_DOWN, false);
+    registerEvent("scroll", WINDOW_ON_SCROLL, false);
+    registerEvent("beforeunload", WINDOW_ON_BEFORE_UNLOAD, false);
 }
 
 module.exports = { handler, useRecursiveWindow };

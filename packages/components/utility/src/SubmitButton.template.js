@@ -1,11 +1,12 @@
 const { component } = require("../..");
+const { ListOfAttributes } = require("../../../dom");
 
 module.exports = () =>
     component({
         nativeInterface: "HTMLInputElement",
         tag: "input",
         props: {
-            value: "string",
+            value: ListOfAttributes.value,
         },
         handler: (element) => {
             element.type = "submit";

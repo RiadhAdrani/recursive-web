@@ -1,5 +1,6 @@
 const { RecursiveConsole } = require("../../../../use");
 const { component, getApp } = require("../..");
+const { ListOfAttributes } = require("../../../dom");
 
 module.exports = () => {
     return component({
@@ -9,7 +10,7 @@ module.exports = () => {
             "An anchor element that allow the user to navigate between the different routes of the application. ",
             "Use `href` to pass the destination route.",
         ],
-        props: { href: "string" },
+        props: { href: ListOfAttributes.href, target: ListOfAttributes.target },
         handler: (element) => {
             if (element.href) {
                 const app = getApp();

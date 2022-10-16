@@ -1,13 +1,14 @@
 const { component } = require("../..");
+const { ListOfAttributes } = require("../../../dom");
 
 module.exports = () =>
     component({
         nativeInterface: "HTMLInputElement",
         tag: "input",
         props: {
-            checked: "string",
-            value: "string",
-            required: "string",
+            checked: ListOfAttributes.checked,
+            value: ListOfAttributes.value,
+            required: ListOfAttributes.required,
         },
         handler: (element) => {
             element.type = "radio";

@@ -1,15 +1,19 @@
 const { component } = require("../..");
 const { HORIZONTAL_LINE } = require("../../../constants");
+const { attribute } = require("../../../templates");
 
 module.exports = () => {
     return component({
         nativeInterface: "HTMLElement",
         tag: HORIZONTAL_LINE,
         props: {
-            thickness: "string",
-            width: "string",
-            marginVertical: "string",
-            color: "Color",
+            thickness: attribute({ name: "thickness", values: "string" }),
+            width: attribute({ name: "width", values: "string" }),
+            marginVertical: attribute({
+                name: "marginVertical",
+                values: "string",
+            }),
+            color: attribute({ name: "Color", values: "string" }),
         },
         childless: true,
         handler: (element) => {

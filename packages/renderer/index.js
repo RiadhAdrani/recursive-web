@@ -174,8 +174,6 @@ class RecursiveWebRenderer extends RecursiveRenderer {
 
         element.attributes.className = element.attributes.className + _class;
         element.style.className = _class;
-
-        console.log(element.style);
     }
 
     /**
