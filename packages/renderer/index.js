@@ -128,12 +128,11 @@ class RecursiveWebRenderer extends RecursiveRenderer {
     shouldStyleBeScoped(element) {
         if (!this.isExternalStyleSheet(element.style)) return false;
 
-        if (!this.scopedStyle || !element.style.scoped) return false;
+        if (element.style.scoped === true) return true;
 
-        if (!element.style.scoped && isBlank(element.style.className))
-            return false;
+        if (element.style.scoped !== false && this.scopedStyle) return true;
 
-        return true;
+        return false;
     }
 
     /**
@@ -181,7 +180,9 @@ class RecursiveWebRenderer extends RecursiveRenderer {
     isExternalStyleSheet(styleSheet) {
         return (
             typeof styleSheet === "object" &&
-            Object.keys(styleSheet).filter((key) => key != "inline").length > 0
+            Object.keys(styleSheet).filter(
+                (key) => !["inline", "scoped", "className"].includes(key)
+            ).length > 0
         );
     }
 

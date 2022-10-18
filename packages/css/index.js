@@ -47,8 +47,6 @@ class RecursiveCSSOM {
             }
         });
 
-        console.log(before, after);
-
         const res = renderStyleSheet(
             mergeStyleSheets([...before, ...computedComponentStyles, ...after])
         );
