@@ -2,6 +2,7 @@ const { component, createElement } = require("../..");
 const { TOGGLE_SWITCH } = require("../../../constants");
 const { ListOfAttributes } = require("../../../dom");
 const { attribute } = require("../../../templates");
+const { CssColor } = require("../../../templates/types");
 
 module.exports = () => {
     return component({
@@ -14,18 +15,18 @@ module.exports = () => {
             "",
             "The `checked` parameter could be assigned a boolean to set the initial value of the switch.",
             "",
-            "Use `radiuxPx` to set the radius of the button knob in pixels, with wich other dimensions will be calculated automatically.",
+            "Use `radiuxPx` to set the radius of the button knob in pixels, with which other dimensions will be calculated automatically.",
         ],
         props: {
             radiusPx: attribute({ name: "radiusPx", values: "string" }),
-            color: attribute({ name: "color", values: "Colors" }),
+            color: attribute({ name: "color", values: CssColor }),
             backgroundColor: attribute({
                 name: "backgroundColor",
-                values: "Color",
+                values: CssColor,
             }),
             onBackgroundColor: attribute({
                 name: "onBackgroundColor",
-                values: "Color",
+                values: CssColor,
             }),
             checked: ListOfAttributes.checked,
         },

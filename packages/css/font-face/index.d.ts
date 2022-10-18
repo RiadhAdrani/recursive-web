@@ -12,4 +12,4 @@ export function renderFontFaceProperty(
 
 export function renderFontFace(content: Array<ObjectOf<string>>): string;
 
-export const ListOfFontFaceProperties: Object<CssPropertyTemplate>;
+export const ListOfFontFaceProperties: ObjectOf<CssPropertyTemplate>;

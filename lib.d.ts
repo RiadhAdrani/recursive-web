@@ -5,7 +5,6 @@ import {
     EventCallback,
     EventDeclaration,
 } from "./packages/dom/event";
-import { Color } from "./packages/css/color";
 import { Events } from "./types/events";
 import { FontFace } from "./types/fontFace";
 import { Selector, SelectorTypes } from "./types/selector";
@@ -14,6 +13,8 @@ import {
     ComponentStyleSheet,
     FreeStyleSheet,
     Selectors,
+    CssPropertyDeclarationOf,
+    CssColor,
 } from "./types/style";
 import { HTMLAttributes } from "./types/htmlCommon";
 import { SVGAttributes } from "./types/svgCommon";
@@ -23,16 +24,23 @@ import {
     ComputedStyleSheets,
     Corners,
     Edges,
+    StringWithAutoComplete,
 } from "./types/util";
 
 export { Route, StateArray };
 
-export { CommonAttributes, ComputedStyleSheets, Corners, Edges };
+export {
+    CommonAttributes,
+    ComputedStyleSheets,
+    Corners,
+    Edges,
+    StringWithAutoComplete,
+};
 
 export { HTMLAttributes, SVGAttributes, ElementChildren };
 
 export {
-    Color,
+    CssColor,
     FontFace,
     Selector,
     SelectorTypes,
@@ -40,6 +48,7 @@ export {
     ComponentStyleSheet,
     FreeStyleSheet,
     Selectors,
+    CssPropertyDeclarationOf,
 };
 
 export { WebEventTarget, WebEvent, EventCallback, EventDeclaration, Events };

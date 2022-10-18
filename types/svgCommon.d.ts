@@ -1,3 +1,5 @@
+import { CommonAttributes } from "./util";
+
 export interface SVGAttributes extends CommonAttributes {
     /**
      * ## className

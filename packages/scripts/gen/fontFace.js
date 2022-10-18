@@ -10,6 +10,7 @@ const {
     createFileContent,
     writeIntoFile,
     write,
+    useImport,
 } = require("../utility");
 
 module.exports = () => {
@@ -26,7 +27,10 @@ module.exports = () => {
         },
     });
 
-    const _FILE_D_TS = createFileContent([...FontFaceInterface], []);
+    const _FILE_D_TS = createFileContent(
+        [...FontFaceInterface],
+        [useImport(["CssPropertyDeclarationOf"], "./style")]
+    );
 
     writeIntoFile(write(_FILE_D_TS), "../../../types/fontFace.d.ts");
 };

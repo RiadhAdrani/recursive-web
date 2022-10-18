@@ -1,6 +1,15 @@
+/**
+ *  ██████╗ ███████╗███╗   ██╗███████╗██████╗  █████╗ ████████╗███████╗██████╗
+ * ██╔════╝ ██╔════╝████╗  ██║██╔════╝██╔══██╗██╔══██╗╚══██╔══╝██╔════╝██╔══██╗
+ * ██║  ███╗█████╗  ██╔██╗ ██║█████╗  ██████╔╝███████║   ██║   █████╗  ██║  ██║
+ * ██║   ██║██╔══╝  ██║╚██╗██║██╔══╝  ██╔══██╗██╔══██║   ██║   ██╔══╝  ██║  ██║
+ * ╚██████╔╝███████╗██║ ╚████║███████╗██║  ██║██║  ██║   ██║   ███████╗██████╔╝
+ *  ╚═════╝ ╚══════╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═════╝
+ */
 import { BaseElement } from "@riadh-adrani/recursive/lib";
 import { CommonAttributes, ElementChildren } from "../lib";
 import { Events } from "../types/events";
+import { CssColor } from "../types/style";
 import { HTMLAttributes } from "../types/htmlCommon";
 
 /**
@@ -4515,7 +4524,7 @@ export interface VerticalLineParams
     /**
      * ## color
      */
-    color: Color;
+    color: CssColor;
 }
 /**
  * ## VerticalLine
@@ -4561,7 +4570,7 @@ export function Link(params: LinkParams): BaseElement;
  *
  * The `checked` parameter could be assigned a boolean to set the initial value of the switch.
  *
- * Use `radiuxPx` to set the radius of the button knob in pixels, with wich other dimensions will be calculated automatically.
+ * Use `radiuxPx` to set the radius of the button knob in pixels, with which other dimensions will be calculated automatically.
  */
 export interface ToggleSwitchParams
     extends CommonAttributes,
@@ -4574,15 +4583,15 @@ export interface ToggleSwitchParams
     /**
      * ## color
      */
-    color: Colors;
+    color: CssColor;
     /**
      * ## backgroundColor
      */
-    backgroundColor: Color;
+    backgroundColor: CssColor;
     /**
      * ## onBackgroundColor
      */
-    onBackgroundColor: Color;
+    onBackgroundColor: CssColor;
     /**
      * ## checked
      * Indicates whether the element should be checked on page load.
@@ -4597,7 +4606,7 @@ export interface ToggleSwitchParams
  *
  * The `checked` parameter could be assigned a boolean to set the initial value of the switch.
  *
- * Use `radiuxPx` to set the radius of the button knob in pixels, with wich other dimensions will be calculated automatically.
+ * Use `radiuxPx` to set the radius of the button knob in pixels, with which other dimensions will be calculated automatically.
  * @returns {BaseElement}
  */
 export function ToggleSwitch(params: ToggleSwitchParams): BaseElement;
@@ -4613,7 +4622,7 @@ export interface CircularSpinnerParams
     /**
      * ## color
      */
-    color: Color;
+    color: CssColor;
     /**
      * ## thickness
      */

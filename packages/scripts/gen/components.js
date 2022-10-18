@@ -7,6 +7,7 @@
 const HTML = require("../../components/html").items;
 const Utility = require("../../components/utility").items;
 const SVG = require("../../components/svg").items;
+const { CssColor } = require("../../templates/types");
 const { HTML_NS, SVG_NS } = require("../../constants/index.js");
 const {
     writeIntoFile,
@@ -106,6 +107,7 @@ module.exports = () => {
         useImport(["BaseElement"], "@riadh-adrani/recursive/lib"),
         useImport(["CommonAttributes", "ElementChildren"], "../lib"),
         useImport(["Events"], "../types/events"),
+        useImport([CssColor], "../types/style"),
     ];
 
     const _HTML_COMPONENTS_JS = createFileContent(HtmlComponents, [

@@ -1,6 +1,7 @@
 const { component } = require("../..");
 const { VERTICAL_LINE } = require("../../../constants");
 const { attribute } = require("../../../templates");
+const { CssColor } = require("../../../templates/types");
 
 module.exports = () => {
     return component({
@@ -13,7 +14,7 @@ module.exports = () => {
                 name: "marginHorizontal",
                 values: "string",
             }),
-            color: attribute({ name: "color", values: "Color" }),
+            color: attribute({ name: "color", values: CssColor }),
         },
         childless: true,
         handler: (element) => {

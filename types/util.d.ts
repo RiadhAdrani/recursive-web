@@ -7,6 +7,8 @@ import { Selector } from "./selector";
  */
 export type ObjectOf<T> = { [key: string]: T };
 
+export type StringWithAutoComplete<T> = T | (string & Record<never, never>);
+
 export interface ElementChildren {
     children: BaseElement | string | Array<BaseElement | string>;
 }
@@ -28,6 +30,10 @@ export interface CommonAttributes {
      * Element style sheet.
      */
     style: ComponentStyleSheet;
+    /**
+     * Overrides current element type.
+     */
+    elementType?: string;
 }
 
 export interface ComputedStyleSheets {

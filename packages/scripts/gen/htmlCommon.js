@@ -10,7 +10,6 @@ const {
     transformInterface,
     transformAttributeTemplate,
     createFileContent,
-    useImport,
     write,
     writeIntoFile,
 } = require("../utility");

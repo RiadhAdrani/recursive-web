@@ -12,6 +12,7 @@ const {
     createFileContent,
     writeIntoFile,
     write,
+    useImport,
 } = require("../utility");
 
 module.exports = () => {
@@ -37,7 +38,7 @@ module.exports = () => {
 
     const _FILE_D_TS = createFileContent(
         [...SelectorInterface, ...SelectorTypesInterface],
-        []
+        [useImport(["CssPropertyDeclarationOf", "CssColor"], "./style")]
     );
 
     writeIntoFile(write(_FILE_D_TS), "../../../types/selector.d.ts");

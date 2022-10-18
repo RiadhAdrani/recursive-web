@@ -47,7 +47,7 @@ function transformKey({
 
     const _value = Array.isArray(value) ? value : [value];
 
-    const _key = wrap(key, '"');
+    const _key = wrap(key, `"`);
     const _type = _value.join(" | ");
 
     const __content = makeJsDocs({ title: key, docs, decorators, links });
@@ -171,11 +171,11 @@ function transformAttributeTemplate(params) {
 function transformCssPropertyTemplate(params) {
     return transformKey({
         key: params.key,
-        value: makeType(
+        value: `CssPropertyDeclarationOf<${makeType(
             params.template.values.length > 0
                 ? params.template.values
                 : params.template.type
-        ),
+        )}>`,
         docs: params.template.docs,
         decorators: params.template.decorators,
         links: params.template.links,
@@ -232,7 +232,7 @@ function transformComponentTemplate(params, ns = HTML_NS, handler = false) {
         body: [
             `const element = createElement('${params.template.tag}',{...props, rendererOptions : {ns : "${ns}"}});`,
             _handler,
-            `return element`,
+            "return element",
         ],
     });
 }
@@ -305,8 +305,19 @@ function writeIntoFile(text, filePath) {
     const fs = require("fs");
     const path = require("path");
 
+    const art = [
+        " ██████╗ ███████╗███╗   ██╗███████╗██████╗  █████╗ ████████╗███████╗██████╗",
+        "██╔════╝ ██╔════╝████╗  ██║██╔════╝██╔══██╗██╔══██╗╚══██╔══╝██╔════╝██╔══██╗",
+        "██║  ███╗█████╗  ██╔██╗ ██║█████╗  ██████╔╝███████║   ██║   █████╗  ██║  ██║",
+        "██║   ██║██╔══╝  ██║╚██╗██║██╔══╝  ██╔══██╗██╔══██║   ██║   ██╔══╝  ██║  ██║",
+        "╚██████╔╝███████╗██║ ╚████║███████╗██║  ██║██║  ██║   ██║   ███████╗██████╔╝",
+        " ╚═════╝ ╚══════╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═════╝",
+    ];
+
+    const _text = write(transformDocs(art)) + "\n" + text;
+
     try {
-        fs.writeFileSync(path.resolve(__dirname, filePath), text);
+        fs.writeFileSync(path.resolve(__dirname, filePath), _text);
         console.log(`Successfully written into file "${filePath}"`);
     } catch (e) {
         console.log(e);

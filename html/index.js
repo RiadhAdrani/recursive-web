@@ -1,3 +1,11 @@
+/**
+ *  ██████╗ ███████╗███╗   ██╗███████╗██████╗  █████╗ ████████╗███████╗██████╗
+ * ██╔════╝ ██╔════╝████╗  ██║██╔════╝██╔══██╗██╔══██╗╚══██╔══╝██╔════╝██╔══██╗
+ * ██║  ███╗█████╗  ██╔██╗ ██║█████╗  ██████╔╝███████║   ██║   █████╗  ██║  ██║
+ * ██║   ██║██╔══╝  ██║╚██╗██║██╔══╝  ██╔══██╗██╔══██║   ██║   ██╔══╝  ██║  ██║
+ * ╚██████╔╝███████╗██║ ╚████║███████╗██║  ██║██║  ██║   ██║   ███████╗██████╔╝
+ *  ╚═════╝ ╚══════╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═════╝
+ */
 import { createElement } from "../packages/components";
 import CustomElements from "../packages/components/utility";
 
@@ -1941,7 +1949,7 @@ export function Link(props) {
  *
  * The `checked` parameter could be assigned a boolean to set the initial value of the switch.
  *
- * Use `radiuxPx` to set the radius of the button knob in pixels, with wich other dimensions will be calculated automatically.
+ * Use `radiuxPx` to set the radius of the button knob in pixels, with which other dimensions will be calculated automatically.
  * @param {import('./index').ToggleSwitchParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
