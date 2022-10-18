@@ -33,7 +33,7 @@
     ],
     "dependencies": {
         "@riadh-adrani/recursive": "^0.7.50",
-        "@riadh-adrani/utility-js": "^0.0.5"
+        "@riadh-adrani/utility-js": "^0.10.0"
     },
     "devDependencies": {
         "jest": "^28.1.3",

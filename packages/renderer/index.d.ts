@@ -61,13 +61,19 @@ export default class RecursiveWebRenderer extends RecursiveRenderer {
     transformUId(uid: string): string;
 
     /**
+     * determine if an element should have a scoped style or not.
+     * @param element target element
+     */
+    shouldStyleBeScoped(element: RecursiveElement): boolean;
+
+    /**
      * check and update the `className` for scoping.
      * @param element target element.
      */
     resolveCLassName(element: RecursiveElement): void;
 
     /**
-     * ceck if the `styleSheet` contains external selectors.
+     * check if the `styleSheet` contains external selectors.
      * @param styleSheet style sheet object.
      */
     isExternalStyleSheet(styleSheet: object): boolean;

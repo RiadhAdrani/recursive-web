@@ -1,4 +1,4 @@
-const { isBlank, wrap } = require("@riadh-adrani/utility-js/string");
+const { isBlank, wrap } = require("@riadh-adrani/utility-js");
 const { isFalsy } = require("@riadh-adrani/utility-js/");
 const { HTML_NS } = require("../../constants");
 const { isAttribute, ListOfAttributes } = require("../../dom");

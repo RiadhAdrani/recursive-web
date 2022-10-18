@@ -15,7 +15,7 @@ const {
     eventHasHandler,
     renderAttributeValue,
 } = require("../dom/index.js");
-const { copy } = require("@riadh-adrani/utility-js");
+const { copy, hasProperty, isBlank } = require("@riadh-adrani/utility-js");
 
 class RecursiveWebRenderer extends RecursiveRenderer {
     /**
@@ -125,55 +125,53 @@ class RecursiveWebRenderer extends RecursiveRenderer {
     /**
      * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
      */
+    shouldStyleBeScoped(element) {
+        if (!this.isExternalStyleSheet(element.style)) return false;
+
+        if (!this.scopedStyle || !element.style.scoped) return false;
+
+        if (!element.style.scoped && isBlank(element.style.className))
+            return false;
+
+        return true;
+    }
+
+    /**
+     * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
+     */
     resolveClassName(element) {
         if (
             [ELEMENT_TYPE_FRAGMENT, ELEMENT_TYPE_TEXT_NODE].includes(
                 element.elementType
             )
         ) {
-            {
-                return;
-            }
-        }
-
-        if (element.attributes.hasOwnProperty("className")) {
-            element.attributes.className = renderAttributeValue(
-                "className",
-                element.attributes.className
-            );
-        }
-
-        if (typeof element.style !== "object") {
             return;
         }
 
-        element.style = copy(element.style);
+        if (!hasProperty(element, "style")) return;
 
-        if (!this.isExternalStyleSheet(element.style)) {
-            return;
-        }
+        if (typeof element.style !== "object") return;
+
+        let styleClassName = "";
 
         if (
-            !this.scopedStyle &&
-            !element.style.scoped &&
-            !element.style.className
+            hasProperty(element, "style") &&
+            hasProperty(element.style, "className") &&
+            !isBlank(element.style.className)
         ) {
-            return;
+            styleClassName += element.style.className;
         }
 
-        let _class = element.style.className || "";
-
-        if (this.scopedStyle || element.style.scoped !== false) {
-            if (_class) _class += "-";
-
-            _class += `_${this.transformUid(element.uid)}`;
+        if (this.shouldStyleBeScoped(element)) {
+            styleClassName += `-_${this.transformUid(element.uid)}`;
         }
 
-        if (element.attributes.className) element.attributes.className += " ";
-        else element.attributes.className = "";
+        element.style.className = styleClassName;
+        element.attributes.className = element.attributes.className
+            ? renderAttributeValue("className", element.attributes.className)
+            : "";
 
-        element.attributes.className = element.attributes.className + _class;
-        element.style.className = _class;
+        element.attributes.className += styleClassName;
     }
 
     /**

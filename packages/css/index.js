@@ -28,15 +28,29 @@ class RecursiveCSSOM {
     }
 
     /**
-     * @param {Object} stack contains styles declarations
+     * @param {Array<object>} stack contains styles declarations
      */
     update(stack) {
-        const computedComponentStyle = (stack || []).map((item) =>
+        const computedComponentStyles = (stack || []).map((item) =>
             processComponentStyleSheet(item)
         );
 
+        const before = [];
+
+        const after = [];
+
+        this.dynamicStack.forEach((sheet) => {
+            if (sheet.options && sheet.options.after === true) {
+                after.push(sheet);
+            } else {
+                before.push(sheet);
+            }
+        });
+
+        console.log(before, after);
+
         const res = renderStyleSheet(
-            mergeStyleSheets([...this.dynamicStack, ...computedComponentStyle])
+            mergeStyleSheets([...before, ...computedComponentStyles, ...after])
         );
 
         if (this.highPriority !== res.highPriority) {

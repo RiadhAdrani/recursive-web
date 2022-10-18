@@ -1,4 +1,4 @@
-import { wrap, isBlank } from "@riadh-adrani/utility-js/string";
+import { wrap, isBlank } from "@riadh-adrani/utility-js";
 
 /**
  * Join arguments using the seperator.

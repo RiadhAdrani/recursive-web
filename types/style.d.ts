@@ -62,6 +62,20 @@ export type FreeStyleSheet = {
      * Font Face
      */
     fontFace: Array<FontFace>;
+    /**
+     * Style sheet options
+     */
+    options: {
+        /**
+         * determine if this free style sheet
+         * should be rendered after components style
+         * or before as usual.
+         *
+         * ``Note that only selectors, media-queries and animations
+         * are affected by this position option.``
+         */
+        after: boolean;
+    };
 };
 
 /**
