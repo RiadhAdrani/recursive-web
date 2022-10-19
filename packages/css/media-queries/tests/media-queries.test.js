@@ -20,6 +20,15 @@ it.each([[""], ["string"], [0], [1], [null], [undefined], [[]], [{}]])(
     }
 );
 
+it("should accept valid media query declaration", () => {
+    expect(
+        isValidMediaQueryDeclaration({
+            condition: "(max-width:300px)",
+            div: {},
+        })
+    );
+});
+
 it.each([
     [[], {}],
     [{}, {}],

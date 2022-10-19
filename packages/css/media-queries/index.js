@@ -1,19 +1,24 @@
+const { hasProperty, isBlank, isFalsy } = require("@riadh-adrani/utility-js");
 const { renderSelector } = require("../selectors/index.js");
 
 /**
- * @param {Object} mediaQueryObject
+ * @param {import("../../../lib.js").MediaQuery} object
  */
-function isValidMediaQueryDeclaration(mediaQueryObject) {
-    if (
-        mediaQueryObject &&
-        typeof mediaQueryObject == "object" &&
-        !Array.isArray(mediaQueryObject) &&
-        Object.keys(mediaQueryObject).length > 0
-    ) {
-        return true;
-    }
+function isValidMediaQueryDeclaration(object) {
+    if (isFalsy(object)) return false;
 
-    return false;
+    if (typeof object !== "object") return false;
+
+    if (Array.isArray(object)) return false;
+
+    if (!hasProperty(object, "condition")) return false;
+
+    if (isBlank(object.condition)) return false;
+
+    if (Object.keys(object).filter((key) => key !== "condition").length === 0)
+        return false;
+
+    return true;
 }
 
 /**

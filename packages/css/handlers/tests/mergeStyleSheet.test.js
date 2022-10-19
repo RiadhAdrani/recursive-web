@@ -130,11 +130,29 @@ it.each([[undefined], [null], [0], ["name"], [true], [Symbol.for()], [{}]])(
 it("should convert media query", () => {
     const object = [
         {
-            mediaQueries: {
-                customMediaQuery: {
-                    normal: { color: "red" },
-                },
+            mediaQueries: [
+                { condition: "customMediaQuery", normal: { color: "red" } },
+            ],
+        },
+    ];
+
+    expect(mergeStyleSheets(object)).toStrictEqual({
+        mediaQueries: [
+            {
+                condition: "customMediaQuery",
+                selectors: { normal: { color: "red" } },
             },
+        ],
+    });
+});
+
+it("should skip duplicate media queries", () => {
+    const object = [
+        {
+            mediaQueries: [
+                { condition: "customMediaQuery", normal: { color: "red" } },
+                { condition: "customMediaQuery", normal: { color: "red" } },
+            ],
         },
     ];
 
@@ -153,9 +171,7 @@ it.each([[undefined], [null], [""], [0], [[]], [{}], [Symbol.for()], [false]])(
     (content) => {
         const object = [
             {
-                mediaQueries: {
-                    mediaQueryName: content,
-                },
+                mediaQueries: [content],
             },
         ];
 

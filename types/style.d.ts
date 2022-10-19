@@ -53,7 +53,7 @@ export type FreeStyleSheet = {
     /**
      * Media Queries.
      */
-    mediaQueries: ObjectOf<ObjectOf<Selector>>;
+    mediaQueries: Array<MediaQuery>;
     /**
      * Animations.
      */

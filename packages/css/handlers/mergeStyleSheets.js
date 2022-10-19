@@ -57,43 +57,43 @@ function mergeStyleSheets(styleSheets) {
                     break;
                 case "mediaQueries":
                     {
-                        if (!sheet.mediaQueries) break;
+                        if (!Array.isArray(sheet.mediaQueries)) {
+                            RecursiveConsole.warn(
+                                "Recursive CSSOM : mediaQueries property is not of type array and therefore it was ignored."
+                            );
+                            break;
+                        }
 
-                        for (let query in sheet.mediaQueries) {
-                            const currentQuery = sheet.mediaQueries[query];
+                        const queries = [];
 
-                            if (!isValidMediaQueryDeclaration(currentQuery))
-                                continue;
+                        sheet.mediaQueries.forEach((query) => {
+                            if (!isValidMediaQueryDeclaration(query)) return;
 
-                            if (!output.mediaQueries) output.mediaQueries = [];
+                            const selectors = {};
 
-                            const queryToBeAdded = {
-                                condition: query,
-                                selectors: sheet.mediaQueries[query],
+                            Object.keys(query)
+                                .filter((key) => key != "condition")
+                                .forEach((key) => {
+                                    selectors[key] = query[key];
+                                });
+
+                            const toBeAdded = {
+                                condition: query.condition,
+                                selectors,
                             };
 
-                            let isValid = true;
-
-                            for (let exQuery in output.mediaQueries) {
-                                const exQueryComp = {
-                                    condition:
-                                        output.mediaQueries[exQuery].condition,
-                                    selectors:
-                                        output.mediaQueries[exQuery].selectors,
-                                };
-
-                                if (
-                                    JSON.stringify(exQueryComp) ===
-                                    JSON.stringify(queryToBeAdded)
-                                ) {
-                                    isValid = false;
-                                    break;
+                            for (let i = 0; i < queries.length; i++) {
+                                if (areEqual(toBeAdded, queries[i])) {
+                                    return;
                                 }
                             }
 
-                            if (isValid) {
-                                output.mediaQueries.push(queryToBeAdded);
-                            }
+                            queries.push(toBeAdded);
+                        });
+
+                        if (queries.length > 0) {
+                            output.mediaQueries = [];
+                            output.mediaQueries.push(...queries);
                         }
                     }
                     break;
