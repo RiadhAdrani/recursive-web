@@ -46,7 +46,7 @@ export function Article(props) {
 }
 /**
  * ## Aside
- * The ``<aside>`` HTML element represents a portion of a document whose
+ * The `<aside>` HTML element represents a portion of a document whose
  * content is only indirectly related to the document's main content. Asides are
  * frequently presented as sidebars or call-out boxes.
  * @param {import('./index').AsideParams} props
@@ -62,7 +62,7 @@ export function Aside(props) {
 }
 /**
  * ## Footer
- * The ``<footer>`` HTML element represents a footer for its nearest ancestor
+ * The `<footer>` HTML element represents a footer for its nearest ancestor
  * sectioning content or sectioning root element. A <footer> typically contains
  * information about the author of the section, copyright data or links to related documents.
  * @param {import('./index').FooterParams} props
@@ -78,7 +78,7 @@ export function Footer(props) {
 }
 /**
  * ## Header
- * The ``<header>`` HTML element represents introductory content, typically a
+ * The `<header>` HTML element represents introductory content, typically a
  * group of introductory or navigational aids. It may contain some heading
  * elements but also a logo, a search form, an author name, and other elements.
  * @param {import('./index').HeaderParams} props
@@ -94,8 +94,8 @@ export function Header(props) {
 }
 /**
  * ## H1
- * The ``<h1>`` to ``<h6>`` HTML elements represent six levels of section headings.
- * ``<h1>`` is the highest section level and ``<h6>`` is the lowest.
+ * The `<h1>` to `<h6>` HTML elements represent six levels of section headings.
+ * `<h1>` is the highest section level and `<h6>` is the lowest.
  * @param {import('./index').H1Params} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -109,8 +109,8 @@ export function H1(props) {
 }
 /**
  * ## H2
- * The ``<h1>`` to ``<h6>`` HTML elements represent six levels of section headings.
- * ``<h1>`` is the highest section level and ``<h6>`` is the lowest.
+ * The `<h1>` to `<h6>` HTML elements represent six levels of section headings.
+ * `<h1>` is the highest section level and `<h6>` is the lowest.
  * @param {import('./index').H2Params} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -124,8 +124,8 @@ export function H2(props) {
 }
 /**
  * ## H3
- * The ``<h1>`` to ``<h6>`` HTML elements represent six levels of section headings.
- * ``<h1>`` is the highest section level and ``<h6>`` is the lowest.
+ * The `<h1>` to `<h6>` HTML elements represent six levels of section headings.
+ * `<h1>` is the highest section level and `<h6>` is the lowest.
  * @param {import('./index').H3Params} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -139,8 +139,8 @@ export function H3(props) {
 }
 /**
  * ## H4
- * The ``<h1>`` to ``<h6>`` HTML elements represent six levels of section headings.
- * ``<h1>`` is the highest section level and ``<h6>`` is the lowest.
+ * The `<h1>` to `<h6>` HTML elements represent six levels of section headings.
+ * `<h1>` is the highest section level and `<h6>` is the lowest.
  * @param {import('./index').H4Params} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -154,8 +154,8 @@ export function H4(props) {
 }
 /**
  * ## H5
- * The ``<h1>`` to ``<h6>`` HTML elements represent six levels of section headings.
- * ``<h1>`` is the highest section level and ``<h6>`` is the lowest.
+ * The `<h1>` to `<h6>` HTML elements represent six levels of section headings.
+ * `<h1>` is the highest section level and `<h6>` is the lowest.
  * @param {import('./index').H5Params} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -169,8 +169,8 @@ export function H5(props) {
 }
 /**
  * ## H6
- * The ``<h1>`` to ``<h6>`` HTML elements represent six levels of section headings.
- * ``<h1>`` is the highest section level and ``<h6>`` is the lowest.
+ * The `<h1>` to `<h6>` HTML elements represent six levels of section headings.
+ * `<h1>` is the highest section level and `<h6>` is the lowest.
  * @param {import('./index').H6Params} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -201,7 +201,7 @@ export function Main(props) {
 }
 /**
  * ## Nav
- * The ``<nav>`` HTML element represents a section of a page whose purpose is to provide navigation links, either within the current document or to other documents. Common examples of navigation sections are menus, tables of contents, and indexes.
+ * The `<nav>` HTML element represents a section of a page whose purpose is to provide navigation links, either within the current document or to other documents. Common examples of navigation sections are menus, tables of contents, and indexes.
  * @param {import('./index').NavParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -215,7 +215,7 @@ export function Nav(props) {
 }
 /**
  * ## Section
- * The ``<section>`` HTML element represents a generic standalone section of a document, which doesn't have a more specific semantic element to represent it. Sections should always have a heading, with very few exceptions.
+ * The `<section>` HTML element represents a generic standalone section of a document, which doesn't have a more specific semantic element to represent it. Sections should always have a heading, with very few exceptions.
  * @param {import('./index').SectionParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -229,7 +229,7 @@ export function Section(props) {
 }
 /**
  * ## Blockquote
- * The ``<blockquote>`` HTML element indicates that the enclosed text is an extended quotation. Usually, this is rendered visually by indentation (see Notes for how to change it). A URL for the source of the quotation may be given using the cite attribute, while a text representation of the source can be given using the cite element.
+ * The `<blockquote>` HTML element indicates that the enclosed text is an extended quotation. Usually, this is rendered visually by indentation (see Notes for how to change it). A URL for the source of the quotation may be given using the cite attribute, while a text representation of the source can be given using the cite element.
  * @param {import('./index').BlockquoteParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -243,7 +243,7 @@ export function Blockquote(props) {
 }
 /**
  * ## Dd
- * The ``<dd>`` HTML element provides the description, definition, or value for the preceding term (dt) in a description list (dl).
+ * The `<dd>` HTML element provides the description, definition, or value for the preceding term (dt) in a description list (dl).
  * @param {import('./index').DdParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -257,7 +257,7 @@ export function Dd(props) {
 }
 /**
  * ## Div
- * The ``<div>`` HTML element is the generic container for flow content. It has no effect on the content or layout until styled in some way using CSS (e.g. styling is directly applied to it, or some kind of layout model like FlexBox is applied to its parent element).
+ * The `<div>` HTML element is the generic container for flow content. It has no effect on the content or layout until styled in some way using CSS (e.g. styling is directly applied to it, or some kind of layout model like FlexBox is applied to its parent element).
  * @param {import('./index').DivParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -271,7 +271,7 @@ export function Div(props) {
 }
 /**
  * ## Dl
- * The ``<dl>`` HTML element represents a description list. The element encloses a list of groups of terms (specified using the dt element) and descriptions (provided by dd elements). Common uses for this element are to implement a glossary or to display metadata (a list of key-value pairs).
+ * The `<dl>` HTML element represents a description list. The element encloses a list of groups of terms (specified using the dt element) and descriptions (provided by dd elements). Common uses for this element are to implement a glossary or to display metadata (a list of key-value pairs).
  * @param {import('./index').DlParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -285,7 +285,7 @@ export function Dl(props) {
 }
 /**
  * ## Dt
- * The ``<dt>`` HTML element specifies a term in a description or definition list, and as such must be used inside a dl element. It is usually followed by a dd element; however, multiple <dt> elements in a row indicate several terms that are all defined by the immediate next dd element.
+ * The `<dt>` HTML element specifies a term in a description or definition list, and as such must be used inside a dl element. It is usually followed by a dd element; however, multiple <dt> elements in a row indicate several terms that are all defined by the immediate next dd element.
  * @param {import('./index').DtParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -299,7 +299,7 @@ export function Dt(props) {
 }
 /**
  * ## Figcaption
- * The ``<figcaption>`` HTML element represents a caption or legend describing the rest of the contents of its parent figure element.
+ * The `<figcaption>` HTML element represents a caption or legend describing the rest of the contents of its parent figure element.
  * @param {import('./index').FigcaptionParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -313,7 +313,7 @@ export function Figcaption(props) {
 }
 /**
  * ## Figure
- * The ``<figure>`` HTML element represents self-contained content, potentially with an optional caption, which is specified using the figcaption element. The figure, its caption, and its contents are referenced as a single unit.
+ * The `<figure>` HTML element represents self-contained content, potentially with an optional caption, which is specified using the figcaption element. The figure, its caption, and its contents are referenced as a single unit.
  * @param {import('./index').FigureParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -327,7 +327,7 @@ export function Figure(props) {
 }
 /**
  * ## Hr
- * The ``<hr>`` HTML element represents a thematic break between paragraph-level elements: for example, a change of scene in a story, or a shift of topic within a section.
+ * The `<hr>` HTML element represents a thematic break between paragraph-level elements: for example, a change of scene in a story, or a shift of topic within a section.
  * @param {import('./index').HrParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -341,7 +341,7 @@ export function Hr(props) {
 }
 /**
  * ## Li
- * The ``<li>`` HTML element is used to represent an item in a list. It must be contained in a parent element: an ordered list (ol), an unordered list (ul), or a menu (menu). In menus and unordered lists, list items are usually displayed using bullet points. In ordered lists, they are usually displayed with an ascending counter on the left, such as a number or letter.
+ * The `<li>` HTML element is used to represent an item in a list. It must be contained in a parent element: an ordered list (ol), an unordered list (ul), or a menu (menu). In menus and unordered lists, list items are usually displayed using bullet points. In ordered lists, they are usually displayed with an ascending counter on the left, such as a number or letter.
  * @param {import('./index').LiParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -355,7 +355,7 @@ export function Li(props) {
 }
 /**
  * ## Menu
- * The ``<menu>`` HTML element is described in the HTML specification as a semantic alternative to ul, but treated by browsers (and exposed through the accessibility tree) as no different than ul. It represents an unordered list of items (which are represented by li elements).
+ * The `<menu>` HTML element is described in the HTML specification as a semantic alternative to ul, but treated by browsers (and exposed through the accessibility tree) as no different than ul. It represents an unordered list of items (which are represented by li elements).
  * @param {import('./index').MenuParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -369,7 +369,7 @@ export function Menu(props) {
 }
 /**
  * ## Ol
- * The ``<ol>`` HTML element represents an ordered list of items — typically rendered as a numbered list.
+ * The `<ol>` HTML element represents an ordered list of items — typically rendered as a numbered list.
  * @param {import('./index').OlParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -383,7 +383,7 @@ export function Ol(props) {
 }
 /**
  * ## P
- * The ``<p>`` HTML element represents a paragraph. Paragraphs are usually represented in visual media as blocks of text separated from adjacent blocks by blank lines and/or first-line indentation, but HTML paragraphs can be any structural grouping of related content, such as images or form fields.
+ * The `<p>` HTML element represents a paragraph. Paragraphs are usually represented in visual media as blocks of text separated from adjacent blocks by blank lines and/or first-line indentation, but HTML paragraphs can be any structural grouping of related content, such as images or form fields.
  * @param {import('./index').PParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -397,7 +397,7 @@ export function P(props) {
 }
 /**
  * ## Pre
- * The ``<pre>`` HTML element represents preformatted text which is to be presented exactly as written in the HTML file. The text is typically rendered using a non-proportional, or monospaced, font. Whitespace inside this element is displayed as written.
+ * The `<pre>` HTML element represents preformatted text which is to be presented exactly as written in the HTML file. The text is typically rendered using a non-proportional, or monospaced, font. Whitespace inside this element is displayed as written.
  * @param {import('./index').PreParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -411,7 +411,7 @@ export function Pre(props) {
 }
 /**
  * ## Ul
- * The ``<ul>`` HTML element represents an unordered list of items, typically rendered as a bulleted list.
+ * The `<ul>` HTML element represents an unordered list of items, typically rendered as a bulleted list.
  * @param {import('./index').UlParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -425,7 +425,7 @@ export function Ul(props) {
 }
 /**
  * ## A
- * The ``<a>`` HTML element (or anchor element), with its href attribute, creates a hyperlink to web pages, files, email addresses, locations in the same page, or anything else a URL can address.
+ * The `<a>` HTML element (or anchor element), with its href attribute, creates a hyperlink to web pages, files, email addresses, locations in the same page, or anything else a URL can address.
  * @param {import('./index').AParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -439,7 +439,7 @@ export function A(props) {
 }
 /**
  * ## Abbr
- * The ``<abbr>`` HTML element represents an abbreviation or acronym.
+ * The `<abbr>` HTML element represents an abbreviation or acronym.
  * @param {import('./index').AbbrParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -453,7 +453,7 @@ export function Abbr(props) {
 }
 /**
  * ## B
- * The ``<b>`` HTML element is used to draw the reader's attention to the element's contents, which are not otherwise granted special importance. This was formerly known as the Boldface element, and most browsers still draw the text in boldface. However, you should not use ``<b>`` for styling text; instead, you should use the CSS font-weight property to create boldface text, or the strong element to indicate that text is of special importance.
+ * The `<b>` HTML element is used to draw the reader's attention to the element's contents, which are not otherwise granted special importance. This was formerly known as the Boldface element, and most browsers still draw the text in boldface. However, you should not use `<b>` for styling text; instead, you should use the CSS font-weight property to create boldface text, or the strong element to indicate that text is of special importance.
  * @param {import('./index').BParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -467,7 +467,7 @@ export function B(props) {
 }
 /**
  * ## Bdi
- * The ``<bdi>`` HTML element tells the browser's bidirectional algorithm to treat the text it contains in isolation from its surrounding text. It's particularly useful when a website dynamically inserts some text and doesn't know the directionality of the text being inserted.
+ * The `<bdi>` HTML element tells the browser's bidirectional algorithm to treat the text it contains in isolation from its surrounding text. It's particularly useful when a website dynamically inserts some text and doesn't know the directionality of the text being inserted.
  * @param {import('./index').BdiParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -481,7 +481,7 @@ export function Bdi(props) {
 }
 /**
  * ## Bdo
- * The ``<bdo> ``HTML element overrides the current directionality of text, so that the text within is rendered in a different direction.
+ * The `<bdo> `HTML element overrides the current directionality of text, so that the text within is rendered in a different direction.
  * @param {import('./index').BdoParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -495,7 +495,7 @@ export function Bdo(props) {
 }
 /**
  * ## Br
- * The ``<br>`` HTML element produces a line break in text (carriage-return). It is useful for writing a poem or an address, where the division of lines is significant.
+ * The `<br>` HTML element produces a line break in text (carriage-return). It is useful for writing a poem or an address, where the division of lines is significant.
  * @param {import('./index').BrParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -509,7 +509,7 @@ export function Br(props) {
 }
 /**
  * ## Cite
- * The ``<cite>`` HTML element is used to describe a reference to a cited creative work, and must include the title of that work. The reference may be in an abbreviated form according to context-appropriate conventions related to citation metadata.
+ * The `<cite>` HTML element is used to describe a reference to a cited creative work, and must include the title of that work. The reference may be in an abbreviated form according to context-appropriate conventions related to citation metadata.
  * @param {import('./index').CiteParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -523,7 +523,7 @@ export function Cite(props) {
 }
 /**
  * ## Code
- * The ``<code>`` HTML element displays its contents styled in a fashion intended to indicate that the text is a short fragment of computer code. By default, the content text is displayed using the user agent default monospace font.
+ * The `<code>` HTML element displays its contents styled in a fashion intended to indicate that the text is a short fragment of computer code. By default, the content text is displayed using the user agent default monospace font.
  * @param {import('./index').CodeParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -537,7 +537,7 @@ export function Code(props) {
 }
 /**
  * ## Data
- * The ``<data>`` HTML element links a given piece of content with a machine-readable translation. If the content is time- or date-related, the time element must be used.
+ * The `<data>` HTML element links a given piece of content with a machine-readable translation. If the content is time- or date-related, the time element must be used.
  * @param {import('./index').DataParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -551,7 +551,7 @@ export function Data(props) {
 }
 /**
  * ## Dfn
- * The ``<dfn>`` HTML element is used to indicate the term being defined within the context of a definition phrase or sentence. The p element, the dt/dd pairing, or the section element which is the nearest ancestor of the ``<dfn>`` is considered to be the definition of the term.
+ * The `<dfn>` HTML element is used to indicate the term being defined within the context of a definition phrase or sentence. The p element, the dt/dd pairing, or the section element which is the nearest ancestor of the `<dfn>` is considered to be the definition of the term.
  * @param {import('./index').DfnParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -565,7 +565,7 @@ export function Dfn(props) {
 }
 /**
  * ## Em
- * The ``<em>`` HTML element marks text that has stress emphasis. The ``<em>`` element can be nested, with each level of nesting indicating a greater degree of emphasis.
+ * The `<em>` HTML element marks text that has stress emphasis. The `<em>` element can be nested, with each level of nesting indicating a greater degree of emphasis.
  * @param {import('./index').EmParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -579,7 +579,7 @@ export function Em(props) {
 }
 /**
  * ## I
- * The ``<i>`` HTML element represents a range of text that is set off from the normal text for some reason, such as idiomatic text, technical terms, taxonomical designations, among others. Historically, these have been presented using italicized type, which is the original source of the ``<i>`` naming of this element.
+ * The `<i>` HTML element represents a range of text that is set off from the normal text for some reason, such as idiomatic text, technical terms, taxonomical designations, among others. Historically, these have been presented using italicized type, which is the original source of the `<i>` naming of this element.
  * @param {import('./index').IParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -593,7 +593,7 @@ export function I(props) {
 }
 /**
  * ## Kbd
- * The ``<kbd>`` HTML element represents a span of inline text denoting textual user input from a keyboard, voice input, or any other text entry device. By convention, the user agent defaults to rendering the contents of a ``<kbd>`` element using its default monospace font, although this is not mandated by the HTML standard.
+ * The `<kbd>` HTML element represents a span of inline text denoting textual user input from a keyboard, voice input, or any other text entry device. By convention, the user agent defaults to rendering the contents of a `<kbd>` element using its default monospace font, although this is not mandated by the HTML standard.
  * @param {import('./index').KbdParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -607,7 +607,7 @@ export function Kbd(props) {
 }
 /**
  * ## Mark
- * The ``<mark>`` HTML element represents text which is marked or highlighted for reference or notation purposes, due to the marked passage's relevance or importance in the enclosing context.
+ * The `<mark>` HTML element represents text which is marked or highlighted for reference or notation purposes, due to the marked passage's relevance or importance in the enclosing context.
  * @param {import('./index').MarkParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -621,7 +621,7 @@ export function Mark(props) {
 }
 /**
  * ## Q
- * The ``<q>`` HTML element indicates that the enclosed text is a short inline quotation. Most modern browsers implement this by surrounding the text in quotation marks. This element is intended for short quotations that don't require paragraph breaks; for long quotations use the blockquote element.
+ * The `<q>` HTML element indicates that the enclosed text is a short inline quotation. Most modern browsers implement this by surrounding the text in quotation marks. This element is intended for short quotations that don't require paragraph breaks; for long quotations use the blockquote element.
  * @param {import('./index').QParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -635,7 +635,7 @@ export function Q(props) {
 }
 /**
  * ## Rp
- * The ``<rp>`` HTML element is used to provide fall-back parentheses for browsers that do not support display of ruby annotations using the ruby element. One ``<rp>`` element should enclose each of the opening and closing parentheses that wrap the rt element that contains the annotation's text.
+ * The `<rp>` HTML element is used to provide fall-back parentheses for browsers that do not support display of ruby annotations using the ruby element. One `<rp>` element should enclose each of the opening and closing parentheses that wrap the rt element that contains the annotation's text.
  * @param {import('./index').RpParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -649,7 +649,7 @@ export function Rp(props) {
 }
 /**
  * ## Rt
- * The ``<rt>`` HTML element specifies the ruby text component of a ruby annotation, which is used to provide pronunciation, translation, or transliteration information for East Asian typography. The ``<rt>`` element must always be contained within a ruby element.
+ * The `<rt>` HTML element specifies the ruby text component of a ruby annotation, which is used to provide pronunciation, translation, or transliteration information for East Asian typography. The `<rt>` element must always be contained within a ruby element.
  * @param {import('./index').RtParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -663,7 +663,7 @@ export function Rt(props) {
 }
 /**
  * ## Ruby
- * The ``<ruby>`` HTML element represents small annotations that are rendered above, below, or next to base text, usually used for showing the pronunciation of East Asian characters. It can also be used for annotating other kinds of text, but this usage is less common.
+ * The `<ruby>` HTML element represents small annotations that are rendered above, below, or next to base text, usually used for showing the pronunciation of East Asian characters. It can also be used for annotating other kinds of text, but this usage is less common.
  * @param {import('./index').RubyParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -677,7 +677,7 @@ export function Ruby(props) {
 }
 /**
  * ## S
- * The ``<s>`` HTML element renders text with a strikethrough, or a line through it. Use the <s> element to represent things that are no longer relevant or no longer accurate. However, <s> is not appropriate when indicating document edits; for that, use the del and ins elements, as appropriate.
+ * The `<s>` HTML element renders text with a strikethrough, or a line through it. Use the <s> element to represent things that are no longer relevant or no longer accurate. However, <s> is not appropriate when indicating document edits; for that, use the del and ins elements, as appropriate.
  * @param {import('./index').SParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -691,7 +691,7 @@ export function S(props) {
 }
 /**
  * ## Samp
- * The ``<samp>`` HTML element is used to enclose inline text which represents sample (or quoted) output from a computer program. Its contents are typically rendered using the browser's default monospaced font (such as Courier or Lucida Console).
+ * The `<samp>` HTML element is used to enclose inline text which represents sample (or quoted) output from a computer program. Its contents are typically rendered using the browser's default monospaced font (such as Courier or Lucida Console).
  * @param {import('./index').SampParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -705,7 +705,7 @@ export function Samp(props) {
 }
 /**
  * ## Small
- * The ``<small>`` HTML element represents side-comments and small print, like copyright and legal text, independent of its styled presentation. By default, it renders text within it one font-size smaller, such as from small to x-small.
+ * The `<small>` HTML element represents side-comments and small print, like copyright and legal text, independent of its styled presentation. By default, it renders text within it one font-size smaller, such as from small to x-small.
  * @param {import('./index').SmallParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -719,7 +719,7 @@ export function Small(props) {
 }
 /**
  * ## Span
- * The ``<span>`` HTML element is a generic inline container for phrasing content, which does not inherently represent anything. It can be used to group elements for styling purposes (using the class or id attributes), or because they share attribute values, such as lang. It should be used only when no other semantic element is appropriate. ``<span>`` is very much like a div element, but div is a block-level element whereas a ``<span>`` is an inline element.
+ * The `<span>` HTML element is a generic inline container for phrasing content, which does not inherently represent anything. It can be used to group elements for styling purposes (using the class or id attributes), or because they share attribute values, such as lang. It should be used only when no other semantic element is appropriate. `<span>` is very much like a div element, but div is a block-level element whereas a `<span>` is an inline element.
  * @param {import('./index').SpanParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -733,7 +733,7 @@ export function Span(props) {
 }
 /**
  * ## Strong
- * The ``<strong>`` HTML element indicates that its contents have strong importance, seriousness, or urgency. Browsers typically render the contents in bold type.
+ * The `<strong>` HTML element indicates that its contents have strong importance, seriousness, or urgency. Browsers typically render the contents in bold type.
  * @param {import('./index').StrongParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -747,7 +747,7 @@ export function Strong(props) {
 }
 /**
  * ## Sub
- * The ``<sub>`` HTML element specifies inline text which should be displayed as subscript for solely typographical reasons. Subscripts are typically rendered with a lowered baseline using smaller text.
+ * The `<sub>` HTML element specifies inline text which should be displayed as subscript for solely typographical reasons. Subscripts are typically rendered with a lowered baseline using smaller text.
  * @param {import('./index').SubParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -761,7 +761,7 @@ export function Sub(props) {
 }
 /**
  * ## Sup
- * The ``<sup>`` HTML element specifies inline text which is to be displayed as superscript for solely typographical reasons. Superscripts are usually rendered with a raised baseline using smaller text.
+ * The `<sup>` HTML element specifies inline text which is to be displayed as superscript for solely typographical reasons. Superscripts are usually rendered with a raised baseline using smaller text.
  * @param {import('./index').SupParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -775,7 +775,7 @@ export function Sup(props) {
 }
 /**
  * ## Time
- * The ``<time>`` HTML element represents a specific period in time. It may include the datetime attribute to translate dates into machine-readable format, allowing for better search engine results or custom features such as reminders.
+ * The `<time>` HTML element represents a specific period in time. It may include the datetime attribute to translate dates into machine-readable format, allowing for better search engine results or custom features such as reminders.
  * @param {import('./index').TimeParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -789,7 +789,7 @@ export function Time(props) {
 }
 /**
  * ## U
- * The ``<u>`` HTML element represents a span of inline text which should be rendered in a way that indicates that it has a non-textual annotation. This is rendered by default as a simple solid underline, but may be altered using CSS.
+ * The `<u>` HTML element represents a span of inline text which should be rendered in a way that indicates that it has a non-textual annotation. This is rendered by default as a simple solid underline, but may be altered using CSS.
  * @param {import('./index').UParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -803,7 +803,7 @@ export function U(props) {
 }
 /**
  * ## Var
- * The ``<var>`` HTML element represents the name of a variable in a mathematical expression or a programming context. It's typically presented using an italicized version of the current typeface, although that behavior is browser-dependent.
+ * The `<var>` HTML element represents the name of a variable in a mathematical expression or a programming context. It's typically presented using an italicized version of the current typeface, although that behavior is browser-dependent.
  * @param {import('./index').VarParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -817,7 +817,7 @@ export function Var(props) {
 }
 /**
  * ## Wbr
- * The ``<wbr>`` HTML element represents a word break opportunity—a position within text where the browser may optionally break a line, though its line-breaking rules would not otherwise create a break at that location
+ * The `<wbr>` HTML element represents a word break opportunity—a position within text where the browser may optionally break a line, though its line-breaking rules would not otherwise create a break at that location
  * @param {import('./index').WbrParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -831,7 +831,7 @@ export function Wbr(props) {
 }
 /**
  * ## Area
- * The ``<area>`` HTML element defines an area inside an image map that has predefined clickable areas. An image map allows geometric areas on an image to be associated with Hyperlink.
+ * The `<area>` HTML element defines an area inside an image map that has predefined clickable areas. An image map allows geometric areas on an image to be associated with Hyperlink.
  * @param {import('./index').AreaParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -845,7 +845,7 @@ export function Area(props) {
 }
 /**
  * ## Audio
- * The ``<audio>`` HTML element is used to embed sound content in documents. It may contain one or more audio sources, represented using the src attribute or the source element: the browser will choose the most suitable one. It can also be the destination for streamed media, using a MediaStream.
+ * The `<audio>` HTML element is used to embed sound content in documents. It may contain one or more audio sources, represented using the src attribute or the source element: the browser will choose the most suitable one. It can also be the destination for streamed media, using a MediaStream.
  * @param {import('./index').AudioParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -859,7 +859,7 @@ export function Audio(props) {
 }
 /**
  * ## Img
- * 	The ``<img>`` HTML element embeds an image into the document.
+ * The `<img>` HTML element embeds an image into the document.
  * @param {import('./index').ImgParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -873,7 +873,7 @@ export function Img(props) {
 }
 /**
  * ## Map
- * The ``<map>`` HTML element is used with area elements to define an image map (a clickable link area).
+ * The `<map>` HTML element is used with area elements to define an image map (a clickable link area).
  * @param {import('./index').MapParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -887,7 +887,7 @@ export function Map(props) {
 }
 /**
  * ## Track
- * The ``<track>`` HTML element is used as a child of the media elements, audio and video. It lets you specify timed text tracks (or time-based data), for example to automatically handle subtitles. The tracks are formatted in WebVTT format (.vtt files) — Web Video Text Tracks.
+ * The `<track>` HTML element is used as a child of the media elements, audio and video. It lets you specify timed text tracks (or time-based data), for example to automatically handle subtitles. The tracks are formatted in WebVTT format (.vtt files) — Web Video Text Tracks.
  * @param {import('./index').TrackParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -901,7 +901,7 @@ export function Track(props) {
 }
 /**
  * ## Video
- * The ``<video>`` HTML element embeds a media player which supports video playback into the document. You can use ``<video>`` for audio content as well, but the audio element may provide a more appropriate user experience.
+ * The `<video>` HTML element embeds a media player which supports video playback into the document. You can use `<video>` for audio content as well, but the audio element may provide a more appropriate user experience.
  * @param {import('./index').VideoParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -915,7 +915,7 @@ export function Video(props) {
 }
 /**
  * ## Embed
- * The ``<embed>`` HTML element embeds external content at the specified point in the document. This content is provided by an external application or other source of interactive content such as a browser plug-in.
+ * The `<embed>` HTML element embeds external content at the specified point in the document. This content is provided by an external application or other source of interactive content such as a browser plug-in.
  * @param {import('./index').EmbedParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -929,7 +929,7 @@ export function Embed(props) {
 }
 /**
  * ## Iframe
- * The ``<iframe>`` HTML element represents a nested browsing context, embedding another HTML page into the current one.
+ * The `<iframe>` HTML element represents a nested browsing context, embedding another HTML page into the current one.
  * @param {import('./index').IframeParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -943,7 +943,7 @@ export function Iframe(props) {
 }
 /**
  * ## Object
- * The ``<object>`` HTML element represents an external resource, which can be treated as an image, a nested browsing context, or a resource to be handled by a plugin.
+ * The `<object>` HTML element represents an external resource, which can be treated as an image, a nested browsing context, or a resource to be handled by a plugin.
  * @param {import('./index').ObjectParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -957,7 +957,7 @@ export function Object(props) {
 }
 /**
  * ## Picture
- * The ``<picture>`` HTML element contains zero or more source elements and one img element to offer alternative versions of an image for different display/device scenarios.
+ * The `<picture>` HTML element contains zero or more source elements and one img element to offer alternative versions of an image for different display/device scenarios.
  * @param {import('./index').PictureParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -971,7 +971,7 @@ export function Picture(props) {
 }
 /**
  * ## Portal
- * The ``<portal>`` HTML element enables the embedding of another HTML page into the current one for the purposes of allowing smoother navigation into new pages.
+ * The `<portal>` HTML element enables the embedding of another HTML page into the current one for the purposes of allowing smoother navigation into new pages.
  * @param {import('./index').PortalParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -985,7 +985,7 @@ export function Portal(props) {
 }
 /**
  * ## Source
- * The ``<source>`` HTML element specifies multiple media resources for the picture, the audio element, or the video element. It is an empty element, meaning that it has no content and does not have a closing tag. It is commonly used to offer the same media content in multiple file formats in order to provide compatibility with a broad range of browsers given their differing support for image file formats and media file formats.
+ * The `<source>` HTML element specifies multiple media resources for the picture, the audio element, or the video element. It is an empty element, meaning that it has no content and does not have a closing tag. It is commonly used to offer the same media content in multiple file formats in order to provide compatibility with a broad range of browsers given their differing support for image file formats and media file formats.
  * @param {import('./index').SourceParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -999,7 +999,7 @@ export function Source(props) {
 }
 /**
  * ## Canvas
- * Use the HTML ``<canvas>`` element with either the canvas scripting API or the WebGL API to draw graphics and animations.
+ * Use the HTML `<canvas>` element with either the canvas scripting API or the WebGL API to draw graphics and animations.
  * @param {import('./index').CanvasParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -1013,7 +1013,7 @@ export function Canvas(props) {
 }
 /**
  * ## Noscript
- * The ``<noscript>`` HTML element defines a section of HTML to be inserted if a script type on the page is unsupported or if scripting is currently turned off in the browser.
+ * The `<noscript>` HTML element defines a section of HTML to be inserted if a script type on the page is unsupported or if scripting is currently turned off in the browser.
  * @param {import('./index').NoscriptParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -1027,7 +1027,7 @@ export function Noscript(props) {
 }
 /**
  * ## Del
- * The ``<del>`` HTML element represents a range of text that has been deleted from a document. This can be used when rendering "track changes" or source code diff information, for example. The ins element can be used for the opposite purpose: to indicate text that has been added to the document.
+ * The `<del>` HTML element represents a range of text that has been deleted from a document. This can be used when rendering "track changes" or source code diff information, for example. The ins element can be used for the opposite purpose: to indicate text that has been added to the document.
  * @param {import('./index').DelParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -1041,7 +1041,7 @@ export function Del(props) {
 }
 /**
  * ## Ins
- * The ``<ins>`` HTML element represents a range of text that has been added to a document. You can use the del element to similarly represent a range of text that has been deleted from the document.
+ * The `<ins>` HTML element represents a range of text that has been added to a document. You can use the del element to similarly represent a range of text that has been deleted from the document.
  * @param {import('./index').InsParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -1055,7 +1055,7 @@ export function Ins(props) {
 }
 /**
  * ## Caption
- * The ``<caption>`` HTML element specifies the caption (or title) of a table.
+ * The `<caption>` HTML element specifies the caption (or title) of a table.
  * @param {import('./index').CaptionParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -1069,7 +1069,7 @@ export function Caption(props) {
 }
 /**
  * ## Col
- * The ``<col>`` HTML element defines a column within a table and is used for defining common semantics on all common cells. It is generally found within a colgroup element.
+ * The `<col>` HTML element defines a column within a table and is used for defining common semantics on all common cells. It is generally found within a colgroup element.
  * @param {import('./index').ColParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -1083,7 +1083,7 @@ export function Col(props) {
 }
 /**
  * ## Colgroup
- * The ``<colgroup>`` HTML element defines a group of columns within a table.
+ * The `<colgroup>` HTML element defines a group of columns within a table.
  * @param {import('./index').ColgroupParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -1097,7 +1097,7 @@ export function Colgroup(props) {
 }
 /**
  * ## Table
- * The ``<table>`` HTML element represents tabular data — that is, information presented in a two-dimensional table comprised of rows and columns of cells containing data.
+ * The `<table>` HTML element represents tabular data — that is, information presented in a two-dimensional table comprised of rows and columns of cells containing data.
  * @param {import('./index').TableParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -1111,7 +1111,7 @@ export function Table(props) {
 }
 /**
  * ## Tbody
- * The ``<tbody>`` HTML element encapsulates a set of table rows (tr elements), indicating that they comprise the body of the table (table).
+ * The `<tbody>` HTML element encapsulates a set of table rows (tr elements), indicating that they comprise the body of the table (table).
  * @param {import('./index').TbodyParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -1125,7 +1125,7 @@ export function Tbody(props) {
 }
 /**
  * ## Td
- * The ``<td>`` HTML element defines a cell of a table that contains data. It participates in the table model.
+ * The `<td>` HTML element defines a cell of a table that contains data. It participates in the table model.
  * @param {import('./index').TdParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -1139,7 +1139,7 @@ export function Td(props) {
 }
 /**
  * ## Tfoot
- * The ``<tfoot>`` HTML element defines a set of rows summarizing the columns of the table.
+ * The `<tfoot>` HTML element defines a set of rows summarizing the columns of the table.
  * @param {import('./index').TfootParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -1153,7 +1153,7 @@ export function Tfoot(props) {
 }
 /**
  * ## Th
- * The ``<th>`` HTML element defines a cell as header of a group of table cells. The exact nature of this group is defined by the scope and headers attributes.
+ * The `<th>` HTML element defines a cell as header of a group of table cells. The exact nature of this group is defined by the scope and headers attributes.
  * @param {import('./index').ThParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -1167,7 +1167,7 @@ export function Th(props) {
 }
 /**
  * ## Thead
- * The ``<thead>`` HTML element defines a set of rows defining the head of the columns of the table.
+ * The `<thead>` HTML element defines a set of rows defining the head of the columns of the table.
  * @param {import('./index').TheadParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -1181,7 +1181,7 @@ export function Thead(props) {
 }
 /**
  * ## Tr
- * The ``<tr>`` HTML element defines a row of cells in a table. The row's cells can then be established using a mix of td (data cell) and th (header cell) elements.
+ * The `<tr>` HTML element defines a row of cells in a table. The row's cells can then be established using a mix of td (data cell) and th (header cell) elements.
  * @param {import('./index').TrParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -1195,7 +1195,7 @@ export function Tr(props) {
 }
 /**
  * ## Button
- * The ``<button>`` HTML element is an interactive element activated by a user with a mouse, keyboard, finger, voice command, or other assistive technology. Once activated, it then performs a programmable action, such as submitting a form or opening a dialog.
+ * The `<button>` HTML element is an interactive element activated by a user with a mouse, keyboard, finger, voice command, or other assistive technology. Once activated, it then performs a programmable action, such as submitting a form or opening a dialog.
  * @param {import('./index').ButtonParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -1209,7 +1209,7 @@ export function Button(props) {
 }
 /**
  * ## Datalist
- * The ``<datalist>`` HTML element contains a set of option elements that represent the permissible or recommended options available to choose from within other controls.
+ * The `<datalist>` HTML element contains a set of option elements that represent the permissible or recommended options available to choose from within other controls.
  * @param {import('./index').DatalistParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -1223,7 +1223,7 @@ export function Datalist(props) {
 }
 /**
  * ## Fieldset
- * The ``<fieldset>`` HTML element is used to group several controls as well as labels (label) within a web form.
+ * The `<fieldset>` HTML element is used to group several controls as well as labels (label) within a web form.
  * @param {import('./index').FieldsetParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -1237,7 +1237,7 @@ export function Fieldset(props) {
 }
 /**
  * ## Form
- * The ``<form>`` HTML element represents a document section containing interactive controls for submitting information.
+ * The `<form>` HTML element represents a document section containing interactive controls for submitting information.
  * @param {import('./index').FormParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -1251,7 +1251,7 @@ export function Form(props) {
 }
 /**
  * ## Input
- * The ``<input>`` HTML element is used to create interactive controls for web-based forms in order to accept data from the user; a wide variety of types of input data and control widgets are available, depending on the device and user agent. The <input> element is one of the most powerful and complex in all of HTML due to the sheer number of combinations of input types and attributes.
+ * The `<input>` HTML element is used to create interactive controls for web-based forms in order to accept data from the user; a wide variety of types of input data and control widgets are available, depending on the device and user agent. The <input> element is one of the most powerful and complex in all of HTML due to the sheer number of combinations of input types and attributes.
  * @param {import('./index').InputParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -1265,7 +1265,7 @@ export function Input(props) {
 }
 /**
  * ## Label
- * The ``<label>`` HTML element represents a caption for an item in a user interface.
+ * The `<label>` HTML element represents a caption for an item in a user interface.
  * @param {import('./index').LabelParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -1279,7 +1279,7 @@ export function Label(props) {
 }
 /**
  * ## Legend
- * The ``<legend>`` HTML element represents a caption for the content of its parent fieldset.
+ * The `<legend>` HTML element represents a caption for the content of its parent fieldset.
  * @param {import('./index').LegendParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -1293,7 +1293,7 @@ export function Legend(props) {
 }
 /**
  * ## Meter
- * The ``<meter>`` HTML element represents either a scalar value within a known range or a fractional value.
+ * The `<meter>` HTML element represents either a scalar value within a known range or a fractional value.
  * @param {import('./index').MeterParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -1307,7 +1307,7 @@ export function Meter(props) {
 }
 /**
  * ## Optgroup
- * The ``<optgroup>`` HTML element creates a grouping of options within a select element.
+ * The `<optgroup>` HTML element creates a grouping of options within a select element.
  * @param {import('./index').OptgroupParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -1335,7 +1335,7 @@ export function Option(props) {
 }
 /**
  * ## Output
- * The ``<output>`` HTML element is a container element into which a site or app can inject the results of a calculation or the outcome of a user action.
+ * The `<output>` HTML element is a container element into which a site or app can inject the results of a calculation or the outcome of a user action.
  * @param {import('./index').OutputParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -1349,7 +1349,7 @@ export function Output(props) {
 }
 /**
  * ## Progress
- * The ``<progress>`` HTML element displays an indicator showing the completion progress of a task, typically displayed as a progress bar.
+ * The `<progress>` HTML element displays an indicator showing the completion progress of a task, typically displayed as a progress bar.
  * @param {import('./index').ProgressParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -1363,7 +1363,7 @@ export function Progress(props) {
 }
 /**
  * ## Select
- * The ``<select>`` HTML element represents a control that provides a menu of options.
+ * The `<select>` HTML element represents a control that provides a menu of options.
  * @param {import('./index').SelectParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -1377,7 +1377,7 @@ export function Select(props) {
 }
 /**
  * ## TextArea
- * The ``<textarea>`` HTML element represents a multi-line plain-text editing control, useful when you want to allow users to enter a sizeable amount of free-form text, for example a comment on a review or feedback form.
+ * The `<textarea>` HTML element represents a multi-line plain-text editing control, useful when you want to allow users to enter a sizeable amount of free-form text, for example a comment on a review or feedback form.
  * @param {import('./index').TextAreaParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -1391,7 +1391,7 @@ export function TextArea(props) {
 }
 /**
  * ## Details
- * The ``<details>`` HTML element creates a disclosure widget in which information is visible only when the widget is toggled into an "open" state. A summary or label must be provided using the summary element.
+ * The `<details>` HTML element creates a disclosure widget in which information is visible only when the widget is toggled into an "open" state. A summary or label must be provided using the summary element.
  * @param {import('./index').DetailsParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -1405,7 +1405,7 @@ export function Details(props) {
 }
 /**
  * ## Dialog
- * The ``<dialog>`` HTML element represents a dialog box or other interactive component, such as a dismissible alert, inspector, or subwindow.
+ * The `<dialog>` HTML element represents a dialog box or other interactive component, such as a dismissible alert, inspector, or sub window.
  * @param {import('./index').DialogParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -1419,7 +1419,7 @@ export function Dialog(props) {
 }
 /**
  * ## Summary
- * The ``<summary>`` HTML element specifies a summary, caption, or legend for a details element's disclosure box. Clicking the <summary> element toggles the state of the parent <details> element open and closed.
+ * The `<summary>` HTML element specifies a summary, caption, or legend for a details element's disclosure box. Clicking the <summary> element toggles the state of the parent <details> element open and closed.
  * @param {import('./index').SummaryParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -1433,7 +1433,7 @@ export function Summary(props) {
 }
 /**
  * ## Slot
- * The ``<slot>`` HTML element—part of the Web Components technology suite—is a placeholder inside a web component that you can fill with your own markup, which lets you create separate DOM trees and present them together.
+ * The `<slot>` HTML element—part of the Web Components technology suite—is a placeholder inside a web component that you can fill with your own markup, which lets you create separate DOM trees and present them together.
  * @param {import('./index').SlotParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */
@@ -1447,7 +1447,7 @@ export function Slot(props) {
 }
 /**
  * ## Template
- * The ``<template>`` HTML element is a mechanism for holding HTML that is not to be rendered immediately when a page is loaded but may be instantiated subsequently during runtime using JavaScript.
+ * The `<template>` HTML element is a mechanism for holding HTML that is not to be rendered immediately when a page is loaded but may be instantiated subsequently during runtime using JavaScript.
  * @param {import('./index').TemplateParams} props
  * @returns {import('@riadh-adrani/recursive/lib').BaseElement}
  */

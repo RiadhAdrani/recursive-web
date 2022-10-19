@@ -16,6 +16,8 @@ interface RecursiveWebRendererOptions {
 export default class RecursiveWebRenderer extends RecursiveRenderer {
     public styler: RecursiveCSSOM;
 
+    public scopedStyle: boolean;
+
     /**
      * create an instance of the Recursive Renderer for the web.
      * @param app callback returning tha elements tree.

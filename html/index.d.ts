@@ -58,7 +58,7 @@ export interface ArticleParams
 export function Article(params: ArticleParams): BaseElement;
 /**
  * ## AsideParams
- * The ``<aside>`` HTML element represents a portion of a document whose
+ * The `<aside>` HTML element represents a portion of a document whose
  * content is only indirectly related to the document's main content. Asides are
  * frequently presented as sidebars or call-out boxes.
  */
@@ -69,7 +69,7 @@ export interface AsideParams
         ElementChildren {}
 /**
  * ## Aside
- * The ``<aside>`` HTML element represents a portion of a document whose
+ * The `<aside>` HTML element represents a portion of a document whose
  * content is only indirectly related to the document's main content. Asides are
  * frequently presented as sidebars or call-out boxes.
  * @returns {BaseElement}
@@ -77,7 +77,7 @@ export interface AsideParams
 export function Aside(params: AsideParams): BaseElement;
 /**
  * ## FooterParams
- * The ``<footer>`` HTML element represents a footer for its nearest ancestor
+ * The `<footer>` HTML element represents a footer for its nearest ancestor
  * sectioning content or sectioning root element. A <footer> typically contains
  * information about the author of the section, copyright data or links to related documents.
  */
@@ -88,7 +88,7 @@ export interface FooterParams
         ElementChildren {}
 /**
  * ## Footer
- * The ``<footer>`` HTML element represents a footer for its nearest ancestor
+ * The `<footer>` HTML element represents a footer for its nearest ancestor
  * sectioning content or sectioning root element. A <footer> typically contains
  * information about the author of the section, copyright data or links to related documents.
  * @returns {BaseElement}
@@ -96,7 +96,7 @@ export interface FooterParams
 export function Footer(params: FooterParams): BaseElement;
 /**
  * ## HeaderParams
- * The ``<header>`` HTML element represents introductory content, typically a
+ * The `<header>` HTML element represents introductory content, typically a
  * group of introductory or navigational aids. It may contain some heading
  * elements but also a logo, a search form, an author name, and other elements.
  */
@@ -107,7 +107,7 @@ export interface HeaderParams
         ElementChildren {}
 /**
  * ## Header
- * The ``<header>`` HTML element represents introductory content, typically a
+ * The `<header>` HTML element represents introductory content, typically a
  * group of introductory or navigational aids. It may contain some heading
  * elements but also a logo, a search form, an author name, and other elements.
  * @returns {BaseElement}
@@ -115,8 +115,8 @@ export interface HeaderParams
 export function Header(params: HeaderParams): BaseElement;
 /**
  * ## H1Params
- * The ``<h1>`` to ``<h6>`` HTML elements represent six levels of section headings.
- * ``<h1>`` is the highest section level and ``<h6>`` is the lowest.
+ * The `<h1>` to `<h6>` HTML elements represent six levels of section headings.
+ * `<h1>` is the highest section level and `<h6>` is the lowest.
  */
 export interface H1Params
     extends CommonAttributes,
@@ -125,15 +125,15 @@ export interface H1Params
         ElementChildren {}
 /**
  * ## H1
- * The ``<h1>`` to ``<h6>`` HTML elements represent six levels of section headings.
- * ``<h1>`` is the highest section level and ``<h6>`` is the lowest.
+ * The `<h1>` to `<h6>` HTML elements represent six levels of section headings.
+ * `<h1>` is the highest section level and `<h6>` is the lowest.
  * @returns {BaseElement}
  */
 export function H1(params: H1Params): BaseElement;
 /**
  * ## H2Params
- * The ``<h1>`` to ``<h6>`` HTML elements represent six levels of section headings.
- * ``<h1>`` is the highest section level and ``<h6>`` is the lowest.
+ * The `<h1>` to `<h6>` HTML elements represent six levels of section headings.
+ * `<h1>` is the highest section level and `<h6>` is the lowest.
  */
 export interface H2Params
     extends CommonAttributes,
@@ -142,15 +142,15 @@ export interface H2Params
         ElementChildren {}
 /**
  * ## H2
- * The ``<h1>`` to ``<h6>`` HTML elements represent six levels of section headings.
- * ``<h1>`` is the highest section level and ``<h6>`` is the lowest.
+ * The `<h1>` to `<h6>` HTML elements represent six levels of section headings.
+ * `<h1>` is the highest section level and `<h6>` is the lowest.
  * @returns {BaseElement}
  */
 export function H2(params: H2Params): BaseElement;
 /**
  * ## H3Params
- * The ``<h1>`` to ``<h6>`` HTML elements represent six levels of section headings.
- * ``<h1>`` is the highest section level and ``<h6>`` is the lowest.
+ * The `<h1>` to `<h6>` HTML elements represent six levels of section headings.
+ * `<h1>` is the highest section level and `<h6>` is the lowest.
  */
 export interface H3Params
     extends CommonAttributes,
@@ -159,15 +159,15 @@ export interface H3Params
         ElementChildren {}
 /**
  * ## H3
- * The ``<h1>`` to ``<h6>`` HTML elements represent six levels of section headings.
- * ``<h1>`` is the highest section level and ``<h6>`` is the lowest.
+ * The `<h1>` to `<h6>` HTML elements represent six levels of section headings.
+ * `<h1>` is the highest section level and `<h6>` is the lowest.
  * @returns {BaseElement}
  */
 export function H3(params: H3Params): BaseElement;
 /**
  * ## H4Params
- * The ``<h1>`` to ``<h6>`` HTML elements represent six levels of section headings.
- * ``<h1>`` is the highest section level and ``<h6>`` is the lowest.
+ * The `<h1>` to `<h6>` HTML elements represent six levels of section headings.
+ * `<h1>` is the highest section level and `<h6>` is the lowest.
  */
 export interface H4Params
     extends CommonAttributes,
@@ -176,15 +176,15 @@ export interface H4Params
         ElementChildren {}
 /**
  * ## H4
- * The ``<h1>`` to ``<h6>`` HTML elements represent six levels of section headings.
- * ``<h1>`` is the highest section level and ``<h6>`` is the lowest.
+ * The `<h1>` to `<h6>` HTML elements represent six levels of section headings.
+ * `<h1>` is the highest section level and `<h6>` is the lowest.
  * @returns {BaseElement}
  */
 export function H4(params: H4Params): BaseElement;
 /**
  * ## H5Params
- * The ``<h1>`` to ``<h6>`` HTML elements represent six levels of section headings.
- * ``<h1>`` is the highest section level and ``<h6>`` is the lowest.
+ * The `<h1>` to `<h6>` HTML elements represent six levels of section headings.
+ * `<h1>` is the highest section level and `<h6>` is the lowest.
  */
 export interface H5Params
     extends CommonAttributes,
@@ -193,15 +193,15 @@ export interface H5Params
         ElementChildren {}
 /**
  * ## H5
- * The ``<h1>`` to ``<h6>`` HTML elements represent six levels of section headings.
- * ``<h1>`` is the highest section level and ``<h6>`` is the lowest.
+ * The `<h1>` to `<h6>` HTML elements represent six levels of section headings.
+ * `<h1>` is the highest section level and `<h6>` is the lowest.
  * @returns {BaseElement}
  */
 export function H5(params: H5Params): BaseElement;
 /**
  * ## H6Params
- * The ``<h1>`` to ``<h6>`` HTML elements represent six levels of section headings.
- * ``<h1>`` is the highest section level and ``<h6>`` is the lowest.
+ * The `<h1>` to `<h6>` HTML elements represent six levels of section headings.
+ * `<h1>` is the highest section level and `<h6>` is the lowest.
  */
 export interface H6Params
     extends CommonAttributes,
@@ -210,8 +210,8 @@ export interface H6Params
         ElementChildren {}
 /**
  * ## H6
- * The ``<h1>`` to ``<h6>`` HTML elements represent six levels of section headings.
- * ``<h1>`` is the highest section level and ``<h6>`` is the lowest.
+ * The `<h1>` to `<h6>` HTML elements represent six levels of section headings.
+ * `<h1>` is the highest section level and `<h6>` is the lowest.
  * @returns {BaseElement}
  */
 export function H6(params: H6Params): BaseElement;
@@ -238,7 +238,7 @@ export interface MainParams
 export function Main(params: MainParams): BaseElement;
 /**
  * ## NavParams
- * The ``<nav>`` HTML element represents a section of a page whose purpose is to provide navigation links, either within the current document or to other documents. Common examples of navigation sections are menus, tables of contents, and indexes.
+ * The `<nav>` HTML element represents a section of a page whose purpose is to provide navigation links, either within the current document or to other documents. Common examples of navigation sections are menus, tables of contents, and indexes.
  */
 export interface NavParams
     extends CommonAttributes,
@@ -247,13 +247,13 @@ export interface NavParams
         ElementChildren {}
 /**
  * ## Nav
- * The ``<nav>`` HTML element represents a section of a page whose purpose is to provide navigation links, either within the current document or to other documents. Common examples of navigation sections are menus, tables of contents, and indexes.
+ * The `<nav>` HTML element represents a section of a page whose purpose is to provide navigation links, either within the current document or to other documents. Common examples of navigation sections are menus, tables of contents, and indexes.
  * @returns {BaseElement}
  */
 export function Nav(params: NavParams): BaseElement;
 /**
  * ## SectionParams
- * The ``<section>`` HTML element represents a generic standalone section of a document, which doesn't have a more specific semantic element to represent it. Sections should always have a heading, with very few exceptions.
+ * The `<section>` HTML element represents a generic standalone section of a document, which doesn't have a more specific semantic element to represent it. Sections should always have a heading, with very few exceptions.
  */
 export interface SectionParams
     extends CommonAttributes,
@@ -262,13 +262,13 @@ export interface SectionParams
         ElementChildren {}
 /**
  * ## Section
- * The ``<section>`` HTML element represents a generic standalone section of a document, which doesn't have a more specific semantic element to represent it. Sections should always have a heading, with very few exceptions.
+ * The `<section>` HTML element represents a generic standalone section of a document, which doesn't have a more specific semantic element to represent it. Sections should always have a heading, with very few exceptions.
  * @returns {BaseElement}
  */
 export function Section(params: SectionParams): BaseElement;
 /**
  * ## BlockquoteParams
- * The ``<blockquote>`` HTML element indicates that the enclosed text is an extended quotation. Usually, this is rendered visually by indentation (see Notes for how to change it). A URL for the source of the quotation may be given using the cite attribute, while a text representation of the source can be given using the cite element.
+ * The `<blockquote>` HTML element indicates that the enclosed text is an extended quotation. Usually, this is rendered visually by indentation (see Notes for how to change it). A URL for the source of the quotation may be given using the cite attribute, while a text representation of the source can be given using the cite element.
  */
 export interface BlockquoteParams
     extends CommonAttributes,
@@ -283,13 +283,13 @@ export interface BlockquoteParams
 }
 /**
  * ## Blockquote
- * The ``<blockquote>`` HTML element indicates that the enclosed text is an extended quotation. Usually, this is rendered visually by indentation (see Notes for how to change it). A URL for the source of the quotation may be given using the cite attribute, while a text representation of the source can be given using the cite element.
+ * The `<blockquote>` HTML element indicates that the enclosed text is an extended quotation. Usually, this is rendered visually by indentation (see Notes for how to change it). A URL for the source of the quotation may be given using the cite attribute, while a text representation of the source can be given using the cite element.
  * @returns {BaseElement}
  */
 export function Blockquote(params: BlockquoteParams): BaseElement;
 /**
  * ## DdParams
- * The ``<dd>`` HTML element provides the description, definition, or value for the preceding term (dt) in a description list (dl).
+ * The `<dd>` HTML element provides the description, definition, or value for the preceding term (dt) in a description list (dl).
  */
 export interface DdParams
     extends CommonAttributes,
@@ -298,13 +298,13 @@ export interface DdParams
         ElementChildren {}
 /**
  * ## Dd
- * The ``<dd>`` HTML element provides the description, definition, or value for the preceding term (dt) in a description list (dl).
+ * The `<dd>` HTML element provides the description, definition, or value for the preceding term (dt) in a description list (dl).
  * @returns {BaseElement}
  */
 export function Dd(params: DdParams): BaseElement;
 /**
  * ## DivParams
- * The ``<div>`` HTML element is the generic container for flow content. It has no effect on the content or layout until styled in some way using CSS (e.g. styling is directly applied to it, or some kind of layout model like FlexBox is applied to its parent element).
+ * The `<div>` HTML element is the generic container for flow content. It has no effect on the content or layout until styled in some way using CSS (e.g. styling is directly applied to it, or some kind of layout model like FlexBox is applied to its parent element).
  */
 export interface DivParams
     extends CommonAttributes,
@@ -313,13 +313,13 @@ export interface DivParams
         ElementChildren {}
 /**
  * ## Div
- * The ``<div>`` HTML element is the generic container for flow content. It has no effect on the content or layout until styled in some way using CSS (e.g. styling is directly applied to it, or some kind of layout model like FlexBox is applied to its parent element).
+ * The `<div>` HTML element is the generic container for flow content. It has no effect on the content or layout until styled in some way using CSS (e.g. styling is directly applied to it, or some kind of layout model like FlexBox is applied to its parent element).
  * @returns {BaseElement}
  */
 export function Div(params: DivParams): BaseElement;
 /**
  * ## DlParams
- * The ``<dl>`` HTML element represents a description list. The element encloses a list of groups of terms (specified using the dt element) and descriptions (provided by dd elements). Common uses for this element are to implement a glossary or to display metadata (a list of key-value pairs).
+ * The `<dl>` HTML element represents a description list. The element encloses a list of groups of terms (specified using the dt element) and descriptions (provided by dd elements). Common uses for this element are to implement a glossary or to display metadata (a list of key-value pairs).
  */
 export interface DlParams
     extends CommonAttributes,
@@ -328,13 +328,13 @@ export interface DlParams
         ElementChildren {}
 /**
  * ## Dl
- * The ``<dl>`` HTML element represents a description list. The element encloses a list of groups of terms (specified using the dt element) and descriptions (provided by dd elements). Common uses for this element are to implement a glossary or to display metadata (a list of key-value pairs).
+ * The `<dl>` HTML element represents a description list. The element encloses a list of groups of terms (specified using the dt element) and descriptions (provided by dd elements). Common uses for this element are to implement a glossary or to display metadata (a list of key-value pairs).
  * @returns {BaseElement}
  */
 export function Dl(params: DlParams): BaseElement;
 /**
  * ## DtParams
- * The ``<dt>`` HTML element specifies a term in a description or definition list, and as such must be used inside a dl element. It is usually followed by a dd element; however, multiple <dt> elements in a row indicate several terms that are all defined by the immediate next dd element.
+ * The `<dt>` HTML element specifies a term in a description or definition list, and as such must be used inside a dl element. It is usually followed by a dd element; however, multiple <dt> elements in a row indicate several terms that are all defined by the immediate next dd element.
  */
 export interface DtParams
     extends CommonAttributes,
@@ -343,13 +343,13 @@ export interface DtParams
         ElementChildren {}
 /**
  * ## Dt
- * The ``<dt>`` HTML element specifies a term in a description or definition list, and as such must be used inside a dl element. It is usually followed by a dd element; however, multiple <dt> elements in a row indicate several terms that are all defined by the immediate next dd element.
+ * The `<dt>` HTML element specifies a term in a description or definition list, and as such must be used inside a dl element. It is usually followed by a dd element; however, multiple <dt> elements in a row indicate several terms that are all defined by the immediate next dd element.
  * @returns {BaseElement}
  */
 export function Dt(params: DtParams): BaseElement;
 /**
  * ## FigcaptionParams
- * The ``<figcaption>`` HTML element represents a caption or legend describing the rest of the contents of its parent figure element.
+ * The `<figcaption>` HTML element represents a caption or legend describing the rest of the contents of its parent figure element.
  */
 export interface FigcaptionParams
     extends CommonAttributes,
@@ -358,13 +358,13 @@ export interface FigcaptionParams
         ElementChildren {}
 /**
  * ## Figcaption
- * The ``<figcaption>`` HTML element represents a caption or legend describing the rest of the contents of its parent figure element.
+ * The `<figcaption>` HTML element represents a caption or legend describing the rest of the contents of its parent figure element.
  * @returns {BaseElement}
  */
 export function Figcaption(params: FigcaptionParams): BaseElement;
 /**
  * ## FigureParams
- * The ``<figure>`` HTML element represents self-contained content, potentially with an optional caption, which is specified using the figcaption element. The figure, its caption, and its contents are referenced as a single unit.
+ * The `<figure>` HTML element represents self-contained content, potentially with an optional caption, which is specified using the figcaption element. The figure, its caption, and its contents are referenced as a single unit.
  */
 export interface FigureParams
     extends CommonAttributes,
@@ -373,13 +373,13 @@ export interface FigureParams
         ElementChildren {}
 /**
  * ## Figure
- * The ``<figure>`` HTML element represents self-contained content, potentially with an optional caption, which is specified using the figcaption element. The figure, its caption, and its contents are referenced as a single unit.
+ * The `<figure>` HTML element represents self-contained content, potentially with an optional caption, which is specified using the figcaption element. The figure, its caption, and its contents are referenced as a single unit.
  * @returns {BaseElement}
  */
 export function Figure(params: FigureParams): BaseElement;
 /**
  * ## HrParams
- * The ``<hr>`` HTML element represents a thematic break between paragraph-level elements: for example, a change of scene in a story, or a shift of topic within a section.
+ * The `<hr>` HTML element represents a thematic break between paragraph-level elements: for example, a change of scene in a story, or a shift of topic within a section.
  */
 export interface HrParams
     extends CommonAttributes,
@@ -413,13 +413,13 @@ export interface HrParams
 }
 /**
  * ## Hr
- * The ``<hr>`` HTML element represents a thematic break between paragraph-level elements: for example, a change of scene in a story, or a shift of topic within a section.
+ * The `<hr>` HTML element represents a thematic break between paragraph-level elements: for example, a change of scene in a story, or a shift of topic within a section.
  * @returns {BaseElement}
  */
 export function Hr(params: HrParams): BaseElement;
 /**
  * ## LiParams
- * The ``<li>`` HTML element is used to represent an item in a list. It must be contained in a parent element: an ordered list (ol), an unordered list (ul), or a menu (menu). In menus and unordered lists, list items are usually displayed using bullet points. In ordered lists, they are usually displayed with an ascending counter on the left, such as a number or letter.
+ * The `<li>` HTML element is used to represent an item in a list. It must be contained in a parent element: an ordered list (ol), an unordered list (ul), or a menu (menu). In menus and unordered lists, list items are usually displayed using bullet points. In ordered lists, they are usually displayed with an ascending counter on the left, such as a number or letter.
  */
 export interface LiParams
     extends CommonAttributes,
@@ -438,13 +438,13 @@ export interface LiParams
 }
 /**
  * ## Li
- * The ``<li>`` HTML element is used to represent an item in a list. It must be contained in a parent element: an ordered list (ol), an unordered list (ul), or a menu (menu). In menus and unordered lists, list items are usually displayed using bullet points. In ordered lists, they are usually displayed with an ascending counter on the left, such as a number or letter.
+ * The `<li>` HTML element is used to represent an item in a list. It must be contained in a parent element: an ordered list (ol), an unordered list (ul), or a menu (menu). In menus and unordered lists, list items are usually displayed using bullet points. In ordered lists, they are usually displayed with an ascending counter on the left, such as a number or letter.
  * @returns {BaseElement}
  */
 export function Li(params: LiParams): BaseElement;
 /**
  * ## MenuParams
- * The ``<menu>`` HTML element is described in the HTML specification as a semantic alternative to ul, but treated by browsers (and exposed through the accessibility tree) as no different than ul. It represents an unordered list of items (which are represented by li elements).
+ * The `<menu>` HTML element is described in the HTML specification as a semantic alternative to ul, but treated by browsers (and exposed through the accessibility tree) as no different than ul. It represents an unordered list of items (which are represented by li elements).
  */
 export interface MenuParams
     extends CommonAttributes,
@@ -453,13 +453,13 @@ export interface MenuParams
         ElementChildren {}
 /**
  * ## Menu
- * The ``<menu>`` HTML element is described in the HTML specification as a semantic alternative to ul, but treated by browsers (and exposed through the accessibility tree) as no different than ul. It represents an unordered list of items (which are represented by li elements).
+ * The `<menu>` HTML element is described in the HTML specification as a semantic alternative to ul, but treated by browsers (and exposed through the accessibility tree) as no different than ul. It represents an unordered list of items (which are represented by li elements).
  * @returns {BaseElement}
  */
 export function Menu(params: MenuParams): BaseElement;
 /**
  * ## OlParams
- * The ``<ol>`` HTML element represents an ordered list of items — typically rendered as a numbered list.
+ * The `<ol>` HTML element represents an ordered list of items — typically rendered as a numbered list.
  */
 export interface OlParams
     extends CommonAttributes,
@@ -484,13 +484,13 @@ export interface OlParams
 }
 /**
  * ## Ol
- * The ``<ol>`` HTML element represents an ordered list of items — typically rendered as a numbered list.
+ * The `<ol>` HTML element represents an ordered list of items — typically rendered as a numbered list.
  * @returns {BaseElement}
  */
 export function Ol(params: OlParams): BaseElement;
 /**
  * ## PParams
- * The ``<p>`` HTML element represents a paragraph. Paragraphs are usually represented in visual media as blocks of text separated from adjacent blocks by blank lines and/or first-line indentation, but HTML paragraphs can be any structural grouping of related content, such as images or form fields.
+ * The `<p>` HTML element represents a paragraph. Paragraphs are usually represented in visual media as blocks of text separated from adjacent blocks by blank lines and/or first-line indentation, but HTML paragraphs can be any structural grouping of related content, such as images or form fields.
  */
 export interface PParams
     extends CommonAttributes,
@@ -499,13 +499,13 @@ export interface PParams
         ElementChildren {}
 /**
  * ## P
- * The ``<p>`` HTML element represents a paragraph. Paragraphs are usually represented in visual media as blocks of text separated from adjacent blocks by blank lines and/or first-line indentation, but HTML paragraphs can be any structural grouping of related content, such as images or form fields.
+ * The `<p>` HTML element represents a paragraph. Paragraphs are usually represented in visual media as blocks of text separated from adjacent blocks by blank lines and/or first-line indentation, but HTML paragraphs can be any structural grouping of related content, such as images or form fields.
  * @returns {BaseElement}
  */
 export function P(params: PParams): BaseElement;
 /**
  * ## PreParams
- * The ``<pre>`` HTML element represents preformatted text which is to be presented exactly as written in the HTML file. The text is typically rendered using a non-proportional, or monospaced, font. Whitespace inside this element is displayed as written.
+ * The `<pre>` HTML element represents preformatted text which is to be presented exactly as written in the HTML file. The text is typically rendered using a non-proportional, or monospaced, font. Whitespace inside this element is displayed as written.
  */
 export interface PreParams
     extends CommonAttributes,
@@ -530,13 +530,13 @@ export interface PreParams
 }
 /**
  * ## Pre
- * The ``<pre>`` HTML element represents preformatted text which is to be presented exactly as written in the HTML file. The text is typically rendered using a non-proportional, or monospaced, font. Whitespace inside this element is displayed as written.
+ * The `<pre>` HTML element represents preformatted text which is to be presented exactly as written in the HTML file. The text is typically rendered using a non-proportional, or monospaced, font. Whitespace inside this element is displayed as written.
  * @returns {BaseElement}
  */
 export function Pre(params: PreParams): BaseElement;
 /**
  * ## UlParams
- * The ``<ul>`` HTML element represents an unordered list of items, typically rendered as a bulleted list.
+ * The `<ul>` HTML element represents an unordered list of items, typically rendered as a bulleted list.
  */
 export interface UlParams
     extends CommonAttributes,
@@ -555,13 +555,13 @@ export interface UlParams
 }
 /**
  * ## Ul
- * The ``<ul>`` HTML element represents an unordered list of items, typically rendered as a bulleted list.
+ * The `<ul>` HTML element represents an unordered list of items, typically rendered as a bulleted list.
  * @returns {BaseElement}
  */
 export function Ul(params: UlParams): BaseElement;
 /**
  * ## AParams
- * The ``<a>`` HTML element (or anchor element), with its href attribute, creates a hyperlink to web pages, files, email addresses, locations in the same page, or anything else a URL can address.
+ * The `<a>` HTML element (or anchor element), with its href attribute, creates a hyperlink to web pages, files, email addresses, locations in the same page, or anything else a URL can address.
  */
 export interface AParams
     extends CommonAttributes,
@@ -645,13 +645,13 @@ export interface AParams
 }
 /**
  * ## A
- * The ``<a>`` HTML element (or anchor element), with its href attribute, creates a hyperlink to web pages, files, email addresses, locations in the same page, or anything else a URL can address.
+ * The `<a>` HTML element (or anchor element), with its href attribute, creates a hyperlink to web pages, files, email addresses, locations in the same page, or anything else a URL can address.
  * @returns {BaseElement}
  */
 export function A(params: AParams): BaseElement;
 /**
  * ## AbbrParams
- * The ``<abbr>`` HTML element represents an abbreviation or acronym.
+ * The `<abbr>` HTML element represents an abbreviation or acronym.
  */
 export interface AbbrParams
     extends CommonAttributes,
@@ -660,13 +660,13 @@ export interface AbbrParams
         ElementChildren {}
 /**
  * ## Abbr
- * The ``<abbr>`` HTML element represents an abbreviation or acronym.
+ * The `<abbr>` HTML element represents an abbreviation or acronym.
  * @returns {BaseElement}
  */
 export function Abbr(params: AbbrParams): BaseElement;
 /**
  * ## BParams
- * The ``<b>`` HTML element is used to draw the reader's attention to the element's contents, which are not otherwise granted special importance. This was formerly known as the Boldface element, and most browsers still draw the text in boldface. However, you should not use ``<b>`` for styling text; instead, you should use the CSS font-weight property to create boldface text, or the strong element to indicate that text is of special importance.
+ * The `<b>` HTML element is used to draw the reader's attention to the element's contents, which are not otherwise granted special importance. This was formerly known as the Boldface element, and most browsers still draw the text in boldface. However, you should not use `<b>` for styling text; instead, you should use the CSS font-weight property to create boldface text, or the strong element to indicate that text is of special importance.
  */
 export interface BParams
     extends CommonAttributes,
@@ -675,13 +675,13 @@ export interface BParams
         ElementChildren {}
 /**
  * ## B
- * The ``<b>`` HTML element is used to draw the reader's attention to the element's contents, which are not otherwise granted special importance. This was formerly known as the Boldface element, and most browsers still draw the text in boldface. However, you should not use ``<b>`` for styling text; instead, you should use the CSS font-weight property to create boldface text, or the strong element to indicate that text is of special importance.
+ * The `<b>` HTML element is used to draw the reader's attention to the element's contents, which are not otherwise granted special importance. This was formerly known as the Boldface element, and most browsers still draw the text in boldface. However, you should not use `<b>` for styling text; instead, you should use the CSS font-weight property to create boldface text, or the strong element to indicate that text is of special importance.
  * @returns {BaseElement}
  */
 export function B(params: BParams): BaseElement;
 /**
  * ## BdiParams
- * The ``<bdi>`` HTML element tells the browser's bidirectional algorithm to treat the text it contains in isolation from its surrounding text. It's particularly useful when a website dynamically inserts some text and doesn't know the directionality of the text being inserted.
+ * The `<bdi>` HTML element tells the browser's bidirectional algorithm to treat the text it contains in isolation from its surrounding text. It's particularly useful when a website dynamically inserts some text and doesn't know the directionality of the text being inserted.
  */
 export interface BdiParams
     extends CommonAttributes,
@@ -696,13 +696,13 @@ export interface BdiParams
 }
 /**
  * ## Bdi
- * The ``<bdi>`` HTML element tells the browser's bidirectional algorithm to treat the text it contains in isolation from its surrounding text. It's particularly useful when a website dynamically inserts some text and doesn't know the directionality of the text being inserted.
+ * The `<bdi>` HTML element tells the browser's bidirectional algorithm to treat the text it contains in isolation from its surrounding text. It's particularly useful when a website dynamically inserts some text and doesn't know the directionality of the text being inserted.
  * @returns {BaseElement}
  */
 export function Bdi(params: BdiParams): BaseElement;
 /**
  * ## BdoParams
- * The ``<bdo> ``HTML element overrides the current directionality of text, so that the text within is rendered in a different direction.
+ * The `<bdo> `HTML element overrides the current directionality of text, so that the text within is rendered in a different direction.
  */
 export interface BdoParams
     extends CommonAttributes,
@@ -717,13 +717,13 @@ export interface BdoParams
 }
 /**
  * ## Bdo
- * The ``<bdo> ``HTML element overrides the current directionality of text, so that the text within is rendered in a different direction.
+ * The `<bdo> `HTML element overrides the current directionality of text, so that the text within is rendered in a different direction.
  * @returns {BaseElement}
  */
 export function Bdo(params: BdoParams): BaseElement;
 /**
  * ## BrParams
- * The ``<br>`` HTML element produces a line break in text (carriage-return). It is useful for writing a poem or an address, where the division of lines is significant.
+ * The `<br>` HTML element produces a line break in text (carriage-return). It is useful for writing a poem or an address, where the division of lines is significant.
  */
 export interface BrParams
     extends CommonAttributes,
@@ -731,13 +731,13 @@ export interface BrParams
         HTMLAttributes {}
 /**
  * ## Br
- * The ``<br>`` HTML element produces a line break in text (carriage-return). It is useful for writing a poem or an address, where the division of lines is significant.
+ * The `<br>` HTML element produces a line break in text (carriage-return). It is useful for writing a poem or an address, where the division of lines is significant.
  * @returns {BaseElement}
  */
 export function Br(params: BrParams): BaseElement;
 /**
  * ## CiteParams
- * The ``<cite>`` HTML element is used to describe a reference to a cited creative work, and must include the title of that work. The reference may be in an abbreviated form according to context-appropriate conventions related to citation metadata.
+ * The `<cite>` HTML element is used to describe a reference to a cited creative work, and must include the title of that work. The reference may be in an abbreviated form according to context-appropriate conventions related to citation metadata.
  */
 export interface CiteParams
     extends CommonAttributes,
@@ -746,13 +746,13 @@ export interface CiteParams
         ElementChildren {}
 /**
  * ## Cite
- * The ``<cite>`` HTML element is used to describe a reference to a cited creative work, and must include the title of that work. The reference may be in an abbreviated form according to context-appropriate conventions related to citation metadata.
+ * The `<cite>` HTML element is used to describe a reference to a cited creative work, and must include the title of that work. The reference may be in an abbreviated form according to context-appropriate conventions related to citation metadata.
  * @returns {BaseElement}
  */
 export function Cite(params: CiteParams): BaseElement;
 /**
  * ## CodeParams
- * The ``<code>`` HTML element displays its contents styled in a fashion intended to indicate that the text is a short fragment of computer code. By default, the content text is displayed using the user agent default monospace font.
+ * The `<code>` HTML element displays its contents styled in a fashion intended to indicate that the text is a short fragment of computer code. By default, the content text is displayed using the user agent default monospace font.
  */
 export interface CodeParams
     extends CommonAttributes,
@@ -761,13 +761,13 @@ export interface CodeParams
         ElementChildren {}
 /**
  * ## Code
- * The ``<code>`` HTML element displays its contents styled in a fashion intended to indicate that the text is a short fragment of computer code. By default, the content text is displayed using the user agent default monospace font.
+ * The `<code>` HTML element displays its contents styled in a fashion intended to indicate that the text is a short fragment of computer code. By default, the content text is displayed using the user agent default monospace font.
  * @returns {BaseElement}
  */
 export function Code(params: CodeParams): BaseElement;
 /**
  * ## DataParams
- * The ``<data>`` HTML element links a given piece of content with a machine-readable translation. If the content is time- or date-related, the time element must be used.
+ * The `<data>` HTML element links a given piece of content with a machine-readable translation. If the content is time- or date-related, the time element must be used.
  */
 export interface DataParams
     extends CommonAttributes,
@@ -781,13 +781,13 @@ export interface DataParams
 }
 /**
  * ## Data
- * The ``<data>`` HTML element links a given piece of content with a machine-readable translation. If the content is time- or date-related, the time element must be used.
+ * The `<data>` HTML element links a given piece of content with a machine-readable translation. If the content is time- or date-related, the time element must be used.
  * @returns {BaseElement}
  */
 export function Data(params: DataParams): BaseElement;
 /**
  * ## DfnParams
- * The ``<dfn>`` HTML element is used to indicate the term being defined within the context of a definition phrase or sentence. The p element, the dt/dd pairing, or the section element which is the nearest ancestor of the ``<dfn>`` is considered to be the definition of the term.
+ * The `<dfn>` HTML element is used to indicate the term being defined within the context of a definition phrase or sentence. The p element, the dt/dd pairing, or the section element which is the nearest ancestor of the `<dfn>` is considered to be the definition of the term.
  */
 export interface DfnParams
     extends CommonAttributes,
@@ -796,13 +796,13 @@ export interface DfnParams
         ElementChildren {}
 /**
  * ## Dfn
- * The ``<dfn>`` HTML element is used to indicate the term being defined within the context of a definition phrase or sentence. The p element, the dt/dd pairing, or the section element which is the nearest ancestor of the ``<dfn>`` is considered to be the definition of the term.
+ * The `<dfn>` HTML element is used to indicate the term being defined within the context of a definition phrase or sentence. The p element, the dt/dd pairing, or the section element which is the nearest ancestor of the `<dfn>` is considered to be the definition of the term.
  * @returns {BaseElement}
  */
 export function Dfn(params: DfnParams): BaseElement;
 /**
  * ## EmParams
- * The ``<em>`` HTML element marks text that has stress emphasis. The ``<em>`` element can be nested, with each level of nesting indicating a greater degree of emphasis.
+ * The `<em>` HTML element marks text that has stress emphasis. The `<em>` element can be nested, with each level of nesting indicating a greater degree of emphasis.
  */
 export interface EmParams
     extends CommonAttributes,
@@ -811,13 +811,13 @@ export interface EmParams
         ElementChildren {}
 /**
  * ## Em
- * The ``<em>`` HTML element marks text that has stress emphasis. The ``<em>`` element can be nested, with each level of nesting indicating a greater degree of emphasis.
+ * The `<em>` HTML element marks text that has stress emphasis. The `<em>` element can be nested, with each level of nesting indicating a greater degree of emphasis.
  * @returns {BaseElement}
  */
 export function Em(params: EmParams): BaseElement;
 /**
  * ## IParams
- * The ``<i>`` HTML element represents a range of text that is set off from the normal text for some reason, such as idiomatic text, technical terms, taxonomical designations, among others. Historically, these have been presented using italicized type, which is the original source of the ``<i>`` naming of this element.
+ * The `<i>` HTML element represents a range of text that is set off from the normal text for some reason, such as idiomatic text, technical terms, taxonomical designations, among others. Historically, these have been presented using italicized type, which is the original source of the `<i>` naming of this element.
  */
 export interface IParams
     extends CommonAttributes,
@@ -826,13 +826,13 @@ export interface IParams
         ElementChildren {}
 /**
  * ## I
- * The ``<i>`` HTML element represents a range of text that is set off from the normal text for some reason, such as idiomatic text, technical terms, taxonomical designations, among others. Historically, these have been presented using italicized type, which is the original source of the ``<i>`` naming of this element.
+ * The `<i>` HTML element represents a range of text that is set off from the normal text for some reason, such as idiomatic text, technical terms, taxonomical designations, among others. Historically, these have been presented using italicized type, which is the original source of the `<i>` naming of this element.
  * @returns {BaseElement}
  */
 export function I(params: IParams): BaseElement;
 /**
  * ## KbdParams
- * The ``<kbd>`` HTML element represents a span of inline text denoting textual user input from a keyboard, voice input, or any other text entry device. By convention, the user agent defaults to rendering the contents of a ``<kbd>`` element using its default monospace font, although this is not mandated by the HTML standard.
+ * The `<kbd>` HTML element represents a span of inline text denoting textual user input from a keyboard, voice input, or any other text entry device. By convention, the user agent defaults to rendering the contents of a `<kbd>` element using its default monospace font, although this is not mandated by the HTML standard.
  */
 export interface KbdParams
     extends CommonAttributes,
@@ -841,13 +841,13 @@ export interface KbdParams
         ElementChildren {}
 /**
  * ## Kbd
- * The ``<kbd>`` HTML element represents a span of inline text denoting textual user input from a keyboard, voice input, or any other text entry device. By convention, the user agent defaults to rendering the contents of a ``<kbd>`` element using its default monospace font, although this is not mandated by the HTML standard.
+ * The `<kbd>` HTML element represents a span of inline text denoting textual user input from a keyboard, voice input, or any other text entry device. By convention, the user agent defaults to rendering the contents of a `<kbd>` element using its default monospace font, although this is not mandated by the HTML standard.
  * @returns {BaseElement}
  */
 export function Kbd(params: KbdParams): BaseElement;
 /**
  * ## MarkParams
- * The ``<mark>`` HTML element represents text which is marked or highlighted for reference or notation purposes, due to the marked passage's relevance or importance in the enclosing context.
+ * The `<mark>` HTML element represents text which is marked or highlighted for reference or notation purposes, due to the marked passage's relevance or importance in the enclosing context.
  */
 export interface MarkParams
     extends CommonAttributes,
@@ -856,13 +856,13 @@ export interface MarkParams
         ElementChildren {}
 /**
  * ## Mark
- * The ``<mark>`` HTML element represents text which is marked or highlighted for reference or notation purposes, due to the marked passage's relevance or importance in the enclosing context.
+ * The `<mark>` HTML element represents text which is marked or highlighted for reference or notation purposes, due to the marked passage's relevance or importance in the enclosing context.
  * @returns {BaseElement}
  */
 export function Mark(params: MarkParams): BaseElement;
 /**
  * ## QParams
- * The ``<q>`` HTML element indicates that the enclosed text is a short inline quotation. Most modern browsers implement this by surrounding the text in quotation marks. This element is intended for short quotations that don't require paragraph breaks; for long quotations use the blockquote element.
+ * The `<q>` HTML element indicates that the enclosed text is a short inline quotation. Most modern browsers implement this by surrounding the text in quotation marks. This element is intended for short quotations that don't require paragraph breaks; for long quotations use the blockquote element.
  */
 export interface QParams
     extends CommonAttributes,
@@ -877,13 +877,13 @@ export interface QParams
 }
 /**
  * ## Q
- * The ``<q>`` HTML element indicates that the enclosed text is a short inline quotation. Most modern browsers implement this by surrounding the text in quotation marks. This element is intended for short quotations that don't require paragraph breaks; for long quotations use the blockquote element.
+ * The `<q>` HTML element indicates that the enclosed text is a short inline quotation. Most modern browsers implement this by surrounding the text in quotation marks. This element is intended for short quotations that don't require paragraph breaks; for long quotations use the blockquote element.
  * @returns {BaseElement}
  */
 export function Q(params: QParams): BaseElement;
 /**
  * ## RpParams
- * The ``<rp>`` HTML element is used to provide fall-back parentheses for browsers that do not support display of ruby annotations using the ruby element. One ``<rp>`` element should enclose each of the opening and closing parentheses that wrap the rt element that contains the annotation's text.
+ * The `<rp>` HTML element is used to provide fall-back parentheses for browsers that do not support display of ruby annotations using the ruby element. One `<rp>` element should enclose each of the opening and closing parentheses that wrap the rt element that contains the annotation's text.
  */
 export interface RpParams
     extends CommonAttributes,
@@ -892,13 +892,13 @@ export interface RpParams
         ElementChildren {}
 /**
  * ## Rp
- * The ``<rp>`` HTML element is used to provide fall-back parentheses for browsers that do not support display of ruby annotations using the ruby element. One ``<rp>`` element should enclose each of the opening and closing parentheses that wrap the rt element that contains the annotation's text.
+ * The `<rp>` HTML element is used to provide fall-back parentheses for browsers that do not support display of ruby annotations using the ruby element. One `<rp>` element should enclose each of the opening and closing parentheses that wrap the rt element that contains the annotation's text.
  * @returns {BaseElement}
  */
 export function Rp(params: RpParams): BaseElement;
 /**
  * ## RtParams
- * The ``<rt>`` HTML element specifies the ruby text component of a ruby annotation, which is used to provide pronunciation, translation, or transliteration information for East Asian typography. The ``<rt>`` element must always be contained within a ruby element.
+ * The `<rt>` HTML element specifies the ruby text component of a ruby annotation, which is used to provide pronunciation, translation, or transliteration information for East Asian typography. The `<rt>` element must always be contained within a ruby element.
  */
 export interface RtParams
     extends CommonAttributes,
@@ -907,13 +907,13 @@ export interface RtParams
         ElementChildren {}
 /**
  * ## Rt
- * The ``<rt>`` HTML element specifies the ruby text component of a ruby annotation, which is used to provide pronunciation, translation, or transliteration information for East Asian typography. The ``<rt>`` element must always be contained within a ruby element.
+ * The `<rt>` HTML element specifies the ruby text component of a ruby annotation, which is used to provide pronunciation, translation, or transliteration information for East Asian typography. The `<rt>` element must always be contained within a ruby element.
  * @returns {BaseElement}
  */
 export function Rt(params: RtParams): BaseElement;
 /**
  * ## RubyParams
- * The ``<ruby>`` HTML element represents small annotations that are rendered above, below, or next to base text, usually used for showing the pronunciation of East Asian characters. It can also be used for annotating other kinds of text, but this usage is less common.
+ * The `<ruby>` HTML element represents small annotations that are rendered above, below, or next to base text, usually used for showing the pronunciation of East Asian characters. It can also be used for annotating other kinds of text, but this usage is less common.
  */
 export interface RubyParams
     extends CommonAttributes,
@@ -922,13 +922,13 @@ export interface RubyParams
         ElementChildren {}
 /**
  * ## Ruby
- * The ``<ruby>`` HTML element represents small annotations that are rendered above, below, or next to base text, usually used for showing the pronunciation of East Asian characters. It can also be used for annotating other kinds of text, but this usage is less common.
+ * The `<ruby>` HTML element represents small annotations that are rendered above, below, or next to base text, usually used for showing the pronunciation of East Asian characters. It can also be used for annotating other kinds of text, but this usage is less common.
  * @returns {BaseElement}
  */
 export function Ruby(params: RubyParams): BaseElement;
 /**
  * ## SParams
- * The ``<s>`` HTML element renders text with a strikethrough, or a line through it. Use the <s> element to represent things that are no longer relevant or no longer accurate. However, <s> is not appropriate when indicating document edits; for that, use the del and ins elements, as appropriate.
+ * The `<s>` HTML element renders text with a strikethrough, or a line through it. Use the <s> element to represent things that are no longer relevant or no longer accurate. However, <s> is not appropriate when indicating document edits; for that, use the del and ins elements, as appropriate.
  */
 export interface SParams
     extends CommonAttributes,
@@ -937,13 +937,13 @@ export interface SParams
         ElementChildren {}
 /**
  * ## S
- * The ``<s>`` HTML element renders text with a strikethrough, or a line through it. Use the <s> element to represent things that are no longer relevant or no longer accurate. However, <s> is not appropriate when indicating document edits; for that, use the del and ins elements, as appropriate.
+ * The `<s>` HTML element renders text with a strikethrough, or a line through it. Use the <s> element to represent things that are no longer relevant or no longer accurate. However, <s> is not appropriate when indicating document edits; for that, use the del and ins elements, as appropriate.
  * @returns {BaseElement}
  */
 export function S(params: SParams): BaseElement;
 /**
  * ## SampParams
- * The ``<samp>`` HTML element is used to enclose inline text which represents sample (or quoted) output from a computer program. Its contents are typically rendered using the browser's default monospaced font (such as Courier or Lucida Console).
+ * The `<samp>` HTML element is used to enclose inline text which represents sample (or quoted) output from a computer program. Its contents are typically rendered using the browser's default monospaced font (such as Courier or Lucida Console).
  */
 export interface SampParams
     extends CommonAttributes,
@@ -952,13 +952,13 @@ export interface SampParams
         ElementChildren {}
 /**
  * ## Samp
- * The ``<samp>`` HTML element is used to enclose inline text which represents sample (or quoted) output from a computer program. Its contents are typically rendered using the browser's default monospaced font (such as Courier or Lucida Console).
+ * The `<samp>` HTML element is used to enclose inline text which represents sample (or quoted) output from a computer program. Its contents are typically rendered using the browser's default monospaced font (such as Courier or Lucida Console).
  * @returns {BaseElement}
  */
 export function Samp(params: SampParams): BaseElement;
 /**
  * ## SmallParams
- * The ``<small>`` HTML element represents side-comments and small print, like copyright and legal text, independent of its styled presentation. By default, it renders text within it one font-size smaller, such as from small to x-small.
+ * The `<small>` HTML element represents side-comments and small print, like copyright and legal text, independent of its styled presentation. By default, it renders text within it one font-size smaller, such as from small to x-small.
  */
 export interface SmallParams
     extends CommonAttributes,
@@ -967,13 +967,13 @@ export interface SmallParams
         ElementChildren {}
 /**
  * ## Small
- * The ``<small>`` HTML element represents side-comments and small print, like copyright and legal text, independent of its styled presentation. By default, it renders text within it one font-size smaller, such as from small to x-small.
+ * The `<small>` HTML element represents side-comments and small print, like copyright and legal text, independent of its styled presentation. By default, it renders text within it one font-size smaller, such as from small to x-small.
  * @returns {BaseElement}
  */
 export function Small(params: SmallParams): BaseElement;
 /**
  * ## SpanParams
- * The ``<span>`` HTML element is a generic inline container for phrasing content, which does not inherently represent anything. It can be used to group elements for styling purposes (using the class or id attributes), or because they share attribute values, such as lang. It should be used only when no other semantic element is appropriate. ``<span>`` is very much like a div element, but div is a block-level element whereas a ``<span>`` is an inline element.
+ * The `<span>` HTML element is a generic inline container for phrasing content, which does not inherently represent anything. It can be used to group elements for styling purposes (using the class or id attributes), or because they share attribute values, such as lang. It should be used only when no other semantic element is appropriate. `<span>` is very much like a div element, but div is a block-level element whereas a `<span>` is an inline element.
  */
 export interface SpanParams
     extends CommonAttributes,
@@ -982,13 +982,13 @@ export interface SpanParams
         ElementChildren {}
 /**
  * ## Span
- * The ``<span>`` HTML element is a generic inline container for phrasing content, which does not inherently represent anything. It can be used to group elements for styling purposes (using the class or id attributes), or because they share attribute values, such as lang. It should be used only when no other semantic element is appropriate. ``<span>`` is very much like a div element, but div is a block-level element whereas a ``<span>`` is an inline element.
+ * The `<span>` HTML element is a generic inline container for phrasing content, which does not inherently represent anything. It can be used to group elements for styling purposes (using the class or id attributes), or because they share attribute values, such as lang. It should be used only when no other semantic element is appropriate. `<span>` is very much like a div element, but div is a block-level element whereas a `<span>` is an inline element.
  * @returns {BaseElement}
  */
 export function Span(params: SpanParams): BaseElement;
 /**
  * ## StrongParams
- * The ``<strong>`` HTML element indicates that its contents have strong importance, seriousness, or urgency. Browsers typically render the contents in bold type.
+ * The `<strong>` HTML element indicates that its contents have strong importance, seriousness, or urgency. Browsers typically render the contents in bold type.
  */
 export interface StrongParams
     extends CommonAttributes,
@@ -997,13 +997,13 @@ export interface StrongParams
         ElementChildren {}
 /**
  * ## Strong
- * The ``<strong>`` HTML element indicates that its contents have strong importance, seriousness, or urgency. Browsers typically render the contents in bold type.
+ * The `<strong>` HTML element indicates that its contents have strong importance, seriousness, or urgency. Browsers typically render the contents in bold type.
  * @returns {BaseElement}
  */
 export function Strong(params: StrongParams): BaseElement;
 /**
  * ## SubParams
- * The ``<sub>`` HTML element specifies inline text which should be displayed as subscript for solely typographical reasons. Subscripts are typically rendered with a lowered baseline using smaller text.
+ * The `<sub>` HTML element specifies inline text which should be displayed as subscript for solely typographical reasons. Subscripts are typically rendered with a lowered baseline using smaller text.
  */
 export interface SubParams
     extends CommonAttributes,
@@ -1012,13 +1012,13 @@ export interface SubParams
         ElementChildren {}
 /**
  * ## Sub
- * The ``<sub>`` HTML element specifies inline text which should be displayed as subscript for solely typographical reasons. Subscripts are typically rendered with a lowered baseline using smaller text.
+ * The `<sub>` HTML element specifies inline text which should be displayed as subscript for solely typographical reasons. Subscripts are typically rendered with a lowered baseline using smaller text.
  * @returns {BaseElement}
  */
 export function Sub(params: SubParams): BaseElement;
 /**
  * ## SupParams
- * The ``<sup>`` HTML element specifies inline text which is to be displayed as superscript for solely typographical reasons. Superscripts are usually rendered with a raised baseline using smaller text.
+ * The `<sup>` HTML element specifies inline text which is to be displayed as superscript for solely typographical reasons. Superscripts are usually rendered with a raised baseline using smaller text.
  */
 export interface SupParams
     extends CommonAttributes,
@@ -1027,13 +1027,13 @@ export interface SupParams
         ElementChildren {}
 /**
  * ## Sup
- * The ``<sup>`` HTML element specifies inline text which is to be displayed as superscript for solely typographical reasons. Superscripts are usually rendered with a raised baseline using smaller text.
+ * The `<sup>` HTML element specifies inline text which is to be displayed as superscript for solely typographical reasons. Superscripts are usually rendered with a raised baseline using smaller text.
  * @returns {BaseElement}
  */
 export function Sup(params: SupParams): BaseElement;
 /**
  * ## TimeParams
- * The ``<time>`` HTML element represents a specific period in time. It may include the datetime attribute to translate dates into machine-readable format, allowing for better search engine results or custom features such as reminders.
+ * The `<time>` HTML element represents a specific period in time. It may include the datetime attribute to translate dates into machine-readable format, allowing for better search engine results or custom features such as reminders.
  */
 export interface TimeParams
     extends CommonAttributes,
@@ -1048,13 +1048,13 @@ export interface TimeParams
 }
 /**
  * ## Time
- * The ``<time>`` HTML element represents a specific period in time. It may include the datetime attribute to translate dates into machine-readable format, allowing for better search engine results or custom features such as reminders.
+ * The `<time>` HTML element represents a specific period in time. It may include the datetime attribute to translate dates into machine-readable format, allowing for better search engine results or custom features such as reminders.
  * @returns {BaseElement}
  */
 export function Time(params: TimeParams): BaseElement;
 /**
  * ## UParams
- * The ``<u>`` HTML element represents a span of inline text which should be rendered in a way that indicates that it has a non-textual annotation. This is rendered by default as a simple solid underline, but may be altered using CSS.
+ * The `<u>` HTML element represents a span of inline text which should be rendered in a way that indicates that it has a non-textual annotation. This is rendered by default as a simple solid underline, but may be altered using CSS.
  */
 export interface UParams
     extends CommonAttributes,
@@ -1063,13 +1063,13 @@ export interface UParams
         ElementChildren {}
 /**
  * ## U
- * The ``<u>`` HTML element represents a span of inline text which should be rendered in a way that indicates that it has a non-textual annotation. This is rendered by default as a simple solid underline, but may be altered using CSS.
+ * The `<u>` HTML element represents a span of inline text which should be rendered in a way that indicates that it has a non-textual annotation. This is rendered by default as a simple solid underline, but may be altered using CSS.
  * @returns {BaseElement}
  */
 export function U(params: UParams): BaseElement;
 /**
  * ## VarParams
- * The ``<var>`` HTML element represents the name of a variable in a mathematical expression or a programming context. It's typically presented using an italicized version of the current typeface, although that behavior is browser-dependent.
+ * The `<var>` HTML element represents the name of a variable in a mathematical expression or a programming context. It's typically presented using an italicized version of the current typeface, although that behavior is browser-dependent.
  */
 export interface VarParams
     extends CommonAttributes,
@@ -1078,13 +1078,13 @@ export interface VarParams
         ElementChildren {}
 /**
  * ## Var
- * The ``<var>`` HTML element represents the name of a variable in a mathematical expression or a programming context. It's typically presented using an italicized version of the current typeface, although that behavior is browser-dependent.
+ * The `<var>` HTML element represents the name of a variable in a mathematical expression or a programming context. It's typically presented using an italicized version of the current typeface, although that behavior is browser-dependent.
  * @returns {BaseElement}
  */
 export function Var(params: VarParams): BaseElement;
 /**
  * ## WbrParams
- * The ``<wbr>`` HTML element represents a word break opportunity—a position within text where the browser may optionally break a line, though its line-breaking rules would not otherwise create a break at that location
+ * The `<wbr>` HTML element represents a word break opportunity—a position within text where the browser may optionally break a line, though its line-breaking rules would not otherwise create a break at that location
  */
 export interface WbrParams
     extends CommonAttributes,
@@ -1093,13 +1093,13 @@ export interface WbrParams
         ElementChildren {}
 /**
  * ## Wbr
- * The ``<wbr>`` HTML element represents a word break opportunity—a position within text where the browser may optionally break a line, though its line-breaking rules would not otherwise create a break at that location
+ * The `<wbr>` HTML element represents a word break opportunity—a position within text where the browser may optionally break a line, though its line-breaking rules would not otherwise create a break at that location
  * @returns {BaseElement}
  */
 export function Wbr(params: WbrParams): BaseElement;
 /**
  * ## AreaParams
- * The ``<area>`` HTML element defines an area inside an image map that has predefined clickable areas. An image map allows geometric areas on an image to be associated with Hyperlink.
+ * The `<area>` HTML element defines an area inside an image map that has predefined clickable areas. An image map allows geometric areas on an image to be associated with Hyperlink.
  */
 export interface AreaParams
     extends CommonAttributes,
@@ -1191,13 +1191,13 @@ export interface AreaParams
 }
 /**
  * ## Area
- * The ``<area>`` HTML element defines an area inside an image map that has predefined clickable areas. An image map allows geometric areas on an image to be associated with Hyperlink.
+ * The `<area>` HTML element defines an area inside an image map that has predefined clickable areas. An image map allows geometric areas on an image to be associated with Hyperlink.
  * @returns {BaseElement}
  */
 export function Area(params: AreaParams): BaseElement;
 /**
  * ## AudioParams
- * The ``<audio>`` HTML element is used to embed sound content in documents. It may contain one or more audio sources, represented using the src attribute or the source element: the browser will choose the most suitable one. It can also be the destination for streamed media, using a MediaStream.
+ * The `<audio>` HTML element is used to embed sound content in documents. It may contain one or more audio sources, represented using the src attribute or the source element: the browser will choose the most suitable one. It can also be the destination for streamed media, using a MediaStream.
  */
 export interface AudioParams
     extends CommonAttributes,
@@ -1242,13 +1242,13 @@ export interface AudioParams
 }
 /**
  * ## Audio
- * The ``<audio>`` HTML element is used to embed sound content in documents. It may contain one or more audio sources, represented using the src attribute or the source element: the browser will choose the most suitable one. It can also be the destination for streamed media, using a MediaStream.
+ * The `<audio>` HTML element is used to embed sound content in documents. It may contain one or more audio sources, represented using the src attribute or the source element: the browser will choose the most suitable one. It can also be the destination for streamed media, using a MediaStream.
  * @returns {BaseElement}
  */
 export function Audio(params: AudioParams): BaseElement;
 /**
  * ## ImgParams
- * 	The ``<img>`` HTML element embeds an image into the document.
+ * The `<img>` HTML element embeds an image into the document.
  */
 export interface ImgParams
     extends CommonAttributes,
@@ -1324,13 +1324,13 @@ export interface ImgParams
 }
 /**
  * ## Img
- * 	The ``<img>`` HTML element embeds an image into the document.
+ * The `<img>` HTML element embeds an image into the document.
  * @returns {BaseElement}
  */
 export function Img(params: ImgParams): BaseElement;
 /**
  * ## MapParams
- * The ``<map>`` HTML element is used with area elements to define an image map (a clickable link area).
+ * The `<map>` HTML element is used with area elements to define an image map (a clickable link area).
  */
 export interface MapParams
     extends CommonAttributes,
@@ -1345,13 +1345,13 @@ export interface MapParams
 }
 /**
  * ## Map
- * The ``<map>`` HTML element is used with area elements to define an image map (a clickable link area).
+ * The `<map>` HTML element is used with area elements to define an image map (a clickable link area).
  * @returns {BaseElement}
  */
 export function Map(params: MapParams): BaseElement;
 /**
  * ## TrackParams
- * The ``<track>`` HTML element is used as a child of the media elements, audio and video. It lets you specify timed text tracks (or time-based data), for example to automatically handle subtitles. The tracks are formatted in WebVTT format (.vtt files) — Web Video Text Tracks.
+ * The `<track>` HTML element is used as a child of the media elements, audio and video. It lets you specify timed text tracks (or time-based data), for example to automatically handle subtitles. The tracks are formatted in WebVTT format (.vtt files) — Web Video Text Tracks.
  */
 export interface TrackParams
     extends CommonAttributes,
@@ -1384,13 +1384,13 @@ export interface TrackParams
 }
 /**
  * ## Track
- * The ``<track>`` HTML element is used as a child of the media elements, audio and video. It lets you specify timed text tracks (or time-based data), for example to automatically handle subtitles. The tracks are formatted in WebVTT format (.vtt files) — Web Video Text Tracks.
+ * The `<track>` HTML element is used as a child of the media elements, audio and video. It lets you specify timed text tracks (or time-based data), for example to automatically handle subtitles. The tracks are formatted in WebVTT format (.vtt files) — Web Video Text Tracks.
  * @returns {BaseElement}
  */
 export function Track(params: TrackParams): BaseElement;
 /**
  * ## VideoParams
- * The ``<video>`` HTML element embeds a media player which supports video playback into the document. You can use ``<video>`` for audio content as well, but the audio element may provide a more appropriate user experience.
+ * The `<video>` HTML element embeds a media player which supports video playback into the document. You can use `<video>` for audio content as well, but the audio element may provide a more appropriate user experience.
  */
 export interface VideoParams
     extends CommonAttributes,
@@ -1449,13 +1449,13 @@ export interface VideoParams
 }
 /**
  * ## Video
- * The ``<video>`` HTML element embeds a media player which supports video playback into the document. You can use ``<video>`` for audio content as well, but the audio element may provide a more appropriate user experience.
+ * The `<video>` HTML element embeds a media player which supports video playback into the document. You can use `<video>` for audio content as well, but the audio element may provide a more appropriate user experience.
  * @returns {BaseElement}
  */
 export function Video(params: VideoParams): BaseElement;
 /**
  * ## EmbedParams
- * The ``<embed>`` HTML element embeds external content at the specified point in the document. This content is provided by an external application or other source of interactive content such as a browser plug-in.
+ * The `<embed>` HTML element embeds external content at the specified point in the document. This content is provided by an external application or other source of interactive content such as a browser plug-in.
  */
 export interface EmbedParams
     extends CommonAttributes,
@@ -1485,13 +1485,13 @@ export interface EmbedParams
 }
 /**
  * ## Embed
- * The ``<embed>`` HTML element embeds external content at the specified point in the document. This content is provided by an external application or other source of interactive content such as a browser plug-in.
+ * The `<embed>` HTML element embeds external content at the specified point in the document. This content is provided by an external application or other source of interactive content such as a browser plug-in.
  * @returns {BaseElement}
  */
 export function Embed(params: EmbedParams): BaseElement;
 /**
  * ## IframeParams
- * The ``<iframe>`` HTML element represents a nested browsing context, embedding another HTML page into the current one.
+ * The `<iframe>` HTML element represents a nested browsing context, embedding another HTML page into the current one.
  */
 export interface IframeParams
     extends CommonAttributes,
@@ -1575,13 +1575,13 @@ export interface IframeParams
 }
 /**
  * ## Iframe
- * The ``<iframe>`` HTML element represents a nested browsing context, embedding another HTML page into the current one.
+ * The `<iframe>` HTML element represents a nested browsing context, embedding another HTML page into the current one.
  * @returns {BaseElement}
  */
 export function Iframe(params: IframeParams): BaseElement;
 /**
  * ## ObjectParams
- * The ``<object>`` HTML element represents an external resource, which can be treated as an image, a nested browsing context, or a resource to be handled by a plugin.
+ * The `<object>` HTML element represents an external resource, which can be treated as an image, a nested browsing context, or a resource to be handled by a plugin.
  */
 export interface ObjectParams
     extends CommonAttributes,
@@ -1626,13 +1626,13 @@ export interface ObjectParams
 }
 /**
  * ## Object
- * The ``<object>`` HTML element represents an external resource, which can be treated as an image, a nested browsing context, or a resource to be handled by a plugin.
+ * The `<object>` HTML element represents an external resource, which can be treated as an image, a nested browsing context, or a resource to be handled by a plugin.
  * @returns {BaseElement}
  */
 export function Object(params: ObjectParams): BaseElement;
 /**
  * ## PictureParams
- * The ``<picture>`` HTML element contains zero or more source elements and one img element to offer alternative versions of an image for different display/device scenarios.
+ * The `<picture>` HTML element contains zero or more source elements and one img element to offer alternative versions of an image for different display/device scenarios.
  */
 export interface PictureParams
     extends CommonAttributes,
@@ -1641,13 +1641,13 @@ export interface PictureParams
         ElementChildren {}
 /**
  * ## Picture
- * The ``<picture>`` HTML element contains zero or more source elements and one img element to offer alternative versions of an image for different display/device scenarios.
+ * The `<picture>` HTML element contains zero or more source elements and one img element to offer alternative versions of an image for different display/device scenarios.
  * @returns {BaseElement}
  */
 export function Picture(params: PictureParams): BaseElement;
 /**
  * ## PortalParams
- * The ``<portal>`` HTML element enables the embedding of another HTML page into the current one for the purposes of allowing smoother navigation into new pages.
+ * The `<portal>` HTML element enables the embedding of another HTML page into the current one for the purposes of allowing smoother navigation into new pages.
  */
 export interface PortalParams
     extends CommonAttributes,
@@ -1662,13 +1662,13 @@ export interface PortalParams
 }
 /**
  * ## Portal
- * The ``<portal>`` HTML element enables the embedding of another HTML page into the current one for the purposes of allowing smoother navigation into new pages.
+ * The `<portal>` HTML element enables the embedding of another HTML page into the current one for the purposes of allowing smoother navigation into new pages.
  * @returns {BaseElement}
  */
 export function Portal(params: PortalParams): BaseElement;
 /**
  * ## SourceParams
- * The ``<source>`` HTML element specifies multiple media resources for the picture, the audio element, or the video element. It is an empty element, meaning that it has no content and does not have a closing tag. It is commonly used to offer the same media content in multiple file formats in order to provide compatibility with a broad range of browsers given their differing support for image file formats and media file formats.
+ * The `<source>` HTML element specifies multiple media resources for the picture, the audio element, or the video element. It is an empty element, meaning that it has no content and does not have a closing tag. It is commonly used to offer the same media content in multiple file formats in order to provide compatibility with a broad range of browsers given their differing support for image file formats and media file formats.
  */
 export interface SourceParams
     extends CommonAttributes,
@@ -1683,13 +1683,13 @@ export interface SourceParams
 }
 /**
  * ## Source
- * The ``<source>`` HTML element specifies multiple media resources for the picture, the audio element, or the video element. It is an empty element, meaning that it has no content and does not have a closing tag. It is commonly used to offer the same media content in multiple file formats in order to provide compatibility with a broad range of browsers given their differing support for image file formats and media file formats.
+ * The `<source>` HTML element specifies multiple media resources for the picture, the audio element, or the video element. It is an empty element, meaning that it has no content and does not have a closing tag. It is commonly used to offer the same media content in multiple file formats in order to provide compatibility with a broad range of browsers given their differing support for image file formats and media file formats.
  * @returns {BaseElement}
  */
 export function Source(params: SourceParams): BaseElement;
 /**
  * ## CanvasParams
- * Use the HTML ``<canvas>`` element with either the canvas scripting API or the WebGL API to draw graphics and animations.
+ * Use the HTML `<canvas>` element with either the canvas scripting API or the WebGL API to draw graphics and animations.
  */
 export interface CanvasParams
     extends CommonAttributes,
@@ -1709,13 +1709,13 @@ export interface CanvasParams
 }
 /**
  * ## Canvas
- * Use the HTML ``<canvas>`` element with either the canvas scripting API or the WebGL API to draw graphics and animations.
+ * Use the HTML `<canvas>` element with either the canvas scripting API or the WebGL API to draw graphics and animations.
  * @returns {BaseElement}
  */
 export function Canvas(params: CanvasParams): BaseElement;
 /**
  * ## NoscriptParams
- * The ``<noscript>`` HTML element defines a section of HTML to be inserted if a script type on the page is unsupported or if scripting is currently turned off in the browser.
+ * The `<noscript>` HTML element defines a section of HTML to be inserted if a script type on the page is unsupported or if scripting is currently turned off in the browser.
  */
 export interface NoscriptParams
     extends CommonAttributes,
@@ -1724,13 +1724,13 @@ export interface NoscriptParams
         ElementChildren {}
 /**
  * ## Noscript
- * The ``<noscript>`` HTML element defines a section of HTML to be inserted if a script type on the page is unsupported or if scripting is currently turned off in the browser.
+ * The `<noscript>` HTML element defines a section of HTML to be inserted if a script type on the page is unsupported or if scripting is currently turned off in the browser.
  * @returns {BaseElement}
  */
 export function Noscript(params: NoscriptParams): BaseElement;
 /**
  * ## DelParams
- * The ``<del>`` HTML element represents a range of text that has been deleted from a document. This can be used when rendering "track changes" or source code diff information, for example. The ins element can be used for the opposite purpose: to indicate text that has been added to the document.
+ * The `<del>` HTML element represents a range of text that has been deleted from a document. This can be used when rendering "track changes" or source code diff information, for example. The ins element can be used for the opposite purpose: to indicate text that has been added to the document.
  */
 export interface DelParams
     extends CommonAttributes,
@@ -1750,13 +1750,13 @@ export interface DelParams
 }
 /**
  * ## Del
- * The ``<del>`` HTML element represents a range of text that has been deleted from a document. This can be used when rendering "track changes" or source code diff information, for example. The ins element can be used for the opposite purpose: to indicate text that has been added to the document.
+ * The `<del>` HTML element represents a range of text that has been deleted from a document. This can be used when rendering "track changes" or source code diff information, for example. The ins element can be used for the opposite purpose: to indicate text that has been added to the document.
  * @returns {BaseElement}
  */
 export function Del(params: DelParams): BaseElement;
 /**
  * ## InsParams
- * The ``<ins>`` HTML element represents a range of text that has been added to a document. You can use the del element to similarly represent a range of text that has been deleted from the document.
+ * The `<ins>` HTML element represents a range of text that has been added to a document. You can use the del element to similarly represent a range of text that has been deleted from the document.
  */
 export interface InsParams
     extends CommonAttributes,
@@ -1776,13 +1776,13 @@ export interface InsParams
 }
 /**
  * ## Ins
- * The ``<ins>`` HTML element represents a range of text that has been added to a document. You can use the del element to similarly represent a range of text that has been deleted from the document.
+ * The `<ins>` HTML element represents a range of text that has been added to a document. You can use the del element to similarly represent a range of text that has been deleted from the document.
  * @returns {BaseElement}
  */
 export function Ins(params: InsParams): BaseElement;
 /**
  * ## CaptionParams
- * The ``<caption>`` HTML element specifies the caption (or title) of a table.
+ * The `<caption>` HTML element specifies the caption (or title) of a table.
  */
 export interface CaptionParams
     extends CommonAttributes,
@@ -1791,13 +1791,13 @@ export interface CaptionParams
         ElementChildren {}
 /**
  * ## Caption
- * The ``<caption>`` HTML element specifies the caption (or title) of a table.
+ * The `<caption>` HTML element specifies the caption (or title) of a table.
  * @returns {BaseElement}
  */
 export function Caption(params: CaptionParams): BaseElement;
 /**
  * ## ColParams
- * The ``<col>`` HTML element defines a column within a table and is used for defining common semantics on all common cells. It is generally found within a colgroup element.
+ * The `<col>` HTML element defines a column within a table and is used for defining common semantics on all common cells. It is generally found within a colgroup element.
  */
 export interface ColParams
     extends CommonAttributes,
@@ -1811,13 +1811,13 @@ export interface ColParams
 }
 /**
  * ## Col
- * The ``<col>`` HTML element defines a column within a table and is used for defining common semantics on all common cells. It is generally found within a colgroup element.
+ * The `<col>` HTML element defines a column within a table and is used for defining common semantics on all common cells. It is generally found within a colgroup element.
  * @returns {BaseElement}
  */
 export function Col(params: ColParams): BaseElement;
 /**
  * ## ColgroupParams
- * The ``<colgroup>`` HTML element defines a group of columns within a table.
+ * The `<colgroup>` HTML element defines a group of columns within a table.
  */
 export interface ColgroupParams
     extends CommonAttributes,
@@ -1831,13 +1831,13 @@ export interface ColgroupParams
 }
 /**
  * ## Colgroup
- * The ``<colgroup>`` HTML element defines a group of columns within a table.
+ * The `<colgroup>` HTML element defines a group of columns within a table.
  * @returns {BaseElement}
  */
 export function Colgroup(params: ColgroupParams): BaseElement;
 /**
  * ## TableParams
- * The ``<table>`` HTML element represents tabular data — that is, information presented in a two-dimensional table comprised of rows and columns of cells containing data.
+ * The `<table>` HTML element represents tabular data — that is, information presented in a two-dimensional table comprised of rows and columns of cells containing data.
  */
 export interface TableParams
     extends CommonAttributes,
@@ -1846,13 +1846,13 @@ export interface TableParams
         ElementChildren {}
 /**
  * ## Table
- * The ``<table>`` HTML element represents tabular data — that is, information presented in a two-dimensional table comprised of rows and columns of cells containing data.
+ * The `<table>` HTML element represents tabular data — that is, information presented in a two-dimensional table comprised of rows and columns of cells containing data.
  * @returns {BaseElement}
  */
 export function Table(params: TableParams): BaseElement;
 /**
  * ## TbodyParams
- * The ``<tbody>`` HTML element encapsulates a set of table rows (tr elements), indicating that they comprise the body of the table (table).
+ * The `<tbody>` HTML element encapsulates a set of table rows (tr elements), indicating that they comprise the body of the table (table).
  */
 export interface TbodyParams
     extends CommonAttributes,
@@ -1861,13 +1861,13 @@ export interface TbodyParams
         ElementChildren {}
 /**
  * ## Tbody
- * The ``<tbody>`` HTML element encapsulates a set of table rows (tr elements), indicating that they comprise the body of the table (table).
+ * The `<tbody>` HTML element encapsulates a set of table rows (tr elements), indicating that they comprise the body of the table (table).
  * @returns {BaseElement}
  */
 export function Tbody(params: TbodyParams): BaseElement;
 /**
  * ## TdParams
- * The ``<td>`` HTML element defines a cell of a table that contains data. It participates in the table model.
+ * The `<td>` HTML element defines a cell of a table that contains data. It participates in the table model.
  */
 export interface TdParams
     extends CommonAttributes,
@@ -1892,13 +1892,13 @@ export interface TdParams
 }
 /**
  * ## Td
- * The ``<td>`` HTML element defines a cell of a table that contains data. It participates in the table model.
+ * The `<td>` HTML element defines a cell of a table that contains data. It participates in the table model.
  * @returns {BaseElement}
  */
 export function Td(params: TdParams): BaseElement;
 /**
  * ## TfootParams
- * The ``<tfoot>`` HTML element defines a set of rows summarizing the columns of the table.
+ * The `<tfoot>` HTML element defines a set of rows summarizing the columns of the table.
  */
 export interface TfootParams
     extends CommonAttributes,
@@ -1907,13 +1907,13 @@ export interface TfootParams
         ElementChildren {}
 /**
  * ## Tfoot
- * The ``<tfoot>`` HTML element defines a set of rows summarizing the columns of the table.
+ * The `<tfoot>` HTML element defines a set of rows summarizing the columns of the table.
  * @returns {BaseElement}
  */
 export function Tfoot(params: TfootParams): BaseElement;
 /**
  * ## ThParams
- * The ``<th>`` HTML element defines a cell as header of a group of table cells. The exact nature of this group is defined by the scope and headers attributes.
+ * The `<th>` HTML element defines a cell as header of a group of table cells. The exact nature of this group is defined by the scope and headers attributes.
  */
 export interface ThParams
     extends CommonAttributes,
@@ -1943,13 +1943,13 @@ export interface ThParams
 }
 /**
  * ## Th
- * The ``<th>`` HTML element defines a cell as header of a group of table cells. The exact nature of this group is defined by the scope and headers attributes.
+ * The `<th>` HTML element defines a cell as header of a group of table cells. The exact nature of this group is defined by the scope and headers attributes.
  * @returns {BaseElement}
  */
 export function Th(params: ThParams): BaseElement;
 /**
  * ## TheadParams
- * The ``<thead>`` HTML element defines a set of rows defining the head of the columns of the table.
+ * The `<thead>` HTML element defines a set of rows defining the head of the columns of the table.
  */
 export interface TheadParams
     extends CommonAttributes,
@@ -1958,13 +1958,13 @@ export interface TheadParams
         ElementChildren {}
 /**
  * ## Thead
- * The ``<thead>`` HTML element defines a set of rows defining the head of the columns of the table.
+ * The `<thead>` HTML element defines a set of rows defining the head of the columns of the table.
  * @returns {BaseElement}
  */
 export function Thead(params: TheadParams): BaseElement;
 /**
  * ## TrParams
- * The ``<tr>`` HTML element defines a row of cells in a table. The row's cells can then be established using a mix of td (data cell) and th (header cell) elements.
+ * The `<tr>` HTML element defines a row of cells in a table. The row's cells can then be established using a mix of td (data cell) and th (header cell) elements.
  */
 export interface TrParams
     extends CommonAttributes,
@@ -1973,13 +1973,13 @@ export interface TrParams
         ElementChildren {}
 /**
  * ## Tr
- * The ``<tr>`` HTML element defines a row of cells in a table. The row's cells can then be established using a mix of td (data cell) and th (header cell) elements.
+ * The `<tr>` HTML element defines a row of cells in a table. The row's cells can then be established using a mix of td (data cell) and th (header cell) elements.
  * @returns {BaseElement}
  */
 export function Tr(params: TrParams): BaseElement;
 /**
  * ## ButtonParams
- * The ``<button>`` HTML element is an interactive element activated by a user with a mouse, keyboard, finger, voice command, or other assistive technology. Once activated, it then performs a programmable action, such as submitting a form or opening a dialog.
+ * The `<button>` HTML element is an interactive element activated by a user with a mouse, keyboard, finger, voice command, or other assistive technology. Once activated, it then performs a programmable action, such as submitting a form or opening a dialog.
  */
 export interface ButtonParams
     extends CommonAttributes,
@@ -2043,13 +2043,13 @@ export interface ButtonParams
 }
 /**
  * ## Button
- * The ``<button>`` HTML element is an interactive element activated by a user with a mouse, keyboard, finger, voice command, or other assistive technology. Once activated, it then performs a programmable action, such as submitting a form or opening a dialog.
+ * The `<button>` HTML element is an interactive element activated by a user with a mouse, keyboard, finger, voice command, or other assistive technology. Once activated, it then performs a programmable action, such as submitting a form or opening a dialog.
  * @returns {BaseElement}
  */
 export function Button(params: ButtonParams): BaseElement;
 /**
  * ## DatalistParams
- * The ``<datalist>`` HTML element contains a set of option elements that represent the permissible or recommended options available to choose from within other controls.
+ * The `<datalist>` HTML element contains a set of option elements that represent the permissible or recommended options available to choose from within other controls.
  */
 export interface DatalistParams
     extends CommonAttributes,
@@ -2058,13 +2058,13 @@ export interface DatalistParams
         ElementChildren {}
 /**
  * ## Datalist
- * The ``<datalist>`` HTML element contains a set of option elements that represent the permissible or recommended options available to choose from within other controls.
+ * The `<datalist>` HTML element contains a set of option elements that represent the permissible or recommended options available to choose from within other controls.
  * @returns {BaseElement}
  */
 export function Datalist(params: DatalistParams): BaseElement;
 /**
  * ## FieldsetParams
- * The ``<fieldset>`` HTML element is used to group several controls as well as labels (label) within a web form.
+ * The `<fieldset>` HTML element is used to group several controls as well as labels (label) within a web form.
  */
 export interface FieldsetParams
     extends CommonAttributes,
@@ -2089,13 +2089,13 @@ export interface FieldsetParams
 }
 /**
  * ## Fieldset
- * The ``<fieldset>`` HTML element is used to group several controls as well as labels (label) within a web form.
+ * The `<fieldset>` HTML element is used to group several controls as well as labels (label) within a web form.
  * @returns {BaseElement}
  */
 export function Fieldset(params: FieldsetParams): BaseElement;
 /**
  * ## FormParams
- * The ``<form>`` HTML element represents a document section containing interactive controls for submitting information.
+ * The `<form>` HTML element represents a document section containing interactive controls for submitting information.
  */
 export interface FormParams
     extends CommonAttributes,
@@ -2225,13 +2225,13 @@ export interface FormParams
 }
 /**
  * ## Form
- * The ``<form>`` HTML element represents a document section containing interactive controls for submitting information.
+ * The `<form>` HTML element represents a document section containing interactive controls for submitting information.
  * @returns {BaseElement}
  */
 export function Form(params: FormParams): BaseElement;
 /**
  * ## InputParams
- * The ``<input>`` HTML element is used to create interactive controls for web-based forms in order to accept data from the user; a wide variety of types of input data and control widgets are available, depending on the device and user agent. The <input> element is one of the most powerful and complex in all of HTML due to the sheer number of combinations of input types and attributes.
+ * The `<input>` HTML element is used to create interactive controls for web-based forms in order to accept data from the user; a wide variety of types of input data and control widgets are available, depending on the device and user agent. The <input> element is one of the most powerful and complex in all of HTML due to the sheer number of combinations of input types and attributes.
  */
 export interface InputParams
     extends CommonAttributes,
@@ -2439,13 +2439,13 @@ export interface InputParams
 }
 /**
  * ## Input
- * The ``<input>`` HTML element is used to create interactive controls for web-based forms in order to accept data from the user; a wide variety of types of input data and control widgets are available, depending on the device and user agent. The <input> element is one of the most powerful and complex in all of HTML due to the sheer number of combinations of input types and attributes.
+ * The `<input>` HTML element is used to create interactive controls for web-based forms in order to accept data from the user; a wide variety of types of input data and control widgets are available, depending on the device and user agent. The <input> element is one of the most powerful and complex in all of HTML due to the sheer number of combinations of input types and attributes.
  * @returns {BaseElement}
  */
 export function Input(params: InputParams): BaseElement;
 /**
  * ## LabelParams
- * The ``<label>`` HTML element represents a caption for an item in a user interface.
+ * The `<label>` HTML element represents a caption for an item in a user interface.
  */
 export interface LabelParams
     extends CommonAttributes,
@@ -2460,13 +2460,13 @@ export interface LabelParams
 }
 /**
  * ## Label
- * The ``<label>`` HTML element represents a caption for an item in a user interface.
+ * The `<label>` HTML element represents a caption for an item in a user interface.
  * @returns {BaseElement}
  */
 export function Label(params: LabelParams): BaseElement;
 /**
  * ## LegendParams
- * The ``<legend>`` HTML element represents a caption for the content of its parent fieldset.
+ * The `<legend>` HTML element represents a caption for the content of its parent fieldset.
  */
 export interface LegendParams
     extends CommonAttributes,
@@ -2475,13 +2475,13 @@ export interface LegendParams
         ElementChildren {}
 /**
  * ## Legend
- * The ``<legend>`` HTML element represents a caption for the content of its parent fieldset.
+ * The `<legend>` HTML element represents a caption for the content of its parent fieldset.
  * @returns {BaseElement}
  */
 export function Legend(params: LegendParams): BaseElement;
 /**
  * ## MeterParams
- * The ``<meter>`` HTML element represents either a scalar value within a known range or a fractional value.
+ * The `<meter>` HTML element represents either a scalar value within a known range or a fractional value.
  */
 export interface MeterParams
     extends CommonAttributes,
@@ -2520,13 +2520,13 @@ export interface MeterParams
 }
 /**
  * ## Meter
- * The ``<meter>`` HTML element represents either a scalar value within a known range or a fractional value.
+ * The `<meter>` HTML element represents either a scalar value within a known range or a fractional value.
  * @returns {BaseElement}
  */
 export function Meter(params: MeterParams): BaseElement;
 /**
  * ## OptgroupParams
- * The ``<optgroup>`` HTML element creates a grouping of options within a select element.
+ * The `<optgroup>` HTML element creates a grouping of options within a select element.
  */
 export interface OptgroupParams
     extends CommonAttributes,
@@ -2546,7 +2546,7 @@ export interface OptgroupParams
 }
 /**
  * ## Optgroup
- * The ``<optgroup>`` HTML element creates a grouping of options within a select element.
+ * The `<optgroup>` HTML element creates a grouping of options within a select element.
  * @returns {BaseElement}
  */
 export function Optgroup(params: OptgroupParams): BaseElement;
@@ -2587,7 +2587,7 @@ export interface OptionParams
 export function Option(params: OptionParams): BaseElement;
 /**
  * ## OutputParams
- * The ``<output>`` HTML element is a container element into which a site or app can inject the results of a calculation or the outcome of a user action.
+ * The `<output>` HTML element is a container element into which a site or app can inject the results of a calculation or the outcome of a user action.
  */
 export interface OutputParams
     extends CommonAttributes,
@@ -2612,13 +2612,13 @@ export interface OutputParams
 }
 /**
  * ## Output
- * The ``<output>`` HTML element is a container element into which a site or app can inject the results of a calculation or the outcome of a user action.
+ * The `<output>` HTML element is a container element into which a site or app can inject the results of a calculation or the outcome of a user action.
  * @returns {BaseElement}
  */
 export function Output(params: OutputParams): BaseElement;
 /**
  * ## ProgressParams
- * The ``<progress>`` HTML element displays an indicator showing the completion progress of a task, typically displayed as a progress bar.
+ * The `<progress>` HTML element displays an indicator showing the completion progress of a task, typically displayed as a progress bar.
  */
 export interface ProgressParams
     extends CommonAttributes,
@@ -2637,13 +2637,13 @@ export interface ProgressParams
 }
 /**
  * ## Progress
- * The ``<progress>`` HTML element displays an indicator showing the completion progress of a task, typically displayed as a progress bar.
+ * The `<progress>` HTML element displays an indicator showing the completion progress of a task, typically displayed as a progress bar.
  * @returns {BaseElement}
  */
 export function Progress(params: ProgressParams): BaseElement;
 /**
  * ## SelectParams
- * The ``<select>`` HTML element represents a control that provides a menu of options.
+ * The `<select>` HTML element represents a control that provides a menu of options.
  */
 export interface SelectParams
     extends CommonAttributes,
@@ -2740,13 +2740,13 @@ export interface SelectParams
 }
 /**
  * ## Select
- * The ``<select>`` HTML element represents a control that provides a menu of options.
+ * The `<select>` HTML element represents a control that provides a menu of options.
  * @returns {BaseElement}
  */
 export function Select(params: SelectParams): BaseElement;
 /**
  * ## TextAreaParams
- * The ``<textarea>`` HTML element represents a multi-line plain-text editing control, useful when you want to allow users to enter a sizeable amount of free-form text, for example a comment on a review or feedback form.
+ * The `<textarea>` HTML element represents a multi-line plain-text editing control, useful when you want to allow users to enter a sizeable amount of free-form text, for example a comment on a review or feedback form.
  */
 export interface TextAreaParams
     extends CommonAttributes,
@@ -2863,13 +2863,13 @@ export interface TextAreaParams
 }
 /**
  * ## TextArea
- * The ``<textarea>`` HTML element represents a multi-line plain-text editing control, useful when you want to allow users to enter a sizeable amount of free-form text, for example a comment on a review or feedback form.
+ * The `<textarea>` HTML element represents a multi-line plain-text editing control, useful when you want to allow users to enter a sizeable amount of free-form text, for example a comment on a review or feedback form.
  * @returns {BaseElement}
  */
 export function TextArea(params: TextAreaParams): BaseElement;
 /**
  * ## DetailsParams
- * The ``<details>`` HTML element creates a disclosure widget in which information is visible only when the widget is toggled into an "open" state. A summary or label must be provided using the summary element.
+ * The `<details>` HTML element creates a disclosure widget in which information is visible only when the widget is toggled into an "open" state. A summary or label must be provided using the summary element.
  */
 export interface DetailsParams
     extends CommonAttributes,
@@ -2884,13 +2884,13 @@ export interface DetailsParams
 }
 /**
  * ## Details
- * The ``<details>`` HTML element creates a disclosure widget in which information is visible only when the widget is toggled into an "open" state. A summary or label must be provided using the summary element.
+ * The `<details>` HTML element creates a disclosure widget in which information is visible only when the widget is toggled into an "open" state. A summary or label must be provided using the summary element.
  * @returns {BaseElement}
  */
 export function Details(params: DetailsParams): BaseElement;
 /**
  * ## DialogParams
- * The ``<dialog>`` HTML element represents a dialog box or other interactive component, such as a dismissible alert, inspector, or subwindow.
+ * The `<dialog>` HTML element represents a dialog box or other interactive component, such as a dismissible alert, inspector, or sub window.
  */
 export interface DialogParams
     extends CommonAttributes,
@@ -2905,13 +2905,13 @@ export interface DialogParams
 }
 /**
  * ## Dialog
- * The ``<dialog>`` HTML element represents a dialog box or other interactive component, such as a dismissible alert, inspector, or subwindow.
+ * The `<dialog>` HTML element represents a dialog box or other interactive component, such as a dismissible alert, inspector, or sub window.
  * @returns {BaseElement}
  */
 export function Dialog(params: DialogParams): BaseElement;
 /**
  * ## SummaryParams
- * The ``<summary>`` HTML element specifies a summary, caption, or legend for a details element's disclosure box. Clicking the <summary> element toggles the state of the parent <details> element open and closed.
+ * The `<summary>` HTML element specifies a summary, caption, or legend for a details element's disclosure box. Clicking the <summary> element toggles the state of the parent <details> element open and closed.
  */
 export interface SummaryParams
     extends CommonAttributes,
@@ -2920,13 +2920,13 @@ export interface SummaryParams
         ElementChildren {}
 /**
  * ## Summary
- * The ``<summary>`` HTML element specifies a summary, caption, or legend for a details element's disclosure box. Clicking the <summary> element toggles the state of the parent <details> element open and closed.
+ * The `<summary>` HTML element specifies a summary, caption, or legend for a details element's disclosure box. Clicking the <summary> element toggles the state of the parent <details> element open and closed.
  * @returns {BaseElement}
  */
 export function Summary(params: SummaryParams): BaseElement;
 /**
  * ## SlotParams
- * The ``<slot>`` HTML element—part of the Web Components technology suite—is a placeholder inside a web component that you can fill with your own markup, which lets you create separate DOM trees and present them together.
+ * The `<slot>` HTML element—part of the Web Components technology suite—is a placeholder inside a web component that you can fill with your own markup, which lets you create separate DOM trees and present them together.
  */
 export interface SlotParams
     extends CommonAttributes,
@@ -2941,13 +2941,13 @@ export interface SlotParams
 }
 /**
  * ## Slot
- * The ``<slot>`` HTML element—part of the Web Components technology suite—is a placeholder inside a web component that you can fill with your own markup, which lets you create separate DOM trees and present them together.
+ * The `<slot>` HTML element—part of the Web Components technology suite—is a placeholder inside a web component that you can fill with your own markup, which lets you create separate DOM trees and present them together.
  * @returns {BaseElement}
  */
 export function Slot(params: SlotParams): BaseElement;
 /**
  * ## TemplateParams
- * The ``<template>`` HTML element is a mechanism for holding HTML that is not to be rendered immediately when a page is loaded but may be instantiated subsequently during runtime using JavaScript.
+ * The `<template>` HTML element is a mechanism for holding HTML that is not to be rendered immediately when a page is loaded but may be instantiated subsequently during runtime using JavaScript.
  */
 export interface TemplateParams
     extends CommonAttributes,
@@ -2956,7 +2956,7 @@ export interface TemplateParams
         ElementChildren {}
 /**
  * ## Template
- * The ``<template>`` HTML element is a mechanism for holding HTML that is not to be rendered immediately when a page is loaded but may be instantiated subsequently during runtime using JavaScript.
+ * The `<template>` HTML element is a mechanism for holding HTML that is not to be rendered immediately when a page is loaded but may be instantiated subsequently during runtime using JavaScript.
  * @returns {BaseElement}
  */
 export function Template(params: TemplateParams): BaseElement;
