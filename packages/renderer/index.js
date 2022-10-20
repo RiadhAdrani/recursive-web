@@ -15,7 +15,7 @@ const {
     eventHasHandler,
     renderAttributeValue,
 } = require("../dom/index.js");
-const { copy, hasProperty, isBlank } = require("@riadh-adrani/utility-js");
+const { hasProperty, isBlank } = require("@riadh-adrani/utility-js");
 
 class RecursiveWebRenderer extends RecursiveRenderer {
     /**
@@ -162,7 +162,7 @@ class RecursiveWebRenderer extends RecursiveRenderer {
         }
 
         if (this.shouldStyleBeScoped(element)) {
-            styleClassName += `-_${this.transformUid(element.uid)}`;
+            styleClassName += "-_" + this.transformUid(element.uid);
         }
 
         element.style.className = styleClassName;

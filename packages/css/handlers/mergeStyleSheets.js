@@ -1,5 +1,5 @@
 const { isValidMediaQueryDeclaration } = require("../media-queries");
-const { areEqual } = require("@riadh-adrani/utility-js");
+const { areEqual, hasProperty, isBlank } = require("@riadh-adrani/utility-js");
 const { RecursiveConsole } = require("../../../use");
 
 /**
@@ -34,156 +34,131 @@ function mergeStyleSheets(styleSheets) {
     styleSheets.forEach((sheet) => {
         if (!sheet) return;
 
-        for (let key in sheet) {
-            switch (key) {
-                case "animations":
-                    {
-                        if (!sheet.animations) break;
+        if (hasProperty(sheet, "animations")) {
+            if (typeof sheet.animations === "object") {
+                for (let animation in sheet.animations) {
+                    if (!isValidSelectorContent(sheet.animations[animation]))
+                        continue;
 
-                        for (let animation in sheet.animations) {
-                            if (
-                                !isValidSelectorContent(
-                                    sheet.animations[animation]
-                                )
-                            )
-                                continue;
+                    if (!output.animations) output.animations = {};
 
-                            if (!output.animations) output.animations = {};
+                    output.animations[animation] = sheet.animations[animation];
+                }
+            }
+        }
 
-                            output.animations[animation] =
-                                sheet.animations[animation];
-                        }
-                    }
-                    break;
-                case "mediaQueries":
-                    {
-                        if (!Array.isArray(sheet.mediaQueries)) {
-                            RecursiveConsole.warn(
-                                "Recursive CSSOM : mediaQueries property is not of type array and therefore it was ignored."
-                            );
-                            break;
-                        }
+        if (hasProperty(sheet, "mediaQueries")) {
+            if (!Array.isArray(sheet.mediaQueries)) {
+                RecursiveConsole.warn(
+                    "Recursive CSSOM : mediaQueries property is not of type array and therefore it was ignored."
+                );
+            } else {
+                const queries = [];
 
-                        const queries = [];
+                sheet.mediaQueries.forEach((query) => {
+                    if (!isValidMediaQueryDeclaration(query)) return;
 
-                        sheet.mediaQueries.forEach((query) => {
-                            if (!isValidMediaQueryDeclaration(query)) return;
+                    const selectors = {};
 
-                            const selectors = {};
-
-                            Object.keys(query)
-                                .filter((key) => key != "condition")
-                                .forEach((key) => {
-                                    selectors[key] = query[key];
-                                });
-
-                            const toBeAdded = {
-                                condition: query.condition,
-                                selectors,
-                            };
-
-                            for (let i = 0; i < queries.length; i++) {
-                                if (areEqual(toBeAdded, queries[i])) {
-                                    return;
-                                }
-                            }
-
-                            queries.push(toBeAdded);
+                    Object.keys(query)
+                        .filter((key) => key != "condition")
+                        .forEach((key) => {
+                            selectors[key] = query[key];
                         });
 
-                        if (queries.length > 0) {
-                            output.mediaQueries = [];
-                            output.mediaQueries.push(...queries);
+                    const toBeAdded = {
+                        condition: query.condition,
+                        selectors,
+                    };
+
+                    for (let i = 0; i < queries.length; i++) {
+                        if (areEqual(toBeAdded, queries[i])) {
+                            return;
                         }
                     }
-                    break;
-                case "fontFace":
-                    {
-                        if (!Array.isArray(sheet.fontFace)) {
-                            RecursiveConsole.warn(
-                                "Recursive CSSOM : fontFace property is not of type array and therefore it was ignored."
-                            );
 
-                            break;
-                        }
+                    queries.push(toBeAdded);
+                });
 
-                        if (!output.fontFace) output.fontFace = [];
+                if (queries.length > 0) {
+                    output.mediaQueries = [];
+                    output.mediaQueries.push(...queries);
+                }
+            }
+        }
 
-                        output.fontFace.push(...sheet.fontFace);
+        if (hasProperty(sheet, "fontFace")) {
+            if (!Array.isArray(sheet.fontFace)) {
+                RecursiveConsole.warn(
+                    "Recursive CSSOM : fontFace property is not of type array and therefore it was ignored."
+                );
+            } else {
+                if (!output.fontFace) output.fontFace = [];
+
+                output.fontFace.push(...sheet.fontFace);
+            }
+        }
+
+        if (hasProperty(sheet, "var")) {
+            if (
+                !sheet.var ||
+                typeof sheet.var != "object" ||
+                Array.isArray(sheet.var) ||
+                Object.keys(sheet.var).length == 0
+            ) {
+            } else {
+                for (let v in sheet.var) {
+                    if (!output.var) output.var = {};
+
+                    if (
+                        typeof sheet.var[v] == "string" &&
+                        sheet.var[v].trim()
+                    ) {
+                        output.var[v] = sheet.var[v];
                     }
-                    break;
-                case "var":
-                    {
-                        if (
-                            !sheet.var ||
-                            typeof sheet.var != "object" ||
-                            Array.isArray(sheet.var) ||
-                            Object.keys(sheet.var).length == 0
-                        )
-                            break;
+                }
+            }
+        }
 
-                        for (let v in sheet.var) {
-                            if (!output.var) output.var = {};
+        if (hasProperty(sheet, "imports")) {
+            if (Array.isArray(sheet.imports) && sheet.imports.length !== 0) {
+                if (!output.imports) output.imports = [];
 
-                            if (
-                                typeof sheet.var[v] == "string" &&
-                                sheet.var[v].trim()
-                            ) {
-                                output.var[v] = sheet.var[v];
-                            }
-                        }
-                    }
-                    break;
-                case "imports":
-                    {
-                        if (!Array.isArray(sheet.imports)) break;
+                output.imports.push(
+                    ...sheet.imports.filter(
+                        (item, index) =>
+                            !isBlank(item) &&
+                            !sheet.imports.slice(0, index).includes(item)
+                    )
+                );
+            }
+        }
 
-                        if (!output.imports) output.imports = [];
+        if (hasProperty(sheet, "selectors")) {
+            for (let selector in sheet.selectors) {
+                if (!isValidSelectorContent(sheet.selectors[selector]))
+                    continue;
 
-                        // TODO : solve conflicts
+                if (!output.hasOwnProperty("selectors")) output.selectors = [];
 
-                        sheet.imports.forEach((item) => {
-                            if (typeof item == "string" && item.trim())
-                                output.imports.push(item.trim());
-                        });
-                    }
-                    break;
-                case "selectors":
-                    {
-                        if (!sheet.hasOwnProperty("selectors")) break;
+                const newSelector = {
+                    selector,
+                    content: sheet.selectors[selector],
+                };
 
-                        for (let selector in sheet.selectors) {
-                            if (
-                                !isValidSelectorContent(
-                                    sheet.selectors[selector]
-                                )
-                            )
-                                continue;
-
-                            if (!output.hasOwnProperty("selectors"))
-                                output.selectors = [];
-
-                            const newSelector = {
-                                selector,
-                                content: sheet.selectors[selector],
-                            };
-
-                            function selectorAlreadyExist() {
-                                for (let _selector of output.selectors) {
-                                    if (areEqual(newSelector, _selector)) {
-                                        return true;
-                                    }
-                                }
-
-                                return false;
-                            }
-
-                            if (!selectorAlreadyExist()) {
-                                output.selectors.push(newSelector);
-                            }
+                function selectorAlreadyExist() {
+                    for (let _selector of output.selectors) {
+                        if (areEqual(newSelector, _selector)) {
+                            return true;
                         }
                     }
-                    break;
+
+                    return false;
+                }
+
+                if (!selectorAlreadyExist()) {
+                    output.selectors.push(newSelector);
+                }
             }
         }
     });

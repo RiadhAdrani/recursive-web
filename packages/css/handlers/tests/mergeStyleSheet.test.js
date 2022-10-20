@@ -183,6 +183,12 @@ it("should append imports statements", () => {
     expect(mergeStyleSheets([{ imports: ["Hello World"] }])).toStrictEqual({
         imports: ["Hello World"],
     });
+
+    expect(
+        mergeStyleSheets([{ imports: ["Hello World", "Hello World"] }])
+    ).toStrictEqual({
+        imports: ["Hello World"],
+    });
 });
 
 it.each([[undefined], [null], [""], [0], [[]], [{}], [Symbol.for()], [false]])(
