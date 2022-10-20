@@ -170,7 +170,10 @@ class RecursiveWebRenderer extends RecursiveRenderer {
             ? renderAttributeValue("className", element.attributes.className)
             : "";
 
-        element.attributes.className += " " + styleClassName;
+        const attrClassName =
+            element.attributes.className + " " + styleClassName;
+
+        element.attributes.className = attrClassName.trim();
     }
 
     /**

@@ -32,3 +32,31 @@ it.each([
         expect(document.body.children.item(0).className).toBe(expected);
     }
 );
+
+it.each([
+    ["", "", false, ""],
+    ["test", "", false, "test"],
+    ["", "test", false, "test"],
+    ["test", "", true, "test -_u"],
+    ["", "", true, "-_u"],
+    ["test", "test2", true, "test test2-_u"],
+    ["", "test2", true, "test2-_u"],
+])(
+    "should handle style.className with attribute.className correctly : '%s' | '%s' | '%s' => '%s'",
+    (attrClass, styleClass, scoped, expected) => {
+        const renderer = app((testApp) =>
+            testApp.createElement("div", {
+                className: attrClass,
+                style: {
+                    normal: {},
+                    className: styleClass,
+                    scoped,
+                },
+            })
+        ).renderer;
+
+        renderer.render();
+
+        expect(document.body.children.item(0).className).toBe(expected);
+    }
+);
