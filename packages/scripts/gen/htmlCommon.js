@@ -12,6 +12,7 @@ const {
     createFileContent,
     write,
     writeIntoFile,
+    useImport,
 } = require("../utility");
 
 module.exports = () => {
@@ -28,10 +29,9 @@ module.exports = () => {
         },
     });
 
-    const _HTML_COMMON_D_TS = createFileContent(
-        CommonHTMLAttributesInterface,
-        []
-    );
+    const _HTML_COMMON_D_TS = createFileContent(CommonHTMLAttributesInterface, [
+        useImport(["AttributeDeclarationOf"], "./attributes"),
+    ]);
 
     writeIntoFile(write(_HTML_COMMON_D_TS), "../../../types/htmlCommon.d.ts");
 };

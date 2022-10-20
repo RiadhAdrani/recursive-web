@@ -1,6 +1,6 @@
 const { property } = require("../../templates");
 
-const COLOR = "Color";
+const COLOR = "CssColor";
 
 const globalValues = [
     "inherit",

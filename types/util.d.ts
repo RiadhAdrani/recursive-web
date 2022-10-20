@@ -9,6 +9,8 @@ export type ObjectOf<T> = { [key: string]: T };
 
 export type StringWithAutoComplete<T> = T | (string & Record<never, never>);
 
+export type TypeOrArray<T> = T | Array<T>;
+
 export interface ElementChildren {
     children: BaseElement | string | Array<BaseElement | string>;
 }

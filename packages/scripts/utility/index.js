@@ -157,7 +157,7 @@ function transformFunction({
 function transformAttributeTemplate(params) {
     return transformKey({
         key: params.key,
-        value: makeType(params.template.values),
+        value: `AttributeDeclarationOf<${makeType(params.template.values)}>`,
         docs: params.template.docs,
         decorators: params.template.decorators,
         links: params.template.links,

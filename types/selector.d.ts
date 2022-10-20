@@ -276,7 +276,7 @@ export interface Selector {
      * The background-color CSS property sets the background color of an element.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/background-color}
      */
-    backgroundColor: CssPropertyDeclarationOf<Color>;
+    backgroundColor: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## backgroundImage
      * The background-image CSS property sets one or more background images on an element.
@@ -357,7 +357,7 @@ export interface Selector {
      * The border-block-color CSS property defines the color of the logical block borders of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the border-top-color and border-bottom-color, or border-right-color and border-left-color property depending on the values defined for writing-mode, direction, and text-orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-block-color}
      */
-    borderBlockColor: CssPropertyDeclarationOf<Color>;
+    borderBlockColor: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## borderBlockStyle
      * The border-block-style CSS property defines the style of the logical block borders of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the border-top-style and border-bottom-style, or border-left-style and border-right-style properties depending on the values defined for writing-mode, direction, and text-orientation.
@@ -381,7 +381,7 @@ export interface Selector {
      * The border-block-end-color CSS property defines the color of the logical block-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the border-top-color, border-right-color, border-bottom-color, or border-left-color property depending on the values defined for writing-mode, direction, and text-orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-block-end-color}
      */
-    borderBlockEndColor: CssPropertyDeclarationOf<Color>;
+    borderBlockEndColor: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## borderBlockEndStyle
      * The border-block-end-style CSS property defines the style of the logical block-end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the border-top-style, border-right-style, border-bottom-style, or border-left-style property depending on the values defined for writing-mode, direction, and text-orientation.
@@ -407,7 +407,7 @@ export interface Selector {
      * The border-block-start-color CSS property defines the color of the logical block-start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the border-top-color, border-right-color, border-bottom-color, or border-left-color property depending on the values defined for writing-mode, direction, and text-orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-block-start-color}
      */
-    borderBlockStartColor: CssPropertyDeclarationOf<Color>;
+    borderBlockStartColor: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## borderBlockStartStyle
      * The border-block-start-style CSS property defines the style of the logical block start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the border-top-style, border-right-style, border-bottom-style, or border-left-style property depending on the values defined for writing-mode, direction, and text-orientation.
@@ -439,7 +439,7 @@ export interface Selector {
      * The border-bottom-color CSS property sets the color of an element's bottom border. It can also be set with the shorthand CSS properties border-color or border-bottom.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-color}
      */
-    borderBottomColor: CssPropertyDeclarationOf<Color>;
+    borderBottomColor: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## borderBottomLeftRadius
      * The border-bottom-left-radius CSS property rounds the bottom-left corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
@@ -486,7 +486,7 @@ export interface Selector {
      * The border-color shorthand CSS property sets the color of an element's border.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-color}
      */
-    borderColor: CssPropertyDeclarationOf<Color>;
+    borderColor: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## borderEndEndRadius
      * The border-end-end-radius CSS property defines a logical border radius on an element, which maps to a physical border radius that depends on the element's writing-mode, direction, and text-orientation. This is useful when building styles to work regardless of the text orientation and writing mode.
@@ -552,13 +552,13 @@ export interface Selector {
      * The border-inline CSS property is a shorthand property for setting the individual logical inline border property values in a single place in the style sheet.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-inline}
      */
-    borderInline: CssPropertyDeclarationOf<Color>;
+    borderInline: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## borderInlineColor
      * The border-inline-color CSS property defines the color of the logical inline borders of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the border-top-color and border-bottom-color, or border-right-color and border-left-color property depending on the values defined for writing-mode, direction, and text-orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-inline-color}
      */
-    borderInlineColor: CssPropertyDeclarationOf<Color>;
+    borderInlineColor: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## borderInlineStyle
      * The border-inline-style CSS property defines the style of the logical inline borders of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the border-top-style and border-bottom-style, or border-left-style and border-right-style properties depending on the values defined for writing-mode, direction, and text-orientation.
@@ -582,7 +582,7 @@ export interface Selector {
      * The border-inline-end-color CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the border-top-color, border-right-color, border-bottom-color, or border-left-color property depending on the values defined for writing-mode, direction, and text-orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-inline-end-color}
      */
-    borderInlineEndColor: CssPropertyDeclarationOf<Color>;
+    borderInlineEndColor: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## borderInlineEndStyle
      * The border-inline-end-style CSS property defines the style of the logical inline end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the border-top-style, border-right-style, border-bottom-style, or border-left-style property depending on the values defined for writing-mode, direction, and text-orientation.
@@ -608,7 +608,7 @@ export interface Selector {
      * The border-inline-start-color CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the border-top-color, border-right-color, border-bottom-color, or border-left-color property depending on the values defined for writing-mode, direction, and text-orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-inline-start-color}
      */
-    borderInlineStartColor: CssPropertyDeclarationOf<Color>;
+    borderInlineStartColor: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## borderInlineStartStyle
      * The border-inline-start-style CSS property defines the style of the logical inline start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the border-top-style, border-right-style, border-bottom-style, or border-left-style property depending on the values defined for writing-mode, direction, and text-orientation.
@@ -634,7 +634,7 @@ export interface Selector {
      * The border-left-color CSS property sets the color of an element's left border. It can also be set with the shorthand CSS properties border-color or border-left.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-left-color}
      */
-    borderLeftColor: CssPropertyDeclarationOf<Color>;
+    borderLeftColor: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## borderLeftStyle
      * The border-left-style CSS property sets the line style of an element's left border.
@@ -675,7 +675,7 @@ export interface Selector {
      * The border-right-color CSS property sets the color of an element's right border. It can also be set with the shorthand CSS properties border-color or border-right.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-right-color}
      */
-    borderRightColor: CssPropertyDeclarationOf<Color>;
+    borderRightColor: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## borderRightStyle
      * The border-right-style CSS property sets the line style of an element's right border.
@@ -733,7 +733,7 @@ export interface Selector {
      * The border-top-color CSS property sets the color of an element's top border. It can also be set with the shorthand CSS properties border-color or border-top.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-color}
      */
-    borderTopColor: CssPropertyDeclarationOf<Color>;
+    borderTopColor: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## borderTopLeftRadius
      * The border-top-left-radius CSS property rounds the top-left corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
@@ -905,7 +905,7 @@ export interface Selector {
      * The color CSS property sets the foreground color value of an element's text and text decorations, and sets the currentcolor value. currentcolor may be used as an indirect value on other properties and is the default for other color properties, such as border-color.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/color}
      */
-    color: CssPropertyDeclarationOf<Color>;
+    color: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## colorAdjust
      * The print-color-adjust CSS property sets what, if anything, the user agent may do to optimize the appearance of the element on the output device. By default, the browser is allowed to make any adjustments to the element's appearance it determines to be necessary and prudent given the type and capabilities of the output device.
@@ -943,7 +943,7 @@ export interface Selector {
      * The column-rule-color CSS property sets the color of the line drawn between columns in a multi-column layout.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/column-rule-color}
      */
-    columnRuleColor: CssPropertyDeclarationOf<Color>;
+    columnRuleColor: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## columnRuleStyle
      * The column-rule-style CSS property sets the style of the line drawn between columns in a multi-column layout.
@@ -2039,7 +2039,7 @@ export interface Selector {
      * The outline-color CSS property sets the color of an element's outline.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/outline-color}
      */
-    outlineColor: CssPropertyDeclarationOf<Color>;
+    outlineColor: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## outlineOffset
      * The outline-offset CSS property sets the amount of space between an outline and the edge or border of an element.
@@ -2557,7 +2557,7 @@ export interface Selector {
      * The scrollbar-color CSS property sets the color of the scrollbar track and thumb.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-color}
      */
-    scrollbarColor: CssPropertyDeclarationOf<Color>;
+    scrollbarColor: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## scrollbarGutter
      * The scrollbar-gutter CSS property allows authors to reserve space for the scrollbar, preventing unwanted layout changes as the content grows while also avoiding unnecessary visuals when scrolling isn't needed.
@@ -2642,7 +2642,7 @@ export interface Selector {
      * The text-decoration-color CSS property sets the color of decorations added to text by text-decoration-line.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color}
      */
-    textDecorationColor: CssPropertyDeclarationOf<Color>;
+    textDecorationColor: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## textDecorationLine
      * The text-decoration-line CSS property sets the kind of decoration that is used on text in an element, such as an underline or overline.
@@ -2697,7 +2697,7 @@ export interface Selector {
      * The text-emphasis-color CSS property sets the color of emphasis marks. This value can also be set using the text-emphasis shorthand.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-color}
      */
-    textEmphasisColor: CssPropertyDeclarationOf<Color>;
+    textEmphasisColor: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## textEmphasisPosition
      */

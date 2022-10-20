@@ -1,4 +1,4 @@
-import { ObjectOf, StringWithAutoComplete } from "./util";
+import { ObjectOf, StringWithAutoComplete, TypeOrArray } from "./util";
 import { FontFace } from "./fontFace";
 import { Selector, SelectorTypes } from "./selector";
 
@@ -8,9 +8,9 @@ export type MediaQuery = { condition: string } & ObjectOf<Selector>;
 
 export type Selectors = ObjectOf<Selector>;
 
-export type CssPropertyDeclarationOf<T> =
-    | StringWithAutoComplete<T>
-    | Array<StringWithAutoComplete<T>>;
+export type CssPropertyDeclarationOf<T> = TypeOrArray<
+    StringWithAutoComplete<T>
+>;
 
 export type ComponentStyleSheet = {
     /**

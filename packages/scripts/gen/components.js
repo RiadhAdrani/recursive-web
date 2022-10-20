@@ -106,8 +106,9 @@ module.exports = () => {
     const tsCommonImports = [
         useImport(["BaseElement"], "@riadh-adrani/recursive/lib"),
         useImport(["CommonAttributes", "ElementChildren"], "../lib"),
-        useImport(["Events"], "../types/events"),
-        useImport([CssColor], "../types/style"),
+        useImport(["Events"], "../lib"),
+        useImport([CssColor], "../lib"),
+        useImport(["AttributeDeclarationOf"], "../lib"),
     ];
 
     const _HTML_COMPONENTS_JS = createFileContent(HtmlComponents, [
