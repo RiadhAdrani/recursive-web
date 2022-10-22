@@ -20,4 +20,13 @@ const getElement = (selector) => {
     return document.querySelector(`body ${selector || ""}`);
 };
 
-module.exports = { createApp, cleanDOM, getElement };
+/**
+ *
+ * @param {Element} element
+ * @param {Event} event
+ */
+const executeEvent = (element, event) => {
+    element.dispatchEvent(event);
+};
+
+module.exports = { createApp, cleanDOM, getElement, executeEvent };
