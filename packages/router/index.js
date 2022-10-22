@@ -1,3 +1,4 @@
+const { isBlank } = require("@riadh-adrani/utility-js");
 const { RecursiveRouter } = require("../../use");
 
 class RecursiveWebRouter extends RecursiveRouter {
@@ -44,7 +45,7 @@ class RecursiveWebRouter extends RecursiveRouter {
 
         const maybeBase = pathname.substring(1, this.base.length + 1);
 
-        if (maybeBase === this.base) {
+        if (!isBlank(this.base) && maybeBase === this.base) {
             return pathname.substring(this.base.length + 1);
         }
 

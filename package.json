@@ -1,6 +1,6 @@
 {
     "name": "@riadh-adrani/recursive-web",
-    "version": "0.7.52",
+    "version": "0.7.53",
     "description": "Recursive Web is the web implementation of the Recursive Framework.",
     "license": "MIT",
     "main": "index.js",
@@ -32,8 +32,8 @@
         "framework"
     ],
     "dependencies": {
-        "@riadh-adrani/recursive": "^0.7.52",
-        "@riadh-adrani/utility-js": "^0.11.1"
+        "@riadh-adrani/recursive": "^0.7.53",
+        "@riadh-adrani/utility-js": "^0.12.0"
     },
     "devDependencies": {
         "jest": "^28.1.3",
