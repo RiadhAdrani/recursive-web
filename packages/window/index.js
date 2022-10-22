@@ -39,7 +39,7 @@ function useRecursiveWindow(app) {
     registerEvent("keydown", WINDOW_ON_KEY_DOWN, false);
     registerEvent("scroll", WINDOW_ON_SCROLL, false);
     registerEvent("beforeunload", WINDOW_ON_BEFORE_UNLOAD, false);
-    registerEvent("drop", WINDOW_ON_DROP);
+    // registerEvent("drop", WINDOW_ON_DROP);
 }
 
 module.exports = { handler, useRecursiveWindow };
