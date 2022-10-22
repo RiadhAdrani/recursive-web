@@ -40,9 +40,15 @@ class RecursiveWebRouter extends RecursiveRouter {
     }
 
     useRouterGetRoute() {
-        return this.base
-            ? window.location.pathname.replace("/" + this.base, "")
-            : window.location.pathname;
+        const pathname = window.location.pathname;
+
+        const maybeBase = pathname.substring(1, this.base.length + 1);
+
+        if (maybeBase === this.base) {
+            return pathname.substring(this.base.length + 1);
+        }
+
+        return pathname;
     }
 
     useRouterGetLocationPath() {

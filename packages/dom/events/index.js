@@ -6,6 +6,7 @@ const {
     WINDOW_ON_CONTEXT_MENU,
     WINDOW_ON_SCROLL,
     WINDOW_ON_BEFORE_UNLOAD,
+    WINDOW_ON_DROP,
 } = require("../../constants");
 const { event, EventTypes } = require("../../templates");
 const { handler } = require("../../window");
@@ -1051,6 +1052,14 @@ module.exports = {
         type: "BeforeUnloadEvent",
         docs: [
             "The `onBeforeUnloadGlobal` event is fired when the user attempt to leave the page.",
+        ],
+        decorators: ["recursive-event"],
+    }),
+    [WINDOW_ON_DROP]: handler({
+        store: WINDOW_ON_DROP.toLowerCase(),
+        type: EventTypes.DragEvent,
+        docs: [
+            "The `onDropGlobal` event is fired when the user drop a text or an element within the window view.",
         ],
         decorators: ["recursive-event"],
     }),

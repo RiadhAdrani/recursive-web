@@ -602,4 +602,10 @@ export interface Events<E = HTMLElement> {
      * @recursive-event
      */
     onBeforeUnloadGlobal: EventDeclaration<BeforeUnloadEvent, E>;
+    /**
+     * ## onDropGlobal
+     * The `onDropGlobal` event is fired when the user drop a text or an element within the window view.
+     * @recursive-event
+     */
+    onDropGlobal: EventDeclaration<DragEvent, E>;
 }

@@ -22,6 +22,7 @@ const WINDOW_ON_KEY_UP = "onKeyUpGlobal";
 const WINDOW_ON_KEY_DOWN = "onKeyDownGlobal";
 const WINDOW_ON_SCROLL = "onScrollGlobal";
 const WINDOW_ON_BEFORE_UNLOAD = "onBeforeUnloadGlobal";
+const WINDOW_ON_DROP = "onDropGlobal";
 
 module.exports = {
     HTML_NS,
@@ -48,4 +49,5 @@ module.exports = {
     WINDOW_ON_RESIZE,
     WINDOW_ON_SCROLL,
     WINDOW_ON_KEY_UP,
+    WINDOW_ON_DROP,
 };
