@@ -9,6 +9,9 @@ const {
     WINDOW_ON_KEY_DOWN,
     WINDOW_ON_SCROLL,
     WINDOW_ON_BEFORE_UNLOAD,
+    WINDOW_ON_MOUSE_DOWN,
+    WINDOW_ON_MOUSE_MOVE,
+    WINDOW_ON_MOUSE_UP,
 } = require("../constants/index");
 
 /**
@@ -47,7 +50,9 @@ function useRecursiveWindow(currentAppInstance) {
     registerEvent("keydown", WINDOW_ON_KEY_DOWN, false);
     registerEvent("scroll", WINDOW_ON_SCROLL, false);
     registerEvent("beforeunload", WINDOW_ON_BEFORE_UNLOAD, false);
-    // registerEvent("drop", WINDOW_ON_DROP);
+    registerEvent("mouseup", WINDOW_ON_MOUSE_UP);
+    registerEvent("mousedown", WINDOW_ON_MOUSE_DOWN);
+    registerEvent("mousemove", WINDOW_ON_MOUSE_MOVE);
 }
 
 /**

@@ -603,4 +603,22 @@ export interface Events<E = HTMLElement> {
      * @recursive-event
      */
     onBeforeUnloadGlobal: EventDeclaration<BeforeUnloadEvent, E>;
+    /**
+     * ## onMouseUpGlobal
+     * The `onMouseUpGlobal` event is fired when the user release the pointing device.
+     * @recursive-event
+     */
+    onMouseUpGlobal: EventDeclaration<MouseEvent, E>;
+    /**
+     * ## onMouseDownGlobal
+     * The `onMouseDownGlobal` event is fired when the user press the pointing device's button.
+     * @recursive-event
+     */
+    onMouseDownGlobal: EventDeclaration<MouseEvent, E>;
+    /**
+     * ## onMouseMoveGlobal
+     * The `onMouseMoveGlobal` event is fired when the user moves the pointing device on the screen.
+     * @recursive-event
+     */
+    onMouseMoveGlobal: EventDeclaration<MouseEvent, E>;
 }

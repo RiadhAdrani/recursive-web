@@ -6,9 +6,11 @@ const {
     WINDOW_ON_CONTEXT_MENU,
     WINDOW_ON_SCROLL,
     WINDOW_ON_BEFORE_UNLOAD,
-    WINDOW_ON_DROP,
+    WINDOW_ON_MOUSE_UP,
+    WINDOW_ON_MOUSE_DOWN,
+    WINDOW_ON_MOUSE_MOVE,
 } = require("../../constants");
-const { event } = require("../../templates");
+const { event, EventTypes } = require("../../templates");
 const { handler } = require("../../window");
 
 /**
@@ -1055,12 +1057,28 @@ module.exports = {
         ],
         decorators: ["recursive-event"],
     }),
-    // [WINDOW_ON_DROP]: handler({
-    //     store: WINDOW_ON_DROP.toLowerCase(),
-    //     type: EventTypes.DragEvent,
-    //     docs: [
-    //         "The `onDropGlobal` event is fired when the user drop a text or an element within the window view.",
-    //     ],
-    //     decorators: ["recursive-event"],
-    // }),
+    [WINDOW_ON_MOUSE_UP]: handler({
+        store: WINDOW_ON_MOUSE_UP.toLowerCase(),
+        type: EventTypes.MouseEvent,
+        docs: [
+            "The `onMouseUpGlobal` event is fired when the user release the pointing device.",
+        ],
+        decorators: ["recursive-event"],
+    }),
+    [WINDOW_ON_MOUSE_DOWN]: handler({
+        store: WINDOW_ON_MOUSE_DOWN.toLowerCase(),
+        type: EventTypes.MouseEvent,
+        docs: [
+            "The `onMouseDownGlobal` event is fired when the user press the pointing device's button.",
+        ],
+        decorators: ["recursive-event"],
+    }),
+    [WINDOW_ON_MOUSE_MOVE]: handler({
+        store: WINDOW_ON_MOUSE_MOVE.toLowerCase(),
+        type: EventTypes.MouseEvent,
+        docs: [
+            "The `onMouseMoveGlobal` event is fired when the user moves the pointing device on the screen.",
+        ],
+        decorators: ["recursive-event"],
+    }),
 };

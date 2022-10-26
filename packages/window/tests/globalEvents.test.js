@@ -29,6 +29,15 @@ it("should create stores for global events", () => {
                 onScrollGlobal: () => {
                     count++;
                 },
+                onMouseUpGlobal: () => {
+                    count++;
+                },
+                onMouseDownGlobal: () => {
+                    count++;
+                },
+                onMouseMoveGlobal: () => {
+                    count++;
+                },
                 onBeforeUnload: () => {
                     count++;
                 },
@@ -66,6 +75,15 @@ it("should create stores for global events", () => {
 
     executeEvent(window, new Event("scroll"));
     expect(count).toBe(6);
+
+    executeEvent(window, new Event("mouseup", { bubbles: true }));
+    expect(count).toBe(7);
+
+    executeEvent(window, new Event("mousedown", { bubbles: true }));
+    expect(count).toBe(8);
+
+    executeEvent(window, new Event("mousemove", { bubbles: true }));
+    expect(count).toBe(9);
 
     // window.dispatchEvent(new Event("beforeunload", { bubbles: true }));
     // expect(count).toBe(7);
