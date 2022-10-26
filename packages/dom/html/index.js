@@ -69,6 +69,14 @@ module.exports = {
         els: ["script"],
         docs: ["Executes the script asynchronously."],
     }),
+    as: attribute({
+        name: "as",
+        values: "string",
+        els: ["link"],
+        docs: [
+            `This attribute is only used when rel="preload" or rel="prefetch" has been set on the <link> element. It specifies the type of content being loaded by the <link>, which is necessary for request matching, application of correct content security policy, and setting of correct Accept request header. Furthermore, rel="preload" uses this as a signal for request prioritization. The table below lists the valid values for this attribute and the elements or resources they apply to.`,
+        ],
+    }),
     autoCapitalize: attribute({
         name: "autocapitalize",
         els: true,
@@ -788,13 +796,29 @@ module.exports = {
             "Name of the element. For example used by the server to identify the fields in form submits.",
         ],
     }),
+    nonce: attribute({
+        name: "nonce",
+        values: "string",
+        els: ["script"],
+        docs: [
+            "A cryptographic nonce (number used once) to allow scripts in a script-src Content-Security-Policy. The server must generate a unique nonce value each time it transmits a policy. It is critical to provide a nonce that cannot be guessed as bypassing a resource's policy is otherwise trivial.",
+        ],
+    }),
     noShade: attribute({
         name: "noshade",
-        type: "togge",
+        type: "toggle",
         values: "boolean",
         els: ["hr"],
         docs: [
             "The HTML ``<hr>`` noshade Attribute is the boolean value and used to specify the solid horizontal line instead of shaded lines.",
+        ],
+    }),
+    noModule: attribute({
+        name: "nomodule",
+        values: "string",
+        els: ["script"],
+        docs: [
+            "This Boolean attribute is set to indicate that the script should not be executed in browsers that support ES modules — in effect, this can be used to serve fallback scripts to older browsers that do not support modular JavaScript code.",
         ],
     }),
     noValidate: attribute({

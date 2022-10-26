@@ -1,3 +1,6 @@
-import { RecursiveWebApp, createComponentStyle } from "./packages/app";
-
-export { RecursiveWebApp, createComponentStyle };
+export {
+    RecursiveWebApp,
+    createComponentStyle,
+    mergeComponentStyles,
+} from "./packages/app";
+export { importFile } from "./packages/window";

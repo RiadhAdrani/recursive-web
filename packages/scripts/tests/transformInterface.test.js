@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 const { transformInterface } = require("../utility");
 
 it.each([

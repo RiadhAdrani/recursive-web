@@ -15,6 +15,19 @@ export interface ElementChildren {
     children: BaseElement | string | Array<BaseElement | string>;
 }
 
+export interface ImportScriptParams {
+    async?: boolean;
+    crossOrigin?: string;
+    defer?: boolean;
+    fetchPriority?: "high" | "low" | "auto";
+    integrity?: string;
+    nonce?: string;
+    referrerPolicy?: string;
+    src?: string;
+    type?: string;
+    rel?: string;
+}
+
 export interface CommonAttributes {
     /**
      * Element key among his siblings.

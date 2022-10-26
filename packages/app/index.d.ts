@@ -11,6 +11,15 @@ export function createComponentStyle(
     params: ComponentStyleSheet
 ): ComponentStyleSheet;
 
+/**
+ * merge components style sheets
+ *
+ * @param styleSheets style objects
+ */
+export function mergeComponentStyles(
+    ...styleSheets: Array<ComponentStyleSheet>
+): ComponentStyleSheet;
+
 export interface RecursiveWebAppConstructorParams {
     /**
      * root element in which the app will be injected.

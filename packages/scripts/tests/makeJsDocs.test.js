@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 const { makeJsDocs } = require("../utility");
 
 it.each([

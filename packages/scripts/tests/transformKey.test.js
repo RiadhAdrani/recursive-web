@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 const { transformKey } = require("../utility/index");
 
 it.each([

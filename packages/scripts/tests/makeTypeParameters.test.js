@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 const { makeTypeParameters } = require("../utility");
 
 it.each([

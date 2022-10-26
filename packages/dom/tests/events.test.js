@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 const { isEvent } = require("..");
 
 it.each([

@@ -3,6 +3,7 @@ const RecursiveWebRouter = require("../router");
 const { RecursiveApp } = require("../../use");
 const { useRecursiveWindow } = require("../window");
 const { useRecursiveComponents } = require("../components");
+const { merge, isFalsy } = require("@riadh-adrani/utility-js");
 require("../components/custom-elements");
 
 class RecursiveWebApp extends RecursiveApp {
@@ -60,4 +61,16 @@ function createComponentStyle(params) {
     return { ...params };
 }
 
-module.exports = { RecursiveWebApp, createComponentStyle };
+function mergeComponentStyles(...styleSheets) {
+    return merge(
+        ...styleSheets.filter(
+            (style) => typeof style === "object" && !isFalsy(style)
+        )
+    );
+}
+
+module.exports = {
+    RecursiveWebApp,
+    createComponentStyle,
+    mergeComponentStyles,
+};

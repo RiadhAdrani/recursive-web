@@ -1,6 +1,6 @@
 const onGlobal = require("./events/onGlobal");
 const handler = require("./events/handler");
-const { RecursiveApp } = require("../../use");
+const { RecursiveApp, createElement } = require("../../use");
 const {
     WINDOW_ON_CLICK,
     WINDOW_ON_CONTEXT_MENU,
@@ -11,11 +11,21 @@ const {
     WINDOW_ON_BEFORE_UNLOAD,
     WINDOW_ON_DROP,
 } = require("../constants/index");
+const { RecursiveWebApp } = require("../app");
 
 /**
- * @param {RecursiveApp} app
+ * @type {RecursiveWebApp}
  */
-function useRecursiveWindow(app) {
+let app;
+
+const useApp = () => app;
+
+/**
+ * @param {RecursiveApp} currentAppInstance
+ */
+function useRecursiveWindow(currentAppInstance) {
+    app = currentAppInstance;
+
     const orchestrator = app.orchestrator;
 
     /**
@@ -42,4 +52,16 @@ function useRecursiveWindow(app) {
     // registerEvent("drop", WINDOW_ON_DROP);
 }
 
-module.exports = { handler, useRecursiveWindow };
+/**
+ * @param {import("../../types/util").ImportScriptParams} params
+ */
+const importFile = (type = "script", params) => {
+    const element = createElement(type, {
+        ...params,
+        className: "__import__file__",
+    });
+
+    document.querySelector("head").append(app.renderElement(element));
+};
+
+module.exports = { handler, useRecursiveWindow, useApp, importFile };

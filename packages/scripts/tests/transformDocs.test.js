@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 const { transformDocs } = require("../utility/index");
 
 it.each([
