@@ -8,7 +8,7 @@ const {
     WINDOW_ON_BEFORE_UNLOAD,
     WINDOW_ON_DROP,
 } = require("../../constants");
-const { event, EventTypes } = require("../../templates");
+const { event } = require("../../templates");
 const { handler } = require("../../window");
 
 /**

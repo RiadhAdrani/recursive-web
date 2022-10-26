@@ -4,7 +4,6 @@ const { RecursiveApp } = require("../../use");
 const { useRecursiveWindow } = require("../window");
 const { useRecursiveComponents } = require("../components");
 const { merge, isFalsy } = require("@riadh-adrani/utility-js");
-require("../components/custom-elements");
 
 class RecursiveWebApp extends RecursiveApp {
     /**
@@ -38,6 +37,8 @@ class RecursiveWebApp extends RecursiveApp {
                 }
             },
             onAppInit: (_app) => {
+                require("../components/custom-elements");
+
                 useRecursiveComponents(_app);
                 useRecursiveWindow(_app);
 

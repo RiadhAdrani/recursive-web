@@ -1,5 +1,4 @@
-const { isBlank, wrap } = require("@riadh-adrani/utility-js");
-const { isFalsy } = require("@riadh-adrani/utility-js/");
+const { isBlank, wrap, isFalsy } = require("@riadh-adrani/utility-js");
 const { HTML_NS } = require("../../constants");
 const { isAttribute, ListOfAttributes } = require("../../dom");
 
@@ -312,6 +311,7 @@ function writeIntoFile(text, filePath) {
         "██║   ██║██╔══╝  ██║╚██╗██║██╔══╝  ██╔══██╗██╔══██║   ██║   ██╔══╝  ██║  ██║",
         "╚██████╔╝███████╗██║ ╚████║███████╗██║  ██║██║  ██║   ██║   ███████╗██████╔╝",
         " ╚═════╝ ╚══════╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═════╝",
+        "------------ Do not delete or modify the content of this file -------------",
     ];
 
     const _text = write(transformDocs(art)) + "\n" + text;

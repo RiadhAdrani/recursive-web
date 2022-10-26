@@ -9,12 +9,10 @@ const {
     WINDOW_ON_KEY_DOWN,
     WINDOW_ON_SCROLL,
     WINDOW_ON_BEFORE_UNLOAD,
-    WINDOW_ON_DROP,
 } = require("../constants/index");
-const { RecursiveWebApp } = require("../app");
 
 /**
- * @type {RecursiveWebApp}
+ * @type {import('../app/index').RecursiveWebApp}
  */
 let app;
 
