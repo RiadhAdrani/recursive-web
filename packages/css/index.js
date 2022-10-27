@@ -7,8 +7,20 @@ const renderStyleSheet = require("./render");
  * @returns {HTMLStyleElement} style element.
  */
 function createStyleElement() {
+    let wrapper = document.querySelector("body > .__reciv__style");
+
+    if (!wrapper) {
+        wrapper = document.createElement("style");
+        wrapper.className = "__reciv__style";
+        wrapper.toggleAttribute("data-recursive-style");
+
+        document.body.append(wrapper);
+    }
+
     const temp = document.createElement("style");
-    document.querySelector("head").append(temp);
+
+    wrapper.append(temp);
+
     return temp;
 }
 

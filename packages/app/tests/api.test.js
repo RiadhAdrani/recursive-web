@@ -129,21 +129,21 @@ describe("Recursive Web App", () => {
 
         expect(webApp.getRoute()).toBe("/");
         expect(webApp.getParams()).toStrictEqual({});
-        expect(getElement("").innerHTML).toBe("<div>Home</div>");
+        expect(getElement("> div").outerHTML).toBe("<div>Home</div>");
 
         webApp.goTo("/user#about");
         expect(webApp.getAnchor()).toBe("#about");
         expect(webApp.getRoute()).toBe("/user");
         expect(webApp.getParams()).toStrictEqual({});
-        expect(getElement("").innerHTML).toBe("<div></div>");
+        expect(getElement("> div").outerHTML).toBe("<div></div>");
 
         webApp.goTo("/user/123");
         expect(webApp.getRoute()).toBe("/user/123");
         expect(webApp.getParams()).toStrictEqual({ id: "123" });
-        expect(getElement("").innerHTML).toBe("<div>123</div>");
+        expect(getElement("> div").outerHTML).toBe("<div>123</div>");
 
         webApp.goTo("/not-a-route");
-        expect(getElement("").innerHTML).toBe("<div>404 Not Found</div>");
+        expect(getElement("> div").outerHTML).toBe("<div>404 Not Found</div>");
     });
 
     it("should add and remove states", () => {

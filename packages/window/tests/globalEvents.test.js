@@ -55,6 +55,9 @@ it("should create stores for global events", () => {
     expect(window.onkeydownglobal).toBeTruthy();
     expect(window.onscrollglobal).toBeTruthy();
     expect(window.onbeforeunloadglobal).toBeTruthy();
+    expect(window.onmouseupglobal).toBeTruthy();
+    expect(window.onmousedownglobal).toBeTruthy();
+    expect(window.onmousemoveglobal).toBeTruthy();
 
     const btn = getElement(" #btn");
 
