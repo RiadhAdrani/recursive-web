@@ -1,0 +1,6 @@
+packages/**/*.test.js
+.github
+.vscode
+package-lock.json
+.prettierignore
+.prettierrc.js
