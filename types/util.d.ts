@@ -32,19 +32,19 @@ export interface CommonAttributes {
     /**
      * Element key among his siblings.
      */
-    key: string;
+    key?: string;
     /**
      * Element lifecycle hooks.
      */
-    hooks: Hooks<HTMLElement>;
+    hooks?: Hooks<HTMLElement>;
     /**
      * Renderer flags.
      */
-    flags: Flags;
+    flags?: Flags;
     /**
      * Element style sheet.
      */
-    style: ComponentStyleSheet;
+    style?: ComponentStyleSheet;
     /**
      * Overrides current element type.
      */
@@ -52,27 +52,27 @@ export interface CommonAttributes {
 }
 
 export interface ComputedStyleSheets {
-    vars: ObjectOf<string>;
-    fontFace: Array<ObjectOf<any>>;
-    selectors: Array<{ selector: string; content: Selector }>;
-    mediaQueries: Array<MediaQuery>;
-    animations: Array<Animation>;
-    imports: Array<string>;
+    vars?: ObjectOf<string>;
+    fontFace?: Array<ObjectOf<any>>;
+    selectors?: Array<{ selector: string; content: Selector }>;
+    mediaQueries?: Array<MediaQuery>;
+    animations?: Array<Animation>;
+    imports?: Array<string>;
 }
 
 export type Corners =
     | string
-    | { top: string; bottom: string }
-    | { left: string; right: string }
-    | { topLeftBottomRight: string; topRightBottomLeft: string }
+    | { top?: string; bottom?: string }
+    | { left?: string; right?: string }
+    | { topLeftBottomRight?: string; topRightBottomLeft?: string }
     | {
-          topLeft: string;
-          topRight: string;
-          bottomRight: string;
-          bottomLeft: string;
+          topLeft?: string;
+          topRight?: string;
+          bottomRight?: string;
+          bottomLeft?: string;
       };
 
 export type Edges =
     | string
-    | { vertical: string; horizontal: string }
-    | { top: string; right: string; bottom: string; left: string };
+    | { vertical?: string; horizontal?: string }
+    | { top?: string; right?: string; bottom?: string; left?: string };

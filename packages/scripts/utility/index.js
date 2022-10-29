@@ -37,6 +37,7 @@ function transformDocs(content = []) {
  */
 function transformKey({
     key,
+    isOptional = true,
     value = "string",
     docs = [],
     decorators = [],
@@ -50,7 +51,7 @@ function transformKey({
     const _type = _value.join(" | ");
 
     const __content = makeJsDocs({ title: key, docs, decorators, links });
-    const __key = `${_key}:${_type};`;
+    const __key = `${_key}${isOptional ? "?" : ""}:${_type};`;
 
     return [...__content, __key];
 }

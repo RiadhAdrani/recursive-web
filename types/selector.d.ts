@@ -24,7 +24,7 @@ export interface Selector {
      * * `<progress>`
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/accent-color}
      */
-    accentColor: CssPropertyDeclarationOf<"auto">;
+    accentColor?: CssPropertyDeclarationOf<"auto">;
     /**
      * ## alignContent
      * The CSS align-content property sets the distribution of space between and around content items along a flexbox's cross-axis or a grid's block axis.
@@ -32,7 +32,7 @@ export interface Selector {
      * This property has no effect on single line flex containers (i.e. ones with ``flex-wrap: nowrap``).
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/align-content}
      */
-    alignContent: CssPropertyDeclarationOf<
+    alignContent?: CssPropertyDeclarationOf<
         | "center"
         | "start"
         | "end"
@@ -54,7 +54,7 @@ export interface Selector {
      * The CSS align-items property sets the align-self value on all direct children as a group. In Flexbox, it controls the alignment of items on the Cross Axis. In Grid Layout, it controls the alignment of items on the Block Axis within their grid area.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/align-items}
      */
-    alignItems: CssPropertyDeclarationOf<
+    alignItems?: CssPropertyDeclarationOf<
         | "center"
         | "start"
         | "end"
@@ -75,7 +75,7 @@ export interface Selector {
      * The property doesn't apply to block-level boxes, or to table cells. If a flexbox item's cross-axis margin is auto, then align-self is ignored.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/align-self}
      */
-    alignSelf: CssPropertyDeclarationOf<
+    alignSelf?: CssPropertyDeclarationOf<
         | "center"
         | "start"
         | "end"
@@ -105,12 +105,14 @@ export interface Selector {
      * If there are fewer values than tracks, the last value is used for all remaining tracks. If there are more values than tracks, any additional values are ignored.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/align-tracks}
      */
-    alignTracks: CssPropertyDeclarationOf<"start" | "space-between" | "center">;
+    alignTracks?: CssPropertyDeclarationOf<
+        "start" | "space-between" | "center"
+    >;
     /**
      * ## all
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/all}
      */
-    all: CssPropertyDeclarationOf<string>;
+    all?: CssPropertyDeclarationOf<string>;
     /**
      * ## animation
      * The animation shorthand CSS property applies an animation between styles. It is a shorthand for animation-name, animation-duration, animation-timing-function, animation-delay, animation-iteration-count, animation-direction, animation-fill-mode, and animation-play-state.
@@ -126,25 +128,25 @@ export interface Selector {
      * * animation-timing-function
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/animation}
      */
-    animation: CssPropertyDeclarationOf<string>;
+    animation?: CssPropertyDeclarationOf<string>;
     /**
      * ## animationDelay
      * The animation-delay CSS property specifies the amount of time to wait from applying the animation to an element before beginning to perform the animation. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/animation-delay}
      */
-    animationDelay: CssPropertyDeclarationOf<string>;
+    animationDelay?: CssPropertyDeclarationOf<string>;
     /**
      * ## animationDuration
      * The animation-duration CSS property sets the length of time that an animation takes to complete one cycle.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/animation-duration}
      */
-    animationDuration: CssPropertyDeclarationOf<string>;
+    animationDuration?: CssPropertyDeclarationOf<string>;
     /**
      * ## animationFillMode
      * The animation-fill-mode CSS property sets how a CSS animation applies styles to its target before and after its execution.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/animation-fill-mode}
      */
-    animationFillMode: CssPropertyDeclarationOf<
+    animationFillMode?: CssPropertyDeclarationOf<
         "none" | "forwards" | "backwards" | "both"
     >;
     /**
@@ -152,13 +154,13 @@ export interface Selector {
      * The animation-iteration-count CSS property sets the number of times an animation sequence should be played before stopping.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/animation-iteration-count}
      */
-    animationIterationCount: CssPropertyDeclarationOf<"infinite">;
+    animationIterationCount?: CssPropertyDeclarationOf<"infinite">;
     /**
      * ## animationName
      * The animation-name CSS property specifies the names of one or more @keyframes at-rules describing the animation or animations to apply to the element.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/animation-name}
      */
-    animationName: CssPropertyDeclarationOf<string>;
+    animationName?: CssPropertyDeclarationOf<string>;
     /**
      * ## animationPlayState
      * The animation-play-state CSS property sets whether an animation is running or paused.
@@ -166,13 +168,13 @@ export interface Selector {
      * Resuming a paused animation will start the animation from where it left off at the time it was paused, rather than starting over from the beginning of the animation sequence.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/animation-play-state}
      */
-    animationPlayState: CssPropertyDeclarationOf<"running" | "paused">;
+    animationPlayState?: CssPropertyDeclarationOf<"running" | "paused">;
     /**
      * ## animationTimingFunction
      * The animation-timing-function CSS property sets how an animation progresses through the duration of each cycle.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function}
      */
-    animationTimingFunction: CssPropertyDeclarationOf<
+    animationTimingFunction?: CssPropertyDeclarationOf<
         | "ease"
         | "ease-in"
         | "ease-out"
@@ -189,7 +191,7 @@ export interface Selector {
      * _Note: If you wish to use this property on websites, you should test it very carefully. Although it is supported in most modern browsers, its implementation varies. In older browsers, even the keyword none does not have the same effect on all form elements across different browsers, and some do not support it at all. The differences are smaller in the newest browsers._
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/appearance}
      */
-    appearance: CssPropertyDeclarationOf<
+    appearance?: CssPropertyDeclarationOf<
         | "none"
         | "auto"
         | "menulist-button"
@@ -211,19 +213,19 @@ export interface Selector {
      * The ascent-override CSS descriptor defines the ascent metric for the font. The ascent metric is the height above the baseline that CSS uses to lay out line boxes in an inline formatting context.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/ascent-override}
      */
-    ascentOverride: CssPropertyDeclarationOf<string>;
+    ascentOverride?: CssPropertyDeclarationOf<string>;
     /**
      * ## aspectRatio
      * The aspect-ratio CSS property sets a preferred aspect ratio for the box, which will be used in the calculation of auto sizes and some other layout functions.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio}
      */
-    aspectRatio: CssPropertyDeclarationOf<"auto">;
+    aspectRatio?: CssPropertyDeclarationOf<"auto">;
     /**
      * ## backdropFilter
      * The backdrop-filter CSS property lets you apply graphical effects such as blurring or color shifting to the area behind an element. Because it applies to everything behind the element, to see the effect you must make the element or its background at least partially transparent.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter}
      */
-    backdropFilter: CssPropertyDeclarationOf<"none">;
+    backdropFilter?: CssPropertyDeclarationOf<"none">;
     /**
      * ## backfaceVisibility
      * The backface-visibility CSS property sets whether the back face of an element is visible when turned towards the user.
@@ -231,7 +233,7 @@ export interface Selector {
      * An element's back face is a mirror image of its front face. Though invisible in 2D, the back face can become visible when a transformation causes the element to be rotated in 3D space. (This property has no effect on 2D transforms, which have no perspective.)
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/backface-visibility}
      */
-    backfaceVisibility: CssPropertyDeclarationOf<"hidden" | "visible">;
+    backfaceVisibility?: CssPropertyDeclarationOf<"hidden" | "visible">;
     /**
      * ## background
      * The background shorthand CSS property sets all background style properties at once, such as color, image, origin and size, or repeat method.
@@ -247,13 +249,13 @@ export interface Selector {
      * * background-size
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/background}
      */
-    background: CssPropertyDeclarationOf<string>;
+    background?: CssPropertyDeclarationOf<string>;
     /**
      * ## backgroundAttachment
      * The background-attachment CSS property sets whether a background image's position is fixed within the viewport, or scrolls with its containing block.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/background-attachment}
      */
-    backgroundAttachment: CssPropertyDeclarationOf<
+    backgroundAttachment?: CssPropertyDeclarationOf<
         "scroll" | "fixed" | "local"
     >;
     /**
@@ -261,7 +263,7 @@ export interface Selector {
      * The background-blend-mode CSS property sets how an element's background images should blend with each other and with the element's background color.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/background-blend-mode}
      */
-    backgroundBlendMode: CssPropertyDeclarationOf<string>;
+    backgroundBlendMode?: CssPropertyDeclarationOf<string>;
     /**
      * ## backgroundClip
      * The background-clip CSS property sets whether an element's background extends underneath its border box, padding box, or content box.
@@ -269,7 +271,7 @@ export interface Selector {
      * If the element has no background-image or background-color, this property will only have a visual effect when the border has transparent regions or partially opaque regions (due to border-style or border-image); otherwise, the border masks the difference.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip}
      */
-    backgroundClip: CssPropertyDeclarationOf<
+    backgroundClip?: CssPropertyDeclarationOf<
         "border-box" | "padding-box" | "content-box" | "text"
     >;
     /**
@@ -277,7 +279,7 @@ export interface Selector {
      * The background-color CSS property sets the background color of an element.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/background-color}
      */
-    backgroundColor: CssPropertyDeclarationOf<CssColor>;
+    backgroundColor?: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## backgroundImage
      * The background-image CSS property sets one or more background images on an element.
@@ -289,7 +291,7 @@ export interface Selector {
      * If a specified image cannot be drawn (for example, when the file denoted by the specified URI cannot be loaded), browsers handle it as they would a none value.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/background-image}
      */
-    backgroundImage: CssPropertyDeclarationOf<string>;
+    backgroundImage?: CssPropertyDeclarationOf<string>;
     /**
      * ## backgroundOrigin
      * The background-origin CSS property sets the background's origin: from the border start, inside the border, or inside the padding.
@@ -297,7 +299,7 @@ export interface Selector {
      * Note that background-origin is ignored when background-attachment is fixed.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/background-origin}
      */
-    backgroundOrigin: CssPropertyDeclarationOf<
+    backgroundOrigin?: CssPropertyDeclarationOf<
         "border-box" | "padding-box" | "content-box"
     >;
     /**
@@ -305,7 +307,7 @@ export interface Selector {
      * The background-position CSS property sets the initial position for each background image. The position is relative to the position layer set by background-origin.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/background-position}
      */
-    backgroundPosition: CssPropertyDeclarationOf<
+    backgroundPosition?: CssPropertyDeclarationOf<
         "top" | "bottom" | "left" | "right" | "center"
     >;
     /**
@@ -315,7 +317,7 @@ export interface Selector {
      * The value of this property is overridden by any declaration of the background or background-position shorthand properties applied to the element after it.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/background-position-x}
      */
-    backgroundPositionX: CssPropertyDeclarationOf<"left" | "right" | "center">;
+    backgroundPositionX?: CssPropertyDeclarationOf<"left" | "right" | "center">;
     /**
      * ## backgroundPositionY
      * The background-position-y CSS property sets the initial vertical position for each background image. The position is relative to the position layer set by background-origin.
@@ -323,7 +325,7 @@ export interface Selector {
      * The value of this property is overridden by any declaration of the background or background-position shorthand properties applied to the element after it.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/background-position-y}
      */
-    backgroundPositionY: CssPropertyDeclarationOf<"top" | "center" | "bottom">;
+    backgroundPositionY?: CssPropertyDeclarationOf<"top" | "center" | "bottom">;
     /**
      * ## backgroundRepeat
      * The background-repeat CSS property sets how background images are repeated. A background image can be repeated along the horizontal and vertical axes, or not repeated at all.
@@ -331,13 +333,13 @@ export interface Selector {
      * By default, the repeated images are clipped to the size of the element, but they can be scaled to fit (using round) or evenly distributed from end to end (using space).
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/background-repeat}
      */
-    backgroundRepeat: CssPropertyDeclarationOf<
+    backgroundRepeat?: CssPropertyDeclarationOf<
         "repeat-x" | "repeat-y" | "repeat" | "space" | "round" | "no-repeat"
     >;
     /**
      * ## backgroundSize
      */
-    backgroundSize: CssPropertyDeclarationOf<"cover" | "contain">;
+    backgroundSize?: CssPropertyDeclarationOf<"cover" | "contain">;
     /**
      * ## blockSize
      * The background-size CSS property sets the size of the element's background image. The image can be left to its natural size, stretched, or constrained to fit the available space.
@@ -345,50 +347,50 @@ export interface Selector {
      * Spaces not covered by a background image are filled with the background-color property, and the background color will be visible behind background images that have transparency/translucency.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/background-size}
      */
-    blockSize: CssPropertyDeclarationOf<"max-content" | "min-content">;
+    blockSize?: CssPropertyDeclarationOf<"max-content" | "min-content">;
     /**
      * ## borderBlock
      * The border-block CSS property is a shorthand property for setting the individual logical block border property values in a single place in the style sheet.
      * border-block can be used to set the values for one or more of border-block-width, border-block-style, and border-block-color setting both the start and end in the block dimension at once. The physical borders to which it maps depends on the element's writing mode, directionality, and text orientation. It corresponds to the border-top and border-bottom or border-right, and border-left properties depending on the values defined for writing-mode, direction, and text-orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-block}
      */
-    borderBlock: CssPropertyDeclarationOf<string>;
+    borderBlock?: CssPropertyDeclarationOf<string>;
     /**
      * ## borderBlockColor
      * The border-block-color CSS property defines the color of the logical block borders of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the border-top-color and border-bottom-color, or border-right-color and border-left-color property depending on the values defined for writing-mode, direction, and text-orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-block-color}
      */
-    borderBlockColor: CssPropertyDeclarationOf<CssColor>;
+    borderBlockColor?: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## borderBlockStyle
      * The border-block-style CSS property defines the style of the logical block borders of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the border-top-style and border-bottom-style, or border-left-style and border-right-style properties depending on the values defined for writing-mode, direction, and text-orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-block-style}
      */
-    borderBlockStyle: CssPropertyDeclarationOf<"dashed" | "dotted" | "groove">;
+    borderBlockStyle?: CssPropertyDeclarationOf<"dashed" | "dotted" | "groove">;
     /**
      * ## borderBlockWidth
      * The border-block-width CSS property defines the width of the logical block borders of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the border-top-width and border-bottom-width, or border-left-width, and border-right-width property depending on the values defined for writing-mode, direction, and text-orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-block-width}
      */
-    borderBlockWidth: CssPropertyDeclarationOf<"thick">;
+    borderBlockWidth?: CssPropertyDeclarationOf<"thick">;
     /**
      * ## borderBlockEnd
      * The border-block-end CSS property is a shorthand property for setting the individual logical block-end border property values in a single place in the style sheet.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-block-end}
      */
-    borderBlockEnd: CssPropertyDeclarationOf<string>;
+    borderBlockEnd?: CssPropertyDeclarationOf<string>;
     /**
      * ## borderBlockEndColor
      * The border-block-end-color CSS property defines the color of the logical block-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the border-top-color, border-right-color, border-bottom-color, or border-left-color property depending on the values defined for writing-mode, direction, and text-orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-block-end-color}
      */
-    borderBlockEndColor: CssPropertyDeclarationOf<CssColor>;
+    borderBlockEndColor?: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## borderBlockEndStyle
      * The border-block-end-style CSS property defines the style of the logical block-end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the border-top-style, border-right-style, border-bottom-style, or border-left-style property depending on the values defined for writing-mode, direction, and text-orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-block-end-style}
      */
-    borderBlockEndStyle: CssPropertyDeclarationOf<
+    borderBlockEndStyle?: CssPropertyDeclarationOf<
         "dashed" | "dotted" | "groove"
     >;
     /**
@@ -396,25 +398,25 @@ export interface Selector {
      * The border-block-end-width CSS property defines the width of the logical block-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the border-top-width, border-right-width, border-bottom-width, or border-left-width property depending on the values defined for writing-mode, direction, and text-orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-block-end-width}
      */
-    borderBlockEndWidth: CssPropertyDeclarationOf<"thick">;
+    borderBlockEndWidth?: CssPropertyDeclarationOf<"thick">;
     /**
      * ## borderBlockStart
      * The border-block-start CSS property is a shorthand property for setting the individual logical block-start border property values in a single place in the style sheet.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-block-start}
      */
-    borderBlockStart: CssPropertyDeclarationOf<string>;
+    borderBlockStart?: CssPropertyDeclarationOf<string>;
     /**
      * ## borderBlockStartColor
      * The border-block-start-color CSS property defines the color of the logical block-start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the border-top-color, border-right-color, border-bottom-color, or border-left-color property depending on the values defined for writing-mode, direction, and text-orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-block-start-color}
      */
-    borderBlockStartColor: CssPropertyDeclarationOf<CssColor>;
+    borderBlockStartColor?: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## borderBlockStartStyle
      * The border-block-start-style CSS property defines the style of the logical block start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the border-top-style, border-right-style, border-bottom-style, or border-left-style property depending on the values defined for writing-mode, direction, and text-orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-block-start-style}
      */
-    borderBlockStartStyle: CssPropertyDeclarationOf<
+    borderBlockStartStyle?: CssPropertyDeclarationOf<
         "dashed" | "dotted" | "groove"
     >;
     /**
@@ -422,43 +424,43 @@ export interface Selector {
      * The border-block-start-width CSS property defines the width of the logical block-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the border-top-width, border-right-width, border-bottom-width, or border-left-width property depending on the values defined for writing-mode, direction, and text-orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-block-start-width}
      */
-    borderBlockStartWidth: CssPropertyDeclarationOf<"thick">;
+    borderBlockStartWidth?: CssPropertyDeclarationOf<"thick">;
     /**
      * ## border
      * The border shorthand CSS property sets an element's border. It sets the values of border-width, border-style, and border-color.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border}
      */
-    border: CssPropertyDeclarationOf<string>;
+    border?: CssPropertyDeclarationOf<string>;
     /**
      * ## borderBottom
      * The border-bottom shorthand CSS property sets an element's bottom border. It sets the values of border-bottom-width, border-bottom-style and border-bottom-color.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom}
      */
-    borderBottom: CssPropertyDeclarationOf<string>;
+    borderBottom?: CssPropertyDeclarationOf<string>;
     /**
      * ## borderBottomColor
      * The border-bottom-color CSS property sets the color of an element's bottom border. It can also be set with the shorthand CSS properties border-color or border-bottom.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-color}
      */
-    borderBottomColor: CssPropertyDeclarationOf<CssColor>;
+    borderBottomColor?: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## borderBottomLeftRadius
      * The border-bottom-left-radius CSS property rounds the bottom-left corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-left-radius}
      */
-    borderBottomLeftRadius: CssPropertyDeclarationOf<string>;
+    borderBottomLeftRadius?: CssPropertyDeclarationOf<string>;
     /**
      * ## borderBottomRightRadius
      * The border-bottom-right-radius CSS property rounds the bottom-right corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-right-radius}
      */
-    borderBottomRightRadius: CssPropertyDeclarationOf<string>;
+    borderBottomRightRadius?: CssPropertyDeclarationOf<string>;
     /**
      * ## borderBottomStyle
      * The border-bottom-style CSS property sets the line style of an element's bottom border.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-style}
      */
-    borderBottomStyle: CssPropertyDeclarationOf<
+    borderBottomStyle?: CssPropertyDeclarationOf<
         | "none"
         | "hidden"
         | "dotted"
@@ -475,59 +477,59 @@ export interface Selector {
      * The border-bottom-width CSS property sets the width of the bottom border of an element.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-width}
      */
-    borderBottomWidth: CssPropertyDeclarationOf<"thin" | "medium" | "thick">;
+    borderBottomWidth?: CssPropertyDeclarationOf<"thin" | "medium" | "thick">;
     /**
      * ## borderCollapse
      * The border-collapse CSS property sets whether cells inside a <table> have shared or separate borders.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-collapse}
      */
-    borderCollapse: CssPropertyDeclarationOf<"collapse" | "seperate">;
+    borderCollapse?: CssPropertyDeclarationOf<"collapse" | "seperate">;
     /**
      * ## borderColor
      * The border-color shorthand CSS property sets the color of an element's border.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-color}
      */
-    borderColor: CssPropertyDeclarationOf<CssColor>;
+    borderColor?: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## borderEndEndRadius
      * The border-end-end-radius CSS property defines a logical border radius on an element, which maps to a physical border radius that depends on the element's writing-mode, direction, and text-orientation. This is useful when building styles to work regardless of the text orientation and writing mode.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-end-end-radius}
      */
-    borderEndEndRadius: CssPropertyDeclarationOf<string>;
+    borderEndEndRadius?: CssPropertyDeclarationOf<string>;
     /**
      * ## borderEndStartRadius
      * The border-end-start-radius CSS property defines a logical border radius on an element, which maps to a physical border radius depending on the element's writing-mode, direction, and text-orientation. This is useful when building styles to work regardless of the text orientation and writing mode.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-end-start-radius}
      */
-    borderEndStartRadius: CssPropertyDeclarationOf<string>;
+    borderEndStartRadius?: CssPropertyDeclarationOf<string>;
     /**
      * ## borderStartEndRadius
      * The border-start-end-radius CSS property defines a logical border radius on an element, which maps to a physical border radius depending on the element's writing-mode, direction, and text-orientation. This is useful when building styles to work regardless of the text orientation and writing mode.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-start-end-radius}
      */
-    borderStartEndRadius: CssPropertyDeclarationOf<string>;
+    borderStartEndRadius?: CssPropertyDeclarationOf<string>;
     /**
      * ## borderStartStartRadius
      * The border-start-start-radius CSS property defines a logical border radius on an element, which maps to a physical border radius that depends on the element's writing-mode, direction, and text-orientation. This is useful when building styles to work regardless of the text orientation and writing mode.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-start-start-radius}
      */
-    borderStartStartRadius: CssPropertyDeclarationOf<string>;
+    borderStartStartRadius?: CssPropertyDeclarationOf<string>;
     /**
      * ## borderImage
      * The border-image CSS property draws an image around a given element. It replaces the element's regular border.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-image}
      */
-    borderImage: CssPropertyDeclarationOf<string>;
+    borderImage?: CssPropertyDeclarationOf<string>;
     /**
      * ## borderImageOutset
      */
-    borderImageOutset: CssPropertyDeclarationOf<string>;
+    borderImageOutset?: CssPropertyDeclarationOf<string>;
     /**
      * ## borderImageRepeat
      * The border-image-repeat CSS property defines how the edge regions of a source image are adjusted to fit the dimensions of an element's border image.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-repeat}
      */
-    borderImageRepeat: CssPropertyDeclarationOf<
+    borderImageRepeat?: CssPropertyDeclarationOf<
         "stretch" | "repeat" | "round" | "space"
     >;
     /**
@@ -535,61 +537,63 @@ export interface Selector {
      * The border-image-slice CSS property divides the image specified by border-image-source into regions. These regions form the components of an element's border image.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-slice}
      */
-    borderImageSlice: CssPropertyDeclarationOf<"fill">;
+    borderImageSlice?: CssPropertyDeclarationOf<"fill">;
     /**
      * ## borderImageSource
      * The border-image-source CSS property sets the source image used to create an element's border image.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-source}
      */
-    borderImageSource: CssPropertyDeclarationOf<string>;
+    borderImageSource?: CssPropertyDeclarationOf<string>;
     /**
      * ## borderImageWidth
      * The border-image-width CSS property sets the width of an element's border image.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-width}
      */
-    borderImageWidth: CssPropertyDeclarationOf<string>;
+    borderImageWidth?: CssPropertyDeclarationOf<string>;
     /**
      * ## borderInline
      * The border-inline CSS property is a shorthand property for setting the individual logical inline border property values in a single place in the style sheet.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-inline}
      */
-    borderInline: CssPropertyDeclarationOf<CssColor>;
+    borderInline?: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## borderInlineColor
      * The border-inline-color CSS property defines the color of the logical inline borders of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the border-top-color and border-bottom-color, or border-right-color and border-left-color property depending on the values defined for writing-mode, direction, and text-orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-inline-color}
      */
-    borderInlineColor: CssPropertyDeclarationOf<CssColor>;
+    borderInlineColor?: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## borderInlineStyle
      * The border-inline-style CSS property defines the style of the logical inline borders of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the border-top-style and border-bottom-style, or border-left-style and border-right-style properties depending on the values defined for writing-mode, direction, and text-orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-inline-style}
      */
-    borderInlineStyle: CssPropertyDeclarationOf<"dashed" | "dotted" | "groove">;
+    borderInlineStyle?: CssPropertyDeclarationOf<
+        "dashed" | "dotted" | "groove"
+    >;
     /**
      * ## borderInlineWidth
      * The border-inline-width CSS property defines the width of the logical inline borders of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the border-top-width and border-bottom-width, or border-left-width, and border-right-width property depending on the values defined for writing-mode, direction, and text-orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-inline-width}
      */
-    borderInlineWidth: CssPropertyDeclarationOf<string>;
+    borderInlineWidth?: CssPropertyDeclarationOf<string>;
     /**
      * ## borderInlineEnd
      * The border-inline-end CSS property is a shorthand property for setting the individual logical inline-end border property values in a single place in the style sheet.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-inline-end}
      */
-    borderInlineEnd: CssPropertyDeclarationOf<string>;
+    borderInlineEnd?: CssPropertyDeclarationOf<string>;
     /**
      * ## borderInlineEndColor
      * The border-inline-end-color CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the border-top-color, border-right-color, border-bottom-color, or border-left-color property depending on the values defined for writing-mode, direction, and text-orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-inline-end-color}
      */
-    borderInlineEndColor: CssPropertyDeclarationOf<CssColor>;
+    borderInlineEndColor?: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## borderInlineEndStyle
      * The border-inline-end-style CSS property defines the style of the logical inline end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the border-top-style, border-right-style, border-bottom-style, or border-left-style property depending on the values defined for writing-mode, direction, and text-orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-inline-end-style}
      */
-    borderInlineEndStyle: CssPropertyDeclarationOf<
+    borderInlineEndStyle?: CssPropertyDeclarationOf<
         "dashed" | "dotted" | "groove"
     >;
     /**
@@ -597,25 +601,25 @@ export interface Selector {
      * The border-inline-end-width CSS property defines the width of the logical inline-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the border-top-width, border-right-width, border-bottom-width, or border-left-width property depending on the values defined for writing-mode, direction, and text-orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-inline-end-width}
      */
-    borderInlineEndWidth: CssPropertyDeclarationOf<string>;
+    borderInlineEndWidth?: CssPropertyDeclarationOf<string>;
     /**
      * ## borderInlineStart
      * The border-inline-start CSS property is a shorthand property for setting the individual logical inline-start border property values in a single place in the style sheet.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-inline-start}
      */
-    borderInlineStart: CssPropertyDeclarationOf<string>;
+    borderInlineStart?: CssPropertyDeclarationOf<string>;
     /**
      * ## borderInlineStartColor
      * The border-inline-start-color CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the border-top-color, border-right-color, border-bottom-color, or border-left-color property depending on the values defined for writing-mode, direction, and text-orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-inline-start-color}
      */
-    borderInlineStartColor: CssPropertyDeclarationOf<CssColor>;
+    borderInlineStartColor?: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## borderInlineStartStyle
      * The border-inline-start-style CSS property defines the style of the logical inline start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the border-top-style, border-right-style, border-bottom-style, or border-left-style property depending on the values defined for writing-mode, direction, and text-orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-inline-start-style}
      */
-    borderInlineStartStyle: CssPropertyDeclarationOf<
+    borderInlineStartStyle?: CssPropertyDeclarationOf<
         "dashed" | "dotted" | "groove"
     >;
     /**
@@ -623,25 +627,25 @@ export interface Selector {
      * The border-inline-start-width CSS property defines the width of the logical inline-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the border-top-width, border-right-width, border-bottom-width, or border-left-width property depending on the values defined for writing-mode, direction, and text-orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-inline-start-width}
      */
-    borderInlineStartWidth: CssPropertyDeclarationOf<string>;
+    borderInlineStartWidth?: CssPropertyDeclarationOf<string>;
     /**
      * ## borderLeft
      * The border-left shorthand CSS property sets all the properties of an element's left border.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-left}
      */
-    borderLeft: CssPropertyDeclarationOf<string>;
+    borderLeft?: CssPropertyDeclarationOf<string>;
     /**
      * ## borderLeftColor
      * The border-left-color CSS property sets the color of an element's left border. It can also be set with the shorthand CSS properties border-color or border-left.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-left-color}
      */
-    borderLeftColor: CssPropertyDeclarationOf<CssColor>;
+    borderLeftColor?: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## borderLeftStyle
      * The border-left-style CSS property sets the line style of an element's left border.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-left-style}
      */
-    borderLeftStyle: CssPropertyDeclarationOf<
+    borderLeftStyle?: CssPropertyDeclarationOf<
         | "none"
         | "hidden"
         | "dotted"
@@ -658,31 +662,31 @@ export interface Selector {
      * The border-left-width CSS property sets the width of the left border of an element.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-left-width}
      */
-    borderLeftWidth: CssPropertyDeclarationOf<string>;
+    borderLeftWidth?: CssPropertyDeclarationOf<string>;
     /**
      * ## borderRadius
      * The border-radius CSS property rounds the corners of an element's outer border edge. You can set a single radius to make circular corners, or two radii to make elliptical corners.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius}
      */
-    borderRadius: CssPropertyDeclarationOf<string>;
+    borderRadius?: CssPropertyDeclarationOf<string>;
     /**
      * ## borderRight
      * The border-right shorthand CSS property sets all the properties of an element's right border.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-right}
      */
-    borderRight: CssPropertyDeclarationOf<string>;
+    borderRight?: CssPropertyDeclarationOf<string>;
     /**
      * ## borderRightColor
      * The border-right-color CSS property sets the color of an element's right border. It can also be set with the shorthand CSS properties border-color or border-right.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-right-color}
      */
-    borderRightColor: CssPropertyDeclarationOf<CssColor>;
+    borderRightColor?: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## borderRightStyle
      * The border-right-style CSS property sets the line style of an element's right border.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-right-style}
      */
-    borderRightStyle: CssPropertyDeclarationOf<
+    borderRightStyle?: CssPropertyDeclarationOf<
         | "none"
         | "hidden"
         | "dotted"
@@ -699,19 +703,19 @@ export interface Selector {
      * The border-right-width CSS property sets the width of the right border of an element.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-right-width}
      */
-    borderRightWidth: CssPropertyDeclarationOf<string>;
+    borderRightWidth?: CssPropertyDeclarationOf<string>;
     /**
      * ## borderSpacing
      * The border-spacing CSS property sets the distance between the borders of adjacent cells in a ``<table>``. This property applies only when border-collapse is separate.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-spacing}
      */
-    borderSpacing: CssPropertyDeclarationOf<string>;
+    borderSpacing?: CssPropertyDeclarationOf<string>;
     /**
      * ## borderStyle
      * The border-style shorthand CSS property sets the line style for all four sides of an element's border.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-style}
      */
-    borderStyle: CssPropertyDeclarationOf<
+    borderStyle?: CssPropertyDeclarationOf<
         | "none"
         | "hidden"
         | "dotted"
@@ -728,31 +732,31 @@ export interface Selector {
      * The border-top shorthand CSS property sets all the properties of an element's top border.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-top}
      */
-    borderTop: CssPropertyDeclarationOf<string>;
+    borderTop?: CssPropertyDeclarationOf<string>;
     /**
      * ## borderTopColor
      * The border-top-color CSS property sets the color of an element's top border. It can also be set with the shorthand CSS properties border-color or border-top.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-color}
      */
-    borderTopColor: CssPropertyDeclarationOf<CssColor>;
+    borderTopColor?: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## borderTopLeftRadius
      * The border-top-left-radius CSS property rounds the top-left corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-left-radius}
      */
-    borderTopLeftRadius: CssPropertyDeclarationOf<string>;
+    borderTopLeftRadius?: CssPropertyDeclarationOf<string>;
     /**
      * ## borderTopRightRadius
      * The border-top-right-radius CSS property rounds the top-right corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-right-radius}
      */
-    borderTopRightRadius: CssPropertyDeclarationOf<string>;
+    borderTopRightRadius?: CssPropertyDeclarationOf<string>;
     /**
      * ## borderTopStyle
      * The border-top-style CSS property sets the line style of an element's top border.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-style}
      */
-    borderTopStyle: CssPropertyDeclarationOf<
+    borderTopStyle?: CssPropertyDeclarationOf<
         | "none"
         | "hidden"
         | "dotted"
@@ -769,43 +773,43 @@ export interface Selector {
      * The border-top-width CSS property sets the width of the top border of an element.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-width}
      */
-    borderTopWidth: CssPropertyDeclarationOf<string>;
+    borderTopWidth?: CssPropertyDeclarationOf<string>;
     /**
      * ## borderWidth
      * The border-width shorthand CSS property sets the width of an element's border.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-width}
      */
-    borderWidth: CssPropertyDeclarationOf<string>;
+    borderWidth?: CssPropertyDeclarationOf<string>;
     /**
      * ## bottom
      * The bottom CSS property participates in setting the vertical position of a positioned element. It has no effect on non-positioned elements.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/bottom}
      */
-    bottom: CssPropertyDeclarationOf<"auto">;
+    bottom?: CssPropertyDeclarationOf<"auto">;
     /**
      * ## boxDecorationBreak
      * The box-decoration-break CSS property specifies how an element's fragments should be rendered when broken across multiple lines, columns, or pages.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/box-decoration-break}
      */
-    boxDecorationBreak: CssPropertyDeclarationOf<"slice" | "clone">;
+    boxDecorationBreak?: CssPropertyDeclarationOf<"slice" | "clone">;
     /**
      * ## boxShadow
      * The box-shadow CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radius, and color.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow}
      */
-    boxShadow: CssPropertyDeclarationOf<"none">;
+    boxShadow?: CssPropertyDeclarationOf<"none">;
     /**
      * ## boxSizing
      * The box-sizing CSS property sets how the total width and height of an element is calculated.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing}
      */
-    boxSizing: CssPropertyDeclarationOf<"border-box" | "box-sizing">;
+    boxSizing?: CssPropertyDeclarationOf<"border-box" | "box-sizing">;
     /**
      * ## breakAfter
      * The break-after CSS property sets how page, column, or region breaks should behave after a generated box. If there is no generated box, the property is ignored.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/break-after}
      */
-    breakAfter: CssPropertyDeclarationOf<
+    breakAfter?: CssPropertyDeclarationOf<
         | "auto"
         | "avoid"
         | "always"
@@ -826,7 +830,7 @@ export interface Selector {
      * The break-before CSS property sets how page, column, or region breaks should behave before a generated box. If there is no generated box, the property is ignored.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/break-before}
      */
-    breakBefore: CssPropertyDeclarationOf<
+    breakBefore?: CssPropertyDeclarationOf<
         | "auto"
         | "avoid"
         | "always"
@@ -847,7 +851,7 @@ export interface Selector {
      * The break-inside CSS property sets how page, column, or region breaks should behave inside a generated box. If there is no generated box, the property is ignored.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/break-inside}
      */
-    breakInside: CssPropertyDeclarationOf<
+    breakInside?: CssPropertyDeclarationOf<
         "auto" | "avoid" | "avoid-page" | "avoid-column" | "avoid-region"
     >;
     /**
@@ -855,7 +859,7 @@ export interface Selector {
      * The caption-side CSS property puts the content of a table's <caption> on the specified side. The values are relative to the writing-mode of the table.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/caption-side}
      */
-    captionSide: CssPropertyDeclarationOf<
+    captionSide?: CssPropertyDeclarationOf<
         | "top"
         | "bottom"
         | "block-start"
@@ -868,7 +872,7 @@ export interface Selector {
      * The caret-color CSS property sets the color of the insertion caret, the visible marker where the next character typed will be inserted. This is sometimes referred to as the text input cursor. The caret appears in elements such as <input> or those with the contenteditable attribute. The caret is typically a thin vertical line that flashes to help make it more noticeable. By default, it is black, but its color can be altered with this property.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/caret-color}
      */
-    caretColor: CssPropertyDeclarationOf<
+    caretColor?: CssPropertyDeclarationOf<
         "auto" | "transparent" | "currentcolor"
     >;
     /**
@@ -876,7 +880,7 @@ export interface Selector {
      * The clear CSS property sets whether an element must be moved below (cleared) floating elements that precede it. The clear property applies to floating and non-floating elements.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/clear}
      */
-    clear: CssPropertyDeclarationOf<
+    clear?: CssPropertyDeclarationOf<
         "none" | "left" | "right" | "both" | "inline-start" | "inline-end"
     >;
     /**
@@ -885,13 +889,13 @@ export interface Selector {
      * @deprecated
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/clip}
      */
-    clip: CssPropertyDeclarationOf<"auto">;
+    clip?: CssPropertyDeclarationOf<"auto">;
     /**
      * ## clipPath
      * The clip-path CSS property creates a clipping region that sets what part of an element should be shown. Parts that are inside the region are shown, while those outside are hidden.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path}
      */
-    clipPath: CssPropertyDeclarationOf<
+    clipPath?: CssPropertyDeclarationOf<
         | "none"
         | "margin-box"
         | "border-box"
@@ -906,51 +910,51 @@ export interface Selector {
      * The color CSS property sets the foreground color value of an element's text and text decorations, and sets the currentcolor value. currentcolor may be used as an indirect value on other properties and is the default for other color properties, such as border-color.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/color}
      */
-    color: CssPropertyDeclarationOf<CssColor>;
+    color?: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## colorAdjust
      * The print-color-adjust CSS property sets what, if anything, the user agent may do to optimize the appearance of the element on the output device. By default, the browser is allowed to make any adjustments to the element's appearance it determines to be necessary and prudent given the type and capabilities of the output device.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/print-color-adjust}
      */
-    colorAdjust: CssPropertyDeclarationOf<string>;
+    colorAdjust?: CssPropertyDeclarationOf<string>;
     /**
      * ## colorScheme
      */
-    colorScheme: CssPropertyDeclarationOf<"normal" | "light" | "dark">;
+    colorScheme?: CssPropertyDeclarationOf<"normal" | "light" | "dark">;
     /**
      * ## columnCount
      * The color-scheme CSS property allows an element to indicate which color schemes it can comfortably be rendered in.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme}
      */
-    columnCount: CssPropertyDeclarationOf<"auto">;
+    columnCount?: CssPropertyDeclarationOf<"auto">;
     /**
      * ## columnFill
      */
-    columnFill: CssPropertyDeclarationOf<"auto" | "balance" | "balance-all">;
+    columnFill?: CssPropertyDeclarationOf<"auto" | "balance" | "balance-all">;
     /**
      * ## columnGap
      * The column-fill CSS property controls how an element's contents are balanced when broken into columns.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/column-fill}
      */
-    columnGap: CssPropertyDeclarationOf<"normal">;
+    columnGap?: CssPropertyDeclarationOf<"normal">;
     /**
      * ## columnRule
      * The column-rule shorthand CSS property sets the width, style, and color of the line drawn between columns in a multi-column layout.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/column-rule}
      */
-    columnRule: CssPropertyDeclarationOf<string>;
+    columnRule?: CssPropertyDeclarationOf<string>;
     /**
      * ## columnRuleColor
      * The column-rule-color CSS property sets the color of the line drawn between columns in a multi-column layout.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/column-rule-color}
      */
-    columnRuleColor: CssPropertyDeclarationOf<CssColor>;
+    columnRuleColor?: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## columnRuleStyle
      * The column-rule-style CSS property sets the style of the line drawn between columns in a multi-column layout.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/column-rule-style}
      */
-    columnRuleStyle: CssPropertyDeclarationOf<
+    columnRuleStyle?: CssPropertyDeclarationOf<
         | "none"
         | "hidden"
         | "dotted"
@@ -967,31 +971,31 @@ export interface Selector {
      * The column-rule-width CSS property sets the width of the line drawn between columns in a multi-column layout.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/column-rule-width}
      */
-    columnRuleWidth: CssPropertyDeclarationOf<"thin" | "medium" | "thick">;
+    columnRuleWidth?: CssPropertyDeclarationOf<"thin" | "medium" | "thick">;
     /**
      * ## columnSpan
      * The column-span CSS property makes it possible for an element to span across all columns when its value is set to all.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/column-span}
      */
-    columnSpan: CssPropertyDeclarationOf<"none" | "all">;
+    columnSpan?: CssPropertyDeclarationOf<"none" | "all">;
     /**
      * ## columnWidth
      * The column-width CSS property sets the ideal column width in a multi-column layout. The container will have as many columns as can fit without any of them having a width less than the column-width value. If the width of the container is narrower than the specified value, the single column's width will be smaller than the declared column width.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/column-width}
      */
-    columnWidth: CssPropertyDeclarationOf<"auto">;
+    columnWidth?: CssPropertyDeclarationOf<"auto">;
     /**
      * ## columns
      * The columns CSS shorthand property sets the number of columns to use when drawing an element's contents, as well as those columns' widths.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/columns}
      */
-    columns: CssPropertyDeclarationOf<"auto">;
+    columns?: CssPropertyDeclarationOf<"auto">;
     /**
      * ## contain
      * The contain CSS property allows an author to indicate that an element and its contents are, as much as possible, independent of the rest of the document tree. Containment allows the browser to calculate layout, style, paint, size, or any combination of them for a specific area of the DOM. Changes within an element with containment applied are not propagated outside of the contained element to the rest of the page, leading to performance benefits through fewer DOM re-renders.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/contain}
      */
-    contain: CssPropertyDeclarationOf<
+    contain?: CssPropertyDeclarationOf<
         "none" | "strict" | "content" | "size" | "layout" | "style" | "paint"
     >;
     /**
@@ -999,7 +1003,7 @@ export interface Selector {
      * The content CSS property replaces an element with a generated value. Objects inserted using the content property are anonymous replaced elements.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/content}
      */
-    content: CssPropertyDeclarationOf<
+    content?: CssPropertyDeclarationOf<
         | "normal"
         | "none"
         | "open-quote"
@@ -1012,31 +1016,31 @@ export interface Selector {
      * The content-visibility CSS property controls whether or not an element renders its contents at all, along with forcing a strong set of containments, allowing user agents to potentially omit large swathes of layout and rendering work until it becomes needed. Basically it enables the user agent to skip an element's rendering work (including layout and painting) until it is needed — which makes the initial page load much faster.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/content-visibility}
      */
-    contentVisibility: CssPropertyDeclarationOf<"visible" | "hidden" | "auto">;
+    contentVisibility?: CssPropertyDeclarationOf<"visible" | "hidden" | "auto">;
     /**
      * ## counterIncrement
      * The counter-increment CSS property increases or decreases the value of a CSS counter by a given value.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/counter-increment}
      */
-    counterIncrement: CssPropertyDeclarationOf<string>;
+    counterIncrement?: CssPropertyDeclarationOf<string>;
     /**
      * ## counterReset
      * The counter-reset CSS property resets a CSS counter to a given value. This property will create a new counter or reversed counter with the given name on the specified element.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/counter-reset}
      */
-    counterReset: CssPropertyDeclarationOf<string>;
+    counterReset?: CssPropertyDeclarationOf<string>;
     /**
      * ## counterSet
      * The counter-set CSS property sets a CSS counter to a given value. It manipulates the value of existing counters, and will only create new counters if there isn't already a counter of the given name on the element.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/counter-set}
      */
-    counterSet: CssPropertyDeclarationOf<string>;
+    counterSet?: CssPropertyDeclarationOf<string>;
     /**
      * ## cursor
      * The cursor CSS property sets the mouse cursor, if any, to show when the mouse pointer is over an element.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/cursor}
      */
-    cursor: CssPropertyDeclarationOf<
+    cursor?: CssPropertyDeclarationOf<
         | "auto"
         | "default"
         | "none"
@@ -1075,13 +1079,13 @@ export interface Selector {
      * The direction CSS property sets the direction of text, table columns, and horizontal overflow. Use rtl for languages written from right to left (like Hebrew or Arabic), and ltr for those written from left to right (like English and most other languages).
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/direction}
      */
-    direction: CssPropertyDeclarationOf<"ltr" | "rtl">;
+    direction?: CssPropertyDeclarationOf<"ltr" | "rtl">;
     /**
      * ## display
      * The display CSS property sets whether an element is treated as a block or inline element and the layout used for its children, such as flow layout, grid or flex.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/display}
      */
-    display: CssPropertyDeclarationOf<
+    display?: CssPropertyDeclarationOf<
         | "block"
         | "inline"
         | "inline-block"
@@ -1100,25 +1104,25 @@ export interface Selector {
      * The empty-cells CSS property sets whether borders and backgrounds appear around <table> cells that have no visible content.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/empty-cells}
      */
-    emptyCells: CssPropertyDeclarationOf<"show" | "hide">;
+    emptyCells?: CssPropertyDeclarationOf<"show" | "hide">;
     /**
      * ## filter
      * The filter attribute specifies the filter effects defined by the <filter> element that shall be applied to its element.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/filter}
      */
-    filter: CssPropertyDeclarationOf<string>;
+    filter?: CssPropertyDeclarationOf<string>;
     /**
      * ## flex
      * The flex CSS shorthand property sets how a flex item will grow or shrink to fit the space available in its flex container.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/flex}
      */
-    flex: CssPropertyDeclarationOf<"auto" | "none">;
+    flex?: CssPropertyDeclarationOf<"auto" | "none">;
     /**
      * ## flexBasis
      * The flex-basis CSS property sets the initial main size of a flex item. It sets the size of the content box unless otherwise set with box-sizing.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis}
      */
-    flexBasis: CssPropertyDeclarationOf<
+    flexBasis?: CssPropertyDeclarationOf<
         "max-content" | "min-content" | "fit-content" | "auto"
     >;
     /**
@@ -1126,7 +1130,7 @@ export interface Selector {
      * The flex-direction CSS property sets how flex items are placed in the flex container defining the main axis and the direction (normal or reversed).
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction}
      */
-    flexDirection: CssPropertyDeclarationOf<
+    flexDirection?: CssPropertyDeclarationOf<
         "row" | "row-reverse" | "column" | "column-reverse"
     >;
     /**
@@ -1134,31 +1138,31 @@ export interface Selector {
      * The flex-flow CSS shorthand property specifies the direction of a flex container, as well as its wrapping behavior.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/flex-flow}
      */
-    flexFlow: CssPropertyDeclarationOf<string>;
+    flexFlow?: CssPropertyDeclarationOf<string>;
     /**
      * ## flexGrow
      * The flex-grow CSS property sets the flex grow factor of a flex item's main size.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow}
      */
-    flexGrow: CssPropertyDeclarationOf<string>;
+    flexGrow?: CssPropertyDeclarationOf<string>;
     /**
      * ## flexShrink
      * The flex-shrink CSS property sets the flex shrink factor of a flex item. If the size of all flex items is larger than the flex container, items shrink to fit according to flex-shrink.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/flex-shrink}
      */
-    flexShrink: CssPropertyDeclarationOf<string>;
+    flexShrink?: CssPropertyDeclarationOf<string>;
     /**
      * ## flexWrap
      * The flex-wrap CSS property sets whether flex items are forced onto one line or can wrap onto multiple lines. If wrapping is allowed, it sets the direction that lines are stacked.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap}
      */
-    flexWrap: CssPropertyDeclarationOf<"nowrap" | "wrap" | "wrap-reverse">;
+    flexWrap?: CssPropertyDeclarationOf<"nowrap" | "wrap" | "wrap-reverse">;
     /**
      * ## float
      * The float CSS property places an element on the left or right side of its container, allowing text and inline elements to wrap around it. The element is removed from the normal flow of the page, though still remaining a part of the flow (in contrast to absolute positioning).
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/float}
      */
-    float: CssPropertyDeclarationOf<
+    float?: CssPropertyDeclarationOf<
         "left" | "right" | "none" | "inline-start" | "inline-end"
     >;
     /**
@@ -1166,13 +1170,13 @@ export interface Selector {
      * The font CSS shorthand property sets all the different properties of an element's font. Alternatively, it sets an element's font to a system font.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/font}
      */
-    font: CssPropertyDeclarationOf<string>;
+    font?: CssPropertyDeclarationOf<string>;
     /**
      * ## fontFamily
      * The font-family CSS property specifies a prioritized list of one or more font family names and/or generic family names for the selected element.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/font-family}
      */
-    fontFamily: CssPropertyDeclarationOf<
+    fontFamily?: CssPropertyDeclarationOf<
         | "serif"
         | "sans-serif"
         | "monospace"
@@ -1192,19 +1196,19 @@ export interface Selector {
      * The font-feature-settings CSS property controls advanced typographic features in OpenType fonts.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/font-feature-settings}
      */
-    fontFeatureSettings: CssPropertyDeclarationOf<string>;
+    fontFeatureSettings?: CssPropertyDeclarationOf<string>;
     /**
      * ## fontKerning
      * The font-kerning CSS property sets the use of the kerning information stored in a font.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/font-kerning}
      */
-    fontKerning: CssPropertyDeclarationOf<"auto" | "normal" | "none">;
+    fontKerning?: CssPropertyDeclarationOf<"auto" | "normal" | "none">;
     /**
      * ## fontSize
      * The font-size CSS property sets the size of the font. Changing the font size also updates the sizes of the font size-relative <length> units, such as em, ex, and so forth.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/font-size}
      */
-    fontSize: CssPropertyDeclarationOf<
+    fontSize?: CssPropertyDeclarationOf<
         | "xx-small"
         | "x-small"
         | "small"
@@ -1219,13 +1223,13 @@ export interface Selector {
      * The font-size-adjust CSS property sets the size of lower-case letters relative to the current font size (which defines the size of upper-case letters).
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/font-size-adjust}
      */
-    fontSizeAdjust: CssPropertyDeclarationOf<"none">;
+    fontSizeAdjust?: CssPropertyDeclarationOf<"none">;
     /**
      * ## fontStretch
      * The font-stretch CSS property selects a normal, condensed, or expanded face from a font.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch}
      */
-    fontStretch: CssPropertyDeclarationOf<
+    fontStretch?: CssPropertyDeclarationOf<
         | "ultra-condensed"
         | "extra-condensed"
         | "condensed"
@@ -1241,13 +1245,13 @@ export interface Selector {
      * The font-style CSS property sets whether a font should be styled with a normal, italic, or oblique face from its font-family.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/font-style}
      */
-    fontStyle: CssPropertyDeclarationOf<"normal" | "italic" | "oblique">;
+    fontStyle?: CssPropertyDeclarationOf<"normal" | "italic" | "oblique">;
     /**
      * ## fontSynthesis
      * The font-synthesis CSS property controls which missing typefaces, bold, italic, or small-caps, may be synthesized by the browser.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/font-synthesis}
      */
-    fontSynthesis: CssPropertyDeclarationOf<
+    fontSynthesis?: CssPropertyDeclarationOf<
         "none" | "weight" | "style" | "small-caps"
     >;
     /**
@@ -1255,53 +1259,53 @@ export interface Selector {
      * The font-variant CSS shorthand property allows you to set all the font variants for a font.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant}
      */
-    fontVariant: CssPropertyDeclarationOf<string>;
+    fontVariant?: CssPropertyDeclarationOf<string>;
     /**
      * ## fontVariantAlternates
      * The font-variant-alternates CSS property controls the usage of alternate glyphs. These alternate glyphs may be referenced by alternative names defined in @font-feature-values.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-alternates}
      */
-    fontVariantAlternates: CssPropertyDeclarationOf<string>;
+    fontVariantAlternates?: CssPropertyDeclarationOf<string>;
     /**
      * ## fontVariantCaps
      * The font-variant-caps CSS property controls the use of alternate glyphs for capital letters.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-caps}
      */
-    fontVariantCaps: CssPropertyDeclarationOf<string>;
+    fontVariantCaps?: CssPropertyDeclarationOf<string>;
     /**
      * ## fontVariantEastAsian
      * The font-variant-east-asian CSS property controls the use of alternate glyphs for East Asian scripts, like Japanese and Chinese.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-east-asian}
      */
-    fontVariantEastAsian: CssPropertyDeclarationOf<string>;
+    fontVariantEastAsian?: CssPropertyDeclarationOf<string>;
     /**
      * ## fontVariantLigatures
      * The font-variant-ligatures CSS property controls which ligatures and contextual forms are used in textual content of the elements it applies to. This leads to more harmonized forms in the resulting text.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-ligatures}
      */
-    fontVariantLigatures: CssPropertyDeclarationOf<string>;
+    fontVariantLigatures?: CssPropertyDeclarationOf<string>;
     /**
      * ## fontVariantNumeric
      * The font-variant-numeric CSS property controls the usage of alternate glyphs for numbers, fractions, and ordinal markers.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric}
      */
-    fontVariantNumeric: CssPropertyDeclarationOf<string>;
+    fontVariantNumeric?: CssPropertyDeclarationOf<string>;
     /**
      * ## fontVariantPosition
      * The font-variant-position CSS property controls the use of alternate, smaller glyphs that are positioned as superscript or subscript.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-position}
      */
-    fontVariantPosition: CssPropertyDeclarationOf<string>;
+    fontVariantPosition?: CssPropertyDeclarationOf<string>;
     /**
      * ## fontVariantSettings
      */
-    fontVariantSettings: CssPropertyDeclarationOf<string>;
+    fontVariantSettings?: CssPropertyDeclarationOf<string>;
     /**
      * ## fontWeight
      * The font-weight CSS property sets the weight (or boldness) of the font. The weights available depend on the font-family that is currently set.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight}
      */
-    fontWeight: CssPropertyDeclarationOf<
+    fontWeight?: CssPropertyDeclarationOf<
         | "normal"
         | "bold"
         | "lighter"
@@ -1321,29 +1325,29 @@ export interface Selector {
      * The forced-color-adjust CSS property allows authors to opt certain elements out of forced colors mode. This then restores the control of those values to CSS.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/forced-color-adjust}
      */
-    forcedColorAdjust: CssPropertyDeclarationOf<"auto" | "none">;
+    forcedColorAdjust?: CssPropertyDeclarationOf<"auto" | "none">;
     /**
      * ## gap
      */
-    gap: CssPropertyDeclarationOf<string>;
+    gap?: CssPropertyDeclarationOf<string>;
     /**
      * ## grid
      * The gap CSS property sets the gaps (gutters) between rows and columns. It is a shorthand for row-gap and column-gap.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/gap}
      */
-    grid: CssPropertyDeclarationOf<"none">;
+    grid?: CssPropertyDeclarationOf<"none">;
     /**
      * ## gridArea
      * The grid-area CSS shorthand property specifies a grid item's size and location within a grid by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the edges of its grid area.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-area}
      */
-    gridArea: CssPropertyDeclarationOf<string>;
+    gridArea?: CssPropertyDeclarationOf<string>;
     /**
      * ## gridAutoColumns
      * The grid-auto-columns CSS property specifies the size of an implicitly-created grid column track or pattern of tracks.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-columns}
      */
-    gridAutoColumns: CssPropertyDeclarationOf<
+    gridAutoColumns?: CssPropertyDeclarationOf<
         "in-content" | "max-content" | "auto"
     >;
     /**
@@ -1351,13 +1355,13 @@ export interface Selector {
      * The grid-auto-flow CSS property controls how the auto-placement algorithm works, specifying exactly how auto-placed items get flowed into the grid.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow}
      */
-    gridAutoFlow: CssPropertyDeclarationOf<"row" | "column" | "dense">;
+    gridAutoFlow?: CssPropertyDeclarationOf<"row" | "column" | "dense">;
     /**
      * ## gridAutoRows
      * The grid-auto-rows CSS property specifies the size of an implicitly-created grid row track or pattern of tracks.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows}
      */
-    gridAutoRows: CssPropertyDeclarationOf<
+    gridAutoRows?: CssPropertyDeclarationOf<
         "min-content" | "max-content" | "auto"
     >;
     /**
@@ -1365,85 +1369,85 @@ export interface Selector {
      * The grid-column CSS shorthand property specifies a grid item's size and location within a grid column by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column}
      */
-    gridColumn: CssPropertyDeclarationOf<"auto">;
+    gridColumn?: CssPropertyDeclarationOf<"auto">;
     /**
      * ## gridColumnEnd
      * The grid-column-end CSS property specifies a grid item's end position within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the block-end edge of its grid area.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-end}
      */
-    gridColumnEnd: CssPropertyDeclarationOf<"auto">;
+    gridColumnEnd?: CssPropertyDeclarationOf<"auto">;
     /**
      * ## gridColumnGap
      * The column-gap CSS property sets the size of the gap (gutter) between an element's columns.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/column-gap}
      */
-    gridColumnGap: CssPropertyDeclarationOf<"auto">;
+    gridColumnGap?: CssPropertyDeclarationOf<"auto">;
     /**
      * ## gridColumnStart
      * The grid-column-start CSS property specifies a grid item's start position within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement. This start position defines the block-start edge of the grid area.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-start}
      */
-    gridColumnStart: CssPropertyDeclarationOf<string>;
+    gridColumnStart?: CssPropertyDeclarationOf<string>;
     /**
      * ## gridGap
      * The gap CSS property sets the gaps (gutters) between rows and columns. It is a shorthand for row-gap and column-gap.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/gap}
      */
-    gridGap: CssPropertyDeclarationOf<string>;
+    gridGap?: CssPropertyDeclarationOf<string>;
     /**
      * ## gridRow
      * The grid-row CSS shorthand property specifies a grid item's size and location within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row}
      */
-    gridRow: CssPropertyDeclarationOf<"auto">;
+    gridRow?: CssPropertyDeclarationOf<"auto">;
     /**
      * ## gridRowEnd
      * The grid-row-end CSS property specifies a grid item's end position within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-end edge of its grid area.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-end}
      */
-    gridRowEnd: CssPropertyDeclarationOf<"auto">;
+    gridRowEnd?: CssPropertyDeclarationOf<"auto">;
     /**
      * ## gridRowGap
      * The row-gap CSS property sets the size of the gap (gutter) between an element's rows.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/row-gap}
      */
-    gridRowGap: CssPropertyDeclarationOf<"auto">;
+    gridRowGap?: CssPropertyDeclarationOf<"auto">;
     /**
      * ## gridRowStart
      * The grid-row-start CSS property specifies a grid item's start position within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start edge of its grid area.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-start}
      */
-    gridRowStart: CssPropertyDeclarationOf<string>;
+    gridRowStart?: CssPropertyDeclarationOf<string>;
     /**
      * ## gridTemplate
      * The grid-template CSS property is a shorthand property for defining grid columns, rows, and areas.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template}
      */
-    gridTemplate: CssPropertyDeclarationOf<"none">;
+    gridTemplate?: CssPropertyDeclarationOf<"none">;
     /**
      * ## gridTemplateAreas
      * The grid-template-areas CSS property specifies named grid areas, establishing the cells in the grid and assigning them names.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas}
      */
-    gridTemplateAreas: CssPropertyDeclarationOf<"none">;
+    gridTemplateAreas?: CssPropertyDeclarationOf<"none">;
     /**
      * ## gridTemplateColumns
      * The grid-template-columns CSS property defines the line names and track sizing functions of the grid columns.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns}
      */
-    gridTemplateColumns: CssPropertyDeclarationOf<"none">;
+    gridTemplateColumns?: CssPropertyDeclarationOf<"none">;
     /**
      * ## gridTemplateRows
      * The grid-template-rows CSS property defines the line names and track sizing functions of the grid rows.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows}
      */
-    gridTemplateRows: CssPropertyDeclarationOf<"none">;
+    gridTemplateRows?: CssPropertyDeclarationOf<"none">;
     /**
      * ## hangingPunctuation
      * The hanging-punctuation CSS property specifies whether a punctuation mark should hang at the start or end of a line of text. Hanging punctuation may be placed outside the line box.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/hanging-punctuation}
      */
-    hangingPunctuation: CssPropertyDeclarationOf<
+    hangingPunctuation?: CssPropertyDeclarationOf<
         "none" | "first" | "last" | "force-end" | "allow-end"
     >;
     /**
@@ -1451,31 +1455,31 @@ export interface Selector {
      * The height CSS property specifies the height of an element. By default, the property defines the height of the content area. If box-sizing is set to border-box, however, it instead determines the height of the border area.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/height}
      */
-    height: CssPropertyDeclarationOf<"max-content" | "min-content" | "auto">;
+    height?: CssPropertyDeclarationOf<"max-content" | "min-content" | "auto">;
     /**
      * ## hyphens
      * The hyphens CSS property specifies how words should be hyphenated when text wraps across multiple lines. It can prevent hyphenation entirely, hyphenate at manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/hyphens}
      */
-    hyphens: CssPropertyDeclarationOf<"none" | "manual" | "auto">;
+    hyphens?: CssPropertyDeclarationOf<"none" | "manual" | "auto">;
     /**
      * ## isolation
      * The isolation CSS property determines whether an element must create a new stacking context.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/isolation}
      */
-    isolation: CssPropertyDeclarationOf<"auto" | "isolate">;
+    isolation?: CssPropertyDeclarationOf<"auto" | "isolate">;
     /**
      * ## imageOrientation
      * The image-orientation CSS property specifies a layout-independent correction to the orientation of an image.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/image-orientation}
      */
-    imageOrientation: CssPropertyDeclarationOf<"none" | "from-image">;
+    imageOrientation?: CssPropertyDeclarationOf<"none" | "from-image">;
     /**
      * ## imageRendering
      * The image-rendering CSS property sets an image scaling algorithm. The property applies to an element itself, to any images set in its other properties, and to its descendants.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/image-rendering}
      */
-    imageRendering: CssPropertyDeclarationOf<
+    imageRendering?: CssPropertyDeclarationOf<
         "auto" | "crisp-edge" | "pixelated"
     >;
     /**
@@ -1484,19 +1488,19 @@ export interface Selector {
      * @experimental
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/image-resolution}
      */
-    imageResolution: CssPropertyDeclarationOf<"from-image">;
+    imageResolution?: CssPropertyDeclarationOf<"from-image">;
     /**
      * ## initialLetter
      * The initial-letter CSS property sets styling for dropped, raised, and sunken initial letters.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/initial-letter}
      */
-    initialLetter: CssPropertyDeclarationOf<"normal">;
+    initialLetter?: CssPropertyDeclarationOf<"normal">;
     /**
      * ## inlineSize
      * The inline-size CSS property defines the horizontal or vertical size of an element's block, depending on its writing mode. It corresponds to either the width or the height property, depending on the value of writing-mode.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/inline-size}
      */
-    inlineSize: CssPropertyDeclarationOf<
+    inlineSize?: CssPropertyDeclarationOf<
         "auto" | "max-content" | "min-content"
     >;
     /**
@@ -1504,31 +1508,31 @@ export interface Selector {
      * The inset CSS property is a shorthand that corresponds to the top, right, bottom, and/or left properties. It has the same multi-value syntax of the margin shorthand.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/inset}
      */
-    inset: CssPropertyDeclarationOf<"auto">;
+    inset?: CssPropertyDeclarationOf<"auto">;
     /**
      * ## insetBlock
      * The inset-inline CSS property defines the logical start and end offsets of an element in the inline direction, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the top and bottom, or right and left properties depending on the values defined for writing-mode, direction, and text-orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/inset-inline}
      */
-    insetBlock: CssPropertyDeclarationOf<"auto">;
+    insetBlock?: CssPropertyDeclarationOf<"auto">;
     /**
      * ## insetBlockStart
      * The inset-block-start CSS property defines the logical block start offset of an element, which maps to a physical inset depending on the element's writing mode, directionality, and text orientation. It corresponds to the top, right, bottom, or left property depending on the values defined for writing-mode, direction, and text-orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/inset-block-start}
      */
-    insetBlockStart: CssPropertyDeclarationOf<"auto">;
+    insetBlockStart?: CssPropertyDeclarationOf<"auto">;
     /**
      * ## insetInlineStart
      * The inset-inline-start CSS property defines the logical inline start inset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the top, right, bottom, or left property depending on the values defined for writing-mode, direction, and text-orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/inset-inline-start}
      */
-    insetInlineStart: CssPropertyDeclarationOf<"auto">;
+    insetInlineStart?: CssPropertyDeclarationOf<"auto">;
     /**
      * ## justifyContent
      * The CSS justify-content property defines how the browser distributes space between and around content items along the main-axis of a flex container, and the inline axis of a grid container.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content}
      */
-    justifyContent: CssPropertyDeclarationOf<
+    justifyContent?: CssPropertyDeclarationOf<
         | "center"
         | "start"
         | "end"
@@ -1548,7 +1552,7 @@ export interface Selector {
      * The CSS justify-items property defines the default justify-self for all items of the box, giving them all a default way of justifying each box along the appropriate axis.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/justify-items}
      */
-    justifyItems: CssPropertyDeclarationOf<
+    justifyItems?: CssPropertyDeclarationOf<
         | "center"
         | "start"
         | "end"
@@ -1576,7 +1580,7 @@ export interface Selector {
      * The CSS justify-self property sets the way a box is justified inside its alignment container along the appropriate axis.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/justify-self}
      */
-    justifySelf: CssPropertyDeclarationOf<
+    justifySelf?: CssPropertyDeclarationOf<
         | "auto"
         | "normal"
         | "stretch"
@@ -1600,25 +1604,25 @@ export interface Selector {
      * The left CSS property participates in specifying the horizontal position of a positioned element. It has no effect on non-positioned elements.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/left}
      */
-    left: CssPropertyDeclarationOf<"auto">;
+    left?: CssPropertyDeclarationOf<"auto">;
     /**
      * ## letterSpacing
      * The letter-spacing CSS property sets the horizontal spacing behavior between text characters. This value is added to the natural spacing between characters while rendering the text. Positive values of letter-spacing causes characters to spread farther apart, while negative values of letter-spacing bring characters closer together.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing}
      */
-    letterSpacing: CssPropertyDeclarationOf<"normal">;
+    letterSpacing?: CssPropertyDeclarationOf<"normal">;
     /**
      * ## lineHeight
      * The line-height CSS property sets the height of a line box. It's commonly used to set the distance between lines of text. On block-level elements, it specifies the minimum height of line boxes within the element. On non-replaced inline elements, it specifies the height that is used to calculate line box height.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/line-height}
      */
-    lineHeight: CssPropertyDeclarationOf<"normal">;
+    lineHeight?: CssPropertyDeclarationOf<"normal">;
     /**
      * ## lineBreak
      * The line-break CSS property sets how to break lines of Chinese, Japanese, or Korean (CJK) text when working with punctuation and symbols.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/line-break}
      */
-    lineBreak: CssPropertyDeclarationOf<
+    lineBreak?: CssPropertyDeclarationOf<
         "auto" | "loose" | "normal" | "strict" | "anywhere"
     >;
     /**
@@ -1626,25 +1630,25 @@ export interface Selector {
      * The list-style CSS shorthand property allows you to set all the list style properties at once.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/list-style}
      */
-    listStyle: CssPropertyDeclarationOf<string>;
+    listStyle?: CssPropertyDeclarationOf<string>;
     /**
      * ## listStyleImage
      * The list-style-image CSS property sets an image to be used as the list item marker.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-image}
      */
-    listStyleImage: CssPropertyDeclarationOf<"none">;
+    listStyleImage?: CssPropertyDeclarationOf<"none">;
     /**
      * ## listStylePosition
      * The list-style-position CSS property sets the position of the ::marker relative to a list item.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-position}
      */
-    listStylePosition: CssPropertyDeclarationOf<"inside" | "outside">;
+    listStylePosition?: CssPropertyDeclarationOf<"inside" | "outside">;
     /**
      * ## listStyleType
      * The list-style-type CSS property sets the marker (such as a disc, character, or custom counter style) of a list item element.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type}
      */
-    listStyleType: CssPropertyDeclarationOf<
+    listStyleType?: CssPropertyDeclarationOf<
         | "none"
         | "disc"
         | "circle"
@@ -1676,97 +1680,97 @@ export interface Selector {
      * The margin CSS shorthand property sets the margin area on all four sides of an element.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/margin}
      */
-    margin: CssPropertyDeclarationOf<"auto">;
+    margin?: CssPropertyDeclarationOf<"auto">;
     /**
      * ## marginBlock
      * The margin-block CSS shorthand property defines the logical block start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/margin-block}
      */
-    marginBlock: CssPropertyDeclarationOf<string>;
+    marginBlock?: CssPropertyDeclarationOf<string>;
     /**
      * ## marginBlockEnd
      * The margin-block-end CSS property defines the logical block end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/margin-block-end}
      */
-    marginBlockEnd: CssPropertyDeclarationOf<"auto">;
+    marginBlockEnd?: CssPropertyDeclarationOf<"auto">;
     /**
      * ## marginBlockStart
      * The margin-block-start CSS property defines the logical block start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/margin-block-start}
      */
-    marginBlockStart: CssPropertyDeclarationOf<"auto">;
+    marginBlockStart?: CssPropertyDeclarationOf<"auto">;
     /**
      * ## marginBottom
      * The margin-bottom CSS property sets the margin area on the bottom of an element. A positive value places it farther from its neighbors, while a negative value places it closer.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/margin-bottom}
      */
-    marginBottom: CssPropertyDeclarationOf<"auto">;
+    marginBottom?: CssPropertyDeclarationOf<"auto">;
     /**
      * ## marginInline
      * The margin-inline CSS shorthand property is a shorthand property that defines both the logical inline start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/margin-inline}
      */
-    marginInline: CssPropertyDeclarationOf<"auto">;
+    marginInline?: CssPropertyDeclarationOf<"auto">;
     /**
      * ## marginInlineEnd
      * The margin-inline-end CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the margin-top, margin-right, margin-bottom or margin-left property depending on the values defined for writing-mode, direction, and text-orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/margin-inline-end}
      */
-    marginInlineEnd: CssPropertyDeclarationOf<"auto">;
+    marginInlineEnd?: CssPropertyDeclarationOf<"auto">;
     /**
      * ## marginInlineStart
      * The margin-inline-start CSS property defines the logical inline start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. It corresponds to the margin-top, margin-right, margin-bottom, or margin-left property depending on the values defined for writing-mode, direction, and text-orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/margin-inline-start}
      */
-    marginInlineStart: CssPropertyDeclarationOf<"auto">;
+    marginInlineStart?: CssPropertyDeclarationOf<"auto">;
     /**
      * ## marginLeft
      * The margin-left CSS property sets the margin area on the left side of an element. A positive value places it farther from its neighbors, while a negative value places it closer.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/margin-left}
      */
-    marginLeft: CssPropertyDeclarationOf<"auto">;
+    marginLeft?: CssPropertyDeclarationOf<"auto">;
     /**
      * ## marginRight
      * The margin-right CSS property sets the margin area on the right side of an element. A positive value places it farther from its neighbors, while a negative value places it closer.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/margin-right}
      */
-    marginRight: CssPropertyDeclarationOf<"auto">;
+    marginRight?: CssPropertyDeclarationOf<"auto">;
     /**
      * ## marginTop
      * The margin-top CSS property sets the margin area on the top of an element. A positive value places it farther from its neighbors, while a negative value places it closer.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/margin-top}
      */
-    marginTop: CssPropertyDeclarationOf<"auto">;
+    marginTop?: CssPropertyDeclarationOf<"auto">;
     /**
      * ## mask
      * The mask CSS shorthand property hides an element (partially or fully) by masking or clipping the image at specific points.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/mask}
      */
-    mask: CssPropertyDeclarationOf<"none">;
+    mask?: CssPropertyDeclarationOf<"none">;
     /**
      * ## maskBorder
      * The mask-border CSS shorthand property lets you create a mask along the edge of an element's border.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/mask-border}
      */
-    maskBorder: CssPropertyDeclarationOf<string>;
+    maskBorder?: CssPropertyDeclarationOf<string>;
     /**
      * ## maskBorderMode
      * The mask-border-mode CSS property specifies the blending mode used in a mask border.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/mask-border-mode}
      */
-    maskBorderMode: CssPropertyDeclarationOf<"luminance" | "alpha">;
+    maskBorderMode?: CssPropertyDeclarationOf<"luminance" | "alpha">;
     /**
      * ## maskBorderOutset
      * The mask-border-outset CSS property specifies the distance by which an element's mask border is set out from its border box.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/mask-border-outset}
      */
-    maskBorderOutset: CssPropertyDeclarationOf<string>;
+    maskBorderOutset?: CssPropertyDeclarationOf<string>;
     /**
      * ## maskBorderRepeat
      * The mask-border-repeat CSS property sets how the edge regions of a source image are adjusted to fit the dimensions of an element's mask border.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/mask-border-repeat}
      */
-    maskBorderRepeat: CssPropertyDeclarationOf<
+    maskBorderRepeat?: CssPropertyDeclarationOf<
         "stretch" | "repeat" | "round" | "space"
     >;
     /**
@@ -1774,25 +1778,25 @@ export interface Selector {
      * The mask-border-slice CSS property divides the image set by mask-border-source into regions. These regions are used to form the components of an element's mask border.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/mask-border-slice}
      */
-    maskBorderSlice: CssPropertyDeclarationOf<string>;
+    maskBorderSlice?: CssPropertyDeclarationOf<string>;
     /**
      * ## maskBorderSource
      * The mask-border-source CSS property sets the source image used to create an element's mask border.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/mask-border-source}
      */
-    maskBorderSource: CssPropertyDeclarationOf<"none">;
+    maskBorderSource?: CssPropertyDeclarationOf<"none">;
     /**
      * ## maskBorderWidth
      * The mask-border-width CSS property sets the width of an element's mask border.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/mask-border-width}
      */
-    maskBorderWidth: CssPropertyDeclarationOf<"auto">;
+    maskBorderWidth?: CssPropertyDeclarationOf<"auto">;
     /**
      * ## maskClip
      * The mask-clip CSS property determines the area which is affected by a mask. The painted content of an element must be restricted to this area.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/mask-clip}
      */
-    maskClip: CssPropertyDeclarationOf<
+    maskClip?: CssPropertyDeclarationOf<
         | "content-box"
         | "padding-box"
         | "border-box"
@@ -1807,7 +1811,7 @@ export interface Selector {
      * The mask-composite CSS property represents a compositing operation used on the current mask layer with the mask layers below it.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/mask-composite}
      */
-    maskComposite: CssPropertyDeclarationOf<
+    maskComposite?: CssPropertyDeclarationOf<
         "add" | "subtract" | "intersect" | "exclude"
     >;
     /**
@@ -1815,19 +1819,19 @@ export interface Selector {
      * The mask-image CSS property sets the image that is used as mask layer for an element. By default this means the alpha channel of the mask image will be multiplied with the alpha channel of the element. This can be controlled with the mask-mode property.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/mask-image}
      */
-    maskImage: CssPropertyDeclarationOf<"none">;
+    maskImage?: CssPropertyDeclarationOf<"none">;
     /**
      * ## maskMode
      * The mask-mode CSS property sets whether the mask reference defined by mask-image is treated as a luminance or alpha mask.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/mask-mode}
      */
-    maskMode: CssPropertyDeclarationOf<"alpha" | "luminance" | "match-source">;
+    maskMode?: CssPropertyDeclarationOf<"alpha" | "luminance" | "match-source">;
     /**
      * ## maskOrigin
      * The mask-origin CSS property sets the origin of a mask.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/mask-origin}
      */
-    maskOrigin: CssPropertyDeclarationOf<
+    maskOrigin?: CssPropertyDeclarationOf<
         | "content-box"
         | "padding-box"
         | "border-box"
@@ -1844,7 +1848,7 @@ export interface Selector {
      * The mask-position CSS property sets the initial position, relative to the mask position layer set by mask-origin, for each defined mask image.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/mask-position}
      */
-    maskPosition: CssPropertyDeclarationOf<
+    maskPosition?: CssPropertyDeclarationOf<
         "top" | "bottom" | "left" | "right" | "center"
     >;
     /**
@@ -1852,7 +1856,7 @@ export interface Selector {
      * The mask-repeat CSS property sets how mask images are repeated. A mask image can be repeated along the horizontal axis, the vertical axis, both axes, or not repeated at all.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/mask-repeat}
      */
-    maskRepeat: CssPropertyDeclarationOf<
+    maskRepeat?: CssPropertyDeclarationOf<
         "repeat-x" | "repeat-y" | "repeat" | "space" | "round" | "no-repeat"
     >;
     /**
@@ -1860,13 +1864,13 @@ export interface Selector {
      * The mask-size CSS property specifies the sizes of the mask images. The size of the image can be fully or partially constrained in order to preserve its intrinsic ratio.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/mask-size}
      */
-    maskSize: CssPropertyDeclarationOf<"cover" | "contain">;
+    maskSize?: CssPropertyDeclarationOf<"cover" | "contain">;
     /**
      * ## maskType
      * The mask-type CSS property sets whether an SVG <mask> element is used as a luminance or an alpha mask. It applies to the <mask> element itself.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/mask-type}
      */
-    maskType: CssPropertyDeclarationOf<"alpha" | "luminance">;
+    maskType?: CssPropertyDeclarationOf<"alpha" | "luminance">;
     /**
      * ## mathStyle
      * The math-style property indicates whether MathML equations should render with normal or compact height.
@@ -1874,13 +1878,13 @@ export interface Selector {
      * @experimental
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/math-style}
      */
-    mathStyle: CssPropertyDeclarationOf<"normal" | "compact">;
+    mathStyle?: CssPropertyDeclarationOf<"normal" | "compact">;
     /**
      * ## maxBlockSize
      * The max-block-size CSS property specifies the maximum size of an element in the direction opposite that of the writing direction as specified by writing-mode. That is, if the writing direction is horizontal, then max-block-size is equivalent to max-height; if the writing direction is vertical, max-block-size is the same as max-width.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/max-block-size}
      */
-    maxBlockSize: CssPropertyDeclarationOf<
+    maxBlockSize?: CssPropertyDeclarationOf<
         "none" | "max-content" | "min-content"
     >;
     /**
@@ -1888,7 +1892,7 @@ export interface Selector {
      * The max-inline-size CSS property defines the horizontal or vertical maximum size of an element's block, depending on its writing mode. It corresponds to either the max-width or the max-height property, depending on the value of writing-mode.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/max-inline-size}
      */
-    maxInlineSize: CssPropertyDeclarationOf<
+    maxInlineSize?: CssPropertyDeclarationOf<
         "none" | "max-content" | "min-content"
     >;
     /**
@@ -1896,7 +1900,7 @@ export interface Selector {
      * The min-block-size CSS property defines the minimum horizontal or vertical size of an element's block, depending on its writing mode. It corresponds to either the min-width or the min-height property, depending on the value of writing-mode.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/min-block-size}
      */
-    minBlockSize: CssPropertyDeclarationOf<
+    minBlockSize?: CssPropertyDeclarationOf<
         "none" | "max-content" | "min-content"
     >;
     /**
@@ -1904,7 +1908,7 @@ export interface Selector {
      * The min-inline-size CSS property defines the horizontal or vertical minimal size of an element's block, depending on its writing mode. It corresponds to either the min-width or the min-height property, depending on the value of writing-mode.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/min-inline-size}
      */
-    minInlineSize: CssPropertyDeclarationOf<
+    minInlineSize?: CssPropertyDeclarationOf<
         "none" | "max-content" | "min-content"
     >;
     /**
@@ -1912,31 +1916,35 @@ export interface Selector {
      * The max-height CSS property sets the maximum height of an element. It prevents the used value of the height property from becoming larger than the value specified for max-height.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/max-height}
      */
-    maxHeight: CssPropertyDeclarationOf<"none" | "max-content" | "min-content">;
+    maxHeight?: CssPropertyDeclarationOf<
+        "none" | "max-content" | "min-content"
+    >;
     /**
      * ## maxWidth
      * The max-width CSS property sets the maximum width of an element. It prevents the used value of the width property from becoming larger than the value specified by max-width.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/max-width}
      */
-    maxWidth: CssPropertyDeclarationOf<"none" | "max-content" | "min-content">;
+    maxWidth?: CssPropertyDeclarationOf<"none" | "max-content" | "min-content">;
     /**
      * ## minHeight
      * The min-height CSS property sets the minimum height of an element. It prevents the used value of the height property from becoming smaller than the value specified for min-height.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/min-height}
      */
-    minHeight: CssPropertyDeclarationOf<"none" | "max-content" | "min-content">;
+    minHeight?: CssPropertyDeclarationOf<
+        "none" | "max-content" | "min-content"
+    >;
     /**
      * ## minWidth
      * The min-width CSS property sets the minimum width of an element. It prevents the used value of the width property from becoming smaller than the value specified for min-width.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/min-width}
      */
-    minWidth: CssPropertyDeclarationOf<"none" | "max-content" | "min-content">;
+    minWidth?: CssPropertyDeclarationOf<"none" | "max-content" | "min-content">;
     /**
      * ## mixBlendMode
      * The mix-blend-mode CSS property sets how an element's content should blend with the content of the element's parent and the element's background.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode}
      */
-    mixBlendMode: CssPropertyDeclarationOf<
+    mixBlendMode?: CssPropertyDeclarationOf<
         | "normal"
         | "multiply"
         | "screen"
@@ -1959,7 +1967,7 @@ export interface Selector {
      * The object-fit CSS property sets how the content of a replaced element, such as an <img> or <video>, should be resized to fit its container.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit}
      */
-    objectFit: CssPropertyDeclarationOf<
+    objectFit?: CssPropertyDeclarationOf<
         "contain" | "cover" | "fill" | "none" | "scale-down"
     >;
     /**
@@ -1967,7 +1975,7 @@ export interface Selector {
      * The object-position CSS property specifies the alignment of the selected replaced element's contents within the element's box. Areas of the box which aren't covered by the replaced element's object will show the element's background.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/object-position}
      */
-    objectPosition: CssPropertyDeclarationOf<
+    objectPosition?: CssPropertyDeclarationOf<
         "top" | "bottom" | "left" | "right" | "center"
     >;
     /**
@@ -1975,13 +1983,13 @@ export interface Selector {
      * The offset CSS shorthand property sets all the properties required for animating an element along a defined path.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/offset}
      */
-    offset: CssPropertyDeclarationOf<"none" | "auto">;
+    offset?: CssPropertyDeclarationOf<"none" | "auto">;
     /**
      * ## offsetAnchor
      * The offset-anchor CSS property specifies the point inside the box of an element traveling along an offset-path that is actually moving along the path.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/offset-anchor}
      */
-    offsetAnchor: CssPropertyDeclarationOf<
+    offsetAnchor?: CssPropertyDeclarationOf<
         "top" | "bottom" | "left" | "right" | "center" | "auto"
     >;
     /**
@@ -1989,20 +1997,20 @@ export interface Selector {
      * The offset-distance CSS property specifies a position along an offset-path for an element to be placed.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/offset-distance}
      */
-    offsetDistance: CssPropertyDeclarationOf<string>;
+    offsetDistance?: CssPropertyDeclarationOf<string>;
     /**
      * ## offsetPath
      * The offset-path CSS property specifies a motion path for an element to follow and defines the element's positioning within the parent container or SVG coordinate system.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/offset-path}
      */
-    offsetPath: CssPropertyDeclarationOf<"none" | "margin-box" | "stroke-box">;
+    offsetPath?: CssPropertyDeclarationOf<"none" | "margin-box" | "stroke-box">;
     /**
      * ## offsetPosition
      * The offset-position CSS property defines the initial position of the offset-path.
      * @experimental
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/offset-position}
      */
-    offsetPosition: CssPropertyDeclarationOf<
+    offsetPosition?: CssPropertyDeclarationOf<
         "top" | "bottom" | "left" | "right" | "center" | "auto"
     >;
     /**
@@ -2010,49 +2018,49 @@ export interface Selector {
      * The offset-rotate CSS property defines the orientation/direction of the element as it is positioned along the offset-path.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/offset-rotate}
      */
-    offsetRotate: CssPropertyDeclarationOf<"auto">;
+    offsetRotate?: CssPropertyDeclarationOf<"auto">;
     /**
      * ## opacity
      * The opacity CSS property sets the opacity of an element. Opacity is the degree to which content behind an element is hidden, and is the opposite of transparency.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/opacity}
      */
-    opacity: CssPropertyDeclarationOf<string>;
+    opacity?: CssPropertyDeclarationOf<string>;
     /**
      * ## order
      * The order CSS property sets the order to lay out an item in a flex or grid container. Items in a container are sorted by ascending order value and then by their source code order.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/order}
      */
-    order: CssPropertyDeclarationOf<string>;
+    order?: CssPropertyDeclarationOf<string>;
     /**
      * ## orphans
      * The orphans CSS property sets the minimum number of lines in a block container that must be shown at the bottom of a page, region, or column.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/orphans}
      */
-    orphans: CssPropertyDeclarationOf<string>;
+    orphans?: CssPropertyDeclarationOf<string>;
     /**
      * ## outline
      * The outline CSS shorthand property sets most of the outline properties in a single declaration.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/outline}
      */
-    outline: CssPropertyDeclarationOf<string>;
+    outline?: CssPropertyDeclarationOf<string>;
     /**
      * ## outlineColor
      * The outline-color CSS property sets the color of an element's outline.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/outline-color}
      */
-    outlineColor: CssPropertyDeclarationOf<CssColor>;
+    outlineColor?: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## outlineOffset
      * The outline-offset CSS property sets the amount of space between an outline and the edge or border of an element.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/outline-offset}
      */
-    outlineOffset: CssPropertyDeclarationOf<string>;
+    outlineOffset?: CssPropertyDeclarationOf<string>;
     /**
      * ## outlineStyle
      * The outline-style CSS property sets the style of an element's outline. An outline is a line that is drawn around an element, outside the border.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/outline-style}
      */
-    outlineStyle: CssPropertyDeclarationOf<
+    outlineStyle?: CssPropertyDeclarationOf<
         | "auto"
         | "none"
         | "dotted"
@@ -2069,13 +2077,13 @@ export interface Selector {
      * The CSS outline-width property sets the thickness of an element's outline. An outline is a line that is drawn around an element, outside the border.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/outline-width}
      */
-    outlineWidth: CssPropertyDeclarationOf<"thin" | "medium" | "thick">;
+    outlineWidth?: CssPropertyDeclarationOf<"thin" | "medium" | "thick">;
     /**
      * ## overflow
      * The overflow CSS shorthand property sets the desired behavior for an element's overflow — i.e. when an element's content is too big to fit in its block formatting context — in both directions.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/overflow}
      */
-    overflow: CssPropertyDeclarationOf<
+    overflow?: CssPropertyDeclarationOf<
         "visible" | "hidden" | "clip" | "scroll" | "auto"
     >;
     /**
@@ -2083,13 +2091,13 @@ export interface Selector {
      * The overflow-anchor CSS property provides a way to opt out of the browser's scroll anchoring behavior, which adjusts scroll position to minimize content shifts.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-anchor}
      */
-    overflowAnchor: CssPropertyDeclarationOf<"auto" | "none">;
+    overflowAnchor?: CssPropertyDeclarationOf<"auto" | "none">;
     /**
      * ## overflowBlock
      * The overflow-block CSS property sets what shows when content overflows the block start and block end edges of a box. This may be nothing, a scroll bar, or the overflow content.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-block}
      */
-    overflowBlock: CssPropertyDeclarationOf<
+    overflowBlock?: CssPropertyDeclarationOf<
         "visible" | "hidden" | "scroll" | "auto"
     >;
     /**
@@ -2098,13 +2106,13 @@ export interface Selector {
      * @experimental
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-clip-margin}
      */
-    overflowClipMargin: CssPropertyDeclarationOf<string>;
+    overflowClipMargin?: CssPropertyDeclarationOf<string>;
     /**
      * ## overflowInline
      * The overflow-inline CSS property sets what shows when content overflows the inline start and end edges of a box. This may be nothing, a scroll bar, or the overflow content.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-inline}
      */
-    overflowInline: CssPropertyDeclarationOf<
+    overflowInline?: CssPropertyDeclarationOf<
         "visible" | "hidden" | "scroll" | "auto"
     >;
     /**
@@ -2112,7 +2120,7 @@ export interface Selector {
      * The overflow-wrap CSS property applies to inline elements, setting whether the browser should insert line breaks within an otherwise unbreakable string to prevent text from overflowing its line box.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-wrap}
      */
-    overflowWrap: CssPropertyDeclarationOf<
+    overflowWrap?: CssPropertyDeclarationOf<
         "normal" | "break-word" | "anywhere"
     >;
     /**
@@ -2120,7 +2128,7 @@ export interface Selector {
      * The overflow-x CSS property sets what shows when content overflows a block-level element's left and right edges. This may be nothing, a scroll bar, or the overflow content.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-x}
      */
-    overflowX: CssPropertyDeclarationOf<
+    overflowX?: CssPropertyDeclarationOf<
         "visible" | "hidden" | "clip" | "scroll" | "auto"
     >;
     /**
@@ -2128,7 +2136,7 @@ export interface Selector {
      * The overflow-y CSS property sets what shows when content overflows a block-level element's top and bottom edges. This may be nothing, a scroll bar, or the overflow content.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-y}
      */
-    overflowY: CssPropertyDeclarationOf<
+    overflowY?: CssPropertyDeclarationOf<
         "visible" | "hidden" | "clip" | "scroll" | "auto"
     >;
     /**
@@ -2136,13 +2144,13 @@ export interface Selector {
      * The overscroll-behavior CSS property sets what a browser does when reaching the boundary of a scrolling area. It's a shorthand for overscroll-behavior-x and overscroll-behavior-y.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior}
      */
-    overscrollBehavior: CssPropertyDeclarationOf<"auto" | "contain" | "none">;
+    overscrollBehavior?: CssPropertyDeclarationOf<"auto" | "contain" | "none">;
     /**
      * ## overscrollBehaviorBlock
      * The overscroll-behavior-block CSS property sets the browser's behavior when the block direction boundary of a scrolling area is reached.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior-block}
      */
-    overscrollBehaviorBlock: CssPropertyDeclarationOf<
+    overscrollBehaviorBlock?: CssPropertyDeclarationOf<
         "auto" | "contain" | "none"
     >;
     /**
@@ -2150,7 +2158,7 @@ export interface Selector {
      * The overscroll-behavior-inline CSS property sets the browser's behavior when the inline direction boundary of a scrolling area is reached.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior-inline}
      */
-    overscrollBehaviorInline: CssPropertyDeclarationOf<
+    overscrollBehaviorInline?: CssPropertyDeclarationOf<
         "auto" | "contain" | "none"
     >;
     /**
@@ -2158,85 +2166,85 @@ export interface Selector {
      * The overscroll-behavior-x CSS property sets the browser's behavior when the horizontal boundary of a scrolling area is reached.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior-x}
      */
-    overscrollBehaviorX: CssPropertyDeclarationOf<"auto" | "contain" | "none">;
+    overscrollBehaviorX?: CssPropertyDeclarationOf<"auto" | "contain" | "none">;
     /**
      * ## overscrollBehaviorY
      * The overscroll-behavior-y CSS property sets the browser's behavior when the vertical boundary of a scrolling area is reached.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior-y}
      */
-    overscrollBehaviorY: CssPropertyDeclarationOf<"auto" | "contain" | "none">;
+    overscrollBehaviorY?: CssPropertyDeclarationOf<"auto" | "contain" | "none">;
     /**
      * ## right
      * The right CSS property participates in specifying the horizontal position of a positioned element. It has no effect on non-positioned elements.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/right}
      */
-    right: CssPropertyDeclarationOf<"auto">;
+    right?: CssPropertyDeclarationOf<"auto">;
     /**
      * ## padding
      * The padding CSS shorthand property sets the padding area on all four sides of an element at once.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/padding}
      */
-    padding: CssPropertyDeclarationOf<string>;
+    padding?: CssPropertyDeclarationOf<string>;
     /**
      * ## paddingBlock
      * The padding-block CSS shorthand property defines the logical block start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/padding-block}
      */
-    paddingBlock: CssPropertyDeclarationOf<string>;
+    paddingBlock?: CssPropertyDeclarationOf<string>;
     /**
      * ## paddingBlockEnd
      * The padding-block-end CSS property defines the logical block end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/padding-block-end}
      */
-    paddingBlockEnd: CssPropertyDeclarationOf<string>;
+    paddingBlockEnd?: CssPropertyDeclarationOf<string>;
     /**
      * ## paddingBlockStart
      * The padding-block-start CSS property defines the logical block start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/padding-block-start}
      */
-    paddingBlockStart: CssPropertyDeclarationOf<string>;
+    paddingBlockStart?: CssPropertyDeclarationOf<string>;
     /**
      * ## paddingBottom
      * The padding-bottom CSS property sets the height of the padding area on the bottom of an element.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/padding-bottom}
      */
-    paddingBottom: CssPropertyDeclarationOf<string>;
+    paddingBottom?: CssPropertyDeclarationOf<string>;
     /**
      * ## paddingInline
      * The padding-inline CSS shorthand property defines the logical inline start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/padding-inline}
      */
-    paddingInline: CssPropertyDeclarationOf<string>;
+    paddingInline?: CssPropertyDeclarationOf<string>;
     /**
      * ## paddingInlineEnd
      * The padding-inline-end CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/padding-inline-end}
      */
-    paddingInlineEnd: CssPropertyDeclarationOf<string>;
+    paddingInlineEnd?: CssPropertyDeclarationOf<string>;
     /**
      * ## paddingInlineStart
      * The padding-inline-start CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/padding-inline-start}
      */
-    paddingInlineStart: CssPropertyDeclarationOf<string>;
+    paddingInlineStart?: CssPropertyDeclarationOf<string>;
     /**
      * ## paddingLeft
      * The padding-left CSS property sets the width of the padding area to the left of an element.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/padding-left}
      */
-    paddingLeft: CssPropertyDeclarationOf<string>;
+    paddingLeft?: CssPropertyDeclarationOf<string>;
     /**
      * ## paddingRight
      * The padding-right CSS property sets the width of the padding area on the right of an element.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/padding-right}
      */
-    paddingRight: CssPropertyDeclarationOf<string>;
+    paddingRight?: CssPropertyDeclarationOf<string>;
     /**
      * ## paddingTop
      * The padding-top CSS property sets the height of the padding area on the top of an element.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/padding-top}
      */
-    paddingTop: CssPropertyDeclarationOf<string>;
+    paddingTop?: CssPropertyDeclarationOf<string>;
     /**
      * ## pageBreakAfter
      * The page-break-after CSS property adjusts page breaks after the current element.
@@ -2244,7 +2252,7 @@ export interface Selector {
      * `Warning: This property has been replaced by the break-after property.`
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/page-break-after}
      */
-    pageBreakAfter: CssPropertyDeclarationOf<string>;
+    pageBreakAfter?: CssPropertyDeclarationOf<string>;
     /**
      * ## pageBreakBefore
      * The page-break-before CSS property adjusts page breaks before the current element.
@@ -2252,7 +2260,7 @@ export interface Selector {
      * `Warning: This property has been replaced by the break-before property.`
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/page-break-before}
      */
-    pageBreakBefore: CssPropertyDeclarationOf<string>;
+    pageBreakBefore?: CssPropertyDeclarationOf<string>;
     /**
      * ## pageBreakInside
      * The page-break-inside CSS property adjusts page breaks inside the current element.
@@ -2260,25 +2268,25 @@ export interface Selector {
      * `Warning: This property has been replaced by the break-inside property.`
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/page-break-inside}
      */
-    pageBreakInside: CssPropertyDeclarationOf<string>;
+    pageBreakInside?: CssPropertyDeclarationOf<string>;
     /**
      * ## perspective
      * The perspective CSS property determines the distance between the z=0 plane and the user in order to give a 3D-positioned element some perspective.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/perspective}
      */
-    perspective: CssPropertyDeclarationOf<"none">;
+    perspective?: CssPropertyDeclarationOf<"none">;
     /**
      * ## perspectiveOrigin
      * The perspective-origin CSS property determines the position at which the viewer is looking. It is used as the vanishing point by the perspective property.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/perspective-origin}
      */
-    perspectiveOrigin: CssPropertyDeclarationOf<"top" | "center" | "right">;
+    perspectiveOrigin?: CssPropertyDeclarationOf<"top" | "center" | "right">;
     /**
      * ## placeContent
      * The place-content CSS shorthand property allows you to align content along both the block and inline directions at once (i.e. the align-content and justify-content properties) in a relevant layout system such as Grid or Flexbox.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/place-content}
      */
-    placeContent: CssPropertyDeclarationOf<
+    placeContent?: CssPropertyDeclarationOf<
         | "start"
         | "end"
         | "flex-start"
@@ -2301,7 +2309,7 @@ export interface Selector {
      * The CSS place-items shorthand property allows you to align items along both the block and inline directions at once (i.e. the align-items and justify-items properties) in a relevant layout system such as Grid or Flexbox. If the second value is not set, the first value is also used for it.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/place-items}
      */
-    placeItems: CssPropertyDeclarationOf<
+    placeItems?: CssPropertyDeclarationOf<
         | "start"
         | "end"
         | "flex-start"
@@ -2328,7 +2336,7 @@ export interface Selector {
      * The pointer-events CSS property sets under what circumstances (if any) a particular graphic element can become the target of pointer events.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events}
      */
-    pointerEvents: CssPropertyDeclarationOf<
+    pointerEvents?: CssPropertyDeclarationOf<
         | "auto"
         | "none"
         | "visiblePainted"
@@ -2345,7 +2353,7 @@ export interface Selector {
      * The position CSS property sets how an element is positioned in a document. The top, right, bottom, and left properties determine the final location of positioned elements.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/position}
      */
-    position: CssPropertyDeclarationOf<
+    position?: CssPropertyDeclarationOf<
         "static" | "relative" | "absolute" | "fixed" | "sticky"
     >;
     /**
@@ -2353,29 +2361,29 @@ export interface Selector {
      * The quotes CSS property sets how the browser should render quotation marks that are added using the open-quotes or close-quotes values of the CSS content property.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/quotes}
      */
-    quotes: CssPropertyDeclarationOf<"none" | "auto">;
+    quotes?: CssPropertyDeclarationOf<"none" | "auto">;
     /**
      * ## resize
      * The resize CSS property sets whether an element is resizable, and if so, in which directions.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/resize}
      */
-    resize: CssPropertyDeclarationOf<string>;
+    resize?: CssPropertyDeclarationOf<string>;
     /**
      * ## rotate
      * The rotate CSS property allows you to specify rotation transforms individually and independently of the transform property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the transform property.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/rotate}
      */
-    rotate: CssPropertyDeclarationOf<"none">;
+    rotate?: CssPropertyDeclarationOf<"none">;
     /**
      * ## rowGap
      * The row-gap CSS property sets the size of the gap (gutter) between an element's rows.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/row-gap}
      */
-    rowGap: CssPropertyDeclarationOf<string>;
+    rowGap?: CssPropertyDeclarationOf<string>;
     /**
      * ## rubyAlign
      */
-    rubyAlign: CssPropertyDeclarationOf<
+    rubyAlign?: CssPropertyDeclarationOf<
         "start" | "center" | "space-between" | "space-around"
     >;
     /**
@@ -2383,7 +2391,7 @@ export interface Selector {
      * The ruby-position CSS property defines the position of a ruby element relatives to its base element. It can be positioned over the element (over), under it (under), or between the characters on their right side (inter-character).
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/ruby-position}
      */
-    rubyPosition: CssPropertyDeclarationOf<
+    rubyPosition?: CssPropertyDeclarationOf<
         "over" | "under" | "inter-character" | "alternate"
     >;
     /**
@@ -2391,145 +2399,145 @@ export interface Selector {
      * The scale CSS property allows you to specify scale transforms individually and independently of the transform property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the transform value.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/scale}
      */
-    scale: CssPropertyDeclarationOf<string>;
+    scale?: CssPropertyDeclarationOf<string>;
     /**
      * ## scrollBehavior
      * The scroll-behavior CSS property sets the behavior for a scrolling box when scrolling is triggered by the navigation or CSSOM scrolling APIs.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior}
      */
-    scrollBehavior: CssPropertyDeclarationOf<"auto" | "smooth">;
+    scrollBehavior?: CssPropertyDeclarationOf<"auto" | "smooth">;
     /**
      * ## scrollMargin
      * The scroll-margin shorthand property sets all of the scroll margins of an element at once, assigning values much like the margin property does for margins of an element.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin}
      */
-    scrollMargin: CssPropertyDeclarationOf<string>;
+    scrollMargin?: CssPropertyDeclarationOf<string>;
     /**
      * ## scrollMarginBlock
      * The scroll-margin-block shorthand property sets the scroll margins of an element in the block dimension.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin-block}
      */
-    scrollMarginBlock: CssPropertyDeclarationOf<string>;
+    scrollMarginBlock?: CssPropertyDeclarationOf<string>;
     /**
      * ## scrollMarginBlockEnd
      * The scroll-margin-block-end property defines the margin of the scroll snap area at the end of the block dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin-block-end}
      */
-    scrollMarginBlockEnd: CssPropertyDeclarationOf<string>;
+    scrollMarginBlockEnd?: CssPropertyDeclarationOf<string>;
     /**
      * ## scrollMarginBlockStart
      * The scroll-margin-block-start property defines the margin of the scroll snap area at the start of the block dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin-block-start}
      */
-    scrollMarginBlockStart: CssPropertyDeclarationOf<string>;
+    scrollMarginBlockStart?: CssPropertyDeclarationOf<string>;
     /**
      * ## scrollMarginBottom
      * The scroll-margin-bottom property defines the bottom margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin-bottom}
      */
-    scrollMarginBottom: CssPropertyDeclarationOf<string>;
+    scrollMarginBottom?: CssPropertyDeclarationOf<string>;
     /**
      * ## scrollMarginInline
      * The scroll-margin-inline shorthand property sets the scroll margins of an element in the inline dimension.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin-inline}
      */
-    scrollMarginInline: CssPropertyDeclarationOf<string>;
+    scrollMarginInline?: CssPropertyDeclarationOf<string>;
     /**
      * ## scrollMarginInlineEnd
      * The scroll-margin-inline-end property defines the margin of the scroll snap area at the end of the inline dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin-inline-end}
      */
-    scrollMarginInlineEnd: CssPropertyDeclarationOf<string>;
+    scrollMarginInlineEnd?: CssPropertyDeclarationOf<string>;
     /**
      * ## scrollMarginInlineStart
      * The scroll-margin-inline-start property defines the margin of the scroll snap area at the start of the inline dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin-inline-start}
      */
-    scrollMarginInlineStart: CssPropertyDeclarationOf<string>;
+    scrollMarginInlineStart?: CssPropertyDeclarationOf<string>;
     /**
      * ## scrollMarginLeft
      * The scroll-margin-left property defines the left margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin-left}
      */
-    scrollMarginLeft: CssPropertyDeclarationOf<string>;
+    scrollMarginLeft?: CssPropertyDeclarationOf<string>;
     /**
      * ## scrollMarginRight
      * The scroll-margin-right property defines the right margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin-right}
      */
-    scrollMarginRight: CssPropertyDeclarationOf<string>;
+    scrollMarginRight?: CssPropertyDeclarationOf<string>;
     /**
      * ## scrollMarginTop
      * The scroll-margin-top property defines the top margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin-top}
      */
-    scrollMarginTop: CssPropertyDeclarationOf<string>;
+    scrollMarginTop?: CssPropertyDeclarationOf<string>;
     /**
      * ## scrollPadding
      * The scroll-padding shorthand property sets scroll padding on all sides of an element at once, much like the padding property does for padding on an element.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding}
      */
-    scrollPadding: CssPropertyDeclarationOf<string>;
+    scrollPadding?: CssPropertyDeclarationOf<string>;
     /**
      * ## scrollPaddingBlock
      * The scroll-padding-block shorthand property sets the scroll padding of an element in the block dimension.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding-block}
      */
-    scrollPaddingBlock: CssPropertyDeclarationOf<string>;
+    scrollPaddingBlock?: CssPropertyDeclarationOf<string>;
     /**
      * ## scrollPaddingBlockEnd
      * The scroll-padding-block-end property defines offsets for the end edge in the block dimension of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding-block-end}
      */
-    scrollPaddingBlockEnd: CssPropertyDeclarationOf<string>;
+    scrollPaddingBlockEnd?: CssPropertyDeclarationOf<string>;
     /**
      * ## scrollPaddingBlockStart
      * The scroll-padding-block-start property defines offsets for the start edge in the block dimension of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding-block-start}
      */
-    scrollPaddingBlockStart: CssPropertyDeclarationOf<string>;
+    scrollPaddingBlockStart?: CssPropertyDeclarationOf<string>;
     /**
      * ## scrollPaddingBottom
      * The scroll-padding-bottom property defines offsets for the bottom of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding-bottom}
      */
-    scrollPaddingBottom: CssPropertyDeclarationOf<string>;
+    scrollPaddingBottom?: CssPropertyDeclarationOf<string>;
     /**
      * ## scrollPaddingInline
      * The scroll-padding-inline-end property defines offsets for the end edge in the inline dimension of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding-inline-end}
      */
-    scrollPaddingInline: CssPropertyDeclarationOf<string>;
+    scrollPaddingInline?: CssPropertyDeclarationOf<string>;
     /**
      * ## scrollPaddingInlineStart
      * The scroll-padding-inline-start property defines offsets for the start edge in the inline dimension of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding-inline-start}
      */
-    scrollPaddingInlineStart: CssPropertyDeclarationOf<string>;
+    scrollPaddingInlineStart?: CssPropertyDeclarationOf<string>;
     /**
      * ## scrollPaddingLeft
      * The scroll-padding-left property defines offsets for the left of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding-left}
      */
-    scrollPaddingLeft: CssPropertyDeclarationOf<string>;
+    scrollPaddingLeft?: CssPropertyDeclarationOf<string>;
     /**
      * ## scrollPaddingRight
      * The scroll-padding-right property defines offsets for the right of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding-right}
      */
-    scrollPaddingRight: CssPropertyDeclarationOf<string>;
+    scrollPaddingRight?: CssPropertyDeclarationOf<string>;
     /**
      * ## scrollPaddingTop
      * The scroll-padding-top property defines offsets for the top of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding-top}
      */
-    scrollPaddingTop: CssPropertyDeclarationOf<string>;
+    scrollPaddingTop?: CssPropertyDeclarationOf<string>;
     /**
      * ## scrollSnapAlign
      * The scroll-snap-align property specifies the box's snap position as an alignment of its snap area (as the alignment subject) within its snap container's snapport (as the alignment container). The two values specify the snapping alignment in the block axis and inline axis, respectively. If only one value is specified, the second value defaults to the same value.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-snap-align}
      */
-    scrollSnapAlign: CssPropertyDeclarationOf<
+    scrollSnapAlign?: CssPropertyDeclarationOf<
         "none" | "start" | "end" | "center"
     >;
     /**
@@ -2537,13 +2545,13 @@ export interface Selector {
      * The scroll-snap-stop CSS property defines whether or not the scroll container is allowed to "pass over" possible snap positions.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-snap-stop}
      */
-    scrollSnapStop: CssPropertyDeclarationOf<"normal" | "always">;
+    scrollSnapStop?: CssPropertyDeclarationOf<"normal" | "always">;
     /**
      * ## scrollSnapType
      * The scroll-snap-type CSS property sets how strictly snap points are enforced on the scroll container in case there is one.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-snap-type}
      */
-    scrollSnapType: CssPropertyDeclarationOf<
+    scrollSnapType?: CssPropertyDeclarationOf<
         | "none"
         | "x"
         | "y"
@@ -2558,37 +2566,39 @@ export interface Selector {
      * The scrollbar-color CSS property sets the color of the scrollbar track and thumb.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-color}
      */
-    scrollbarColor: CssPropertyDeclarationOf<CssColor>;
+    scrollbarColor?: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## scrollbarGutter
      * The scrollbar-gutter CSS property allows authors to reserve space for the scrollbar, preventing unwanted layout changes as the content grows while also avoiding unnecessary visuals when scrolling isn't needed.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-gutter}
      */
-    scrollbarGutter: CssPropertyDeclarationOf<"auto" | "stable" | "both-edges">;
+    scrollbarGutter?: CssPropertyDeclarationOf<
+        "auto" | "stable" | "both-edges"
+    >;
     /**
      * ## scrollbarWidth
      * The scrollbar-width property allows the author to set the maximum thickness of an element's scrollbars when they are shown.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-width}
      */
-    scrollbarWidth: CssPropertyDeclarationOf<"auto" | "thin" | "none">;
+    scrollbarWidth?: CssPropertyDeclarationOf<"auto" | "thin" | "none">;
     /**
      * ## shapeImageThreshold
      * The shape-image-threshold CSS property sets the alpha channel threshold used to extract the shape using an image as the value for shape-outside.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/shape-image-threshold}
      */
-    shapeImageThreshold: CssPropertyDeclarationOf<string>;
+    shapeImageThreshold?: CssPropertyDeclarationOf<string>;
     /**
      * ## shapeMargin
      * The shape-margin CSS property sets a margin for a CSS shape created using shape-outside.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/shape-margin}
      */
-    shapeMargin: CssPropertyDeclarationOf<string>;
+    shapeMargin?: CssPropertyDeclarationOf<string>;
     /**
      * ## shapeOutside
      * The shape-outside CSS property defines a shape—which may be non-rectangular—around which adjacent inline content should wrap. By default, inline content wraps around its margin box; shape-outside provides a way to customize this wrapping, making it possible to wrap text around complex objects rather than simple boxes.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/shape-outside}
      */
-    shapeOutside: CssPropertyDeclarationOf<
+    shapeOutside?: CssPropertyDeclarationOf<
         "none" | "margin-box" | "content-box" | "border-box" | "padding-box"
     >;
     /**
@@ -2596,19 +2606,19 @@ export interface Selector {
      * The tab-size CSS property is used to customize the width of tab characters (U+0009).
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/tab-size}
      */
-    tabSize: CssPropertyDeclarationOf<string>;
+    tabSize?: CssPropertyDeclarationOf<string>;
     /**
      * ## tableLayout
      * The table-layout CSS property sets the algorithm used to lay out <table> cells, rows, and columns.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout}
      */
-    tableLayout: CssPropertyDeclarationOf<"auto" | "fixed">;
+    tableLayout?: CssPropertyDeclarationOf<"auto" | "fixed">;
     /**
      * ## textAlign
      * The text-align CSS property sets the horizontal alignment of the inline-level content inside a block element or table-cell box. This means it works like vertical-align but in the horizontal direction.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/text-align}
      */
-    textAlign: CssPropertyDeclarationOf<
+    textAlign?: CssPropertyDeclarationOf<
         | "start"
         | "end"
         | "left"
@@ -2623,7 +2633,7 @@ export interface Selector {
      * The text-align-last CSS property sets how the last line of a block or a line, right before a forced line break, is aligned.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/text-align-last}
      */
-    textAlignLast: CssPropertyDeclarationOf<
+    textAlignLast?: CssPropertyDeclarationOf<
         "start" | "end" | "left" | "right" | "center" | "justify"
     >;
     /**
@@ -2631,25 +2641,25 @@ export interface Selector {
      * The text-combine-upright CSS property sets the combination of characters into the space of a single character. If the combined text is wider than 1em, the user agent must fit the contents within 1em. The resulting composition is treated as a single upright glyph for layout and decoration. This property only has an effect in vertical writing modes.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/text-combine-upright}
      */
-    textCombineUpright: CssPropertyDeclarationOf<"none" | "all">;
+    textCombineUpright?: CssPropertyDeclarationOf<"none" | "all">;
     /**
      * ## textDecoration
      * The text-decoration shorthand CSS property sets the appearance of decorative lines on text. It is a shorthand for text-decoration-line, text-decoration-color, text-decoration-style, and the newer text-decoration-thickness property.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration}
      */
-    textDecoration: CssPropertyDeclarationOf<"none">;
+    textDecoration?: CssPropertyDeclarationOf<"none">;
     /**
      * ## textDecorationColor
      * The text-decoration-color CSS property sets the color of decorations added to text by text-decoration-line.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color}
      */
-    textDecorationColor: CssPropertyDeclarationOf<CssColor>;
+    textDecorationColor?: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## textDecorationLine
      * The text-decoration-line CSS property sets the kind of decoration that is used on text in an element, such as an underline or overline.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-line}
      */
-    textDecorationLine: CssPropertyDeclarationOf<
+    textDecorationLine?: CssPropertyDeclarationOf<
         "none" | "underline" | "overline" | "line-through" | "blink"
     >;
     /**
@@ -2658,7 +2668,7 @@ export interface Selector {
      * @experimental
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-skip}
      */
-    textDecorationSkip: CssPropertyDeclarationOf<
+    textDecorationSkip?: CssPropertyDeclarationOf<
         | "none"
         | "objects"
         | "spaces"
@@ -2672,13 +2682,13 @@ export interface Selector {
      * The text-decoration-skip-ink CSS property specifies how overlines and underlines are drawn when they pass over glyph ascenders and descenders.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-skip-ink}
      */
-    textDecorationSkipInk: CssPropertyDeclarationOf<"none" | "auto" | "all">;
+    textDecorationSkipInk?: CssPropertyDeclarationOf<"none" | "auto" | "all">;
     /**
      * ## textDecorationStyle
      * The text-decoration-style CSS property sets the style of the lines specified by text-decoration-line. The style applies to all lines that are set with text-decoration-line.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-style}
      */
-    textDecorationStyle: CssPropertyDeclarationOf<
+    textDecorationStyle?: CssPropertyDeclarationOf<
         "solid" | "double" | "dotted" | "dashed" | "wavy"
     >;
     /**
@@ -2686,23 +2696,23 @@ export interface Selector {
      * The text-decoration-thickness CSS property sets the stroke thickness of the decoration line that is used on text in an element, such as a line-through, underline, or overline.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-thickness}
      */
-    textDecorationThickness: CssPropertyDeclarationOf<"auto" | "from-font">;
+    textDecorationThickness?: CssPropertyDeclarationOf<"auto" | "from-font">;
     /**
      * ## textEmphasis
      * The text-emphasis CSS property applies emphasis marks to text (except spaces and control characters). It is a shorthand for text-emphasis-style and text-emphasis-color.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis}
      */
-    textEmphasis: CssPropertyDeclarationOf<"none">;
+    textEmphasis?: CssPropertyDeclarationOf<"none">;
     /**
      * ## textEmphasisColor
      * The text-emphasis-color CSS property sets the color of emphasis marks. This value can also be set using the text-emphasis shorthand.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-color}
      */
-    textEmphasisColor: CssPropertyDeclarationOf<CssColor>;
+    textEmphasisColor?: CssPropertyDeclarationOf<CssColor>;
     /**
      * ## textEmphasisPosition
      */
-    textEmphasisPosition: CssPropertyDeclarationOf<
+    textEmphasisPosition?: CssPropertyDeclarationOf<
         "over" | "under" | "right" | "left"
     >;
     /**
@@ -2710,7 +2720,7 @@ export interface Selector {
      * The text-emphasis-position CSS property sets where emphasis marks are drawn. Like ruby text, if there isn't enough room for emphasis marks, the line height is increased.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-position}
      */
-    textEmphasisStyle: CssPropertyDeclarationOf<
+    textEmphasisStyle?: CssPropertyDeclarationOf<
         | "none"
         | "filled"
         | "open"
@@ -2725,13 +2735,13 @@ export interface Selector {
      * The text-indent CSS property sets the length of empty space (indentation) that is put before lines of text in a block.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/text-indent}
      */
-    textIndent: CssPropertyDeclarationOf<string>;
+    textIndent?: CssPropertyDeclarationOf<string>;
     /**
      * ## textJustify
      * The text-justify CSS property sets what type of justification should be applied to text when text-align: justify; is set on an element.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/text-justify}
      */
-    textJustify: CssPropertyDeclarationOf<
+    textJustify?: CssPropertyDeclarationOf<
         "none" | "auto" | "inter-word" | "inter-character" | "distribute"
     >;
     /**
@@ -2739,7 +2749,7 @@ export interface Selector {
      * The text-orientation CSS property sets the orientation of the text characters in a line. It only affects text in vertical mode (when writing-mode is not horizontal-tb). It is useful for controlling the display of languages that use vertical script, and also for making vertical table headers.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/text-orientation}
      */
-    textOrientation: CssPropertyDeclarationOf<
+    textOrientation?: CssPropertyDeclarationOf<
         | "mixed"
         | "upright"
         | "sideways-right"
@@ -2751,13 +2761,13 @@ export interface Selector {
      * The text-overflow CSS property sets how hidden overflow content is signaled to users. It can be clipped, display an ellipsis ('…'), or display a custom string.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow}
      */
-    textOverflow: CssPropertyDeclarationOf<"clip" | "ellipsis">;
+    textOverflow?: CssPropertyDeclarationOf<"clip" | "ellipsis">;
     /**
      * ## textRendering
      * The text-rendering CSS property provides information to the rendering engine about what to optimize for when rendering text.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/text-rendering}
      */
-    textRendering: CssPropertyDeclarationOf<
+    textRendering?: CssPropertyDeclarationOf<
         "auto" | "optimizeSpeed" | "optimizeLegibility" | "geometricPrecision"
     >;
     /**
@@ -2765,20 +2775,20 @@ export interface Selector {
      * The text-shadow CSS property adds shadows to text. It accepts a comma-separated list of shadows to be applied to the text and any of its decorations. Each shadow is described by some combination of X and Y offsets from the element, blur radius, and color.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow}
      */
-    textShadow: CssPropertyDeclarationOf<string>;
+    textShadow?: CssPropertyDeclarationOf<string>;
     /**
      * ## textSizeAdjust
      * The text-size-adjust CSS property controls the text inflation algorithm used on some smartphones and tablets. Other browsers will ignore this property.
      * @experimental
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust}
      */
-    textSizeAdjust: CssPropertyDeclarationOf<string>;
+    textSizeAdjust?: CssPropertyDeclarationOf<string>;
     /**
      * ## textTransform
      * The text-transform CSS property specifies how to capitalize an element's text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized. It also can help improve legibility for ruby.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform}
      */
-    textTransform: CssPropertyDeclarationOf<
+    textTransform?: CssPropertyDeclarationOf<
         | "none"
         | "capitalize"
         | "uppercase"
@@ -2791,13 +2801,13 @@ export interface Selector {
      * The text-underline-offset CSS property sets the offset distance of an underline text decoration line (applied using text-decoration) from its original position.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/text-underline-offset}
      */
-    textUnderlineOffset: CssPropertyDeclarationOf<"auto">;
+    textUnderlineOffset?: CssPropertyDeclarationOf<"auto">;
     /**
      * ## textUnderlinePosition
      * The text-underline-position CSS property specifies the position of the underline which is set using the text-decoration property's underline value.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/text-underline-position}
      */
-    textUnderlinePosition: CssPropertyDeclarationOf<
+    textUnderlinePosition?: CssPropertyDeclarationOf<
         "auto" | "under" | "left" | "right"
     >;
     /**
@@ -2805,13 +2815,13 @@ export interface Selector {
      * The top CSS property participates in specifying the vertical position of a positioned element. It has no effect on non-positioned elements.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/top}
      */
-    top: CssPropertyDeclarationOf<"auto">;
+    top?: CssPropertyDeclarationOf<"auto">;
     /**
      * ## touchAction
      * The touch-action CSS property sets how an element's region can be manipulated by a touchscreen user (for example, by zooming features built into the browser).
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action}
      */
-    touchAction: CssPropertyDeclarationOf<
+    touchAction?: CssPropertyDeclarationOf<
         "auto" | "none" | "pan-x" | "pan-y" | "manipulation" | "pinch-zoom"
     >;
     /**
@@ -2819,13 +2829,13 @@ export interface Selector {
      * The transform CSS property lets you rotate, scale, skew, or translate an element. It modifies the coordinate space of the CSS visual formatting model.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/transform}
      */
-    transform: CssPropertyDeclarationOf<string>;
+    transform?: CssPropertyDeclarationOf<string>;
     /**
      * ## transformBox
      * The transform-box CSS property defines the layout box to which the transform and transform-origin properties relate.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/transform-box}
      */
-    transformBox: CssPropertyDeclarationOf<
+    transformBox?: CssPropertyDeclarationOf<
         "content-box" | "border-box" | "fill-box" | "stroke-box" | "view-box"
     >;
     /**
@@ -2833,7 +2843,7 @@ export interface Selector {
      * The transform-origin CSS property sets the origin for an element's transformations.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin}
      */
-    transformOrigin: CssPropertyDeclarationOf<
+    transformOrigin?: CssPropertyDeclarationOf<
         "left" | "center" | "right" | "top" | "bottom"
     >;
     /**
@@ -2841,37 +2851,37 @@ export interface Selector {
      * The transform-style CSS property sets whether children of an element are positioned in the 3D space or are flattened in the plane of the element.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/transform-style}
      */
-    transformStyle: CssPropertyDeclarationOf<"flat" | "preserve-3d">;
+    transformStyle?: CssPropertyDeclarationOf<"flat" | "preserve-3d">;
     /**
      * ## transition
      * The transition CSS property is a shorthand property for transition-property, transition-duration, transition-timing-function, and transition-delay.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/transition}
      */
-    transition: CssPropertyDeclarationOf<string>;
+    transition?: CssPropertyDeclarationOf<string>;
     /**
      * ## transitionDelay
      * The transition-delay CSS property specifies the duration to wait before starting a property's transition effect when its value changes.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/transition-delay}
      */
-    transitionDelay: CssPropertyDeclarationOf<string>;
+    transitionDelay?: CssPropertyDeclarationOf<string>;
     /**
      * ## transitionDuration
      * The transition-duration CSS property sets the length of time a transition animation should take to complete. By default, the value is 0s, meaning that no animation will occur.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/transition-duration}
      */
-    transitionDuration: CssPropertyDeclarationOf<string>;
+    transitionDuration?: CssPropertyDeclarationOf<string>;
     /**
      * ## transitionProperty
      * The transition-property CSS property sets the CSS properties to which a transition effect should be applied.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/transition-property}
      */
-    transitionProperty: CssPropertyDeclarationOf<string>;
+    transitionProperty?: CssPropertyDeclarationOf<string>;
     /**
      * ## transitionTimingFunction
      * The transition-timing-function CSS property sets how intermediate values are calculated for CSS properties being affected by a transition effect.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function}
      */
-    transitionTimingFunction: CssPropertyDeclarationOf<
+    transitionTimingFunction?: CssPropertyDeclarationOf<
         | "ease"
         | "ease-in"
         | "ease-out"
@@ -2885,19 +2895,19 @@ export interface Selector {
      * The translate CSS property allows you to specify translation transforms individually and independently of the transform property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the transform value.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/translate}
      */
-    translate: CssPropertyDeclarationOf<"none">;
+    translate?: CssPropertyDeclarationOf<"none">;
     /**
      * ## unicodeBidi
      * The unicode-bidi CSS property, together with the direction property, determines how bidirectional text in a document is handled. For example, if a block of content contains both left-to-right and right-to-left text, the user-agent uses a complex Unicode algorithm to decide how to display the text. The unicode-bidi property overrides this algorithm and allows the developer to control the text embedding.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/unicode-bidi}
      */
-    unicodeBidi: CssPropertyDeclarationOf<string>;
+    unicodeBidi?: CssPropertyDeclarationOf<string>;
     /**
      * ## userSelect
      * The user-select CSS property controls whether the user can select text. This doesn't have any effect on content loaded as part of a browser's user interface (its chrome), except in textboxes.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/user-select}
      */
-    userSelect: CssPropertyDeclarationOf<
+    userSelect?: CssPropertyDeclarationOf<
         "none" | "auto" | "text" | "contain" | "all"
     >;
     /**
@@ -2905,7 +2915,7 @@ export interface Selector {
      * The vertical-align CSS property sets vertical alignment of an inline, inline-block or table-cell box.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/vertical-align}
      */
-    verticalAlign: CssPropertyDeclarationOf<
+    verticalAlign?: CssPropertyDeclarationOf<
         | "baseline"
         | "sub"
         | "super"
@@ -2920,13 +2930,13 @@ export interface Selector {
      * The visibility CSS property shows or hides an element without changing the layout of a document. The property can also hide rows or columns in a ``<table>``.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/visibility}
      */
-    visibility: CssPropertyDeclarationOf<"visible" | "hidden" | "collapse">;
+    visibility?: CssPropertyDeclarationOf<"visible" | "hidden" | "collapse">;
     /**
      * ## whiteSpace
      * The white-space CSS property sets how white space inside an element is handled.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/white-space}
      */
-    whiteSpace: CssPropertyDeclarationOf<
+    whiteSpace?: CssPropertyDeclarationOf<
         "normal" | "nowrap" | "pre" | "pre-wrap" | "pre-line" | "break-spaces"
     >;
     /**
@@ -2934,19 +2944,19 @@ export interface Selector {
      * The width CSS property sets an element's width. By default, it sets the width of the content area, but if box-sizing is set to border-box, it sets the width of the border area.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/width}
      */
-    width: CssPropertyDeclarationOf<"max-content" | "min-content" | "auto">;
+    width?: CssPropertyDeclarationOf<"max-content" | "min-content" | "auto">;
     /**
      * ## widows
      * The widows CSS property sets the minimum number of lines in a block container that must be shown at the top of a page, region, or column.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/widows}
      */
-    widows: CssPropertyDeclarationOf<string>;
+    widows?: CssPropertyDeclarationOf<string>;
     /**
      * ## wordBreak
      * The word-break CSS property sets whether line breaks appear wherever the text would otherwise overflow its content box.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/word-break}
      */
-    wordBreak: CssPropertyDeclarationOf<
+    wordBreak?: CssPropertyDeclarationOf<
         "normal" | "break-all" | "keep-all" | "break-word"
     >;
     /**
@@ -2954,19 +2964,19 @@ export interface Selector {
      * The word-spacing CSS property sets the length of space between words and between tags.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/word-spacing}
      */
-    wordSpacing: CssPropertyDeclarationOf<"normal">;
+    wordSpacing?: CssPropertyDeclarationOf<"normal">;
     /**
      * ## wordWrap
      * The overflow-wrap CSS property applies to inline elements, setting whether the browser should insert line breaks within an otherwise unbreakable string to prevent text from overflowing its line box.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-wrap}
      */
-    wordWrap: CssPropertyDeclarationOf<"normal" | "break-word" | "anywhere">;
+    wordWrap?: CssPropertyDeclarationOf<"normal" | "break-word" | "anywhere">;
     /**
      * ## writingMode
      * The writing-mode CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which blocks progress. When set for an entire document, it should be set on the root element (html element for HTML documents).
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode}
      */
-    writingMode: CssPropertyDeclarationOf<
+    writingMode?: CssPropertyDeclarationOf<
         "horizontal-tb" | "vertical-rl" | "vertical-lr"
     >;
     /**
@@ -2974,20 +2984,20 @@ export interface Selector {
      * The z-index CSS property sets the z-order of a positioned element and its descendants or flex items. Overlapping elements with a larger z-index cover those with a smaller one.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/z-index}
      */
-    zIndex: CssPropertyDeclarationOf<"auto">;
+    zIndex?: CssPropertyDeclarationOf<"auto">;
     /**
      * ## zoom
      * The non-standard zoom CSS property can be used to control the magnification level of an element. transform: scale() should be used instead of this property, if possible. However, unlike CSS Transforms, zoom affects the layout size of the element.
      * @non-standard
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/zoom}
      */
-    zoom: CssPropertyDeclarationOf<string>;
+    zoom?: CssPropertyDeclarationOf<string>;
     /**
      * ## webkitLineClamp
      * The -webkit-line-clamp CSS property allows limiting of the contents of a block container to the specified number of lines.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-line-clamp}
      */
-    webkitLineClamp: CssPropertyDeclarationOf<string>;
+    webkitLineClamp?: CssPropertyDeclarationOf<string>;
     /**
      * ## alignmentBaseline
      * The alignment-baseline attribute specifies how an object is aligned with respect to its parent. This property specifies which baseline of this element is to be aligned with the corresponding baseline of the parent. For example, this allows alphabetic baselines in Roman text to stay aligned across font size changes. It defaults to the baseline with the same name as the computed value of the alignment-baseline property.
@@ -2998,31 +3008,31 @@ export interface Selector {
      * * `<altGlyph>`
      * * `<textPath>`
      */
-    alignmentBaseline: CssPropertyDeclarationOf<string>;
+    alignmentBaseline?: CssPropertyDeclarationOf<string>;
     /**
      * ## baselineShift
      * The baseline-shift attribute allows repositioning of the dominant-baseline relative to the dominant-baseline of the parent text content element. The shifted object might be a sub- or superscript.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/baseline-shift}
      */
-    baselineShift: CssPropertyDeclarationOf<string>;
+    baselineShift?: CssPropertyDeclarationOf<string>;
     /**
      * ## clipRule
      * The clip-rule attribute only applies to graphics elements that are contained within a <clipPath> element. The clip-rule attribute basically works as the fill-rule attribute, except that it applies to <clipPath> definitions.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/clip-rule}
      */
-    clipRule: CssPropertyDeclarationOf<string>;
+    clipRule?: CssPropertyDeclarationOf<string>;
     /**
      * ## colorInterpolation
      * The color-interpolation attribute specifies the color space for gradient interpolations, color animations, and alpha compositing.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/color-interpolation}
      */
-    colorInterpolation: CssPropertyDeclarationOf<string>;
+    colorInterpolation?: CssPropertyDeclarationOf<string>;
     /**
      * ## colorInterpolationFilter
      * The color-interpolation-filters attribute specifies the color space for imaging operations performed via filter effects.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/color-interpolation-filters}
      */
-    colorInterpolationFilter: CssPropertyDeclarationOf<string>;
+    colorInterpolationFilter?: CssPropertyDeclarationOf<string>;
     /**
      * ## colorProfile
      * The color-profile attribute is used to define which color profile a raster image included through the ``<image>`` element should use.
@@ -3030,168 +3040,168 @@ export interface Selector {
      * @deprecated
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/color-profile}
      */
-    colorProfile: CssPropertyDeclarationOf<string>;
+    colorProfile?: CssPropertyDeclarationOf<string>;
     /**
      * ## colorRendering
      */
-    colorRendering: CssPropertyDeclarationOf<string>;
+    colorRendering?: CssPropertyDeclarationOf<string>;
     /**
      * ## dominantBaseline
      * The dominant-baseline attribute specifies the dominant baseline, which is the baseline used to align the box's text and inline-level contents. It also indicates the default alignment baseline of any boxes participating in baseline alignment in the box's alignment context.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/dominant-baseline}
      */
-    dominantBaseline: CssPropertyDeclarationOf<string>;
+    dominantBaseline?: CssPropertyDeclarationOf<string>;
     /**
      * ## enableBackground
      */
-    enableBackground: CssPropertyDeclarationOf<string>;
+    enableBackground?: CssPropertyDeclarationOf<string>;
     /**
      * ## fill
      * The fill attribute has two different meanings. For shapes and text it's a presentation attribute that defines the color (or any SVG paint servers like gradients or patterns) used to paint the element; for animation it defines the final state of the animation.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill}
      */
-    fill: CssPropertyDeclarationOf<string>;
+    fill?: CssPropertyDeclarationOf<string>;
     /**
      * ## fillOpacity
      * The enable-background attribute specifies how the accumulation of the background image is managed.
      * @deprecated
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/enable-background}
      */
-    fillOpacity: CssPropertyDeclarationOf<string>;
+    fillOpacity?: CssPropertyDeclarationOf<string>;
     /**
      * ## fillRule
      * The fill-rule attribute is a presentation attribute defining the algorithm to use to determine the inside part of a shape.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill-rule}
      */
-    fillRule: CssPropertyDeclarationOf<string>;
+    fillRule?: CssPropertyDeclarationOf<string>;
     /**
      * ## floodColor
      * The flood-color attribute indicates what color to use to flood the current filter primitive subregion.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/flood-color}
      */
-    floodColor: CssPropertyDeclarationOf<string>;
+    floodColor?: CssPropertyDeclarationOf<string>;
     /**
      * ## floodOpacity
      * The flood-opacity attribute indicates the opacity value to use across the current filter primitive subregion.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/flood-opacity}
      */
-    floodOpacity: CssPropertyDeclarationOf<string>;
+    floodOpacity?: CssPropertyDeclarationOf<string>;
     /**
      * ## glyphOrientationHorizontal
      * The glyph-orientation-horizontal attribute affects the amount that the current text position advances as each glyph is rendered.
      * @deprecated
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/glyph-orientation-horizontal}
      */
-    glyphOrientationHorizontal: CssPropertyDeclarationOf<string>;
+    glyphOrientationHorizontal?: CssPropertyDeclarationOf<string>;
     /**
      * ## glyphOrientationVertical
      * The glyph-orientation-vertical attribute affects the amount that hte current text position advances as each glyph is rendered.
      * @deprecated
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/glyph-orientation-vertical}
      */
-    glyphOrientationVertical: CssPropertyDeclarationOf<string>;
+    glyphOrientationVertical?: CssPropertyDeclarationOf<string>;
     /**
      * ## lightingColor
      * The lighting-color attribute defines the color of the light source for lighting filter primitives.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/lighting-color}
      */
-    lightingColor: CssPropertyDeclarationOf<string>;
+    lightingColor?: CssPropertyDeclarationOf<string>;
     /**
      * ## markerEnd
      * The marker-end attribute defines the arrowhead or polymarker that will be drawn at the final vertex of the given shape.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/marker-end}
      */
-    markerEnd: CssPropertyDeclarationOf<string>;
+    markerEnd?: CssPropertyDeclarationOf<string>;
     /**
      * ## markerMid
      * The marker-mid attribute defines the arrowhead or polymarker that will be drawn at all interior vertices of the given shape.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/marker-mid}
      */
-    markerMid: CssPropertyDeclarationOf<string>;
+    markerMid?: CssPropertyDeclarationOf<string>;
     /**
      * ## markerStart
      * The marker-start attribute defines the arrowhead or polymarker that will be drawn at the first vertex of the given shape.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/marker-start}
      */
-    markerStart: CssPropertyDeclarationOf<string>;
+    markerStart?: CssPropertyDeclarationOf<string>;
     /**
      * ## shapeRendering
      * The shape-rendering attribute provides hints to the renderer about what tradeoffs to make when rendering shapes like paths, circles, or rectangles.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/shape-rendering}
      */
-    shapeRendering: CssPropertyDeclarationOf<string>;
+    shapeRendering?: CssPropertyDeclarationOf<string>;
     /**
      * ## stopColor
      * The stop-color attribute indicates what color to use at a gradient stop.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stop-color}
      */
-    stopColor: CssPropertyDeclarationOf<string>;
+    stopColor?: CssPropertyDeclarationOf<string>;
     /**
      * ## stopOpacity
      * The stop-opacity attribute defines the opacity of a given color gradient stop.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stop-opacity}
      */
-    stopOpacity: CssPropertyDeclarationOf<string>;
+    stopOpacity?: CssPropertyDeclarationOf<string>;
     /**
      * ## stroke
      * The stroke attribute is a presentation attribute defining the color (or any SVG paint servers like gradients or patterns) used to paint the outline of the shape;
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke}
      */
-    stroke: CssPropertyDeclarationOf<string>;
+    stroke?: CssPropertyDeclarationOf<string>;
     /**
      * ## strokeDasharray
      * The stroke-dasharray attribute is a presentation attribute defining the pattern of dashes and gaps used to paint the outline of the shape;
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dasharray}
      */
-    strokeDasharray: CssPropertyDeclarationOf<string>;
+    strokeDasharray?: CssPropertyDeclarationOf<string>;
     /**
      * ## strokeDashoffset
      * The stroke-dashoffset attribute is a presentation attribute defining an offset on the rendering of the associated dash array.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dashoffset}
      */
-    strokeDashoffset: CssPropertyDeclarationOf<string>;
+    strokeDashoffset?: CssPropertyDeclarationOf<string>;
     /**
      * ## strokeLinecap
      * The stroke-linecap attribute is a presentation attribute defining the shape to be used at the end of open subpaths when they are stroked.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-linecap}
      */
-    strokeLinecap: CssPropertyDeclarationOf<string>;
+    strokeLinecap?: CssPropertyDeclarationOf<string>;
     /**
      * ## strokeLinejoin
      * The stroke-linejoin attribute is a presentation attribute defining the shape to be used at the corners of paths when they are stroked.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-linejoin}
      */
-    strokeLinejoin: CssPropertyDeclarationOf<string>;
+    strokeLinejoin?: CssPropertyDeclarationOf<string>;
     /**
      * ## strokeMiterlimit
      * The stroke-miterlimit attribute is a presentation attribute defining a limit on the ratio of the miter length to the stroke-width used to draw a miter join. When the limit is exceeded, the join is converted from a miter to a bevel.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-miterlimit}
      */
-    strokeMiterlimit: CssPropertyDeclarationOf<string>;
+    strokeMiterlimit?: CssPropertyDeclarationOf<string>;
     /**
      * ## strokeOpacity
      * The stroke-opacity attribute is a presentation attribute defining the opacity of the paint server (color, gradient, pattern, etc.) applied to the stroke of a shape.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-opacity}
      */
-    strokeOpacity: CssPropertyDeclarationOf<string>;
+    strokeOpacity?: CssPropertyDeclarationOf<string>;
     /**
      * ## strokeWidth
      * The stroke-width attribute is a presentation attribute defining the width of the stroke to be applied to the shape.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-width}
      */
-    strokeWidth: CssPropertyDeclarationOf<string>;
+    strokeWidth?: CssPropertyDeclarationOf<string>;
     /**
      * ## textAnchor
      * The text-anchor attribute is used to align (start-, middle- or end-alignment) a string of pre-formatted text or auto-wrapped text where the wrapping area is determined from the inline-size property relative to a given point.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-anchor}
      */
-    textAnchor: CssPropertyDeclarationOf<string>;
+    textAnchor?: CssPropertyDeclarationOf<string>;
     /**
      * ## vectorEffect
      * The vector-effect property specifies the vector effect to use when drawing an object. Vector effects are applied before any of the other compositing operations, i.e. filters, masks and clips.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/vector-effect}
      */
-    vectorEffect: CssPropertyDeclarationOf<string>;
+    vectorEffect?: CssPropertyDeclarationOf<string>;
 }
 /**
  * ## SelectorTypes
@@ -3201,19 +3211,19 @@ export interface SelectorTypes {
      * ## inline
      * Define inline element style having the top priority.
      */
-    inline: Selector;
+    inline?: Selector;
     /**
      * ## normal
      * Define style for the normal state of the element.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors}
      */
-    normal: Selector;
+    normal?: Selector;
     /**
      * ## active
      * Define style for the element when clicked.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:active}
      */
-    active: Selector;
+    active?: Selector;
     /**
      * ## anyLink
      * Define the style that represents an element
@@ -3221,7 +3231,7 @@ export interface SelectorTypes {
      * independent of whether it has been visited.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:any-link}
      */
-    anyLink: Selector;
+    anyLink?: Selector;
     /**
      * ## autofill
      * The :autofill CSS pseudo-class matches when an ``<input>``
@@ -3229,7 +3239,7 @@ export interface SelectorTypes {
      * The class stops matching if the user edits the field.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:autofill}
      */
-    autofill: Selector;
+    autofill?: Selector;
     /**
      * ## checked
      * The ``:checked`` CSS pseudo-class selector represents any radio
@@ -3237,14 +3247,14 @@ export interface SelectorTypes {
      * or option (``<option>`` in a ``<select>``)
      * element that is checked or toggled to an on state.
      */
-    checked: Selector;
+    checked?: Selector;
     /**
      * ## default
      * The :default CSS pseudo-class selects
      * form elements that are the default in a group of related elements.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:default}
      */
-    default: Selector;
+    default?: Selector;
     /**
      * ## defined
      * The :defined CSS pseudo-class
@@ -3254,7 +3264,7 @@ export interface SelectorTypes {
      * (i.e. with the CustomElementRegistry.define() method).
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:defined}
      */
-    defined: Selector;
+    defined?: Selector;
     /**
      * ## disabled
      * The :disabled CSS pseudo-class represents any disabled element.
@@ -3264,7 +3274,7 @@ export interface SelectorTypes {
      * in which it can be activated or accept focus.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:disabled}
      */
-    disabled: Selector;
+    disabled?: Selector;
     /**
      * ## empty
      * The :empty CSS pseudo-class represents any element that has no children.
@@ -3273,7 +3283,7 @@ export interface SelectorTypes {
      * and CSS content do not affect whether an element is considered empty.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:empty}
      */
-    empty: Selector;
+    empty?: Selector;
     /**
      * ## enabled
      * The :enabled CSS pseudo-class represents any enabled element.
@@ -3283,7 +3293,7 @@ export interface SelectorTypes {
      * in which it can't be activated or accept focus.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:enabled}
      */
-    enabled: Selector;
+    enabled?: Selector;
     /**
      * ## first
      * The :first CSS pseudo-class, used with the ``@page`` at-rule,
@@ -3291,21 +3301,21 @@ export interface SelectorTypes {
      *
      * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:first}
      */
-    first: Selector;
+    first?: Selector;
     /**
      * ## firstChild
      * The :first-child CSS pseudo-class
      * represents the first element among a group of sibling elements.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:first-child}
      */
-    firstChild: Selector;
+    firstChild?: Selector;
     /**
      * ## firstOfType
      * The :first-of-type CSS pseudo-class represents
      * the first element of its type among a group of sibling elements.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:first-of-type}
      */
-    firstOfType: Selector;
+    firstOfType?: Selector;
     /**
      * ## fullscreen
      * The :fullscreen CSS pseudo-class
@@ -3314,7 +3324,7 @@ export interface SelectorTypes {
      * this selects them all.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:fullscreen}
      */
-    fullscreen: Selector;
+    fullscreen?: Selector;
     /**
      * ## focus
      * The :focus CSS pseudo-class represents an element
@@ -3323,7 +3333,7 @@ export interface SelectorTypes {
      * or taps on an element or selects it with the keyboard's Tab key.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:focus}
      */
-    focus: Selector;
+    focus?: Selector;
     /**
      * ## focusVisible
      * The :focus-visible pseudo-class applies
@@ -3332,7 +3342,7 @@ export interface SelectorTypes {
      * (Many browsers show a "focus ring" by default in this case.)
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible}
      */
-    focusVisible: Selector;
+    focusVisible?: Selector;
     /**
      * ## focusWithin
      * The :focus-within CSS pseudo-class
@@ -3343,7 +3353,7 @@ export interface SelectorTypes {
      *
      * @link {https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-within}
      */
-    focusWithin: Selector;
+    focusWithin?: Selector;
     /**
      * ## host
      * The :host CSS pseudo-class
@@ -3352,7 +3362,7 @@ export interface SelectorTypes {
      * this allows you to select a custom element from inside its shadow DOM.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:host}
      */
-    host: Selector;
+    host?: Selector;
     /**
      * ## hover
      * ## `:hover`
@@ -3363,7 +3373,7 @@ export interface SelectorTypes {
      * when the user hovers over an element with the cursor (mouse pointer).
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:hover}
      */
-    hover: Selector;
+    hover?: Selector;
     /**
      * ## indeterminate
      * The :indeterminate CSS pseudo-class
@@ -3373,14 +3383,14 @@ export interface SelectorTypes {
      * and indeterminate ``<progress>`` elements.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:indeterminate}
      */
-    indeterminate: Selector;
+    indeterminate?: Selector;
     /**
      * ## inRange
      * The :in-range CSS pseudo-class represents an ``<input>`` element
      * whose current value is within the range limits specified by the min and max attributes.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:in-range}
      */
-    inRange: Selector;
+    inRange?: Selector;
     /**
      * ## invalid
      * The :invalid CSS pseudo-class represents
@@ -3388,21 +3398,21 @@ export interface SelectorTypes {
      * or other ``<form>`` element whose contents fail to validate.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:invalid}
      */
-    invalid: Selector;
+    invalid?: Selector;
     /**
      * ## lastChild
      * The :last-child CSS pseudo-class
      * represents the last element among a group of sibling elements.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:last-child}
      */
-    lastChild: Selector;
+    lastChild?: Selector;
     /**
      * ## lastOfType
      * The :last-of-type CSS pseudo-class
      * represents the last element of its type among a group of sibling elements.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:last-of-type}
      */
-    lastOfType: Selector;
+    lastOfType?: Selector;
     /**
      * ## left
      * The :left CSS pseudo-class,
@@ -3410,7 +3420,7 @@ export interface SelectorTypes {
      * represents all left-hand pages of a printed document.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:left}
      */
-    left: Selector;
+    left?: Selector;
     /**
      * ## link
      * The :link CSS pseudo-class
@@ -3419,7 +3429,7 @@ export interface SelectorTypes {
      * that has an href attribute.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:link}
      */
-    link: Selector;
+    link?: Selector;
     /**
      * ## modal
      * The :modal CSS pseudo-class
@@ -3432,7 +3442,7 @@ export interface SelectorTypes {
      * but only one of them will be active and able to receive input.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:modal}
      */
-    modal: Selector;
+    modal?: Selector;
     /**
      * ## onlyChild
      * The :only-child CSS pseudo-class
@@ -3442,14 +3452,14 @@ export interface SelectorTypes {
      * but with a lower specificity.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:only-child}
      */
-    onlyChild: Selector;
+    onlyChild?: Selector;
     /**
      * ## onlyOfType
      * The :only-of-type CSS pseudo-class
      * represents an element that has no siblings of the same type.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:only-of-type}
      */
-    onlyOfType: Selector;
+    onlyOfType?: Selector;
     /**
      * ## optional
      * The :optional CSS pseudo-class represents any ``<input>``
@@ -3457,7 +3467,7 @@ export interface SelectorTypes {
      * that does not have the required attribute set on it.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:optional}
      */
-    optional: Selector;
+    optional?: Selector;
     /**
      * ## outOfRange
      * The :out-of-range CSS pseudo-class
@@ -3466,7 +3476,7 @@ export interface SelectorTypes {
      * by the min and max attributes.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:out-of-range}
      */
-    outOfRange: Selector;
+    outOfRange?: Selector;
     /**
      * ## pictureInPicutre
      * The :picture-in-picture CSS pseudo-class
@@ -3474,7 +3484,7 @@ export interface SelectorTypes {
      * in picture-in-picture mode.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:picture-in-picture}
      */
-    pictureInPicutre: Selector;
+    pictureInPicutre?: Selector;
     /**
      * ## placeholderShown
      * The :placeholder-shown CSS pseudo-class
@@ -3482,7 +3492,7 @@ export interface SelectorTypes {
      * that is currently displaying placeholder text.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:placeholder-shown}
      */
-    placeholderShown: Selector;
+    placeholderShown?: Selector;
     /**
      * ## readOnly
      * The :read-only CSS pseudo-class
@@ -3490,7 +3500,7 @@ export interface SelectorTypes {
      * that is not editable by the user.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:read-only}
      */
-    readOnly: Selector;
+    readOnly?: Selector;
     /**
      * ## readWrite
      * The :read-write CSS pseudo-class
@@ -3498,7 +3508,7 @@ export interface SelectorTypes {
      * that is editable by the user.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:read-write}
      */
-    readWrite: Selector;
+    readWrite?: Selector;
     /**
      * ## required
      * The :required CSS pseudo-class
@@ -3506,7 +3516,7 @@ export interface SelectorTypes {
      * that has the required attribute set on it.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:required}
      */
-    required: Selector;
+    required?: Selector;
     /**
      * ## scope
      * The :scope CSS pseudo-class
@@ -3514,7 +3524,7 @@ export interface SelectorTypes {
      * for selectors to match against.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:scope}
      */
-    scope: Selector;
+    scope?: Selector;
     /**
      * ## target
      * The :target CSS pseudo-class
@@ -3522,7 +3532,7 @@ export interface SelectorTypes {
      * with an id matching the URL's fragment.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:target}
      */
-    target: Selector;
+    target?: Selector;
     /**
      * ## valid
      * The :valid CSS pseudo-class
@@ -3533,7 +3543,7 @@ export interface SelectorTypes {
      * that their data is formatted properly.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:valid}
      */
-    valid: Selector;
+    valid?: Selector;
     /**
      * ## visited
      * The :visited CSS pseudo-class
@@ -3543,7 +3553,7 @@ export interface SelectorTypes {
      * using this selector are very limited.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:visited}
      */
-    visited: Selector;
+    visited?: Selector;
     /**
      * ## after
      * In CSS, ::after creates a pseudo-element
@@ -3553,7 +3563,7 @@ export interface SelectorTypes {
      * It is inline by default.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/::after}
      */
-    after: Selector;
+    after?: Selector;
     /**
      * ## before
      * In CSS, ::before creates a pseudo-element
@@ -3563,7 +3573,7 @@ export interface SelectorTypes {
      * It is inline by default.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/::before}
      */
-    before: Selector;
+    before?: Selector;
     /**
      * ## cue
      * The ::cue CSS pseudo-element matches WebVTT cues
@@ -3572,7 +3582,7 @@ export interface SelectorTypes {
      * and other cues in media with VTT tracks.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/::cue}
      */
-    cue: Selector;
+    cue?: Selector;
     /**
      * ## firstLetter
      * The ::first-letter CSS pseudo-element
@@ -3582,21 +3592,21 @@ export interface SelectorTypes {
      * (such as images or inline tables).
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/::first-letter}
      */
-    firstLetter: Selector;
+    firstLetter?: Selector;
     /**
      * ## firstLine
      * The ::first-line CSS pseudo-element
      * applies styles to the first line of a block-level element.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/::first-line}
      */
-    firstLine: Selector;
+    firstLine?: Selector;
     /**
      * ## fileSelectorButton
      * The ::file-selector-button CSS pseudo-element
      * represents the button of an ``<input>`` of type="file".
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/::file-selector-button}
      */
-    fileSelectorButton: Selector;
+    fileSelectorButton?: Selector;
     /**
      * ## placeholder
      * The ::placeholder CSS pseudo-element
@@ -3604,7 +3614,7 @@ export interface SelectorTypes {
      * an ``<input>`` or ``<textarea>`` element.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/::placeholder}
      */
-    placeholder: Selector;
+    placeholder?: Selector;
     /**
      * ## selection
      * The ::selection CSS pseudo-element
@@ -3613,7 +3623,7 @@ export interface SelectorTypes {
      * (such as clicking and dragging the mouse across text).
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/::selection}
      */
-    selection: Selector;
+    selection?: Selector;
     /**
      * ## marker
      * The ::marker CSS pseudo-element selects the marker box
@@ -3623,7 +3633,7 @@ export interface SelectorTypes {
      * such as the ``<li> ``and ``<summary>`` elements.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:marker}
      */
-    marker: Selector;
+    marker?: Selector;
     /**
      * ## userInvalid
      * The :user-invalid CSS pseudo-class represents any validated form
@@ -3631,25 +3641,25 @@ export interface SelectorTypes {
      * after the user has interacted with it.
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/:user-invalid}
      */
-    userInvalid: Selector;
+    userInvalid?: Selector;
     /**
      * ## webkitScrollbar
      */
-    webkitScrollbar: Selector;
+    webkitScrollbar?: Selector;
     /**
      * ## webkitScrollbarTrack
      */
-    webkitScrollbarTrack: Selector;
+    webkitScrollbarTrack?: Selector;
     /**
      * ## webkitScrollbarThumb
      */
-    webkitScrollbarThumb: Selector;
+    webkitScrollbarThumb?: Selector;
     /**
      * ## webkitScrollbarThumbHover
      */
-    webkitScrollbarThumbHover: Selector;
+    webkitScrollbarThumbHover?: Selector;
     /**
      * ## webkitScrollbarThumbActive
      */
-    webkitScrollbarThumbActive: Selector;
+    webkitScrollbarThumbActive?: Selector;
 }

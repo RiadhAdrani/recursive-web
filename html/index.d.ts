@@ -281,7 +281,7 @@ export interface BlockquoteParams
      * ## cite
      * Contains a URI which points to the source of the quote or change.
      */
-    cite: AttributeDeclarationOf<string>;
+    cite?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Blockquote
@@ -391,27 +391,27 @@ export interface HrParams
      * ## align
      * Specifies the horizontal alignment of the element.
      */
-    align: AttributeDeclarationOf<string>;
+    align?: AttributeDeclarationOf<string>;
     /**
      * ## color
      * This attribute sets the text color using either a named color or a color specified in the hexadecimal #RRGGBB format.
      */
-    color: AttributeDeclarationOf<string>;
+    color?: AttributeDeclarationOf<string>;
     /**
      * ## noShade
      * The HTML ``<hr>`` noshade Attribute is the boolean value and used to specify the solid horizontal line instead of shaded lines.
      */
-    noShade: AttributeDeclarationOf<boolean>;
+    noShade?: AttributeDeclarationOf<boolean>;
     /**
      * ## size
      * Defines the width of the element (in pixels). If the element's type attribute is text or password then it's the number of characters.
      */
-    size: AttributeDeclarationOf<string>;
+    size?: AttributeDeclarationOf<string>;
     /**
      * ## width
      * For the elements listed here, this establishes the element's width.
      */
-    width: AttributeDeclarationOf<string>;
+    width?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Hr
@@ -431,12 +431,12 @@ export interface LiParams
     /**
      * ## value
      */
-    value: AttributeDeclarationOf<string>;
+    value?: AttributeDeclarationOf<string>;
     /**
      * ## type
      * Defines the type of the element.
      */
-    type: AttributeDeclarationOf<string>;
+    type?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Li
@@ -472,17 +472,17 @@ export interface OlParams
      * ## reversed
      * Indicates whether the list should be displayed in a descending order instead of a ascending.
      */
-    reversed: AttributeDeclarationOf<boolean>;
+    reversed?: AttributeDeclarationOf<boolean>;
     /**
      * ## start
      * Defines the first number if other than 1.
      */
-    start: AttributeDeclarationOf<string>;
+    start?: AttributeDeclarationOf<string>;
     /**
      * ## type
      * Defines the type of the element.
      */
-    type: AttributeDeclarationOf<string>;
+    type?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Ol
@@ -518,17 +518,17 @@ export interface PreParams
      * ## cols
      * Defines the number of columns in a textarea.
      */
-    cols: AttributeDeclarationOf<number>;
+    cols?: AttributeDeclarationOf<number>;
     /**
      * ## width
      * For the elements listed here, this establishes the element's width.
      */
-    width: AttributeDeclarationOf<string>;
+    width?: AttributeDeclarationOf<string>;
     /**
      * ## wrap
      * Indicates whether the text should be wrapped.
      */
-    wrap: AttributeDeclarationOf<"hard" | "soft" | "off">;
+    wrap?: AttributeDeclarationOf<"hard" | "soft" | "off">;
 }
 /**
  * ## Pre
@@ -548,12 +548,12 @@ export interface UlParams
     /**
      * ## compact
      */
-    compact: AttributeDeclarationOf<string>;
+    compact?: AttributeDeclarationOf<string>;
     /**
      * ## type
      * Defines the type of the element.
      */
-    type: AttributeDeclarationOf<string>;
+    type?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Ul
@@ -574,27 +574,27 @@ export interface AParams
      * ## download
      * Indicates that the hyperlink is to be used for downloading a resource.
      */
-    download: AttributeDeclarationOf<string>;
+    download?: AttributeDeclarationOf<string>;
     /**
      * ## href
      * The URL of a linked resource.
      */
-    href: AttributeDeclarationOf<string>;
+    href?: AttributeDeclarationOf<string>;
     /**
      * ## hrefLang
      * Specifies the language of the linked resource.
      */
-    hrefLang: AttributeDeclarationOf<string>;
+    hrefLang?: AttributeDeclarationOf<string>;
     /**
      * ## ping
      * The ping attribute specifies a space-separated list of URLs to be notified if a user follows the hyperlink.
      */
-    ping: AttributeDeclarationOf<string>;
+    ping?: AttributeDeclarationOf<string>;
     /**
      * ## referrerPolicy
      * Specifies which referrer is sent when fetching the resource.
      */
-    referrerPolicy: AttributeDeclarationOf<
+    referrerPolicy?: AttributeDeclarationOf<
         | "no-referrer"
         | "no-referrer-when-downgrade"
         | "origin"
@@ -608,7 +608,7 @@ export interface AParams
      * ## rel
      * Specifies the relationship of the target object to the link object.
      */
-    rel: AttributeDeclarationOf<
+    rel?: AttributeDeclarationOf<
         | "alternate"
         | "author"
         | "bookmark"
@@ -640,12 +640,12 @@ export interface AParams
      * ## target
      * Specifies where to open the linked document (in the case of an ``<a>`` element) or where to display the response received (in the case of a ``<form>`` element)
      */
-    target: AttributeDeclarationOf<"_self" | "_blank" | "_parent" | "_top">;
+    target?: AttributeDeclarationOf<"_self" | "_blank" | "_parent" | "_top">;
     /**
      * ## type
      * Defines the type of the element.
      */
-    type: AttributeDeclarationOf<string>;
+    type?: AttributeDeclarationOf<string>;
 }
 /**
  * ## A
@@ -696,7 +696,7 @@ export interface BdiParams
      * ## dir
      * Defines the text direction. Allowed values are ltr (Left-To-Right) or rtl (Right-To-Left)
      */
-    dir: AttributeDeclarationOf<"ltr" | "rtl" | "auto">;
+    dir?: AttributeDeclarationOf<"ltr" | "rtl" | "auto">;
 }
 /**
  * ## Bdi
@@ -717,7 +717,7 @@ export interface BdoParams
      * ## dir
      * Defines the text direction. Allowed values are ltr (Left-To-Right) or rtl (Right-To-Left)
      */
-    dir: AttributeDeclarationOf<"ltr" | "rtl" | "auto">;
+    dir?: AttributeDeclarationOf<"ltr" | "rtl" | "auto">;
 }
 /**
  * ## Bdo
@@ -781,7 +781,7 @@ export interface DataParams
     /**
      * ## value
      */
-    value: AttributeDeclarationOf<string>;
+    value?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Data
@@ -877,7 +877,7 @@ export interface QParams
      * ## cite
      * Contains a URI which points to the source of the quote or change.
      */
-    cite: AttributeDeclarationOf<string>;
+    cite?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Q
@@ -1048,7 +1048,7 @@ export interface TimeParams
      * ## dateTime
      * Indicates the date and time associated with the element.
      */
-    dateTime: AttributeDeclarationOf<string>;
+    dateTime?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Time
@@ -1113,37 +1113,37 @@ export interface AreaParams
      * ## alt
      * Alternative text in case an image can't be displayed.
      */
-    alt: AttributeDeclarationOf<string>;
+    alt?: AttributeDeclarationOf<string>;
     /**
      * ## coords
      * A set of values specifying the coordinates of the hot-spot region.
      */
-    coords: AttributeDeclarationOf<string>;
+    coords?: AttributeDeclarationOf<string>;
     /**
      * ## download
      * Indicates that the hyperlink is to be used for downloading a resource.
      */
-    download: AttributeDeclarationOf<string>;
+    download?: AttributeDeclarationOf<string>;
     /**
      * ## href
      * The URL of a linked resource.
      */
-    href: AttributeDeclarationOf<string>;
+    href?: AttributeDeclarationOf<string>;
     /**
      * ## hrefLang
      * Specifies the language of the linked resource.
      */
-    hrefLang: AttributeDeclarationOf<string>;
+    hrefLang?: AttributeDeclarationOf<string>;
     /**
      * ## ping
      * The ping attribute specifies a space-separated list of URLs to be notified if a user follows the hyperlink.
      */
-    ping: AttributeDeclarationOf<string>;
+    ping?: AttributeDeclarationOf<string>;
     /**
      * ## referrerPolicy
      * Specifies which referrer is sent when fetching the resource.
      */
-    referrerPolicy: AttributeDeclarationOf<
+    referrerPolicy?: AttributeDeclarationOf<
         | "no-referrer"
         | "no-referrer-when-downgrade"
         | "origin"
@@ -1157,7 +1157,7 @@ export interface AreaParams
      * ## rel
      * Specifies the relationship of the target object to the link object.
      */
-    rel: AttributeDeclarationOf<
+    rel?: AttributeDeclarationOf<
         | "alternate"
         | "author"
         | "bookmark"
@@ -1188,12 +1188,12 @@ export interface AreaParams
     /**
      * ## shape
      */
-    shape: AttributeDeclarationOf<string>;
+    shape?: AttributeDeclarationOf<string>;
     /**
      * ## target
      * Specifies where to open the linked document (in the case of an ``<a>`` element) or where to display the response received (in the case of a ``<form>`` element)
      */
-    target: AttributeDeclarationOf<"_self" | "_blank" | "_parent" | "_top">;
+    target?: AttributeDeclarationOf<"_self" | "_blank" | "_parent" | "_top">;
 }
 /**
  * ## Area
@@ -1214,37 +1214,37 @@ export interface AudioParams
      * ## autoplay
      * The audio or video should play as soon as possible.
      */
-    autoplay: AttributeDeclarationOf<boolean>;
+    autoplay?: AttributeDeclarationOf<boolean>;
     /**
      * ## controls
      * Indicates whether the browser should show playback controls to the user.
      */
-    controls: AttributeDeclarationOf<string>;
+    controls?: AttributeDeclarationOf<string>;
     /**
      * ## crossOrigin
      * How the element handles cross-origin requests
      */
-    crossOrigin: AttributeDeclarationOf<"use-credentials" | "anonymous">;
+    crossOrigin?: AttributeDeclarationOf<"use-credentials" | "anonymous">;
     /**
      * ## loop
      * Indicates whether the media should start playing from the start when it's finished.
      */
-    loop: AttributeDeclarationOf<boolean>;
+    loop?: AttributeDeclarationOf<boolean>;
     /**
      * ## muted
      * Indicates whether the audio will be initially silenced on page load.
      */
-    muted: AttributeDeclarationOf<boolean>;
+    muted?: AttributeDeclarationOf<boolean>;
     /**
      * ## preload
      * Indicates whether the whole resource, parts of it or nothing should be preloaded.
      */
-    preload: AttributeDeclarationOf<string>;
+    preload?: AttributeDeclarationOf<string>;
     /**
      * ## src
      * The URL of the embeddable content.
      */
-    src: AttributeDeclarationOf<string>;
+    src?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Audio
@@ -1264,37 +1264,37 @@ export interface ImgParams
      * ## alt
      * Alternative text in case an image can't be displayed.
      */
-    alt: AttributeDeclarationOf<string>;
+    alt?: AttributeDeclarationOf<string>;
     /**
      * ## crossOrigin
      * How the element handles cross-origin requests
      */
-    crossOrigin: AttributeDeclarationOf<"use-credentials" | "anonymous">;
+    crossOrigin?: AttributeDeclarationOf<"use-credentials" | "anonymous">;
     /**
      * ## decoding
      * Indicates the preferred method to decode the image.
      */
-    decoding: AttributeDeclarationOf<"sync" | "async" | "auto">;
+    decoding?: AttributeDeclarationOf<"sync" | "async" | "auto">;
     /**
      * ## height
      * Specifies the height of elements listed here. For all other elements, use the CSS height property.
      */
-    height: AttributeDeclarationOf<string>;
+    height?: AttributeDeclarationOf<string>;
     /**
      * ## isMap
      * Indicates that the image is part of a server-side image map.
      */
-    isMap: AttributeDeclarationOf<boolean>;
+    isMap?: AttributeDeclarationOf<boolean>;
     /**
      * ## loading
      * Indicates if the element should be loaded lazily (loading="lazy") or loaded immediately (loading="eager").
      */
-    loading: AttributeDeclarationOf<"lazy" | "eager">;
+    loading?: AttributeDeclarationOf<"lazy" | "eager">;
     /**
      * ## referrerPolicy
      * Specifies which referrer is sent when fetching the resource.
      */
-    referrerPolicy: AttributeDeclarationOf<
+    referrerPolicy?: AttributeDeclarationOf<
         | "no-referrer"
         | "no-referrer-when-downgrade"
         | "origin"
@@ -1307,27 +1307,27 @@ export interface ImgParams
     /**
      * ## sizes
      */
-    sizes: AttributeDeclarationOf<string>;
+    sizes?: AttributeDeclarationOf<string>;
     /**
      * ## src
      * The URL of the embeddable content.
      */
-    src: AttributeDeclarationOf<string>;
+    src?: AttributeDeclarationOf<string>;
     /**
      * ## srcSet
      * One or more responsive image candidates.
      */
-    srcSet: AttributeDeclarationOf<string>;
+    srcSet?: AttributeDeclarationOf<string>;
     /**
      * ## width
      * For the elements listed here, this establishes the element's width.
      */
-    width: AttributeDeclarationOf<string>;
+    width?: AttributeDeclarationOf<string>;
     /**
      * ## useMap
      * Defines a default value which will be displayed in the element on page load.
      */
-    useMap: AttributeDeclarationOf<string>;
+    useMap?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Img
@@ -1348,7 +1348,7 @@ export interface MapParams
      * ## name
      * Name of the element. For example used by the server to identify the fields in form submits.
      */
-    name: AttributeDeclarationOf<string>;
+    name?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Map
@@ -1368,28 +1368,28 @@ export interface TrackParams
      * ## def
      * Indicates that the track should be enabled unless the user's preferences indicate something different.
      */
-    def: AttributeDeclarationOf<string>;
+    def?: AttributeDeclarationOf<string>;
     /**
      * ## kind
      * Specifies the kind of text track.
      */
-    kind: AttributeDeclarationOf<
+    kind?: AttributeDeclarationOf<
         "subtitles" | "captions" | "descriptions" | "chapters" | "metadata"
     >;
     /**
      * ## label
      * Specifies a user-readable title of the element.
      */
-    label: AttributeDeclarationOf<string>;
+    label?: AttributeDeclarationOf<string>;
     /**
      * ## src
      * The URL of the embeddable content.
      */
-    src: AttributeDeclarationOf<string>;
+    src?: AttributeDeclarationOf<string>;
     /**
      * ## srcLang
      */
-    srcLang: AttributeDeclarationOf<string>;
+    srcLang?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Track
@@ -1410,51 +1410,51 @@ export interface VideoParams
      * ## autoplay
      * The audio or video should play as soon as possible.
      */
-    autoplay: AttributeDeclarationOf<boolean>;
+    autoplay?: AttributeDeclarationOf<boolean>;
     /**
      * ## crossOrigin
      * How the element handles cross-origin requests
      */
-    crossOrigin: AttributeDeclarationOf<"use-credentials" | "anonymous">;
+    crossOrigin?: AttributeDeclarationOf<"use-credentials" | "anonymous">;
     /**
      * ## height
      * Specifies the height of elements listed here. For all other elements, use the CSS height property.
      */
-    height: AttributeDeclarationOf<string>;
+    height?: AttributeDeclarationOf<string>;
     /**
      * ## loop
      * Indicates whether the media should start playing from the start when it's finished.
      */
-    loop: AttributeDeclarationOf<boolean>;
+    loop?: AttributeDeclarationOf<boolean>;
     /**
      * ## muted
      * Indicates whether the audio will be initially silenced on page load.
      */
-    muted: AttributeDeclarationOf<boolean>;
+    muted?: AttributeDeclarationOf<boolean>;
     /**
      * ## playsInline
      */
-    playsInline: AttributeDeclarationOf<string>;
+    playsInline?: AttributeDeclarationOf<string>;
     /**
      * ## poster
      * A URL indicating a poster frame to show until the user plays or seeks.
      */
-    poster: AttributeDeclarationOf<string>;
+    poster?: AttributeDeclarationOf<string>;
     /**
      * ## preload
      * Indicates whether the whole resource, parts of it or nothing should be preloaded.
      */
-    preload: AttributeDeclarationOf<string>;
+    preload?: AttributeDeclarationOf<string>;
     /**
      * ## src
      * The URL of the embeddable content.
      */
-    src: AttributeDeclarationOf<string>;
+    src?: AttributeDeclarationOf<string>;
     /**
      * ## width
      * For the elements listed here, this establishes the element's width.
      */
-    width: AttributeDeclarationOf<string>;
+    width?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Video
@@ -1475,22 +1475,22 @@ export interface EmbedParams
      * ## height
      * Specifies the height of elements listed here. For all other elements, use the CSS height property.
      */
-    height: AttributeDeclarationOf<string>;
+    height?: AttributeDeclarationOf<string>;
     /**
      * ## src
      * The URL of the embeddable content.
      */
-    src: AttributeDeclarationOf<string>;
+    src?: AttributeDeclarationOf<string>;
     /**
      * ## type
      * Defines the type of the element.
      */
-    type: AttributeDeclarationOf<string>;
+    type?: AttributeDeclarationOf<string>;
     /**
      * ## width
      * For the elements listed here, this establishes the element's width.
      */
-    width: AttributeDeclarationOf<string>;
+    width?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Embed
@@ -1511,35 +1511,35 @@ export interface IframeParams
      * ## allow
      * Specifies a feature-policy for the iframe.
      */
-    allow: AttributeDeclarationOf<string>;
+    allow?: AttributeDeclarationOf<string>;
     /**
      * ## allowFullScreen
      */
-    allowFullScreen: AttributeDeclarationOf<boolean>;
+    allowFullScreen?: AttributeDeclarationOf<boolean>;
     /**
      * ## allowPaymentRequest
      */
-    allowPaymentRequest: AttributeDeclarationOf<string>;
+    allowPaymentRequest?: AttributeDeclarationOf<string>;
     /**
      * ## height
      * Specifies the height of elements listed here. For all other elements, use the CSS height property.
      */
-    height: AttributeDeclarationOf<string>;
+    height?: AttributeDeclarationOf<string>;
     /**
      * ## loading
      * Indicates if the element should be loaded lazily (loading="lazy") or loaded immediately (loading="eager").
      */
-    loading: AttributeDeclarationOf<"lazy" | "eager">;
+    loading?: AttributeDeclarationOf<"lazy" | "eager">;
     /**
      * ## name
      * Name of the element. For example used by the server to identify the fields in form submits.
      */
-    name: AttributeDeclarationOf<string>;
+    name?: AttributeDeclarationOf<string>;
     /**
      * ## referrerPolicy
      * Specifies which referrer is sent when fetching the resource.
      */
-    referrerPolicy: AttributeDeclarationOf<
+    referrerPolicy?: AttributeDeclarationOf<
         | "no-referrer"
         | "no-referrer-when-downgrade"
         | "origin"
@@ -1553,7 +1553,7 @@ export interface IframeParams
      * ## sandbox
      * Stops a document loaded in an iframe from using certain features (such as submitting forms or opening new windows).
      */
-    sandbox: AttributeDeclarationOf<
+    sandbox?: AttributeDeclarationOf<
         | "allow-downloads-without-user-activation"
         | "allow-downloads"
         | "allow-forms"
@@ -1573,16 +1573,16 @@ export interface IframeParams
      * ## src
      * The URL of the embeddable content.
      */
-    src: AttributeDeclarationOf<string>;
+    src?: AttributeDeclarationOf<string>;
     /**
      * ## srcDoc
      */
-    srcDoc: AttributeDeclarationOf<string>;
+    srcDoc?: AttributeDeclarationOf<string>;
     /**
      * ## width
      * For the elements listed here, this establishes the element's width.
      */
-    width: AttributeDeclarationOf<string>;
+    width?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Iframe
@@ -1603,37 +1603,37 @@ export interface ObjectParams
      * ## data
      * Specifies the URL of the resource.
      */
-    data: AttributeDeclarationOf<string>;
+    data?: AttributeDeclarationOf<string>;
     /**
      * ## form
      * Indicates the form that is the owner of the element.
      */
-    form: AttributeDeclarationOf<string>;
+    form?: AttributeDeclarationOf<string>;
     /**
      * ## height
      * Specifies the height of elements listed here. For all other elements, use the CSS height property.
      */
-    height: AttributeDeclarationOf<string>;
+    height?: AttributeDeclarationOf<string>;
     /**
      * ## name
      * Name of the element. For example used by the server to identify the fields in form submits.
      */
-    name: AttributeDeclarationOf<string>;
+    name?: AttributeDeclarationOf<string>;
     /**
      * ## type
      * Defines the type of the element.
      */
-    type: AttributeDeclarationOf<string>;
+    type?: AttributeDeclarationOf<string>;
     /**
      * ## useMap
      * Defines a default value which will be displayed in the element on page load.
      */
-    useMap: AttributeDeclarationOf<string>;
+    useMap?: AttributeDeclarationOf<string>;
     /**
      * ## width
      * For the elements listed here, this establishes the element's width.
      */
-    width: AttributeDeclarationOf<string>;
+    width?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Object
@@ -1669,7 +1669,7 @@ export interface PortalParams
      * ## src
      * The URL of the embeddable content.
      */
-    src: AttributeDeclarationOf<string>;
+    src?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Portal
@@ -1690,7 +1690,7 @@ export interface SourceParams
      * ## type
      * Defines the type of the element.
      */
-    type: AttributeDeclarationOf<string>;
+    type?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Source
@@ -1711,12 +1711,12 @@ export interface CanvasParams
      * ## height
      * Specifies the height of elements listed here. For all other elements, use the CSS height property.
      */
-    height: AttributeDeclarationOf<string>;
+    height?: AttributeDeclarationOf<string>;
     /**
      * ## width
      * For the elements listed here, this establishes the element's width.
      */
-    width: AttributeDeclarationOf<string>;
+    width?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Canvas
@@ -1752,12 +1752,12 @@ export interface DelParams
      * ## cite
      * Contains a URI which points to the source of the quote or change.
      */
-    cite: AttributeDeclarationOf<string>;
+    cite?: AttributeDeclarationOf<string>;
     /**
      * ## dateTime
      * Indicates the date and time associated with the element.
      */
-    dateTime: AttributeDeclarationOf<string>;
+    dateTime?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Del
@@ -1778,12 +1778,12 @@ export interface InsParams
      * ## cite
      * Contains a URI which points to the source of the quote or change.
      */
-    cite: AttributeDeclarationOf<string>;
+    cite?: AttributeDeclarationOf<string>;
     /**
      * ## dateTime
      * Indicates the date and time associated with the element.
      */
-    dateTime: AttributeDeclarationOf<string>;
+    dateTime?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Ins
@@ -1818,7 +1818,7 @@ export interface ColParams
     /**
      * ## span
      */
-    span: AttributeDeclarationOf<string>;
+    span?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Col
@@ -1838,7 +1838,7 @@ export interface ColgroupParams
     /**
      * ## span
      */
-    span: AttributeDeclarationOf<string>;
+    span?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Colgroup
@@ -1889,17 +1889,17 @@ export interface TdParams
      * ## colSpan
      * The colspan attribute defines the number of columns a cell should span.
      */
-    colSpan: AttributeDeclarationOf<string>;
+    colSpan?: AttributeDeclarationOf<string>;
     /**
      * ## headers
      * IDs of the ``<th>`` elements which applies to this element.
      */
-    headers: AttributeDeclarationOf<string>;
+    headers?: AttributeDeclarationOf<string>;
     /**
      * ## rowSpan
      * Defines the number of rows a table cell should span over.
      */
-    rowSpan: AttributeDeclarationOf<string>;
+    rowSpan?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Td
@@ -1935,22 +1935,22 @@ export interface ThParams
      * ## colSpan
      * The colspan attribute defines the number of columns a cell should span.
      */
-    colSpan: AttributeDeclarationOf<string>;
+    colSpan?: AttributeDeclarationOf<string>;
     /**
      * ## headers
      * IDs of the ``<th>`` elements which applies to this element.
      */
-    headers: AttributeDeclarationOf<string>;
+    headers?: AttributeDeclarationOf<string>;
     /**
      * ## rowSpan
      * Defines the number of rows a table cell should span over.
      */
-    rowSpan: AttributeDeclarationOf<string>;
+    rowSpan?: AttributeDeclarationOf<string>;
     /**
      * ## scope
      * Defines the cells that the header test (defined in the th element) relates to.
      */
-    scope: AttributeDeclarationOf<"row" | "col" | "rowgroup" | "colgroup">;
+    scope?: AttributeDeclarationOf<"row" | "col" | "rowgroup" | "colgroup">;
 }
 /**
  * ## Th
@@ -2001,56 +2001,56 @@ export interface ButtonParams
      * ## autoFocus
      * The element should be automatically focused after the page loaded.
      */
-    autoFocus: AttributeDeclarationOf<string>;
+    autoFocus?: AttributeDeclarationOf<string>;
     /**
      * ## disabled
      * Indicates whether the user can interact with the element.
      */
-    disabled: AttributeDeclarationOf<boolean>;
+    disabled?: AttributeDeclarationOf<boolean>;
     /**
      * ## form
      * Indicates the form that is the owner of the element.
      */
-    form: AttributeDeclarationOf<string>;
+    form?: AttributeDeclarationOf<string>;
     /**
      * ## formAction
      * Indicates the action of the element, overriding the action defined in the <form>.
      */
-    formAction: AttributeDeclarationOf<string>;
+    formAction?: AttributeDeclarationOf<string>;
     /**
      * ## formEncType
      * If the button/input is a submit button (type="submit"), this attribute sets the encoding type to use during form submission. If this attribute is specified, it overrides the enctype attribute of the button's form owner.
      */
-    formEncType: AttributeDeclarationOf<string>;
+    formEncType?: AttributeDeclarationOf<string>;
     /**
      * ## formMethod
      * If the button/input is a submit button (type="submit"), this attribute sets the submission method to use during form submission (GET, POST, etc.). If this attribute is specified, it overrides the method attribute of the button's form owner.
      */
-    formMethod: AttributeDeclarationOf<string>;
+    formMethod?: AttributeDeclarationOf<string>;
     /**
      * ## formNoValidate
      * If the button/input is a submit button (type="submit"), this boolean attribute specifies that the form is not to be validated when it is submitted. If this attribute is specified, it overrides the novalidate attribute of the button's form owner.
      */
-    formNoValidate: AttributeDeclarationOf<string>;
+    formNoValidate?: AttributeDeclarationOf<string>;
     /**
      * ## formTarget
      * The formtarget attribute specifies a name or a keyword that indicates where to display the response that is received after submitting the form.
      */
-    formTarget: AttributeDeclarationOf<string>;
+    formTarget?: AttributeDeclarationOf<string>;
     /**
      * ## name
      * Name of the element. For example used by the server to identify the fields in form submits.
      */
-    name: AttributeDeclarationOf<string>;
+    name?: AttributeDeclarationOf<string>;
     /**
      * ## type
      * Defines the type of the element.
      */
-    type: AttributeDeclarationOf<string>;
+    type?: AttributeDeclarationOf<string>;
     /**
      * ## value
      */
-    value: AttributeDeclarationOf<string>;
+    value?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Button
@@ -2086,17 +2086,17 @@ export interface FieldsetParams
      * ## disabled
      * Indicates whether the user can interact with the element.
      */
-    disabled: AttributeDeclarationOf<boolean>;
+    disabled?: AttributeDeclarationOf<boolean>;
     /**
      * ## form
      * Indicates the form that is the owner of the element.
      */
-    form: AttributeDeclarationOf<string>;
+    form?: AttributeDeclarationOf<string>;
     /**
      * ## name
      * Name of the element. For example used by the server to identify the fields in form submits.
      */
-    name: AttributeDeclarationOf<string>;
+    name?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Fieldset
@@ -2117,12 +2117,12 @@ export interface FormParams
      * ## acceptCharSet
      * List of supported charsets.
      */
-    acceptCharSet: AttributeDeclarationOf<string>;
+    acceptCharSet?: AttributeDeclarationOf<string>;
     /**
      * ## autoComplete
      * Indicates whether controls in this form can by default have their values automatically completed by the browser.
      */
-    autoComplete: AttributeDeclarationOf<
+    autoComplete?: AttributeDeclarationOf<
         | "off"
         | "on"
         | "name"
@@ -2175,12 +2175,12 @@ export interface FormParams
      * ## name
      * Name of the element. For example used by the server to identify the fields in form submits.
      */
-    name: AttributeDeclarationOf<string>;
+    name?: AttributeDeclarationOf<string>;
     /**
      * ## rel
      * Specifies the relationship of the target object to the link object.
      */
-    rel: AttributeDeclarationOf<
+    rel?: AttributeDeclarationOf<
         | "alternate"
         | "author"
         | "bookmark"
@@ -2211,12 +2211,12 @@ export interface FormParams
     /**
      * ## action
      */
-    action: AttributeDeclarationOf<string>;
+    action?: AttributeDeclarationOf<string>;
     /**
      * ## encType
      * Defines the content type of the form data when the method is POST.
      */
-    encType: AttributeDeclarationOf<
+    encType?: AttributeDeclarationOf<
         | "application/x-www-form-urlencoded"
         | "multipart/form-data"
         | "text/plain"
@@ -2225,17 +2225,17 @@ export interface FormParams
      * ## method
      * Defines which HTTP method to use when submitting the form. Can be GET (default) or POST.
      */
-    method: AttributeDeclarationOf<"post" | "get" | "dialog">;
+    method?: AttributeDeclarationOf<"post" | "get" | "dialog">;
     /**
      * ## noValidate
      * This attribute indicates that the form shouldn't be validated when submitted.
      */
-    noValidate: AttributeDeclarationOf<string>;
+    noValidate?: AttributeDeclarationOf<string>;
     /**
      * ## target
      * Specifies where to open the linked document (in the case of an ``<a>`` element) or where to display the response received (in the case of a ``<form>`` element)
      */
-    target: AttributeDeclarationOf<"_self" | "_blank" | "_parent" | "_top">;
+    target?: AttributeDeclarationOf<"_self" | "_blank" | "_parent" | "_top">;
 }
 /**
  * ## Form
@@ -2255,17 +2255,17 @@ export interface InputParams
      * ## accept
      * List of types the server accepts, typically a file type.
      */
-    accept: AttributeDeclarationOf<"audio/*" | "video/*" | "image/*">;
+    accept?: AttributeDeclarationOf<"audio/*" | "video/*" | "image/*">;
     /**
      * ## alt
      * Alternative text in case an image can't be displayed.
      */
-    alt: AttributeDeclarationOf<string>;
+    alt?: AttributeDeclarationOf<string>;
     /**
      * ## autoComplete
      * Indicates whether controls in this form can by default have their values automatically completed by the browser.
      */
-    autoComplete: AttributeDeclarationOf<
+    autoComplete?: AttributeDeclarationOf<
         | "off"
         | "on"
         | "name"
@@ -2318,139 +2318,139 @@ export interface InputParams
      * ## capture
      * From the Media Capture specification, specifies a new file can be captured.
      */
-    capture: AttributeDeclarationOf<"user" | "environment">;
+    capture?: AttributeDeclarationOf<"user" | "environment">;
     /**
      * ## checked
      * Indicates whether the element should be checked on page load.
      */
-    checked: AttributeDeclarationOf<string>;
+    checked?: AttributeDeclarationOf<string>;
     /**
      * ## dirName
      */
-    dirName: AttributeDeclarationOf<string>;
+    dirName?: AttributeDeclarationOf<string>;
     /**
      * ## disabled
      * Indicates whether the user can interact with the element.
      */
-    disabled: AttributeDeclarationOf<boolean>;
+    disabled?: AttributeDeclarationOf<boolean>;
     /**
      * ## form
      * Indicates the form that is the owner of the element.
      */
-    form: AttributeDeclarationOf<string>;
+    form?: AttributeDeclarationOf<string>;
     /**
      * ## formAction
      * Indicates the action of the element, overriding the action defined in the <form>.
      */
-    formAction: AttributeDeclarationOf<string>;
+    formAction?: AttributeDeclarationOf<string>;
     /**
      * ## formEncType
      * If the button/input is a submit button (type="submit"), this attribute sets the encoding type to use during form submission. If this attribute is specified, it overrides the enctype attribute of the button's form owner.
      */
-    formEncType: AttributeDeclarationOf<string>;
+    formEncType?: AttributeDeclarationOf<string>;
     /**
      * ## formMethod
      * If the button/input is a submit button (type="submit"), this attribute sets the submission method to use during form submission (GET, POST, etc.). If this attribute is specified, it overrides the method attribute of the button's form owner.
      */
-    formMethod: AttributeDeclarationOf<string>;
+    formMethod?: AttributeDeclarationOf<string>;
     /**
      * ## formNoValidate
      * If the button/input is a submit button (type="submit"), this boolean attribute specifies that the form is not to be validated when it is submitted. If this attribute is specified, it overrides the novalidate attribute of the button's form owner.
      */
-    formNoValidate: AttributeDeclarationOf<string>;
+    formNoValidate?: AttributeDeclarationOf<string>;
     /**
      * ## formTarget
      * The formtarget attribute specifies a name or a keyword that indicates where to display the response that is received after submitting the form.
      */
-    formTarget: AttributeDeclarationOf<string>;
+    formTarget?: AttributeDeclarationOf<string>;
     /**
      * ## height
      * Specifies the height of elements listed here. For all other elements, use the CSS height property.
      */
-    height: AttributeDeclarationOf<string>;
+    height?: AttributeDeclarationOf<string>;
     /**
      * ## list
      * Identifies a list of pre-defined options to suggest to the user.
      */
-    list: AttributeDeclarationOf<string>;
+    list?: AttributeDeclarationOf<string>;
     /**
      * ## max
      * Indicates the maximum value allowed.
      */
-    max: AttributeDeclarationOf<string>;
+    max?: AttributeDeclarationOf<string>;
     /**
      * ## maxLength
      * Defines the maximum number of characters allowed in the element.
      */
-    maxLength: AttributeDeclarationOf<string>;
+    maxLength?: AttributeDeclarationOf<string>;
     /**
      * ## min
      * Indicates the minimum value allowed.
      */
-    min: AttributeDeclarationOf<string>;
+    min?: AttributeDeclarationOf<string>;
     /**
      * ## minLength
      * Defines the minimum number of characters allowed in the element.
      */
-    minLength: AttributeDeclarationOf<string>;
+    minLength?: AttributeDeclarationOf<string>;
     /**
      * ## multiple
      * Indicates whether multiple values can be entered in an input of the type email or file.
      */
-    multiple: AttributeDeclarationOf<boolean>;
+    multiple?: AttributeDeclarationOf<boolean>;
     /**
      * ## name
      * Name of the element. For example used by the server to identify the fields in form submits.
      */
-    name: AttributeDeclarationOf<string>;
+    name?: AttributeDeclarationOf<string>;
     /**
      * ## pattern
      * Defines a regular expression which the element's value will be validated against.
      */
-    pattern: AttributeDeclarationOf<string>;
+    pattern?: AttributeDeclarationOf<string>;
     /**
      * ## placeholder
      * Provides a hint to the user of what can be entered in the field.
      */
-    placeholder: AttributeDeclarationOf<string>;
+    placeholder?: AttributeDeclarationOf<string>;
     /**
      * ## readOnly
      * Indicates whether the element can be edited.
      */
-    readOnly: AttributeDeclarationOf<boolean>;
+    readOnly?: AttributeDeclarationOf<boolean>;
     /**
      * ## required
      * Indicates whether this element is required to fill out or not.
      */
-    required: AttributeDeclarationOf<boolean>;
+    required?: AttributeDeclarationOf<boolean>;
     /**
      * ## size
      * Defines the width of the element (in pixels). If the element's type attribute is text or password then it's the number of characters.
      */
-    size: AttributeDeclarationOf<string>;
+    size?: AttributeDeclarationOf<string>;
     /**
      * ## src
      * The URL of the embeddable content.
      */
-    src: AttributeDeclarationOf<string>;
+    src?: AttributeDeclarationOf<string>;
     /**
      * ## step
      */
-    step: AttributeDeclarationOf<string>;
+    step?: AttributeDeclarationOf<string>;
     /**
      * ## type
      * Defines the type of the element.
      */
-    type: AttributeDeclarationOf<string>;
+    type?: AttributeDeclarationOf<string>;
     /**
      * ## value
      */
-    value: AttributeDeclarationOf<string>;
+    value?: AttributeDeclarationOf<string>;
     /**
      * ## width
      * For the elements listed here, this establishes the element's width.
      */
-    width: AttributeDeclarationOf<string>;
+    width?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Input
@@ -2471,7 +2471,7 @@ export interface LabelParams
      * ## isFor
      * Describes elements which belongs to this one.
      */
-    isFor: AttributeDeclarationOf<string>;
+    isFor?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Label
@@ -2506,32 +2506,32 @@ export interface MeterParams
     /**
      * ## value
      */
-    value: AttributeDeclarationOf<string>;
+    value?: AttributeDeclarationOf<string>;
     /**
      * ## min
      * Indicates the minimum value allowed.
      */
-    min: AttributeDeclarationOf<string>;
+    min?: AttributeDeclarationOf<string>;
     /**
      * ## max
      * Indicates the maximum value allowed.
      */
-    max: AttributeDeclarationOf<string>;
+    max?: AttributeDeclarationOf<string>;
     /**
      * ## low
      * Indicates the upper bound of the lower range.
      */
-    low: AttributeDeclarationOf<string>;
+    low?: AttributeDeclarationOf<string>;
     /**
      * ## high
      * Indicates the lower bound of the upper range.
      */
-    high: AttributeDeclarationOf<string>;
+    high?: AttributeDeclarationOf<string>;
     /**
      * ## optimum
      * Indicates the optimal numeric value.
      */
-    optimum: AttributeDeclarationOf<string>;
+    optimum?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Meter
@@ -2552,12 +2552,12 @@ export interface OptgroupParams
      * ## disabled
      * Indicates whether the user can interact with the element.
      */
-    disabled: AttributeDeclarationOf<boolean>;
+    disabled?: AttributeDeclarationOf<boolean>;
     /**
      * ## label
      * Specifies a user-readable title of the element.
      */
-    label: AttributeDeclarationOf<string>;
+    label?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Optgroup
@@ -2578,21 +2578,21 @@ export interface OptionParams
      * ## disabled
      * Indicates whether the user can interact with the element.
      */
-    disabled: AttributeDeclarationOf<boolean>;
+    disabled?: AttributeDeclarationOf<boolean>;
     /**
      * ## label
      * Specifies a user-readable title of the element.
      */
-    label: AttributeDeclarationOf<string>;
+    label?: AttributeDeclarationOf<string>;
     /**
      * ## selected
      * Defines a value which will be selected on page load.
      */
-    selected: AttributeDeclarationOf<boolean>;
+    selected?: AttributeDeclarationOf<boolean>;
     /**
      * ## value
      */
-    value: AttributeDeclarationOf<string>;
+    value?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Option
@@ -2613,17 +2613,17 @@ export interface OutputParams
      * ## isFor
      * Describes elements which belongs to this one.
      */
-    isFor: AttributeDeclarationOf<string>;
+    isFor?: AttributeDeclarationOf<string>;
     /**
      * ## form
      * Indicates the form that is the owner of the element.
      */
-    form: AttributeDeclarationOf<string>;
+    form?: AttributeDeclarationOf<string>;
     /**
      * ## name
      * Name of the element. For example used by the server to identify the fields in form submits.
      */
-    name: AttributeDeclarationOf<string>;
+    name?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Output
@@ -2644,11 +2644,11 @@ export interface ProgressParams
      * ## max
      * Indicates the maximum value allowed.
      */
-    max: AttributeDeclarationOf<string>;
+    max?: AttributeDeclarationOf<string>;
     /**
      * ## value
      */
-    value: AttributeDeclarationOf<string>;
+    value?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Progress
@@ -2669,7 +2669,7 @@ export interface SelectParams
      * ## autoComplete
      * Indicates whether controls in this form can by default have their values automatically completed by the browser.
      */
-    autoComplete: AttributeDeclarationOf<
+    autoComplete?: AttributeDeclarationOf<
         | "off"
         | "on"
         | "name"
@@ -2722,37 +2722,37 @@ export interface SelectParams
      * ## autoFocus
      * The element should be automatically focused after the page loaded.
      */
-    autoFocus: AttributeDeclarationOf<string>;
+    autoFocus?: AttributeDeclarationOf<string>;
     /**
      * ## disabled
      * Indicates whether the user can interact with the element.
      */
-    disabled: AttributeDeclarationOf<boolean>;
+    disabled?: AttributeDeclarationOf<boolean>;
     /**
      * ## form
      * Indicates the form that is the owner of the element.
      */
-    form: AttributeDeclarationOf<string>;
+    form?: AttributeDeclarationOf<string>;
     /**
      * ## multiple
      * Indicates whether multiple values can be entered in an input of the type email or file.
      */
-    multiple: AttributeDeclarationOf<boolean>;
+    multiple?: AttributeDeclarationOf<boolean>;
     /**
      * ## name
      * Name of the element. For example used by the server to identify the fields in form submits.
      */
-    name: AttributeDeclarationOf<string>;
+    name?: AttributeDeclarationOf<string>;
     /**
      * ## required
      * Indicates whether this element is required to fill out or not.
      */
-    required: AttributeDeclarationOf<boolean>;
+    required?: AttributeDeclarationOf<boolean>;
     /**
      * ## size
      * Defines the width of the element (in pixels). If the element's type attribute is text or password then it's the number of characters.
      */
-    size: AttributeDeclarationOf<string>;
+    size?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Select
@@ -2773,7 +2773,7 @@ export interface TextAreaParams
      * ## autoComplete
      * Indicates whether controls in this form can by default have their values automatically completed by the browser.
      */
-    autoComplete: AttributeDeclarationOf<
+    autoComplete?: AttributeDeclarationOf<
         | "off"
         | "on"
         | "name"
@@ -2826,57 +2826,57 @@ export interface TextAreaParams
      * ## autoFocus
      * The element should be automatically focused after the page loaded.
      */
-    autoFocus: AttributeDeclarationOf<string>;
+    autoFocus?: AttributeDeclarationOf<string>;
     /**
      * ## cols
      * Defines the number of columns in a textarea.
      */
-    cols: AttributeDeclarationOf<number>;
+    cols?: AttributeDeclarationOf<number>;
     /**
      * ## disabled
      * Indicates whether the user can interact with the element.
      */
-    disabled: AttributeDeclarationOf<boolean>;
+    disabled?: AttributeDeclarationOf<boolean>;
     /**
      * ## form
      * Indicates the form that is the owner of the element.
      */
-    form: AttributeDeclarationOf<string>;
+    form?: AttributeDeclarationOf<string>;
     /**
      * ## maxLength
      * Defines the maximum number of characters allowed in the element.
      */
-    maxLength: AttributeDeclarationOf<string>;
+    maxLength?: AttributeDeclarationOf<string>;
     /**
      * ## name
      * Name of the element. For example used by the server to identify the fields in form submits.
      */
-    name: AttributeDeclarationOf<string>;
+    name?: AttributeDeclarationOf<string>;
     /**
      * ## placeholder
      * Provides a hint to the user of what can be entered in the field.
      */
-    placeholder: AttributeDeclarationOf<string>;
+    placeholder?: AttributeDeclarationOf<string>;
     /**
      * ## readOnly
      * Indicates whether the element can be edited.
      */
-    readOnly: AttributeDeclarationOf<boolean>;
+    readOnly?: AttributeDeclarationOf<boolean>;
     /**
      * ## required
      * Indicates whether this element is required to fill out or not.
      */
-    required: AttributeDeclarationOf<boolean>;
+    required?: AttributeDeclarationOf<boolean>;
     /**
      * ## spellCheck
      * Indicates whether spell checking is allowed for the element.
      */
-    spellCheck: AttributeDeclarationOf<"true" | "false">;
+    spellCheck?: AttributeDeclarationOf<"true" | "false">;
     /**
      * ## wrap
      * Indicates whether the text should be wrapped.
      */
-    wrap: AttributeDeclarationOf<"hard" | "soft" | "off">;
+    wrap?: AttributeDeclarationOf<"hard" | "soft" | "off">;
 }
 /**
  * ## TextArea
@@ -2897,7 +2897,7 @@ export interface DetailsParams
      * ## open
      * Indicates whether the contents are currently visible (in the case of a ``<details>`` element) or whether the dialog is active and can be interacted with (in the case of a ``<dialog>`` element).
      */
-    open: AttributeDeclarationOf<boolean>;
+    open?: AttributeDeclarationOf<boolean>;
 }
 /**
  * ## Details
@@ -2918,7 +2918,7 @@ export interface DialogParams
      * ## open
      * Indicates whether the contents are currently visible (in the case of a ``<details>`` element) or whether the dialog is active and can be interacted with (in the case of a ``<dialog>`` element).
      */
-    open: AttributeDeclarationOf<boolean>;
+    open?: AttributeDeclarationOf<boolean>;
 }
 /**
  * ## Dialog
@@ -2954,7 +2954,7 @@ export interface SlotParams
      * ## name
      * Name of the element. For example used by the server to identify the fields in form submits.
      */
-    name: AttributeDeclarationOf<string>;
+    name?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Slot
@@ -3082,12 +3082,12 @@ export interface CheckBoxParams
     /**
      * ## value
      */
-    value: AttributeDeclarationOf<string>;
+    value?: AttributeDeclarationOf<string>;
     /**
      * ## checked
      * Indicates whether the element should be checked on page load.
      */
-    checked: AttributeDeclarationOf<string>;
+    checked?: AttributeDeclarationOf<string>;
 }
 /**
  * ## CheckBox
@@ -3108,7 +3108,7 @@ export interface ColorPickerParams
     /**
      * ## value
      */
-    value: AttributeDeclarationOf<string>;
+    value?: AttributeDeclarationOf<string>;
 }
 /**
  * ## ColorPicker
@@ -3128,21 +3128,21 @@ export interface DatePickerParams
     /**
      * ## value
      */
-    value: AttributeDeclarationOf<string>;
+    value?: AttributeDeclarationOf<string>;
     /**
      * ## max
      * Indicates the maximum value allowed.
      */
-    max: AttributeDeclarationOf<string>;
+    max?: AttributeDeclarationOf<string>;
     /**
      * ## min
      * Indicates the minimum value allowed.
      */
-    min: AttributeDeclarationOf<string>;
+    min?: AttributeDeclarationOf<string>;
     /**
      * ## step
      */
-    step: AttributeDeclarationOf<string>;
+    step?: AttributeDeclarationOf<string>;
 }
 /**
  * ## DatePicker
@@ -3163,21 +3163,21 @@ export interface DateTimeLocalPickerParams
     /**
      * ## value
      */
-    value: AttributeDeclarationOf<string>;
+    value?: AttributeDeclarationOf<string>;
     /**
      * ## max
      * Indicates the maximum value allowed.
      */
-    max: AttributeDeclarationOf<string>;
+    max?: AttributeDeclarationOf<string>;
     /**
      * ## min
      * Indicates the minimum value allowed.
      */
-    min: AttributeDeclarationOf<string>;
+    min?: AttributeDeclarationOf<string>;
     /**
      * ## step
      */
-    step: AttributeDeclarationOf<string>;
+    step?: AttributeDeclarationOf<string>;
 }
 /**
  * ## DateTimeLocalPicker
@@ -3201,12 +3201,12 @@ export interface EmailFieldParams
     /**
      * ## value
      */
-    value: AttributeDeclarationOf<string>;
+    value?: AttributeDeclarationOf<string>;
     /**
      * ## autoComplete
      * Indicates whether controls in this form can by default have their values automatically completed by the browser.
      */
-    autoComplete: AttributeDeclarationOf<
+    autoComplete?: AttributeDeclarationOf<
         | "off"
         | "on"
         | "name"
@@ -3259,47 +3259,47 @@ export interface EmailFieldParams
      * ## list
      * Identifies a list of pre-defined options to suggest to the user.
      */
-    list: AttributeDeclarationOf<string>;
+    list?: AttributeDeclarationOf<string>;
     /**
      * ## maxLength
      * Defines the maximum number of characters allowed in the element.
      */
-    maxLength: AttributeDeclarationOf<string>;
+    maxLength?: AttributeDeclarationOf<string>;
     /**
      * ## minLength
      * Defines the minimum number of characters allowed in the element.
      */
-    minLength: AttributeDeclarationOf<string>;
+    minLength?: AttributeDeclarationOf<string>;
     /**
      * ## multiple
      * Indicates whether multiple values can be entered in an input of the type email or file.
      */
-    multiple: AttributeDeclarationOf<boolean>;
+    multiple?: AttributeDeclarationOf<boolean>;
     /**
      * ## pattern
      * Defines a regular expression which the element's value will be validated against.
      */
-    pattern: AttributeDeclarationOf<string>;
+    pattern?: AttributeDeclarationOf<string>;
     /**
      * ## placeholder
      * Provides a hint to the user of what can be entered in the field.
      */
-    placeholder: AttributeDeclarationOf<string>;
+    placeholder?: AttributeDeclarationOf<string>;
     /**
      * ## readOnly
      * Indicates whether the element can be edited.
      */
-    readOnly: AttributeDeclarationOf<boolean>;
+    readOnly?: AttributeDeclarationOf<boolean>;
     /**
      * ## required
      * Indicates whether this element is required to fill out or not.
      */
-    required: AttributeDeclarationOf<boolean>;
+    required?: AttributeDeclarationOf<boolean>;
     /**
      * ## size
      * Defines the width of the element (in pixels). If the element's type attribute is text or password then it's the number of characters.
      */
-    size: AttributeDeclarationOf<string>;
+    size?: AttributeDeclarationOf<string>;
 }
 /**
  * ## EmailField
@@ -3322,22 +3322,22 @@ export interface FilePickerParams
      * ## required
      * Indicates whether this element is required to fill out or not.
      */
-    required: AttributeDeclarationOf<boolean>;
+    required?: AttributeDeclarationOf<boolean>;
     /**
      * ## accept
      * List of types the server accepts, typically a file type.
      */
-    accept: AttributeDeclarationOf<"audio/*" | "video/*" | "image/*">;
+    accept?: AttributeDeclarationOf<"audio/*" | "video/*" | "image/*">;
     /**
      * ## capture
      * From the Media Capture specification, specifies a new file can be captured.
      */
-    capture: AttributeDeclarationOf<"user" | "environment">;
+    capture?: AttributeDeclarationOf<"user" | "environment">;
     /**
      * ## multiple
      * Indicates whether multiple values can be entered in an input of the type email or file.
      */
-    multiple: AttributeDeclarationOf<boolean>;
+    multiple?: AttributeDeclarationOf<boolean>;
 }
 /**
  * ## FilePicker
@@ -3360,16 +3360,16 @@ export interface HiddenInputParams
      * ## name
      * Name of the element. For example used by the server to identify the fields in form submits.
      */
-    name: AttributeDeclarationOf<string>;
+    name?: AttributeDeclarationOf<string>;
     /**
      * ## value
      */
-    value: AttributeDeclarationOf<string>;
+    value?: AttributeDeclarationOf<string>;
     /**
      * ## autoComplete
      * Indicates whether controls in this form can by default have their values automatically completed by the browser.
      */
-    autoComplete: AttributeDeclarationOf<
+    autoComplete?: AttributeDeclarationOf<
         | "off"
         | "on"
         | "name"
@@ -3440,42 +3440,42 @@ export interface ImagePickerParams
      * ## alt
      * Alternative text in case an image can't be displayed.
      */
-    alt: AttributeDeclarationOf<string>;
+    alt?: AttributeDeclarationOf<string>;
     /**
      * ## src
      * The URL of the embeddable content.
      */
-    src: AttributeDeclarationOf<string>;
+    src?: AttributeDeclarationOf<string>;
     /**
      * ## height
      * Specifies the height of elements listed here. For all other elements, use the CSS height property.
      */
-    height: AttributeDeclarationOf<string>;
+    height?: AttributeDeclarationOf<string>;
     /**
      * ## formAction
      * Indicates the action of the element, overriding the action defined in the <form>.
      */
-    formAction: AttributeDeclarationOf<string>;
+    formAction?: AttributeDeclarationOf<string>;
     /**
      * ## formEncType
      * If the button/input is a submit button (type="submit"), this attribute sets the encoding type to use during form submission. If this attribute is specified, it overrides the enctype attribute of the button's form owner.
      */
-    formEncType: AttributeDeclarationOf<string>;
+    formEncType?: AttributeDeclarationOf<string>;
     /**
      * ## formMethod
      * If the button/input is a submit button (type="submit"), this attribute sets the submission method to use during form submission (GET, POST, etc.). If this attribute is specified, it overrides the method attribute of the button's form owner.
      */
-    formMethod: AttributeDeclarationOf<string>;
+    formMethod?: AttributeDeclarationOf<string>;
     /**
      * ## formNoValidate
      * If the button/input is a submit button (type="submit"), this boolean attribute specifies that the form is not to be validated when it is submitted. If this attribute is specified, it overrides the novalidate attribute of the button's form owner.
      */
-    formNoValidate: AttributeDeclarationOf<string>;
+    formNoValidate?: AttributeDeclarationOf<string>;
     /**
      * ## formTarget
      * The formtarget attribute specifies a name or a keyword that indicates where to display the response that is received after submitting the form.
      */
-    formTarget: AttributeDeclarationOf<string>;
+    formTarget?: AttributeDeclarationOf<string>;
 }
 /**
  * ## ImagePicker
@@ -3497,7 +3497,7 @@ export interface MonthPickerParams
      * ## autoComplete
      * Indicates whether controls in this form can by default have their values automatically completed by the browser.
      */
-    autoComplete: AttributeDeclarationOf<
+    autoComplete?: AttributeDeclarationOf<
         | "off"
         | "on"
         | "name"
@@ -3550,20 +3550,20 @@ export interface MonthPickerParams
      * ## list
      * Identifies a list of pre-defined options to suggest to the user.
      */
-    list: AttributeDeclarationOf<string>;
+    list?: AttributeDeclarationOf<string>;
     /**
      * ## readOnly
      * Indicates whether the element can be edited.
      */
-    readOnly: AttributeDeclarationOf<boolean>;
+    readOnly?: AttributeDeclarationOf<boolean>;
     /**
      * ## step
      */
-    step: AttributeDeclarationOf<string>;
+    step?: AttributeDeclarationOf<string>;
     /**
      * ## value
      */
-    value: AttributeDeclarationOf<string>;
+    value?: AttributeDeclarationOf<string>;
 }
 /**
  * ## MonthPicker
@@ -3584,7 +3584,7 @@ export interface NumberPickerParams
      * ## autoComplete
      * Indicates whether controls in this form can by default have their values automatically completed by the browser.
      */
-    autoComplete: AttributeDeclarationOf<
+    autoComplete?: AttributeDeclarationOf<
         | "off"
         | "on"
         | "name"
@@ -3637,21 +3637,21 @@ export interface NumberPickerParams
      * ## list
      * Identifies a list of pre-defined options to suggest to the user.
      */
-    list: AttributeDeclarationOf<string>;
+    list?: AttributeDeclarationOf<string>;
     /**
      * ## placeholder
      * Provides a hint to the user of what can be entered in the field.
      */
-    placeholder: AttributeDeclarationOf<string>;
+    placeholder?: AttributeDeclarationOf<string>;
     /**
      * ## readOnly
      * Indicates whether the element can be edited.
      */
-    readOnly: AttributeDeclarationOf<boolean>;
+    readOnly?: AttributeDeclarationOf<boolean>;
     /**
      * ## value
      */
-    value: AttributeDeclarationOf<string>;
+    value?: AttributeDeclarationOf<string>;
 }
 /**
  * ## NumberPicker
@@ -3673,7 +3673,7 @@ export interface PasswordFieldParams
      * ## autoComplete
      * Indicates whether controls in this form can by default have their values automatically completed by the browser.
      */
-    autoComplete: AttributeDeclarationOf<
+    autoComplete?: AttributeDeclarationOf<
         | "off"
         | "on"
         | "name"
@@ -3726,7 +3726,7 @@ export interface PasswordFieldParams
      * ## inputMode
      * Provides a hint as to the type of data that might be entered by the user while editing the element or its contents. The attribute can be used with form controls (such as the value of textarea elements), or in elements in an editing host (e.g., using contenteditable attribute).
      */
-    inputMode: AttributeDeclarationOf<
+    inputMode?: AttributeDeclarationOf<
         | "none"
         | "text"
         | "decimal"
@@ -3740,41 +3740,41 @@ export interface PasswordFieldParams
      * ## maxLength
      * Defines the maximum number of characters allowed in the element.
      */
-    maxLength: AttributeDeclarationOf<string>;
+    maxLength?: AttributeDeclarationOf<string>;
     /**
      * ## minLength
      * Defines the minimum number of characters allowed in the element.
      */
-    minLength: AttributeDeclarationOf<string>;
+    minLength?: AttributeDeclarationOf<string>;
     /**
      * ## pattern
      * Defines a regular expression which the element's value will be validated against.
      */
-    pattern: AttributeDeclarationOf<string>;
+    pattern?: AttributeDeclarationOf<string>;
     /**
      * ## placeholder
      * Provides a hint to the user of what can be entered in the field.
      */
-    placeholder: AttributeDeclarationOf<string>;
+    placeholder?: AttributeDeclarationOf<string>;
     /**
      * ## readOnly
      * Indicates whether the element can be edited.
      */
-    readOnly: AttributeDeclarationOf<boolean>;
+    readOnly?: AttributeDeclarationOf<boolean>;
     /**
      * ## required
      * Indicates whether this element is required to fill out or not.
      */
-    required: AttributeDeclarationOf<boolean>;
+    required?: AttributeDeclarationOf<boolean>;
     /**
      * ## size
      * Defines the width of the element (in pixels). If the element's type attribute is text or password then it's the number of characters.
      */
-    size: AttributeDeclarationOf<string>;
+    size?: AttributeDeclarationOf<string>;
     /**
      * ## value
      */
-    value: AttributeDeclarationOf<string>;
+    value?: AttributeDeclarationOf<string>;
 }
 /**
  * ## PasswordField
@@ -3796,16 +3796,16 @@ export interface RadioButtonParams
      * ## checked
      * Indicates whether the element should be checked on page load.
      */
-    checked: AttributeDeclarationOf<string>;
+    checked?: AttributeDeclarationOf<string>;
     /**
      * ## value
      */
-    value: AttributeDeclarationOf<string>;
+    value?: AttributeDeclarationOf<string>;
     /**
      * ## required
      * Indicates whether this element is required to fill out or not.
      */
-    required: AttributeDeclarationOf<boolean>;
+    required?: AttributeDeclarationOf<boolean>;
 }
 /**
  * ## RadioButton
@@ -3827,7 +3827,7 @@ export interface RangePickerParams
      * ## autoComplete
      * Indicates whether controls in this form can by default have their values automatically completed by the browser.
      */
-    autoComplete: AttributeDeclarationOf<
+    autoComplete?: AttributeDeclarationOf<
         | "off"
         | "on"
         | "name"
@@ -3880,25 +3880,25 @@ export interface RangePickerParams
      * ## list
      * Identifies a list of pre-defined options to suggest to the user.
      */
-    list: AttributeDeclarationOf<string>;
+    list?: AttributeDeclarationOf<string>;
     /**
      * ## max
      * Indicates the maximum value allowed.
      */
-    max: AttributeDeclarationOf<string>;
+    max?: AttributeDeclarationOf<string>;
     /**
      * ## min
      * Indicates the minimum value allowed.
      */
-    min: AttributeDeclarationOf<string>;
+    min?: AttributeDeclarationOf<string>;
     /**
      * ## step
      */
-    step: AttributeDeclarationOf<string>;
+    step?: AttributeDeclarationOf<string>;
     /**
      * ## value
      */
-    value: AttributeDeclarationOf<string>;
+    value?: AttributeDeclarationOf<string>;
 }
 /**
  * ## RangePicker
@@ -3919,7 +3919,7 @@ export interface ResetButtonParams
     /**
      * ## value
      */
-    value: AttributeDeclarationOf<string>;
+    value?: AttributeDeclarationOf<string>;
 }
 /**
  * ## ResetButton
@@ -3940,46 +3940,46 @@ export interface SearchFieldParams
      * ## autoComplete
      * Identifies a list of pre-defined options to suggest to the user.
      */
-    autoComplete: AttributeDeclarationOf<string>;
+    autoComplete?: AttributeDeclarationOf<string>;
     /**
      * ## list
      * Identifies a list of pre-defined options to suggest to the user.
      */
-    list: AttributeDeclarationOf<string>;
+    list?: AttributeDeclarationOf<string>;
     /**
      * ## maxLength
      * Defines the maximum number of characters allowed in the element.
      */
-    maxLength: AttributeDeclarationOf<string>;
+    maxLength?: AttributeDeclarationOf<string>;
     /**
      * ## minLength
      * Defines the minimum number of characters allowed in the element.
      */
-    minLength: AttributeDeclarationOf<string>;
+    minLength?: AttributeDeclarationOf<string>;
     /**
      * ## pattern
      * Defines a regular expression which the element's value will be validated against.
      */
-    pattern: AttributeDeclarationOf<string>;
+    pattern?: AttributeDeclarationOf<string>;
     /**
      * ## placeholder
      * Provides a hint to the user of what can be entered in the field.
      */
-    placeholder: AttributeDeclarationOf<string>;
+    placeholder?: AttributeDeclarationOf<string>;
     /**
      * ## required
      * Indicates whether this element is required to fill out or not.
      */
-    required: AttributeDeclarationOf<boolean>;
+    required?: AttributeDeclarationOf<boolean>;
     /**
      * ## size
      * Defines the width of the element (in pixels). If the element's type attribute is text or password then it's the number of characters.
      */
-    size: AttributeDeclarationOf<string>;
+    size?: AttributeDeclarationOf<string>;
     /**
      * ## value
      */
-    value: AttributeDeclarationOf<string>;
+    value?: AttributeDeclarationOf<string>;
 }
 /**
  * ## SearchField
@@ -4000,7 +4000,7 @@ export interface SubmitButtonParams
     /**
      * ## value
      */
-    value: AttributeDeclarationOf<string>;
+    value?: AttributeDeclarationOf<string>;
 }
 /**
  * ## SubmitButton
@@ -4022,46 +4022,46 @@ export interface TelephoneNumberFieldParams
      * ## readOnly
      * Indicates whether the element can be edited.
      */
-    readOnly: AttributeDeclarationOf<boolean>;
+    readOnly?: AttributeDeclarationOf<boolean>;
     /**
      * ## autoComplete
      * Identifies a list of pre-defined options to suggest to the user.
      */
-    autoComplete: AttributeDeclarationOf<string>;
+    autoComplete?: AttributeDeclarationOf<string>;
     /**
      * ## list
      * Identifies a list of pre-defined options to suggest to the user.
      */
-    list: AttributeDeclarationOf<string>;
+    list?: AttributeDeclarationOf<string>;
     /**
      * ## maxLength
      * Defines the maximum number of characters allowed in the element.
      */
-    maxLength: AttributeDeclarationOf<string>;
+    maxLength?: AttributeDeclarationOf<string>;
     /**
      * ## minLength
      * Defines the minimum number of characters allowed in the element.
      */
-    minLength: AttributeDeclarationOf<string>;
+    minLength?: AttributeDeclarationOf<string>;
     /**
      * ## pattern
      * Defines a regular expression which the element's value will be validated against.
      */
-    pattern: AttributeDeclarationOf<string>;
+    pattern?: AttributeDeclarationOf<string>;
     /**
      * ## placeholder
      * Provides a hint to the user of what can be entered in the field.
      */
-    placeholder: AttributeDeclarationOf<string>;
+    placeholder?: AttributeDeclarationOf<string>;
     /**
      * ## size
      * Defines the width of the element (in pixels). If the element's type attribute is text or password then it's the number of characters.
      */
-    size: AttributeDeclarationOf<string>;
+    size?: AttributeDeclarationOf<string>;
     /**
      * ## value
      */
-    value: AttributeDeclarationOf<string>;
+    value?: AttributeDeclarationOf<string>;
 }
 /**
  * ## TelephoneNumberField
@@ -4084,51 +4084,51 @@ export interface TextFieldParams
      * ## required
      * Indicates whether this element is required to fill out or not.
      */
-    required: AttributeDeclarationOf<boolean>;
+    required?: AttributeDeclarationOf<boolean>;
     /**
      * ## readOnly
      * Indicates whether the element can be edited.
      */
-    readOnly: AttributeDeclarationOf<boolean>;
+    readOnly?: AttributeDeclarationOf<boolean>;
     /**
      * ## autoComplete
      * Identifies a list of pre-defined options to suggest to the user.
      */
-    autoComplete: AttributeDeclarationOf<string>;
+    autoComplete?: AttributeDeclarationOf<string>;
     /**
      * ## list
      * Identifies a list of pre-defined options to suggest to the user.
      */
-    list: AttributeDeclarationOf<string>;
+    list?: AttributeDeclarationOf<string>;
     /**
      * ## maxLength
      * Defines the maximum number of characters allowed in the element.
      */
-    maxLength: AttributeDeclarationOf<string>;
+    maxLength?: AttributeDeclarationOf<string>;
     /**
      * ## minLength
      * Defines the minimum number of characters allowed in the element.
      */
-    minLength: AttributeDeclarationOf<string>;
+    minLength?: AttributeDeclarationOf<string>;
     /**
      * ## pattern
      * Defines a regular expression which the element's value will be validated against.
      */
-    pattern: AttributeDeclarationOf<string>;
+    pattern?: AttributeDeclarationOf<string>;
     /**
      * ## placeholder
      * Provides a hint to the user of what can be entered in the field.
      */
-    placeholder: AttributeDeclarationOf<string>;
+    placeholder?: AttributeDeclarationOf<string>;
     /**
      * ## size
      * Defines the width of the element (in pixels). If the element's type attribute is text or password then it's the number of characters.
      */
-    size: AttributeDeclarationOf<string>;
+    size?: AttributeDeclarationOf<string>;
     /**
      * ## value
      */
-    value: AttributeDeclarationOf<string>;
+    value?: AttributeDeclarationOf<string>;
 }
 /**
  * ## TextField
@@ -4149,7 +4149,7 @@ export interface TimePickerParams
      * ## autoComplete
      * Indicates whether controls in this form can by default have their values automatically completed by the browser.
      */
-    autoComplete: AttributeDeclarationOf<
+    autoComplete?: AttributeDeclarationOf<
         | "off"
         | "on"
         | "name"
@@ -4202,20 +4202,20 @@ export interface TimePickerParams
      * ## list
      * Identifies a list of pre-defined options to suggest to the user.
      */
-    list: AttributeDeclarationOf<string>;
+    list?: AttributeDeclarationOf<string>;
     /**
      * ## readOnly
      * Indicates whether the element can be edited.
      */
-    readOnly: AttributeDeclarationOf<boolean>;
+    readOnly?: AttributeDeclarationOf<boolean>;
     /**
      * ## step
      */
-    step: AttributeDeclarationOf<string>;
+    step?: AttributeDeclarationOf<string>;
     /**
      * ## value
      */
-    value: AttributeDeclarationOf<string>;
+    value?: AttributeDeclarationOf<string>;
 }
 /**
  * ## TimePicker
@@ -4236,16 +4236,16 @@ export interface UrlFieldParams
      * ## pattern
      * Defines a regular expression which the element's value will be validated against.
      */
-    pattern: AttributeDeclarationOf<string>;
+    pattern?: AttributeDeclarationOf<string>;
     /**
      * ## value
      */
-    value: AttributeDeclarationOf<string>;
+    value?: AttributeDeclarationOf<string>;
     /**
      * ## autoComplete
      * Indicates whether controls in this form can by default have their values automatically completed by the browser.
      */
-    autoComplete: AttributeDeclarationOf<
+    autoComplete?: AttributeDeclarationOf<
         | "off"
         | "on"
         | "name"
@@ -4298,42 +4298,42 @@ export interface UrlFieldParams
      * ## list
      * Identifies a list of pre-defined options to suggest to the user.
      */
-    list: AttributeDeclarationOf<string>;
+    list?: AttributeDeclarationOf<string>;
     /**
      * ## maxLength
      * Defines the maximum number of characters allowed in the element.
      */
-    maxLength: AttributeDeclarationOf<string>;
+    maxLength?: AttributeDeclarationOf<string>;
     /**
      * ## minLength
      * Defines the minimum number of characters allowed in the element.
      */
-    minLength: AttributeDeclarationOf<string>;
+    minLength?: AttributeDeclarationOf<string>;
     /**
      * ## multiple
      * Indicates whether multiple values can be entered in an input of the type email or file.
      */
-    multiple: AttributeDeclarationOf<boolean>;
+    multiple?: AttributeDeclarationOf<boolean>;
     /**
      * ## placeholder
      * Provides a hint to the user of what can be entered in the field.
      */
-    placeholder: AttributeDeclarationOf<string>;
+    placeholder?: AttributeDeclarationOf<string>;
     /**
      * ## readOnly
      * Indicates whether the element can be edited.
      */
-    readOnly: AttributeDeclarationOf<boolean>;
+    readOnly?: AttributeDeclarationOf<boolean>;
     /**
      * ## required
      * Indicates whether this element is required to fill out or not.
      */
-    required: AttributeDeclarationOf<boolean>;
+    required?: AttributeDeclarationOf<boolean>;
     /**
      * ## size
      * Defines the width of the element (in pixels). If the element's type attribute is text or password then it's the number of characters.
      */
-    size: AttributeDeclarationOf<string>;
+    size?: AttributeDeclarationOf<string>;
 }
 /**
  * ## UrlField
@@ -4354,7 +4354,7 @@ export interface WeekPickerParams
      * ## autoComplete
      * Indicates whether controls in this form can by default have their values automatically completed by the browser.
      */
-    autoComplete: AttributeDeclarationOf<
+    autoComplete?: AttributeDeclarationOf<
         | "off"
         | "on"
         | "name"
@@ -4407,20 +4407,20 @@ export interface WeekPickerParams
      * ## list
      * Identifies a list of pre-defined options to suggest to the user.
      */
-    list: AttributeDeclarationOf<string>;
+    list?: AttributeDeclarationOf<string>;
     /**
      * ## readOnly
      * Indicates whether the element can be edited.
      */
-    readOnly: AttributeDeclarationOf<boolean>;
+    readOnly?: AttributeDeclarationOf<boolean>;
     /**
      * ## step
      */
-    step: AttributeDeclarationOf<string>;
+    step?: AttributeDeclarationOf<string>;
     /**
      * ## value
      */
-    value: AttributeDeclarationOf<string>;
+    value?: AttributeDeclarationOf<string>;
 }
 /**
  * ## WeekPicker
@@ -4440,11 +4440,11 @@ export interface SpacerParams
     /**
      * ## height
      */
-    height: AttributeDeclarationOf<string>;
+    height?: AttributeDeclarationOf<string>;
     /**
      * ## width
      */
-    width: AttributeDeclarationOf<string>;
+    width?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Spacer
@@ -4504,19 +4504,19 @@ export interface HorizontalLineParams
     /**
      * ## thickness
      */
-    thickness: AttributeDeclarationOf<string>;
+    thickness?: AttributeDeclarationOf<string>;
     /**
      * ## width
      */
-    width: AttributeDeclarationOf<string>;
+    width?: AttributeDeclarationOf<string>;
     /**
      * ## marginVertical
      */
-    marginVertical: AttributeDeclarationOf<string>;
+    marginVertical?: AttributeDeclarationOf<string>;
     /**
      * ## color
      */
-    color: AttributeDeclarationOf<string>;
+    color?: AttributeDeclarationOf<string>;
 }
 /**
  * ## HorizontalLine
@@ -4539,19 +4539,19 @@ export interface VerticalLineParams
     /**
      * ## thickness
      */
-    thickness: AttributeDeclarationOf<string>;
+    thickness?: AttributeDeclarationOf<string>;
     /**
      * ## height
      */
-    height: AttributeDeclarationOf<string>;
+    height?: AttributeDeclarationOf<string>;
     /**
      * ## marginHorizontal
      */
-    marginHorizontal: AttributeDeclarationOf<string>;
+    marginHorizontal?: AttributeDeclarationOf<string>;
     /**
      * ## color
      */
-    color: AttributeDeclarationOf<CssColor>;
+    color?: AttributeDeclarationOf<CssColor>;
 }
 /**
  * ## VerticalLine
@@ -4575,12 +4575,12 @@ export interface LinkParams
      * ## href
      * The URL of a linked resource.
      */
-    href: AttributeDeclarationOf<string>;
+    href?: AttributeDeclarationOf<string>;
     /**
      * ## target
      * Specifies where to open the linked document (in the case of an ``<a>`` element) or where to display the response received (in the case of a ``<form>`` element)
      */
-    target: AttributeDeclarationOf<"_self" | "_blank" | "_parent" | "_top">;
+    target?: AttributeDeclarationOf<"_self" | "_blank" | "_parent" | "_top">;
 }
 /**
  * ## Link
@@ -4606,24 +4606,24 @@ export interface ToggleSwitchParams
     /**
      * ## radiusPx
      */
-    radiusPx: AttributeDeclarationOf<string>;
+    radiusPx?: AttributeDeclarationOf<string>;
     /**
      * ## color
      */
-    color: AttributeDeclarationOf<CssColor>;
+    color?: AttributeDeclarationOf<CssColor>;
     /**
      * ## backgroundColor
      */
-    backgroundColor: AttributeDeclarationOf<CssColor>;
+    backgroundColor?: AttributeDeclarationOf<CssColor>;
     /**
      * ## onBackgroundColor
      */
-    onBackgroundColor: AttributeDeclarationOf<CssColor>;
+    onBackgroundColor?: AttributeDeclarationOf<CssColor>;
     /**
      * ## checked
      * Indicates whether the element should be checked on page load.
      */
-    checked: AttributeDeclarationOf<string>;
+    checked?: AttributeDeclarationOf<string>;
 }
 /**
  * ## ToggleSwitch
@@ -4649,15 +4649,15 @@ export interface CircularSpinnerParams
     /**
      * ## color
      */
-    color: AttributeDeclarationOf<CssColor>;
+    color?: AttributeDeclarationOf<CssColor>;
     /**
      * ## thickness
      */
-    thickness: AttributeDeclarationOf<number>;
+    thickness?: AttributeDeclarationOf<number>;
     /**
      * ## size
      */
-    size: AttributeDeclarationOf<number>;
+    size?: AttributeDeclarationOf<number>;
 }
 /**
  * ## CircularSpinner

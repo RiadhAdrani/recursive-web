@@ -17,21 +17,21 @@ export type ComponentStyleSheet = {
      * Define if the current stylesheet
      * should be scoped for the current element.
      */
-    scoped: boolean;
+    scoped?: boolean;
     /**
      * Class name that will serve for styling.
      * The name should not start with a `.`
      * as it will be automatically added
      */
-    className: string;
+    className?: string;
     /**
      * Array of animations.
      */
-    animations: Array<ComponentAnimation>;
+    animations?: Array<ComponentAnimation>;
     /**
      * Media queries of the current element.
      */
-    mediaQueries: Array<MediaQuery> & SelectorTypes;
+    mediaQueries?: Array<MediaQuery> & SelectorTypes;
 } & Selectors &
     SelectorTypes;
 
@@ -41,31 +41,31 @@ export type FreeStyleSheet = {
      * The renderer will add the `--` prefix
      * before each key.
      */
-    var: ObjectOf<string>;
+    var?: ObjectOf<string>;
     /**
      * Array of string, containing imports `url`s.
      */
-    imports: Array<string>;
+    imports?: Array<string>;
     /**
      * Style selectors.
      */
-    selectors: ObjectOf<Selector>;
+    selectors?: ObjectOf<Selector>;
     /**
      * Media Queries.
      */
-    mediaQueries: Array<MediaQuery>;
+    mediaQueries?: Array<MediaQuery>;
     /**
      * Animations.
      */
-    animations: ObjectOf<ObjectOf<Selector>>;
+    animations?: ObjectOf<ObjectOf<Selector>>;
     /**
      * Font Face
      */
-    fontFace: Array<FontFace>;
+    fontFace?: Array<FontFace>;
     /**
      * Style sheet options
      */
-    options: {
+    options?: {
         /**
          * determine if this free style sheet
          * should be rendered after components style
@@ -74,7 +74,7 @@ export type FreeStyleSheet = {
          * ``Note that only selectors, media-queries and animations
          * are affected by this position option.``
          */
-        after: boolean;
+        after?: boolean;
     };
 };
 

@@ -28,22 +28,22 @@ export interface AParams
      * ## href
      * The URL of a linked resource.
      */
-    href: AttributeDeclarationOf<string>;
+    href?: AttributeDeclarationOf<string>;
     /**
      * ## hrefLang
      * Specifies the language of the linked resource.
      */
-    hrefLang: AttributeDeclarationOf<string>;
+    hrefLang?: AttributeDeclarationOf<string>;
     /**
      * ## target
      * Specifies where to open the linked document (in the case of an ``<a>`` element) or where to display the response received (in the case of a ``<form>`` element)
      */
-    target: AttributeDeclarationOf<"_self" | "_blank" | "_parent" | "_top">;
+    target?: AttributeDeclarationOf<"_self" | "_blank" | "_parent" | "_top">;
     /**
      * ## type
      * Defines the type of the element.
      */
-    type: AttributeDeclarationOf<string>;
+    type?: AttributeDeclarationOf<string>;
 }
 /**
  * ## A
@@ -65,86 +65,86 @@ export interface AnimateParams
      * ## begin
      * The begin attribute defines when an animation should begin or when an element should be discarded.
      */
-    begin: AttributeDeclarationOf<string>;
+    begin?: AttributeDeclarationOf<string>;
     /**
      * ## dur
      * The dur attribute indicates the simple duration of an animation.
      */
-    dur: AttributeDeclarationOf<string>;
+    dur?: AttributeDeclarationOf<string>;
     /**
      * ## end
      * The end attribute defines an end value for the animation that can constrain the active duration.
      */
-    end: AttributeDeclarationOf<string>;
+    end?: AttributeDeclarationOf<string>;
     /**
      * ## min
      * Indicates the minimum value allowed.
      */
-    min: AttributeDeclarationOf<string>;
+    min?: AttributeDeclarationOf<string>;
     /**
      * ## max
      * Indicates the maximum value allowed.
      */
-    max: AttributeDeclarationOf<string>;
+    max?: AttributeDeclarationOf<string>;
     /**
      * ## restart
      */
-    restart: AttributeDeclarationOf<string>;
+    restart?: AttributeDeclarationOf<string>;
     /**
      * ## repeatCount
      */
-    repeatCount: AttributeDeclarationOf<string>;
+    repeatCount?: AttributeDeclarationOf<string>;
     /**
      * ## fill
      * The fill attribute has two different meanings. For shapes and text it's a presentation attribute that defines the color (or any SVG paint servers like gradients or patterns) used to paint the element; for animation it defines the final state of the animation.
      */
-    fill: AttributeDeclarationOf<string>;
+    fill?: AttributeDeclarationOf<string>;
     /**
      * ## calcMode
      * The calcMode attribute specifies the interpolation mode for the animation.
      */
-    calcMode: AttributeDeclarationOf<string>;
+    calcMode?: AttributeDeclarationOf<string>;
     /**
      * ## values
      */
-    values: AttributeDeclarationOf<string>;
+    values?: AttributeDeclarationOf<string>;
     /**
      * ## keyTimes
      */
-    keyTimes: AttributeDeclarationOf<string>;
+    keyTimes?: AttributeDeclarationOf<string>;
     /**
      * ## keySplines
      */
-    keySplines: AttributeDeclarationOf<string>;
+    keySplines?: AttributeDeclarationOf<string>;
     /**
      * ## from
      * The from attribute indicates the initial value of the attribute that will be modified during the animation.
      */
-    from: AttributeDeclarationOf<string>;
+    from?: AttributeDeclarationOf<string>;
     /**
      * ## to
      */
-    to: AttributeDeclarationOf<string>;
+    to?: AttributeDeclarationOf<string>;
     /**
      * ## by
      * The by attribute specifies a relative offset value for an attribute that will be modified during an animation.
      */
-    by: AttributeDeclarationOf<string>;
+    by?: AttributeDeclarationOf<string>;
     /**
      * ## attributeName
      * The attributeName attribute indicates the name of the CSS property or attribute of the target element that is going to be changed during an animation.
      */
-    attributeName: AttributeDeclarationOf<string>;
+    attributeName?: AttributeDeclarationOf<string>;
     /**
      * ## additive
      * The additive attribute controls whether or not an animation is additive.
      */
-    additive: AttributeDeclarationOf<"sum" | "replace">;
+    additive?: AttributeDeclarationOf<"sum" | "replace">;
     /**
      * ## accumulate
      * The accumulate attribute controls whether or not an animation is cumulative.
      */
-    accumulate: AttributeDeclarationOf<"sum" | "none">;
+    accumulate?: AttributeDeclarationOf<"sum" | "none">;
 }
 /**
  * ## Animate
@@ -164,15 +164,15 @@ export interface AnimateMotionParams
     /**
      * ## keyPoints
      */
-    keyPoints: AttributeDeclarationOf<string>;
+    keyPoints?: AttributeDeclarationOf<string>;
     /**
      * ## path
      */
-    path: AttributeDeclarationOf<string>;
+    path?: AttributeDeclarationOf<string>;
     /**
      * ## rotate
      */
-    rotate: AttributeDeclarationOf<string>;
+    rotate?: AttributeDeclarationOf<string>;
 }
 /**
  * ## AnimateMotion
@@ -208,20 +208,20 @@ export interface CircleParams
      * ## cx
      * The cx attribute define the x-axis coordinate of a center point.
      */
-    cx: AttributeDeclarationOf<string>;
+    cx?: AttributeDeclarationOf<string>;
     /**
      * ## cy
      * The cy attribute define the y-axis coordinate of a center point.
      */
-    cy: AttributeDeclarationOf<string>;
+    cy?: AttributeDeclarationOf<string>;
     /**
      * ## r
      */
-    r: AttributeDeclarationOf<string>;
+    r?: AttributeDeclarationOf<string>;
     /**
      * ## pathLength
      */
-    pathLength: AttributeDeclarationOf<string>;
+    pathLength?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Circle
@@ -243,7 +243,7 @@ export interface ClipPathParams
      * ## clipPathUnits
      * The clipPathUnits attribute indicates which coordinate system to use for the contents of the ``<clipPath>`` element.
      */
-    clipPathUnits: AttributeDeclarationOf<
+    clipPathUnits?: AttributeDeclarationOf<
         "userSpaceOnUse" | "objectBoundingBox"
     >;
 }
@@ -320,24 +320,24 @@ export interface EllipseParams
      * ## cx
      * The cx attribute define the x-axis coordinate of a center point.
      */
-    cx: AttributeDeclarationOf<string>;
+    cx?: AttributeDeclarationOf<string>;
     /**
      * ## cy
      * The cy attribute define the y-axis coordinate of a center point.
      */
-    cy: AttributeDeclarationOf<string>;
+    cy?: AttributeDeclarationOf<string>;
     /**
      * ## rx
      */
-    rx: AttributeDeclarationOf<string>;
+    rx?: AttributeDeclarationOf<string>;
     /**
      * ## ry
      */
-    ry: AttributeDeclarationOf<string>;
+    ry?: AttributeDeclarationOf<string>;
     /**
      * ## pathLength
      */
-    pathLength: AttributeDeclarationOf<string>;
+    pathLength?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Ellipse
@@ -357,15 +357,15 @@ export interface FeBlendParams
     /**
      * ## in
      */
-    in: AttributeDeclarationOf<string>;
+    in?: AttributeDeclarationOf<string>;
     /**
      * ## in2
      */
-    in2: AttributeDeclarationOf<string>;
+    in2?: AttributeDeclarationOf<string>;
     /**
      * ## mode
      */
-    mode: AttributeDeclarationOf<string>;
+    mode?: AttributeDeclarationOf<string>;
 }
 /**
  * ## FeBlend
@@ -385,16 +385,16 @@ export interface FeColorMatrixParams
     /**
      * ## in
      */
-    in: AttributeDeclarationOf<string>;
+    in?: AttributeDeclarationOf<string>;
     /**
      * ## type
      * Defines the type of the element.
      */
-    type: AttributeDeclarationOf<string>;
+    type?: AttributeDeclarationOf<string>;
     /**
      * ## values
      */
-    values: AttributeDeclarationOf<string>;
+    values?: AttributeDeclarationOf<string>;
 }
 /**
  * ## FeColorMatrix
@@ -433,7 +433,7 @@ export interface FeCompositeParams
     /**
      * ## in
      */
-    in: AttributeDeclarationOf<string>;
+    in?: AttributeDeclarationOf<string>;
 }
 /**
  * ## FeComposite
@@ -453,41 +453,41 @@ export interface FeConvolveMatrixParams
     /**
      * ## in
      */
-    in: AttributeDeclarationOf<string>;
+    in?: AttributeDeclarationOf<string>;
     /**
      * ## order
      */
-    order: AttributeDeclarationOf<string>;
+    order?: AttributeDeclarationOf<string>;
     /**
      * ## kernelMatrix
      */
-    kernelMatrix: AttributeDeclarationOf<string>;
+    kernelMatrix?: AttributeDeclarationOf<string>;
     /**
      * ## bias
      * The bias attribute shifts the range of the filter. After applying the kernelMatrix of the ``<feConvolveMatrix>`` element to the input image to yield a number and applied the divisor attribute, the bias attribute is added to each component. This allows representation of values that would otherwise be clamped to 0 or 1.
      */
-    bias: AttributeDeclarationOf<string>;
+    bias?: AttributeDeclarationOf<string>;
     /**
      * ## targetX
      */
-    targetX: AttributeDeclarationOf<string>;
+    targetX?: AttributeDeclarationOf<string>;
     /**
      * ## targetY
      */
-    targetY: AttributeDeclarationOf<string>;
+    targetY?: AttributeDeclarationOf<string>;
     /**
      * ## edgeMode
      * The edgeMode attribute determines how to extend the input image as necessary with color values so that the matrix operations can be applied when the kernel is positioned at or near the edge of the input image.
      */
-    edgeMode: AttributeDeclarationOf<string>;
+    edgeMode?: AttributeDeclarationOf<string>;
     /**
      * ## kernelUnitLength
      */
-    kernelUnitLength: AttributeDeclarationOf<string>;
+    kernelUnitLength?: AttributeDeclarationOf<string>;
     /**
      * ## preserveAlpha
      */
-    preserveAlpha: AttributeDeclarationOf<string>;
+    preserveAlpha?: AttributeDeclarationOf<string>;
 }
 /**
  * ## FeConvolveMatrix
@@ -561,20 +561,20 @@ export interface FeDropShadowParams
      * ## id
      * Often used with CSS to style a specific element. The value of this attribute must be unique.
      */
-    id: AttributeDeclarationOf<string>;
+    id?: AttributeDeclarationOf<string>;
     /**
      * ## surfaceScale
      */
-    surfaceScale: AttributeDeclarationOf<string>;
+    surfaceScale?: AttributeDeclarationOf<string>;
     /**
      * ## diffuseConstant
      * The diffuseConstant attribute represents the kd value in the Phong lighting model. In SVG, this can be any non-negative number.
      */
-    diffuseConstant: AttributeDeclarationOf<string>;
+    diffuseConstant?: AttributeDeclarationOf<string>;
     /**
      * ## kernelUnitLength
      */
-    kernelUnitLength: AttributeDeclarationOf<string>;
+    kernelUnitLength?: AttributeDeclarationOf<string>;
 }
 /**
  * ## FeDropShadow
@@ -595,12 +595,12 @@ export interface FeFloodParams
      * ## floodColor
      * The flood-color attribute indicates what color to use to flood the current filter primitive subregion.
      */
-    floodColor: AttributeDeclarationOf<string>;
+    floodColor?: AttributeDeclarationOf<string>;
     /**
      * ## floodOpacity
      * The flood-opacity attribute indicates the opacity value to use across the current filter primitive subregion.
      */
-    floodOpacity: AttributeDeclarationOf<string>;
+    floodOpacity?: AttributeDeclarationOf<string>;
 }
 /**
  * ## FeFlood
@@ -680,16 +680,16 @@ export interface FeGaussianBlurParams
     /**
      * ## in
      */
-    in: AttributeDeclarationOf<string>;
+    in?: AttributeDeclarationOf<string>;
     /**
      * ## stdDeviation
      */
-    stdDeviation: AttributeDeclarationOf<string>;
+    stdDeviation?: AttributeDeclarationOf<string>;
     /**
      * ## edgeMode
      * The edgeMode attribute determines how to extend the input image as necessary with color values so that the matrix operations can be applied when the kernel is positioned at or near the edge of the input image.
      */
-    edgeMode: AttributeDeclarationOf<string>;
+    edgeMode?: AttributeDeclarationOf<string>;
 }
 /**
  * ## FeGaussianBlur
@@ -709,11 +709,11 @@ export interface FeImageParams
     /**
      * ## preserveAspectRatio
      */
-    preserveAspectRatio: AttributeDeclarationOf<string>;
+    preserveAspectRatio?: AttributeDeclarationOf<string>;
     /**
      * ## xLinkHref
      */
-    xLinkHref: AttributeDeclarationOf<string>;
+    xLinkHref?: AttributeDeclarationOf<string>;
 }
 /**
  * ## FeImage
@@ -748,7 +748,7 @@ export interface FeMergeNodeParams
     /**
      * ## in
      */
-    in: AttributeDeclarationOf<string>;
+    in?: AttributeDeclarationOf<string>;
 }
 /**
  * ## FeMergeNode
@@ -768,15 +768,15 @@ export interface FeMorphologyParams
     /**
      * ## in
      */
-    in: AttributeDeclarationOf<string>;
+    in?: AttributeDeclarationOf<string>;
     /**
      * ## operator
      */
-    operator: AttributeDeclarationOf<string>;
+    operator?: AttributeDeclarationOf<string>;
     /**
      * ## radius
      */
-    radius: AttributeDeclarationOf<string>;
+    radius?: AttributeDeclarationOf<string>;
 }
 /**
  * ## FeMorphology
@@ -796,17 +796,17 @@ export interface FeOffsetParams
     /**
      * ## in
      */
-    in: AttributeDeclarationOf<string>;
+    in?: AttributeDeclarationOf<string>;
     /**
      * ## dx
      * The dx attribute indicates a shift along the x-axis on the position of an element or its content.
      */
-    dx: AttributeDeclarationOf<string>;
+    dx?: AttributeDeclarationOf<string>;
     /**
      * ## dy
      * The dy attribute indicates a shift along the y-axis on the position of an element or its content.
      */
-    dy: AttributeDeclarationOf<string>;
+    dy?: AttributeDeclarationOf<string>;
 }
 /**
  * ## FeOffset
@@ -826,15 +826,15 @@ export interface FePointLightParams
     /**
      * ## x
      */
-    x: AttributeDeclarationOf<string>;
+    x?: AttributeDeclarationOf<string>;
     /**
      * ## y
      */
-    y: AttributeDeclarationOf<string>;
+    y?: AttributeDeclarationOf<string>;
     /**
      * ## z
      */
-    z: AttributeDeclarationOf<string>;
+    z?: AttributeDeclarationOf<string>;
 }
 /**
  * ## FePointLight
@@ -854,23 +854,23 @@ export interface FeSpecularLightingParams
     /**
      * ## in
      */
-    in: AttributeDeclarationOf<string>;
+    in?: AttributeDeclarationOf<string>;
     /**
      * ## surfaceScale
      */
-    surfaceScale: AttributeDeclarationOf<string>;
+    surfaceScale?: AttributeDeclarationOf<string>;
     /**
      * ## specularConstant
      */
-    specularConstant: AttributeDeclarationOf<string>;
+    specularConstant?: AttributeDeclarationOf<string>;
     /**
      * ## specularExponent
      */
-    specularExponent: AttributeDeclarationOf<string>;
+    specularExponent?: AttributeDeclarationOf<string>;
     /**
      * ## kernelUnitLength
      */
-    kernelUnitLength: AttributeDeclarationOf<string>;
+    kernelUnitLength?: AttributeDeclarationOf<string>;
 }
 /**
  * ## FeSpecularLighting
@@ -892,23 +892,23 @@ export interface FeSpotLightParams
     /**
      * ## x
      */
-    x: AttributeDeclarationOf<string>;
+    x?: AttributeDeclarationOf<string>;
     /**
      * ## y
      */
-    y: AttributeDeclarationOf<string>;
+    y?: AttributeDeclarationOf<string>;
     /**
      * ## z
      */
-    z: AttributeDeclarationOf<string>;
+    z?: AttributeDeclarationOf<string>;
     /**
      * ## specularExponent
      */
-    specularExponent: AttributeDeclarationOf<string>;
+    specularExponent?: AttributeDeclarationOf<string>;
     /**
      * ## limitingConeAngle
      */
-    limitingConeAngle: AttributeDeclarationOf<string>;
+    limitingConeAngle?: AttributeDeclarationOf<string>;
 }
 /**
  * ## FeSpotLight
@@ -928,7 +928,7 @@ export interface FeTileParams
     /**
      * ## in
      */
-    in: AttributeDeclarationOf<string>;
+    in?: AttributeDeclarationOf<string>;
 }
 /**
  * ## FeTile
@@ -949,24 +949,24 @@ export interface FeTurbulenceParams
      * ## baseFrequency
      * The baseFrequency attribute represents the base frequency parameter for the noise function of the ``<feTurbulence>`` filter primitive.
      */
-    baseFrequency: AttributeDeclarationOf<string>;
+    baseFrequency?: AttributeDeclarationOf<string>;
     /**
      * ## numOctaves
      */
-    numOctaves: AttributeDeclarationOf<string>;
+    numOctaves?: AttributeDeclarationOf<string>;
     /**
      * ## seed
      */
-    seed: AttributeDeclarationOf<string>;
+    seed?: AttributeDeclarationOf<string>;
     /**
      * ## stitchTiles
      */
-    stitchTiles: AttributeDeclarationOf<string>;
+    stitchTiles?: AttributeDeclarationOf<string>;
     /**
      * ## type
      * Defines the type of the element.
      */
-    type: AttributeDeclarationOf<string>;
+    type?: AttributeDeclarationOf<string>;
 }
 /**
  * ## FeTurbulence
@@ -986,40 +986,40 @@ export interface FilterParams
     /**
      * ## x
      */
-    x: AttributeDeclarationOf<string>;
+    x?: AttributeDeclarationOf<string>;
     /**
      * ## y
      */
-    y: AttributeDeclarationOf<string>;
+    y?: AttributeDeclarationOf<string>;
     /**
      * ## width
      * For the elements listed here, this establishes the element's width.
      */
-    width: AttributeDeclarationOf<string>;
+    width?: AttributeDeclarationOf<string>;
     /**
      * ## height
      * Specifies the height of elements listed here. For all other elements, use the CSS height property.
      */
-    height: AttributeDeclarationOf<string>;
+    height?: AttributeDeclarationOf<string>;
     /**
      * ## filterRes
      * The filterRes attribute indicates the width and height of the intermediate images in pixels of a filter primitive.
      * @deprecated
      */
-    filterRes: AttributeDeclarationOf<string>;
+    filterRes?: AttributeDeclarationOf<string>;
     /**
      * ## filterUnits
      * The filterUnits attribute defines the coordinate system for the attributes x, y, width and height.
      */
-    filterUnits: AttributeDeclarationOf<string>;
+    filterUnits?: AttributeDeclarationOf<string>;
     /**
      * ## primitiveUnits
      */
-    primitiveUnits: AttributeDeclarationOf<string>;
+    primitiveUnits?: AttributeDeclarationOf<string>;
     /**
      * ## xLinkHref
      */
-    xLinkHref: AttributeDeclarationOf<string>;
+    xLinkHref?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Filter
@@ -1040,20 +1040,20 @@ export interface ForeignObjectParams
      * ## height
      * Specifies the height of elements listed here. For all other elements, use the CSS height property.
      */
-    height: AttributeDeclarationOf<string>;
+    height?: AttributeDeclarationOf<string>;
     /**
      * ## width
      * For the elements listed here, this establishes the element's width.
      */
-    width: AttributeDeclarationOf<string>;
+    width?: AttributeDeclarationOf<string>;
     /**
      * ## x
      */
-    x: AttributeDeclarationOf<string>;
+    x?: AttributeDeclarationOf<string>;
     /**
      * ## y
      */
-    y: AttributeDeclarationOf<string>;
+    y?: AttributeDeclarationOf<string>;
 }
 /**
  * ## ForeignObject
@@ -1118,39 +1118,39 @@ export interface ImageParams
     /**
      * ## x
      */
-    x: AttributeDeclarationOf<string>;
+    x?: AttributeDeclarationOf<string>;
     /**
      * ## y
      */
-    y: AttributeDeclarationOf<string>;
+    y?: AttributeDeclarationOf<string>;
     /**
      * ## width
      * For the elements listed here, this establishes the element's width.
      */
-    width: AttributeDeclarationOf<string>;
+    width?: AttributeDeclarationOf<string>;
     /**
      * ## height
      * Specifies the height of elements listed here. For all other elements, use the CSS height property.
      */
-    height: AttributeDeclarationOf<string>;
+    height?: AttributeDeclarationOf<string>;
     /**
      * ## href
      * The URL of a linked resource.
      */
-    href: AttributeDeclarationOf<string>;
+    href?: AttributeDeclarationOf<string>;
     /**
      * ## xLinkHref
      */
-    xLinkHref: AttributeDeclarationOf<string>;
+    xLinkHref?: AttributeDeclarationOf<string>;
     /**
      * ## preserveAspectRatio
      */
-    preserveAspectRatio: AttributeDeclarationOf<string>;
+    preserveAspectRatio?: AttributeDeclarationOf<string>;
     /**
      * ## crossOrigin
      * How the element handles cross-origin requests
      */
-    crossOrigin: AttributeDeclarationOf<"use-credentials" | "anonymous">;
+    crossOrigin?: AttributeDeclarationOf<"use-credentials" | "anonymous">;
 }
 /**
  * ## Image
@@ -1172,23 +1172,23 @@ export interface LineParams
     /**
      * ## x1
      */
-    x1: AttributeDeclarationOf<string>;
+    x1?: AttributeDeclarationOf<string>;
     /**
      * ## x2
      */
-    x2: AttributeDeclarationOf<string>;
+    x2?: AttributeDeclarationOf<string>;
     /**
      * ## y1
      */
-    y1: AttributeDeclarationOf<string>;
+    y1?: AttributeDeclarationOf<string>;
     /**
      * ## y2
      */
-    y2: AttributeDeclarationOf<string>;
+    y2?: AttributeDeclarationOf<string>;
     /**
      * ## pathLength
      */
-    pathLength: AttributeDeclarationOf<string>;
+    pathLength?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Line
@@ -1208,36 +1208,36 @@ export interface LinearGradientParams
     /**
      * ## gradientUnits
      */
-    gradientUnits: AttributeDeclarationOf<string>;
+    gradientUnits?: AttributeDeclarationOf<string>;
     /**
      * ## gradientTransform
      */
-    gradientTransform: AttributeDeclarationOf<string>;
+    gradientTransform?: AttributeDeclarationOf<string>;
     /**
      * ## href
      * The URL of a linked resource.
      */
-    href: AttributeDeclarationOf<string>;
+    href?: AttributeDeclarationOf<string>;
     /**
      * ## spreadMethod
      */
-    spreadMethod: AttributeDeclarationOf<string>;
+    spreadMethod?: AttributeDeclarationOf<string>;
     /**
      * ## x1
      */
-    x1: AttributeDeclarationOf<string>;
+    x1?: AttributeDeclarationOf<string>;
     /**
      * ## x2
      */
-    x2: AttributeDeclarationOf<string>;
+    x2?: AttributeDeclarationOf<string>;
     /**
      * ## y1
      */
-    y1: AttributeDeclarationOf<string>;
+    y1?: AttributeDeclarationOf<string>;
     /**
      * ## y2
      */
-    y2: AttributeDeclarationOf<string>;
+    y2?: AttributeDeclarationOf<string>;
 }
 /**
  * ## LinearGradient
@@ -1258,35 +1258,35 @@ export interface MarkerParams
     /**
      * ## markerHeight
      */
-    markerHeight: AttributeDeclarationOf<string>;
+    markerHeight?: AttributeDeclarationOf<string>;
     /**
      * ## markerUnits
      */
-    markerUnits: AttributeDeclarationOf<string>;
+    markerUnits?: AttributeDeclarationOf<string>;
     /**
      * ## markerWidth
      */
-    markerWidth: AttributeDeclarationOf<string>;
+    markerWidth?: AttributeDeclarationOf<string>;
     /**
      * ## orient
      */
-    orient: AttributeDeclarationOf<string>;
+    orient?: AttributeDeclarationOf<string>;
     /**
      * ## preserveAspectRatio
      */
-    preserveAspectRatio: AttributeDeclarationOf<string>;
+    preserveAspectRatio?: AttributeDeclarationOf<string>;
     /**
      * ## refX
      */
-    refX: AttributeDeclarationOf<string>;
+    refX?: AttributeDeclarationOf<string>;
     /**
      * ## refY
      */
-    refY: AttributeDeclarationOf<string>;
+    refY?: AttributeDeclarationOf<string>;
     /**
      * ## viewBox
      */
-    viewBox: AttributeDeclarationOf<string>;
+    viewBox?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Marker
@@ -1308,28 +1308,28 @@ export interface MaskParams
      * ## height
      * Specifies the height of elements listed here. For all other elements, use the CSS height property.
      */
-    height: AttributeDeclarationOf<string>;
+    height?: AttributeDeclarationOf<string>;
     /**
      * ## maskContentUnits
      */
-    maskContentUnits: AttributeDeclarationOf<string>;
+    maskContentUnits?: AttributeDeclarationOf<string>;
     /**
      * ## maskUnits
      */
-    maskUnits: AttributeDeclarationOf<string>;
+    maskUnits?: AttributeDeclarationOf<string>;
     /**
      * ## x
      */
-    x: AttributeDeclarationOf<string>;
+    x?: AttributeDeclarationOf<string>;
     /**
      * ## y
      */
-    y: AttributeDeclarationOf<string>;
+    y?: AttributeDeclarationOf<string>;
     /**
      * ## width
      * For the elements listed here, this establishes the element's width.
      */
-    width: AttributeDeclarationOf<string>;
+    width?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Mask
@@ -1364,7 +1364,7 @@ export interface MpathParams
     /**
      * ## xLinkHref
      */
-    xLinkHref: AttributeDeclarationOf<string>;
+    xLinkHref?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Mpath
@@ -1385,11 +1385,11 @@ export interface PathParams
      * ## d
      * The d attribute defines a path to be drawn.
      */
-    d: AttributeDeclarationOf<string>;
+    d?: AttributeDeclarationOf<string>;
     /**
      * ## pathLength
      */
-    pathLength: AttributeDeclarationOf<string>;
+    pathLength?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Path
@@ -1411,32 +1411,32 @@ export interface PatternParams
      * ## height
      * Specifies the height of elements listed here. For all other elements, use the CSS height property.
      */
-    height: AttributeDeclarationOf<string>;
+    height?: AttributeDeclarationOf<string>;
     /**
      * ## href
      * The URL of a linked resource.
      */
-    href: AttributeDeclarationOf<string>;
+    href?: AttributeDeclarationOf<string>;
     /**
      * ## patternContentUnits
      */
-    patternContentUnits: AttributeDeclarationOf<string>;
+    patternContentUnits?: AttributeDeclarationOf<string>;
     /**
      * ## patternTransform
      */
-    patternTransform: AttributeDeclarationOf<string>;
+    patternTransform?: AttributeDeclarationOf<string>;
     /**
      * ## preserveAspectRatio
      */
-    preserveAspectRatio: AttributeDeclarationOf<string>;
+    preserveAspectRatio?: AttributeDeclarationOf<string>;
     /**
      * ## viewBox
      */
-    viewBox: AttributeDeclarationOf<string>;
+    viewBox?: AttributeDeclarationOf<string>;
     /**
      * ## x
      */
-    x: AttributeDeclarationOf<string>;
+    x?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Pattern
@@ -1458,11 +1458,11 @@ export interface PolygonParams
     /**
      * ## points
      */
-    points: AttributeDeclarationOf<string>;
+    points?: AttributeDeclarationOf<string>;
     /**
      * ## pathLength
      */
-    pathLength: AttributeDeclarationOf<string>;
+    pathLength?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Polygon
@@ -1483,11 +1483,11 @@ export interface PolylineParams
     /**
      * ## points
      */
-    points: AttributeDeclarationOf<string>;
+    points?: AttributeDeclarationOf<string>;
     /**
      * ## pathLength
      */
-    pathLength: AttributeDeclarationOf<string>;
+    pathLength?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Polyline
@@ -1508,48 +1508,48 @@ export interface RadialGradientParams
      * ## cx
      * The cx attribute define the x-axis coordinate of a center point.
      */
-    cx: AttributeDeclarationOf<string>;
+    cx?: AttributeDeclarationOf<string>;
     /**
      * ## cy
      * The cy attribute define the y-axis coordinate of a center point.
      */
-    cy: AttributeDeclarationOf<string>;
+    cy?: AttributeDeclarationOf<string>;
     /**
      * ## fr
      * The fr attribute defines the radius of the focal point for the radial gradient.
      */
-    fr: AttributeDeclarationOf<string>;
+    fr?: AttributeDeclarationOf<string>;
     /**
      * ## fx
      * The fx attribute defines the x-axis coordinate of the focal point for a radial gradient.
      */
-    fx: AttributeDeclarationOf<string>;
+    fx?: AttributeDeclarationOf<string>;
     /**
      * ## fy
      * The fy attribute defines the y-axis coordinate of the focal point for a radial gradient.
      */
-    fy: AttributeDeclarationOf<string>;
+    fy?: AttributeDeclarationOf<string>;
     /**
      * ## gradientUnits
      */
-    gradientUnits: AttributeDeclarationOf<string>;
+    gradientUnits?: AttributeDeclarationOf<string>;
     /**
      * ## gradientTransform
      */
-    gradientTransform: AttributeDeclarationOf<string>;
+    gradientTransform?: AttributeDeclarationOf<string>;
     /**
      * ## href
      * The URL of a linked resource.
      */
-    href: AttributeDeclarationOf<string>;
+    href?: AttributeDeclarationOf<string>;
     /**
      * ## r
      */
-    r: AttributeDeclarationOf<string>;
+    r?: AttributeDeclarationOf<string>;
     /**
      * ## spreadMethod
      */
-    spreadMethod: AttributeDeclarationOf<string>;
+    spreadMethod?: AttributeDeclarationOf<string>;
 }
 /**
  * ## RadialGradient
@@ -1569,33 +1569,33 @@ export interface RectParams
     /**
      * ## x
      */
-    x: AttributeDeclarationOf<string>;
+    x?: AttributeDeclarationOf<string>;
     /**
      * ## y
      */
-    y: AttributeDeclarationOf<string>;
+    y?: AttributeDeclarationOf<string>;
     /**
      * ## width
      * For the elements listed here, this establishes the element's width.
      */
-    width: AttributeDeclarationOf<string>;
+    width?: AttributeDeclarationOf<string>;
     /**
      * ## height
      * Specifies the height of elements listed here. For all other elements, use the CSS height property.
      */
-    height: AttributeDeclarationOf<string>;
+    height?: AttributeDeclarationOf<string>;
     /**
      * ## rx
      */
-    rx: AttributeDeclarationOf<string>;
+    rx?: AttributeDeclarationOf<string>;
     /**
      * ## ry
      */
-    ry: AttributeDeclarationOf<string>;
+    ry?: AttributeDeclarationOf<string>;
     /**
      * ## pathLength
      */
-    pathLength: AttributeDeclarationOf<string>;
+    pathLength?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Rect
@@ -1615,7 +1615,7 @@ export interface SetParams
     /**
      * ## to
      */
-    to: AttributeDeclarationOf<string>;
+    to?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Set
@@ -1635,11 +1635,11 @@ export interface StopParams
     /**
      * ## stopColor
      */
-    stopColor: AttributeDeclarationOf<string>;
+    stopColor?: AttributeDeclarationOf<string>;
     /**
      * ## stopOpacity
      */
-    stopOpacity: AttributeDeclarationOf<string>;
+    stopOpacity?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Stop
@@ -1660,28 +1660,28 @@ export interface SvgParams
      * ## height
      * Specifies the height of elements listed here. For all other elements, use the CSS height property.
      */
-    height: AttributeDeclarationOf<string>;
+    height?: AttributeDeclarationOf<string>;
     /**
      * ## preserveAspectRatio
      */
-    preserveAspectRatio: AttributeDeclarationOf<string>;
+    preserveAspectRatio?: AttributeDeclarationOf<string>;
     /**
      * ## viewBox
      */
-    viewBox: AttributeDeclarationOf<string>;
+    viewBox?: AttributeDeclarationOf<string>;
     /**
      * ## width
      * For the elements listed here, this establishes the element's width.
      */
-    width: AttributeDeclarationOf<string>;
+    width?: AttributeDeclarationOf<string>;
     /**
      * ## x
      */
-    x: AttributeDeclarationOf<string>;
+    x?: AttributeDeclarationOf<string>;
     /**
      * ## y
      */
-    y: AttributeDeclarationOf<string>;
+    y?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Svg
@@ -1717,36 +1717,36 @@ export interface SymbolParams
      * ## height
      * Specifies the height of elements listed here. For all other elements, use the CSS height property.
      */
-    height: AttributeDeclarationOf<string>;
+    height?: AttributeDeclarationOf<string>;
     /**
      * ## preserveAspectRatio
      */
-    preserveAspectRatio: AttributeDeclarationOf<string>;
+    preserveAspectRatio?: AttributeDeclarationOf<string>;
     /**
      * ## refX
      */
-    refX: AttributeDeclarationOf<string>;
+    refX?: AttributeDeclarationOf<string>;
     /**
      * ## refY
      */
-    refY: AttributeDeclarationOf<string>;
+    refY?: AttributeDeclarationOf<string>;
     /**
      * ## viewBox
      */
-    viewBox: AttributeDeclarationOf<string>;
+    viewBox?: AttributeDeclarationOf<string>;
     /**
      * ## width
      * For the elements listed here, this establishes the element's width.
      */
-    width: AttributeDeclarationOf<string>;
+    width?: AttributeDeclarationOf<string>;
     /**
      * ## x
      */
-    x: AttributeDeclarationOf<string>;
+    x?: AttributeDeclarationOf<string>;
     /**
      * ## y
      */
-    y: AttributeDeclarationOf<string>;
+    y?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Symbol
@@ -1766,33 +1766,33 @@ export interface TextParams
     /**
      * ## x
      */
-    x: AttributeDeclarationOf<string>;
+    x?: AttributeDeclarationOf<string>;
     /**
      * ## y
      */
-    y: AttributeDeclarationOf<string>;
+    y?: AttributeDeclarationOf<string>;
     /**
      * ## dx
      * The dx attribute indicates a shift along the x-axis on the position of an element or its content.
      */
-    dx: AttributeDeclarationOf<string>;
+    dx?: AttributeDeclarationOf<string>;
     /**
      * ## dy
      * The dy attribute indicates a shift along the y-axis on the position of an element or its content.
      */
-    dy: AttributeDeclarationOf<string>;
+    dy?: AttributeDeclarationOf<string>;
     /**
      * ## rotate
      */
-    rotate: AttributeDeclarationOf<string>;
+    rotate?: AttributeDeclarationOf<string>;
     /**
      * ## lengthAdjust
      */
-    lengthAdjust: AttributeDeclarationOf<string>;
+    lengthAdjust?: AttributeDeclarationOf<string>;
     /**
      * ## textLength
      */
-    textLength: AttributeDeclarationOf<string>;
+    textLength?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Text
@@ -1813,32 +1813,32 @@ export interface TextPathParams
      * ## href
      * The URL of a linked resource.
      */
-    href: AttributeDeclarationOf<string>;
+    href?: AttributeDeclarationOf<string>;
     /**
      * ## lengthAdjust
      */
-    lengthAdjust: AttributeDeclarationOf<string>;
+    lengthAdjust?: AttributeDeclarationOf<string>;
     /**
      * ## method
      * Defines which HTTP method to use when submitting the form. Can be GET (default) or POST.
      */
-    method: AttributeDeclarationOf<"post" | "get" | "dialog">;
+    method?: AttributeDeclarationOf<"post" | "get" | "dialog">;
     /**
      * ## path
      */
-    path: AttributeDeclarationOf<string>;
+    path?: AttributeDeclarationOf<string>;
     /**
      * ## spacing
      */
-    spacing: AttributeDeclarationOf<string>;
+    spacing?: AttributeDeclarationOf<string>;
     /**
      * ## startOffset
      */
-    startOffset: AttributeDeclarationOf<string>;
+    startOffset?: AttributeDeclarationOf<string>;
     /**
      * ## textLength
      */
-    textLength: AttributeDeclarationOf<string>;
+    textLength?: AttributeDeclarationOf<string>;
 }
 /**
  * ## TextPath
@@ -1873,33 +1873,33 @@ export interface TspanParams
     /**
      * ## x
      */
-    x: AttributeDeclarationOf<string>;
+    x?: AttributeDeclarationOf<string>;
     /**
      * ## y
      */
-    y: AttributeDeclarationOf<string>;
+    y?: AttributeDeclarationOf<string>;
     /**
      * ## dx
      * The dx attribute indicates a shift along the x-axis on the position of an element or its content.
      */
-    dx: AttributeDeclarationOf<string>;
+    dx?: AttributeDeclarationOf<string>;
     /**
      * ## dy
      * The dy attribute indicates a shift along the y-axis on the position of an element or its content.
      */
-    dy: AttributeDeclarationOf<string>;
+    dy?: AttributeDeclarationOf<string>;
     /**
      * ## rotate
      */
-    rotate: AttributeDeclarationOf<string>;
+    rotate?: AttributeDeclarationOf<string>;
     /**
      * ## lengthAdjust
      */
-    lengthAdjust: AttributeDeclarationOf<string>;
+    lengthAdjust?: AttributeDeclarationOf<string>;
     /**
      * ## textLength
      */
-    textLength: AttributeDeclarationOf<string>;
+    textLength?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Tspan
@@ -1920,29 +1920,29 @@ export interface UseParams
      * ## href
      * The URL of a linked resource.
      */
-    href: AttributeDeclarationOf<string>;
+    href?: AttributeDeclarationOf<string>;
     /**
      * ## xLinkHref
      */
-    xLinkHref: AttributeDeclarationOf<string>;
+    xLinkHref?: AttributeDeclarationOf<string>;
     /**
      * ## x
      */
-    x: AttributeDeclarationOf<string>;
+    x?: AttributeDeclarationOf<string>;
     /**
      * ## y
      */
-    y: AttributeDeclarationOf<string>;
+    y?: AttributeDeclarationOf<string>;
     /**
      * ## width
      * For the elements listed here, this establishes the element's width.
      */
-    width: AttributeDeclarationOf<string>;
+    width?: AttributeDeclarationOf<string>;
     /**
      * ## height
      * Specifies the height of elements listed here. For all other elements, use the CSS height property.
      */
-    height: AttributeDeclarationOf<string>;
+    height?: AttributeDeclarationOf<string>;
 }
 /**
  * ## Use

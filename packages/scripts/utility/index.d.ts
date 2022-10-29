@@ -8,6 +8,7 @@ import {
 
 interface transformKeyParams {
     key: string;
+    isOptional: boolean;
     value: string | Array<string>;
     docs: Array<string>;
 }
