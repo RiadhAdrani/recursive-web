@@ -4,6 +4,11 @@ function beforeEach() {
     document.body.innerHTML = "";
 }
 
+/**
+ *
+ * @param {} scopedStyle
+ * @returns {RecursiveWebApp}
+ */
 function emptyApp(scopedStyle = false) {
     beforeEach();
 

@@ -21,5 +21,7 @@ it.each([
     ["", "string", ["cool title"], []],
     ["title", "", ["cool title"], []],
 ])("should render key correctly", (attr, value, docs, expected) => {
-    expect(transformKey({ key: attr, docs, value })).toStrictEqual(expected);
+    expect(
+        transformKey({ key: attr, docs, value, isOptional: false })
+    ).toStrictEqual(expected);
 });
