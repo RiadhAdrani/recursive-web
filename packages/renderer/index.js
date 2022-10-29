@@ -16,6 +16,21 @@ const {
     renderAttributeValue,
 } = require("../dom/index.js");
 const { hasProperty, isBlank } = require("@riadh-adrani/utility-js");
+const {
+    createElement: createEl,
+    createTextNode: createText,
+    isElementInDocument,
+    injectNode,
+    changeChildPosition,
+    getElementPosition,
+    setTextNodeData,
+    setEvent,
+    replaceNodeWith,
+    removeNode,
+    removeEvent,
+    removeAttribute,
+    setAttribute,
+} = require("@riadh-adrani/dom-control-js");
 
 class RecursiveWebRenderer extends RecursiveRenderer {
     /**
@@ -41,9 +56,7 @@ class RecursiveWebRenderer extends RecursiveRenderer {
      * @param {HTMLElement} instance
      */
     setElementEvent(onEventName, callback, instance) {
-        let _callback = () => {
-            throw "Error";
-        };
+        let _callback = () => {};
 
         if (typeof callback === "function") {
             _callback = callback;
@@ -57,10 +70,19 @@ class RecursiveWebRenderer extends RecursiveRenderer {
             };
         }
 
-        instance[onEventName] = (e) =>
-            this.orchestrator.batchCallback(() => {
-                _callback(e);
-            }, onEventName);
+        setEvent(
+            onEventName,
+            (e) =>
+                this.orchestrator.batchCallback(() => {
+                    _callback(e);
+                }),
+            instance
+        );
+
+        // instance[onEventName] = (e) =>
+        //     this.orchestrator.batchCallback(() => {
+        //         _callback(e);
+        //     }, onEventName);
     }
 
     /**
@@ -73,6 +95,8 @@ class RecursiveWebRenderer extends RecursiveRenderer {
         const _value = renderAttributeValue(attribute, value);
 
         const _attributeName = getAttributeName(attribute);
+
+        // TODO : setAttribute(_attributeName, _value, instance);
 
         if (isToggleableAttribute(attribute)) {
             instance.toggleAttribute(_attributeName, _value === true);
@@ -221,7 +245,12 @@ class RecursiveWebRenderer extends RecursiveRenderer {
      */
     reduceChildrenToInnerHTML(element) {
         return element.children.reduce((value, child) => {
-            return value + child.children.toString();
+            const innerHTML =
+                child.elementType === ELEMENT_TYPE_TEXT_NODE
+                    ? child.children
+                    : this.renderInstance(child).outerHTML;
+
+            return value + innerHTML;
         }, "");
     }
 
@@ -238,7 +267,7 @@ class RecursiveWebRenderer extends RecursiveRenderer {
      */
     useRendererCreateInstance(element) {
         if (element.elementType === ELEMENT_TYPE_TEXT_NODE)
-            return document.createTextNode(element.children);
+            return createText(element.children);
 
         let ns = HTML_NS;
 
@@ -246,7 +275,7 @@ class RecursiveWebRenderer extends RecursiveRenderer {
             ns = element.rendererOptions.ns;
         }
 
-        return document.createElementNS(ns, element.elementType);
+        return createEl(element.elementType, { namespace: ns });
     }
 
     /**
@@ -254,7 +283,7 @@ class RecursiveWebRenderer extends RecursiveRenderer {
      * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} newElement
      */
     useRendererUpdateText(element, newElement) {
-        element.instance.data = newElement.children;
+        setTextNodeData(element.instance, newElement.children);
     }
 
     /**
@@ -278,7 +307,7 @@ class RecursiveWebRenderer extends RecursiveRenderer {
      * @returns {boolean}
      */
     useRendererItemInTree(element) {
-        return document.contains(element.instance);
+        return isElementInDocument(element.instance);
     }
 
     /**
@@ -405,7 +434,7 @@ class RecursiveWebRenderer extends RecursiveRenderer {
 
         if (!eventData) return;
 
-        instance[eventData.on] = null;
+        removeEvent(eventData.on, instance);
     }
 
     /**
@@ -413,14 +442,17 @@ class RecursiveWebRenderer extends RecursiveRenderer {
      * @param {HTMLElement} instance
      */
     useRendererInjectChild(child, instance) {
-        instance.append(this.renderInstance(child));
+        injectNode(this.renderInstance(child), instance);
     }
 
     useRendererClean() {}
 
     useRendererRenderTree() {
         const tree = this.renderInstance(this.current);
-        this.root.append(tree);
+
+        // this.root.append(tree);
+
+        injectNode(tree, this.root);
     }
 
     /**
@@ -429,10 +461,12 @@ class RecursiveWebRenderer extends RecursiveRenderer {
      */
     useRendererRemoveAttribute(attribute, instance) {
         // works with some attributes.
-        instance.removeAttribute(attribute);
+        // instance.removeAttribute(attribute);
 
         // just making sure.
-        instance[attribute] = "";
+        // instance[attribute] = "";
+
+        removeAttribute(attribute, instance);
     }
 
     /**
@@ -455,15 +489,17 @@ class RecursiveWebRenderer extends RecursiveRenderer {
          */
         const parent = parentElement.instance;
 
-        if (typeof index == "number" && parent.childNodes.length > index) {
-            const parent = element.parent.instance;
+        // if (typeof index == "number" && parent.childNodes.length > index) {
+        //     const parent = element.parent.instance;
 
-            const child = parent.childNodes.item(index);
+        //     const child = parent.childNodes.item(index);
 
-            parent.insertBefore(this.renderInstance(element), child);
-        } else {
-            parent.append(this.renderInstance(element));
-        }
+        //     parent.insertBefore(this.renderInstance(element), child);
+        // } else {
+        //     parent.append(this.renderInstance(element));
+        // }
+
+        injectNode(this.renderInstance(element), parent, index);
     }
 
     /**
@@ -471,19 +507,23 @@ class RecursiveWebRenderer extends RecursiveRenderer {
      * @param {number} newPosition
      */
     useRendererChangeElementPosition(element, newPosition) {
-        element.parent.instance.insertBefore(
-            element.instance,
-            element.parent.instance.children[newPosition]
-        );
+        // element.parent.instance.insertBefore(
+        //     element.instance,
+        //     element.parent.instance.children[newPosition]
+        // );
+
+        changeChildPosition(element.instance, newPosition);
     }
 
     /**
      * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
      */
     useRendererGetElementPosition(element) {
-        return Array.from(element.instance.parentElement.children).indexOf(
-            element.instance
-        );
+        // return Array.from(element.instance.parentElement.children).indexOf(
+        //     element.instance
+        // );
+
+        return getElementPosition(element.instance);
     }
 
     /**
@@ -491,21 +531,23 @@ class RecursiveWebRenderer extends RecursiveRenderer {
      * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} newElement
      */
     useRendererReplaceElement(element, newElement) {
-        element.instance.replaceWith(this.renderInstance(newElement));
+        // element.instance.replaceWith(this.renderInstance(newElement));
+
+        replaceNodeWith(element.instance, this.renderInstance(newElement));
     }
 
     /**
      * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
      */
     useRendererRemoveElement(element) {
-        element.instance.remove();
+        removeNode(element.instance);
     }
 
     /**
      * @param {import("@riadh-adrani/recursive/lib.js").RecursiveElement} element
      */
     useRendererCreateRawContainer(element) {
-        const output = document.createElement(HTML_CONTAINER);
+        const output = createEl(HTML_CONTAINER);
 
         output.innerHTML = this.reduceChildrenToInnerHTML(element);
 

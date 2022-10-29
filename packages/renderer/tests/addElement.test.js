@@ -3,6 +3,7 @@
  */
 
 const { emptyApp } = require("./test.utility");
+const { createElement } = require("../../../use");
 const {
     ELEMENT_TYPE_TEXT_NODE,
     RECURSIVE_ELEMENT_SYMBOL,
@@ -24,28 +25,22 @@ it("should add an html div element", () => {
     expect(document.body.children.item(0).childElementCount).toBe(1);
 });
 
-it("should add a raw element", () => {
-    const app = emptyApp();
-    const renderer = app.renderer;
-
-    renderer.render();
-
-    const el = app.createElement(ELEMENT_TYPE_RAW, {
-        children: [
-            {
-                elementType: ELEMENT_TYPE_TEXT_NODE,
-                $$_RecursiveSymbol: RECURSIVE_ELEMENT_SYMBOL,
-                children: "<p>Hello</p>",
-                instance: undefined,
-            },
+it.each([
+    ["<p>Hello</p>", "<p>Hello</p>"],
+    [["Hello", createElement("span")], "Hello<span></span>"],
+    [[createElement("p"), createElement("span")], "<p></p><span></span>"],
+    [
+        [
+            createElement("p", { children: "Hello" }),
+            "And",
+            createElement("span", { children: "Welcome" }),
         ],
-    });
+        "<p>Hello</p>And<span>Welcome</span>",
+    ],
+])("should add a raw element", (children, expected) => {
+    const app = emptyApp();
 
-    const parent = { instance: document.body.children.item(0) };
+    const el = app.renderElement(createElement(ELEMENT_TYPE_RAW, { children }));
 
-    renderer.useRendererAddElement(el, parent);
-
-    expect(document.body.children.item(0).children.item(0).innerHTML).toBe(
-        "<p>Hello</p>"
-    );
+    expect(el.outerHTML).toBe(`<html-container>${expected}</html-container>`);
 });
