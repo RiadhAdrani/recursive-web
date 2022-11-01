@@ -1,4 +1,8 @@
-import { RecursiveElement, Route } from "@riadh-adrani/recursive/lib";
+import {
+    BaseElement,
+    RecursiveElement,
+    Route,
+} from "@riadh-adrani/recursive/lib";
 import { FreeStyleSheet, ComponentStyleSheet } from "../../lib";
 import { RecursiveApp } from "../../use";
 
@@ -28,31 +32,31 @@ export interface RecursiveWebAppConstructorParams {
     /**
      * Callback returning the tree of elements.
      */
-    app: () => RecursiveElement;
+    app: () => BaseElement;
     /**
      * routing tree object.
      */
-    route: Route;
+    route?: Route;
     /**
      * base url of the web app.
      */
-    base: string;
+    base?: string;
     /**
      * a boolean indicating if the page should scroll to the top when a new route is mounted.
      */
-    scrollCorrection: boolean;
+    scrollCorrection?: boolean;
     /**
      * defines the maximum number of cached stateful objects.
      */
-    cacheSize: number;
+    cacheSize?: number;
     /**
      * callback that will be executed when the app is initialized.
      */
-    onAppInit: (app: RecursiveWebApp) => void;
+    onAppInit?: (app: RecursiveWebApp) => void;
     /**
      * decides if all component styles should be scoped by default.
      */
-    scopedStyle: boolean;
+    scopedStyle?: boolean;
 }
 
 /**

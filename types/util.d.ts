@@ -12,10 +12,10 @@ export type StringWithAutoComplete<T> = T | (string & Record<never, never>);
 export type TypeOrArray<T> = T | Array<T>;
 
 export interface ElementChildren {
-    children: BaseElement | string | Array<BaseElement | string>;
+    children?: BaseElement | string | Array<BaseElement | string>;
 }
 
-export interface ImportScriptParams {
+export interface ImportScriptParams extends ObjectOf<any> {
     async?: boolean;
     crossOrigin?: string;
     defer?: boolean;
