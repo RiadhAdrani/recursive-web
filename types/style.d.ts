@@ -2,9 +2,9 @@ import { ObjectOf, StringWithAutoComplete, TypeOrArray } from "./util";
 import { FontFace } from "./fontFace";
 import { Selector, SelectorTypes } from "./selector";
 
-export type ComponentAnimation = { name: string } & ObjectOf<Selector>;
+export type ComponentAnimation = { name: string } & ObjectOf<Selector | string>;
 
-export type MediaQuery = { condition: string } & ObjectOf<Selector>;
+export type MediaQuery = { condition: string } & ObjectOf<Selector | string>;
 
 export type Selectors = ObjectOf<Selector>;
 
@@ -31,9 +31,8 @@ export type ComponentStyleSheet = {
     /**
      * Media queries of the current element.
      */
-    mediaQueries?: Array<MediaQuery> & SelectorTypes;
-} & Selectors &
-    SelectorTypes;
+    mediaQueries?: Array<MediaQuery & SelectorTypes>;
+} & SelectorTypes;
 
 export type FreeStyleSheet = {
     /**

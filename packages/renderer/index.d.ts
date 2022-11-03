@@ -13,7 +13,7 @@ interface RecursiveWebRendererOptions {
 /**
  * Perform rendering and updates to the DOM.
  */
-export default class RecursiveWebRenderer extends RecursiveRenderer {
+export default class RecursiveWebRenderer extends RecursiveRenderer<Element> {
     public styler: RecursiveCSSOM;
 
     public scopedStyle: boolean;

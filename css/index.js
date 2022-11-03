@@ -962,3 +962,22 @@ export function whenBetween(min, max, content) {
         ...content,
     };
 }
+
+/**
+ * Helper function to create a selector.
+ * @param {import("../types/selector").Selector} content
+ * @returns {import("../types/selector").Selector}
+ */
+export function createSelector(content) {
+    return content;
+}
+
+/**
+ * Helper function to create a media query.
+ * @param {string} condition
+ * @param {import("@riadh-adrani/utility-js/types").ObjectOf<import("../types/selector").Selector>} selectors
+ * @returns {import("../types/style").MediaQuery}
+ */
+export function createMediaQuery(condition, selectors) {
+    return { condition, ...selectors };
+}

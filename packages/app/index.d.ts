@@ -62,7 +62,7 @@ export interface RecursiveWebAppConstructorParams {
 /**
  * Web implementation of the `RecursiveApp` class.
  */
-export class RecursiveWebApp extends RecursiveApp {
+export class RecursiveWebApp extends RecursiveApp<Element> {
     /**
      * Create a new instance of Recursive App for the web.
      *
@@ -82,6 +82,4 @@ export class RecursiveWebApp extends RecursiveApp {
      * @param styleSheet style sheet declaration.
      */
     setStyle(styleSheet: FreeStyleSheet): void;
-
-    getRef<T = HTMLElement>(key: string, defaultValue: T): T;
 }
