@@ -18,6 +18,7 @@ const {
 module.exports = () => {
     const SelectorInterface = transformInterface({
         name: "Selector",
+        extending: ["BaseSelector"],
         keys: Object.keys(ListOfCssProperties),
         callback: (key) => {
             const data = ListOfCssProperties[key];
@@ -38,7 +39,12 @@ module.exports = () => {
 
     const _FILE_D_TS = createFileContent(
         [...SelectorInterface, ...SelectorTypesInterface],
-        [useImport(["CssPropertyDeclarationOf", "CssColor"], "./style")]
+        [
+            useImport(
+                ["CssPropertyDeclarationOf", "CssColor", "BaseSelector"],
+                "./style"
+            ),
+        ]
     );
 
     writeIntoFile(write(_FILE_D_TS), "../../../types/selector.d.ts");

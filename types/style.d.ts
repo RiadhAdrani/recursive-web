@@ -2,6 +2,8 @@ import { ObjectOf, StringWithAutoComplete, TypeOrArray } from "./util";
 import { FontFace } from "./fontFace";
 import { Selector, SelectorTypes } from "./selector";
 
+export type BaseSelector = ObjectOf<CssPropertyDeclarationOf<string>>;
+
 export type ComponentAnimation = { name: string } & ObjectOf<Selector | string>;
 
 export type MediaQuery = { condition: string } & ObjectOf<Selector | string>;
