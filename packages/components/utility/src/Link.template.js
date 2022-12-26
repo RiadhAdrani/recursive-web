@@ -1,8 +1,8 @@
-const { RecursiveConsole } = require("../../../../use");
-const { component, getApp } = require("../..");
-const { ListOfAttributes } = require("../../../dom");
+import { component, getApp } from "../../index.js";
+import { ListOfAttributes } from "../../../dom/index.js";
+import { RecursiveConsole } from "../../../../use/index.js";
 
-module.exports = () => {
+export default () => {
     return component({
         nativeInterface: "HTMLAnchorElement",
         tag: "a",

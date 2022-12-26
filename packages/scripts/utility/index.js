@@ -1,6 +1,6 @@
-const { isBlank, wrap, isFalsy } = require("@riadh-adrani/utility-js");
-const { HTML_NS } = require("../../constants");
-const { isAttribute, ListOfAttributes } = require("../../dom");
+import { isBlank, wrap, isFalsy } from "@riadh-adrani/utility-js";
+import { HTML_NS } from "../../constants/index.js";
+import { isAttribute, ListOfAttributes } from "../../dom/index.js";
 
 function makeJsDocs({ title = "", docs = [], decorators = [], links = [] }) {
     const content = [
@@ -302,8 +302,8 @@ function write(array) {
  * @param {string} filePath
  */
 function writeIntoFile(text, filePath) {
-    const fs = require("fs");
-    const path = require("path");
+    const fs = import("fs");
+    const path = import("path");
 
     const art = [
         " ██████╗ ███████╗███╗   ██╗███████╗██████╗  █████╗ ████████╗███████╗██████╗",
@@ -325,7 +325,7 @@ function writeIntoFile(text, filePath) {
     }
 }
 
-module.exports = {
+export {
     useImport,
     createFileContent,
     makeJsDocs,

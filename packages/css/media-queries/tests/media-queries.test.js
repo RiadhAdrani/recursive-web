@@ -1,4 +1,4 @@
-const { renderMediaQuery, isValidMediaQueryDeclaration } = require("..");
+import { renderMediaQuery, isValidMediaQueryDeclaration } from "..";
 
 it("should render a correct media queries with valid input.", () => {
     expect(

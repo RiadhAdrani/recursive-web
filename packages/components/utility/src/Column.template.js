@@ -1,7 +1,7 @@
-const { component } = require("../..");
-const { COLUMN_VIEW } = require("../../../constants");
+import { component } from "../../index.js";
+import { COLUMN_VIEW } from "../../../constants/index.js";
 
-module.exports = () =>
+export default () =>
     component({
         nativeInterface: "HTMLElement",
         tag: COLUMN_VIEW,

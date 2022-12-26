@@ -4,12 +4,12 @@
  * use `npm run generate` instead
  */
 
-const HTML = require("../../components/html").items;
-const Utility = require("../../components/utility").items;
-const SVG = require("../../components/svg").items;
-const { CssColor } = require("../../templates/types");
-const { HTML_NS, SVG_NS } = require("../../constants/index.js");
-const {
+import { items as HTML } from "../../components/html/index.js";
+import { items as Utility } from "../../components/utility/index.js";
+import { items as SVG } from "../../components/svg/index.js";
+import { CssColor } from "../../templates/types.js";
+import { HTML_NS, SVG_NS } from "../../constants/index.js";
+import {
     writeIntoFile,
     transformComponentTemplate,
     write,
@@ -17,7 +17,7 @@ const {
     createFileContent,
     transformFunction,
     transformComponentTemplateProps,
-} = require("../utility");
+} from "../utility/index.js";
 
 const HtmlComponents = [];
 const HtmlComponentsDeclaration = [];

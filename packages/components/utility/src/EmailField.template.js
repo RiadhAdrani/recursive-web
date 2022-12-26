@@ -1,7 +1,7 @@
-const { component } = require("../..");
-const { ListOfAttributes } = require("../../../dom");
+import { component } from "../../index.js";
+import { ListOfAttributes } from "../../../dom/index.js";
 
-module.exports = () => {
+export default () => {
     return component({
         nativeInterface: "HTMLInputElement",
         tag: "input",

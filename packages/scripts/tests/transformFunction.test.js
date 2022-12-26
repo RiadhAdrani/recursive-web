@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-const { transformFunction } = require("../utility");
+import { transformFunction } from "../utility";
 
 it.each([
     [

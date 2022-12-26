@@ -1,9 +1,9 @@
-const { attribute } = require("../../templates");
+import { attribute } from "../../templates";
 
 /**
  * @credit MDN (2022) - https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes
  */
-module.exports = {
+export default {
     accept: attribute({
         name: "accept",
         values: ["audio/*", "video/*", "image/*"],

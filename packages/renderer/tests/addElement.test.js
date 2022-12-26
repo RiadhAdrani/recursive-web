@@ -2,13 +2,9 @@
  * @jest-environment jsdom
  */
 
-const { emptyApp } = require("./test.utility");
-const { createElement } = require("../../../use");
-const {
-    ELEMENT_TYPE_TEXT_NODE,
-    RECURSIVE_ELEMENT_SYMBOL,
-    ELEMENT_TYPE_RAW,
-} = require("@riadh-adrani/recursive/packages/constants");
+import { emptyApp } from "./test.utility";
+import { createElement } from "../../../use";
+import { ELEMENT_TYPE_RAW } from "@riadh-adrani/recursive/packages/constants";
 
 it("should add an html div element", () => {
     const app = emptyApp();

@@ -1,6 +1,6 @@
-const { component } = require("../../templates");
+import { component } from "../../templates/index.js";
 
-const Elements = {
+export const items = {
     Address: component({
         tag: "address",
         props: {},
@@ -1033,5 +1033,3 @@ const Elements = {
         ],
     }),
 };
-
-module.exports = { items: Elements };

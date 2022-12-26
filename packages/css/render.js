@@ -1,9 +1,9 @@
-const { renderSelector } = require("./selectors");
-const { renderAnimation } = require("./animations");
-const { renderMediaQuery } = require("./media-queries");
-const { renderFontFace } = require("./font-face");
-const { renderImport } = require("./imports");
-const { renderVars } = require("./vars");
+import { renderSelector } from "./selectors";
+import { renderAnimation } from "./animations";
+import { renderMediaQuery } from "./media-queries";
+import { renderFontFace } from "./font-face";
+import { renderImport } from "./imports";
+import { renderVars } from "./vars";
 
 /**
  * Convert style object to string
@@ -56,4 +56,4 @@ function renderCSS(styleSheet) {
     return output;
 }
 
-module.exports = renderCSS;
+export default renderCSS;

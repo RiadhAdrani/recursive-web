@@ -2,8 +2,8 @@
  * @jest-environment jsdom
  */
 
-const { createElement } = require("@riadh-adrani/recursive");
-const { createApp, getElement, executeEvent } = require("../../testing");
+import { createElement } from "@riadh-adrani/recursive";
+import { createApp, getElement, executeEvent } from "../../testing";
 
 it("should create stores for global events", () => {
     let count = 0;

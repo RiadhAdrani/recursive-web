@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-const { isAttribute, renderAttributeValue } = require("..");
+import { isAttribute, renderAttributeValue } from "..";
 
 it.each([
     ["title", true],

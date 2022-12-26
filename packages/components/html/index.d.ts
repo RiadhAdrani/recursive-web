@@ -1,3 +1,3 @@
-import { ComponentTemplate } from "../../templates";
+import { ComponentTemplate } from "../../templates/index.js";
 
 export const items: { [key: string]: ComponentTemplate };

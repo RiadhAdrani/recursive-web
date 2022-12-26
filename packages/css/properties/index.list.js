@@ -1,4 +1,4 @@
-const { property } = require("../../templates");
+import { property } from "../../templates";
 
 const COLOR = "CssColor";
 
@@ -4948,4 +4948,4 @@ const ListOfCssProperties = {
     }),
 };
 
-module.exports = { ListOfCssProperties, globalValues };
+export { ListOfCssProperties, globalValues };

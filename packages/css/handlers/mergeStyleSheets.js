@@ -1,6 +1,6 @@
-const { isValidMediaQueryDeclaration } = require("../media-queries");
-const { areEqual, hasProperty, isBlank } = require("@riadh-adrani/utility-js");
-const { RecursiveConsole } = require("../../../use");
+import { isValidMediaQueryDeclaration } from "../media-queries";
+import { areEqual, hasProperty, isBlank } from "@riadh-adrani/utility-js";
+import { RecursiveConsole } from "../../../use";
 
 /**
  * Merge an array of style sheet into a single one.
@@ -166,4 +166,4 @@ function mergeStyleSheets(styleSheets) {
     return output;
 }
 
-module.exports = mergeStyleSheets;
+export default mergeStyleSheets;

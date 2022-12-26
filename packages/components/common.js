@@ -1,4 +1,4 @@
-const { RecursiveConsole } = require("../../use");
+import { RecursiveConsole } from "../../use";
 
 /**
  * Use intersection observer.
@@ -62,8 +62,4 @@ function transformString(uid) {
     return output;
 }
 
-module.exports = {
-    useIntersectionObserver,
-    createAnimationName,
-    transformString,
-};
+export { useIntersectionObserver, createAnimationName, transformString };

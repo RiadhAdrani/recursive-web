@@ -13,4 +13,4 @@ function renderImport(list) {
     return output;
 }
 
-module.exports = { renderImport };
+export { renderImport };

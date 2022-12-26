@@ -1,12 +1,8 @@
-const HtmlAttributes = require("./html");
-const SvgAttributes = require("./svg");
-const AriaAttributes = require("./aria");
-const { RecursiveConsole } = require("../../use");
-
-/**
- * Contains `DOM` events.
- */
-const ListOfEvents = require("./events");
+import HtmlAttributes from "./html";
+import SvgAttributes from "./svg";
+import AriaAttributes from "./aria";
+import { RecursiveConsole } from "../../use";
+import { default as ListOfEvents } from "./events";
 
 /**
  * Contains `html`, `svg` and `aria` attributes.
@@ -109,7 +105,7 @@ function getEventListener(key) {
     return ListOfEvents[key].listener;
 }
 
-module.exports = {
+export {
     isAttribute,
     getAttributeName,
     renderAttributeValue,

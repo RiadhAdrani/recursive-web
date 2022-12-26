@@ -1,6 +1,6 @@
-const { component } = require("../../templates");
+import { component } from "../../templates/index.js";
 
-const Elements = {
+export const items = {
     A: component({
         nativeInterface: "SVGAElement",
         tag: "a",
@@ -732,5 +732,3 @@ const Elements = {
         ],
     }),
 };
-
-module.exports = { items: Elements };

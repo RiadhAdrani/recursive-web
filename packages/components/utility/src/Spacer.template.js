@@ -1,8 +1,8 @@
-const { component } = require("../..");
-const { SPACER_VIEW } = require("../../../constants");
-const { attribute } = require("../../../templates");
+import { component } from "../..";
+import { SPACER_VIEW } from "../../../constants";
+import { attribute } from "../../../templates";
 
-module.exports = () =>
+export default () =>
     component({
         nativeInterface: "HTMLElement",
         tag: SPACER_VIEW,

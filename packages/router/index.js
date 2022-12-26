@@ -1,5 +1,5 @@
-const { isBlank } = require("@riadh-adrani/utility-js");
-const { RecursiveRouter } = require("../../use");
+import { isBlank } from "@riadh-adrani/utility-js";
+import { RecursiveRouter } from "../../use";
 
 class RecursiveWebRouter extends RecursiveRouter {
     constructor(route, base, scroll, app) {
@@ -119,4 +119,4 @@ class RecursiveWebRouter extends RecursiveRouter {
     }
 }
 
-module.exports = RecursiveWebRouter;
+export default RecursiveWebRouter;

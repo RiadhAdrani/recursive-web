@@ -1,11 +1,11 @@
-const { RecursiveConsole } = require("../../../use");
-const { isValidName } = require("../animations");
-const {
-    get: getSelector,
+import { RecursiveConsole } from "../../../use";
+import { isValidName } from "../animations";
+import {
+    get as getSelector,
     is,
     customSelectorAlreadyExists,
     getSelectorSupport,
-} = require("../selectors");
+} from "../selectors";
 
 /**
  * Process the given component stylesheet and convert it into a unified format.
@@ -129,4 +129,4 @@ function processComponentStyleSheet(styleSheet) {
     return output;
 }
 
-module.exports = processComponentStyleSheet;
+export default processComponentStyleSheet;

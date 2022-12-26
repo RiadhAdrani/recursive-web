@@ -1,4 +1,4 @@
-const { event } = require("../../templates");
+import { event } from "../../templates";
 
 /**
  * @param {import("./handler").GlobalEventHandlerTemplate} params
@@ -18,4 +18,4 @@ function handler({ store, type = "Event", docs = [], ...arg }) {
     });
 }
 
-module.exports = handler;
+export default handler;

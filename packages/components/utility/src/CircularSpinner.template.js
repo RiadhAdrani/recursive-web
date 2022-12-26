@@ -1,11 +1,11 @@
-const { component, createElement } = require("../..");
-const { RecursiveConsole } = require("../../../../use");
-const { CIRCULAR_SPINNER, SVG_NS } = require("../../../constants");
-const { createAnimationName } = require("../../common");
-const { attribute } = require("../../../templates");
-const { CssColor } = require("../../../templates/types");
+import RecursiveConsole from "../../../../use";
+import { CIRCULAR_SPINNER, SVG_NS } from "../../../constants/index.js";
+import { createAnimationName } from "../../common.js";
+import { attribute } from "../../../templates/index.js";
+import CssColor from "../../../templates/types.js";
+import { component, createElement } from "../../index.js";
 
-module.exports = () => {
+export default () => {
     return component({
         nativeInterface: "HTMLElement",
         tag: CIRCULAR_SPINNER,

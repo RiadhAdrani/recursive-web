@@ -110,11 +110,4 @@ function selector({
     return { css, docs, support, links, decorators };
 }
 
-module.exports = {
-    attribute,
-    event,
-    component,
-    property,
-    selector,
-    EventTypes,
-};
+export { attribute, event, component, property, selector, EventTypes };

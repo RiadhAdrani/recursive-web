@@ -1,4 +1,4 @@
-const { selector } = require("../../templates");
+import { selector } from "../../templates";
 
 const ListOfCssSelectors = {
     inline: selector({
@@ -525,4 +525,4 @@ const ListOfCssSelectors = {
     }),
 };
 
-module.exports = { ListOfCssSelectors };
+export { ListOfCssSelectors };

@@ -2,8 +2,8 @@
  * @jest-environment jsdom
  */
 
-const { createElement } = require("../../../use");
-const { createApp } = require("../../testing");
+import { createElement } from "../../../use";
+import { createApp } from "../../testing";
 
 describe("isWithinRoute", () => {
     const app = createApp({

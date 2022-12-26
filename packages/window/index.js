@@ -1,7 +1,7 @@
-const onGlobal = require("./events/onGlobal");
-const handler = require("./events/handler");
-const { RecursiveApp, createElement } = require("../../use");
-const {
+import onGlobal from "./events/onGlobal";
+import handler from "./events/handler";
+import { RecursiveApp, createElement } from "../../use";
+import {
     WINDOW_ON_CLICK,
     WINDOW_ON_CONTEXT_MENU,
     WINDOW_ON_RESIZE,
@@ -12,7 +12,7 @@ const {
     WINDOW_ON_MOUSE_DOWN,
     WINDOW_ON_MOUSE_MOVE,
     WINDOW_ON_MOUSE_UP,
-} = require("../constants/index");
+} from "../constants/index";
 
 /**
  * @type {import('../app/index').RecursiveWebApp}
@@ -67,4 +67,4 @@ const importFile = (type = "script", params) => {
     document.querySelector("head").append(app.renderElement(element));
 };
 
-module.exports = { handler, useRecursiveWindow, useApp, importFile };
+export { handler, useRecursiveWindow, useApp, importFile };

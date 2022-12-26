@@ -1,6 +1,6 @@
-const { attribute } = require("../../templates");
+import { attribute } from "../../templates";
 
-module.exports = {
+export default {
     accentHeight: attribute({
         name: "accent-height",
         values: "string",

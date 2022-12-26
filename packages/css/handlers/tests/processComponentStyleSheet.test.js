@@ -1,5 +1,5 @@
-const mergeStyleSheets = require("../mergeStyleSheets");
-const processComponentStyleSheet = require("../processComponentStyleSheet");
+import mergeStyleSheets from "../mergeStyleSheets";
+import processComponentStyleSheet from "../processComponentStyleSheet";
 
 it.each([
     [undefined],

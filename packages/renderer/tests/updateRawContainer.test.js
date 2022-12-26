@@ -2,12 +2,12 @@
  * @jest-environment jsdom
  */
 
-const {
+import {
     ELEMENT_TYPE_TEXT_NODE,
     RECURSIVE_ELEMENT_SYMBOL,
     ELEMENT_TYPE_RAW,
-} = require("@riadh-adrani/recursive/packages/constants");
-const { emptyApp } = require("./test.utility");
+} from "@riadh-adrani/recursive/packages/constants";
+import { emptyApp } from "./test.utility";
 
 it("should update raw container", () => {
     const app = emptyApp();

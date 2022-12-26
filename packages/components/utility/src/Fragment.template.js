@@ -1,9 +1,7 @@
-const {
-    ELEMENT_TYPE_FRAGMENT,
-} = require("@riadh-adrani/recursive/packages/constants");
-const { component } = require("../..");
+import { ELEMENT_TYPE_FRAGMENT } from "@riadh-adrani/recursive/packages/constants/index.js";
+import { component } from "../../index.js";
 
-module.exports = () =>
+export default () =>
     component({
         nativeInterface: "HTMLElement",
         tag: ELEMENT_TYPE_FRAGMENT,

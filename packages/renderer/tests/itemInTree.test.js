@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-const { app } = require("./test.utility");
+import { app } from "./test.utility";
 
 it("should detect if the element instance is in the tree", () => {
     const renderer = app((testApp) =>

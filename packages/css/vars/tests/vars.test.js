@@ -1,4 +1,4 @@
-const { renderVar } = require("..");
+import { renderVar } from "..";
 
 it.each([
     ["myColor", "red", "--myColor:red;"],

@@ -1,5 +1,5 @@
-const { createElement, RecursiveConsole, RecursiveApp } = require("../../use");
-const { component } = require("../templates");
+import { createElement, RecursiveConsole, RecursiveApp } from "../../use";
+import { component } from "../templates";
 
 /**
  * @type {RecursiveApp}
@@ -27,9 +27,4 @@ function useRecursiveComponents(app) {
     bootstrapper = app;
 }
 
-module.exports = {
-    createElement,
-    component,
-    getApp,
-    useRecursiveComponents,
-};
+export { createElement, component, getApp, useRecursiveComponents };

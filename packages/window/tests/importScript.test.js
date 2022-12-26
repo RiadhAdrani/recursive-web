@@ -2,9 +2,9 @@
  * @jest-environment jsdom
  */
 
-const { createElement } = require("@riadh-adrani/recursive");
-const { createApp } = require("../../testing");
-const { importFile } = require("..");
+import { createElement } from "@riadh-adrani/recursive";
+import { createApp } from "../../testing";
+import { importFile } from "..";
 
 it("should add imported scripts", () => {
     const webApp = createApp({

@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-const { app } = require("./test.utility");
+import { app } from "./test.utility";
 
 it("should update inline style attribute", () => {
     const testApp = app((testApp) =>

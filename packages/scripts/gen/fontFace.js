@@ -3,17 +3,17 @@
  * Do not run this file using node.
  * use `npm run generate` instead
  */
-const { ListOfFontFaceProperties } = require("../../css/font-face");
-const {
+import { ListOfFontFaceProperties } from "../../css/font-face/index.js";
+import {
     transformCssPropertyTemplate,
     transformInterface,
     createFileContent,
     writeIntoFile,
     write,
     useImport,
-} = require("../utility");
+} from "../utility/index.js";
 
-module.exports = () => {
+export default () => {
     const FontFaceInterface = transformInterface({
         name: "FontFace",
         keys: Object.keys(ListOfFontFaceProperties),

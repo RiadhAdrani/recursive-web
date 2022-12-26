@@ -1,4 +1,4 @@
-const mergeStyleSheets = require("../mergeStyleSheets");
+import mergeStyleSheets from "../mergeStyleSheets";
 
 it.each([
     [undefined],

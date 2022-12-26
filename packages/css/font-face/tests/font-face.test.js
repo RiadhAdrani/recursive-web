@@ -1,9 +1,9 @@
-const {
+import {
     isFontFaceProperty,
     getFontFaceProperty,
     renderFontFaceProperty,
     renderFontFace,
-} = require("..");
+} from "..";
 
 it.each([
     ["fontFamily", true],

@@ -1,4 +1,4 @@
-const { RecursiveWebApp } = require("../../app");
+import { RecursiveWebApp } from "../../app";
 
 function beforeEach() {
     document.body.innerHTML = "";
@@ -33,4 +33,4 @@ function app(myApp, scopedStyle = false) {
     return testApp;
 }
 
-module.exports = { emptyApp, app };
+export { emptyApp, app };

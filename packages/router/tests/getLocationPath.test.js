@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-const { app } = require("./test.utility");
+import { app } from "./test.utility";
 
 it("should get the correct pathname", () => {
     const router = app().router;

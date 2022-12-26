@@ -1,4 +1,3 @@
-import { ObjectOf } from "../../../types/util";
 import { CssPropertyTemplate } from "../../templates";
 
 export function isFontFaceProperty(key: string): boolean;
@@ -10,6 +9,6 @@ export function renderFontFaceProperty(
     value: string | Array<string>
 ): string;
 
-export function renderFontFace(content: Array<ObjectOf<string>>): string;
+export function renderFontFace(content: Array<Record<string, string>>): string;
 
-export const ListOfFontFaceProperties: ObjectOf<CssPropertyTemplate>;
+export const ListOfFontFaceProperties: Record<string, CssPropertyTemplate>;

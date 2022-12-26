@@ -2,8 +2,8 @@
  * @jest-environment jsdom
  */
 
-const { createElement, createRoute } = require("../../../use");
-const { createApp, getElement } = require("../../testing");
+import { createElement, createRoute } from "../../../use";
+import { createApp, getElement } from "../../testing";
 
 describe("Recursive Web App", () => {
     beforeEach(() => {

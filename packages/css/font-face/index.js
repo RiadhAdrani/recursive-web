@@ -1,5 +1,5 @@
-const { renderValue } = require("../properties");
-const ListOfFontFaceProperties = require("./index.list");
+import { renderValue } from "../properties";
+import ListOfFontFaceProperties from "./index.list";
 
 /**
  * @param {string} key
@@ -54,7 +54,7 @@ function renderFontFace(content) {
     return all.join("");
 }
 
-module.exports = {
+export {
     ListOfFontFaceProperties,
     isFontFaceProperty,
     getFontFaceProperty,

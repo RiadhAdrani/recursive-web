@@ -1,4 +1,4 @@
-const { renderSelector } = require("../selectors");
+import { renderSelector } from "../selectors";
 
 /**
  * @param {string} name
@@ -45,4 +45,4 @@ function renderAnimation(name, steps) {
     return output;
 }
 
-module.exports = { isValidName, isValidStepsObject, renderAnimation };
+export { isValidName, isValidStepsObject, renderAnimation };

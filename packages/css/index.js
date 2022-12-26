@@ -1,6 +1,6 @@
-const processComponentStyleSheet = require("./handlers/processComponentStyleSheet");
-const mergeStyleSheets = require("./handlers/mergeStyleSheets");
-const renderStyleSheet = require("./render");
+import processComponentStyleSheet from "./handlers/processComponentStyleSheet";
+import mergeStyleSheets from "./handlers/mergeStyleSheets";
+import renderStyleSheet from "./render";
 
 /**
  * Create an return a style element within the `head` element.
@@ -101,4 +101,4 @@ class RecursiveCSSOM {
     }
 }
 
-module.exports = RecursiveCSSOM;
+export default RecursiveCSSOM;

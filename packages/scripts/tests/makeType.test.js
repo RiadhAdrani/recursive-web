@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-const { makeType } = require("../utility");
+import { makeType } from "../utility";
 
 it.each([
     ["string", "string"],

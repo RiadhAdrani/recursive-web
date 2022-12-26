@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-const { transformKey } = require("../utility/index");
+import { transformKey } from "../utility/index";
 
 it.each([
     [

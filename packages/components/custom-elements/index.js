@@ -1,4 +1,4 @@
-const {
+import {
     COLUMN_VIEW,
     ROW_VIEW,
     LAZY_COLUMN,
@@ -10,8 +10,8 @@ const {
     VERTICAL_LINE,
     TOGGLE_SWITCH,
     CIRCULAR_SPINNER,
-} = require("../../constants");
-const RecursiveCSSOM = require("../../css/");
+} from "../../constants/index.js";
+import RecursiveCSSOM from "../../css/index.js";
 
 /**
  * Class extending HTMLElement that define a custom element.

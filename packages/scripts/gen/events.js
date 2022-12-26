@@ -3,17 +3,17 @@
  * Do not run this file using node.
  * use `npm run generate` instead
  */
-const { ListOfEvents } = require("../../dom");
-const {
+import { ListOfEvents } from "../../dom/index.js";
+import {
     transformEventTemplate,
     transformInterface,
     useImport,
     createFileContent,
     writeIntoFile,
     write,
-} = require("../utility");
+} from "../utility/index.js";
 
-module.exports = () => {
+export default () => {
     const EventsInterface = transformInterface({
         name: "Events",
         typeParams: ["E = HTMLElement"],

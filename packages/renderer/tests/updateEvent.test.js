@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-const { app: Application } = require("./test.utility");
+import { app as Application } from "./test.utility";
 
 it("should update events", () => {
     let value;

@@ -1,75 +1,73 @@
-const CenteredColumnTemplate = require("./src/CenteredColumn.template");
-const CenteredRowTemplate = require("./src/CenteredRow.template");
-const CheckboxTemplate = require("./src/Checkbox.template");
-const CircularSpinnerTemplate = require("./src/CircularSpinner.template");
-const ColorPickerTemplate = require("./src/ColorPicker.template");
-const ColumnTemplate = require("./src/Column.template");
-const DatePickerTemplate = require("./src/DatePicker.template");
-const DateTimeLocalPickerTemplate = require("./src/DateTimeLocalPicker.template");
-const EmailFieldTemplate = require("./src/EmailField.template");
-const FilePickerTemplate = require("./src/FilePicker.template");
-const FragmentTemplate = require("./src/Fragment.template");
-const HiddenInputTemplate = require("./src/HiddenInput.template");
-const HorizontalLineTemplate = require("./src/HorizontalLine.template");
-const HtmlContainerTemplate = require("./src/HtmlContainer.template");
-const ImagePickerTemplate = require("./src/ImagePicker.template");
-const LazyColumnTemplate = require("./src/LazyColumn.template");
-const LazyRowTemplate = require("./src/LazyRow.template");
-const LinkTemplate = require("./src/Link.template");
-const MonthPickerTemplate = require("./src/MonthPicker.template");
-const NumberPickerTemplate = require("./src/NumberPicker.template");
-const PasswordFieldTemplate = require("./src/PasswordField.template");
-const RadioButtonTemplate = require("./src/RadioButton.template");
-const RangePickerTemplate = require("./src/RangePicker.template");
-const ResetButtonTemplate = require("./src/ResetButton.template");
-const RowTemplate = require("./src/Row.template");
-const SearchFieldTemplate = require("./src/SearchField.template");
-const SpacerTemplate = require("./src/Spacer.template");
-const SubmitButtonTemplate = require("./src/SubmitButton.template");
-const TelephoneNumberFieldTemplate = require("./src/TelephoneNumberField.template");
-const TextFieldTemplate = require("./src/TextField.template");
-const TimePickerTemplate = require("./src/TimePicker.template");
-const ToggleSwitchTemplate = require("./src/ToggleSwitch.template");
-const UrlFieldTemplate = require("./src/UrlField.template");
-const VerticalLineTemplate = require("./src/VerticalLine.template");
-const WeekPickerTemplate = require("./src/WeekPicker.template");
+import CenteredColumnTemplate from "./src/CenteredColumn.template.js";
+import CenteredRowTemplate from "./src/CenteredRow.template.js";
+import CheckboxTemplate from "./src/Checkbox.template.js";
+import CircularSpinnerTemplate from "./src/CircularSpinner.template.js";
+import ColorPickerTemplate from "./src/ColorPicker.template.js";
+import ColumnTemplate from "./src/Column.template.js";
+import DatePickerTemplate from "./src/DatePicker.template.js";
+import DateTimeLocalPickerTemplate from "./src/DateTimeLocalPicker.template.js";
+import EmailFieldTemplate from "./src/EmailField.template.js";
+import FilePickerTemplate from "./src/FilePicker.template.js";
+import FragmentTemplate from "./src/Fragment.template.js";
+import HiddenInputTemplate from "./src/HiddenInput.template.js";
+import HorizontalLineTemplate from "./src/HorizontalLine.template.js";
+import HtmlContainerTemplate from "./src/HtmlContainer.template.js";
+import ImagePickerTemplate from "./src/ImagePicker.template.js";
+import LazyColumnTemplate from "./src/LazyColumn.template.js";
+import LazyRowTemplate from "./src/LazyRow.template.js";
+import LinkTemplate from "./src/Link.template.js";
+import MonthPickerTemplate from "./src/MonthPicker.template.js";
+import NumberPickerTemplate from "./src/NumberPicker.template.js";
+import PasswordFieldTemplate from "./src/PasswordField.template.js";
+import RadioButtonTemplate from "./src/RadioButton.template.js";
+import RangePickerTemplate from "./src/RangePicker.template.js";
+import ResetButtonTemplate from "./src/ResetButton.template.js";
+import RowTemplate from "./src/Row.template.js";
+import SearchFieldTemplate from "./src/SearchField.template.js";
+import SpacerTemplate from "./src/Spacer.template.js";
+import SubmitButtonTemplate from "./src/SubmitButton.template.js";
+import TelephoneNumberFieldTemplate from "./src/TelephoneNumberField.template.js";
+import TextFieldTemplate from "./src/TextField.template.js";
+import TimePickerTemplate from "./src/TimePicker.template.js";
+import ToggleSwitchTemplate from "./src/ToggleSwitch.template.js";
+import UrlFieldTemplate from "./src/UrlField.template.js";
+import VerticalLineTemplate from "./src/VerticalLine.template.js";
+import WeekPickerTemplate from "./src/WeekPicker.template.js";
 
-module.exports = {
-    items: {
-        HtmlContainer: HtmlContainerTemplate(),
-        Fragment: FragmentTemplate(),
-        Column: ColumnTemplate(),
-        Row: RowTemplate(),
-        CenteredColumn: CenteredColumnTemplate(),
-        CenteredRow: CenteredRowTemplate(),
-        CheckBox: CheckboxTemplate(),
-        ColorPicker: ColorPickerTemplate(),
-        DatePicker: DatePickerTemplate(),
-        DateTimeLocalPicker: DateTimeLocalPickerTemplate(),
-        EmailField: EmailFieldTemplate(),
-        FilePicker: FilePickerTemplate(),
-        HiddenInput: HiddenInputTemplate(),
-        ImagePicker: ImagePickerTemplate(),
-        MonthPicker: MonthPickerTemplate(),
-        NumberPicker: NumberPickerTemplate(),
-        PasswordField: PasswordFieldTemplate(),
-        RadioButton: RadioButtonTemplate(),
-        RangePicker: RangePickerTemplate(),
-        ResetButton: ResetButtonTemplate(),
-        SearchField: SearchFieldTemplate(),
-        SubmitButton: SubmitButtonTemplate(),
-        TelephoneNumberField: TelephoneNumberFieldTemplate(),
-        TextField: TextFieldTemplate(),
-        TimePicker: TimePickerTemplate(),
-        UrlField: UrlFieldTemplate(),
-        WeekPicker: WeekPickerTemplate(),
-        Spacer: SpacerTemplate(),
-        LazyColumn: LazyColumnTemplate(),
-        LazyRow: LazyRowTemplate(),
-        HorizontalLine: HorizontalLineTemplate(),
-        VerticalLine: VerticalLineTemplate(),
-        Link: LinkTemplate(),
-        ToggleSwitch: ToggleSwitchTemplate(),
-        CircularSpinner: CircularSpinnerTemplate(),
-    },
+export const items = {
+    HtmlContainer: HtmlContainerTemplate(),
+    Fragment: FragmentTemplate(),
+    Column: ColumnTemplate(),
+    Row: RowTemplate(),
+    CenteredColumn: CenteredColumnTemplate(),
+    CenteredRow: CenteredRowTemplate(),
+    CheckBox: CheckboxTemplate(),
+    ColorPicker: ColorPickerTemplate(),
+    DatePicker: DatePickerTemplate(),
+    DateTimeLocalPicker: DateTimeLocalPickerTemplate(),
+    EmailField: EmailFieldTemplate(),
+    FilePicker: FilePickerTemplate(),
+    HiddenInput: HiddenInputTemplate(),
+    ImagePicker: ImagePickerTemplate(),
+    MonthPicker: MonthPickerTemplate(),
+    NumberPicker: NumberPickerTemplate(),
+    PasswordField: PasswordFieldTemplate(),
+    RadioButton: RadioButtonTemplate(),
+    RangePicker: RangePickerTemplate(),
+    ResetButton: ResetButtonTemplate(),
+    SearchField: SearchFieldTemplate(),
+    SubmitButton: SubmitButtonTemplate(),
+    TelephoneNumberField: TelephoneNumberFieldTemplate(),
+    TextField: TextFieldTemplate(),
+    TimePicker: TimePickerTemplate(),
+    UrlField: UrlFieldTemplate(),
+    WeekPicker: WeekPickerTemplate(),
+    Spacer: SpacerTemplate(),
+    LazyColumn: LazyColumnTemplate(),
+    LazyRow: LazyRowTemplate(),
+    HorizontalLine: HorizontalLineTemplate(),
+    VerticalLine: VerticalLineTemplate(),
+    Link: LinkTemplate(),
+    ToggleSwitch: ToggleSwitchTemplate(),
+    CircularSpinner: CircularSpinnerTemplate(),
 };

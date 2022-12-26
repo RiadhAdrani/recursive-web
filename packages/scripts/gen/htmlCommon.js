@@ -4,18 +4,18 @@
  * use `npm run generate` instead
  */
 
-const { ListOfAttributes } = require("../../dom");
+import { ListOfAttributes } from "../../dom/index.js";
 
-const {
+import {
     transformInterface,
     transformAttributeTemplate,
     createFileContent,
     write,
     writeIntoFile,
     useImport,
-} = require("../utility");
+} from "../utility/index.js";
 
-module.exports = () => {
+export default () => {
     const CommonHTMLAttributesInterface = transformInterface({
         name: "HTMLAttributes",
         extending: [],

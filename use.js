@@ -28,24 +28,4 @@
  * Before publishing to NPM, make sure to switch to production.
  */
 
-const {
-    RecursiveOrchestrator,
-    RecursiveRenderer,
-    RecursiveRouter,
-    RecursiveState,
-    RecursiveConsole,
-    RecursiveApp,
-    createElement,
-    createRoute,
-} = require("@riadh-adrani/recursive");
-
-module.exports = {
-    RecursiveOrchestrator,
-    RecursiveRenderer,
-    RecursiveRouter,
-    RecursiveState,
-    RecursiveApp,
-    RecursiveConsole,
-    createElement,
-    createRoute,
-};
+export * from "@riadh-adrani/recursive";

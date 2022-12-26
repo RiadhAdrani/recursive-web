@@ -1,4 +1,4 @@
-const { is, renderSelector, customSelectorAlreadyExists } = require("..");
+import { is, renderSelector, customSelectorAlreadyExists } from "..";
 
 it.each([
     [undefined],

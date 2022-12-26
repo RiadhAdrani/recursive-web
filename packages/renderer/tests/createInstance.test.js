@@ -2,13 +2,13 @@
  * @jest-environment jsdom
  */
 
-const {
+import {
     ELEMENT_TYPE_TEXT_NODE,
     RECURSIVE_ELEMENT_SYMBOL,
     ELEMENT_TYPE_RAW,
-} = require("@riadh-adrani/recursive/packages/constants");
-const { RecursiveWebApp } = require("../../app");
-const { HTML_CONTAINER } = require("../../constants");
+} from "@riadh-adrani/recursive/packages/constants";
+import { RecursiveWebApp } from "../../app";
+import { HTML_CONTAINER } from "../../constants";
 
 describe("create instance tests", () => {
     const app = new RecursiveWebApp({

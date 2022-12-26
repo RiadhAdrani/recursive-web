@@ -1,4 +1,4 @@
-const { renderAnimation, isValidName, isValidStepsObject } = require("..");
+import { renderAnimation, isValidName, isValidStepsObject } from "..";
 
 it.each([
     [undefined],

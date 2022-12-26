@@ -1,5 +1,5 @@
-const { createElement } = require("../../../use");
-const { RecursiveWebApp } = require("../../app");
+import { createElement } from "../../../use";
+import { RecursiveWebApp } from "../../app";
 
 function beforeEach() {
     location.pathname = "/";
@@ -23,4 +23,4 @@ function app() {
     return _app;
 }
 
-module.exports = { app };
+export { app };

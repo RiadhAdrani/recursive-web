@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-const { app } = require("./test.utility");
+import { app } from "./test.utility";
 
 it("should inject an event", () => {
     const renderer = app((testApp) =>

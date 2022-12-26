@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-const { app } = require("./test.utility");
+import { app } from "./test.utility";
 
 it("should remove the instance from the dom", () => {
     const renderer = app((testApp) => testApp.createElement("span")).renderer;

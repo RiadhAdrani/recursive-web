@@ -1,9 +1,9 @@
-const { attribute } = require("../../templates");
+import { attribute } from "../../templates";
 
 /**
  * @credit MDN (2022) - https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes
  */
-module.exports = {
+export default {
     ariaAutocomplete: attribute({
         name: "aria-autocomplete",
         values: ["none", "inline", "list", "both"],

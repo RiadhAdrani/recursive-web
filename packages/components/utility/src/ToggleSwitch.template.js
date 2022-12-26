@@ -1,10 +1,10 @@
-const { component, createElement } = require("../..");
-const { TOGGLE_SWITCH } = require("../../../constants");
-const { ListOfAttributes } = require("../../../dom");
-const { attribute } = require("../../../templates");
-const { CssColor } = require("../../../templates/types");
+import { component, createElement } from "../..";
+import { ListOfAttributes } from "../../../dom";
+import { TOGGLE_SWITCH } from "../../../constants";
+import { attribute } from "../../../templates";
+import { CssColor } from "../../../templates/types";
 
-module.exports = () => {
+export default () => {
     return component({
         nativeInterface: "HTMLInputElement",
         tag: TOGGLE_SWITCH,

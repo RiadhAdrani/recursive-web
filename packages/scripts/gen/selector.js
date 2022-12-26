@@ -3,9 +3,9 @@
  * Do not run this file using node.
  * use `npm run generate` instead
  */
-const { ListOfCssProperties } = require("../../css/properties");
-const { ListOfCssSelectors } = require("../../css/selectors");
-const {
+import { ListOfCssProperties } from "../../css/properties/index.js";
+import { ListOfCssSelectors } from "../../css/selectors/index.js";
+import {
     transformCssSelectorTemplate,
     transformCssPropertyTemplate,
     transformInterface,
@@ -13,9 +13,9 @@ const {
     writeIntoFile,
     write,
     useImport,
-} = require("../utility");
+} from "../utility/index.js";
 
-module.exports = () => {
+export default () => {
     const SelectorInterface = transformInterface({
         name: "Selector",
         extending: ["BaseSelector"],

@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-const { app } = require("./test.utility");
+import { app } from "./test.utility";
 
 it("should remove the attributes from the dom element.", () => {
     const renderer = app((testApp) =>

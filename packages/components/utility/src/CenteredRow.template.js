@@ -1,7 +1,7 @@
-const { component } = require("../..");
-const { CENTERED_ROW } = require("../../../constants");
+import { component } from "../../index.js";
+import { CENTERED_ROW } from "../../../constants/index.js";
 
-module.exports = () =>
+export default () =>
     component({
         nativeInterface: "HTMLElement",
         tag: CENTERED_ROW,

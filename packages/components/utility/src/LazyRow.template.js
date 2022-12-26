@@ -1,8 +1,8 @@
-const { component } = require("../..");
-const { LAZY_ROW } = require("../../../constants");
-const { useIntersectionObserver } = require("../../common");
+import { component } from "../../index.js";
+import { LAZY_ROW } from "../../../constants/index.js";
+import { useIntersectionObserver } from "../../common/index.js";
 
-module.exports = () => {
+export default () => {
     return component({
         nativeInterface: "HTMLElement",
         tag: LAZY_ROW,

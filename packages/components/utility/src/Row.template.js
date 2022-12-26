@@ -1,7 +1,8 @@
-const { component } = require("../..");
-const { ROW_VIEW } = require("../../../constants");
+import { component } from "../..";
+import { ListOfAttributes } from "../../../dom";
+import { ROW_VIEW } from "../../../constants";
 
-module.exports = () =>
+export default () =>
     component({
         nativeInterface: "HTMLElement",
         tag: ROW_VIEW,

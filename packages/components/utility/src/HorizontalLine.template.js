@@ -1,8 +1,8 @@
-const { component } = require("../..");
-const { HORIZONTAL_LINE } = require("../../../constants");
-const { attribute } = require("../../../templates");
+import { component } from "../../index.js";
+import { HORIZONTAL_LINE } from "../../../constants/index.js";
+import { attribute } from "../../../templates/index.js";
 
-module.exports = () => {
+export default () => {
     return component({
         nativeInterface: "HTMLElement",
         tag: HORIZONTAL_LINE,

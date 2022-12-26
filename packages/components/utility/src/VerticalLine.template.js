@@ -1,9 +1,8 @@
-const { component } = require("../..");
-const { VERTICAL_LINE } = require("../../../constants");
-const { attribute } = require("../../../templates");
-const { CssColor } = require("../../../templates/types");
+import { component } from "../..";
+import { VERTICAL_LINE } from "../../../constants";
+import { CssColor } from "../../../templates/types";
 
-module.exports = () => {
+export default () => {
     return component({
         nativeInterface: "HTMLElement",
         tag: VERTICAL_LINE,

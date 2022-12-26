@@ -34,4 +34,4 @@ function renderVars(list) {
     return output;
 }
 
-module.exports = { renderVars, renderVar };
+export { renderVars, renderVar };

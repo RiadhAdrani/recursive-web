@@ -1,4 +1,4 @@
-const { RecursiveWebApp } = require("../app");
+import { RecursiveWebApp } from "../app";
 
 /**
  *
@@ -29,4 +29,4 @@ const executeEvent = (element, event) => {
     element.dispatchEvent(event);
 };
 
-module.exports = { createApp, cleanDOM, getElement, executeEvent };
+export { createApp, cleanDOM, getElement, executeEvent };

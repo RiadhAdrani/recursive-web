@@ -1,5 +1,4 @@
 import { Selector } from "../../../lib";
-import { ObjectOf } from "../../../types/util";
 
 /**
  * check if a given media query object is valid or not.
@@ -14,5 +13,5 @@ export function isValidMediaQueryDeclaration(object: any): boolean;
  */
 export function renderMediaQuery(
     rule: string,
-    selectors: ObjectOf<Selector>
+    selectors: Record<string, Selector>
 ): string;

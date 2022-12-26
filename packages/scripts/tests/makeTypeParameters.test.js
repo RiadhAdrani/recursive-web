@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-const { makeTypeParameters } = require("../utility");
+import { makeTypeParameters } from "../utility";
 
 it.each([
     [[], ""],

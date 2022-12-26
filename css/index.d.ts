@@ -1,6 +1,5 @@
-import { ObjectOf } from "@riadh-adrani/utility-js/types";
 import { Selector } from "../types/selector";
-import { MediaQuery, Selectors } from "../types/style";
+import { MediaQuery } from "../types/style";
 import { Corners, Edges } from "../types/util";
 
 /**
@@ -768,7 +767,7 @@ export function corners(input: Corners): string;
  */
 export function whenLessThan(
     size: string,
-    content: ObjectOf<Selector>
+    content: Record<string, Selector>
 ): MediaQuery;
 
 /**
@@ -778,7 +777,7 @@ export function whenLessThan(
  */
 export function whenGreaterThan(
     size: string,
-    content: ObjectOf<Selector>
+    content: Record<stringSelector>
 ): MediaQuery;
 
 /**
@@ -790,7 +789,7 @@ export function whenGreaterThan(
 export function whenBetween(
     min: string,
     max: string,
-    content: ObjectOf<Selector>
+    content: Record<stringSelector>
 ): MediaQuery;
 
 /**
@@ -806,5 +805,5 @@ export function createSelector(content: Selector): Selector;
  */
 export function createMediaQuery(
     condition: string,
-    selectors: ObjectOf<Selector>
+    selectors: Record<stringSelector>
 ): MediaQuery;

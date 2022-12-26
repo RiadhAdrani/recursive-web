@@ -1,5 +1,5 @@
-const { renderProperty } = require("../properties");
-const { ListOfCssSelectors } = require("./index.list");
+import { renderProperty } from "../properties";
+import { ListOfCssSelectors } from "./index.list";
 
 /**
  * @param {string} key
@@ -58,7 +58,7 @@ function getSelectorSupport(key) {
     return ListOfCssSelectors[key].support;
 }
 
-module.exports = {
+export {
     ListOfCssSelectors,
     is,
     get,

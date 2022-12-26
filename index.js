@@ -1,13 +1,6 @@
-const {
+export { importFile } from "./packages/window";
+export {
     RecursiveWebApp,
     createComponentStyle,
     mergeComponentStyles,
-} = require("./packages/app");
-const { importFile } = require("./packages/window");
-
-module.exports = {
-    RecursiveWebApp,
-    createComponentStyle,
-    mergeComponentStyles,
-    importFile,
-};
+} from "./packages/app";

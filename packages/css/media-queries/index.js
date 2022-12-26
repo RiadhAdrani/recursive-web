@@ -1,5 +1,5 @@
-const { hasProperty, isBlank, isFalsy } = require("@riadh-adrani/utility-js");
-const { renderSelector } = require("../selectors/index.js");
+import { hasProperty, isBlank, isFalsy } from "@riadh-adrani/utility-js";
+import { renderSelector } from "../selectors/index.js";
 
 /**
  * @param {import("../../../lib.js").MediaQuery} object
@@ -41,4 +41,4 @@ function renderMediaQuery(rule, selectors) {
     return output;
 }
 
-module.exports = { renderMediaQuery, isValidMediaQueryDeclaration };
+export { renderMediaQuery, isValidMediaQueryDeclaration };

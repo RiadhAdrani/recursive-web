@@ -1,4 +1,4 @@
-const {
+import {
     WINDOW_ON_CLICK,
     WINDOW_ON_RESIZE,
     WINDOW_ON_KEY_UP,
@@ -9,14 +9,14 @@ const {
     WINDOW_ON_MOUSE_UP,
     WINDOW_ON_MOUSE_DOWN,
     WINDOW_ON_MOUSE_MOVE,
-} = require("../../constants");
-const { event, EventTypes } = require("../../templates");
-const { handler } = require("../../window");
+} from "../../constants";
+import { event, EventTypes } from "../../templates";
+import { handler } from "../../window";
 
 /**
  * @credit MDN (2022) - https://developer.mozilla.org/en-US/docs/Web/Events
  */
-module.exports = {
+export default {
     onAbort: event({
         listener: "abort",
         on: "onabort",

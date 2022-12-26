@@ -1,14 +1,20 @@
-import { ObjectOf, StringWithAutoComplete, TypeOrArray } from "./util";
+import { StringWithAutoComplete, TypeOrArray } from "./util";
 import { FontFace } from "./fontFace";
 import { Selector, SelectorTypes } from "./selector";
 
-export type BaseSelector = ObjectOf<CssPropertyDeclarationOf<string>>;
+export type BaseSelector = Record<string, CssPropertyDeclarationOf<string>>;
 
-export type ComponentAnimation = { name: string } & ObjectOf<Selector | string>;
+export type ComponentAnimation = { name: string } & Record<
+    string,
+    Selector | string
+>;
 
-export type MediaQuery = { condition: string } & ObjectOf<Selector | string>;
+export type MediaQuery = { condition: string } & Record<
+    string,
+    Selector | string
+>;
 
-export type Selectors = ObjectOf<Selector>;
+export type Selectors = Record<string, Selector>;
 
 export type CssPropertyDeclarationOf<T> = TypeOrArray<
     StringWithAutoComplete<T>
@@ -42,7 +48,7 @@ export type FreeStyleSheet = {
      * The renderer will add the `--` prefix
      * before each key.
      */
-    var?: ObjectOf<string>;
+    var?: Record<string, string>;
     /**
      * Array of string, containing imports `url`s.
      */
@@ -50,7 +56,7 @@ export type FreeStyleSheet = {
     /**
      * Style selectors.
      */
-    selectors?: ObjectOf<Selector>;
+    selectors?: Record<string, Selector>;
     /**
      * Media Queries.
      */
@@ -58,7 +64,7 @@ export type FreeStyleSheet = {
     /**
      * Animations.
      */
-    animations?: ObjectOf<ObjectOf<Selector>>;
+    animations?: Record<string, Record<string, Selector>>;
     /**
      * Font Face
      */

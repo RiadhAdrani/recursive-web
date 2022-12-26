@@ -1,12 +1,12 @@
-const { RecursiveConsole, RecursiveRenderer } = require("../../use.js");
-const RecursiveCSSOM = require("../css/");
-const { HTML_CONTAINER, HTML_NS } = require("../constants/index.js");
-const { renderValue } = require("../css/properties");
-const {
+import { RecursiveConsole, RecursiveRenderer } from "../../use.js";
+import RecursiveCSSOM from "../css/";
+import { HTML_CONTAINER, HTML_NS } from "../constants/index.js";
+import { renderValue } from "../css/properties";
+import {
     ELEMENT_TYPE_TEXT_NODE,
     ELEMENT_TYPE_FRAGMENT,
-} = require("@riadh-adrani/recursive/packages/constants/index.js");
-const {
+} from "@riadh-adrani/recursive/packages/constants/index.js";
+import {
     isEvent,
     isAttribute,
     isToggleableAttribute,
@@ -14,11 +14,11 @@ const {
     getEvent,
     eventHasHandler,
     renderAttributeValue,
-} = require("../dom/index.js");
-const { hasProperty, isBlank } = require("@riadh-adrani/utility-js");
-const {
-    createElement: createEl,
-    createTextNode: createText,
+} from "../dom/index.js";
+import { hasProperty, isBlank } from "@riadh-adrani/utility-js";
+import {
+    createElement as createEl,
+    createTextNode as createText,
     isElementInDocument,
     injectNode,
     changeChildPosition,
@@ -30,7 +30,7 @@ const {
     removeEvent,
     removeAttribute,
     setAttribute,
-} = require("@riadh-adrani/dom-control-js");
+} from "@riadh-adrani/dom-control-js";
 
 class RecursiveWebRenderer extends RecursiveRenderer {
     /**
@@ -568,4 +568,4 @@ class RecursiveWebRenderer extends RecursiveRenderer {
     }
 }
 
-module.exports = RecursiveWebRenderer;
+export default RecursiveWebRenderer;

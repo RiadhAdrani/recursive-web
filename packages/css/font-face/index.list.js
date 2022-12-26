@@ -1,6 +1,6 @@
-const { property } = require("../../templates");
+import { property } from "../../templates";
 
-module.exports = {
+export default {
     ascentOverride: property({
         css: "ascent-override",
         values: ["normal"],

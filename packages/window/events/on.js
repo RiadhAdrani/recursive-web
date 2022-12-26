@@ -6,4 +6,4 @@ function on(winEvent, callback) {
     window.addEventListener(winEvent, callback);
 }
 
-module.exports = on;
+export default on;

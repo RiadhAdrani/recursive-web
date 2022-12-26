@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-const { emptyApp } = require("./test.utility");
+import { emptyApp } from "./test.utility";
 
 it("should update text", () => {
     const app = emptyApp();

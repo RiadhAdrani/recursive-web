@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-const { isEvent } = require("..");
+import { isEvent } from "..";
 
 it.each([
     ["onClick", true],

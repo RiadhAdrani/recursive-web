@@ -1,5 +1,5 @@
-const { RecursiveOrchestrator } = require("@riadh-adrani/recursive");
-const on = require("./on.js");
+import { RecursiveOrchestrator } from "@riadh-adrani/recursive";
+import on from "./on.js";
 
 /**
  * @param {RecursiveOrchestrator} orchestrator
@@ -57,4 +57,4 @@ function onGlobal(orchestrator, winEvent, store, listener, checkTarget = true) {
     });
 }
 
-module.exports = onGlobal;
+export default onGlobal;

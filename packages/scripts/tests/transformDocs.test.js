@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-const { transformDocs } = require("../utility/index");
+import { transformDocs } from "../utility/index";
 
 it.each([
     [["cool title"], ["/**", "* cool title", "*/"]],

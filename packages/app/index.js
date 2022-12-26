@@ -1,11 +1,11 @@
-const RecursiveWebRenderer = require("../renderer");
-const RecursiveWebRouter = require("../router");
-const { RecursiveApp } = require("../../use");
-const { useRecursiveWindow } = require("../window");
-const { useRecursiveComponents } = require("../components");
-const { merge, isFalsy } = require("@riadh-adrani/utility-js");
+import RecursiveWebRenderer from "../renderer/index.js";
+import RecursiveWebRouter from "../router/index.js";
+import { RecursiveApp } from "../../use.js";
+import { useRecursiveWindow } from "../window/index.js";
+import { useRecursiveComponents } from "../components/index.js";
+import { merge, isFalsy } from "@riadh-adrani/utility-js";
 
-class RecursiveWebApp extends RecursiveApp {
+export class RecursiveWebApp extends RecursiveApp {
     /**
      * @param {import(".").RecursiveWebAppConstructorParams} params
      */
@@ -37,7 +37,7 @@ class RecursiveWebApp extends RecursiveApp {
                 }
             },
             onAppInit: (_app) => {
-                require("../components/custom-elements");
+                import("../components/custom-elements");
 
                 useRecursiveComponents(_app);
                 useRecursiveWindow(_app);
@@ -58,20 +58,14 @@ class RecursiveWebApp extends RecursiveApp {
 /**
  * @param {import("../../lib").StyleSheet} params
  */
-function createComponentStyle(params) {
+export function createComponentStyle(params) {
     return { ...params };
 }
 
-function mergeComponentStyles(...styleSheets) {
+export function mergeComponentStyles(...styleSheets) {
     return merge(
         ...styleSheets.filter(
             (style) => typeof style === "object" && !isFalsy(style)
         )
     );
 }
-
-module.exports = {
-    RecursiveWebApp,
-    createComponentStyle,
-    mergeComponentStyles,
-};

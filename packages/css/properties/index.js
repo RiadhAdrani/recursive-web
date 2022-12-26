@@ -1,5 +1,5 @@
-const { RecursiveConsole } = require("../../../use");
-const { ListOfCssProperties, globalValues } = require("./index.list");
+import { RecursiveConsole } from "../../../use";
+import { ListOfCssProperties, globalValues } from "./index.list";
 
 const regEx = /\{|\}/g;
 
@@ -100,7 +100,7 @@ function renderProperty(property, value) {
     return output.join("");
 }
 
-module.exports = {
+export {
     is,
     get,
     renderProperty,

@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-const { makeJsDocs } = require("../utility");
+import { makeJsDocs } from "../utility";
 
 it.each([
     [

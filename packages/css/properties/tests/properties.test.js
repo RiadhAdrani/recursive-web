@@ -1,4 +1,4 @@
-const { is, renderProperty, renderValue, validValue } = require("..");
+import { is, renderProperty, renderValue, validValue } from "..";
 
 it.each([
     [undefined],
